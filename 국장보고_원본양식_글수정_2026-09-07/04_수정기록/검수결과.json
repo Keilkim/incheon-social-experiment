@@ -1,0 +1,449 @@
+{
+  "status": "PASS",
+  "pages": 43,
+  "checks": [
+    {
+      "page": 1,
+      "label": "공통 보고 1",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 1,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 1
+    },
+    {
+      "page": 2,
+      "label": "공통 보고 2",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 2,
+      "original_images": 5,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 2
+    },
+    {
+      "page": 3,
+      "label": "공통 보고 3",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 3,
+      "original_images": 2,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 0
+    },
+    {
+      "page": 4,
+      "label": "공통 보고 4",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 4,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 4
+    },
+    {
+      "page": 5,
+      "label": "공통 보고 5",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 5,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 6
+    },
+    {
+      "page": 6,
+      "label": "공통 보고 6",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 6,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 7591,
+      "new_text_fields": 4
+    },
+    {
+      "page": 7,
+      "label": "공통 보고 7",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 7,
+      "original_images": 2,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 23
+    },
+    {
+      "page": 8,
+      "label": "공통 보고 8",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 8,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 8
+    },
+    {
+      "page": 9,
+      "label": "공통 보고 9",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 9,
+      "original_images": 2,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 0
+    },
+    {
+      "page": 10,
+      "label": "공통 보고 10",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 10,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 1445,
+      "new_text_fields": 16
+    },
+    {
+      "page": 11,
+      "label": "공통 보고 11",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 11,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 12
+    },
+    {
+      "page": 12,
+      "label": "공통 보고 12",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 12,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 3046,
+      "new_text_fields": 26
+    },
+    {
+      "page": 13,
+      "label": "공통 보고 13",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 13,
+      "original_images": 2,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 6
+    },
+    {
+      "page": 14,
+      "label": "공통 보고 14",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 14,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 1750,
+      "new_text_fields": 7
+    },
+    {
+      "page": 15,
+      "label": "공통 보고 15",
+      "source": "인천창의디자인_국장님보고.pdf",
+      "original_page": 15,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 8
+    },
+    {
+      "page": 16,
+      "label": "거점별 세부계획 표지",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 1,
+      "original_images": 4,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 0
+    },
+    {
+      "page": 17,
+      "label": "대상지별 추진방향",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 2,
+      "original_images": 1,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 31
+    },
+    {
+      "page": 18,
+      "label": "거점 대상지 개념도",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 3,
+      "original_images": 9,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 44
+    },
+    {
+      "page": 19,
+      "label": "약산초등학교 개요",
+      "source": "아이디어 정교화_약산초등학교.pdf",
+      "original_page": 4,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 63,
+      "new_text_fields": 38
+    },
+    {
+      "page": 20,
+      "label": "약산초등학교 1차",
+      "source": "아이디어 정교화_약산초등학교.pdf",
+      "original_page": 5,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 24
+    },
+    {
+      "page": 21,
+      "label": "약산초등학교 2차",
+      "source": "아이디어 정교화_약산초등학교.pdf",
+      "original_page": 6,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 24
+    },
+    {
+      "page": 22,
+      "label": "선인재단 개요",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 7,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 43
+    },
+    {
+      "page": 23,
+      "label": "선인재단 1차",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 8,
+      "original_images": 7,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 21
+    },
+    {
+      "page": 24,
+      "label": "선인재단 2차",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 9,
+      "original_images": 2,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 21
+    },
+    {
+      "page": 25,
+      "label": "송도캠퍼스타운역 개요",
+      "source": "연안여객터미널, 송도 캠퍼스역)_국장보고 자료.pdf",
+      "original_page": 4,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 38
+    },
+    {
+      "page": 26,
+      "label": "송도캠퍼스타운역 1차",
+      "source": "연안여객터미널, 송도 캠퍼스역)_국장보고 자료.pdf",
+      "original_page": 5,
+      "original_images": 3,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 263,
+      "new_text_fields": 22
+    },
+    {
+      "page": 27,
+      "label": "송도캠퍼스타운역 2차",
+      "source": "연안여객터미널, 송도 캠퍼스역)_국장보고 자료.pdf",
+      "original_page": 6,
+      "original_images": 3,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 209,
+      "new_text_fields": 22
+    },
+    {
+      "page": 28,
+      "label": "차이나타운 개요",
+      "source": "아이디어 정교화_약산초등학교.pdf",
+      "original_page": 7,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 68,
+      "new_text_fields": 38
+    },
+    {
+      "page": 29,
+      "label": "차이나타운 1차",
+      "source": "아이디어 정교화_약산초등학교.pdf",
+      "original_page": 8,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 14,
+      "new_text_fields": 22
+    },
+    {
+      "page": 30,
+      "label": "차이나타운 2차",
+      "source": "아이디어 정교화_약산초등학교.pdf",
+      "original_page": 9,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 22
+    },
+    {
+      "page": 31,
+      "label": "굴포천 개요",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 16,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 69,
+      "new_text_fields": 39
+    },
+    {
+      "page": 32,
+      "label": "굴포천 1차",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 17,
+      "original_images": 3,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 24
+    },
+    {
+      "page": 33,
+      "label": "굴포천 2차",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 18,
+      "original_images": 3,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 21
+    },
+    {
+      "page": 34,
+      "label": "구월동로데오거리 개요",
+      "source": "국장님보고포맷_로데오거리.pdf",
+      "original_page": 1,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 37
+    },
+    {
+      "page": 35,
+      "label": "구월동로데오거리 1차",
+      "source": "국장님보고포맷_로데오거리.pdf",
+      "original_page": 2,
+      "original_images": 3,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 21
+    },
+    {
+      "page": 36,
+      "label": "구월동로데오거리 2차",
+      "source": "국장님보고포맷_로데오거리.pdf",
+      "original_page": 3,
+      "original_images": 15,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 21
+    },
+    {
+      "page": 37,
+      "label": "연안여객터미널 개요",
+      "source": "연안여객터미널, 송도 캠퍼스역)_국장보고 자료.pdf",
+      "original_page": 1,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 35
+    },
+    {
+      "page": 38,
+      "label": "연안여객터미널 1차",
+      "source": "연안여객터미널, 송도 캠퍼스역)_국장보고 자료.pdf",
+      "original_page": 2,
+      "original_images": 2,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 113,
+      "new_text_fields": 21
+    },
+    {
+      "page": 39,
+      "label": "연안여객터미널 2차",
+      "source": "연안여객터미널, 송도 캠퍼스역)_국장보고 자료.pdf",
+      "original_page": 3,
+      "original_images": 3,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 21
+    },
+    {
+      "page": 40,
+      "label": "향후계획 표지",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 25,
+      "original_images": 2,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 1
+    },
+    {
+      "page": 41,
+      "label": "일정계획",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 26,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 11
+    },
+    {
+      "page": 42,
+      "label": "인천 디자인 위크",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 27,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 11
+    },
+    {
+      "page": 43,
+      "label": "사회실험 최종목표",
+      "source": "인천창의디자인_국장님보고_2_선인재단, 굴포천.pdf",
+      "original_page": 28,
+      "original_images": 0,
+      "nontext_changed_pixels": 0,
+      "retained_text_rendering_difference_pixels": 0,
+      "new_text_fields": 11
+    }
+  ],
+  "errors": [],
+  "scope": [
+    "PDF와 PPTX 교체 문구 누락 대조",
+    "유효한 원본 이미지 수·위치·크기·변환 일치 검사",
+    "교체 영역과 원본 글자 영역을 제외한 비문자 영역의 픽셀 대조",
+    "새 글상자 간 겹침 검사"
+  ],
+  "limitations": [
+    "PPTX는 PDF 원본의 배경과 교체 글상자로 구성됨. 사진·도형은 배경에 포함되며 교체한 글은 편집 가능.",
+    "PDF 텍스트 재생성에 따른 일부 글자 렌더링 차이는 원본 글자 영역에서 별도 분리함.",
+    "PDF와 PPTX 내부 구조를 확인했으며 PowerPoint 앱 렌더링 검사는 별도 수행하지 않음.",
+    "원본에 미제작된 이미지 영역은 위치를 유지한 채 최신 시안 설명으로 바꾸었음."
+  ]
+}

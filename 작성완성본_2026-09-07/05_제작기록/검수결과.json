@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "document_files_checked": 51,
+  "report_pages": 40,
+  "individual_report_sets": 7,
+  "workbook_sheets": 18,
+  "errors": [],
+  "scope": [
+    "HWPX·DOCX ZIP/전체 XML 구조 및 본문 대조",
+    "PDF 전체 문단 누락·문자 깨짐·페이지 경계 검사",
+    "PPTX 40쪽 전체 본문·발표자 노트 대조",
+    "거점별 보고 각 3쪽 확인",
+    "엑셀 18개 시트 및 실측 데이터 없는 빈 양식 확인"
+  ],
+  "limitations": [
+    "HWPX·DOCX는 구조와 본문을 대조했으며 한글·워드 앱에서 실제 열기·재저장 검사는 수행하지 않음.",
+    "PPTX는 구조와 본문을 대조하고 같은 배치로 만든 PDF를 시각 검수함. PowerPoint 앱 자체 렌더링은 별도 확인하지 않음."
+  ],
+  "index_links": "PASS",
+  "combined_idea_pdf": {
+    "pages": 28,
+    "bookmarks": 7,
+    "page_text_comparison": "PASS"
+  }
+}
