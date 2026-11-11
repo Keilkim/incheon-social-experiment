@@ -1,0 +1,122 @@
+/* 인천 창의디자인 사회실험 최종보고서 — 공통 디자인 시스템 (STYLE_2 · 보고서형 formal 톤으로 확정)
+   - 팔레트는 :root 변수만 쓴다. 노랑은 쓰지 않는다(--yellow 는 이름만 남은 옅은 블루 #C9D7E6, 남색 면 위 강조 글자 전용).
+   - 채움 문법: 주요·실측·현재 = 솔리드(--navy/--teal) / 비교·사전·계획·대조·보조 = 빗살(.hatch, SVG url(#hatch-*)) / 배경·묶음 = --sky2, --gray-bg
+   - 면이 있는 도형에는 외곽선을 두지 않는다. 모서리는 0.6mm 이하(--rd). 원형 요소는 그대로.
+   - 사진은 원색(살짝 채도만 낮춤). 듀오톤·청록 필터를 쓰지 않는다.
+
+   [SVG 공통 빗살 패턴 — 각 HTML의 inline SVG <defs>에 붙여 쓴다. 단위는 viewBox가 mm일 때 기준.
+    viewBox가 mm가 아니면 width/height·선 굵기를 같은 비율로 키운다(예: px viewBox ≒ ×3.78).]
+   <defs>
+     <pattern id="hatch-navy" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+       <rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#1A2F4B"/></pattern>
+     <pattern id="hatch-blue" ...같은 구조... fill="#2E5A87"/>
+     <pattern id="hatch-gray" ...같은 구조... fill="#9AA6B1"/>
+     <pattern id="hatch-red"  ...같은 구조... fill="#E5332A"/>
+    ※ 선은 <line x1="0">이 아니라 폭 .3 의 <rect>로 그린다. x=0 에 둔 line 은 절반이 타일 밖으로 잘려 0.15mm로 흐려진다.
+   </defs>
+   사용: <rect ... fill="url(#hatch-blue)"/>  (빗살 도형에도 stroke는 두지 않는다. 범례 칩도 같은 채움으로 표시)
+*/
+@font-face{font-family:P;font-weight:200;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-2ExtraLight.ttf')}
+@font-face{font-family:P;font-weight:300;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-3Light.ttf')}
+@font-face{font-family:P;font-weight:400;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-4Regular.ttf')}
+@font-face{font-family:P;font-weight:500;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-5Medium.ttf')}
+@font-face{font-family:P;font-weight:600;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-6SemiBold.ttf')}
+@font-face{font-family:P;font-weight:700;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-7Bold.ttf')}
+@font-face{font-family:P;font-weight:800;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-8ExtraBold.ttf')}
+@font-face{font-family:P;font-weight:900;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-9Black.ttf')}
+
+:root{
+  --teal:#2E5A87; --teal-d:#22476C; --teal-l:#7D97B3; --sky:#E3E9F0; --sky2:#F2F5F8;
+  --navy:#1A2F4B; --navy-d:#13243A; --yellow:#C9D7E6; --ink:#1E2A35; --mute:#6A7784; --line:#D3DCE3;
+  --gray-bg:#F3F6F8; --red:#E5332A; --red-l:#FBE9E8; --act-blue:#2E5A87;
+  --rd:.6mm; /* 카드·상자·칩 모서리 상한 */
+  /* 4개 분야 색 (보고서 전체 고정) */
+  --f-safe:#3A5F8E; --f-incl:#3F7A6E; --f-attr:#A67C45; --f-conv:#675F8C;
+}
+@page{size:210mm 297mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#8a949c}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:P,'Apple SD Gothic Neo',sans-serif;color:var(--ink);font-weight:400;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#fff;margin:0 auto 8mm;break-after:page}
+@media print{html,body{background:#fff}.page{margin:0}}
+.serif{font-family:'NanumMyeongjo',serif}
+.dummy{color:var(--red)!important}
+
+/* 쪽번호 · 출처 */
+.pno{position:absolute;bottom:11mm;font-weight:800;font-size:11pt;color:var(--teal);font-style:oblique 10deg}
+.even .pno{left:16mm}.odd .pno{right:16mm}
+.foot-src{position:absolute;bottom:11.6mm;font-size:6.2pt;color:#8C98A3;font-weight:500}
+.even .foot-src{right:16mm}.odd .foot-src{left:16mm}
+
+/* 상단 장 내비게이션 (현재 장에 .on) */
+.nav{position:absolute;top:11mm;left:16mm;right:16mm;display:flex;border-top:.35mm solid var(--navy);padding-top:2mm;font-size:6.4pt;color:#A2ADB6;font-weight:600}
+.nav span{flex:1;position:relative}
+.nav span.on{color:var(--teal)}
+.nav span.on::before{content:"";position:absolute;left:0;right:15%;top:-2.35mm;height:.9mm;background:var(--teal)}
+
+/* 절 머리 + 결론형 헤드라인 */
+.hd{position:absolute;top:22mm;left:16mm;right:16mm}
+.sec{display:flex;align-items:center;gap:2.4mm;font-size:7.6pt;font-weight:700;color:var(--teal)}
+.sec .no{background:var(--teal);color:#fff;padding:.7mm 2.2mm;font-weight:800;letter-spacing:.04em}
+.hl{margin-top:3.4mm;font-size:16pt;line-height:1.36;font-weight:800;color:var(--navy);letter-spacing:-.025em}
+.hl em{font-style:normal;color:var(--teal)}
+.lede{margin-top:3mm;font-size:8.6pt;line-height:1.7;color:#3D4A56;font-weight:500;max-width:168mm}
+.body{position:absolute;left:16mm;right:16mm}
+
+/* 사진: 원색 + 살짝 채도 낮춤 (클래스명 .duo 는 호환용으로 유지) */
+.duo{position:relative;overflow:hidden;background:#E9EEF2}
+.duo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88) contrast(1.03)}
+.duo::after{display:none}
+/* 사진 위 글자 가독용 그늘이 필요할 때만: 아래쪽 남색 그라데이션 (.shade 를 붙이고, 부모는 position 지정) */
+.duo.shade::after,.photo.shade::after{content:"";display:block;position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg,rgba(19,36,58,0),rgba(19,36,58,.65));mix-blend-mode:normal;opacity:1}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cap{font-size:6.6pt;color:var(--mute);font-weight:600;line-height:1.45;margin-top:1.2mm}
+
+/* 자주 쓰는 블록 */
+.lb{font-size:7pt;font-weight:700;color:var(--teal);letter-spacing:.1em;margin-bottom:1.6mm;display:flex;align-items:center;gap:2mm}
+.lb::after{content:"";flex:1;height:.25mm;background:var(--line)}
+.card{background:var(--gray-bg);border-radius:var(--rd);padding:3.4mm}
+.verdict{background:var(--sky);border-radius:0;padding:4.6mm 5mm;text-align:center}
+.verdict b{display:block;font-size:12pt;font-weight:900;color:var(--navy);line-height:1.4}
+.band{background:var(--navy);color:#fff;border-radius:var(--rd);padding:4.4mm 5mm;font-weight:800}
+.band span{color:#C9D7E6}
+.chip{display:inline-block;font-size:6.4pt;font-weight:800;border-radius:var(--rd);padding:.4mm 2mm}
+.fd{display:inline-block;font-size:6.2pt;font-weight:800;color:#fff;border-radius:var(--rd);padding:.2mm 1.6mm}
+.fd.safe{background:var(--f-safe)}.fd.incl{background:var(--f-incl)}.fd.attr{background:var(--f-attr)}.fd.conv{background:var(--f-conv)}
+.tally{display:grid;gap:0;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.tally>div{padding:3.4mm 2mm;text-align:center;border-right:.25mm solid var(--line)}
+.tally>div:last-child{border-right:0}
+.tally b{display:block;font-size:20pt;font-weight:900;color:var(--teal);line-height:1}
+.tally b small{font-size:8pt;color:var(--navy);margin-left:.4mm}
+.tally span{display:block;font-size:7pt;font-weight:700;color:var(--navy);margin-top:1.4mm}
+/* 인용 자리(원문 확보 전): 따옴표 없는 회색 라벨 */
+.quote-slot{background:#F1F3F5;border-radius:var(--rd);padding:2.6mm 3mm;font-size:7.2pt;color:#7D8892;font-weight:600;line-height:1.5}
+/* 판정 칩: 가봉 분류 — 상설(솔리드) / 수정(빗살, 글자 둘레는 흰 바탕으로 비움) / 중지(옅은 회색 면) / 미정(옅은 붉은 면) */
+.judge{display:inline-block;font-size:7pt;font-weight:800;border-radius:var(--rd);padding:.6mm 2.6mm;border:0}
+.judge.keep{background:var(--navy);color:#fff}
+.judge.fix{color:var(--navy);background:repeating-linear-gradient(135deg,#8FA6BF 0 .3mm,#fff .3mm 1.3mm);text-shadow:0 0 .45mm #fff,0 0 .45mm #fff,0 0 .45mm #fff,0 0 .45mm #fff}
+.judge.next{background:#E3E8EC;color:var(--navy)}
+.judge.tbd{background:var(--red-l);color:var(--red)}
+
+/* 빗살 채움 유틸리티 (HTML 상자용). 비교·사전·계획·대조·보조 항목에만 쓰고 장식에는 쓰지 않는다.
+   --hc 로 선 색을 바꾼다. 글자를 얹을 때는 .hatch.soft(옅은 선) 또는 .hatch.lbl(글자 둘레 흰 바탕)을 쓴다. */
+.hatch{--hc:var(--teal);background:repeating-linear-gradient(135deg,var(--hc) 0 .3mm,#fff .3mm 1.3mm)}
+.hatch.navy{--hc:var(--navy)}.hatch.blue{--hc:var(--teal)}.hatch.gray{--hc:#9AA6B1}.hatch.red{--hc:var(--red)}
+.hatch.soft{--hc:#C3CED8}
+.hatch.lbl{color:var(--navy);text-shadow:0 0 .45mm #fff,0 0 .45mm #fff,0 0 .45mm #fff,0 0 .45mm #fff}
+
+/* 장 간지 (홀수 쪽) */
+.divider{background:var(--navy-d)}
+.divider .horizon{position:absolute;left:0;right:0;top:63.6%;height:.25mm;background:rgba(255,255,255,.4)}
+.divider .num{position:absolute;right:20mm;top:58mm;font-size:210pt;line-height:1;color:#fff;font-weight:800;font-family:'NanumMyeongjo',serif}
+.divider .kick{position:absolute;left:18mm;top:96mm;font-size:13pt;font-weight:700;color:#C9D7E6;letter-spacing:.06em}
+.divider .ttl{position:absolute;left:18mm;top:106mm;font-size:30pt;line-height:1.22;font-weight:800;color:#fff;letter-spacing:-.02em}
+.divider .q{position:absolute;left:18mm;top:146mm;font-size:10.5pt;color:#DCE4EE;font-weight:500}
+.divider ol{position:absolute;left:18mm;top:206mm;list-style:none;color:#fff;font-size:9.6pt;line-height:2.05;font-weight:500;counter-reset:s}
+.divider ol li{counter-increment:s;display:flex;gap:4mm}
+.divider ol li::before{content:counter(s,decimal-leading-zero);font-weight:800;color:#C9D7E6;width:6mm}
+.divider ol li span{opacity:.75;margin-left:auto;padding-left:10mm;font-weight:700}
+
+/* 조판 품질: 헤드라인 줄 균형, 본문 외톨이 단어 방지 */
+.hl,.divider .ttl{text-wrap:balance}
+p,.lede{text-wrap:pretty}

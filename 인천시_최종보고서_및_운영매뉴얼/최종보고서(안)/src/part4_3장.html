@@ -1,0 +1,1279 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Ⅲ장 실험의 설계</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.divider .pno{display:none}
+/* 본문 서술 */
+.tx p{font-size:8.9pt;line-height:1.82;color:#2B3742;font-weight:400;margin-bottom:2.4mm;word-break:keep-all}
+.tx p b{font-weight:700;color:var(--navy)}
+.tx p em{font-style:normal;font-weight:700;color:var(--teal-d)}
+.col2{column-count:2;column-gap:8mm}
+.col2 p{orphans:3;widows:3}
+.tx p.leadp,.leadp{font-size:10.4pt;line-height:1.66;font-weight:600;color:var(--navy);letter-spacing:-.01em;word-break:keep-all}
+.leadp em{font-style:normal;color:var(--teal)}
+.cap2{font-size:6.8pt;line-height:1.5;color:#4A5662;font-weight:500;margin-top:1.4mm;word-break:keep-all}
+.cap2 b{color:var(--navy);font-weight:800}
+.mnote{border-top:.5mm solid var(--navy);padding-top:2.4mm}
+.mnote .k{font-size:6.8pt;font-weight:800;letter-spacing:.12em;color:var(--teal)}
+.mnote h5 em{font-style:normal;color:var(--teal);margin-right:1.4mm}
+.mnote h5{font-size:9.6pt;font-weight:800;color:var(--navy);margin:.8mm 0 1.6mm;line-height:1.35}
+.mnote p{font-size:7.7pt;line-height:1.6;color:#4A5662;font-weight:500}
+.fdot{display:inline-block;width:2.4mm;height:2.4mm;border-radius:50%;vertical-align:-.2mm;margin-right:1mm}
+
+/* p32 깔때기 */
+.stg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.stg .s{padding:0 3mm 0 0}
+.stg .s .when{font-size:6.6pt;font-weight:800;color:var(--teal);letter-spacing:.08em}
+.stg .s .n{font-size:30pt;font-weight:900;color:var(--navy);line-height:1;margin:1mm 0 .4mm;font-style:oblique 8deg}
+.stg .s .n small{font-size:9pt;margin-left:.6mm}
+.stg .s .w{font-size:7pt;font-weight:700;color:#56636E;margin-bottom:2mm;line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:.6mm 2.6mm;border-top:.25mm solid var(--line);padding-top:1.6mm}
+.chips span{font-size:7pt;font-weight:600;color:var(--navy);white-space:nowrap;line-height:1.45}
+.chips span.out{color:#8C98A3;text-decoration:line-through}
+.chips span.mv{color:var(--teal-d);font-weight:800}
+.chips span.in{color:var(--teal-d);font-weight:800}
+.stg .ar{position:absolute;top:8mm;font-size:11pt;color:var(--teal);font-weight:900}
+.ph2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.ph2 .duo{height:50mm;border-radius:var(--rd)}
+
+/* p33 */
+.sieve{display:grid;grid-template-columns:repeat(6,1fr);border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.sieve div{padding:2.8mm 2mm 3mm;text-align:center;border-right:.25mm solid var(--line)}
+.sieve div:last-child{border-right:0}
+.sieve b{display:block;font-size:9.8pt;font-weight:900;color:var(--teal)}
+.sieve small{display:block;font-size:6.8pt;color:#56636E;font-weight:600;line-height:1.4;margin-top:.8mm}
+.bign{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:.25mm solid var(--line);border-bottom:.25mm solid var(--line)}
+.bign .t{padding:3mm 3mm 3.2mm 0;margin-right:3mm;border-right:.25mm solid var(--line);position:relative}
+.bign .t:last-child{border-right:0;margin-right:0}
+.bign .t .pl{font-size:6.8pt;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:1.2mm}
+.bign .t .v{font-size:16pt;font-weight:900;color:var(--teal);line-height:1;margin-top:2.2mm;letter-spacing:-.02em}
+.bign .t .v small{font-size:7.6pt;color:var(--navy);margin-left:.6mm}
+.bign .t .d{font-size:7.2pt;font-weight:600;color:#56636E;line-height:1.45;margin-top:1.2mm}
+.bign .t .row{display:flex;gap:4mm;align-items:flex-end}
+.dir4{display:grid;grid-template-columns:repeat(4,1fr);border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.dir4 .c{padding:2.6mm 3mm 2.8mm 0;margin-right:3mm;border-right:.25mm solid var(--line)}
+.dir4 .c:last-child{border-right:0;margin-right:0}
+.dir4 .c .chips{border-top:0;padding-top:0}
+.dir4 .c i{display:block;font-style:normal;font-size:7.4pt;font-weight:900;letter-spacing:.04em}
+.dir4 .c b{display:block;font-size:8.4pt;font-weight:800;color:var(--navy);margin:.6mm 0 1.8mm}
+
+.ph4{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm;margin-top:4mm}
+.ph4 .duo{height:26mm;border-radius:var(--rd)}
+/* p34 질문의 구조 */
+.anat{display:grid;grid-template-columns:30mm 4mm 1fr 4mm 1fr 4mm 1fr;align-items:stretch;row-gap:3mm}
+.anat .hh{font-size:6.6pt;font-weight:800;letter-spacing:.1em;color:#93A2AF;padding-bottom:1mm;border-bottom:.3mm solid var(--line);align-self:end}
+.anat .site{display:flex;flex-direction:column;justify-content:center;padding:2mm 0}
+.anat .site b{font-size:9.4pt;font-weight:800;color:var(--navy)}
+.anat .site small{font-size:6.4pt;color:var(--mute);font-weight:700}
+.anat .bx{background:#F3F6F8;border-radius:var(--rd);padding:3.2mm 3mm;font-size:7.6pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.anat .bx.q{background:var(--navy);color:#fff;font-weight:700;font-size:8pt}
+.anat .bx.ch{background:var(--sky)}
+.anat .ar{display:flex;align-items:center;justify-content:center;color:var(--teal);font-weight:900;font-size:8pt}
+
+/* p35 질문 벽 */
+.qwall{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.qc{border-top:.25mm solid var(--line);padding:3.6mm 1mm 3.2mm;position:relative;min-height:50mm;display:flex;flex-direction:column}
+.qc:nth-child(-n+2){border-top:.5mm solid var(--navy)}
+.qc .top{display:flex;align-items:center;gap:2mm}
+.qc .top .no{font-size:17pt;font-weight:900;font-style:oblique 8deg;line-height:1}
+.qc .top .nm{font-size:8.6pt;font-weight:800;color:var(--navy)}
+.qc .top .fd{margin-left:auto}
+.qc .pur{font-size:6.6pt;font-weight:800;letter-spacing:.08em;margin-top:2.2mm}
+.qc .qq{font-size:10.8pt;font-weight:700;color:var(--navy);line-height:1.5;margin-top:1mm;letter-spacing:-.015em;word-break:keep-all}
+.qc .ty{margin-top:auto;padding-top:2.4mm;font-size:6.6pt;font-weight:700;color:#56636E;border-top:.25mm solid var(--line)}
+.qc .ty i{font-style:normal;color:#fff;background:var(--teal);font-weight:800;margin-right:1.6mm;border-radius:var(--rd);padding:.2mm 1.6mm;font-size:6.2pt}
+.qc .ty i.acc{background:var(--navy)}
+.qc.note{background:var(--sky2);border-top:0;border-radius:var(--rd);padding:4mm 4.4mm;justify-content:center}
+.qc.note p{font-size:8.8pt;line-height:1.72;color:#2B3742;font-weight:500;word-break:keep-all}
+.qc.note p b{color:var(--navy);font-weight:800}
+
+/* p36 관계 3유형 */
+.rel3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm}
+.rel{border-radius:var(--rd);overflow:hidden;display:flex;flex-direction:column;background:var(--sky2)}
+.rel .hd3{background:var(--navy);color:#fff;padding:3mm 3.4mm}
+.rel .hd3 i{display:block;font-style:normal;font-size:6.4pt;letter-spacing:.16em;color:var(--teal-l);font-weight:800}
+.rel .hd3 b{display:block;font-size:12pt;font-weight:900;margin-top:.6mm}
+.rel .hd3 small{display:block;font-size:6.8pt;font-weight:500;opacity:.9;margin-top:.8mm;line-height:1.45}
+.rel .gl{height:34mm;background:var(--sky);display:flex;align-items:center;justify-content:center}
+.rel .its{padding:2.4mm 3mm 3mm;display:flex;flex-direction:column;gap:2mm;flex:1}
+.it3{padding:.4mm 0}
+.it3 b{display:block;font-size:8.2pt;font-weight:800;color:var(--navy)}
+.it3 .pair{font-size:7.4pt;color:#3D4A56;font-weight:600;line-height:1.45;margin-top:.4mm}
+.it3 .pair em{font-style:normal;color:var(--teal);font-weight:900;margin:0 .8mm}
+.it3 small{display:block;font-size:6.6pt;color:var(--mute);font-weight:600;margin-top:.4mm}
+.it3 small.cand{color:var(--teal-d);font-weight:800;margin-top:.8mm}
+
+/* p36 관계 2유형 */
+.rel2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.rel2 .hd3 b{display:flex;align-items:baseline;gap:2mm}
+.rel2 .hd3 .cnt{font-size:8pt;font-weight:800;color:var(--yellow)}
+.rel2 .hd3.acc{background:#13243A}
+.rel2 .gl{height:31mm}
+.rel2 .its{padding:3mm 3.6mm 3.4mm;gap:2.6mm}
+.same{margin-top:auto;padding-top:2.2mm;border-top:.25mm solid var(--line);font-size:6.6pt;font-weight:800;color:#56636E;display:flex;gap:1.6mm;align-items:center;flex-wrap:wrap}
+.same span{font-size:6.6pt;font-weight:700;color:var(--navy);background:#fff;border-radius:var(--rd);padding:.4mm 2mm}
+/* p37 2단 대조 */
+.twin{display:grid;grid-template-columns:19mm repeat(5,1fr);gap:1.6mm}
+.twin .rh{font-size:7pt;font-weight:800;color:var(--navy);display:flex;align-items:center;line-height:1.35}
+.twin .ch{font-size:6.4pt;font-weight:800;letter-spacing:.06em;color:#93A2AF;text-align:center;padding-bottom:1mm;border-bottom:.3mm solid var(--line)}
+.twin .p{background:repeating-linear-gradient(135deg,#B5BEC6 0 .3mm,#fff .3mm 1.3mm);border-radius:var(--rd);padding:2.6mm 1.6mm;text-align:center;font-size:6.9pt;color:#6A7784;font-weight:600;line-height:1.4}
+.twin .p b{display:block;font-size:8.6pt;color:#56636E;font-weight:800}
+.twin .a{background:var(--teal);border-radius:var(--rd);padding:2.6mm 1.6mm;text-align:center;font-size:6.9pt;color:#fff;font-weight:600;line-height:1.4}
+.twin .a b{display:block;font-size:8.6pt;font-weight:900}
+.twin .a.n2{background:var(--navy)}
+.twin .a.add{background:var(--sky);color:var(--navy)}
+.twin .a.chg{background:var(--sky);color:var(--navy)}
+.twin .a.chg b{color:var(--teal-d)}
+.twin .p.none{background:#F3F6F8;color:#B5BEC6}
+.keepchg{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.keepchg div{border-radius:var(--rd);padding:3mm 3.4mm;font-size:7.6pt;line-height:1.6;font-weight:500;color:#3D4A56}
+.keepchg .k1{background:var(--navy);color:#C9D7E6}.keepchg .k1 b{color:#fff}
+.keepchg .k2{background:var(--sky)}
+.keepchg b{display:block;font-size:8.4pt;font-weight:900;color:var(--navy);margin-bottom:.6mm}
+.imgpair{display:grid;grid-template-columns:1.42fr 1fr;gap:3mm}
+.imgpair .photo{height:78mm;border-radius:var(--rd);overflow:hidden;background:#F3F6F8}
+.imgpair .photo.fit img{object-fit:contain;background:#fff;mix-blend-mode:multiply}
+
+/* p37 운영 순서 */
+.seq5{display:grid;grid-template-columns:1fr 4mm 1fr 4mm 1fr 4mm 1fr 4mm 1fr;align-items:stretch}
+.seq5 .ar{display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:7pt;font-weight:900}
+.seq5 .sq{border-radius:var(--rd);padding:2.8mm 2mm;text-align:center;line-height:1.35}
+.seq5 .sq i{display:block;font-style:normal;font-size:6.4pt;font-weight:800;letter-spacing:.06em}
+.seq5 .sq b{display:block;font-size:11pt;font-weight:900;margin:.6mm 0 .4mm}
+.seq5 .sq small{display:block;font-size:6.6pt;font-weight:600}
+.seq5 .s1{background:var(--teal);color:#fff}
+.seq5 .s2{background:var(--navy);color:#fff}
+.seq5 .sr{background:repeating-linear-gradient(135deg,var(--teal) 0 .3mm,#fff .3mm 1.3mm);color:var(--navy);text-shadow:0 0 .45mm #fff,0 0 .45mm #fff,0 0 .45mm #fff,0 0 .45mm #fff}
+.seq5 .sv{background:var(--teal-l);color:var(--navy)}
+.seq5 .sv b{color:var(--navy)}
+/* p38 */
+.side{border-left:.3mm solid var(--line);padding-left:5mm}
+.ledger .lh{font-size:7pt;font-weight:800;letter-spacing:.1em;color:var(--teal);margin-bottom:2mm}
+.ledger .g{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm;margin-bottom:5mm}
+.ledger .g span{font-size:7.6pt;font-weight:800;color:var(--navy);background:var(--sky);border-radius:var(--rd);padding:1.8mm 0;text-align:center}
+.ledger .g.k span{background:#F3F6F8;color:#56636E}
+.ledger .g.k span.on{background:var(--navy);color:#fff}
+.ledger .g span.on{background:var(--teal);color:#fff}
+.strip{border-radius:var(--rd);overflow:hidden;background:#F3F6F8}
+.strip img{width:100%;display:block;mix-blend-mode:multiply}
+.strip-l{display:flex;align-items:center;gap:2mm;font-size:7pt;font-weight:800;color:var(--navy);margin:3mm 0 1.2mm}
+.strip-l i{font-style:normal;font-size:6.4pt;color:#fff;background:var(--teal);border-radius:var(--rd);padding:.3mm 1.8mm}
+.strip-l i.n2{background:var(--navy)}
+
+/* p39 측정 3회 도식 */
+.cond4{display:grid;grid-template-columns:repeat(4,1fr);border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line);margin-top:4mm}
+.cond4 div{padding:2.6mm 3mm 2.8mm 0;margin-right:3mm;border-right:.25mm solid var(--line);font-size:7.4pt;line-height:1.5;color:#3D4A56;font-weight:600}
+.cond4 div:last-child{border-right:0;margin-right:0}
+.cond4 b{display:block;font-size:9pt;font-weight:800;color:var(--navy);margin-bottom:.4mm}
+.ph3x{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.4mm;margin-top:2mm}
+.ph3x .duo{height:30mm;border-radius:var(--rd)}
+.m3{position:relative}
+
+/* p40 규칙 흐름 */
+.flow{display:grid;grid-template-columns:62mm 8mm 1fr;row-gap:4mm;align-items:stretch}
+.flow .rule{background:var(--navy);color:#fff;border-radius:var(--rd);padding:3.8mm 3.8mm;position:relative}
+.flow .rule .nn{font-size:16pt;font-weight:900;color:#C9D7E6;line-height:1;font-style:oblique 8deg}
+.flow .rule b{display:block;font-size:10pt;font-weight:800;margin-top:1mm}
+.flow .rule small{display:block;font-size:6.8pt;line-height:1.5;font-weight:500;opacity:.88;margin-top:.8mm}
+.flow .lk{display:flex;align-items:center}
+.flow .lk i{display:block;width:100%;height:.3mm;background:var(--teal);position:relative}
+.flow .lk i::after{content:"";position:absolute;right:-.2mm;top:-1.2mm;width:2mm;height:2.9mm;background:var(--teal);clip-path:polygon(0 0,100% 50%,0 100%)}
+.flow .ex{background:var(--sky2);border-radius:var(--rd);padding:2.6mm 3.4mm;display:flex;flex-direction:column;justify-content:center;gap:1.4mm}
+.flow .ex div{font-size:7.9pt;line-height:1.5;color:#2B3742;font-weight:500;display:grid;grid-template-columns:22mm 1fr;gap:2mm}
+.flow .ex div b{font-weight:800;color:var(--navy);font-size:7.9pt}
+.flow .down{grid-column:1;display:flex;justify-content:center;height:2mm}
+.excp2{margin-top:4mm;background:var(--sky);border-radius:var(--rd);padding:3.2mm 3.6mm;display:grid;grid-template-columns:52mm 1fr;gap:4mm;align-items:center}
+.excp2 .h b{display:block;color:var(--navy);font-weight:900;font-size:9.6pt}
+.excp2 .h small{display:block;font-size:6.8pt;color:#5E6B76;font-weight:600;line-height:1.5;margin-top:.8mm}
+.excp2 .l{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2mm}
+.excp2 .l div{background:#fff;border-radius:var(--rd);padding:2mm 2.4mm;font-size:6.9pt;color:#3D4A56;font-weight:600;line-height:1.45}
+.excp2 .l div b{display:block;color:var(--navy);font-weight:800;font-size:7.6pt;margin-bottom:.4mm}
+.result{margin-top:4mm}
+
+/* p41 */
+.lg{display:flex;gap:4mm;font-size:6.6pt;font-weight:700;color:#56636E;align-items:center;flex-wrap:wrap}
+.lg i{display:inline-block;width:2.4mm;height:2.4mm;border-radius:50%;margin-right:1mm;vertical-align:-.3mm}
+.mth3{display:grid;grid-template-columns:1fr 1fr 40mm;gap:3mm;margin-top:4mm}
+.mth3 .m{border-top:.5mm solid var(--navy);background:var(--gray-bg);border-radius:0 0 var(--rd) var(--rd);padding:3mm 3.4mm}
+.mth3 .m.tot{background:#fff;border-top:.5mm solid var(--navy)}
+.mth3 .h{display:flex;align-items:baseline;gap:2mm}
+.mth3 .h b{font-size:17pt;font-weight:900;color:var(--teal);line-height:1}
+.mth3 .h b small{font-size:7.6pt;color:var(--navy);margin-left:.4mm}
+.mth3 .h span{font-size:7.4pt;font-weight:800;color:var(--navy)}
+.mth3 .h b{white-space:nowrap}
+.mth3 .tot .h{flex-direction:column;align-items:flex-start;gap:.8mm}
+.mth3 .tot .h b{font-size:15pt}
+.mth3 .tot .h span{font-size:7pt}
+.mth3 .st{font-size:6.8pt;font-weight:700;color:var(--teal-d);margin-top:1.4mm}
+.mth3 p{font-size:7.4pt;line-height:1.55;color:#3D4A56;font-weight:500;margin-top:1.2mm;word-break:keep-all}
+.how7{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border-top:.25mm solid var(--line);margin-top:1mm}
+.how7 div{padding:2.4mm 1.2mm 0;font-size:6.5pt;line-height:1.45;color:#3D4A56;font-weight:600;text-align:center;word-break:keep-all;border-right:.25mm solid var(--line)}
+.how7 div:last-child{border-right:0}
+.how7 .ty{display:inline-block;margin-top:1.2mm;font-size:6pt;font-weight:800;border-radius:var(--rd);padding:.2mm 1.6mm;color:#fff;background:var(--teal)}
+.how7 .ty.q{background:var(--sky);color:var(--teal-d)}
+
+/* p42 */
+.ctl{display:grid;grid-template-columns:104mm 1fr;gap:5mm}
+.planbox{background:#EEF3F6;border-radius:var(--rd);position:relative;overflow:hidden}
+.chartbox .lb{margin-bottom:1mm}
+
+.ct2{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:2mm}
+.ct2 div{background:var(--sky2);border-radius:var(--rd);padding:4mm 4mm}
+.ct2 div+div{background:#EEF3F6}
+.ct2 div+div i{color:var(--navy)}
+.ct2 i{display:inline;margin-right:1.6mm;font-style:normal;font-size:6.6pt;font-weight:800;letter-spacing:.1em;color:var(--teal-d)}
+.ct2 b{display:inline;font-size:9.4pt;font-weight:800;color:var(--navy)}
+.ct2 span{margin-top:1mm}
+.ct2 span{display:block;font-size:7.6pt;color:#3D4A56;font-weight:600;line-height:1.5}
+/* p43 */
+.ph3{display:grid;grid-template-columns:1.25fr 1fr;gap:3mm}
+.ph3 .duo{height:58mm;border-radius:var(--rd)}
+.pflow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.pflow div{text-align:center;position:relative;padding-top:7.4mm;font-size:7pt;font-weight:800;color:var(--navy);line-height:1.35}
+.pflow div::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:5.4mm;height:5.4mm;border-radius:50%;background:#C9D7E6}
+.pflow div.last::before{background:var(--teal)}
+.pflow::before{content:"";position:absolute;left:10%;right:10%;top:2.55mm;height:.3mm;background:var(--teal)}
+.pflow small{display:block;font-size:6.2pt;color:var(--mute);font-weight:600;margin-top:.6mm}
+
+/* p44 설치 전·중·후 */
+.ph5{display:grid;grid-template-columns:22mm 1fr;column-gap:4mm}
+.ph5 .phase{display:flex;align-items:center;justify-content:center;text-align:center;font-size:8.6pt;font-weight:800;color:#fff;background:var(--teal);border-radius:var(--rd);line-height:1.3}
+.ph5 .phase.p2{background:var(--navy)}
+.ph5 .phase.p3{background:#5B6B7A}
+.ph5 .steps{display:flex;flex-direction:column;gap:2.2mm}
+.stp{display:grid;grid-template-columns:44mm 1fr 52mm;border-radius:var(--rd);overflow:hidden;background:#F7F9FA}
+.stp .a{padding:5.2mm 3mm;background:#EEF1F4}
+.stp .a i{font-style:normal;font-size:12pt;font-weight:900;color:var(--teal);font-style:oblique 8deg;margin-right:1.6mm}
+.stp .a b{font-size:9pt;font-weight:800;color:var(--navy)}
+.stp .a small{display:block;font-size:6.6pt;color:var(--mute);font-weight:700;margin-top:.4mm}
+.stp .b{padding:3mm 3mm;font-size:7.6pt;line-height:1.5;color:#3D4A56;font-weight:500;display:flex;align-items:center}
+.stp .c{padding:3mm 3mm;background:var(--sky);font-size:7.4pt;line-height:1.5;color:var(--navy);font-weight:700;display:flex;align-items:center}
+.safety{border-radius:var(--rd);background:var(--sky);padding:3mm 4mm;display:grid;grid-template-columns:30mm 1fr 1fr;gap:3mm;align-items:center}
+.safety b{font-size:9.4pt;font-weight:900;color:var(--navy)}
+.safety div{font-size:7.6pt;font-weight:600;color:#3D4A56;line-height:1.45}
+.safety div em{font-style:normal;font-weight:900;color:var(--navy);font-size:10pt}
+.fname{display:flex;gap:1mm;align-items:stretch;margin-top:2mm}
+.fname span{flex:1;text-align:center;background:var(--navy);color:#fff;font-size:7.2pt;font-weight:800;padding:2mm 0 1.6mm;border-radius:var(--rd);position:relative}
+.fname span small{display:block;font-size:5.9pt;font-weight:600;color:var(--teal-l);margin-top:.5mm}
+.fname i{font-style:normal;font-weight:900;color:var(--teal);align-self:center}
+.fmt4{display:grid;grid-template-columns:repeat(4,1fr);margin-top:3mm;border-top:.25mm solid var(--line)}
+.fmt4 div{padding:2.8mm 3mm 1mm 0;margin-right:3mm;border-right:.25mm solid var(--line)}
+.fmt4 div:last-child{border-right:0;margin-right:0}
+.fmt4 b{display:block;font-size:7.6pt;font-weight:800;color:var(--navy)}
+.fmt4 small{display:block;font-size:6.4pt;color:#56636E;font-weight:600;line-height:1.45;margin-top:.6mm}
+.fmt4 .f{display:block;margin-top:1.2mm;font-size:6.2pt;font-weight:800;color:var(--teal-d)}
+
+/* p45 */
+.sit4{display:grid;grid-template-columns:17mm repeat(4,1fr);border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.sit4 .sh{font-size:8.2pt;font-weight:800;color:var(--navy);padding:2.4mm 2.6mm 2mm;border-bottom:.25mm solid var(--line)}
+.sit4 .rl{font-size:6.8pt;font-weight:800;color:var(--teal-d);padding:2.4mm 0;line-height:1.4}
+.sit4 .s2{padding:2.4mm 2.6mm;font-size:7.2pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.sit4 .s3,.sit4 .rl.k{padding:2.2mm 2.6mm;font-size:7.2pt;line-height:1.5;color:var(--navy);font-weight:700;background:var(--sky2)}
+.sit4 .rl.k{font-size:6.8pt;color:var(--teal-d);font-weight:800;padding-left:0;padding-right:0;text-indent:1.6mm}
+.sit4 .sh,.sit4 .s2,.sit4 .s3{border-left:.25mm solid var(--line)}
+.chain5{display:flex;align-items:center;gap:1.4mm;margin-bottom:3mm}
+.chain5 span{flex:1;text-align:center;font-size:7pt;font-weight:800;color:var(--navy);background:var(--sky);border-radius:var(--rd);padding:1.8mm .6mm;line-height:1.3}
+.chain5 span:last-of-type{background:var(--navy);color:#fff}
+.chain5 i{font-style:normal;color:var(--teal);font-weight:900;font-size:7pt}
+
+/* p46 관문 */
+.gate{display:grid;grid-template-columns:1fr 50mm;gap:5mm}
+.gates{display:flex;flex-direction:column;gap:0}
+.gt{display:grid;grid-template-columns:16mm 1fr;align-items:stretch;position:relative}
+.gt .n{background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15pt;font-weight:900;font-style:oblique 8deg}
+.gt .b{padding:4mm 4mm;background:var(--sky2)}
+.gt .b i{display:inline;margin-right:1.6mm;font-style:normal;font-size:6.4pt;font-weight:800;letter-spacing:.12em;color:var(--teal)}
+.gt .b b{display:inline;font-size:10pt;font-weight:800;color:var(--navy)}
+.gt .b p{margin-top:1mm}
+.gt .b p{font-size:7.8pt;line-height:1.55;color:#3D4A56;font-weight:500}
+.gt.g1 .n{background:#7D97B3}.gt.g2 .n{background:var(--teal)}.gt.g3 .n{background:var(--navy)}
+.gconn{height:5mm;margin-left:7.5mm;position:relative}
+.gconn::before{content:"";position:absolute;left:.15mm;top:0;bottom:0;width:.3mm;background:var(--teal)}
+.gconn span{position:absolute;left:4mm;top:.6mm;font-size:6.4pt;font-weight:700;color:var(--mute)}
+.gfin{background:var(--navy);border-radius:var(--rd);padding:3.4mm 4mm;margin-top:3mm;display:flex;align-items:center;justify-content:space-between}
+.gfin b{font-size:10.6pt;font-weight:900;color:#fff}
+.gfin span{font-size:7.6pt;font-weight:700;color:#C9D7E6}
+.gfin span.dummy{background:#fff;border-radius:var(--rd);padding:.2mm 1.4mm;margin-left:.6mm}
+.paths{display:flex;flex-direction:column;gap:2.4mm}
+.paths .pt{border-radius:var(--rd);padding:3.6mm 3.4mm;background:#F3F6F8}
+.paths .pt b{display:block;font-size:8.6pt;font-weight:800;color:var(--navy)}
+.paths .pt small{display:block;font-size:6.7pt;color:#56636E;font-weight:600;line-height:1.5;margin-top:.6mm}
+.paths .pt.fx{background:var(--navy)}
+.paths .pt.fx b{color:#fff}.paths .pt.fx small{color:#C9D7E6}
+.chk{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.chk div{background:repeating-linear-gradient(135deg,var(--teal) 0 .3mm,#fff .3mm 1.3mm) left top/2.6mm 100% no-repeat,var(--sky2);border-radius:var(--rd);padding:2.6mm 3.2mm 2.6mm 5.8mm}
+.chk b{display:block;font-size:7.8pt;font-weight:800;color:var(--navy);margin-bottom:.8mm}
+.chk span{display:block;font-size:7pt;color:#3D4A56;font-weight:600;line-height:1.6}
+.chk span::before{content:"□";color:var(--teal);margin-right:1.4mm;font-weight:800}
+</style>
+</head>
+<body>
+
+<!-- ================= p31 간지 ================= -->
+<section class="page odd divider">
+  <div class="horizon"></div>
+  <div class="num serif">Ⅲ</div>
+  <div class="kick">설계하다</div>
+  <div class="ttl">실험의<br>설계</div>
+  <div class="q">무엇을 바꾸고, 무엇을 같게 두었는가</div>
+  <ol>
+    <li>여덟 곳에서 일곱 곳으로<span>32</span></li>
+    <li>거점별 실험 질문<span>34</span></li>
+    <li>1·2차 연동 설계<span>36</span></li>
+    <li>같은 조건에서 세 번 측정<span>39</span></li>
+    <li>참여와 운영<span>43</span></li>
+  </ol>
+  <div class="pno">31</div>
+</section>
+
+<!-- ================= p32 여덟 곳에서 일곱 곳으로 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-01</span>여덟 곳에서 일곱 곳으로</div>
+    <h2 class="hl">착수 때 여덟 곳이던 후보지를 현장에서 다시 확인한 뒤,<br><em>일곱 거점</em>으로 실험 장소를 확정하였다</h2>
+    <p class="lede">과업은 안전·포용·매력·편의 4개 분야에서 8개소 내외를 고르도록 정하였다. 후보지를 평일과 주말, 낮과 밤으로 나누어 찾아가 본 결과, 한 곳은 빠지고 한 곳은 위치를 옮겨 일곱 곳이 남았다.</p>
+  </div>
+  <div class="body tx" style="top:66mm">
+    <div class="col2">
+      <p>후보지는 착수 단계에서 여덟 곳으로 출발하였다. 약산초등학교 통학로, 선인재단 일원, 송도 캠퍼스타운역 일대 보행축, 차이나타운 공중화장실, 인천항 1·8부두, 굴포천 산책로, 구월동 로데오거리, 연안여객터미널이다. 생활권 문제가 눈에 띄는 장소를 넓게 모은 목록이었고, 실험이 가능한지는 현장에서 따로 확인해야 했다.</p>
+      <p>현장조사는 7월 29일 첫 방문을 시작으로 거점마다 두 차례에서 네 차례 이어졌다. 조사단은 실험 대상이 실제로 나타나는 시간과 장소를 찾고, 관찰할 수 있는 상태인지와 설치 여건을 점검하였다. 9월 11일 중간보고와 9월 18일 관계부서 협의에서는 거점별 대상 범위와 설치·운영 조건을 검토하였다.</p>
+      <p>인천항 1·8부두는 외부 광장과 실내 대공간 모두 사람을 머물게 할 요소가 부족한 곳으로 기록되었지만, 실험 거점에는 넣지 않았다. 선인재단은 처음에 경사로와 계단 접근 동선을 살폈다. 경사 구간의 그늘·휴식 공간 부족과 보행 피로를 기록한 뒤, 실험 장소를 제물포역 인근 학교 정문 앞 등하굣길로 옮겨 청소년의 정서 경험을 묻는 거점으로 다시 짰다.</p>
+      <p>장소는 그대로 두고 범위를 좁힌 곳도 있다. 연안여객터미널은 2층 휴게공간으로 이용객을 이끄는 안에서 출발했으나, 2층이 리모델링에 들어가면서 1층 대합실만 실험 범위로 삼았다. 약산초는 8월의 ‘High Five Road’ 구상이 시민안과 어린이안을 비교하는 실험으로 바뀌었다. 확정된 일곱 거점은 안전 2곳, 포용 2곳, 매력 1곳, 편의 2곳이다.</p>
+    </div>
+    <div class="lb" style="margin-top:3mm">후보지가 일곱 거점으로 좁혀진 과정</div>
+    <div class="stg">
+      <div class="s"><div class="when">착수 · 6월</div><div class="n">8<small>곳</small></div><div class="w">현장조사 대상 후보지</div>
+        <div class="chips"><span>약산초</span><span>선인재단 일원</span><span>송도</span><span>차이나타운</span><span>인천항 1·8부두</span><span>굴포천</span><span>로데오거리</span><span>연안여객터미널</span></div></div>
+      <div class="s"><div class="when">현장조사 · 7.29~10.7</div><div class="n">3<small>곳 조정</small></div><div class="w">제외 1 · 위치 이동 1 · 범위 축소 1</div>
+        <div class="chips"><span class="out">인천항 1·8부두</span><span class="mv">선인재단 → 학교 정문 앞</span><span class="mv">연안 2층 → 1층 대합실</span></div></div>
+      <div class="s"><div class="when">1차 실험 · 10.20~</div><div class="n">7<small>곳</small></div><div class="w">1·2차 실험 거점</div>
+        <div class="chips"><span>약산초</span><span class="in">선인재단 등하굣길</span><span>송도</span><span>차이나타운</span><span>굴포천</span><span>로데오거리</span><span>연안 1층 대합실</span></div></div>
+      <div class="ar" style="left:31.5%">▶</div><div class="ar" style="left:64.8%">▶</div>
+    </div>
+    <div class="ph2" style="margin-top:5mm">
+      <div><div class="duo"><img src="img/00_인천항부두_ch3_광장.jpg"></div><div class="cap2"><b>인천항 1·8부두 외부 광장.</b> 머무름과 활동을 이끌 요소가 부족한 여건을 기록하였고, 실험 거점에는 넣지 않았다.</div></div>
+      <div><div class="duo"><img src="img/02_선인재단_ch3_초기후보.jpg"></div><div class="cap2"><b>선인재단 일원의 초기 검토 위치.</b> 경사로·계단의 보행 피로를 기록한 뒤, 실험은 학교 정문 앞 등하굣길로 옮겼다.</div></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">32</div>
+</section>
+
+<!-- ================= p33 선정 기준과 근거 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-01</span>선정 기준과 근거</div>
+    <h2 class="hl">여섯 가지 기준으로 거르고,<br><em>문제가 숫자와 현장 기록으로 드러난 곳</em>을 남겼다</h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="sieve">
+      <div><b>접근성</b><small>시민이 일상에서<br>쉽게 닿는 곳</small></div>
+      <div><b>가시성</b><small>실험 장치가<br>눈에 띄는 곳</small></div>
+      <div><b>안전성</b><small>설치·관찰을<br>안전하게 할 수 있는 곳</small></div>
+      <div><b>활용성</b><small>실험 뒤에도<br>쓰임이 이어지는 곳</small></div>
+      <div><b>상징성</b><small>인천의 생활을<br>대표하는 곳</small></div>
+      <div><b>파급력</b><small>결과를 다른 곳으로<br>옮길 수 있는 곳</small></div>
+    </div>
+    <div class="tx" style="margin-top:5mm">
+      <div class="col2">
+        <p>현장조사를 마친 후보지는 여섯 기준으로 다시 걸렀다. 기준만으로는 장소가 정해지지 않았기 때문에, 거점마다 문제를 보여 주는 자료가 있는지를 함께 확인하였다. 로데오거리·굴포천·선인재단은 문제의 크기가 숫자로 드러났다.</p>
+        <p>숫자가 없는 곳은 현장 기록이 근거가 되었다. 약산초 등굣길은 폐자재와 적치물로 학교 경계가 잘 보이지 않았고, 차이나타운 공중화장실은 인천에서 관광객이 가장 많이 찾는 곳인데도 다국어 안내가 부족하였다. 송도는 청년·외국인 유동은 많지만 함께 어울릴 콘텐츠가 없었고, 연안여객터미널은 2층 휴게공간 이용이 낮아 1층에 대기 인파와 수하물이 한꺼번에 몰렸다.</p>
+      </div>
+    </div>
+    <div class="bign" style="margin-top:2mm">
+      <div class="t"><div class="pl"><i class="fdot" style="background:var(--f-conv)"></i>06 로데오거리</div><div class="v">1,387<small>건</small></div><div class="d">금연구역 단속 7개월 실적.<br>보행자와 흡연자가 한 광장에 섞였다.</div></div>
+      <div class="t"><div class="pl"><i class="fdot" style="background:var(--f-attr)"></i>05 굴포천</div><div class="row"><div><div class="v">35<small>%</small></div></div><div><div class="v" style="color:var(--navy)">15<small>%</small></div></div></div><div class="d">복원 직후 방문 목적 1위는 휴식이었지만, 교량 밑에 머무는 사람은 15%, 머무는 시간은 20분 미만이었다.</div></div>
+      <div class="t"><div class="pl"><i class="fdot" style="background:var(--f-safe)"></i>02 선인재단</div><div class="row"><div><div class="v">8<small>개교</small></div></div><div><div class="v" style="color:var(--navy);font-size:11pt;padding-bottom:.4mm">3년 연속</div></div></div><div class="d">중·고등학교 8곳이 모인 등굣길. 인천의 정신건강 고위험군 학생은 3년 연속 늘었다.</div></div>
+    </div>
+    <div class="ph4">
+      <div><div class="duo"><img src="img/01_약산초_사전_008.jpg"></div><div class="cap2"><b>약산초</b> 적치물에 가린 학교 경계</div></div>
+      <div><div class="duo"><img src="img/04_차이나타운.jpg"></div><div class="cap2"><b>차이나타운</b> 다국어 안내가 부족한 세면대</div></div>
+      <div><div class="duo"><img src="img/03_송도_2장_보행축.jpg"></div><div class="cap2"><b>송도</b> 통행 위주의 가로수 보행축</div></div>
+      <div><div class="duo"><img src="img/07_연안여객터미널.jpg"></div><div class="cap2"><b>연안여객터미널</b> 대기·수하물이 몰린 1층</div></div>
+    </div>
+    <div class="tx" style="margin-top:4mm"><p>남은 일곱 곳은 네 갈래의 실험 방향으로 묶었다. VERIFY는 이미 있는 공간과 시설을 대상으로, INCHEON ONLY는 인천의 생활 조건 안에서, PARTICIPATE는 시민이 실제로 쓰는 상태에서, SCALE은 민간과 함께 실험한다는 뜻이다. 한 거점이 여러 방향에 걸치기도 하였다. 굴포천은 세 방향에 모두 속하였다.</p></div>
+    <div class="lb" style="margin-top:1mm">실험 방향과 거점</div>
+    <div class="dir4">
+      <div class="c"><i style="color:var(--teal)">VERIFY</i><b>기존을 실험함</b><div class="chips"><span>연안여객터미널</span><span>굴포천</span><span>차이나타운</span></div></div>
+      <div class="c"><i style="color:var(--teal)">INCHEON ONLY</i><b>인천 조건에서 실험함</b><div class="chips"><span>연안여객터미널</span><span>굴포천</span><span>차이나타운</span></div></div>
+      <div class="c"><i style="color:var(--teal)">PARTICIPATE</i><b>시민이 쓰는 상태로 실험함</b><div class="chips"><span>굴포천</span><span>약산초</span><span>선인재단</span></div></div>
+      <div class="c"><i style="color:var(--teal)">SCALE</i><b>민간과 함께 실험함</b><div class="chips"><span>로데오거리</span><span>송도</span></div></div>
+    </div>
+    <div class="band" style="margin-top:5mm;text-align:center;font-size:10pt">선정 단계에서 이미 <span>일곱 실험 가운데 한 곳은 고정시설로 남긴다</span>는 전제를 두었다</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">33</div>
+</section>
+
+<!-- ================= p34 질문 만들기 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-02</span>거점별 실험 질문</div>
+    <h2 class="hl">‘무엇을 설치할까’보다 먼저<br><em>‘무엇이 달라지는지 확인할까’</em>를 물었다</h2>
+  </div>
+  <div class="body tx" style="top:57mm">
+    <p class="leadp" style="margin-bottom:4mm">실험 질문은 누가, 어디에서, 어떤 불편을 겪는지에서 출발하였다. 질문 하나에는 <em>바꿀 요소</em>와 <em>확인할 경험</em>이 함께 들어가도록 하였다.</p>
+    <div class="col2">
+      <p>8월 초기 기획은 대부분 시설의 이름으로 적혀 있었다. 연안여객터미널의 ‘2층 안심 라운지’, 약산초의 ‘High Five Road’처럼 무엇을 놓을지가 앞에 있었고, 무엇을 확인할지는 뒤에 있었다. 설계 단계에서는 이 순서를 뒤집었다. 거점마다 ‘누가, 어디에서, 어떤 불편을 겪는가’를 한 문장으로 적고, 그 불편이 달라졌는지 볼 수 있는 경험을 골랐다.</p>
+      <p>질문에는 세 가지를 넣었다. 바꿀 요소, 그 요소를 겪을 사람, 달라졌는지 확인할 경험이다. 약산초는 ‘안전한 등굣길’이라는 과제를 ‘시민안과 어린이안은 그림 인지와 위치 설명에서 어떻게 다른가’로 바꾸었다. 이렇게 묻자 잴 것이 정해졌다. 시설을 알아보았는지, 지도에서 위치를 맞혔는지, 보호자에게 어떤 단서로 위치를 설명하는지였다.</p>
+      <p>질문은 결과를 미리 정하지 않는 형태로 썼다. ‘좋아지는가’ 대신 ‘어떻게 다른가’, ‘바꾸는가’로 물어 1차와 2차가 어느 쪽으로 나오더라도 답이 되게 하였다. 질문에 담긴 경험은 그대로 설문 문항과 관찰 항목의 기준이 되었다.</p>
+    </div>
+    <div class="lb" style="margin-top:3mm">질문이 만들어진 순서 · 세 거점의 예</div>
+    <div class="anat">
+      <div class="hh">거점</div><div></div><div class="hh">누가 · 어디서 · 어떤 불편</div><div></div><div class="hh">바꿀 요소 → 확인할 경험</div><div></div><div class="hh">실험 질문</div>
+      <div class="site"><small>01 · 안전</small><b>약산초</b></div><div class="ar">▶</div>
+      <div class="bx">등굣길 어린이가 적치물과 폐자재 때문에 학교 경계와 안전시설을 알아보기 어렵다</div><div class="ar">▶</div>
+      <div class="bx ch">디자인 주체(시민안·어린이안) → 그림 인지, 지도 위치 정답, 위치 설명 단서</div><div class="ar">▶</div>
+      <div class="bx q">시민안과 어린이안은 그림 인지와 위치 설명에서 어떻게 다른가?</div>
+      <div class="site"><small>06 · 편의</small><b>로데오거리</b></div><div class="ar">▶</div>
+      <div class="bx">광장의 보행자와 흡연자가 한 공간에 섞이고, 꽁초 투기와 간접흡연이 이어진다</div><div class="ar">▶</div>
+      <div class="bx ch">흡연·휴게 구역 분리, 시간·방향 유도사인 → 흡연존 이용, 휴게공간 사용, 이동 행동</div><div class="ar">▶</div>
+      <div class="bx q">구역 분리와 유도사인이 흡연존 이용과 휴게공간 사용을 바꾸는가?</div>
+      <div class="site"><small>07 · 편의</small><b>연안여객터미널</b></div><div class="ar">▶</div>
+      <div class="bx">여객이 짐과 함께 1층 대합실에 몰리고, 복잡한 동선에서 목적지와 편의시설을 찾기 어렵다</div><div class="ar">▶</div>
+      <div class="bx ch">통합 안내사인, 짐 보관·정리 공간 → 목적지 선택, 보관시설 인지·이용, 대기 편의</div><div class="ar">▶</div>
+      <div class="bx q">통합 안내사인과 짐 보관·정리 공간 제공이 시설 이용과 대기 편의에 어떤 변화를 만드는가?</div>
+    </div>
+    <div class="mnote" style="margin-top:6mm;display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm">
+      <div><h5><em>요소</em>하나의 질문에 하나의 비교</h5><p>두 가지를 한꺼번에 바꾸면 무엇이 효과를 냈는지 가릴 수 없어, 질문마다 비교 축을 하나로 두었다.</p></div>
+      <div><h5><em>사람</em>질문 속에 이용자를 넣음</h5><p>어린이, 청소년, 유학생, 외국인 관광객, 산책하는 시민, 흡연자, 여객처럼 경험의 주인을 먼저 정하였다.</p></div>
+      <div><h5><em>경험</em>셀 수 있는 행동으로 바꿈</h5><p>인지·이해·체류·이동처럼 관찰과 설문으로 확인할 수 있는 경험만 질문에 담았다.</p></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">34</div>
+</section>
+
+<!-- ================= p35 일곱 질문 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-02</span>일곱 거점의 질문</div>
+    <h2 class="hl">일곱 거점에 하나씩,<br><em>실험으로 답할 질문</em>을 세웠다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="qwall">
+      <div class="qc"><div class="top"><span class="no" style="color:var(--f-safe)">01</span><span class="nm">약산초</span><span class="fd safe">안전</span></div><div class="pur" style="color:var(--f-safe)">장소 인식</div><div class="qq">시민안과 어린이안은 그림 인지와 위치 설명에서 어떻게 다른가?</div><div class="ty"><i class="cmp">비교형</i>시민 디자인안 ↔ 어린이 디자인안</div></div>
+      <div class="qc"><div class="top"><span class="no" style="color:var(--f-safe)">02</span><span class="nm">선인재단</span><span class="fd safe">안전</span></div><div class="pur" style="color:var(--f-safe)">정서안정</div><div class="qq">거울·색·조명의 어떤 요소를 선호하며, 선별한 최종안은 어떻게 경험되는가?</div><div class="ty"><i class="acc">누적형</i>1차 스티커 응답 위에 2차 거울나무</div></div>
+      <div class="qc"><div class="top"><span class="no" style="color:var(--f-incl)">03</span><span class="nm">송도 캠퍼스타운역 일대</span><span class="fd incl">포용</span></div><div class="pur" style="color:var(--f-incl)">언어·교류</div><div class="qq">그림·숫자 안내와 영어·발음·공동 활동은 이해와 소통을 어떻게 돕는가?</div><div class="ty"><i class="cmp">비교형</i>그림·숫자 안내 ↔ 영문·한국어 병기 안내</div></div>
+      <div class="qc"><div class="top"><span class="no" style="color:var(--f-incl)">04</span><span class="nm">차이나타운 공중화장실</span><span class="fd incl">포용</span></div><div class="pur" style="color:var(--f-incl)">쉬운 이해</div><div class="qq">권유형과 금지형 그림의 의미 이해·경각심은 어떻게 다른가?</div><div class="ty"><i class="cmp">비교형</i>권유형 그림 ↔ 금지형 그림</div></div>
+      <div class="qc"><div class="top"><span class="no" style="color:var(--f-attr)">05</span><span class="nm">굴포천 제1교량(부흥교) 옆 산책로</span><span class="fd attr">매력</span></div><div class="pur" style="color:var(--f-attr)">그늘·체류</div><div class="qq">그늘과 자리가 머무름을, 시민 제작이 참여와 장소 인식을 바꾸는가?</div><div class="ty"><i class="acc">누적형</i>그늘·자리 위에 대학 협업 수업</div></div>
+      <div class="qc"><div class="top"><span class="no" style="color:var(--f-conv)">06</span><span class="nm">구월동 로데오거리·광장</span><span class="fd conv">편의</span></div><div class="pur" style="color:var(--f-conv)">흡연·휴게</div><div class="qq">구역 분리와 유도사인이 흡연존 이용과 휴게공간 사용을 바꾸는가?</div><div class="ty"><i class="acc">누적형</i>구역 분리 위에 시간·방향 유도사인</div></div>
+      <div class="qc"><div class="top"><span class="no" style="color:var(--f-conv)">07</span><span class="nm">연안여객터미널 1층 대합실</span><span class="fd conv">편의</span></div><div class="pur" style="color:var(--f-conv)">대기 편의</div><div class="qq">통합 안내사인과 짐 보관·정리 공간 제공이 이용객의 시설 이용과 대기 편의에 어떤 변화를 만드는가?</div><div class="ty"><i class="acc">누적형</i>통합 안내사인 위에 짐 보관 공간</div></div>
+      <div class="qc note"><p>질문마다 확인할 경험을 하나씩 정하였다. 장소 인식, 정서안정, 언어·교류, 쉬운 이해, 그늘·체류, 흡연·휴게, 대기 편의로 거점마다 달랐다.</p><p style="margin-top:2mm">1·2차의 관계는 두 가지로 나뉘었다. <b>비교형 세 곳</b>은 같은 자리에 1차안과 2차안을 바꾸어 설치해 두 안을 견주었고, <b>누적형 네 곳</b>은 1차 시설을 둔 채 2차에 요소를 더하였다.</p></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">35</div>
+</section>
+
+<!-- ================= p36 비교형·누적형 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-03</span>1·2차 연동 설계</div>
+    <h2 class="hl">1차와 2차는 <em>바꾸어 견주는 비교형</em>과<br><em>위에 더하는 누적형</em>, 두 가지 관계로 이었다</h2>
+    <p class="lede">같은 자리에서 두 안을 바꾸어 비교한 거점이 세 곳, 1차 시설을 둔 채 2차에 요소를 더한 거점이 네 곳이다. 관계를 먼저 정하고, 그 관계에 맞는 자료를 차수마다 따로 모았다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+    <div class="rel2">
+      <div class="rel">
+        <div class="hd3"><b>비교형<span class="cnt">3곳</span></b><small>같은 자리에 1차안과 2차안을 바꾸어 설치하고, 같은 문항으로 묻는다</small></div>
+        <div class="gl"><svg viewBox="0 0 80 26" width="80mm" height="26mm" font-family="P">
+          <rect x="6" y="5" width="24" height="12" rx=".6" fill="#2E5A87"/><text x="18" y="12.4" font-size="3.8" font-weight="900" fill="#fff" text-anchor="middle">1차안</text>
+          <rect x="50" y="5" width="24" height="12" rx=".6" fill="#1A2F4B"/><text x="62" y="12.4" font-size="3.8" font-weight="900" fill="#fff" text-anchor="middle">2차안</text>
+          <path d="M33 8.6 H46" stroke="#2E5A87" stroke-width=".3"/><path d="M45.4 6.8 L48 8.6 L45.4 10.4z" fill="#2E5A87"/>
+          <path d="M47 13.4 H34" stroke="#1A2F4B" stroke-width=".3"/><path d="M34.6 11.6 L32 13.4 L34.6 15.2z" fill="#1A2F4B"/>
+          <text x="40" y="5.2" font-size="2.5" font-weight="800" fill="#22476C" text-anchor="middle">바꾸어 설치</text>
+          <path d="M3 20.4 H77" stroke="#1A2F4B" stroke-width=".3"/>
+          <text x="40" y="24.6" font-size="2.6" font-weight="700" fill="#6A7784" text-anchor="middle">같은 자리 · 같은 요일·시간대 · 같은 문항</text></svg></div>
+        <div class="its">
+          <div class="it3"><b><i class="fdot" style="background:var(--f-safe)"></i>01 약산초</b><div class="pair">시민 디자인안<em>↔</em>어린이 디자인안</div><small>시설 인지 · 위치 정답률 · 위치 설명</small><small class="cand">후보 · 어린이 참여형 안전시설물 표준디자인</small></div>
+          <div class="it3"><b><i class="fdot" style="background:var(--f-incl)"></i>04 차이나타운</b><div class="pair">권유형 그림<em>↔</em>금지형 그림</div><small>의미 해석 · 경각심 · 개선 의견</small><small class="cand">후보 · 다문화 공공화장실 에티켓 픽토그램</small></div>
+          <div class="same">같은 유형<span>03 송도 캠퍼스타운역 일대</span></div>
+        </div>
+      </div>
+      <div class="rel">
+        <div class="hd3 acc"><b>누적형<span class="cnt">4곳</span></b><small>1차 시설을 그대로 두고, 2차에 요소를 더해 더한 몫을 본다</small></div>
+        <div class="gl"><svg viewBox="0 0 80 26" width="80mm" height="26mm" font-family="P">
+          <rect x="16" y="11" width="48" height="7.4" rx=".6" fill="#2E5A87"/><text x="40" y="16" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">1차 시설 · 응답</text>
+          <rect x="16" y="2.2" width="48" height="7.4" rx=".6" fill="#1A2F4B"/><text x="40" y="7.2" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">+ 2차 요소</text>
+          <path d="M3 20.4 H77" stroke="#1A2F4B" stroke-width=".3"/>
+          <text x="40" y="24.6" font-size="2.6" font-weight="700" fill="#6A7784" text-anchor="middle">1차를 둔 채 더하기 · 더한 요소의 몫을 읽음</text></svg></div>
+        <div class="its">
+          <div class="it3"><b><i class="fdot" style="background:var(--f-safe)"></i>02 선인재단</b><div class="pair">스티커 설문 응답<em>+</em>거울나무</div><small>응답 · 선호 · 설치 후 반응</small><small class="cand">후보 · 청소년 정서안정 공공디자인</small></div>
+          <div class="it3"><b><i class="fdot" style="background:var(--f-attr)"></i>05 굴포천</b><div class="pair">그늘·머무름 자리<em>+</em>대학 협업 수업</div><small>체류 · 참여 · 장소 인식</small><small class="cand">후보 · 시민수요 대응형 공공공간 표준디자인</small></div>
+          <div class="same">같은 유형<span>06 로데오거리</span><span>07 연안여객터미널</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tx col2" style="margin-top:6mm">
+      <p><b>비교형</b>은 두 안 사이의 차이 하나만 남기는 설계다. 약산초·송도·차이나타운은 1차안을 걷어 낸 같은 자리에 2차안을 설치하고, 장소·요일·시간대·문항을 그대로 두었다. 그래서 응답의 차이를 안의 차이로 읽을 수 있었다. 약산초는 같은 전교생에게 같은 사진·지도 문항으로 두 번 물었고, 차이나타운은 차수마다 참여자를 따로 모아 중복 참여를 뺐다. 송도는 같은 러닝 코스에 그림·숫자 안내와 영문·한국어 병기 안내를 차례로 놓고 러닝 참여자를 만났다.</p>
+      <p><b>누적형</b>은 1차에서 만든 공간이나 안내, 응답을 2차에도 그대로 두고 요소를 더하는 설계다. 선인재단·굴포천·로데오거리·연안여객터미널이 여기에 속한다. 2차에서 새로 생긴 변화는 더한 요소의 몫으로 보았다. 선인재단은 1차 스티커 설문의 응답으로 2차 거울나무의 색·긍정 문구·높이를 정했고, 그 응답은 2차를 읽는 대조 자료가 되었다. 굴포천은 파라솔 그늘과 자리를 그대로 둔 채 대학 협업 수업을 더하였다.</p>
+      <p>두 유형 모두 끝은 표준디자인 후보로 이어지도록 짰다. 후보는 실험 전에 이름을 붙여 두었지만, 실제로 남길지는 1·2차 결과를 본 뒤 상설·수정·중지로 가렸다. 어느 유형이든 같게 둔 조건과 달라진 요소, 대상과 시간의 차이를 함께 기록하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">36</div>
+</section>
+
+<!-- ================= p37 약산초 재실험 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-03</span>설치 위치 재실험 · 약산초</div>
+    <h2 class="hl">약산초는 1차 뒤 설치 위치를 바꾸어<br><em>한 번 더 실험한 다음</em> 2차로 넘어갔다</h2>
+    <p class="lede">1차 시민안과 2차 어린이안 사이에, 시민안의 설치 위치만 바꾼 재실험을 한 차례 더 두었다. 세 차례 모두 화~목 등교 시간에 운영하였다.</p>
+  </div>
+  <div class="body" style="top:62mm">
+    <div class="imgpair">
+      <div><div class="photo"><img src="img/01_약산초_ch3_1차설치.jpg"></div><div class="cap2"><b>1차 「색연필 수비대」.</b> 시민 디자인안. 통학로 전봇대 다섯 곳에 다섯 색 연필 모양을 입히고 바닥 표시를 더하였다.</div></div>
+      <div><div class="photo fit"><img src="img/01_약산초_ch3_2차동물안.png"></div><div class="cap2"><b>2차 「꿈꾸는 안전디자이너」.</b> 6학년 35명의 워크숍 제안을 바탕으로 동물 다섯 종과 배경색을 위치 단서로 삼은 어린이안.</div></div>
+    </div>
+    <div class="lb" style="margin-top:5mm">1차 · 재실험 · 2차 운영 순서</div>
+    <div class="seq5">
+      <div class="sq s1"><i>1차 운영</i><b>10.20~22</b><small>화~목 · 시민안 설치</small></div><span class="ar">▶</span>
+      <div class="sq sv"><i>1차 설문</i><b>10.27</b><small>화 · 전교생 링크·서면</small></div><span class="ar">▶</span>
+      <div class="sq sr"><i>재실험</i><b>10.27~29</b><small>화~목 · 설치 위치 변경</small></div><span class="ar">▶</span>
+      <div class="sq s2"><i>2차 운영</i><b>11.3~5</b><small>화~목 · 어린이안 설치</small></div><span class="ar">▶</span>
+      <div class="sq sv"><i>2차 설문</i><b>11.6</b><small>금 · 학교 설문</small></div>
+    </div>
+    <div class="tx col2" style="margin-top:5mm">
+      <p>1차 시민안은 10월 20일부터 22일까지 사흘 동안 등교 시간에 운영한 뒤, 설치 위치를 바꾸어 27일부터 29일까지 같은 요일·같은 시간대로 다시 운영하였다. 1차 학교 설문은 재실험 첫날인 27일에 설문 링크와 서면 설문지로 전교생 556명에게 배포하였다.</p>
+      <p>2차 어린이안은 11월 3일부터 5일까지 같은 요일·시간대에 운영하고, 6일(금) 학교 설문에서 두 안을 같은 사진·지도 문항으로 물었다. 두 설문 사이에는 최소 1주일 간격을 두었고, 등하교 때의 반응은 따로 관찰하였다.</p>
+      <p>2차 어린이안은 6학년 35명이 10월 8일 워크숍에서 낸 동물·색 제안으로 만들었다. 통학로 전봇대 다섯 곳에 동물 다섯 종과 배경색을 입히고 반사 시트와 EVA 스펀지를 더해, 어린이가 위치를 기억하고 설명할 단서로 삼았다.</p>
+    </div>
+    <div class="keepchg" style="margin-top:2mm">
+      <div class="k1"><b>재실험에서 바꾼 것</b>시민안의 설치 위치 하나</div>
+      <div class="k2"><b>바꾸지 않은 것</b>시민 디자인안, 화~목 요일, 등교 시간대, 설문 문항</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">37</div>
+</section>
+
+<!-- ================= p38 한 가지 요소만 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-03</span>바꾼 요소와 기록한 조건</div>
+    <h2 class="hl">두 차수 사이에서는 <em>한 가지 요소만</em> 바꾸고,<br>같게 둘 수 없는 조건은 모두 기록하였다</h2>
+  </div>
+  <div class="body" style="top:57mm;display:grid;grid-template-columns:118mm 1fr;gap:5mm">
+    <div class="tx">
+      <p>1·2차 사이에서 무엇이 달라졌는지 말하려면 달라진 것이 하나여야 했다. 설계 단계에서 거점마다 바꿀 요소를 그림·언어·조명·그늘·사인·콘텐츠 가운데에서 고르고, 그 밖의 조건은 같게 두도록 하였다. 장소·시간·날씨·운항·행사·대상 집단은 거점마다 다르게 움직이는 조건이어서, 같게 둘 수 없는 것은 관찰일지에 적어 결과를 읽을 때 함께 보았다.</p>
+      <p>차이나타운은 이 원칙이 가장 단순하게 적용된 곳이다. 공중화장실에 11월 5일에는 권유형 그림을, 6일에는 금지형 그림을 붙였다. 장소도, 배치도, 문항과 척도도 같았고 바뀐 것은 표현 방식 하나였다. 차수 안에서는 같은 주제를 한 컷 단일형과 세 컷 연속형으로 함께 보여 주었다. 차수마다 성인 외국인 50명을 따로 모으고 중복 참여를 빼, 같은 사람이 두 그림을 모두 보지 않게 하였다.</p>
+      <div class="strip-l"><i>1차</i>권유형 · 바른 행동을 그림으로 권한다</div>
+      <div class="strip"><img src="img/04_차이나타운_ch3_1차권유형.png"></div>
+      <div class="strip-l"><i class="n2">2차</i>금지형 · 하지 말아야 할 행동을 그림으로 막는다</div>
+      <div class="strip" style="margin-bottom:4mm"><img src="img/04_차이나타운_ch3_2차금지형.png"></div>
+      <p>제1회 공공디자인위원회 심의에서는 권장 행동과 금지 행동이 구분되도록 그림을 간결하게 다듬으라는 의견이 나왔다. 권유형 그림에서 금지 표시를 지우고 캐릭터의 행동을 바꾸어 반영하였다. 권유형에 금지 표시가 섞여 있으면 두 표현 방식의 차이가 흐려지기 때문이다. 순서는 권유형을 먼저, 금지형을 나중에 두었다.</p>
+      <p>누적형 거점은 1차 요소를 2차에도 그대로 남기고, 더한 요소 하나를 바꾼 요소로 보았다. 굴포천은 파라솔 그늘과 자리를 둔 채 대학 협업 수업을 더했고, 연안여객터미널은 통합 안내사인을 둔 채 짐 보관 공간을 더하였다. 비교형인 송도는 같은 자리에 영문·한국어 병기 안내를 바꾸어 놓았고, 제1회 심의에서 나온 영문 글자의 두께·배경 대비 보강을 2차 영문 안내에 부분 반영하였다.</p>
+      <div class="verdict" style="margin-top:3mm;padding:4mm"><b style="font-size:10.4pt">바뀐 것이 하나일 때만,<br>1·2차의 차이를 디자인의 차이로 읽었다</b></div>
+    </div>
+    <div class="side ledger">
+      <div class="lh">바꿀 수 있는 요소</div>
+      <div class="g"><span class="on">그림</span><span>언어</span><span>조명</span><span>그늘</span><span>사인</span><span>콘텐츠</span></div>
+      <div class="cap2" style="margin:-3mm 0 6mm">차이나타운은 <b>그림</b>의 표현 방식 하나만 바꾸었다.</div>
+      <div class="lh">같게 두거나 기록한 조건</div>
+      <div class="g k"><span class="on">장소</span><span class="on">시간</span><span>날씨</span><span>운항</span><span>행사</span><span class="on">대상 집단</span></div>
+      <div class="cap2" style="margin:-3mm 0 6mm">진한 칸은 차이나타운에서 같게 둔 조건이다. 날씨·행사는 관찰일지에 적었다.</div>
+      <div class="lh">차이나타운 1·2차</div>
+      <div class="tally" style="grid-template-columns:1fr 1fr;margin-top:1mm">
+        <div><b>50<small>명</small></b><span>차수별 성인 외국인</span></div>
+        <div><b>1<small>일</small></b><span>차수별 설치·철거</span></div>
+      </div>
+      <div class="tally" style="grid-template-columns:1fr 1fr;border-top:0">
+        <div><b style="font-size:15pt">11.5</b><span>1차 권유형</span></div>
+        <div><b style="font-size:15pt;color:var(--navy)">11.6</b><span>2차 금지형</span></div>
+      </div>
+      <div class="quote-slot" style="margin-top:5mm">참여자 A · 1차 · 그림 의미 해석 관련</div>
+      <div class="quote-slot" style="margin-top:2mm">참여자 B · 2차 · 경각심 관련</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">38</div>
+</section>
+
+<!-- ================= p39 같은 조건에서 세 번 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-04</span>같은 조건에서 세 번 측정</div>
+    <h2 class="hl">모든 거점에서 <em>실험 전 기준값</em>을 먼저 재고,<br>같은 조건에서 두 번 더 쟀다</h2>
+    <p class="lede">측정은 사전조사·1차·2차 세 번이다. 세 번 모두 같은 요일·시간대·지점·방법을 지켜야 1차와 2차의 차이를 디자인의 효과로 읽을 수 있었다.</p>
+  </div>
+  <div class="body" style="top:63mm">
+    <div class="m3">
+      <svg viewBox="0 0 178 50" width="178mm" height="50mm" font-family="P">
+        <defs><pattern id="h4-blue" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#7D97B3"/></pattern></defs>
+        <rect x="0" y="0" width="178" height="50" rx=".6" fill="#F2F5F8"/>
+        <line x1="14" x2="164" y1="25" y2="25" stroke="#1A2F4B" stroke-width=".3"/>
+        <circle cx="30" cy="25" r="8" fill="url(#h4-blue)"/><g stroke="#fff" stroke-width="1" stroke-linejoin="round" paint-order="stroke"><text x="30" y="24.2" font-size="3" font-weight="900" fill="#1A2F4B" text-anchor="middle">사전조사</text><text x="30" y="28" font-size="2.3" font-weight="700" fill="#1A2F4B" text-anchor="middle">9.14~10.24</text></g>
+        <circle cx="89" cy="25" r="8" fill="#2E5A87"/><text x="89" y="24.2" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">1차</text><text x="89" y="28" font-size="2.3" font-weight="700" fill="#fff" text-anchor="middle">10.20~11.22</text>
+        <circle cx="148" cy="25" r="8" fill="#1A2F4B"/><text x="148" y="24.2" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">2차</text><text x="148" y="28" font-size="2.3" font-weight="700" fill="#fff" text-anchor="middle">11.3~11월 말</text>
+        <text x="30" y="6" font-size="2.8" font-weight="800" fill="#22476C" text-anchor="middle">디자인이 들어가기 전</text>
+        <text x="89" y="6" font-size="2.8" font-weight="800" fill="#22476C" text-anchor="middle">1차 안 설치</text>
+        <text x="148" y="6" font-size="2.8" font-weight="800" fill="#22476C" text-anchor="middle">요소 하나를 바꾼 2차 안</text>
+        <path d="M40 18 Q59.5 12 79 18" fill="none" stroke="#2E5A87" stroke-width=".3" stroke-dasharray="1 .6"/><text x="59.5" y="12.6" font-size="2.5" font-weight="700" fill="#1A2F4B" text-anchor="middle">1차가 만든 변화</text>
+        <path d="M99 18 Q118.5 12 138 18" fill="none" stroke="#1A2F4B" stroke-width=".3" stroke-dasharray="1 .6"/><text x="118.5" y="12.6" font-size="2.5" font-weight="700" fill="#1A2F4B" text-anchor="middle">바꾼 요소가 만든 변화</text>
+        <text x="89" y="42" font-size="2.7" font-weight="800" fill="#1A2F4B" text-anchor="middle">같은 요일 · 같은 시간대 · 같은 지점과 대조군 · 같은 계수·설문 방법 · 관찰자 3인 이내·비개입</text>
+        <text x="89" y="46.4" font-size="2.4" font-weight="600" fill="#6A7784" text-anchor="middle">날씨와 특이사항은 세 번 모두 기록</text>
+      </svg>
+    </div>
+    <div class="tx col2" style="margin-top:6mm">
+      <p>측정은 실험보다 먼저 시작되었다. 7월부터 10월까지 이어진 현장조사로 실험 대상이 나타나는 시간과 장소를 확인한 뒤, 9월 14일부터 10월 24일까지 일곱 거점에서 사전조사를 하여 디자인이 들어가기 전의 상태를 쟀다. 이 값이 1차와 2차를 비교하는 기준값이 되었다.</p>
+      <p>1차는 사전조사와 같은 요일·시간대를, 2차는 1차와 같은 요일·시간대를 원칙으로 삼았다. 계수 지점과 설문 방법도 바꾸지 않았다. 관찰자는 3인 이내로 두고, 관찰하는 동안에는 이용자에게 말을 걸거나 길을 안내하지 않았다. 관찰자가 실험 조건의 하나가 되지 않게 하기 위해서였다.</p>
+      <p>요일은 소상공인 365 데이터에서 유동인구가 가장 많은 요일을 기준으로 주중 하루, 주말 하루를 골랐다. 이용자가 정해진 시간에만 지나가는 학교 앞은 기준이 달랐다. 선인재단은 학생의 등교 동선과 시간이 일정해, 오래 관찰하기보다 등교 시간인 07:30~08:50에 사흘을 집중해서 보았다.</p>
+      <p>시설 운영기간과 자료 수집일도 나누어 잡았다. 로데오거리는 1차 시설을 11월 15일부터 17일까지 두면서 자료는 15·16일에, 2차는 18일부터 21일까지 운영하면서 20·21일에 모았다. 평일 저녁과 주말 저녁을 하루씩 잡고, 각각 밀집도가 가장 높은 시간에 집중 관찰하였다.</p>
+    </div>
+    <div class="ph3x">
+      <div class="duo"><img src="img/01_약산초_사전_003.jpg"></div>
+      <div class="duo"><img src="img/01_약산초_사전_005.jpg"></div>
+      <div class="duo"><img src="img/01_약산초_사전_007.jpg"></div>
+    </div>
+    <div class="cap2"><b>실험 전 약산초 등굣길.</b> 디자인이 들어가기 전의 통학로를 기록하고, 같은 등교 시간대에 기준값을 쟀다.</div>
+    <div class="cond4">
+      <div><b>측정 3회</b>사전조사·1차·2차를 거점마다 같은 조건으로</div>
+      <div><b>선정 규칙 4가지</b>요일과 시간대를 정한 기준</div>
+      <div><b>관찰자 3인 이내</b>이용자에게 말을 걸지 않는 비개입 관찰</div>
+      <div><b>주중 1일 · 주말 1일</b>유동인구가 가장 많은 요일 기준</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">39</div>
+</section>
+
+<!-- ================= p40 일정 선정 규칙 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-04</span>일정 선정 규칙</div>
+    <h2 class="hl">요일과 시간대는 <em>네 가지 규칙</em>을 차례로 적용해 정하고,<br>협업 주체의 일정만 예외로 두었다</h2>
+    <p class="lede">규칙은 위에서부터 걸렀다. 타겟이 나타나지 않는 시간은 처음부터 빼고, 남은 시간 가운데 관찰할 수 있고 표본이 차는 때를 골랐다. 유동인구가 비슷한 요일끼리는 오차 5~10% 안에서 서로 바꿀 수 있게 하였다.</p>
+  </div>
+  <div class="body" style="top:76mm">
+    <div class="flow">
+      <div class="rule"><span class="nn">①</span><b>타겟 반영</b><small>기획 타겟이 충분히 나타나는<br>시간·공간을 고른다</small></div>
+      <div class="lk"><i></i></div>
+      <div class="ex"><div><b>약산초·선인재단</b><span>평일 등교 시간. 선인재단은 07:30~08:50 등교 동선에 사흘 집중</span></div><div><b>연안여객터미널</b><span>여객 운항 시간 7:30~15:00 전일 수집. 1차 11.11(수)~12(목), 2차 11.13(금)~14(토)로 평일과 주말을 함께 담음</span></div></div>
+      <div class="rule"><span class="nn">②</span><b>관찰 가능한 상태</b><small>시야·조명·날씨 등<br>관찰·계수가 가능한 조건</small></div>
+      <div class="lk"><i></i></div>
+      <div class="ex"><div><b>일곱 거점 공통</b><span>현장조사 때 평일·주말, 낮·밤을 모두 찾아가 관찰할 수 있는 상태와 설치 여건을 점검</span></div></div>
+      <div class="rule"><span class="nn">③</span><b>최소 표본 수 충족</b><small>프로젝트 특성마다 기준이 다르며<br>사전조사에서 확인한다</small></div>
+      <div class="lk"><i></i></div>
+      <div class="ex"><div><b>로데오거리</b><span>9월 14일 월요일 저녁 사전조사에서 표본 200을 채워, 1·2차도 같은 저녁 시간대로 고정</span></div></div>
+      <div class="rule"><span class="nn">④</span><b>5~10% 오차 범위 조절</b><small>유동인구가 비슷한 요일끼리는<br>운영 일정에 맞춰 조절한다</small></div>
+      <div class="lk"><i></i></div>
+      <div class="ex"><div><b>굴포천</b><span>유동인구가 가장 많은 주말 낮. 10.17(토) 사전조사 → 1차 11.21(토)~22(일), 10~11시·15~16시대</span></div><div><b>선인재단</b><span>10.15(목) 사전조사 → 1·2차 화~목 등교 시간</span></div></div>
+    </div>
+    <div class="excp2">
+      <div class="h"><b>예외 · 협업 일정 우선</b><small>협업 주체가 실험 데이터를 쌓는 데 꼭 필요한 경우에만 규칙보다 협업 일정을 앞에 두었다.</small></div>
+      <div class="l">
+        <div><b>송도</b>러닝크루 정기 러닝. 일요일 유동이 가장 적어 금·토로 맞춤</div>
+        <div><b>굴포천 2차</b>인천대 학생 워크숍 일정에 맞춤</div>
+        <div><b>차이나타운</b>외국인 참여자 50명 모집형, 차수마다 당일 수집</div>
+      </div>
+    </div>
+    <div class="tx col2" style="margin-top:5mm"><p>규칙을 차례로 적용하자 거점마다 요일과 시간대가 다르게 정해졌다. 학교 앞 두 곳은 평일 등교 시간, 로데오거리는 사전조사에서 표본이 찬 저녁 시간대, 굴포천은 주말 낮의 오전·오후 한 시간씩, 연안여객터미널은 여객 운항 시간대 전체였다. 확정한 요일·시간대는 사전조사·1차·2차에 같게 적용하였다.</p><p>협업 주체의 일정을 따른 차수는 따로 표시하였다. 송도 2차는 러닝크루의 정기 러닝에 맞춰 11월 말 금·토에, 굴포천 2차는 인천대 협업 일정에 맞춰 11월 23일(월) 13~15시에 운영하였다. 로데오거리는 같은 저녁 시간대를 지키면서 3M 제작·설치 일정에 따라 요일을 더하였다. 예외로 표시한 차수는 결과를 읽을 때 조건의 차이로 함께 보았다.</p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">40</div>
+</section>
+
+<!-- ================= p41 최소 참여인원 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-04</span>표본과 참여 규모</div>
+    <h2 class="hl">거점마다 참여 방법과 <em>최소 참여인원</em>을<br>실험을 시작하기 전에 정하였다</h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="tx col2">
+      <p>최소 참여인원은 거점의 이용자 규모와 조사 방법에 맞추어 따로 정하였다. 약산초는 전교생 556명에게 1·2차 설문을 배포하고 6학년 35명이 워크숍에 참여하도록 잡았다. 선인재단은 등교하는 학생에게 1인 1장 스티커 설문을 받아 차수마다 100명을, 차이나타운은 외국인 참여자를 차수마다 50명씩 따로 모았다.</p>
+      <p>인터뷰 중심의 거점은 차수마다 30명을 기준으로 삼았다. 송도는 러닝 참여자, 굴포천은 공간에 머문 시민, 로데오거리와 연안여객터미널은 현장 이용자를 만났다. 굴포천 2차에는 인천대 학생 19명이 제작 워크숍에, 로데오거리 1차에는 시민디자인단 7명이 설치에 참여하였다.</p>
+    </div>
+    <div class="lb" style="margin-top:3mm">거점별 최소 참여인원 <span style="font-weight:600;letter-spacing:0;color:var(--mute);margin-left:2mm">점 하나 = 5명</span></div>
+    <div class="lg" style="margin-bottom:1mm"><span><i style="background:#A9BBCE"></i>1·2차 전교생 설문</span><span><i style="background:var(--teal)"></i>1차</span><span><i style="background:var(--navy)"></i>2차</span><span><i style="background:#5B6B7A"></i>워크숍·설치 참여</span></div>
+    <svg viewBox="0 0 178 86" width="178mm" height="86mm" font-family="P">
+<line x1="0" x2="178" y1="61.92" y2="61.92" stroke="#D3DCE3" stroke-width=".2" stroke-dasharray="1 1"/>
+<text x="178" y="61.12" font-size="2.2" fill="#8C98A3" text-anchor="end" font-weight="600">100명</text>
+<line x1="0" x2="178" y1="54.06" y2="54.06" stroke="#D3DCE3" stroke-width=".2" stroke-dasharray="1 1"/>
+<text x="178" y="53.26" font-size="2.2" fill="#8C98A3" text-anchor="end" font-weight="600">200명</text>
+<line x1="0" x2="178" y1="46.20" y2="46.20" stroke="#D3DCE3" stroke-width=".2" stroke-dasharray="1 1"/>
+<text x="178" y="45.40" font-size="2.2" fill="#8C98A3" text-anchor="end" font-weight="600">300명</text>
+<line x1="0" x2="178" y1="38.35" y2="38.35" stroke="#D3DCE3" stroke-width=".2" stroke-dasharray="1 1"/>
+<text x="178" y="37.55" font-size="2.2" fill="#8C98A3" text-anchor="end" font-weight="600">400명</text>
+<line x1="0" x2="178" y1="30.49" y2="30.49" stroke="#D3DCE3" stroke-width=".2" stroke-dasharray="1 1"/>
+<text x="178" y="29.69" font-size="2.2" fill="#8C98A3" text-anchor="end" font-weight="600">500명</text>
+<circle cx="4.46" cy="68.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="68.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="68.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="68.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="68.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="68.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="68.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="65.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="65.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="65.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="65.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="65.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="65.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="65.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="62.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="62.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="62.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="62.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="62.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="62.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="62.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="60.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="60.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="60.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="60.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="60.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="60.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="60.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="57.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="57.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="57.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="57.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="57.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="57.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="57.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="54.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="54.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="54.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="54.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="54.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="54.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="54.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="51.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="51.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="51.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="51.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="51.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="51.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="51.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="49.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="49.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="49.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="49.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="49.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="49.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="49.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="46.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="46.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="46.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="46.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="46.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="46.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="46.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="43.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="43.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="43.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="43.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="43.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="43.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="43.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="40.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="40.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="40.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="40.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="40.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="40.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="40.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="38.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="38.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="38.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="38.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="38.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="38.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="38.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="35.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="35.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="35.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="35.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="35.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="35.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="35.40" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="32.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="32.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="32.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="32.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="32.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="32.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="32.65" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="29.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="29.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="29.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="29.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="29.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="29.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="29.90" r="1.0" fill="#A9BBCE"/>
+<circle cx="4.46" cy="27.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="7.21" cy="27.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="9.96" cy="27.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="12.71" cy="27.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="15.46" cy="27.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="18.21" cy="27.15" r="1.0" fill="#A9BBCE"/>
+<circle cx="20.96" cy="27.15" r="0.50" fill="#A9BBCE"/>
+<circle cx="4.46" cy="24.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="7.21" cy="24.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="9.96" cy="24.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="12.71" cy="24.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="15.46" cy="24.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="18.21" cy="24.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="20.96" cy="24.40" r="1.0" fill="#5B6B7A"/>
+<text x="12.71" y="17.80" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">591<tspan font-size="2.6" font-weight="800">명</tspan></text>
+<text x="12.71" y="21.20" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">556 + 35</text>
+<circle cx="5.76" cy="75.00" r="1.2" fill="#3A5F8E"/>
+<text x="12.71" y="76.10" font-size="3.1" font-weight="800" fill="#1A2F4B" text-anchor="middle">약산초</text>
+<text x="12.71" y="80.40" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="middle">설문 · 워크숍</text>
+<circle cx="29.89" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="32.64" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="35.39" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="38.14" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="40.89" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="43.64" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="46.39" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="29.89" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="32.64" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="35.39" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="38.14" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="40.89" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="43.64" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="46.39" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="29.89" cy="62.90" r="1.0" fill="#2E5A87"/>
+<circle cx="32.64" cy="62.90" r="1.0" fill="#2E5A87"/>
+<circle cx="35.39" cy="62.90" r="1.0" fill="#2E5A87"/>
+<circle cx="38.14" cy="62.90" r="1.0" fill="#2E5A87"/>
+<circle cx="40.89" cy="62.90" r="1.0" fill="#2E5A87"/>
+<circle cx="43.64" cy="62.90" r="1.0" fill="#2E5A87"/>
+<circle cx="46.39" cy="62.90" r="1.0" fill="#1A2F4B"/>
+<circle cx="29.89" cy="60.15" r="1.0" fill="#1A2F4B"/>
+<circle cx="32.64" cy="60.15" r="1.0" fill="#1A2F4B"/>
+<circle cx="35.39" cy="60.15" r="1.0" fill="#1A2F4B"/>
+<circle cx="38.14" cy="60.15" r="1.0" fill="#1A2F4B"/>
+<circle cx="40.89" cy="60.15" r="1.0" fill="#1A2F4B"/>
+<circle cx="43.64" cy="60.15" r="1.0" fill="#1A2F4B"/>
+<circle cx="46.39" cy="60.15" r="1.0" fill="#1A2F4B"/>
+<circle cx="29.89" cy="57.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="32.64" cy="57.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="35.39" cy="57.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="38.14" cy="57.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="40.89" cy="57.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="43.64" cy="57.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="46.39" cy="57.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="29.89" cy="54.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="32.64" cy="54.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="35.39" cy="54.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="38.14" cy="54.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="40.89" cy="54.65" r="1.0" fill="#1A2F4B"/>
+<text x="38.14" y="48.05" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">200<tspan font-size="2.6" font-weight="800">명</tspan></text>
+<text x="38.14" y="51.45" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">100 + 100</text>
+<circle cx="29.74" cy="75.00" r="1.2" fill="#3A5F8E"/>
+<text x="38.14" y="76.10" font-size="3.1" font-weight="800" fill="#1A2F4B" text-anchor="middle">선인재단</text>
+<text x="38.14" y="80.40" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="middle">1차 · 2차</text>
+<circle cx="55.32" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="58.07" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="60.82" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="63.57" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="66.32" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="69.07" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="71.82" cy="68.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="55.32" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="58.07" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="60.82" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="63.57" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="66.32" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<text x="63.57" y="59.05" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">60<tspan font-size="2.6" font-weight="800">명</tspan></text>
+<text x="63.57" y="62.45" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">30 + 30</text>
+<circle cx="58.07" cy="75.00" r="1.2" fill="#3F7A6E"/>
+<text x="63.57" y="76.10" font-size="3.1" font-weight="800" fill="#1A2F4B" text-anchor="middle">송도</text>
+<text x="63.57" y="80.40" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="middle">1차 · 2차</text>
+<circle cx="80.75" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="83.50" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="86.25" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="89.00" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="91.75" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="94.50" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="97.25" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="80.75" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="83.50" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="86.25" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="89.00" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="91.75" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="94.50" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="97.25" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="80.75" cy="62.90" r="1.0" fill="#1A2F4B"/>
+<circle cx="83.50" cy="62.90" r="1.0" fill="#1A2F4B"/>
+<circle cx="86.25" cy="62.90" r="1.0" fill="#1A2F4B"/>
+<circle cx="89.00" cy="62.90" r="1.0" fill="#1A2F4B"/>
+<circle cx="91.75" cy="62.90" r="1.0" fill="#1A2F4B"/>
+<circle cx="94.50" cy="62.90" r="1.0" fill="#1A2F4B"/>
+<text x="89.00" y="56.30" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">100<tspan font-size="2.6" font-weight="800">명</tspan></text>
+<text x="89.00" y="59.70" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">50 + 50</text>
+<circle cx="79.15" cy="75.00" r="1.2" fill="#3F7A6E"/>
+<text x="89.00" y="76.10" font-size="3.1" font-weight="800" fill="#1A2F4B" text-anchor="middle">차이나타운</text>
+<text x="89.00" y="80.40" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="middle">1차 · 2차</text>
+<circle cx="106.18" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="108.93" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="111.68" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="114.43" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="117.18" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="119.93" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="122.68" cy="68.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="106.18" cy="65.65" r="1.0" fill="#5B6B7A"/>
+<circle cx="108.93" cy="65.65" r="1.0" fill="#5B6B7A"/>
+<circle cx="111.68" cy="65.65" r="0.80" fill="#5B6B7A"/>
+<text x="114.43" y="59.05" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">49<tspan font-size="2.6" font-weight="800">명</tspan></text>
+<text x="114.43" y="62.45" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">30 + 19</text>
+<circle cx="107.48" cy="75.00" r="1.2" fill="#A67C45"/>
+<text x="114.43" y="76.10" font-size="3.1" font-weight="800" fill="#1A2F4B" text-anchor="middle">굴포천</text>
+<text x="114.43" y="80.40" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="middle">인터뷰 · 워크숍</text>
+<circle cx="131.61" cy="68.40" r="1.0" fill="#5B6B7A"/>
+<circle cx="134.36" cy="68.40" r="0.50" fill="#5B6B7A"/>
+<circle cx="137.11" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="139.86" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="142.61" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="145.36" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="148.11" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="131.61" cy="65.65" r="1.0" fill="#2E5A87"/>
+<circle cx="134.36" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="137.11" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="139.86" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="142.61" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="145.36" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="148.11" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<text x="139.86" y="59.05" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">67<tspan font-size="2.6" font-weight="800">명</tspan></text>
+<text x="139.86" y="62.45" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">7 + 30 + 30</text>
+<circle cx="130.01" cy="75.00" r="1.2" fill="#675F8C"/>
+<text x="139.86" y="76.10" font-size="3.1" font-weight="800" fill="#1A2F4B" text-anchor="middle">로데오거리</text>
+<text x="139.86" y="80.40" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="middle">설치 · 1차 · 2차</text>
+<circle cx="157.04" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="159.79" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="162.54" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="165.29" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="168.04" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="170.79" cy="68.40" r="1.0" fill="#2E5A87"/>
+<circle cx="173.54" cy="68.40" r="1.0" fill="#1A2F4B"/>
+<circle cx="157.04" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="159.79" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="162.54" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="165.29" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<circle cx="168.04" cy="65.65" r="1.0" fill="#1A2F4B"/>
+<text x="165.29" y="59.05" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">60<tspan font-size="2.6" font-weight="800">명</tspan></text>
+<text x="165.29" y="62.45" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">30 + 30</text>
+<circle cx="152.54" cy="75.00" r="1.2" fill="#675F8C"/>
+<text x="165.29" y="76.10" font-size="3.1" font-weight="800" fill="#1A2F4B" text-anchor="middle">연안여객터미널</text>
+<text x="165.29" y="80.40" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="middle">1차 · 2차</text>
+<line x1="0" x2="178" y1="70.0" y2="70.0" stroke="#1A2F4B" stroke-width=".3"/>
+</svg>
+    <div class="mth3">
+      <div class="m"><div class="h"><b>3<small>곳</small></b><span>정량·정성 병행</span></div><div class="st">약산초 · 선인재단 · 차이나타운</div><p>설문과 스티커 응답으로 같은 문항의 응답 수·비율을 모으고, 워크숍·주관식 응답·보충 인터뷰로 이유를 들었다.</p></div>
+      <div class="m"><div class="h"><b>4<small>곳</small></b><span>인터뷰 중심 정성</span></div><div class="st">송도 · 굴포천 · 로데오거리 · 연안여객터미널</div><p>러닝 참여자, 머문 시민, 현장 이용자를 차수마다 30명씩 만나고 제작 워크숍과 설치 참여를 더하였다.</p></div>
+      <div class="m tot"><div class="h"><b>1,127<small>명</small></b><span>최소 참여인원 합계</span></div><div class="h" style="margin-top:2.6mm"><b class="dummy">[0,000]<small class="dummy">명</small></b><span>1·2차 실제 참여 인원</span></div></div>
+    </div>
+    <div class="verdict" style="margin-top:4mm"><b>참여인원은 결과를 본 뒤 맞추지 않고,<br>실험을 시작하기 전에 거점마다 먼저 정하였다</b></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">41</div>
+</section>
+
+<!-- ================= p42 대조군 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-04</span>대조군과 기준값</div>
+    <h2 class="hl">실험 구역 옆에 <em>대조군</em>을 두고 같은 시각에 세어,<br>바깥 조건이 만든 변화를 따로 보았다</h2>
+    <p class="lede">날씨가 좋으면 사람이 늘고, 행사가 있으면 동선이 바뀐다. 실험 구역만 세면 이런 변화가 디자인의 효과처럼 보일 수 있었다.</p>
+  </div>
+  <div class="body" style="top:63mm">
+    <div class="ctl">
+      <div>
+        <div class="lb">굴포천 제1교량 일대 · 계수 구역</div>
+        <div class="planbox">
+          <svg viewBox="0 0 104 84" width="104mm" height="84mm" font-family="P">
+            <defs><pattern id="h4-gray" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#9AA6B1"/></pattern></defs>
+            <rect x="0" y="0" width="104" height="84" fill="#EEF3F6"/>
+            <path d="M0 34 C30 30 70 30 104 34 L104 50 C70 46 30 46 0 50 Z" fill="#D3DDE7"/>
+            <text x="8" y="43.6" font-size="2.6" font-weight="700" fill="#4F7396">굴포천 물길</text>
+            <rect x="0" y="20" width="104" height="10" fill="#fff"/>
+            <rect x="0" y="54" width="104" height="10" fill="#fff"/>
+            <text x="2" y="18.4" font-size="2.5" font-weight="800" fill="#1A2F4B">실험 구역 · 한쪽 산책로</text>
+            <text x="2" y="69.6" font-size="2.5" font-weight="800" fill="#6A7784">대조군 · 반대쪽 산책로</text>
+            <rect x="46" y="12" width="12" height="60" fill="url(#h4-gray)"/>
+            <text x="52" y="9.4" font-size="2.5" font-weight="800" fill="#1A2F4B" text-anchor="middle">제1교량(부흥교)</text>
+            <rect x="46.6" y="35" width="10.8" height="10" rx=".6" fill="#fff"/>
+            <text x="52" y="39.4" font-size="2.2" font-weight="800" fill="#1A2F4B" text-anchor="middle">교량 하부</text>
+            <text x="52" y="42.6" font-size="2.2" font-weight="800" fill="#1A2F4B" text-anchor="middle">대조군</text>
+            <g fill="#A67C45">
+              <circle cx="11" cy="25" r="2.2"/><circle cx="19" cy="25" r="2.2"/><circle cx="27" cy="25" r="2.2"/><circle cx="35" cy="25" r="2.2"/>
+              <circle cx="69" cy="25" r="2.2"/><circle cx="77" cy="25" r="2.2"/><circle cx="85" cy="25" r="2.2"/><circle cx="93" cy="25" r="2.2"/>
+            </g>
+            <text x="23" y="32.6" font-size="2.3" font-weight="700" fill="#7A5A2E" text-anchor="middle">상류 파라솔 4</text>
+            <text x="81" y="32.6" font-size="2.3" font-weight="700" fill="#7A5A2E" text-anchor="middle">하류 파라솔 4</text>
+            <g fill="url(#h4-gray)"><rect x="4" y="55.5" width="38" height="7" rx=".6"/><rect x="62" y="55.5" width="38" height="7" rx=".6"/></g>
+            <g font-size="2.4" font-weight="800" fill="#fff"><rect x="4" y="74" width="30" height="6.6" rx=".6" fill="#2E5A87"/><text x="19" y="78.4" text-anchor="middle">관찰자 3인 이내</text>
+            <rect x="37" y="74" width="30" height="6.6" rx=".6" fill="#1A2F4B"/><text x="52" y="78.4" text-anchor="middle">두 구역 동시 계수</text>
+            <rect x="70" y="74" width="30" height="6.6" rx=".6" fill="#5B6B7A"/><text x="85" y="78.4" text-anchor="middle">오전·오후 각 1시간</text></g>
+          </svg>
+        </div>
+        <div class="cap2">파라솔 8개를 교량 양쪽에 3.5m 간격으로 놓았다. 그림은 구역 관계를 나타낸 모식도이며 실제 축척과 다르다.</div>
+      </div>
+      <div class="chartbox">
+        <div class="lb">그늘 아래 체류 인원</div>
+        <svg viewBox="0 0 69 84" width="69mm" height="84mm" font-family="P">
+          <defs><pattern id="h4-gray2" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#9AA6B1"/></pattern></defs>
+          <line x1="4" x2="68" y1="66" y2="66" stroke="#1A2F4B" stroke-width=".3"/>
+          <g fill="#B5BEC6"><rect x="7" y="40" width="7" height="26"/><rect x="27" y="40" width="7" height="26"/><rect x="47" y="40" width="7" height="26"/></g>
+          <g fill="url(#h4-gray2)"><rect x="15" y="40" width="7" height="26"/><rect x="35" y="40" width="7" height="26"/><rect x="55" y="40" width="7" height="26"/></g>
+          <g font-size="2.5" font-weight="800" fill="#E5332A" text-anchor="middle"><text x="10.5" y="38">[00]</text><text x="18.5" y="38">[00]</text><text x="30.5" y="38">[00]</text><text x="38.5" y="38">[00]</text><text x="50.5" y="38">[00]</text><text x="58.5" y="38">[00]</text></g>
+          <g font-size="2.8" font-weight="800" fill="#1A2F4B" text-anchor="middle"><text x="14.5" y="71">사전조사</text><text x="34.5" y="71">1차</text><text x="54.5" y="71">2차</text></g>
+          <g font-size="2.2" font-weight="600" fill="#8C98A3" text-anchor="middle"><text x="14.5" y="75">10.17</text><text x="34.5" y="75">11.21~22</text><text x="54.5" y="75">11.23</text></g>
+          <rect x="6" y="4" width="3" height="3" fill="#B5BEC6"/><text x="10.4" y="6.6" font-size="2.4" font-weight="700" fill="#1A2F4B">실험 구역(파라솔)</text>
+          <rect x="6" y="9" width="3" height="3" fill="url(#h4-gray2)"/><text x="10.4" y="11.6" font-size="2.4" font-weight="700" fill="#1A2F4B">대조군(교량 하부)</text>
+          <text x="6" y="20" font-size="2.4" font-weight="600" fill="#6A7784">단위 명 · 두 구역 동시 계수</text>
+          <text x="6" y="82" font-size="2.3" font-weight="600" fill="#6A7784">오전·오후 각 1시간 계수</text>
+        </svg>
+      </div>
+    </div>
+    <div class="tx col2" style="margin-top:5mm">
+      <p>대조군은 거점의 비교 방식에 따라 두 가지로 두었다. 공간에 장치를 놓는 거점은 장치가 없는 옆 구역을 같은 시각에 함께 세었다. 굴포천은 제1교량을 가운데 두고 한쪽 산책로에 파라솔을 상류 4개, 하류 4개로 놓고, 반대쪽 산책로와 교량 하부를 대조군으로 삼았다. 체류 인원·체류 시간·멈춤률을 10월 17일 사전조사와 같은 시간대에 두 구역에서 동시에 세었다.</p>
+      <p>응답을 받는 거점은 앞 차수의 응답을 대조 자료로 썼다. 선인재단은 1차 스티커 설문의 응답을 2차 거울나무 앞의 멈춤·시선·체류와 나란히 놓았다. 두 방식 모두 같은 때 바깥 조건 때문에 함께 움직인 변화를 실험 구역의 변화와 나란히 보게 해 주었다.</p>
+      <p>굴포천 2차는 두 방식을 함께 썼다. 교량 하부를 같은 시각에 세는 한편, 청년작가·시민 워크숍을 더한 2차의 체류를 1차 결과와 나란히 놓아, 참여 활동이 더한 변화를 따로 읽었다.</p>
+    </div>
+    <div class="ct2">
+      <div><i>공간형 대조</i><b>옆 구역을 같은 시각에 센다</b><span>굴포천 · 파라솔 구역과 교량 하부 · 체류 인원·시간·멈춤률</span></div>
+      <div><i>응답형 대조</i><b>앞 차수의 응답과 나란히 놓는다</b><span>선인재단 · 1차 스티커 설문 → 2차 거울나무 앞 멈춤·시선·체류</span></div>
+    </div>
+    <div class="verdict" style="margin-top:4mm;padding:4mm"><b style="font-size:10.6pt">같은 시각에 함께 센 대조군이 있어, 실험 구역의 변화 가운데<br>날씨와 행사가 만든 몫을 가려 읽을 수 있었다</b></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">42</div>
+</section>
+
+<!-- ================= p43 참여 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-05</span>참여와 운영</div>
+    <h2 class="hl">시민은 실험 장치를 만들고 붙이고 설치하며<br><em>실험을 함께 운영하는 사람</em>으로 참여하였다</h2>
+  </div>
+  <div class="body tx" style="top:57mm">
+    <p class="leadp" style="margin-bottom:4mm">일곱 거점 가운데 네 곳에서 시민이 실험 장치의 재료를 내거나 직접 만들고, 붙이고, 설치하였다. 어린이가 제안한 동물과 색이 2차 디자인안의 단서가 되었고, 대학생이 만든 스툴이 산책로에 놓였다.</p>
+    <div class="col2">
+      <p>약산초에서는 10월 8일 6학년 35명이 학교 주변 지도를 펼쳐 놓고 위험하다고 느낀 곳과 그 이유, 그 자리에 있었으면 하는 시설을 적었다. 이 워크숍에서 나온 동물·색 제안이 2차 「꿈꾸는 안전디자이너」의 재료가 되었다. 1·2차 평가는 전학년 설문으로 받았고, 설문 링크와 서면 설문지를 함께 배포하였다.</p>
+      <p>선인재단에서는 등굣길 학생이 다섯 가지 질문에 스티커를 붙여 답하였다. 마음이 편안해지는 것, 등굣길에 있었으면 하는 것, 기분이 좋아지는 색, 거울을 보면 드는 생각, 거울을 볼 때 듣고 싶은 말이다. 이 응답이 2차 거울나무의 색과 긍정 문구, 높이를 정하였다.</p>
+      <p>송도에서는 유학생과 러닝크루가 코스와 안내 위치, 발음 표기를 함께 확인한 뒤 안내를 읽고 붙이고 인사하며 달렸다. 굴포천에서는 인천대 학생 19명이 4팀으로 나뉘어 스툴을 만들고 당번을 맡았고, 청년작가 2명과 시민이 2차 워크숍을 함께 진행하였다. 로데오거리에서는 시민디자인단 7명이 1차 설치에 참여하였다.</p>
+      <p>현장 운영은 세 역할로 나누었다. 운영 담당은 그날의 활동과 참여 범위를 설명하고, 조사 담당은 참여자가 어떤 안을 경험했는지 확인해 의견과 연결하였다. 디자인 담당은 현장에서 바꾼 내용과 그 이유를 기록하였다. 참여자의 의견은 이 기록을 거쳐 다음 차수의 디자인 수정으로 이어졌다.</p>
+    </div>
+    <div class="ph3" style="margin-top:2mm">
+      <div><div class="duo"><img src="img/01_약산초_워크숍1.jpg"></div><div class="cap2"><b>약산초 어린이 안전디자인 워크숍(10.8).</b> 6학년 35명이 지도 위에 위험한 곳과 바라는 시설을 적었다.</div></div>
+      <div><div class="duo"><img src="img/01_약산초_워크숍3.jpg"></div><div class="cap2"><b>모둠 발표.</b> 워크숍에서 나온 동물·색 제안이 2차 어린이안의 바탕이 되었다.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:4mm">
+      <div class="quote-slot">참여 어린이 A · 약산초 워크숍 · 위험하다고 느낀 장소 관련</div>
+      <div class="quote-slot">인천대 학생 B · 굴포천 · 스툴 제작·당번 관련</div>
+    </div>
+    <div class="lb" style="margin-top:4.6mm">참여가 디자인 수정으로 이어진 순서</div>
+    <div class="pflow">
+      <div>참여 안내<small>활동과 참여 범위 설명</small></div>
+      <div>활동 경험<small>만들기·붙이기·달리기</small></div>
+      <div>참여자 의견<small>어떤 안을 경험했는지 확인</small></div>
+      <div>디자인 수정<small>바꾼 내용·이유 기록</small></div>
+      <div class="last">다음 적용<small>2차 안·다음 거점</small></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">43</div>
+</section>
+
+<!-- ================= p44 설치 전·중·후 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-05</span>설치 전·운영 중·종료 후</div>
+    <h2 class="hl">단계마다 <em>남길 자료</em>를 먼저 정해 두고,<br>일곱 거점이 같은 양식으로 기록하였다</h2>
+    <p class="lede">설치 전에는 위치도와 시작 점검표, 운영 중에는 관찰표와 운영일지, 종료 뒤에는 정비 목록과 인수인계 자료를 남겼다. 기록 양식은 실험을 시작하기 전에 정하였다.</p>
+  </div>
+  <div class="body" style="top:70mm">
+    <div class="ph5">
+      <div class="phase">설치<br>전</div>
+      <div class="steps">
+        <div class="stp"><div class="a"><i>01</i><b>사전협의</b><small>범위 · 동선 · 담당</small></div><div class="b">장소·관리기관과 설치 범위를 협의하고 설치도·동선·시설 상태를 확인</div><div class="c">설치 위치도</div></div>
+        <div class="stp"><div class="a"><i>02</i><b>설치 전 확인</b><small>시설 · 안내 · 도구</small></div><div class="b">설치물·안내물·조사 도구를 점검하고 실험 전 현장을 촬영</div><div class="c">시작 점검표 · 전후 사진</div></div>
+      </div>
+    </div>
+    <div class="ph5" style="margin-top:2.2mm">
+      <div class="phase p2">운영<br>중</div>
+      <div class="steps">
+        <div class="stp"><div class="a"><i>03</i><b>운영·기록</b><small>이용 · 의견 · 변경</small></div><div class="b">참여 안내, 관찰·설문, 고장·불편·조건 변경에 대응</div><div class="c">관찰표 · 의견 기록 · 운영일지 · 변경 대장</div></div>
+      </div>
+    </div>
+    <div class="ph5" style="margin-top:2.2mm">
+      <div class="phase p3">종료<br>후</div>
+      <div class="steps">
+        <div class="stp"><div class="a"><i>04</i><b>마감·정비</b><small>정돈 · 철거 · 존치</small></div><div class="b">철거·원상정비 또는 존치, 보수 내용을 정리</div><div class="c">종료 사진 · 정비 목록</div></div>
+        <div class="stp"><div class="a"><i>05</i><b>평가·인계</b><small>결과 · 관리자료</small></div><div class="b">결과를 정리하고 관리기관에 넘길 자료를 꾸림</div><div class="c">인수인계 자료</div></div>
+      </div>
+    </div>
+    <div class="safety" style="margin-top:5mm"><b>공통 안전계획</b><div>대상지마다 안전요원 <em>최소 3명</em> 이상 배치</div><div>설치와 철수는 <em>당일</em> 원칙</div></div>
+    <div class="tx" style="margin-top:5mm"><p>운영일지에는 거점·단계·일시·구역·조건·변경을 같은 순서로 적었다. 일곱 거점이 같은 양식을 쓴 덕분에 사전조사·1차·2차 자료를 거점끼리 나란히 놓고 볼 수 있었다. 원본은 고치지 않고 보존했으며, 집계나 도면을 고칠 때마다 버전과 변경 이유를 함께 남겨 누락을 점검하였다.</p></div>
+    <div class="lb" style="margin-top:1mm">파일 이름 규칙 · 일곱 거점의 자료를 한곳에 모아도 섞이지 않게</div>
+    <div class="fname"><span>거점코드<small>01~07</small></span><i>_</i><span>단계<small>사전·1차·2차</small></span><i>_</i><span>YYYYMMDD<small>수집일</small></span><i>_</i><span>자료유형<small>관찰·설문·사진</small></span><i>_</i><span>번호<small>원자료 번호</small></span><i>_</i><span>v버전<small>수정 이력</small></span></div>
+    <div class="fmt4">
+      <div><b>관찰·운영일지</b><small>거점·단계·일시·구역·조건·변경</small><span class="f">PDF · CSV · XLSX</span></div>
+      <div><b>설문·인터뷰</b><small>경험한 안·문항·응답·의견</small><span class="f">CSV · XLSX · 텍스트</span></div>
+      <div><b>사진·영상</b><small>촬영 위치·방향·시각·단계·대상번호</small><span class="f">JPG · PNG · 영상 원본</span></div>
+      <div><b>분석·설계</b><small>집계 기준·원자료 번호·버전·변경 이유</small><span class="f">편집원본 · PDF</span></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">44</div>
+</section>
+
+<!-- ================= p45 운영 일정과 변수 대응 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-05</span>운영 일정과 변수 대응</div>
+    <h2 class="hl">학교·협업 주체의 일정을 따른 차수는<br><em>조건과 함께</em> 운영일지와 변경 대장에 남겼다</h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="tx col2">
+      <p>1·2차 날짜는 거점마다 학교와 협업 주체의 일정에 맞물려 정해졌다. 약산초는 1차와 2차 사이에 시민안의 설치 위치를 바꾼 재실험을 한 차례 더 두었고, 1차 설문은 10월 27일, 2차 설문은 11월 6일(금)에 받았다. 선인재단은 학교와 협의해 1차를 11월 10일(화)부터 12일(목)까지, 2차를 17일(화)부터 19일(목)까지 등교 시간에 운영하였다.</p>
+      <p>송도는 1차를 11월 20일(금)·21일(토)에, 2차를 러닝크루의 정기 러닝에 맞춰 11월 말 금·토에 운영하였다. 굴포천은 1차를 21일(토)·22일(일) 주말 낮에, 2차를 인천대 협업 일정에 맞춰 23일(월) 13~15시에 진행하였다. 협업 일정을 따른 차수는 운영일지에 예외로 표시하고, 결과를 읽을 때 조건의 차이로 함께 보았다.</p>
+    </div>
+    <div class="lb" style="margin-top:2mm">학교·협업 일정에 맞춘 네 거점의 1·2차 운영 · 회색 열 = 주말</div>
+    <svg viewBox="0 0 178 80.0" width="178mm" height="80.0mm" font-family="P">
+<rect x="40.12" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="43.19" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="61.57" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="64.64" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="83.03" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="86.09" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="104.48" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="107.54" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="125.93" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="128.99" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="147.38" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="150.44" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="168.83" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<rect x="171.90" y="10.0" width="3.06" height="70.0" fill="#F3F6F8"/>
+<text x="34.62" y="4.4" font-size="3.2" font-weight="900" fill="#2E5A87">10월</text>
+<text x="86.69" y="4.4" font-size="3.2" font-weight="900" fill="#2E5A87">11월</text>
+<line x1="86.09" x2="86.09" y1="1" y2="80.0" stroke="#1A2F4B" stroke-width=".3"/>
+<text x="50.85" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">20</text>
+<text x="66.17" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">25</text>
+<text x="99.88" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">5</text>
+<text x="115.20" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">10</text>
+<text x="130.53" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">15</text>
+<text x="145.85" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">20</text>
+<text x="161.17" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">25</text>
+<text x="176.49" y="8.6" font-size="2.2" font-weight="700" fill="#8C98A3" text-anchor="middle">30</text>
+<defs><pattern id="h4-blue2" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#2E5A87"/></pattern><pattern id="h4-red" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#E5332A"/></pattern></defs>
+<line x1="0" x2="178" y1="10.0" y2="10.0" stroke="#1A2F4B" stroke-width=".3"/>
+<circle cx="1.6" cy="15.60" r="1.3" fill="#3A5F8E"/>
+<text x="4" y="16.70" font-size="3.4" font-weight="800" fill="#1A2F4B">약산초</text>
+<text x="4" y="21.40" font-size="2.3" font-weight="700" fill="#22476C">학교 일정 · 위치 변경 재실험</text>
+<rect x="49.32" y="16.00" width="9.19" height="4" rx=".6" fill="#2E5A87"/>
+<text x="53.91" y="23.00" font-size="2.3" font-weight="800" fill="#2E5A87" text-anchor="middle">1차 10.20~22</text>
+<rect x="70.77" y="16.00" width="9.19" height="4" rx=".6" fill="url(#h4-blue2)"/>
+<text x="75.36" y="23.00" font-size="2.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">재실험 10.27~29</text>
+<path d="M72.30 11.8 l1.3 1.8 -1.3 1.8 -1.3 -1.8z" fill="#7D97B3"/><text x="74.2" y="14.4" font-size="2.1" font-weight="700" fill="#22476C">1차 설문 10.27</text>
+<rect x="92.22" y="16.00" width="9.19" height="4" rx=".6" fill="#1A2F4B"/>
+<text x="96.82" y="23.00" font-size="2.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">2차 11.3~5</text>
+<path d="M103.40 15.8 l1.6 2.2 -1.6 2.2 -1.6 -2.2z" fill="#7D97B3"/><text x="105.6" y="18.8" font-size="2.2" font-weight="700" fill="#22476C">2차 설문 11.6</text>
+<line x1="0" x2="178" y1="27.50" y2="27.50" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="1.6" cy="33.10" r="1.3" fill="#3A5F8E"/>
+<text x="4" y="34.20" font-size="3.4" font-weight="800" fill="#1A2F4B">선인재단</text>
+<text x="4" y="38.90" font-size="2.3" font-weight="700" fill="#22476C">학교 협의 · 화~목 등교 시간</text>
+<rect x="113.67" y="33.50" width="9.19" height="4" rx=".6" fill="#2E5A87"/>
+<text x="118.27" y="40.50" font-size="2.3" font-weight="800" fill="#2E5A87" text-anchor="middle">1차 11.10~12</text>
+<rect x="135.12" y="33.50" width="9.19" height="4" rx=".6" fill="#1A2F4B"/>
+<text x="139.72" y="40.50" font-size="2.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">2차 11.17~19</text>
+<line x1="0" x2="178" y1="45.00" y2="45.00" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="1.6" cy="50.60" r="1.3" fill="#3F7A6E"/>
+<text x="4" y="51.70" font-size="3.4" font-weight="800" fill="#1A2F4B">송도</text>
+<text x="4" y="56.40" font-size="2.3" font-weight="700" fill="#22476C">러닝크루 정기 러닝 일정</text>
+<rect x="144.32" y="51.00" width="6.13" height="4" rx=".6" fill="#2E5A87"/>
+<text x="143.52" y="54.00" font-size="2.3" font-weight="800" fill="#2E5A87" text-anchor="end">1차 11.20~21</text>
+<rect x="165.77" y="51.00" width="6.13" height="4" rx=".6" fill="url(#h4-red)"/>
+<text x="177.6" y="58.00" font-size="2.3" font-weight="800" fill="#1A2F4B" text-anchor="end">2차 11월 말 금·토 <tspan fill="#E5332A">11.[00]</tspan></text>
+<line x1="0" x2="178" y1="62.50" y2="62.50" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="1.6" cy="68.10" r="1.3" fill="#A67C45"/>
+<text x="4" y="69.20" font-size="3.4" font-weight="800" fill="#1A2F4B">굴포천</text>
+<text x="4" y="73.90" font-size="2.3" font-weight="700" fill="#22476C">2차 인천대 협업 일정</text>
+<rect x="147.38" y="68.50" width="6.13" height="4" rx=".6" fill="#2E5A87"/>
+<text x="146.58" y="71.50" font-size="2.3" font-weight="800" fill="#2E5A87" text-anchor="end">1차 11.21~22</text>
+<rect x="153.51" y="68.50" width="3.06" height="4" rx=".6" fill="#1A2F4B"/>
+<text x="157.17" y="71.50" font-size="2.3" font-weight="800" fill="#1A2F4B" text-anchor="start">2차 11.23(월)</text>
+<line x1="0" x2="178" y1="80.00" y2="80.00" stroke="#D3DCE3" stroke-width=".25"/>
+</svg>
+    <div class="lb" style="margin-top:5mm">운영 중 상황이 생겼을 때의 순서</div>
+    <div class="chain5"><span>상황 발생</span><i>▶</i><span>영향 구역·<br>이용자 확인</span><i>▶</i><span>현장 조치</span><i>▶</i><span>책임자·<br>관리기관 공유</span><i>▶</i><span>재개·부분 운영·<br>중지 기록</span></div>
+    <div class="sit4">
+      <span class="sh" style="border-left:0"></span><b class="sh">기상·수변 변화</b><b class="sh">고장·파손</b><b class="sh">반사·빛·음향 불편</b><b class="sh">통행·민원</b>
+      <span class="rl">현장 대응</span><div class="s2">현장 상태를 확인하고 존치·철거 범위를 협의. 굴포천 파라솔은 강풍·우천 시 철거 기준을 따름</div><div class="s2">영향 구역을 안내하고 사용 제한·정비</div><div class="s2">해당 요소를 조정하거나 사용 중단</div><div class="s2">동선 확보, 범위 조정, 책임자 전달</div>
+      <span class="rl k">남긴 기록</span><div class="s3">날씨·시각·운영 변화</div><div class="s3">대상번호·사진·작동 확인</div><div class="s3">불편 내용·변경 전후</div><div class="s3">요청·조치·전달 내용</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">45</div>
+</section>
+
+<!-- ================= p46 고정시설 사전 기준 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span class="on">Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅲ-05</span>종료 후 경로와 고정시설 기준</div>
+    <h2 class="hl">고정시설로 남길 곳은<br><em>실험을 시작하기 전에 정한 기준</em>으로 골랐다</h2>
+    <p class="lede">과업은 성과 검증 데이터를 바탕으로 1개소 이상을 고정시설로 구현하도록 정하였다. 결과를 본 뒤 기준을 만들지 않도록, 판단 순서와 기준을 설계 단계에서 먼저 정하였다.</p>
+  </div>
+  <div class="body" style="top:70mm">
+    <div class="gate">
+      <div>
+        <div class="gates">
+          <div class="gt g1"><div class="n">1</div><div class="b"><i>실험 결과</i><b>질문에 답한 요소가 있는가</b><p>지표의 변화와 이용자 반응이 거점의 실험 질문에 답한 요소를 가려낸다.</p></div></div>
+          <div class="gconn"><span>통과한 요소만</span></div>
+          <div class="gt g2"><div class="n">2</div><div class="b"><i>효과 · 이용 · 관리</i><b>고정해도 쓰이고 관리되는가</b><p>효과가 유지되는지, 실제 이용이 이어지는지, 누가 어떤 비용과 부담으로 관리하는지를 따진다.</p></div></div>
+          <div class="gconn"><span>관리 주체가 정해진 요소만</span></div>
+          <div class="gt g3"><div class="n">3</div><div class="b"><i>기관 협의</i><b>소관부서·관리기관이 동의하는가</b><p>법·제도 검토와 시각적 이미지 협의를 거쳐 최종 설계·심의·이관 협의로 넘긴다.</p></div></div>
+        </div>
+        <div class="gfin"><b>고정 구현 1개소</b><span>대상 <span class="dummy">[거점명] · [시설명]</span></span></div>
+      </div>
+      <div>
+        <div class="lb">실험이 끝난 뒤의 세 갈래</div>
+        <div class="paths">
+          <div class="pt"><b>철거·원상 정비</b><small>임시물·장비·부착물을 회수하고 설치 전후 상태를 확인</small></div>
+          <div class="pt"><b>존치 및 관리</b><small>존치 대상·관리 주체·정비 조건을 정하고 현장 점검 후 인계</small></div>
+          <div class="pt fx"><b>고정 구현 검토</b><small>효과·이용·관리 가능성 검토, 최종 설계·심의·이관 협의</small></div>
+        </div>
+        <div class="mnote" style="margin-top:5mm"><h5>성과 검증 데이터로 1개소 이상</h5><p>고정시설은 사회실험의 성과 검증 결과를 바탕으로 1개소 이상 구현하고, 표준모델(안)과 운영 매뉴얼로 이어 가도록 과업에 정해져 있었다.</p></div>
+      </div>
+    </div>
+    <div class="tx col2" style="margin-top:5mm">
+      <p>판단은 세 단계로 하였다. 먼저 실험 결과에서 질문에 답한 요소가 있는지 보았다. 다음으로 그 요소를 고정했을 때 효과가 이어지는지, 실제 이용이 계속되는지, 누가 어떤 비용으로 관리할지를 따졌다. 마지막으로 소관부서와 관리기관의 검토와 동의를 받아 설계·심의·이관 협의로 넘겼다.</p>
+      <p>세 단계는 거점 하나를 고르는 데만 쓰지 않았다. 고정 구현에 이르지 않은 거점도 같은 판단을 거쳐 철거·원상 정비와 존치 가운데 하나로 경로를 정하였다. 어느 경로든 실험 종료 시점의 시설 상태와 이용 동선, 미처리 사항을 먼저 점검하였다.</p>
+    </div>
+    <div class="chk" style="margin-top:1mm">
+      <div><b>현장 관리 체크사항</b><span>시설 변경 관련 사항</span><span>마감 미처리 사항</span></div>
+      <div><b>실험 관리 체크사항</b><span>결과에서 드러난 불편 사항</span><span>관리 부담 체계 협의</span></div>
+    </div>
+    <div class="lb" style="margin-top:5mm">판단이 이어지는 곳</div>
+    <div class="chain5"><span>실험 결과</span><i>▶</i><span>설계 보완</span><i>▶</i><span>고정 구현 판단</span><i>▶</i><span>운영·관리 매뉴얼</span></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">46</div>
+</section>
+
+</body>
+</html>

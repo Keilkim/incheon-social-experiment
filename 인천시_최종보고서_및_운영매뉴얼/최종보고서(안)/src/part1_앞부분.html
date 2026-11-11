@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 창의디자인 사회실험 최종보고서 — 앞부분 시안</title>
+<style>
+@font-face{font-family:P;font-weight:200;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-2ExtraLight.ttf')}
+@font-face{font-family:P;font-weight:300;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-3Light.ttf')}
+@font-face{font-family:P;font-weight:400;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-4Regular.ttf')}
+@font-face{font-family:P;font-weight:500;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-5Medium.ttf')}
+@font-face{font-family:P;font-weight:600;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-6SemiBold.ttf')}
+@font-face{font-family:P;font-weight:700;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-7Bold.ttf')}
+@font-face{font-family:P;font-weight:800;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-8ExtraBold.ttf')}
+@font-face{font-family:P;font-weight:900;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-9Black.ttf')}
+
+:root{
+  --teal:#2E5A87; --teal-d:#22476C; --teal-l:#7D97B3; --sky:#E3E9F0; --sky2:#F2F5F8;
+  --navy:#1A2F4B; --navy-d:#13243A; --rd:.6mm;
+  --yellow:#C9D7E6; --ink:#1E2A35; --mute:#6A7784; --line:#D3DCE3;
+  --red:#E5332A;
+}
+@page{size:210mm 297mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#8a949c}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:P,'Apple SD Gothic Neo',sans-serif;color:var(--ink);font-weight:400;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#fff;margin:0 auto 8mm;page-break-after:always;break-after:page}
+@media print{html,body{background:#fff}.page{margin:0}}
+.serif{font-family:'NanumMyeongjo','AppleMyungjo',serif}
+.dummy{color:var(--red)}
+.pno{position:absolute;bottom:11mm;font-weight:800;font-size:11pt;letter-spacing:.02em;color:var(--teal);font-style:oblique 10deg}
+.even .pno{left:16mm} .odd .pno{right:16mm}
+.duo{position:relative;overflow:hidden;background:#E9EEF2}
+.duo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88) contrast(1.03)}
+
+/* running nav on body pages */
+.nav{position:absolute;top:12mm;left:16mm;right:16mm;display:flex;gap:0;border-top:.35mm solid var(--navy);padding-top:2.2mm;font-size:6.6pt;color:#9AA6B0;font-weight:500;letter-spacing:.02em}
+.nav span{flex:1;position:relative}
+.nav span.on{color:var(--teal);font-weight:700}
+.nav span.on::before{content:"";position:absolute;left:0;right:12%;top:-2.55mm;height:.9mm;background:var(--teal)}
+
+/* ---------- P1 COVER ---------- */
+.cover .eyebrow{position:absolute;top:20mm;left:18mm;font-size:7.5pt;letter-spacing:.32em;color:var(--teal);font-weight:600}
+.cover .t1{position:absolute;top:34mm;left:18mm;font-size:31pt;line-height:1.18;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.cover .t2{position:absolute;top:73mm;left:18mm;font-size:21pt;font-weight:300;color:var(--teal);letter-spacing:-.01em}
+.cover .t2 b{font-weight:700}
+.cover .claim{position:absolute;top:88mm;left:18mm;font-size:9pt;color:var(--mute);font-weight:500;line-height:1.6}
+.mosaic{position:absolute;top:106mm;left:0;right:0;height:112mm;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:1fr 1fr;gap:1.2mm;background:#fff}
+.mosaic .duo{grid-row:span 1}
+.mosaic .duo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(180deg,rgba(19,36,58,0),rgba(19,36,58,.65))}
+.mosaic .c4{grid-column:span 3}.mosaic .c3{grid-column:span 4}
+.mosaic .lab{position:absolute;left:3.2mm;bottom:3mm;z-index:2;color:#fff;line-height:1.25}
+.mosaic .lab i{display:block;font-style:normal;font-size:6.3pt;font-weight:600;letter-spacing:.14em;opacity:.9}
+.mosaic .lab b{display:block;font-size:10.5pt;font-weight:800}
+.mosaic .lab small{display:block;font-size:6.6pt;font-weight:500;opacity:.92}
+.cover .act{position:absolute;top:226mm;left:18mm;font-size:34pt;font-weight:900;color:var(--teal);letter-spacing:-.03em;line-height:1}
+.cover .act span{color:var(--navy)}
+.cover .tag{position:absolute;top:241mm;left:18mm;font-size:10pt;font-weight:600;color:var(--navy)}
+.cover .dots{position:absolute;top:228mm;right:18mm;display:flex;gap:2.4mm}
+.cover .dots i{width:7mm;height:7mm;border-radius:50%;display:block}
+.cover .foot{position:absolute;left:18mm;right:18mm;bottom:16mm;border-top:.3mm solid var(--line);padding-top:4mm;display:flex;justify-content:space-between;align-items:flex-end;font-size:9pt;color:var(--navy);font-weight:600}
+.cover .ci{width:34mm;height:9mm;background:repeating-linear-gradient(135deg,#D3DCE3 0 .3mm,#fff .3mm 1.3mm);display:flex;align-items:center;justify-content:center;font-size:6pt;color:#8C98A3;font-weight:700}
+
+/* ---------- P2 CONTENTS ---------- */
+.toc .head{position:absolute;top:22mm;left:16mm;right:16mm}
+.toc .head h1{font-size:30pt;font-weight:900;color:var(--teal);letter-spacing:-.01em;line-height:1}
+.toc .head p{margin-top:2.5mm;font-size:8pt;color:var(--mute);font-weight:500}
+.verbs{position:absolute;top:44mm;left:16mm;right:16mm;height:16mm;display:flex;align-items:center}
+.verbs .v{flex:1;position:relative;text-align:center;font-size:8.4pt;font-weight:700;color:var(--navy)}
+.verbs .v::before{content:"";display:block;margin:0 auto 1.8mm;width:3.2mm;height:3.2mm;border-radius:50%;background:var(--sky);position:relative;z-index:2}
+.verbs .v.fill::before{background:var(--teal)}
+.verbs .v small{display:block;font-size:6.2pt;color:var(--mute);font-weight:500;margin-top:.6mm}
+.verbs .rail{position:absolute;left:8%;right:8%;top:5.4mm;height:.5mm;background:var(--teal)}
+.rows{position:absolute;top:66mm;left:16mm;right:16mm}
+.row{display:grid;grid-template-columns:19mm 48mm 1fr 10mm;align-items:start;padding:3.1mm 0;border-top:.25mm solid var(--line)}
+.row:last-child{border-bottom:.25mm solid var(--line)}
+.row .num{font-size:20pt;line-height:.95;color:var(--teal)}
+.row .num.sm{font-family:P;font-size:12pt;font-weight:800;padding-top:1.2mm}
+.row .ttl b{display:block;font-size:6.8pt;letter-spacing:.12em;color:var(--teal);font-weight:700;margin-bottom:.6mm}
+.row .ttl span{font-size:10.4pt;font-weight:800;color:var(--navy);line-height:1.25}
+.row ul{list-style:none;font-size:7.4pt;color:#47545F;line-height:1.62;font-weight:500;padding-top:.3mm}
+.row ul li::before{content:"·";color:var(--teal);font-weight:900;margin-right:1.4mm}
+.row .pg{text-align:right;font-weight:800;font-size:9.5pt;color:var(--navy);padding-top:.8mm}
+.sites{display:grid;grid-template-columns:1fr 1fr;gap:1.4mm 3mm;padding-top:.4mm}
+.chip{display:grid;grid-template-columns:9mm 1fr 7mm;align-items:center;gap:1.8mm;font-size:7pt}
+.chip .th{width:9mm;height:6.6mm;border-radius:.3mm}
+.chip b{display:block;font-size:7.3pt;color:var(--navy);font-weight:700;line-height:1.2}
+.chip em{font-style:normal;color:var(--teal);font-weight:600;font-size:6.5pt}
+.chip .p{text-align:right;font-weight:800;color:var(--navy);font-size:7.4pt}
+
+/* ---------- P3 사회실험이란 ---------- */
+.concept{background:var(--navy-d);color:#fff}
+.concept .tagline{position:absolute;top:18mm;left:18mm;font-size:7pt;font-weight:700;letter-spacing:.14em;background:rgba(255,255,255,.14);padding:1mm 2.6mm;border-radius:var(--rd)}
+.concept h1{position:absolute;top:31mm;left:18mm;font-size:30pt;font-weight:800;letter-spacing:-.02em}
+.concept .lead{position:absolute;top:47mm;left:18mm;right:30mm;font-size:12pt;line-height:1.6;font-weight:400}
+.concept .txt{position:absolute;top:70mm;left:18mm;right:18mm;column-count:2;column-gap:8mm;font-size:8.5pt;line-height:1.74;font-weight:500;color:#fff}
+.concept .txt p{word-break:keep-all}
+.concept .txt p+p{margin-top:2.2mm}
+.concept .txt b{font-weight:800;color:var(--yellow);white-space:nowrap}
+.concept .lead b{font-weight:800;box-shadow:inset 0 -.35mm 0 rgba(201,215,230,.7)}
+.eq{position:absolute;top:118mm;left:20mm;right:20mm;display:flex;align-items:center;justify-content:space-between}
+.eq .c{width:45mm;height:45mm;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(255,255,255,.09)}
+.eq .c i{font-style:normal;font-size:6.6pt;letter-spacing:.2em;font-weight:600;opacity:.85}
+.eq .c .s{font-size:6.6pt;letter-spacing:.1em;font-weight:700;color:#C9D7E6;margin-bottom:1.2mm}
+.eq .c b{font-size:12.4pt;font-weight:800;margin:.8mm 0 1mm}
+.eq .c small{font-size:6.8pt;line-height:1.45;opacity:.95;font-weight:500}
+.eq .op{font-size:20pt;font-weight:300;opacity:.9}
+.equal{position:absolute;top:164mm;left:0;right:0;text-align:center;font-size:18pt;font-weight:300}
+.core{position:absolute;top:176mm;left:50%;transform:translateX(-50%);width:50mm;height:50mm;border-radius:50%;background:#fff;color:var(--teal);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 3mm rgba(255,255,255,.12),0 0 0 6.5mm rgba(255,255,255,.05)}
+.core b{font-size:17pt;font-weight:900;color:var(--navy);letter-spacing:-.02em}
+.core i{font-style:normal;font-size:7.4pt;letter-spacing:.2em;font-weight:600;margin-top:1mm}
+.core small{font-size:7.2pt;color:var(--mute);margin-top:2.6mm;font-weight:500;text-align:center;line-height:1.45}
+.branch{position:absolute;top:188mm;width:52mm;font-size:7.6pt;line-height:1.5}
+.branch.l{left:14mm;text-align:right}
+.branch.r{right:14mm}
+.branch .k{display:inline-block;font-size:7pt;font-weight:800;background:#C9D7E6;color:var(--navy);padding:.6mm 2.2mm;border-radius:var(--rd);margin-bottom:1.6mm}
+/* 안 맞으면(기록·다음 실험 조건) = 빗살, 글자 둘레는 바탕색으로 비움 */
+.branch.r .k{color:#fff;background:repeating-linear-gradient(135deg,#5A6B80 0 .3mm,var(--navy-d) .3mm 1.3mm);text-shadow:0 0 .45mm var(--navy-d),0 0 .45mm var(--navy-d),0 0 .45mm var(--navy-d),0 0 .45mm var(--navy-d)}
+.branch b{display:block;font-size:11.5pt;font-weight:800;margin-bottom:.8mm}
+.branch .ln{position:absolute;top:3.4mm;height:.4mm;width:9mm;background:#fff}
+.branch.l .ln{right:-11mm}.branch.r .ln{left:-11mm;background:repeating-linear-gradient(90deg,#fff 0 1.2mm,transparent 1.2mm 2.2mm)}
+.result{position:absolute;top:237mm;left:18mm;right:18mm;background:var(--teal);border-radius:var(--rd);padding:5mm 6mm;display:flex;align-items:center;gap:5mm}
+.result .ico{flex:none;width:12mm;height:12mm;border-radius:50%;background:#C9D7E6;color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13pt}
+.result b{display:block;font-size:12.5pt;font-weight:800}
+.result small{display:block;font-size:7.6pt;opacity:.85;margin-top:1mm;font-weight:500}
+.concept .quote{position:absolute;left:18mm;right:18mm;bottom:22mm;font-size:8.4pt;color:#C9D7E6;font-weight:600;display:flex;justify-content:space-between}
+.concept .quote span{font-weight:500;opacity:.75;font-size:6.6pt;color:#fff}
+.concept .pno{color:#fff}
+
+/* ---------- P4 과업 개요 ---------- */
+.brief .lcol{position:absolute;top:22mm;left:16mm;width:86mm;bottom:22mm}
+.brief .rcol{position:absolute;top:0;right:0;width:96mm;bottom:0;background:var(--navy)}
+.chtag{display:inline-block;background:var(--teal);color:#fff;font-size:7pt;font-weight:700;padding:.9mm 2.6mm;letter-spacing:.06em}
+.brief h1{font-size:20pt;font-weight:800;color:var(--navy);margin:3mm 0 5.4mm;letter-spacing:-.02em;line-height:1.2}
+.blk{margin-bottom:4.6mm}
+.blk p+p{margin-top:1.6mm}
+.blk.purpose p{font-size:8.5pt;line-height:1.72;word-break:keep-all}
+.blk .lb{font-size:7pt;font-weight:700;color:var(--teal);letter-spacing:.1em;margin-bottom:1.6mm;display:flex;align-items:center;gap:2mm}
+.blk .lb::after{content:"";flex:1;height:.25mm;background:var(--line)}
+.blk .big{font-size:12.5pt;font-weight:800;color:var(--navy)}
+.blk p{font-size:8.6pt;line-height:1.7;color:#33414D;font-weight:500}
+.blk p b{color:var(--navy);font-weight:800}
+.scope{display:grid;grid-template-columns:14mm 1fr;row-gap:2.6mm;font-size:8.2pt;line-height:1.5;color:#33414D;font-weight:500}
+.scope dt{font-weight:800;color:var(--navy);font-size:7.6pt;padding-top:.2mm}
+.scope dd b{color:var(--navy);font-weight:800}
+.tasks{display:flex;flex-direction:column;gap:2.4mm}
+.task{display:grid;grid-template-columns:7mm 1fr;gap:2mm;align-items:start}
+.task .n{width:6.4mm;height:6.4mm;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:8pt;display:flex;align-items:center;justify-content:center}
+.task b{display:block;font-size:8.4pt;color:var(--navy);font-weight:800;line-height:1.35}
+.task small{display:block;font-size:7.2pt;color:var(--mute);line-height:1.5;font-weight:500;margin-top:.4mm}
+.brief .photo{position:absolute;top:0;left:0;right:0;height:112mm}
+.brief .photo::before{content:"";position:absolute;left:0;right:0;bottom:0;height:52mm;background:linear-gradient(180deg,rgba(26,47,75,0),rgba(26,47,75,.65) 55%,var(--navy));z-index:3}
+.brief .photo .duo{position:absolute;inset:0}
+.brief .ph-cap{position:absolute;top:10mm;left:8mm;right:8mm;z-index:4;color:#fff}
+.brief .ph-cap i{font-style:normal;font-size:6.6pt;letter-spacing:.24em;font-weight:600;opacity:.85}
+.brief .ph-cap b{display:block;font-size:15pt;font-weight:800;line-height:1.35;margin-top:2mm;text-shadow:0 0 2.4mm rgba(19,36,58,.55)}
+.steps{position:absolute;top:92mm;left:9mm;right:9mm;z-index:5}
+.step{position:relative;display:grid;grid-template-columns:17mm 1fr;padding:0 0 11.5mm 0;color:#fff}
+.stats{position:absolute;left:0;right:0;bottom:6mm;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm}
+.stat{background:var(--sky);border-radius:var(--rd);padding:3.4mm 2mm 3mm;text-align:center}
+.stat b{display:block;font-size:19pt;font-weight:900;color:var(--teal);line-height:1;letter-spacing:-.02em}
+.stat b small{font-size:8pt;font-weight:800;color:var(--navy);margin-left:.4mm}
+.stat b{white-space:nowrap}
+.stat b.dummy,.stat b .dummy{color:var(--red)}
+.stat b.dummy{font-size:16pt;padding-top:1.5mm}
+.stat span{display:block;font-size:6.8pt;color:var(--navy);font-weight:700;margin-top:1.6mm}
+.stats-lb{position:absolute;left:0;right:0;bottom:30mm;font-size:7pt;font-weight:700;color:var(--teal);letter-spacing:.1em;display:flex;align-items:center;gap:2mm}
+.stats-lb::after{content:"";flex:1;height:.25mm;background:var(--line)}
+.step::before{content:"";position:absolute;left:6.6mm;top:12mm;bottom:0;width:.4mm;background:rgba(255,255,255,.28)}
+.step:last-child::before{display:none}
+.step .bub{width:13.5mm;height:13.5mm;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#2A4262}
+.step .bub i{font-style:normal;font-size:5pt;letter-spacing:.16em;color:var(--teal-l);font-weight:700}
+.step .bub b{font-size:12pt;font-weight:900;line-height:1;font-style:oblique 8deg}
+.step.hl .bub{background:var(--teal)}
+.step.hl .bub i{color:#fff}
+.step .tx .k{font-size:6.8pt;letter-spacing:.14em;color:var(--teal-l);font-weight:700}
+.step .tx h3{font-size:11.2pt;font-weight:800;margin:.6mm 0 1mm}
+.step .tx p{font-size:7.8pt;line-height:1.55;opacity:.88;font-weight:500}
+.brief .pno{color:var(--teal)}
+
+/* ---------- P5 Ⅰ 간지 ---------- */
+.divider{background:var(--navy-d)}
+.divider .horizon{position:absolute;left:0;right:0;top:63.6%;height:.25mm;background:rgba(255,255,255,.4)}
+.divider .num{position:absolute;right:20mm;top:58mm;font-size:210pt;line-height:1;color:#fff;font-weight:800}
+.divider .kick{position:absolute;left:18mm;top:96mm;font-size:13pt;font-weight:700;color:#C9D7E6;letter-spacing:.06em}
+.divider .ttl{position:absolute;left:18mm;top:106mm;font-size:30pt;line-height:1.22;font-weight:800;color:#fff;letter-spacing:-.02em}
+.divider .q{position:absolute;left:18mm;top:146mm;font-size:10.5pt;color:#DCE4EE;font-weight:500}
+.divider ol{position:absolute;left:18mm;top:206mm;list-style:none;color:#fff;font-size:9.6pt;line-height:2.05;font-weight:500;counter-reset:s}
+.divider ol li{counter-increment:s;display:flex;gap:4mm}
+.divider ol li::before{content:counter(s,decimal-leading-zero);font-weight:800;color:#C9D7E6;width:6mm}
+.divider ol li span{opacity:.75;margin-left:auto;padding-left:10mm;font-weight:700}
+.divider .pno{display:none}
+</style>
+</head>
+<body>
+
+<!-- =============== P1 표지 =============== -->
+<section class="page odd cover">
+  <div class="eyebrow">INCHEON CREATIVE DESIGN · SOCIAL EXPERIMENT</div>
+  <div class="t1">인천 창의디자인<br>사회실험 사업</div>
+  <div class="t2"><b>최종</b> 성과보고서</div>
+  <div class="claim">일곱 장소에서 시민과 함께 실험하고,<br>검증한 디자인을 설계와 고정시설로 남겼다.</div>
+
+  <div class="mosaic">
+    <div class="duo c4"><img src="img/01_약산초.jpg"><div class="lab"><i>01 · 안전</i><b>살피는 인천</b><small>약산초등학교 통학로</small></div></div>
+    <div class="duo c4"><img src="img/02_선인재단.jpg"><div class="lab"><i>02 · 안전</i><b>공감하는 인천</b><small>선인재단 등하굣길</small></div></div>
+    <div class="duo c4"><img src="img/03_송도.jpg"><div class="lab"><i>03 · 포용</i><b>동행하는 인천</b><small>송도 캠퍼스타운역 일대</small></div></div>
+    <div class="duo c4"><img src="img/04_차이나타운.jpg"><div class="lab"><i>04 · 포용</i><b>친절한 인천</b><small>차이나타운 공중화장실</small></div></div>
+    <div class="duo c3"><img src="img/05_굴포천.jpg"><div class="lab"><i>05 · 매력</i><b>만나는 인천</b><small>굴포천 제1교량(부흥교) 옆 산책로</small></div></div>
+    <div class="duo c3"><img src="img/06_로데오.jpg"><div class="lab"><i>06 · 편의</i><b>어울리는 인천</b><small>구월동 로데오거리·광장</small></div></div>
+    <div class="duo c3"><img src="img/07_연안여객터미널.jpg"><div class="lab"><i>07 · 편의</i><b>안내하는 인천</b><small>연안여객터미널 1층 대합실</small></div></div>
+  </div>
+
+  <div class="act">ACT <span>Incheon</span></div>
+  <div class="tag">함께 만드는 도시의 변화, 선순환의 인천</div>
+  <div class="dots"><i style="background:var(--teal)"></i><i style="background:var(--teal-l)"></i><i style="background:var(--navy)"></i></div>
+
+  <div class="foot"><span>2026. 12</span><span class="ci">인천광역시 CI</span></div>
+</section>
+
+<!-- =============== P2 목차 =============== -->
+<section class="page even toc">
+  <div class="head"><h1>CONTENTS</h1><p>묻고, 찾고, 설계하고, 실험하고, 검증하고, 남겼다</p></div>
+
+  <div class="verbs">
+    <div class="rail"></div>
+    <div class="v fill">묻다<small>배경과 방향</small></div>
+    <div class="v fill">찾다<small>조사와 참여</small></div>
+    <div class="v fill">설계하다<small>실험 설계</small></div>
+    <div class="v fill">실험하다<small>일곱 장소</small></div>
+    <div class="v fill">검증하다<small>종합분석</small></div>
+    <div class="v fill">남기다<small>설계·확산</small></div>
+  </div>
+
+  <div class="rows">
+    <div class="row"><div class="num sm">00</div><div class="ttl"><b>INTRO</b><span>들어가기</span></div>
+      <ul><li>사회실험이란</li><li>과업의 개요 및 목적</li></ul><div class="pg">03</div></div>
+
+    <div class="row"><div class="num serif">Ⅰ</div><div class="ttl"><b>묻다</b><span>사업의 배경과 방향</span></div>
+      <ul><li>디자인 사업의 패러다임 변화</li><li>사회실험으로 확인한 가치</li><li>ACT Incheon</li><li>4개 분야, 일곱 거점</li><li>추진 경과</li></ul><div class="pg">05</div></div>
+
+    <div class="row"><div class="num serif">Ⅱ</div><div class="ttl"><b>찾다</b><span>조사와 시민참여</span></div>
+      <ul><li>현장조사</li><li>포럼과 시민워크숍</li><li>국내외 사례</li><li>관계부서 협의와 심의 반영</li><li>진단 종합</li></ul><div class="pg">17</div></div>
+
+    <div class="row"><div class="num serif">Ⅲ</div><div class="ttl"><b>설계하다</b><span>실험의 설계</span></div>
+      <ul><li>여덟 곳에서 일곱 곳으로</li><li>거점별 실험 질문</li><li>1·2차 연동 설계</li><li>같은 조건에서 세 번 측정</li><li>참여와 운영</li></ul><div class="pg">31</div></div>
+
+    <div class="row"><div class="num serif">Ⅳ</div><div class="ttl"><b>실험하다</b><span>일곱 장소의<br>사회실험</span></div>
+      <div class="sites">
+        <div class="chip"><div class="th duo"><img src="img/01_약산초.jpg"></div><div><b>약산초등학교</b><em>살피는 인천</em></div><div class="p">49</div></div>
+        <div class="chip"><div class="th duo"><img src="img/05_굴포천.jpg"></div><div><b>굴포천</b><em>만나는 인천</em></div><div class="p">145</div></div>
+        <div class="chip"><div class="th duo"><img src="img/02_선인재단.jpg"></div><div><b>선인재단</b><em>공감하는 인천</em></div><div class="p">73</div></div>
+        <div class="chip"><div class="th duo"><img src="img/06_로데오.jpg"></div><div><b>로데오거리</b><em>어울리는 인천</em></div><div class="p">169</div></div>
+        <div class="chip"><div class="th duo"><img src="img/03_송도.jpg"></div><div><b>송도 캠퍼스타운역</b><em>동행하는 인천</em></div><div class="p">97</div></div>
+        <div class="chip"><div class="th duo"><img src="img/07_연안여객터미널.jpg"></div><div><b>연안여객터미널</b><em>안내하는 인천</em></div><div class="p">193</div></div>
+        <div class="chip"><div class="th duo"><img src="img/04_차이나타운.jpg"></div><div><b>차이나타운</b><em>친절한 인천</em></div><div class="p">121</div></div>
+      </div><div class="pg">47</div></div>
+
+    <div class="row"><div class="num serif">Ⅴ</div><div class="ttl"><b>검증하다</b><span>종합분석과 성과</span></div>
+      <ul><li>일곱 질문에 대한 답</li><li>맞은 것, 고쳐 맞출 것</li><li>참여의 성과</li><li>시민의 목소리</li></ul><div class="pg">217</div></div>
+
+    <div class="row"><div class="num serif">Ⅵ</div><div class="ttl"><b>남기다</b><span>설계 반영과 확산</span></div>
+      <ul><li>설계 반영 판단</li><li>마스터플랜</li><li>고정시설 구현</li><li>표준모델과 운영 매뉴얼</li><li>협의·이관과 홍보</li></ul><div class="pg">231</div></div>
+
+    <div class="row"><div class="num sm">+</div><div class="ttl"><b>APPENDIX</b><span>부록</span></div>
+      <ul><li>과업 이행 대조 · 분석 기준 · 자료 출처 · 참여 기관과 시민</li></ul><div class="pg">249</div></div>
+  </div>
+  <div class="pno">02</div>
+</section>
+
+<!-- =============== P3 사회실험이란 =============== -->
+<section class="page odd concept">
+  <div class="tagline">들어가기</div>
+  <h1>사회실험이란,</h1>
+  <p class="lead">거창한 계획을 한 번에 완성하는 대신,<br><b>도시에 디자인을 작게 입혀 보고 시민의 반응으로 고쳐 맞추는 일</b>이다.</p>
+  <div class="txt">
+    <p>사회실험은 생활 속 문제에 디자인을 작게 적용하고, 이용자의 경험으로 가능성을 확인하는 실증형 접근이다. 계획을 크게 세워 한 번에 완성하지 않고, 작게 설치한 뒤 시민이 직접 써 보게 하고, 그 반응과 변화를 관찰한다. 시민이 매일 지나는 통학로와 산책로, 대합실이 곧 실험실이 된다.</p>
+    <p>옷을 맞출 때의 <b>가봉</b>과 같다. 시침질한 옷을 입어 보고 어디가 맞지 않는지 확인한 뒤 고쳐 맞춘다. 비용은 최소로 들이고 언제든 되돌릴 수 있게 설치하며, 시민이 실제로 겪는 장면에서 행동을 세고 인식을 묻는다.</p>
+    <p>잘 작동한 것은 검증된 치수로 정식 제작하고, 예상과 다르게 작동한 것도 그대로 기록하였다. 실패 역시 데이터이고, 어디가 맞지 않았는지가 다음 실험의 조건이 되기 때문이다. 인천 창의디자인 사회실험은 일곱 거점에서 1·2차 실험으로 이 순환을 거쳐, 결과를 <b>상설·수정·중지</b>로 나누었다.</p>
+  </div>
+
+  <div class="eq">
+    <div class="c"><span class="s">STEP 01</span><i>가봉·시침질</i><b>작게 설치한다</b><small>비용은 최소로,<br>언제든 되돌릴 수 있게</small></div>
+    <div class="op">+</div>
+    <div class="c"><span class="s">STEP 02</span><i>입어 본다</i><b>직접 사용한다</b><small>시민이 실제로<br>겪는 장면에서</small></div>
+    <div class="op">+</div>
+    <div class="c"><span class="s">STEP 03</span><i>어디가 안 맞는지</i><b>관찰한다</b><small>행동을 세고,<br>인식을 묻는다</small></div>
+  </div>
+
+  <div class="equal">=</div>
+  <div class="core"><b>사회실험</b><i>SOCIAL EXPERIMENT</i><small>인천의 치수를<br>찾는 과정</small></div>
+
+  <div class="branch l"><span class="ln"></span><span class="k">잘 맞으면</span><b>발전시킨다</b>검증된 치수로 정식 제작해<br>상설 시설로 남긴다</div>
+  <div class="branch r"><span class="ln"></span><span class="k">안 맞으면</span><b>기록한다</b>어디가 맞지 않았는지가<br>다음 실험의 조건이 된다</div>
+
+  <div class="result"><div class="ico">↻</div><div><b>두 결과 모두 데이터가 되어, 인천의 치수가 쌓인다</b><small>잘 맞은 것은 상설로, 맞지 않은 것은 다음 실험의 조건으로 이어졌다</small></div></div>
+
+  <div class="quote">“기성복은 안 맞으면 버려야 하지만, 가봉은 고쳐서 맞출 수 있다.”<span>ACT Incheon 사회실험 개념</span></div>
+  <div class="pno">03</div>
+</section>
+
+<!-- =============== P4 과업의 개요 및 목적 =============== -->
+<section class="page even brief">
+  <div class="lcol">
+    <span class="chtag">들어가기</span>
+    <h1>과업의 개요 및 목적</h1>
+
+    <div class="blk"><div class="lb">과업명</div><div class="big">인천 창의디자인 사회실험 사업</div></div>
+
+    <div class="blk purpose"><div class="lb">과업의 목적</div>
+      <p>이 과업은 인천광역시가 마주한 <b>생활권 사회문제</b>를 공공디자인 솔루션과 <b>시민참여형 사회실험</b>으로 검증하고, 그 결과를 설계에 반영하는 실증형 프로젝트다.</p>
+      <p>4개 분야 8개소 내외로 계획한 대상지는 현장조사와 협의를 거쳐 일곱 거점으로 확정되었다. 거점마다 1차와 2차 실험을 이어 운영하고, 사전조사에서 잰 실험 전 기준값과 견주어 무엇이 달라졌는지 확인하였다. 인천시민디자인단과 청년작가는 협업TFT로 참여하였고, 사회실험 포럼은 시민과 공무원에게 배움의 자리가 되었다.</p>
+      <p>실험 결과는 <b>기본·실시설계와 고정시설, 표준모델(안)과 운영 매뉴얼</b>로 이어졌다. 성과가 검증된 거점을 고정시설로 구현하고, 시민 만족도 조사와 결과자료집으로 사업의 성과를 알렸다.</p></div>
+
+    <div class="blk"><div class="lb">과업의 범위</div>
+      <dl class="scope">
+        <dt>공간</dt><dd>인천광역시 관내 <b>4개 분야</b>(안전·포용·매력·편의) <b>7개 거점</b></dd>
+        <dt>시간</dt><dd>2026년 5월 15일 ~ 12월 30일</dd>
+        <dt>사업비</dt><dd>410,000,000원 (부가가치세 포함)</dd>
+        <dt>내용</dt><dd>사회실험 운영에 따른 기본·실시설계, 인천시민디자인단 운영, 청년작가 협업, 고정시설 1개소 이상 구현, 운영 매뉴얼 작성 및 홍보</dd>
+      </dl></div>
+
+    <div class="blk"><div class="lb">주요 과업</div>
+      <div class="tasks">
+        <div class="task"><div class="n">1</div><div><b>사회실험 운영에 따른 기본 및 실시설계</b><small>거점 선정·기본구상 → 실험 성과 기반 마스터플랜·도면·시방서 → 소관부서 사전협의</small></div></div>
+        <div class="task"><div class="n">2</div><div><b>시민참여형 사회실험 운영</b><small>사회실험 포럼 → 시민디자인단·청년작가 협업TFT → 거점별 1·2차 시범구현</small></div></div>
+        <div class="task"><div class="n">3</div><div><b>시범구현 매뉴얼 작성 및 홍보</b><small>고정시설 1개소 이상 구현 → 표준모델(안)·운영 매뉴얼 → 만족도 조사·결과자료집</small></div></div>
+      </div></div>
+
+    <div class="stats-lb">숫자로 보는 사업</div>
+    <div class="stats">
+      <div class="stat"><b>4<small>개</small></b><span>분야</span></div>
+      <div class="stat"><b>7<small>곳</small></b><span>실험 거점</span></div>
+      <div class="stat"><b>14<small>회</small></b><span>1·2차 사회실험</span></div>
+      <div class="stat"><b class="dummy">0,000<small class="dummy">명</small></b><span>참여 시민</span></div>
+    </div>
+  </div>
+
+  <div class="rcol">
+    <div class="photo"><div class="duo"><img src="img/05_굴포천.jpg"></div></div>
+    <div class="ph-cap"><b>문제를 찾는 데서 시작해<br>인천 전역으로 넓힐 기반을<br>남기기까지</b></div>
+    <div class="steps">
+      <div class="step"><div class="bub"><i>STEP</i><b>01</b></div><div class="tx"><div class="k">문제발굴</div><h3>일곱 거점을 정하였다</h3><p>현장조사와 시민 의견으로 4개 분야의<br>생활 문제를 확인하고 거점을 선정하였다.</p></div></div>
+      <div class="step hl"><div class="bub"><i>STEP</i><b>02</b></div><div class="tx"><div class="k">사회실험</div><h3>1·2차 연동 실험을 운영하였다</h3><p>거점마다 두 차례 실험을 이어 운영하고<br>시민의 반응과 행동을 기록하였다.</p></div></div>
+      <div class="step"><div class="bub"><i>STEP</i><b>03</b></div><div class="tx"><div class="k">설계</div><h3>실험 데이터로 설계를 보완하였다</h3><p>맞은 것과 고쳐 맞출 것을 가려<br>기본·실시설계에 반영하였다.</p></div></div>
+      <div class="step"><div class="bub"><i>STEP</i><b>04</b></div><div class="tx"><div class="k">고정구현</div><h3>1개소를 고정시설로 남겼다</h3><p>성과가 검증된 <span class="dummy">[거점명]</span>을 고정시설로<br>구현하고 관리 주체에 이관하였다.</p></div></div>
+      <div class="step"><div class="bub"><i>STEP</i><b>05</b></div><div class="tx"><div class="k">확산</div><h3>표준모델과 매뉴얼을 만들었다</h3><p>표준모델(안)과 운영 매뉴얼로<br>인천 전역 확산의 기반을 마련하였다.</p></div></div>
+    </div>
+  </div>
+  <div class="pno">04</div>
+</section>
+
+<!-- =============== P5 Ⅰ 간지 =============== -->
+<section class="page odd divider">
+  <div class="horizon"></div>
+  <div class="num serif">Ⅰ</div>
+  <div class="kick">묻다</div>
+  <div class="ttl">사업의 배경과<br>방향</div>
+  <div class="q">왜 인천은 디자인을 실험하는가</div>
+  <ol>
+    <li>디자인 사업의 패러다임 변화<span>06</span></li>
+    <li>사회실험으로 확인한 가치<span>08</span></li>
+    <li>ACT Incheon<span>10</span></li>
+    <li>4개 분야, 일곱 거점<span>12</span></li>
+    <li>추진 경과<span>14</span></li>
+  </ol>
+</section>
+
+</body>
+</html>

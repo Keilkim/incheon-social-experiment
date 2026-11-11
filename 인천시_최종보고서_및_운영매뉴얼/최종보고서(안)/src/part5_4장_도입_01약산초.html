@@ -1,0 +1,1416 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 창의디자인 사회실험 최종보고서 — Ⅳ장 도입 · 01 약산초등학교</title>
+<!--
+================================================================================
+ Ⅳ 실험하다 · 일곱 장소의 사회실험 — p47 장 간지 / p48 도입(1·2차 관계 유형) / p49–72 거점편 01 약산초등학교
+================================================================================
+ [거점편 24쪽 기준 모듈] 02~07 거점은 이 파일의 p49–72 부분을 복제해 '거점 변수'와 내용만 바꾼다.
+  · 고정 레이아웃  : st_module.css (.st- 접두사). common.css 다음에 link. 거점마다 수정하지 않는다.
+  · 거점 변수      : 아래 <style>의 body.st-01 { --st 분야색 / --st-l 옅은 바탕 / --st-d 진한색 / --st-n 썸 탭 순번 }
+                     02 선인재단 → .st-02{--st:#3A5F8E;...;--st-n:2}, 03 송도 → 포용색 --f-incl, 04 차이나타운 포용,
+                     05 굴포천 매력 --f-attr, 06 로데오 편의 --f-conv, 07 연안 편의 --f-conv.
+  · 거점마다 바뀌는 것 : 사진(img/0N_거점_*), 실험명·일정·수치, 배치도 SVG, 인용(원문이 없으면 .quote-slot), 판정 더미.
+  · 쪽 머리(고정)  : .sec = <span class="no">Ⅳ-0N</span><span class="site">거점명</span><span class="part">소절명</span><span class="st-step">(10칸, 현재 .on)</span>
+                     바깥 가장자리 .st-thumb(거점 번호 탭, --st-n으로 세로 위치 이동). 간지(1쪽)에는 탭 없음.
+  · 쪽 유형(글밥)  : 서술형 = .st-tx 본문 700~1,200자 + 작은 도식 / 혼합형 = 도식 1 + 본문 400~700자 / 도식형 = 도식 + 해설 200~400자
+
+ 상대 | 실제(01) | 소절(step)     | 유형 | 주도 도식 · 주요 클래스
+ -----+----------+----------------+------+------------------------------------------------------------
+  1 홀|  49      | 거점 간지       |  —   | 전면 사진 + 분야색 띠 + 질문형 카피 · .st-cover .st-cv-*
+  2 짝|  50      | 왜 여기인가 ①(1)| 서술 | 리드+본문 1단 + 사이드 사진 2 + 사람·공간·문제 카드 · .st-split .st-prof
+  3 홀|  51      | 왜 여기인가 ②(1)| 혼합 | 근거 수치 4 → 실험 질문 수렴 + 문제→해법 사다리 · .st-ev .st-q .st-ladder4
+  4 짝|  52      | 기획의 변천 ①(2)| 서술 | 문서 버전 세로 스트립(사이드) + 본문 · .st-ver .st-shift
+  5 홀|  53      | 기획의 변천 ②(2)| 혼합 | 참여 → 디자인 재료 흐름(3열 흐름) + 사진 · .st-flow
+  6 짝|  54      | 실험 설계 ①(3)  | 혼합 | 1·2차 거울 비교 + 유지 조건 띠 · .st-mir .st-keep
+  7 홀|  55      | 실험 설계 ②(3)  | 도식 | 지표 파이프 3 + 측정 타임라인 + 표본 띠 · .st-pipe .st-nums
+  8 짝|  56      | 1차 실험 ①(4)   | 혼합 | 현장 사진 + 콜아웃 · .st-hero .st-co
+  9 홀|  57      | 1차 실험 ②(4)   | 혼합 | 색 체계(먼셀) + 제작 도면 + 치수 · .st-pal .st-dims
+ 10 짝|  58      | 2차 실험 ①(5)   | 서술 | 디자인 패널 + 2단 본문 · .st-pal .st-c2
+ 11 홀|  59      | 2차 실험 ②(5)   | 혼합 | 시뮬레이션 + 치수 + 1차 대비 변경 태그 · .st-chg
+ 12 짝|  60      | 현장 기록 ①(6)  | 도식 | 배치도(세로판 재작도 SVG) + 위치 카드 · .st-plan .st-pos
+ 13 홀|  61      | 현장 기록 ②(6)  | 혼합 | 운영 달력 + 회차 기록 카드 · .st-log
+ 14 짝|  62      | 정량 ① 표본(7)  | 혼합 | 배포→회수→유효 흐름 + 학년 막대 · .st-chart
+ 15 홀|  63      | 정량 ② 지표(7)  | 도식 | 확정 축 차트(회색 막대 + 붉은 더미) · .st-kpi
+ 16 짝|  64      | 정량 ③ 비교(7)  | 혼합 | 위치별 점 그래프 + 학년군 + 외부 조건 · .st-chart
+ 17 홀|  65      | 정량 ④ 소결(7)  | 서술 | 본문 + 소결 3 · .st-sum
+ 18 짝|  66      | 정성 ① 자료(8)  | 혼합 | 자료 갈래 트리 + 주요 단어 · .st-src
+ 19 홀|  67      | 정성 ② 주제1(8) | 혼합 | 인용 벽(심의도서 수록 1차 응답 + 2차 .quote-slot) · .st-qw
+ 20 짝|  68      | 정성 ③ 주제2(8) | 도식 | 방사형 주제 맵 · .st-rad .st-th
+ 21 홀|  69      | 정성 ④ 소결(8)  | 서술 | 본문 + 단계 사다리 · .st-ladder4
+ 22 짝|  70      | 통합 해석(9)    | 혼합 | 질문 → 정량·정성 → 답 수렴 · .st-qa
+ 23 홀|  71      | 가봉 판정(9)    | 도식 | 요소 카드 + 판정 칩(.judge, 미확정은 .judge.tbd) · .st-jg
+ 24 짝|  72      | 설계 반영(10)   | 서술 | 본문 + 판단 매트릭스 + 다음 조건 · .st-dm .st-next
+ 실험 뒤 확정할 값은 모두 붉은 더미(.dummy)로 두었다. 원문 인용은 심의도서에 수록된 1차 응답만 쓰고, 나머지는 .quote-slot.
+================================================================================
+-->
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="st_module.css">
+<style>
+/* ---------- 거점 변수 (01 약산초 · 안전) ---------- */
+body.st-01{--st:#3A5F8E;--st-l:#E8EEF8;--st-d:#22476C;--st-n:1}
+
+/* ---------- Ⅳ장 간지 · 도입 전용 (p47–48) ---------- */
+.divider ol li i{font-style:normal;font-size:6.6pt;font-weight:800;border-radius:var(--rd);padding:.1mm 1.4mm;color:#fff;align-self:center;margin-left:-1mm}
+.divider ol li em{font-style:normal;opacity:.8;font-weight:500;font-size:8.4pt}
+.divider .runs{position:absolute;left:18mm;right:20mm;top:163mm;display:flex;gap:3mm;color:#fff}
+.divider .runs div{border-top:.35mm solid rgba(255,255,255,.6);padding-top:2mm;font-size:7.2pt;font-weight:600;line-height:1.45;width:40mm}
+.divider .runs b{display:block;font-size:15pt;font-weight:900;color:var(--yellow);line-height:1.1}
+.divider .runs b small{font-size:8pt;margin-left:.6mm}
+
+.rel{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.rel-col{display:flex;flex-direction:column;gap:2mm}
+.rel-hd{border-radius:var(--rd);padding:3mm 3.4mm;display:grid;grid-template-columns:27mm 1fr;gap:3mm;align-items:center;color:#fff}
+.rel-col.cmp .rel-hd{background:var(--teal)}
+.rel-col.stp .rel-hd{background:var(--navy)}
+.rel-hd .k{font-size:6.4pt;letter-spacing:.16em;font-weight:800;opacity:.85}
+.rel-hd h4{font-size:13pt;font-weight:900;line-height:1.15;margin:.4mm 0 1mm}
+.rel-hd p{font-size:6.9pt;line-height:1.5;font-weight:500;opacity:.95}
+.rc{border-radius:var(--rd);padding:2mm 2.6mm 2mm 2.8mm;background:var(--sky2)}
+.rc .h{display:flex;align-items:center;gap:1.6mm;margin-bottom:1.4mm}
+.rc .h b{font-size:10pt;font-weight:900;color:var(--c);font-style:oblique 8deg}
+.rc .h .nm{font-size:8.2pt;font-weight:800;color:var(--navy)}
+.rc .h .ax{margin-left:auto;font-size:6.2pt;font-weight:800;color:var(--teal-d);background:var(--sky);border-radius:var(--rd);padding:.3mm 1.8mm;white-space:nowrap}
+.rel-col.stp .rc .h .ax{background:#E6EAF0;color:var(--navy)}
+.rc .fl{display:grid;grid-template-columns:1fr 5.4mm 1fr;align-items:stretch}
+.rc .fl>div{background:#fff;border-radius:var(--rd);padding:1.5mm 2mm;font-size:7pt;font-weight:700;color:var(--navy);line-height:1.35}
+.rc .fl>div i{display:inline-block;font-style:normal;font-size:5.8pt;font-weight:800;color:#fff;background:var(--teal);border-radius:var(--rd);padding:0 1.2mm;margin-right:1mm;vertical-align:.2mm}
+.rc .fl>div.b i{background:var(--navy)}
+.rc .fl .op{display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--teal);font-size:9pt;background:none;padding:0}
+.rel-col.stp .rc .fl .op{color:var(--navy)}
+.rel-col.stp .rc .fl>div.b{background:var(--sky)}
+.rc .ck{margin-top:1.2mm;font-size:6.4pt;font-weight:600;color:var(--mute)}
+.rc .ck b{color:var(--navy);font-weight:800;margin-right:1mm}
+.mod .t{font-size:7pt;font-weight:800;color:var(--teal);letter-spacing:.1em;margin-bottom:1.6mm}
+.mod .bar{display:flex;height:11mm}
+.mod .bar div{position:relative;display:flex;flex-direction:column;justify-content:center;padding-left:3mm;color:#fff;font-size:6.2pt;font-weight:800;line-height:1.2;clip-path:polygon(0 0,calc(100% - 2mm) 0,100% 50%,calc(100% - 2mm) 100%,0 100%,2mm 50%)}
+.mod .bar div:first-child{clip-path:polygon(0 0,calc(100% - 2mm) 0,100% 50%,calc(100% - 2mm) 100%,0 100%);padding-left:1.8mm}
+.mod .bar div small{font-size:5.4pt;font-weight:600;opacity:.85}
+
+/* ---------- 약산초 쪽 고유 ---------- */
+.y-wsph{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1.6mm;height:46mm}
+.y-wsph .st-ph{height:46mm}
+.y-cal svg{display:block}
+.y-src{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.y-src .c{border-radius:var(--rd);overflow:hidden;background:var(--sky2)}
+.y-src .c .h{padding:2.2mm 2.8mm;color:#fff;font-size:8.6pt;font-weight:900}
+.y-src .c .h small{display:block;font-size:6.2pt;font-weight:600;opacity:.85;margin-top:.2mm}
+.y-src .c ul{list-style:none;padding:2mm 2.8mm 2.4mm;font-size:6.9pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.y-src .c ul li{padding:1.5mm 0;border-bottom:.25mm solid var(--line);display:flex;justify-content:space-between;gap:2mm}
+.y-src .c ul li:last-child{border-bottom:0}
+.y-src .c ul li b{color:var(--navy);font-weight:900;white-space:nowrap}
+.y-conv{display:grid;grid-template-columns:1fr 1fr 6mm 52mm;gap:2mm;align-items:stretch}
+.y-conv>div{border-radius:var(--rd);padding:2.4mm 2.8mm;font-size:7.1pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.y-conv .k{grid-column:1/-1;display:flex;align-items:center;gap:2mm;padding:0;font-size:8.6pt;font-weight:900;color:var(--navy)}
+.y-conv .k i{font-style:normal;background:var(--st);color:#fff;font-size:6.6pt;font-weight:800;border-radius:var(--rd);padding:.3mm 1.8mm}
+.y-conv .qn{background:#F3F6F8}.y-conv .ql{background:var(--st-l)}
+.y-conv .qn i,.y-conv .ql i{display:block;font-style:normal;font-size:6pt;font-weight:800;letter-spacing:.1em;color:var(--mute);margin-bottom:.4mm}
+.y-conv .ar{display:flex;align-items:center;justify-content:center;color:var(--st);font-weight:900;padding:0}
+.y-conv .an{background:var(--navy);font-weight:700;color:#fff;display:flex;align-items:center}
+.y-conv .an .dummy{color:#FF8A80!important}
+.y-inset{position:absolute;right:4mm;bottom:4mm;width:50mm;background:#fff;border-radius:var(--rd);padding:1.4mm;box-shadow:0 .4mm 1.6mm rgba(0,0,0,.15)}
+.y-inset img{width:100%;display:block;border-radius:.3mm}
+.y-inset span{display:block;font-size:5.8pt;color:var(--mute);font-weight:600;margin-top:.8mm}
+.y-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm}
+.y-strip .st-ph{height:30mm}
+.y-two{display:grid;grid-template-columns:1fr 8mm 1fr;align-items:stretch}
+.y-two>div{border-radius:var(--rd);padding:3mm 3.4mm}
+.y-two .a{background:#EEF1F4}.y-two .b{background:var(--st);color:#fff}
+.y-two i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.14em;font-weight:800;opacity:.75}
+.y-two b{display:block;font-size:10pt;font-weight:900;margin:.6mm 0 1.6mm;color:var(--navy)}
+.y-two .b b{color:#fff}
+.y-two ul{list-style:none;font-size:7.2pt;line-height:1.55;font-weight:500}
+.y-two ul li{display:grid;grid-template-columns:20mm 1fr;border-top:.25mm solid rgba(21,58,94,.15);padding:1mm 0}
+.y-two .b ul li{border-color:rgba(255,255,255,.3)}
+.y-two ul li span{font-weight:800;opacity:.7}
+.y-two .vs{display:flex;align-items:center;justify-content:center;font-size:12pt;font-weight:900;color:var(--st);padding:0}
+.y-ba{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6mm}
+.y-ba .c{border-radius:var(--rd);overflow:hidden;background:var(--sky2);display:flex;flex-direction:column}
+.y-ba .c .k{background:var(--navy);color:#fff;font-size:7.6pt;font-weight:900;padding:1.6mm 2.6mm}
+.y-ba .c .r{display:grid;grid-template-columns:22mm 1fr;gap:2mm;align-items:center;padding:2mm 2.6mm}
+.y-ba .c .r .st-ph{height:17mm;border-radius:.3mm}
+.y-ba .c .r .ic{height:17mm;border-radius:.3mm;background:#E3E8EC;display:flex;align-items:center;justify-content:center;font-size:6.4pt;font-weight:800;color:var(--mute);text-align:center;line-height:1.3}
+.y-ba .c .r p{font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500}
+.y-ba .c .r p b{display:block;font-size:7.8pt;color:var(--navy);font-weight:900}
+.y-ba .c .r.b{background:var(--st-l)}
+.y-ba .c .r.b p b{color:var(--st-d)}
+.y-ba .c .dn{text-align:center;color:var(--st);font-weight:900;font-size:7pt;line-height:1;padding:.6mm 0;background:linear-gradient(var(--sky2),var(--st-l))}
+.y-unit{display:grid;grid-template-columns:repeat(3,1fr);border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.y-unit div{padding:2.4mm 3mm 2.6mm;font-size:7pt;line-height:1.5;color:#3D4A56;font-weight:500;border-right:.25mm solid var(--line)}
+.y-unit div:first-child{padding-left:0}.y-unit div:last-child{border-right:0;padding-right:0}
+.y-unit div i{font-style:normal;font-size:6.4pt;font-weight:700;color:var(--mute);margin-left:1.6mm}
+.y-unit div b{font-size:9.4pt;font-weight:900;color:var(--navy)}
+.y-unit div .t{display:block;margin-bottom:1mm}
+.y-unit .dummy{white-space:nowrap}
+.y-unit div em{font-style:normal;font-weight:900;color:var(--navy)}
+.y-fun{display:grid;grid-template-columns:12mm 1fr 5mm 1fr 5mm 1fr;align-items:center;row-gap:2mm}
+.y-fun .lab{font-size:8pt;font-weight:900}
+.y-fun .st{border-radius:var(--rd);padding:2.4mm 3mm;background:#F1F3F5;text-align:center}
+.y-fun .st i{display:block;font-style:normal;font-size:6.4pt;font-weight:800;color:var(--mute)}
+.y-fun .st b{display:block;font-size:14pt;font-weight:900;color:var(--red);line-height:1.1;margin-top:.4mm}
+.y-fun .ar{text-align:center;color:var(--st);font-weight:900}
+.y-code{display:grid;grid-template-columns:24mm 1fr;row-gap:2mm;align-items:center}
+.y-code .h{font-size:7.6pt;font-weight:900;color:var(--navy)}
+.y-code .h small{display:block;font-size:6.2pt;font-weight:600;color:var(--mute)}
+.y-code .tags{display:flex;flex-wrap:wrap;gap:1.6mm}
+.y-code .tags span{font-size:7.2pt;font-weight:800;border-radius:var(--rd);padding:.8mm 2.6mm;background:var(--st-l);color:var(--st-d)}
+.y-code .tags span b{color:var(--red);font-weight:900;margin-left:1mm}
+.y-code .tags.e span{background:#EEF2F6;color:var(--navy)}
+.y-say{display:grid;grid-template-columns:1fr 9mm 1fr;align-items:stretch;row-gap:2.4mm}
+.y-say>div{border-radius:var(--rd);padding:3mm 3.4mm}
+.y-say .d{background:#EEF1F4}
+.y-say .d i,.y-say .k i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.12em;font-weight:800;color:var(--mute);margin-bottom:.8mm}
+.y-say .d b{font-size:11pt;font-weight:900;color:var(--mute)}
+.y-say .d b.k2{text-decoration:none;color:var(--navy)}
+.y-say .k{background:var(--sky)}
+.y-say .k b{font-size:12pt;font-weight:900;color:var(--navy)}
+.y-say .ar{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--st);font-weight:900;padding:0;font-size:10pt}
+.y-say .ar small{font-size:5.8pt;font-weight:800;color:var(--mute);margin-top:.6mm}
+.y-th4{display:grid;grid-template-columns:1fr 1fr;gap:3mm;position:relative}
+.y-th4 .c{border-radius:var(--rd);background:#F3F6F8;padding:3.4mm 3.6mm;min-height:60mm}
+.y-th4 .c:nth-child(1),.y-th4 .c:nth-child(3){padding-right:16mm}
+.y-th4 .c:nth-child(2),.y-th4 .c:nth-child(4){padding-left:16mm}
+.y-th4 .c:nth-child(2),.y-th4 .c:nth-child(4){text-align:right}
+.y-th4 .c .h{display:flex;align-items:baseline;gap:2mm;margin-bottom:1.4mm}
+.y-th4 .c:nth-child(2) .h,.y-th4 .c:nth-child(4) .h{justify-content:flex-end}
+.y-th4 .c .h b{font-size:10.4pt;font-weight:900;color:var(--navy)}
+.y-th4 .c .h span{font-size:6.6pt;font-weight:800;color:#fff;background:var(--st);border-radius:var(--rd);padding:.2mm 1.6mm}
+.y-th4 .c .qq{font-size:10pt;font-weight:800;color:var(--st-d);margin-bottom:1.4mm;line-height:1.4}
+.y-th4 .c p{font-size:7.4pt;line-height:1.55;color:#3D4A56;font-weight:500;margin-bottom:1.6mm}
+.y-th4 .c .quote-slot{text-align:left}
+.y-th4 .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36mm;height:36mm;border-radius:50%;background:var(--r2);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 2.4mm #fff}
+.y-th4 .mid i{font-style:normal;font-size:6pt;letter-spacing:.16em;color:var(--teal-l);font-weight:800}
+.y-th4 .mid b{font-size:9.6pt;font-weight:900;line-height:1.35;margin-top:.8mm}
+.y-step{display:grid;grid-template-columns:16mm repeat(4,1fr);gap:1.6mm;align-items:stretch}
+.y-step>div{border-radius:var(--rd);padding:2.2mm 2.4mm;font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500;background:#F3F6F8}
+.y-step .hh{background:var(--st);color:#fff;font-weight:800;font-size:7.4pt;text-align:center}
+.y-step .hh small{display:block;font-size:6pt;opacity:.8;font-weight:700}
+.y-step .rl{background:none;display:flex;align-items:center;justify-content:center;padding:0}
+.y-step .mk{display:block;font-size:11pt;font-weight:900;color:var(--st);line-height:1;margin-bottom:.8mm}
+.y-step .mk.dummy{font-size:9pt}
+.y-dimw div{grid-template-columns:33mm 1fr}
+.basis{display:flex;flex-wrap:wrap;align-items:baseline;gap:1mm 0;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line);padding:2.4mm 0;font-size:7pt;font-weight:700;color:var(--navy);line-height:1.4}
+.basis>i{font-style:normal;font-weight:800;color:var(--st);margin-right:4mm}
+.basis>span{padding:0 3.4mm;border-left:.25mm solid var(--line)}
+.basis>span:nth-child(2){border-left:0;padding-left:0}
+.basis b{font-size:9.6pt;font-weight:900;margin-left:1.2mm}
+.basis small{font-size:6.4pt;font-weight:600;color:var(--mute);margin-left:.8mm}
+</style>
+</head>
+<body class="st st-01">
+<svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true"><defs><pattern id="y-hatch-pre" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#7D97B3"/></pattern><pattern id="y-hatch-blue" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#2E5A87"/></pattern><pattern id="y-hatch-gray" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#9AA6B1"/></pattern><pattern id="y-hatch-zone" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width=".3" height="1.3" fill="#7D97B3"/></pattern></defs></svg>
+
+<!-- ================= p47 Ⅳ장 간지 ================= -->
+<section class="page odd divider">
+  <div class="horizon"></div>
+  <div class="num serif">Ⅳ</div>
+  <div class="kick">실험하다</div>
+  <div class="ttl">일곱 장소의<br>사회실험</div>
+  <div class="q">같은 자리에서 두 번 바꿔 보고, 무엇이 달라졌는지 재었다</div>
+  <div class="runs">
+    <div><b>7<small>거점</small></b>4개 분야 · 일곱 개의 ‘○○하는 인천’</div>
+    <div><b>14<small>회</small></b>거점마다 1차·2차 실험</div>
+    <div><b>3<small>번</small></b>사전조사 · 1차 · 2차를 같은 조건으로 측정</div>
+  </div>
+  <ol>
+    <li>약산초등학교 <i style="background:var(--f-safe)">안전</i><em>살피는 인천</em><span>49</span></li>
+    <li>선인재단 <i style="background:var(--f-safe)">안전</i><em>공감하는 인천</em><span>73</span></li>
+    <li>송도 캠퍼스타운역 일대 <i style="background:var(--f-incl)">포용</i><em>동행하는 인천</em><span>97</span></li>
+    <li>차이나타운 공중화장실 <i style="background:var(--f-incl)">포용</i><em>친절한 인천</em><span>121</span></li>
+    <li>굴포천 제1교량(부흥교) 옆 산책로 <i style="background:var(--f-attr)">매력</i><em>만나는 인천</em><span>145</span></li>
+    <li>구월동 로데오거리·광장 <i style="background:var(--f-conv)">편의</i><em>어울리는 인천</em><span>169</span></li>
+    <li>연안여객터미널 1층 대합실 <i style="background:var(--f-conv)">편의</i><em>안내하는 인천</em><span>193</span></li>
+  </ol>
+</section>
+
+<!-- ================= p48 도입 · 1·2차 관계 유형 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ</span>일곱 장소의 사회실험 · 1차와 2차의 관계</div>
+    <h2 class="hl">세 거점은 1·2차를 <em>바꿔 놓고 비교</em>하였고,<br>네 거점은 1차 위에 <em>2차를 더해</em> 실험하였다</h2>
+    <p class="lede">일곱 거점 모두 같은 장소에서 1차와 2차를 이어 운영하였다. 다만 두 차수가 맺는 관계는 거점의 질문에 따라 달랐고, 결과를 읽는 방법도 그 관계를 따랐다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+    <div class="rel">
+      <div class="rel-col cmp">
+        <div class="rel-hd">
+          <svg width="27mm" height="15mm" viewBox="0 0 27 15"><rect x="1" y="3" width="9" height="9" rx=".6" fill="#fff"/><rect x="17" y="3" width="9" height="9" rx=".6" fill="#fff" fill-opacity=".26"/><text x="5.5" y="9.4" font-size="4.6" font-weight="900" text-anchor="middle" fill="#2E5A87">A</text><text x="21.5" y="9.4" font-size="4.6" font-weight="900" text-anchor="middle" fill="#fff">B</text><path d="M11.5 6 H15.5 M14 4.5 L15.6 6 L14 7.5 M15.5 9 H11.5 M13 7.5 L11.4 9 L13 10.5" stroke="#C9D7E6" stroke-width=".7" fill="none"/></svg>
+          <div><h4>비교형 · 3거점</h4><p>같은 자리에서 한 축을 바꾼 두 안을 차례로 세우고, 같은 질문으로 맞대었다</p></div>
+        </div>
+        <div class="rc" style="--c:var(--f-safe)"><div class="h"><b>01</b><span class="nm">약산초등학교</span><span class="ax">디자인 주체</span></div>
+          <div class="fl"><div><i>1차</i>시민 디자인안<br><small>「색연필 수비대」</small></div><div class="op">⇄</div><div class="b"><i>2차</i>어린이 디자인안<br><small>「꿈꾸는 안전디자이너」</small></div></div>
+          <div class="ck"><b>확인</b>시설 인지 · 지도 위치 정답률 · 위치 설명</div></div>
+        <div class="rc" style="--c:var(--f-incl)"><div class="h"><b>03</b><span class="nm">송도 캠퍼스타운역 일대</span><span class="ax">안내 방식</span></div>
+          <div class="fl"><div><i>1차</i>그림·숫자 보도블록<br><small>「보고, 함께하다」</small></div><div class="op">⇄</div><div class="b"><i>2차</i>영문·한국어 병기 보도블록<br><small>「읽고, 연결하다」</small></div></div>
+          <div class="ck"><b>확인</b>의미 이해 · 공간 이용 · 인사와 대화</div></div>
+        <div class="rc" style="--c:var(--f-incl)"><div class="h"><b>04</b><span class="nm">차이나타운 공중화장실</span><span class="ax">표현 방식</span></div>
+          <div class="fl"><div><i>1차</i>권유형 그림<br><small>「그림으로 권유하는 에티켓」</small></div><div class="op">⇄</div><div class="b"><i>2차</i>금지형 그림<br><small>「그림으로 금지하는 에티켓」</small></div></div>
+          <div class="ck"><b>확인</b>의미 해석 · 경각심 · 개선 의견</div></div>
+        <div class="card" style="font-size:7.1pt;line-height:1.55;color:#3D4A56;font-weight:500;flex:1"><b style="color:var(--navy);font-weight:800">읽는 법. 2차 ⇄ 1차를 바로 맞댄다.</b> 바꾼 축이 하나를 넘으면(약산초는 주체와 함께 단서·소재가 바뀌었다) 차이를 요소 하나의 효과로 나누지 않고 안 전체의 차이로 판정하였다.</div>
+      </div>
+      <div class="rel-col stp">
+        <div class="rel-hd">
+          <svg width="27mm" height="15mm" viewBox="0 0 27 15"><rect x="1" y="3" width="9" height="9" rx=".6" fill="#fff"/><rect x="15" y="3" width="9" height="9" rx=".6" fill="#fff"/><rect x="18" y="1" width="8" height="8" rx=".6" fill="#C9D7E6" fill-opacity=".45"/><text x="5.5" y="9.4" font-size="4.6" font-weight="900" text-anchor="middle" fill="#1A2F4B">A</text><text x="19.5" y="10.4" font-size="4.2" font-weight="900" text-anchor="middle" fill="#1A2F4B">A</text><text x="23.6" y="6" font-size="3.6" font-weight="900" text-anchor="middle" fill="#fff">+B</text><path d="M11 7.5 H14 M12.6 6 L14.2 7.5 L12.6 9" stroke="#C9D7E6" stroke-width=".7" fill="none"/></svg>
+          <div><h4>누적형 · 4거점</h4><p>1차에서 확인한 것을 남긴 채, 2차에 기능을 더하거나 고른 것을 묶었다</p></div>
+        </div>
+        <div class="rc" style="--c:var(--f-safe)"><div class="h"><b>02</b><span class="nm">선인재단</span><span class="ax">탐색 → 선별·통합</span></div>
+          <div class="fl"><div><i>1차</i>스티커 설문 응답<br><small>「마음, 바라봄」</small></div><div class="op">→</div><div class="b"><i>2차</i>거울나무로 통합<br><small>「마음, 마주봄」</small></div></div>
+          <div class="ck"><b>확인</b>응답·선호 · 설치 후 반응</div></div>
+        <div class="rc" style="--c:var(--f-attr)"><div class="h"><b>05</b><span class="nm">굴포천 산책로</span><span class="ax">공간 → 참여 활동</span></div>
+          <div class="fl"><div><i>1차</i>그늘·머무름 자리<br><small>「흐르는 인천」</small></div><div class="op">+</div><div class="b"><i>2차</i>대학 협업 수업<br><small>「함께 만드는 인천」</small></div></div>
+          <div class="ck"><b>확인</b>체류 · 참여 · 장소 인식</div></div>
+        <div class="rc" style="--c:var(--f-conv)"><div class="h"><b>06</b><span class="nm">로데오거리·광장</span><span class="ax">구역 → 이동 안내</span></div>
+          <div class="fl"><div><i>1차</i>흡연·휴게 공간 분리<br><small>「피어봄」</small></div><div class="op">+</div><div class="b"><i>2차</i>시간·방향 유도사인<br><small>「이어봄」</small></div></div>
+          <div class="ck"><b>확인</b>공간 인지 · 이용 · 이동 행동</div></div>
+        <div class="rc" style="--c:var(--f-conv)"><div class="h"><b>07</b><span class="nm">연안여객터미널</span><span class="ax">정보 → 공간 연계</span></div>
+          <div class="fl"><div><i>1차</i>길 안내 통합사이니지<br><small>「발걸음은 가볍게」</small></div><div class="op">+</div><div class="b"><i>2차</i>짐 보관 공간 조성<br><small>「두 손은 자유롭게」</small></div></div>
+          <div class="ck"><b>확인</b>쉬운 길찾기 · 짐 보관의 정돈 정도</div></div>
+      </div>
+    </div>
+
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>비교형 세 거점은 같은 자리에 1차안과 2차안을 바꾸어 설치하였다. 약산초는 디자인한 사람을 시민에서 어린이로, 송도는 보도블록 안내를 그림·숫자에서 영문·한국어 병기로, 차이나타운은 화장실 에티켓 그림을 권유형에서 금지형으로 바꾸었다. 1차안을 걷어 낸 자리에 2차안을 세웠으므로 두 안이 한자리에 함께 놓인 날은 없었다. 두 안이 같은 질문을 받았으므로 결과는 1차와 2차를 바로 맞대어 읽었다.</p>
+      <p>누적형 네 거점은 1차 결과를 2차의 바탕으로 삼았다. 선인재단은 스티커 설문으로 학생이 고른 색과 문구를 거울나무에 옮겼고, 굴포천·로데오·연안은 1차 시설을 둔 채 참여 수업, 유도사인, 짐 보관 공간을 더하였다. 이 거점들의 결과는 사전조사 기준값에서 1차, 1차에서 2차로 쌓인 변화로 읽었고, 대조 구간이 있는 거점은 그 구간과의 차이를 함께 보았다.</p>
+    </div>
+
+    <div class="mod" style="margin-top:4.6mm">
+      <div class="t">일곱 거점의 거점편 24쪽은 모두 같은 순서로 이어진다</div>
+      <div class="bar">
+        <div style="flex:1;background:#7D97B3">간지<small>1쪽</small></div>
+        <div style="flex:2;background:#4F7396">왜 여기인가<small>2쪽</small></div>
+        <div style="flex:2;background:#4F7396">기획의 변천<small>2쪽</small></div>
+        <div style="flex:2;background:#3A5F8E">실험 설계<small>2쪽</small></div>
+        <div style="flex:2;background:var(--teal)">1차·2차<small>4쪽</small></div>
+        <div style="flex:2;background:#2E5A87">현장 기록<small>2쪽</small></div>
+        <div style="flex:3;background:#22476C">정량 결과<small>4쪽</small></div>
+        <div style="flex:3;background:#22476C">정성 결과<small>4쪽</small></div>
+        <div style="flex:2;background:var(--navy)">해석·판정<small>2쪽</small></div>
+        <div style="flex:1.6;background:#13243A;color:#fff">설계 반영<small>1쪽</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">48</div>
+</section>
+
+<!-- ================= p49 거점 간지 · 01 약산초 ================= -->
+<section class="page odd st-cover">
+  <div class="st-cv-photo"><img src="img/01_약산초_1차설치현장.jpg" alt=""></div>
+  <div class="st-cv-tab"><span class="f">01 · 안전</span><span>Ⅳ 실험하다</span></div>
+  <div class="st-cv-cap">1차 실험 「색연필 수비대」 설치 현장 · 약산초 정문 남동쪽 통학로</div>
+  <div class="st-cv-band">
+    <div class="st-cv-no">01</div>
+    <div class="st-cv-kick">안전 · 살피는 인천</div>
+    <div class="st-cv-ttl">약산초등학교</div>
+    <div class="st-cv-site">인천 남동구 · 약산초 스쿨존 통학로 전신주 5개소</div>
+    <div class="st-cv-q">어린이는 통학로의 무엇을 보고<br>‘내가 지금 어디에 있는지’ 말할 수 있을까</div>
+    <div class="st-cv-runs">
+      <div><i>1차 · 시민 디자인안</i><b>「색연필 수비대」</b><span>10.20(화)–22(목) 운영 · 설치 위치를 바꿔 10.27–29 재실험</span></div>
+      <div><i>2차 · 어린이 디자인안</i><b>「꿈꾸는 안전디자이너」</b><span>11.3(화)–5(목) 운영 · 11.6(금) 학교 설문</span></div>
+    </div>
+  </div>
+  <div class="pno">49</div>
+</section>
+
+<!-- ================= p50 왜 여기인가 ① (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">약산초 통학로는 학교 경계가 잘 보이지 않았고,<br>어린이가 <em>자기 위치를 말할 단서</em>가 부족하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split">
+      <div>
+        <p class="st-lead">정문 앞 통학로는 같은 어린이들이 날마다 같은 시간에 지나는 길이다. 실험은 이 반복되는 길에서 <em>어린이가 지금 서 있는 곳을 스스로 알아보고 말할 수 있는지</em>를 물었다.</p>
+        <div class="st-tx" style="margin-top:3.6mm">
+          <p>약산초등학교는 인천 남동구 간석오거리역 동쪽의 저층 주거지 안에 있다. 학교 북동쪽으로 간석여자중학교가 맞닿아 있고, 정문은 남동쪽 담장을 따라 난 통학로를 향한다. 이 담장 앞 보도에 전신주와 지주가 줄지어 서 있어, 등·하굣길 어린이는 기둥들 사이를 지나 학교로 들어간다.</p>
+          <p>7월 29일부터 9월 15일까지 네 차례 현장조사에서 낮과 밤, 평일과 주말의 통학로를 기록하였다. 학교 담장 앞에는 폐자재와 적치물이 쌓여 학교 경계가 잘 드러나지 않았고, 학교 표지가 선 모퉁이에서도 보행공간은 좁았다. 9월 17일(목)에는 실험과 같은 평일 등·하굣길 시간대에 사전조사를 하여 실험 전 상태를 남겼다.</p>
+          <p>통학 안전을 위해 행정이 그동안 늘려 온 것은 지켜보는 장치였다. 남동구는 2022~2024년 생활안전 CCTV 537개소를 설치하였다. 이 사업은 여기에 다른 질문을 더하였다. 어린이가 위험을 느끼거나 도움이 필요할 때 보호자나 주변 어른에게 지금 있는 곳을 설명할 수 있는가. 위치를 말할 수 있어야 도움도 정확한 자리로 온다.</p>
+          <p>시민디자인단은 이 길의 전신주와 바닥을 어린이가 알아볼 수 있는 표지로 바꾸자는 아이디어를 냈다. 문제는 ‘아동·청소년의 생활권 범죄안전’으로 정의하였고, 해법은 두 갈래로 나누었다. 1차는 어른이 생각한 어린이 안전 디자인, 2차는 어린이가 직접 구상한 어린이 안전 디자인이다. 같은 길에서 두 안을 차례로 세워, 어느 쪽이 어린이의 눈에 더 잘 들어오고 위치를 말하는 데 쓰이는지 비교하였다.</p>
+        </div>
+      </div>
+      <div>
+        <div class="st-ph" style="height:38mm"><img src="img/01_약산초_사전_002.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>담장 앞 적치물이 학교 경계를 가렸다.</b><br>폐자재·적치물과 좁은 보행공간을 기록함</div>
+        <div class="st-ph" style="height:38mm;margin-top:3mm"><img src="img/01_약산초_사전_006.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>학교 표지가 선 모퉁이도 통학로가 좁았다.</b><br>등·하굣길 보행 동선 기록</div>
+        <div class="st-mn" style="margin-top:4mm"><b>현장을 본 날</b>현장조사 7.29 · 8.11 · 8.27 · 9.15<br>(낮·밤·평일·주말)<br>사전조사 9.17(목) 평일 등·하굣길</div>
+      </div>
+    </div>
+    <div class="st-prof" style="margin-top:6mm">
+      <div class="st-pc"><div class="t"><b>사람</b></div><div class="big">556<small>명</small></div><div class="sub">약산초 전교생 · 설문 배포 대상</div>
+        <ul><li><b>6학년 35명</b> 어린이 워크숍 참여(2반 18 · 5반 17)</li><li>등·하굣길 어린이와 보호자</li></ul></div>
+      <div class="st-pc"><div class="t"><b>공간</b></div><div class="big">5<small>개소</small></div><div class="sub">정문 남동쪽 통학로 전신주 A–E</div>
+        <ul><li><b>스쿨존</b> 저층 주거지 안 통학로</li><li>전봇대·전기제어함·볼록거울·볼라드가 놓인 좁은 보도</li></ul></div>
+      <div class="st-pc"><div class="t"><b>문제</b></div><div class="big">9<small>/14건</small></div><div class="sub">전봇대 응답 중 좁음·통행 방해·이전 요구</div>
+        <ul><li><b>경계</b> 적치물로 학교 경계 인지가 어려움</li><li><b>위치</b> 장소를 부를 이름·단서가 없음</li></ul></div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">사전 현장조사에서 기록한 통학로</div>
+    <div class="y-strip">
+      <div class="st-ph"><img src="img/01_약산초_사전_003.jpg" alt=""><span>담장 앞 가림막</span></div>
+      <div class="st-ph"><img src="img/01_약산초_사전_004.jpg" alt=""><span>학교 건물과 보도</span></div>
+      <div class="st-ph"><img src="img/01_약산초_사전_005.jpg" alt=""><span>보도 옆 주차 차량</span></div>
+      <div class="st-ph"><img src="img/01_약산초_사전_007.jpg" alt=""><span>좁은 이면 통학로</span></div>
+    </div>
+    <div class="st-cap"><b>가림막·적치물·주차 차량이 담장과 보도 사이를 채워, 학교의 경계와 길의 폭이 함께 좁아 보였다.</b> 사전 현장조사 사진</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">50</div>
+</section>
+
+<!-- ================= p51 왜 여기인가 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">네 가지 근거는 <em>‘장소 단서와 위치’</em>라는<br>하나의 실험 질문으로 모였다</h2>
+    <p class="lede">심의 과정에서 정리한 핵심 문제 지표는 연구 두 편과 지역 통계 두 개였다. 넷은 통학 안전을 감시의 문제에서 ‘장소를 알아보는 힘’의 문제로 다시 보게 하였다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+    <div class="st-ev">
+      <div class="st-ec"><span class="k">연구 ①</span><div class="n">72<small>명</small></div><p>5세 어린이 72명 가상환경 연구에서, 경로 위 지형지물에 <b>이름을 붙이거나 주의를 기울이게 하자</b> 길찾기 오류가 줄었다.</p><div class="src">Lingwood 외(2015), Frontiers in Psychology</div></div>
+      <div class="st-ec"><span class="k">지역 통계 ①</span><div class="n">537<small>개소</small></div><p>남동구는 2022~2024년 <b>생활안전 CCTV 537개소</b>를 설치해 지켜보는 안전 인프라를 늘렸다.</p><div class="src">중도일보, 인천 남동구 ‘사각지대 제로’ 촘촘한 안전망 구축</div></div>
+      <div class="st-ec"><span class="k">연구 ②</span><div class="n">83<small>%</small></div><p>김천시 초등학교 5·6학년 56명의 83%가 안전지도 제작처럼 <b>장소 인지를 높이는 활동</b>이 위험공간 이해에 도움이 되었다고 답하였다.</p><div class="src">서울도시연구, 「범죄로부터 안전한 도시를 위한 아동안전지도 제작 및 활용에 관한 연구」</div></div>
+      <div class="st-ec"><span class="k">지역 통계 ②</span><div class="n">75.2<small>점</small></div><p>2023년 인천 체감안전도 종합점수는 75.2점으로, 전국 78.7점보다 <b>3.5점 낮았다.</b></p><div class="src">인천연구원(2023), 「인천 안전도시 이미지 강화 정책 방안」</div></div>
+    </div>
+    <svg width="178mm" height="13mm" viewBox="0 0 178 13" style="display:block"><path d="M22 0 L84 10 M66 0 L87 10 M112 0 L91 10 M156 0 L94 10" stroke="#3A5F8E" stroke-width=".5" fill="none"/><path d="M85 9 L89 13 L93 9" fill="#3A5F8E"/></svg>
+    <div class="st-q"><i>약산초 실험 질문</i><b>시민안과 어린이안은 그림 인지와 위치 설명에서 어떻게 다른가?</b></div>
+
+    <div class="st-tx st-c2" style="margin-top:5.4mm">
+      <p>두 연구는 같은 쪽을 가리켰다. 어린이는 길 위의 사물에 이름을 붙이고 눈여겨볼 때 길을 덜 잃었고, 장소를 스스로 지도에 옮겨 볼 때 위험한 곳을 더 잘 이해하였다. 두 지역 통계는 인천이 감시 장치를 꾸준히 늘려 왔지만, 시민이 느끼는 안전은 여전히 전국 평균보다 낮다는 점을 보여 주었다. 지켜보는 장치를 늘리는 것만으로는 체감 안전의 격차가 줄지 않았다는 점이 이 실험의 출발점이 되었다.</p>
+      <p>실험은 이 간극에서 질문을 세웠다. CCTV가 어린이를 지켜보는 장치라면, 통학로의 전신주는 어린이가 스스로 위치를 말하게 돕는 장치가 될 수 있는가. 같은 전신주에 시민안과 어린이안을 차례로 입혀, 어린이가 시설물을 알아보는지, 지도에서 그 자리를 찾는지, 보호자에게 그 위치를 어떤 말로 설명하는지를 재었다. 세 물음은 그대로 시설물 인지, 지도 위치 정답률, 위치 설명 단서라는 세 지표가 되었다.</p>
+    </div>
+
+    <div class="y-two" style="margin-top:4.6mm">
+      <div class="a"><i>지켜보는 장치</i><b>생활안전 CCTV</b><ul><li><span>보는 사람</span>관제하는 행정</li><li><span>어린이의 자리</span>지켜봄을 받는 사람</li><li><span>필요한 것</span>설치와 관제</li></ul></div>
+      <div class="vs">+</div>
+      <div class="b"><i>말하게 돕는 장치</i><b>통학로 전신주의 위치 단서</b><ul><li><span>보는 사람</span>어린이 자신</li><li><span>어린이의 자리</span>위치를 말하는 사람</li><li><span>필요한 것</span>알아보고 부를 수 있는 단서</li></ul></div>
+    </div>
+    <div class="st-cap"><b>약산초 실험은 CCTV를 대신하지 않고, 그 위에 어린이 스스로의 위치 설명을 더하는 쪽을 택하였다.</b></div>
+    <div class="st-lb" style="margin-top:4.6mm">문제에서 기대효과까지</div>
+    <div class="st-ladder4">
+      <div class="s"><i>문제 정의</i><b>아동·청소년의<br>생활권 범죄안전 문제</b></div><div class="ar">▶</div>
+      <div class="s"><i>1차 해법</i><b>어른이 생각하는<br>어린이 안전 디자인</b></div><div class="ar">▶</div>
+      <div class="s"><i>2차 해법</i><b>어린이가 구상하는<br>어린이 안전 디자인</b></div><div class="ar">▶</div>
+      <div class="s on"><i>기대효과</i><b>어린이 맞춤형<br>안전문화</b></div>
+    </div>
+    <div class="st-cap"><b>해법의 주어가 ‘어른’에서 ‘어린이’로 옮겨 가는 것이 약산초 실험의 뼈대였다.</b> 기대효과는 심리적 안전감 향상과 안전 통학문화 형성으로 정리하였다.</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">51</div>
+</section>
+
+<!-- ================= p52 기획의 변천 ① (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">‘등굣길 참여 장치’로 출발한 기획은 네 번의 수정을 거쳐<br><em>두 안의 위치 단서 비교</em>로 좁혀졌다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split l">
+      <div class="st-ver">
+        <div class="v"><div class="d">08.24<small>초기 기획</small></div><h5>High Five Road</h5><p>안전한 등굣길을 위한 참여 장치 탐색</p></div>
+        <div class="v"><div class="d">09.09<small>중간보고 자료</small></div><h5>색연필 수비대 · 어린이 참여</h5><p>시민안과 어린이안의 인지·장소 비교</p></div>
+        <div class="v"><div class="d">10.01<small>디자인 보완</small></div><h5>동물·색·문구 대안 탐색</h5><p>위치를 기억하고 설명할 시각 단서</p></div>
+        <div class="v"><div class="d">10.08<small>어린이 워크숍</small></div><h5>6학년 35명 참여</h5><p>문제·위치·시설 아이디어를 지도에 제안</p></div>
+        <div class="v now"><div class="d">10.15<small>운영계획</small></div><h5>5개 전봇대 · 3일 통학 노출</h5><p>같은 사진·지도 문항으로 두 안 평가</p></div>
+        <div class="v now"><div class="d">10.20–11.06<small>실행</small></div><h5>1차 · 재실험 · 2차</h5><p>1차 10.20–22, 위치 변경 재실험 10.27–29, 2차 11.3–5, 학교 설문 11.6</p></div>
+      </div>
+      <div class="st-tx">
+        <p>8월 24일 초기 기획의 이름은 「High Five Road」였다. 안전한 등굣길을 만들기 위해 어린이가 참여할 수 있는 장치를 찾는 구상이었고, 이 단계의 질문은 ‘무엇을 설치할 것인가’에 머물렀다.</p>
+        <p>9월 9일 중간보고 자료에서 기획은 「색연필 수비대」라는 이름을 얻었다. 시민디자인단 아이디어로 만든 시민안을 먼저 세우고, 어린이 참여로 만든 어린이안을 뒤이어 세워 두 안의 인지와 장소 설명을 비교하는 틀이 이때 생겼다. 설치물의 종류보다 <b>‘누가 디자인했는가’가 비교의 축</b>이 되었다.</p>
+        <p>10월 1일 디자인 보완에서는 동물·색·문구 대안을 탐색하였다. 비교의 초점은 어린이가 위치를 기억하고 설명할 때 무엇을 단서로 삼는가로 옮겨 갔다. 1차 부서검토에서는 약산초 2차 실험도 다른 거점처럼 별도 계획으로 세우라는 의견이 나와 가설·대상·방법·수집 데이터·일정·관계기관을 따로 정리하였고, 2차 부서검토 의견에 따라 연필형 시설물의 다섯 색과 동물 그래픽의 다섯 배경색에 모두 먼셀 색기호를 적었다.</p>
+        <p>10월 8일 어린이 워크숍을 거쳐 10월 15일 운영계획에서 실험의 규모가 정해졌다. 통학로 전봇대 5개에 3일 동안 등·하굣길 노출을 하고, 같은 사진·지도 문항으로 두 안을 평가하는 방식이다. 시민 제안에서 출발한 기획이 어린이의 관점으로 넘어가는 사이, 실험의 단서는 <b>문구와 색에서 그림과 색으로</b>, 매체는 <b>지주와 바닥에서 전봇대 감싸기로</b> 바뀌었다.</p>
+        <p>실행은 세 번의 운영으로 이어졌다. 1차는 10월 20~22일에 운영하였고, 10월 27~29일에는 설치 위치를 바꿔 같은 구성으로 한 번 더 운영하였다. 2차는 그 1주 뒤인 11월 3~5일에 운영하였다. 학교 설문은 1차를 10월 27일, 2차를 11월 6일에 받았다. 세 번의 운영 모두 화요일부터 목요일까지 같은 요일을 지켰다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">착수안과 실행안에서 바뀐 것</div>
+    <div class="y-ba">
+      <div class="c"><div class="k">디자인 주체</div>
+        <div class="r"><div class="ic">시민디자인단<br>8.05 워크숍</div><p><b>시민 아이디어</b>어른이 생각한 어린이 안전</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/01_약산초_워크숍3.jpg" alt=""></div><p><b>6학년 35명</b>어린이가 구상한 어린이 안전</p></div></div>
+      <div class="c"><div class="k">위치 단서</div>
+        <div class="r"><div class="st-ph"><img src="img/01_약산초_1차연필5색.jpg" alt="" style="object-fit:contain;background:#fff"></div><p><b>색 + 문구</b>다섯 색과 ‘난 지금 ○○색 앞’</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/01_약산초_2차동물5종.png" alt="" style="object-fit:contain;background:#fff"></div><p><b>그림 + 색</b>다섯 동물과 배경색, 문구 없음</p></div></div>
+      <div class="c"><div class="k">매체 · 소재</div>
+        <div class="r"><div class="st-ph"><img src="img/01_약산초_1차도면.png" alt="" style="object-fit:contain;background:#fff"></div><p><b>지주 + 바닥</b>그래픽 시트와 원형 바닥 시트</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/01_약산초_2차도면.png" alt="" style="object-fit:contain;background:#fff"></div><p><b>전봇대 감싸기</b>EVA 스펀지 10T와 반사 시트</p></div></div>
+    </div>
+    <div class="st-shift" style="margin-top:5mm">
+      <div><i>착수 구상 · 08.24</i><b>등굣길에 참여 장치를 설치한다</b><br>무엇을 세울지가 질문</div>
+      <div class="ar">▶</div>
+      <div class="now"><i>실행한 실험 · 10.20–11.06</i><b>두 안이 위치 단서가 되는지 비교한다</b><br>누가 디자인했고 무엇을 단서로 삼는지가 질문</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">52</div>
+</section>
+
+<!-- ================= p53 기획의 변천 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">10월 8일 6학년 35명의 워크숍 의견이<br><em>2차 디자인의 재료</em>가 되었다</h2>
+    <p class="lede">6학년 2반 18명과 5반 17명이 1·2교시 동안 학교 주변의 불편과 해결책을 카드와 지도에 적었다. 시설물 카드 75응답과 지도 의견 57건이 모였다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+    <div class="y-wsph">
+      <div class="st-ph"><img src="img/01_약산초_워크숍1.jpg" alt=""><span>공공디자인 알기</span></div>
+      <div class="st-ph"><img src="img/01_약산초_워크숍2.jpg" alt=""><span>학교 주변 안전 문제 나누기</span></div>
+      <div class="st-ph"><img src="img/01_약산초_워크숍3.jpg" alt=""><span>안전을 지키는 방법 말하기</span></div>
+    </div>
+    <div class="st-cap"><b>워크숍은 공공디자인 알기 → 학교 주변 안전 문제 나누기 → 안전을 지키는 방법 말하기 순서로 진행하였다.</b> 10월 8일(목) 1·2교시 · 6학년 2반·5반 교실</div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:3mm">
+      <div><b>35<small>명</small></b><span>6학년 2반·5반 참여</span></div>
+      <div><b>75<small>응답</small></b><span>시설물 카드 6종</span></div>
+      <div><b>57<small>건</small></b><span>워크맵 지도 의견</span></div>
+      <div><b>51<small>건</small></b><span>시설물 이름 제안</span></div>
+    </div>
+
+    <div class="st-flow" style="margin-top:4.6mm">
+      <div class="hdr"><div>워크숍에서 나온 제안</div><div class="ar"></div><div>2차 디자인에 반영한 것</div><div class="ar"></div><div>현장에서 확인한 것</div></div>
+      <div class="r"><div class="a"><b>9<small>/ 14건</small></b>전봇대 관련 응답 중 좁음·통행 방해·이전 요구로 분류된 의견, 스펀지 전봇대 제안</div><div class="ar">▶</div><div class="b"><b>EVA 스펀지 10T 감싸기</b>스펀지 전봇대 제안을 그대로 소재로 옮김</div><div class="ar">▶</div><div class="c">보행폭 · 돌출 · 고정 상태</div></div>
+      <div class="r"><div class="a"><b>색 · 형광색 · 동물 귀</b>서로 다른 색과 형광색, 여러 시설에 대한 동물 귀·색 제안</div><div class="ar">▶</div><div class="b"><b>동물 5종 + 배경색 5색</b>흩어진 제안을 다섯 동물과 다섯 배경색으로 통합</div><div class="ar">▶</div><div class="c">동물·색이 위치 설명의 단서로 쓰이는지</div></div>
+      <div class="r"><div class="a"><b>10<small>/ 51건</small></b>이름 제안 중 애칭·의인화 등. 그 밖에 기능·상태 설명 17행, 재질·형태 바꾸기 15행 등</div><div class="ar">▶</div><div class="b"><b>문구 없이 그림·색으로 구분</b>이름은 디자인이 정하지 않고 어린이가 부르게 둠</div><div class="ar">▶</div><div class="c">어린이가 전봇대를 부르는 이름</div></div>
+      <div class="r"><div class="a"><b>57<small>건</small></b>지도 의견이 동쪽 정문–통학로 구간에 몰림</div><div class="ar">▶</div><div class="b"><b>그림·색을 장소 구분 단서로</b>의견이 몰린 구간의 전봇대에 적용</div><div class="ar">▶</div><div class="c">지도 위치 선택과 보호자에게 위치를 설명하는 방식</div></div>
+    </div>
+
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>워크숍은 공공디자인이 무엇인지 함께 알아보고, 학교 주변의 안전 문제를 나눈 뒤, 안전을 지키는 방법을 말해 보는 순서로 진행하였다. 어린이들은 전봇대·전기제어함·보행 바닥·펜스·볼록거울·볼라드 여섯 장의 카드에 불편했던 점과 해결책, 아이디어 이름을 적고, 학교 주변 워크맵 위에 문제의 위치를 표시하였다. 지도 의견이 가장 많이 몰린 곳은 동쪽 정문에서 통학로로 이어지는 구간이었다.</p>
+      <p>의견은 2차 디자인의 재료로 넘어갔다. 소재는 스펀지 전봇대 제안에서, 동물과 배경색은 색·귀 제안에서, 문구를 빼기로 한 결정은 어린이가 스스로 이름을 붙이는 방식에서 나왔다. 설치 위치와 필요한 개수는 현장을 확인해 실현 가능한 범위에서 정하였다. 워크숍 기록은 실험 설문의 표본에 넣지 않고, 2차안의 각 요소가 어떤 제안에서 나왔는지를 잇는 근거로 남겼다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">53</div>
+</section>
+
+<!-- ================= p54 실험 설계 ① (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1·2차는 <em>디자인 주체와 단서</em>를 바꾸고,<br>장소·문항·노출 기간은 그대로 두었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-mir">
+      <div class="ph">
+        <div class="st-ph" style="height:50mm"><img src="img/01_약산초_1차현장.jpg" alt="" style="object-position:66% 30%;transform:scale(1.55);transform-origin:68% 38%"><span>1차 연필형 지주</span></div>
+        <div class="mid">바꾼 요소</div>
+        <div class="st-ph" style="height:50mm"><img src="img/01_약산초_2차시뮬.jpg" alt="" style="object-position:12% 50%"><span>2차 적용 시뮬레이션(합성)</span></div>
+      </div>
+      <div class="hh"><div class="a">1차 「색연필 수비대」<small>시민 디자인안 · 어른이 생각한 어린이 안전</small></div><div style="background:#fff"></div><div class="b">2차 「꿈꾸는 안전디자이너」<small>어린이 디자인안 · 어린이가 구상한 어린이 안전</small></div></div>
+      <div class="r"><div class="a">시민디자인단 아이디어</div><div class="m">디자인 주체</div><div class="b">6학년 35명 워크숍 제안</div></div>
+      <div class="r"><div class="a">다섯 색 + 색 이름<small>빨강·주황·노랑·초록·파랑 연필</small></div><div class="m">위치 단서</div><div class="b">다섯 동물 + 배경색<small>강아지·고양이·곰·토끼·앵무새</small></div></div>
+      <div class="r"><div class="a">‘난 지금 ○○색 앞’</div><div class="m">문구</div><div class="b">없음(그림과 색만)</div></div>
+      <div class="r"><div class="a">지주 감싸기 + 바닥 원형 시트</div><div class="m">매체</div><div class="b">전봇대 감싸기 · 바닥은 기존 보도블록</div></div>
+      <div class="r"><div class="a">그래픽 시트 · 미끄럼방지 바닥 시트</div><div class="m">소재</div><div class="b">EVA 스펀지 10T · 반사 시트</div></div>
+      <div class="r"><div class="a">지주 2,000mm</div><div class="m">감싼 높이</div><div class="b">전봇대 1,800mm</div></div>
+    </div>
+    <div class="st-keep" style="margin-top:3.6mm">
+      <div class="t">유지한 조건 <span>1차 · 재실험 · 2차 모두 같게</span></div>
+      <div class="g">
+        <div><b>같은 통학로</b><small>정문 남동쪽<br>전봇대 5개소</small></div>
+        <div><b>3일 노출</b><small>화–목 등·하굣길<br>통학 노출</small></div>
+        <div><b>같은 문항</b><small>같은 사진·지도<br>문항과 정답 기준</small></div>
+        <div><b>같은 대상</b><small>약산초 전교생<br>556명 배포</small></div>
+        <div><b>1주 간격</b><small>설문 사이<br>최소 1주일</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>실험이 알고 싶었던 것은 ‘누가 디자인했는가’가 어린이의 인지와 위치 설명을 바꾸는가였다. 그러나 주체가 바뀌면서 단서의 종류(색 이름 문구에서 동물 그림으로), 소재(그래픽 시트에서 EVA 스펀지로), 바닥 표시의 유무도 함께 바뀌었다. 그래서 1·2차의 차이는 요소 하나의 효과로 쪼개지 않고 <b>두 안 전체의 차이</b>로 판정하였고, 어떤 요소가 단서로 쓰였는지는 어린이가 실제로 입에 올린 말로 보완하였다.</p>
+      <p>대신 비교를 흔들 수 있는 조건은 묶어 두었다. 세 번의 운영 모두 정문 남동쪽 통학로의 같은 구간에서 화요일부터 목요일까지 3일 동안 등·하굣길 노출을 하였고, 설문은 같은 사진·지도 문항과 같은 정답 기준을 썼다. 설문 사이에는 최소 1주일을 두어 앞선 설문의 기억이 다음 응답에 섞이지 않게 하였다.</p>
+      <p>1차 재실험은 이 비교 구조를 바꾸지 않았다. 같은 다섯 색 연필을 위치만 옮겨 다시 세웠으므로 시민안과 어린이안의 비교라는 틀은 그대로였다. 다만 1차는 두 번, 2차는 한 번 노출되었다는 차이가 생겼고, 이 차이는 결과를 읽을 때 외부 조건으로 따로 적었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">54</div>
+</section>
+
+<!-- ================= p55 실험 설계 ② (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">알아보기 · 찾기 · 말하기, <em>세 지표</em>를<br>같은 사진·지도 문항으로 두 번 재었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-pipe">
+      <div class="s"><div class="h"><i>지표 ①</i><b>시설물 인지</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><circle cx="20" cy="10" r="7" fill="none" stroke="#3A5F8E" stroke-width="1"/><circle cx="20" cy="10" r="2.6" fill="#3A5F8E"/><path d="M6 10 Q20 -2 34 10 Q20 22 6 10Z" fill="none" stroke="#3A5F8E" stroke-width=".6"/></svg></div>
+        <dl><dt>무엇을</dt><dd>통학로에서 실험 시설물을 알아보았는가</dd><dt>어떻게</dt><dd>사진 문항</dd><dt>값</dt><dd><b>인지 응답 비율</b> · 분모는 해당 문항 유효 응답</dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ②</i><b>위치 찾기</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><rect x="5" y="3" width="30" height="14" rx=".6" fill="#fff" stroke="#3A5F8E" stroke-width=".6"/><path d="M5 9 H35 M16 3 V17 M26 3 V17" stroke="#C5D2E6" stroke-width=".5"/><path d="M21 13 C17 8 18 4.6 21 4.6 C24 4.6 25 8 21 13Z" fill="#3A5F8E"/><circle cx="21" cy="7.4" r="1.1" fill="#fff"/></svg></div>
+        <dl><dt>무엇을</dt><dd>지도에서 시설물의 자리를 바르게 골랐는가</dd><dt>어떻게</dt><dd>지도 문항 · 사전에 정한 정답 기준</dd><dt>값</dt><dd><b>지도 위치 정답률</b></dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ③</i><b>위치 설명</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><path d="M6 4 H24 a2 2 0 0 1 2 2 V11 a2 2 0 0 1 -2 2 H13 L9 16 V13 H6 a2 2 0 0 1 -2 -2 V6 a2 2 0 0 1 2 -2Z" fill="#3A5F8E"/><path d="M8 7.4 H21 M8 10 H17" stroke="#fff" stroke-width=".8"/><circle cx="31" cy="9" r="4" fill="none" stroke="#3A5F8E" stroke-width=".7"/><path d="M27 18 Q31 12.6 35 18" fill="none" stroke="#3A5F8E" stroke-width=".7"/></svg></div>
+        <dl><dt>무엇을</dt><dd>보호자에게 위치를 말할 때 무엇을 단서로 썼는가</dd><dt>어떻게</dt><dd>서술 응답 · 현장 인터뷰</dd><dt>값</dt><dd><b>설명 단서 분포</b> · 색·동물·문구·주변 시설(복수 응답)</dd></dl></div>
+    </div>
+    <div class="st-cap"><b>2차에는 동물·색 식별, 소재 느낌, 통행 불편을 묻는 문항을 더하였다.</b> 세 지표는 1·2차 모두 같은 문항과 같은 정답 기준을 썼다.</div>
+
+    <div class="st-lb" style="margin-top:5mm">측정과 운영의 날짜</div>
+    <div class="y-cal">
+      <svg width="178mm" height="52mm" viewBox="0 0 178 52">
+        <line x1="4" y1="22" x2="174" y2="22" stroke="#C9D3DC" stroke-width=".5"/>
+        <path d="M56.5 19 V25 M152.3 19 V25" stroke="#9AA8B5" stroke-width=".4"/>
+        <text x="4" y="30" font-size="3" font-weight="800" fill="#6A7784">9월</text><text x="57.5" y="30" font-size="3" font-weight="800" fill="#6A7784">10월</text><text x="153.3" y="30" font-size="3" font-weight="800" fill="#6A7784">11월</text>
+        <rect x="12" y="19" width="3.1" height="6" rx=".3" fill="url(#y-hatch-pre)"/>
+        <text x="13.5" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">9.17</text><text x="13.5" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">사전조사</text>
+        <rect x="76.7" y="19" width="3.1" height="6" rx=".3" fill="url(#y-hatch-gray)"/>
+        <text x="78.2" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">10.8</text><text x="78.2" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">어린이 워크숍</text>
+        <rect x="115.2" y="19" width="9.3" height="6" rx=".3" fill="#2E5A87"/>
+        <text x="119.8" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">10.20–22</text><text x="119.8" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">1차</text>
+        <rect x="136.9" y="19" width="9.3" height="6" rx=".3" fill="url(#y-hatch-blue)"/>
+        <path d="M141.5 25.4 V33" stroke="#9AA8B5" stroke-width=".3"/><text x="141.5" y="37" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">10.27–29</text><text x="141.5" y="41" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">1차 재실험(위치 변경)</text>
+        <rect x="158.5" y="19" width="9.3" height="6" rx=".3" fill="#1A2F4B"/>
+        <text x="163.1" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">11.3–5</text><text x="163.1" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">2차</text>
+        <rect x="168.3" y="19" width="2.6" height="6" rx=".3" fill="#7D97B3"/>
+        <path d="M169.4 25.4 V43" stroke="#9AA8B5" stroke-width=".3"/><text x="174" y="47" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="end">11.6</text><text x="174" y="51" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="end">2차 학교 설문</text>
+        <path d="M137 18.6 L139.2 15.2 L141.4 18.6Z" fill="#7D97B3"/>
+        <text x="139.2" y="13" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">10.27</text><text x="139.2" y="9" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">1차 설문</text>
+      </svg>
+    </div>
+
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:4mm">
+      <div><b>556<small>명</small></b><span>설문 배포 대상<br>약산초 전교생</span></div>
+      <div><b class="dummy">[000]<small class="dummy">명</small></b><span>1차 유효 응답</span></div>
+      <div><b class="dummy">[000]<small class="dummy">명</small></b><span>2차 유효 응답</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>현장 인터뷰<br>(1·2차 합계)</span></div>
+    </div>
+
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>설문은 전교생 556명에게 설문 링크와 서면 설문지로 배포하였다. 1차 설문은 10월 27일(화), 2차 설문은 11월 6일(금)에 학교에서 받았다. 556명은 배포 대상이며, 실제 응답 수는 차수마다 따로 집계하였다. 워크숍의 35명·75응답·57건은 디자인 재료를 모은 기록으로, 실험 설문의 표본과 섞지 않았다.</p>
+      <p>인터뷰는 등·하굣길 현장에서 위치를 설명하는 말과 현장 반응을 들었고, 같은 시간대에 등·하교하는 어린이의 반응을 함께 관찰하였다. 실험 전 기준은 9월 17일 사전조사에서 같은 요일·시간대로 기록해 두었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">55</div>
+</section>
+
+<!-- ================= p56 1차 실험 ① (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">1차 실험 「색연필 수비대」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1차는 통학로 전신주 다섯 곳을<br><em>다섯 색 연필</em>로 바꾸고, 기둥마다 색 이름을 적었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-hero" style="height:132mm">
+      <img src="img/01_약산초_1차설치현장.jpg" alt="">
+      <svg viewBox="0 0 178 132" width="178mm" height="132mm"><g stroke="#fff" stroke-width=".45" fill="none"><path d="M134 16 L119 33"/><path d="M134 58 L120 68"/><path d="M134 112 L126 122"/><path d="M50 106 L86 101"/></g><g fill="#2E5A87" stroke="#fff" stroke-width=".45"><circle cx="119" cy="33" r="1.4"/><circle cx="120" cy="68" r="1.4"/><circle cx="126" cy="122" r="1.4"/><circle cx="86" cy="101" r="1.4"/></g></svg>
+      <div class="st-co" style="left:130mm;top:5mm"><b><i>1</i>연필형 지주 감싸기</b>전신주 옆 지주를 색연필 모양으로 감쌌다. 높이 2,000mm</div>
+      <div class="st-co" style="left:130mm;top:48mm"><b><i>2</i>색 이름 문구</b>‘난 지금 초록색 앞’. 어린이 눈높이 1,000~1,500mm에 배치</div>
+      <div class="st-co" style="left:130mm;top:98mm"><b><i>3</i>바닥 원형 시트</b>지름 1,000mm 미끄럼방지 시트로 기둥과 바닥을 한 영역으로</div>
+      <div class="st-co" style="left:5mm;top:98mm"><b><i>4</i>실험 안내 입간판</b>지나는 어린이와 보호자에게 실험을 알림</div>
+    </div>
+    <div class="st-cap"><b>기둥과 바닥을 같은 색으로 묶어, 전신주 주변을 눈에 띄는 작은 영역으로 만들었다.</b> 초록 연필 지주 설치 모습 · 약산초 정문 남동쪽 통학로</div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>1차 「색연필 수비대」는 시민디자인단 아이디어를 바탕으로 한 시민안이다. 정문 남동쪽 통학로의 전신주 지주 다섯 개를 빨강·주황·노랑·초록·파랑 색연필로 감싸고, 기둥 아래 바닥에는 같은 색 계열의 원형 시트를 깔았다. 기둥과 바닥이 한 덩어리로 읽히게 하여, 전신주 주변을 눈에 띄고 영역성 있는 작은 안전 공간으로 만들었다.</p>
+      <p>기둥마다 ‘난 지금 ○○색 앞’이라는 문구를 넣었다. 어린이가 보호자에게 위치를 말할 때 그대로 따라 쓸 수 있는 문장이다. 문구와 그래픽은 지면에서 1,000~1,500mm, 초등학생의 눈높이 범위에 두었다. 설치와 철거는 수행기관이 맡았고, 전신주 사용은 인천시·약산초·한국전력공사가 공문과 현장 실사로 협의하였다.</p>
+      <p>1차는 10월 20일(화)부터 22일(목)까지 등·하굣길 3일 동안 운영하였고, 설치 위치를 바꿔 10월 27일(화)부터 29일(목)까지 같은 구성으로 한 번 더 운영하였다. 운영 기간에는 등·하교 시간대의 반응을 관찰하고 시설물 앞에서 현장 인터뷰를 진행하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">56</div>
+</section>
+
+<!-- ================= p57 1차 실험 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">1차 실험 「색연필 수비대」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">다섯 색은 <em>먼셀 기호</em>로 고정하고,<br>굵기가 다른 기둥마다 펼친 폭을 맞춰 제작하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-pal">
+      <div class="sw"><div class="c" style="background:#D8452F">빨강</div><div class="m">10R 5/16<small>난 지금 ‘빨간색’ 앞</small></div></div>
+      <div class="sw"><div class="c" style="background:#EC7B2A">주황</div><div class="m">5YR 6/20<small>난 지금 ‘주황색’ 앞</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#F6D64A">노랑</div><div class="m">5Y 9/12<small>난 지금 ‘노란색’ 앞</small></div></div>
+      <div class="sw"><div class="c" style="background:#3E7A4A">초록</div><div class="m">2.5G 4/6<small>난 지금 ‘초록색’ 앞</small></div></div>
+      <div class="sw"><div class="c" style="background:#2E5CC6">파랑</div><div class="m">7.5PB 4/16<small>난 지금 ‘파란색’ 앞</small></div></div>
+    </div>
+    <div class="st-fig" style="margin-top:3mm;padding:3mm 6mm"><img src="img/01_약산초_1차연필5색.jpg" alt="" style="height:44mm;width:auto;margin:0 auto"></div>
+    <div class="st-cap"><b>연필 끝과 몸통, 바닥 원형 그래픽을 같은 색으로 맞추었다.</b> 1차 디자인 5종 · 각 색의 먼셀 기호는 제작·설치 때 적용 색을 확인하는 기준으로 썼다.</div>
+
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:1fr 56mm">
+      <div><div class="st-fig"><img src="img/01_약산초_1차도면.png" alt=""></div>
+        <div class="st-cap"><b>문구와 그래픽은 어린이 눈높이 1,000~1,500mm 안에 두었다.</b> 1차 제작도 · 바닥 원형 시트, 지주 감싸기 전개도</div></div>
+      <div class="st-dims y-dimw">
+        <div><b>2,000<small>mm</small></b><span>지주 감싸기 높이</span></div>
+        <div><b>207–345<small>mm</small></b><span>지주 폭(기둥마다 다름)</span></div>
+        <div><b>1,200–1,480<small>mm</small></b><span>감싸기 펼친 폭</span></div>
+        <div><b>Ø1,000<small>mm</small></b><span>바닥 원형 시트(가운데 400mm는 지주 자리)</span></div>
+        <div><b>1,000–1,500<small>mm</small></b><span>문구·그래픽 높이 범위</span></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>다섯 색에는 2차 부서검토 의견에 따라 먼셀 색기호를 붙여 고정하였다. 색 이름이 곧 위치 문구가 되는 안이었기 때문에, 어린이가 부르는 색 이름과 실제 색이 어긋나지 않는 것이 중요하였다. 다섯 색의 명도는 노랑 9, 주황 6, 빨강 5, 초록·파랑 4로 나뉘어, 다섯 색은 색상과 밝기가 모두 달랐다.</p>
+      <p>현장의 지주는 굵기가 207mm에서 345mm까지 달랐다. 그래서 감싸기는 펼친 폭 1,200~1,480mm 범위에서 기둥마다 맞춰 제작하였고, 위쪽 연필 끝 그래픽과 아래쪽 그래픽 범위 사이에 문구 자리를 두었다. 바닥 시트는 걷는 어린이가 미끄러지지 않도록 미끄럼방지 시트를 썼고, 가운데 지름 400mm는 지주가 서는 자리로 비워 두었다. 다섯 기둥 모두 같은 높이 2,000mm까지 감싸, 색 말고는 기둥끼리 다른 점이 없게 하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">57</div>
+</section>
+
+<!-- ================= p58 2차 실험 ① (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">2차 실험 「꿈꾸는 안전디자이너」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 글을 빼고 <em>동물과 색</em>만으로<br>전봇대를 구분하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-fig" style="padding:2mm"><img src="img/01_약산초_2차동물5종.png" alt=""></div>
+    <div class="st-pal" style="margin-top:2.4mm">
+      <div class="sw"><div class="c" style="background:#F08A1C">강아지</div><div class="m">2.5YR 7/20<small>주황</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#FFE21A">고양이</div><div class="m">7.5Y 9/16<small>노랑</small></div></div>
+      <div class="sw"><div class="c" style="background:#7A3B12">곰</div><div class="m">5YR 3/12<small>갈색</small></div></div>
+      <div class="sw"><div class="c" style="background:#EC1F8E">토끼</div><div class="m">10RP 5/24<small>분홍</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#26C6DA">앵무새</div><div class="m">2.5B 7/10<small>하늘</small></div></div>
+    </div>
+    <div class="st-cap"><b>다섯 동물과 다섯 배경색은 어린이 워크숍의 색·동물 제안을 묶은 것이다.</b> 2차 디자인 5종과 배경색 먼셀 기호</div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>2차안은 1차의 반응에서 출발하였다. 1차 인터뷰에서 어린이들은 색과 모양이 눈에 잘 띄었다고 답했고, 위치를 말할 때 색 이름을 썼다. 반면 기둥에 적힌 문구는 읽지 않았거나 기억나지 않는다는 응답이 함께 나왔다. <b>색은 단서로 쓰였지만 글은 단서가 되지 못한 것</b>이다.</p>
+      <p>10월 8일 워크숍의 제안이 여기에 더해졌다. 어린이들은 서로 다른 색과 형광색, 동물의 귀와 색을 제안했고, 시설물마다 애칭을 붙이거나 의인화한 이름을 지었다. 2차안은 이 제안들을 강아지·고양이·곰·토끼·앵무새 다섯 동물과 다섯 배경색으로 묶었다. 문구는 넣지 않았다. 어린이가 그림과 색만 보고 전봇대에 스스로 이름을 붙여 부르는지가 새로운 관찰 대상이 되었다.</p>
+      <p>소재도 바뀌었다. 워크숍에서 전봇대에 대한 응답 14건 중 9건이 좁고 지나가기 불편하다거나 옮겨 달라는 의견이었고, 어린이들은 스펀지로 감싼 전봇대를 제안하였다. 2차는 이 제안을 받아 EVA 스펀지 10T로 둘레 400mm의 전봇대를 1,800mm 높이까지 감쌌다.</p>
+      <p>1차의 바닥 원형 시트는 쓰지 않고 기존 보도블록을 그대로 두었다. 대신 밤에도 동물이 드러나도록 반사 시트를 쓰고, 반사 효과를 살리기 위해 동물 형태를 뺀 배경만 컬러로 인쇄하였다. 동물은 흰 실루엣으로 남아 낮에는 배경색과 대비되고, 밤에는 빛을 받아 윤곽이 떠오른다.</p>
+      <p>배경색은 1차처럼 먼셀 기호로 고정하였다. 다섯 색은 주황(2.5YR 7/20), 노랑(7.5Y 9/16), 갈색(5YR 3/12), 분홍(10RP 5/24), 하늘(2.5B 7/10)로, 1차의 빨강·초록·파랑 대신 어린이들이 제안한 형광에 가까운 고채도 색과 어두운 갈색이 섞였다. 2차 설문에는 동물과 색을 구별하는지, 스펀지의 느낌이 어떤지, 지나갈 때 불편하지 않은지를 묻는 문항을 더하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">58</div>
+</section>
+
+<!-- ================= p59 2차 실험 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">2차 실험 「꿈꾸는 안전디자이너」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 1차에서 <em>문구와 바닥 시트를 덜어 내고</em>,<br>스펀지와 반사 시트를 더하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 52mm;gap:5mm">
+      <div><div class="st-ph" style="height:76mm"><img src="img/01_약산초_2차시뮬.jpg" alt=""></div>
+        <div class="st-cap"><b>주황 강아지 전봇대. 낮에는 배경색이, 밤에는 반사 시트의 동물 윤곽이 보인다.</b> 현장 적용 시뮬레이션(합성) · 주간(왼쪽)·야간(오른쪽)</div></div>
+      <div class="st-dims">
+        <div><b>400<small>mm</small></b><span>전봇대 둘레</span></div>
+        <div><b>1,800<small>mm</small></b><span>감싼 높이</span></div>
+        <div><b>약 463<small>mm</small></b><span>그래픽 폭(+겹침 여유)</span></div>
+        <div><b>10<small>T</small></b><span>EVA 스펀지 두께</span></div>
+        <div><b>5<small>개소</small></b><span>동물 1종씩 전봇대 5개</span></div>
+      </div>
+    </div>
+    <div class="st-split" style="margin-top:4mm;grid-template-columns:62mm 1fr;gap:6mm">
+      <div><div class="st-fig"><img src="img/01_약산초_2차도면.png" alt=""></div>
+        <div class="st-cap"><b>그래픽 범위 안에 동물을 두고 바깥 배경만 인쇄하였다.</b> 2차 제작·부착도</div></div>
+      <div class="st-tx">
+        <p>2차는 같은 통학로의 전봇대 다섯 개에 동물 한 종씩을 입혔다. 감싸기는 EVA 스펀지 10T 위에 반사 시트를 붙이는 구조로, 전봇대 둘레 400mm를 한 바퀴 두르고 겹침 여유를 두어 고정하였다.</p>
+        <p>1차와 견주면 바뀐 것은 여섯 가지였다. 디자인한 사람, 위치를 알려 주는 단서, 문구, 바닥, 소재, 밤의 보임이다. 주체·단서·문구·소재의 변화는 1차 인터뷰와 어린이 워크숍의 반응과 제안에 근거를 두었고, 바닥과 야간 사양은 제작·부착 계획에서 정하였다.</p>
+        <p>설치 전에는 주간과 야간 두 장면의 현장 적용 시뮬레이션으로 배경색과 반사 시트 위 동물 윤곽이 어떻게 보이는지 확인하였다. 동물 5종은 기둥마다 한 종씩 나누어, 다섯 기둥이 서로 다른 이름으로 불릴 수 있게 하였다. 반사 시트는 1차에 없던 사양이어서, 밤의 보임은 2차에서 처음 확인하는 조건이 되었다.</p>
+      </div>
+    </div>
+    <div class="st-chg" style="margin-top:4.6mm">
+      <div class="c"><div class="k">디자인 주체</div><div class="a">시민디자인단 아이디어</div><div class="b">6학년 35명 제안</div><div class="w">근거 · 해법의 주어를 어린이로</div></div>
+      <div class="c"><div class="k">위치 단서</div><div class="a">다섯 색 연필</div><div class="b">다섯 동물 + 배경색</div><div class="w">근거 · 색·형광색·동물 귀 제안</div></div>
+      <div class="c"><div class="k">문구</div><div class="a">‘난 지금 ○○색 앞’</div><div class="b">문구 없음</div><div class="w">근거 · 1차 문구를 읽지 않은 응답</div></div>
+      <div class="c"><div class="k">바닥</div><div class="a">원형 미끄럼방지 시트</div><div class="b">기존 보도블록 유지</div><div class="w">근거 · 기존 보도블록 유지 계획</div></div>
+      <div class="c"><div class="k">소재</div><div class="a">그래픽 시트</div><div class="b">EVA 스펀지 10T</div><div class="w">근거 · 스펀지 전봇대 제안</div></div>
+      <div class="c"><div class="k">야간</div><div class="a">1차 사양에 없음</div><div class="b">반사 시트 · 동물 윤곽</div><div class="w">근거 · 주·야간 적용 시뮬레이션</div></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">59</div>
+</section>
+
+<!-- ================= p60 현장 기록 ① 배치도 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">현장 배치</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">실험은 어린이 의견이 몰린 <em>정문 남동쪽 담장의</em><br>전신주 다섯 곳(A–E)에 모았다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-plan" style="height:150mm">
+      <svg viewBox="0 0 178 150" width="178mm" height="150mm">
+                <!-- 주변 블록 -->
+        <g fill="#E1E7EC"><rect x="4" y="4" width="14" height="22" rx=".6"/><rect x="4" y="30" width="14" height="30" rx=".6"/><rect x="4" y="64" width="14" height="26" rx=".6"/><rect x="4" y="94" width="14" height="22" rx=".6"/><rect x="4" y="120" width="14" height="26" rx=".6"/><rect x="150" y="34" width="24" height="24" rx=".6"/><rect x="150" y="62" width="24" height="30" rx=".6"/><rect x="150" y="96" width="24" height="22" rx=".6"/><rect x="150" y="122" width="24" height="24" rx=".6"/><rect x="22" y="140" width="58" height="8" rx=".6"/></g>
+        <text x="11" y="80" font-size="3" font-weight="700" fill="#8C98A3" text-anchor="middle" transform="rotate(-90 11 80)">저층 주거지</text>
+        <!-- 간석여중 -->
+        <rect x="46" y="4" width="52" height="22" rx=".6" fill="#DCE3EA"/>
+        <text x="72" y="16.4" font-size="3.4" font-weight="800" fill="#56636E" text-anchor="middle">간석여자중학교</text>
+        <!-- 학교 -->
+        <rect x="22" y="32" width="78" height="104" rx=".6" fill="#D6E0EF"/>
+        <path d="M26 36 H96 V48 H38 V96 H26 Z" fill="#BFCFE6"/>
+        <ellipse cx="66" cy="94" rx="24" ry="28" fill="#EEF2F6"/>
+        <text x="66" y="93" font-size="4.2" font-weight="900" fill="#1A2F4B" text-anchor="middle">약산초등학교</text>
+        <text x="66" y="98.6" font-size="2.8" font-weight="700" fill="#56636E" text-anchor="middle">운동장</text>
+        <!-- 담장(남동쪽) + 보도 + 차도 -->
+        <rect x="100" y="28" width="16" height="120" fill="#FFFFFF"/>
+        <rect x="116" y="28" width="30" height="120" fill="#D3DBE2"/>
+        <path d="M131 30 V146" stroke="#fff" stroke-width=".6" stroke-dasharray="4 3"/>
+        <rect x="100" y="28" width="16" height="120" fill="url(#y-hatch-zone)"/>
+        <line x1="100" y1="32" x2="100" y2="136" stroke="#1A2F4B" stroke-width=".9"/>
+        <text x="108" y="146" font-size="2.7" font-weight="800" fill="#22476C" text-anchor="middle" stroke="#fff" stroke-width=".9" stroke-linejoin="round" style="paint-order:stroke">지도 의견 57건 집중</text>
+        <!-- 이동동선 -->
+        <path d="M172 6 C150 8 120 12 110 22 L110 76" fill="none" stroke="#2E5A87" stroke-width=".6" stroke-dasharray="2.2 1.4"/>
+        <path d="M108 72 L110 77 L112 72" fill="#2E5A87"/>
+        <text x="148" y="16" font-size="3" font-weight="800" fill="#22476C">등교 이동 동선</text>
+        <!-- 정문 -->
+        <rect x="97.6" y="78" width="4.8" height="8" rx=".3" fill="#1A2F4B"/>
+        <text x="95" y="83.6" font-size="3.4" font-weight="900" fill="#1A2F4B" text-anchor="end">정문</text>
+        <!-- 전신주 A–E -->
+        <g font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">
+          <circle cx="107" cy="38" r="3.4" fill="#2E5A87"/><text x="107" y="39.2">A</text>
+          <circle cx="107" cy="53" r="3.4" fill="#2E5A87"/><text x="107" y="54.2">B</text>
+          <circle cx="107" cy="66" r="3.4" fill="#2E5A87"/><text x="107" y="67.2">C</text>
+          <circle cx="107" cy="110" r="3.4" fill="#2E5A87"/><text x="107" y="111.2">D</text>
+          <circle cx="107" cy="131" r="3.4" fill="#2E5A87"/><text x="107" y="132.2">E</text>
+        </g>
+        <!-- 방위·축척 -->
+        <g transform="translate(166 132)"><circle r="5" fill="#fff"/><path d="M1.8 2.4 L-1.9 -3.3 L-0.4 2.9Z" fill="#1A2F4B"/><text x="-4.6" y="-1.6" font-size="2.6" font-weight="800" fill="#1A2F4B">N</text></g>
+        <text x="24" y="144.6" font-size="2.6" font-weight="700" fill="#8C98A3">← 간석오거리역 방면</text>
+      </svg>
+      <div class="y-inset" style="right:auto;left:126mm;top:66mm;bottom:auto;width:48mm"><img src="img/01_약산초_항공.jpg" alt=""><span>항공사진 위 전신주 A–E와 등교 이동 동선</span></div>
+    </div>
+    <div class="st-cap"><b>정문을 사이에 두고 북쪽에 A·B·C, 남쪽에 D·E가 섰다. 어린이 지도 의견이 몰린 구간과 같은 곳이다.</b> 개념 배치도(축척 없음) · 정문 쪽 담장을 세로로 놓고 그림</div>
+    <div class="st-pos" style="margin-top:3.4mm">
+      <div><b><i>A</i>북쪽 끝</b>간석여중 쪽 모퉁이에서 처음 만나는 기둥</div>
+      <div><b><i>B</i>북쪽</b>등교 동선이 담장을 따라 내려오는 구간</div>
+      <div><b><i>C</i>정문 직전</b>정문으로 꺾기 바로 전 기둥</div>
+      <div><b><i>D</i>정문 남쪽</b>정문을 지나 남쪽 담장 구간</div>
+      <div><b><i>E</i>남쪽 끝</b>남쪽 모퉁이 쪽 마지막 기둥</div>
+    </div>
+    <div class="st-tx" style="margin-top:3.4mm">
+      <p>다섯 기둥은 모두 정문이 있는 남동쪽 담장을 따라 섰다. 1차 재실험(10.27–29)에서는 설치 위치를 <span class="dummy">[변경한 기둥·위치]</span>로 옮겼고, 기둥별 색·동물 배치는 <span class="dummy">[기둥별 배치]</span>였다. 전신주는 한국전력공사 시설물이어서 설치 전 인천시·약산초·한국전력공사가 장소를 협의하였다. 다섯 기둥은 등교 이동 동선이 담장을 따라 내려와 정문으로 꺾이는 구간에 놓였다.</p>
+      <p>위치는 어린이 워크숍의 워크맵에서 출발하였다. 지도 의견 57건이 동쪽 정문–통학로 구간에 몰렸고, 실험 기둥도 이 구간 안에서 골랐다. 기둥은 정문 북쪽에 세 곳(A–C), 남쪽에 두 곳(D–E)을 두었다. 설치 위치와 필요한 개수는 현장을 확인해 보행과 설치가 가능한 범위에서 정하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">60</div>
+</section>
+
+<!-- ================= p61 현장 기록 ② 운영 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">설치·운영 기록</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1차는 위치를 바꿔 <em>한 번 더 운영</em>하였고,<br>2차는 그 1주 뒤 같은 요일에 이어졌다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="y-cal">
+      <svg width="178mm" height="54mm" viewBox="0 0 178 54">
+        <g font-size="3.2" font-weight="800" fill="#6A7784" text-anchor="middle">
+          <text x="38" y="5">월</text><text x="58" y="5">화</text><text x="78" y="5">수</text><text x="98" y="5">목</text><text x="118" y="5">금</text><text x="138" y="5">토</text><text x="158" y="5">일</text>
+        </g>
+        <g font-size="3.2" font-weight="900" fill="#1A2F4B"><text x="2" y="17">10월 셋째 주</text><text x="2" y="32">10월 넷째 주</text><text x="2" y="47">11월 첫째 주</text></g>
+        <g fill="#F3F6F8"><rect x="29" y="8" width="18" height="13" rx=".6"/><rect x="109" y="8" width="18" height="13" rx=".6"/><rect x="129" y="8" width="18" height="13" rx=".6"/><rect x="149" y="8" width="18" height="13" rx=".6"/>
+          <rect x="29" y="23" width="18" height="13" rx=".6"/><rect x="109" y="23" width="18" height="13" rx=".6"/><rect x="129" y="23" width="18" height="13" rx=".6"/><rect x="149" y="23" width="18" height="13" rx=".6"/>
+          <rect x="29" y="38" width="18" height="13" rx=".6"/><rect x="129" y="38" width="18" height="13" rx=".6"/><rect x="149" y="38" width="18" height="13" rx=".6"/></g>
+        <rect x="49" y="8" width="58" height="13" rx=".6" fill="#2E5A87"/>
+        <text x="78" y="13.4" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">1차 「색연필 수비대」</text><text x="78" y="18" font-size="2.8" font-weight="600" fill="#fff" text-anchor="middle">10.20 – 10.22 · 등·하굣길 3일</text>
+        <rect x="49" y="23" width="58" height="13" rx=".6" fill="url(#y-hatch-blue)"/>
+        <text x="86" y="28.4" font-size="3.4" font-weight="900" fill="#1A2F4B" text-anchor="middle" stroke="#fff" stroke-width="1" stroke-linejoin="round" style="paint-order:stroke">1차 재실험 · 위치 변경</text><text x="86" y="33" font-size="2.8" font-weight="700" fill="#1A2F4B" text-anchor="middle" stroke="#fff" stroke-width="1" stroke-linejoin="round" style="paint-order:stroke">10.27 – 10.29 · 같은 구성</text>
+        <rect x="50.4" y="24.4" width="14.6" height="10.2" rx=".4" fill="#C9D7E6"/><text x="57.7" y="28.6" font-size="2.9" font-weight="900" fill="#1A2F4B" text-anchor="middle">10.27</text><text x="57.7" y="32.6" font-size="2.5" font-weight="700" fill="#1A2F4B" text-anchor="middle">1차 설문</text>
+        <rect x="49" y="38" width="58" height="13" rx=".6" fill="#1A2F4B"/>
+        <text x="78" y="43.4" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">2차 「꿈꾸는 안전디자이너」</text><text x="78" y="48" font-size="2.8" font-weight="600" fill="#fff" text-anchor="middle">11.3 – 11.5 · 등·하굣길 3일</text>
+        <rect x="109" y="38" width="18" height="13" rx=".6" fill="#C9D7E6"/>
+        <text x="118" y="43.4" font-size="3.2" font-weight="900" fill="#1A2F4B" text-anchor="middle">11.6</text><text x="118" y="48" font-size="2.7" font-weight="700" fill="#1A2F4B" text-anchor="middle">학교 설문</text>
+      </svg>
+    </div>
+    <div class="st-cap"><b>세 번의 운영이 모두 화요일에 시작해 목요일에 끝났다.</b> 1차 설문은 재실험 첫날인 10월 27일(화), 2차 설문은 11월 6일(금) 학교에서 진행하였다.</div>
+
+    <div class="st-log" style="margin-top:4.6mm;--lh:46mm">
+      <div class="c"><div class="st-ph"><img src="img/01_약산초_1차현장.jpg" alt="" style="object-position:55% 85%;transform:scale(1.6);transform-origin:56% 86%"><span>1차 설치 · 안내 입간판과 바닥 시트</span></div>
+        <div class="t"><span class="rtag r1">1차</span>색연필 수비대</div>
+        <dl><dt>운영</dt><dd>10.20(화)–22(목)</dd><dt>위치</dt><dd>전신주 지주 A–E</dd><dt>노출</dt><dd>등·하굣길 3일</dd><dt>기록</dt><dd>사진 · 등·하교 관찰 · 인터뷰</dd></dl></div>
+      <div class="c"><div class="st-ph"><img src="img/01_약산초_1차인터뷰A.jpg" alt="" style="object-position:50% 30%"><span>1차 현장 인터뷰</span></div>
+        <div class="t"><span class="rtag r1">1차</span>재실험</div>
+        <dl><dt>운영</dt><dd>10.27(화)–29(목)</dd><dt>변경</dt><dd class="dummy">[설치 위치 변경 내용]</dd><dt>구성</dt><dd>1차와 같은 다섯 색</dd><dt>설문</dt><dd>10.27(화) 전교생 배포</dd></dl></div>
+      <div class="c"><div class="st-ph"><img src="img/01_약산초_2차시뮬.jpg" alt="" style="object-position:0% 50%"><span>2차 적용 시뮬레이션(합성)</span></div>
+        <div class="t"><span class="rtag r2">2차</span>꿈꾸는 안전디자이너</div>
+        <dl><dt>운영</dt><dd>11.3(화)–5(목)</dd><dt>위치</dt><dd>통학로 전봇대 5개소</dd><dt>노출</dt><dd>등·하굣길 3일</dd><dt>설문</dt><dd>11.6(금) 학교 설문</dd></dl></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>설치와 철거, 현장 조사와 워크숍, 분석은 수행기관이 맡았다. 현장에는 거점 공통 안전 계획에 따라 안전요원을 3명 이상 두었고, 등·하교 시간에는 시설물 앞을 지나는 어린이의 반응을 관찰자가 개입하지 않고 기록하였다. 관찰자는 3인 이내로 두어 같은 지점에서 같은 방식으로 기록하였고, 날마다 설치 상태를 점검하였다.</p>
+      <p>1차를 한 차례 더 운영하면서 1차의 노출은 두 번이 되었다. 1차 설문은 재실험이 시작된 10월 27일에 받았고, 첫 운영과 재실험 사이의 설치 위치 차이는 1·2차 비교의 외부 조건으로 따로 기록하였다. 날씨와 학교 행사 같은 특이사항은 <span class="dummy">[특이사항]</span>이었다. 2차는 재실험 다음 주인 11월 3일(화)부터 5일(목)까지 정문 남동쪽 통학로의 전봇대 다섯 곳에서 운영하였고, 설문은 운영을 마친 다음 날 받았다.</p>
+    </div>
+    <div class="st-keep" style="margin-top:4.6mm">
+      <div class="t">현장 운영 원칙 <span>일곱 거점 공통 · 약산초 적용</span></div>
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>안전요원 3명 이상</b><small>설치·운영·철거 동안<br>대상지별 배치</small></div>
+        <div><b>관찰자 3인 이내</b><small>비개입 관찰<br>같은 지점·같은 계수</small></div>
+        <div><b>같은 요일·시간대</b><small>화–목 등·하굣길<br>사전조사와 같은 패턴</small></div>
+        <div><b>특이사항 기록</b><small>날씨·학교 행사<br>설치 상태 점검</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">61</div>
+</section>
+
+<!-- ================= p62 정량 ① 표본·자료 품질 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정량 결과 · 표본</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">전교생 556명에게 배포한 설문에서<br>1차 <span class="dummy">[000]</span>명, 2차 <span class="dummy">[000]</span>명의 <em>유효 응답</em>을 얻었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-chart">
+      <svg width="178mm" height="50mm" viewBox="0 0 178 50">
+        <g font-size="3.4" font-weight="900"><text x="0" y="14" fill="#2E5A87">1차</text><text x="0" y="38" fill="#1A2F4B">2차</text></g>
+        <g>
+          <rect x="12" y="4" width="44" height="16" rx=".6" fill="#E8EEF8"/><text x="34" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">배포</text><text x="34" y="17.4" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">556명</text>
+          <path d="M57.5 12 H63.5 M61.6 10 L63.8 12 L61.6 14" stroke="#3A5F8E" stroke-width=".6" fill="none"/>
+          <rect x="65" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="87" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">회수</text><text x="87" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[000]명</text>
+          <path d="M110.5 12 H116.5 M114.6 10 L116.8 12 L114.6 14" stroke="#3A5F8E" stroke-width=".6" fill="none"/>
+          <rect x="118" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="140" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">유효 응답</text><text x="140" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[000]명</text>
+          <text x="166" y="11" font-size="2.8" font-weight="700" fill="#6A7784">제외</text><text x="166" y="16.4" font-size="3.6" font-weight="900" fill="#E5332A">[00]</text>
+        </g>
+        <g transform="translate(0 24)">
+          <rect x="12" y="4" width="44" height="16" rx=".6" fill="#E8EEF8"/><text x="34" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">배포</text><text x="34" y="17.4" font-size="5" font-weight="900" fill="#1A2F4B" text-anchor="middle">556명</text>
+          <path d="M57.5 12 H63.5 M61.6 10 L63.8 12 L61.6 14" stroke="#3A5F8E" stroke-width=".6" fill="none"/>
+          <rect x="65" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="87" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">회수</text><text x="87" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[000]명</text>
+          <path d="M110.5 12 H116.5 M114.6 10 L116.8 12 L114.6 14" stroke="#3A5F8E" stroke-width=".6" fill="none"/>
+          <rect x="118" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="140" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">유효 응답</text><text x="140" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[000]명</text>
+          <text x="166" y="11" font-size="2.8" font-weight="700" fill="#6A7784">제외</text><text x="166" y="16.4" font-size="3.6" font-weight="900" fill="#E5332A">[00]</text>
+        </g>
+      </svg>
+    </div>
+    <div class="st-cap"><b>배포 대상은 두 차수 모두 전교생 556명으로 같았다.</b> 회수율 1차 <span class="dummy">[00]%</span> · 2차 <span class="dummy">[00]%</span> · 응답 방식 설문 링크 <span class="dummy">[00]%</span> · 서면 <span class="dummy">[00]%</span></div>
+
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:96mm 1fr;gap:7mm">
+      <div>
+        <div class="st-lb">학년별 유효 응답</div>
+        <div class="st-chart">
+          <svg width="96mm" height="70mm" viewBox="0 0 96 62">
+            <g stroke="#E3E8EC" stroke-width=".3"><line x1="8" y1="6" x2="96" y2="6"/><line x1="8" y1="19" x2="96" y2="19"/><line x1="8" y1="32" x2="96" y2="32"/><line x1="8" y1="45" x2="96" y2="45"/></g>
+            <line x1="8" y1="52" x2="96" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+            <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="6.4" y="7">[00]</text><text x="6.4" y="33">[00]</text><text x="6.4" y="53">0</text></g>
+            <g>
+              <rect x="12" y="26" width="5" height="26" fill="#2E5A87"/><rect x="18" y="26" width="5" height="26" fill="#1A2F4B"/>
+              <rect x="26.6" y="26" width="5" height="26" fill="#2E5A87"/><rect x="32.6" y="26" width="5" height="26" fill="#1A2F4B"/>
+              <rect x="41.2" y="26" width="5" height="26" fill="#2E5A87"/><rect x="47.2" y="26" width="5" height="26" fill="#1A2F4B"/>
+              <rect x="55.8" y="26" width="5" height="26" fill="#2E5A87"/><rect x="61.8" y="26" width="5" height="26" fill="#1A2F4B"/>
+              <rect x="70.4" y="26" width="5" height="26" fill="#2E5A87"/><rect x="76.4" y="26" width="5" height="26" fill="#1A2F4B"/>
+              <rect x="85" y="26" width="5" height="26" fill="#2E5A87"/><rect x="91" y="26" width="5" height="26" fill="#1A2F4B"/>
+            </g>
+            <g font-size="2.4" fill="#E5332A" font-weight="800" text-anchor="middle"><text x="14.5" y="24.4">[00]</text><text x="20.5" y="21.4">[00]</text><text x="29.1" y="24.4">[00]</text><text x="35.1" y="21.4">[00]</text><text x="43.7" y="24.4">[00]</text><text x="49.7" y="21.4">[00]</text><text x="58.3" y="24.4">[00]</text><text x="64.3" y="21.4">[00]</text><text x="72.9" y="24.4">[00]</text><text x="78.9" y="21.4">[00]</text><text x="87.5" y="24.4">[00]</text><text x="93.5" y="21.4">[00]</text></g>
+            <g font-size="3" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="17.5" y="57">1학년</text><text x="32.1" y="57">2학년</text><text x="46.7" y="57">3학년</text><text x="61.3" y="57">4학년</text><text x="75.9" y="57">5학년</text><text x="90.5" y="57">6학년</text></g>
+            <g font-size="2.6" font-weight="700" fill="#56636E"><rect x="60" y="0" width="3" height="3" fill="#2E5A87"/><text x="64" y="2.7">1차</text><rect x="72" y="0" width="3" height="3" fill="#1A2F4B"/><text x="76" y="2.7">2차</text></g>
+          </svg>
+        </div>
+        <div class="st-cap"><b>어느 학년이 많이 답했는지에 따라 정답률이 달라질 수 있어 학년을 함께 보았다.</b> 블루 1차 · 남색 2차</div>
+      </div>
+      <div class="st-tx">
+        <p>유효 응답의 기준은 <span class="dummy">[사진·지도 문항 모두 응답]</span>으로 정하였고, <span class="dummy">[중복 제출·학년 정보 누락]</span> 응답을 제외하였다. 문항마다 무응답을 뺀 수를 그 문항의 분모로 썼다.</p>
+        <p>두 차수 모두 같은 학생들에게 배포하였다. 같은 학생의 1·2차 응답을 짝지어 볼 수 있는지는 <span class="dummy">[익명 응답 · 연결 불가]</span>였고, 결과는 차수별 응답 집단을 맞대어 읽었다. 학년 구성이 두 차수에서 크게 다르면 학년별 값을 따로 보았다.</p>
+        <p>학년별 응답 수는 1차 <span class="dummy">[0]</span>학년, 2차 <span class="dummy">[0]</span>학년이 가장 많았다.</p>
+        <p>1차 설문은 재실험이 시작된 10월 27일(화)에, 2차 설문은 2차 운영을 마친 다음 날인 11월 6일(금)에 받았다. 1차가 위치를 바꿔 두 번 운영된 점은 1·2차 비교의 외부 조건으로 기록하였다. 두 설문의 간격은 10일로, 설문 사이에 최소 1주일을 둔다는 원칙을 지켰다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">섞지 않은 세 가지 단위</div>
+    <div class="y-unit">
+      <div><span class="t"><b>응답자 수</b><i>사람 단위 · 설문</i></span>배포 <em>556명</em> → 1차 유효 <span class="dummy">[000]명</span> · 2차 유효 <span class="dummy">[000]명</span>. 비율의 분모는 문항별 유효 응답</div>
+      <div><span class="t"><b>카드·지도 의견 수</b><i>응답 단위 · 워크숍</i></span>참여 <em>35명</em>이 남긴 시설물 카드 <em>75응답</em>, 지도 의견 <em>57건</em>, 이름 제안 <em>51건</em>. 실험 전 기록</div>
+      <div><span class="t"><b>발언·장면 수</b><i>장면 단위 · 인터뷰·관찰</i></span>인터뷰 <span class="dummy">[00]명</span>의 발언 <span class="dummy">[000]건</span>, 등·하교 관찰 장면 <span class="dummy">[00]건</span>. 주제 분류에만 사용</div>
+    </div>
+    <div class="st-cap"><b>세 단위는 서로 더하거나 나누지 않았다.</b> 정량 결과의 분모는 언제나 설문 응답자다.</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 약산초 1·2차 설문</div>
+  <div class="pno">62</div>
+</section>
+
+<!-- ================= p63 정량 ② 핵심 지표 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정량 결과 · 핵심 지표</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">지도 위치 정답률은 1차 <span class="dummy">[00]%</span>, 2차 <span class="dummy">[00]%</span>로<br><em>어린이안이</em> <span class="dummy">[00]%p [높았다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-kpi">
+      <div class="c"><h5>① 시설물 인지 응답 비율</h5><p>사진 속 실험 시설물을 통학로에서 보았다고 답한 비율 · 분모: 문항 유효 응답</p>
+        <svg width="86mm" height="66mm" viewBox="0 0 86 62">
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="10" y1="4" x2="86" y2="4"/><line x1="10" y1="16" x2="86" y2="16"/><line x1="10" y1="28" x2="86" y2="28"/><line x1="10" y1="40" x2="86" y2="40"/></g>
+          <line x1="10" y1="52" x2="86" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="8" y="5">100%</text><text x="8" y="17">75</text><text x="8" y="29">50</text><text x="8" y="41">25</text><text x="8" y="53">0</text></g>
+          <rect x="22" y="28" width="18" height="24" fill="#2E5A87"/><rect x="56" y="28" width="18" height="24" fill="#1A2F4B"/>
+          <text x="31" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text><text x="65" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text>
+          <text x="31" y="57.4" font-size="3" font-weight="800" fill="#2E5A87" text-anchor="middle">1차 시민안</text><text x="65" y="57.4" font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="middle">2차 어린이안</text>
+          <text x="48" y="12" font-size="3" font-weight="800" fill="#E5332A" text-anchor="middle">[±00]%p</text>
+        </svg></div>
+      <div class="c"><h5>② 지도 위치 정답률</h5><p>지도에서 시설물의 자리를 사전 정답 기준대로 고른 비율 · 분모: 문항 유효 응답</p>
+        <svg width="86mm" height="66mm" viewBox="0 0 86 62">
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="10" y1="4" x2="86" y2="4"/><line x1="10" y1="16" x2="86" y2="16"/><line x1="10" y1="28" x2="86" y2="28"/><line x1="10" y1="40" x2="86" y2="40"/></g>
+          <line x1="10" y1="52" x2="86" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="8" y="5">100%</text><text x="8" y="17">75</text><text x="8" y="29">50</text><text x="8" y="41">25</text><text x="8" y="53">0</text></g>
+          <rect x="22" y="28" width="18" height="24" fill="#2E5A87"/><rect x="56" y="28" width="18" height="24" fill="#1A2F4B"/>
+          <text x="31" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text><text x="65" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text>
+          <text x="31" y="57.4" font-size="3" font-weight="800" fill="#2E5A87" text-anchor="middle">1차 시민안</text><text x="65" y="57.4" font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="middle">2차 어린이안</text>
+          <text x="48" y="12" font-size="3" font-weight="800" fill="#E5332A" text-anchor="middle">[±00]%p</text>
+        </svg></div>
+    </div>
+    <div class="st-kpi" style="grid-template-columns:1fr;margin-top:4mm">
+      <div class="c"><h5>③ 위치 설명에 쓴 단서 (복수 응답)</h5><p>보호자에게 위치를 설명하는 서술 응답에 등장한 단서 · 분모: 설명 응답자 수, 한 응답에 여러 단서 가능</p>
+        <svg width="178mm" height="64mm" viewBox="0 0 178 64">
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="42" y1="2" x2="42" y2="56"/><line x1="75" y1="2" x2="75" y2="56"/><line x1="108" y1="2" x2="108" y2="56"/><line x1="141" y1="2" x2="141" y2="56"/><line x1="174" y1="2" x2="174" y2="56"/></g>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle"><text x="42" y="61">0</text><text x="75" y="61">25</text><text x="108" y="61">50</text><text x="141" y="61">75</text><text x="174" y="61">100%</text></g>
+          <g font-size="3.2" font-weight="800" fill="#1A2F4B" text-anchor="end"><text x="39" y="8.6">색 이름</text><text x="39" y="19.6">동물 이름</text><text x="39" y="30.6">기둥 문구</text><text x="39" y="41.6">주변 가게·표지</text><text x="39" y="52.6">기타·모름</text></g>
+          <g>
+            <rect x="42" y="3" width="66" height="4" fill="#2E5A87"/><rect x="42" y="7.6" width="66" height="4" fill="#1A2F4B"/>
+            <rect x="42" y="14" width="66" height="4" fill="#2E5A87"/><rect x="42" y="18.6" width="66" height="4" fill="#1A2F4B"/>
+            <rect x="42" y="25" width="66" height="4" fill="#2E5A87"/><rect x="42" y="29.6" width="66" height="4" fill="#1A2F4B"/>
+            <rect x="42" y="36" width="66" height="4" fill="#2E5A87"/><rect x="42" y="40.6" width="66" height="4" fill="#1A2F4B"/>
+            <rect x="42" y="47" width="66" height="4" fill="#2E5A87"/><rect x="42" y="51.6" width="66" height="4" fill="#1A2F4B"/>
+          </g>
+          <g font-size="2.8" font-weight="800" fill="#E5332A"><text x="110" y="6.4">1차 [00]%</text><text x="110" y="11">2차 [00]%</text><text x="110" y="17.4">1차 [00]%</text><text x="110" y="22">2차 [00]%</text><text x="110" y="28.4">1차 [00]%</text><text x="110" y="33">2차 [00]%</text><text x="110" y="39.4">1차 [00]%</text><text x="110" y="44">2차 [00]%</text><text x="110" y="50.4">1차 [00]%</text><text x="110" y="55">2차 [00]%</text></g>
+          <g font-size="2.7" font-weight="700" fill="#56636E"><rect x="140" y="-0.4" width="3" height="3" fill="#2E5A87"/><text x="144" y="2.3">1차</text><rect x="153" y="-0.4" width="3" height="3" fill="#1A2F4B"/><text x="157" y="2.3">2차</text></g>
+        </svg></div>
+    </div>
+    <div class="st-cap"><b>세 지표 모두 0–100% 같은 축으로 그렸다.</b> 블루 1차 · 남색 2차. 차이는 퍼센트포인트(%p)로 적었다.</div>
+    <div class="st-tx" style="margin-top:4mm">
+      <p>시설물을 알아본 비율은 1차 <span class="dummy">[00]%</span>, 2차 <span class="dummy">[00]%</span>로 두 안 모두 <span class="dummy">[절반을 넘었다]</span>. 차이는 지도에서 자리를 찾는 단계에서 <span class="dummy">[커졌다]</span>. 위치를 설명할 때 1차 응답자는 색 이름을 <span class="dummy">[00]%</span>, 2차 응답자는 동물 이름을 <span class="dummy">[00]%</span> 썼고, 기둥 문구를 단서로 쓴 응답은 1차에서 <span class="dummy">[00]%</span>였다.</p>
+      <p>두 차수의 지도 문항은 같은 지도와 같은 정답 기준을 썼고, 문항마다 유효 응답 수가 달라 분모를 따로 두었다. 차이가 오차 범위 안에 든 지표는 ‘비슷하였다’로 판정하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 약산초 1·2차 설문(유효 응답 1차 <span class="dummy">[000]</span>명 · 2차 <span class="dummy">[000]</span>명)</div>
+  <div class="pno">63</div>
+</section>
+
+<!-- ================= p64 정량 ③ 조건 비교 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정량 결과 · 조건별 비교</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">기둥별·학년별로 나누어 보아도<br>두 안의 차이는 <span class="dummy">[같은 방향이었다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 1fr;gap:6mm">
+      <div>
+        <div class="st-lb">기둥별 지도 위치 정답률</div>
+        <svg width="86mm" height="66mm" viewBox="0 0 86 66">
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="14" y1="2" x2="14" y2="58"/><line x1="32" y1="2" x2="32" y2="58"/><line x1="50" y1="2" x2="50" y2="58"/><line x1="68" y1="2" x2="68" y2="58"/><line x1="86" y1="2" x2="86" y2="58"/></g>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle"><text x="14" y="63">0</text><text x="32" y="63">25</text><text x="50" y="63">50</text><text x="68" y="63">75</text><text x="85" y="63">100%</text></g>
+          <g font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">
+            <circle cx="5" cy="8" r="3" fill="#2E5A87"/><text x="5" y="9.2">A</text><circle cx="5" cy="19" r="3" fill="#2E5A87"/><text x="5" y="20.2">B</text><circle cx="5" cy="30" r="3" fill="#2E5A87"/><text x="5" y="31.2">C</text><circle cx="5" cy="41" r="3" fill="#2E5A87"/><text x="5" y="42.2">D</text><circle cx="5" cy="52" r="3" fill="#2E5A87"/><text x="5" y="53.2">E</text>
+          </g>
+          <g stroke="#C9D1D8" stroke-width="1.6" stroke-linecap="round"><line x1="40" y1="8" x2="60" y2="8"/><line x1="40" y1="19" x2="60" y2="19"/><line x1="40" y1="30" x2="60" y2="30"/><line x1="40" y1="41" x2="60" y2="41"/><line x1="40" y1="52" x2="60" y2="52"/></g>
+          <g fill="#2E5A87"><circle cx="40" cy="8" r="1.9"/><circle cx="40" cy="19" r="1.9"/><circle cx="40" cy="30" r="1.9"/><circle cx="40" cy="41" r="1.9"/><circle cx="40" cy="52" r="1.9"/></g>
+          <g fill="#1A2F4B"><circle cx="60" cy="8" r="1.9"/><circle cx="60" cy="19" r="1.9"/><circle cx="60" cy="30" r="1.9"/><circle cx="60" cy="41" r="1.9"/><circle cx="60" cy="52" r="1.9"/></g>
+          <g font-size="2.6" font-weight="800" fill="#E5332A"><text x="63" y="9">[00]→[00]</text><text x="63" y="20">[00]→[00]</text><text x="63" y="31">[00]→[00]</text><text x="63" y="42">[00]→[00]</text><text x="63" y="53">[00]→[00]</text></g>
+        </svg>
+        <div class="st-cap"><b><span style="color:#2E5A87">●</span> 1차 · <span style="color:#1A2F4B">●</span> 2차.</b> 재실험으로 위치가 바뀐 기둥은 <span class="dummy">[기둥]</span></div>
+      </div>
+      <div>
+        <div class="st-lb">학년군별 지도 위치 정답률</div>
+        <svg width="86mm" height="66mm" viewBox="0 0 86 66">
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="8" y1="4" x2="86" y2="4"/><line x1="8" y1="17" x2="86" y2="17"/><line x1="8" y1="30" x2="86" y2="30"/><line x1="8" y1="43" x2="86" y2="43"/></g>
+          <line x1="8" y1="56" x2="86" y2="56" stroke="#1A2F4B" stroke-width=".5"/>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="7" y="5">100</text><text x="7" y="31">50</text><text x="7" y="57">0</text></g>
+          <rect x="14" y="30" width="9" height="26" fill="#2E5A87"/><rect x="24" y="30" width="9" height="26" fill="#1A2F4B"/>
+          <rect x="40" y="30" width="9" height="26" fill="#2E5A87"/><rect x="50" y="30" width="9" height="26" fill="#1A2F4B"/>
+          <rect x="66" y="30" width="9" height="26" fill="#2E5A87"/><rect x="76" y="30" width="9" height="26" fill="#1A2F4B"/>
+          <g font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="middle"><text x="18.5" y="27.6">[00]</text><text x="28.5" y="27.6">[00]</text><text x="44.5" y="27.6">[00]</text><text x="54.5" y="27.6">[00]</text><text x="70.5" y="27.6">[00]</text><text x="80.5" y="27.6">[00]</text></g>
+          <g font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="middle"><text x="23.5" y="61">1·2학년</text><text x="49.5" y="61">3·4학년</text><text x="75.5" y="61">5·6학년</text></g>
+        </svg>
+        <div class="st-cap"><b>블루 1차 · 남색 2차.</b> 저학년은 문구보다 그림을 단서로 쓸 가능성이 있어 따로 나누었다.</div>
+      </div>
+    </div>
+    <div class="st-split" style="margin-top:4mm;grid-template-columns:86mm 1fr;gap:6mm">
+      <div>
+        <div class="st-lb">응답 방식별 지도 위치 정답률</div>
+        <svg width="86mm" height="34mm" viewBox="0 0 86 34">
+          <g font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="end"><text x="17" y="9">설문 링크</text><text x="17" y="25">서면 설문지</text></g>
+          <g><rect x="20" y="3" width="40" height="4.4" fill="#2E5A87"/><rect x="20" y="8.2" width="40" height="4.4" fill="#1A2F4B"/><rect x="20" y="19" width="40" height="4.4" fill="#2E5A87"/><rect x="20" y="24.2" width="40" height="4.4" fill="#1A2F4B"/></g>
+          <g font-size="2.8" font-weight="800" fill="#E5332A"><text x="62" y="6.6">1차 [00]%</text><text x="62" y="11.8">2차 [00]%</text><text x="62" y="22.6">1차 [00]%</text><text x="62" y="27.8">2차 [00]%</text></g>
+          <line x1="20" y1="1" x2="20" y2="31" stroke="#1A2F4B" stroke-width=".4"/>
+        </svg>
+      </div>
+      <div class="st-tx"><p>설문은 링크와 서면 두 방식으로 받았다. 저학년은 서면 응답이 <span class="dummy">[많았고]</span>, 두 방식 사이의 정답률 차이는 <span class="dummy">[00]%p</span>로 응답 방식이 결과를 <span class="dummy">[크게 바꾸지 않았다]</span>.</p></div>
+    </div>
+    <div class="st-lb" style="margin-top:4mm">결과를 흔들 수 있었던 외부 조건</div>
+    <div class="st-keep">
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>재실험</b><small>1차는 위치를 바꿔 2회 운영<br>10.20–22 · 10.27–29</small></div>
+        <div><b>노출 기간</b><small>1·2차 모두 화–목 3일<br>등·하굣길 노출</small></div>
+        <div><b>설문 시점</b><small>1차 10.27(화) · 2차 11.6(금)<br>설문 간격 1주 이상</small></div>
+        <div><b>날씨·행사</b><small class="dummy">[1차 맑음 · 2차 비 등]</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>전체 정답률의 차이가 특정 기둥 하나에서 생긴 것인지 확인하려고 기둥별로 나누어 보았다. 다섯 기둥 가운데 <span class="dummy">[0]</span>곳에서 2차 정답률이 1차보다 <span class="dummy">[높았고]</span>, <span class="dummy">[정문 바로 앞 C와 D]</span>에서 차이가 <span class="dummy">[가장 컸다]</span>.</p>
+      <p>학년군으로 나누면 1·2학년의 차이가 <span class="dummy">[00]%p</span>, 5·6학년은 <span class="dummy">[00]%p</span>였다. 워크숍에 참여한 6학년이 2차안의 제안자였다는 점은 고학년 응답을 읽을 때 함께 고려하였다.</p>
+      <p>외부 조건 가운데 비교에 가장 크게 걸린 것은 1차의 재실험이었다. 1차 설문은 재실험이 시작된 10월 27일에 받아, 응답에는 첫 운영과 바뀐 설치 위치가 함께 섞일 수 있었다. 재실험으로 위치가 바뀐 기둥과 그대로 둔 기둥의 정답률 차이는 <span class="dummy">[00]%p</span>였고, 위치 변경이 기둥별 비교를 <span class="dummy">[크게 흔들지 않았다]</span>.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 약산초 1·2차 설문(유효 응답 1차 <span class="dummy">[000]</span>명 · 2차 <span class="dummy">[000]</span>명)</div>
+  <div class="pno">64</div>
+</section>
+
+<!-- ================= p65 정량 ④ 소결 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정량 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">숫자로 보면, 두 안의 차이는 알아보기보다<br><em>위치를 찾고 말하는 단계</em>에서 <span class="dummy">[더 컸다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-nums" style="grid-template-columns:repeat(3,1fr)">
+      <div><b class="dummy">[±00]<small class="dummy">%p</small></b><span>시설물 인지 응답 비율<br>2차 − 1차</span></div>
+      <div><b class="dummy">[±00]<small class="dummy">%p</small></b><span>지도 위치 정답률<br>2차 − 1차</span></div>
+      <div><b class="dummy">[00]<small class="dummy">%</small></b><span>2차 응답 중 동물 이름으로<br>위치를 설명한 비율</span></div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">세 단계를 거치며 남은 비율</div>
+    <div class="y-fun">
+      <div class="lab" style="color:var(--r1)">1차</div><div class="st"><i>알아보았다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>자리를 찾았다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>단서로 설명하였다</i><b>[00]%</b></div>
+      <div class="lab" style="color:var(--r2)">2차</div><div class="st"><i>알아보았다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>자리를 찾았다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>단서로 설명하였다</i><b>[00]%</b></div>
+    </div>
+    <div class="st-cap"><b>세 단계를 모두 통과한 응답의 비율을 차수별로 이어 보았다.</b> 각 단계의 분모는 앞 단계를 통과한 응답</div>
+    <div class="st-split" style="margin-top:5mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">약산초의 정량 결과는 세 단계로 읽었다. 시설물을 알아보았는가, 그 자리를 지도에서 찾았는가, 그리고 그 위치를 말로 설명할 단서를 가졌는가.</p>
+        <p>첫 단계에서 두 안은 <span class="dummy">[비슷하였다]</span>. 1차의 다섯 색 연필은 현장 인터뷰에서 눈에 잘 띄었다는 응답을 얻었고, 두 차수 인지 응답 비율의 차이는 <span class="dummy">[00]%p</span>였다. 인지 응답 비율의 분모는 사진 문항의 유효 응답이다. <span class="dummy">[첫 단계의 차이는 ‘누가 디자인했는가’보다 ‘무엇이든 입혔는가’에 더 가까웠다.]</span></p>
+        <p>둘째 단계에서 차이가 <span class="dummy">[벌어졌다]</span>. 2차 응답자의 지도 위치 정답률은 <span class="dummy">[00]%</span>로 1차보다 <span class="dummy">[00]%p [높았고]</span>, 기둥별로 나누어도 다섯 곳 중 <span class="dummy">[0]</span>곳에서 같은 방향이었다. 다섯 색은 서로 비슷한 연필 형태를 공유했지만, 다섯 동물은 형태 자체가 달라 기둥끼리 헷갈릴 여지가 <span class="dummy">[적었다]</span>.</p>
+        <p>셋째 단계는 단서의 종류가 갈랐다. 1차에서 기둥 문구를 단서로 쓴 응답은 <span class="dummy">[00]%[에 그쳤고]</span>, <span class="dummy">[대부분]</span>은 문구 대신 색 이름을 썼다. 2차에서는 <span class="dummy">[00]%</span>가 동물 이름을, <span class="dummy">[00]%</span>가 배경색을 단서로 썼다. 글을 빼도 위치 설명은 <span class="dummy">[줄지 않았다]</span>.</p>
+        <p>다만 1차 응답은 재실험이 시작된 날 받아 첫 운영과 바뀐 설치 위치가 함께 담겼고, 2차안은 주체와 함께 단서·소재가 동시에 바뀐 묶음이다. 그래서 정량 결과만으로는 동물 그림, 배경색, 스펀지 중 무엇이 차이를 만들었는지 가르지 않았다. 그 몫은 정성 자료로 넘겼고, 정성 자료에서는 어린이가 실제로 입에 올린 단서가 무엇이었는지를 확인하였다.</p>
+      </div>
+      <div class="st-sum">
+        <div class="it"><b>1</b><p><em>알아보기</em><br>두 안 모두 인지 응답 비율 <span class="dummy">[00]%</span> 이상. 차이 <span class="dummy">[±00]%p</span></p></div>
+        <div class="it"><b>2</b><p><em>찾기</em><br>지도 위치 정답률 2차가 <span class="dummy">[00]%p</span> <span class="dummy">[높음]</span></p></div>
+        <div class="it"><b>3</b><p><em>말하기</em><br>문구 단서 1차 <span class="dummy">[00]%</span> → 동물·색 단서 2차 <span class="dummy">[00]%</span></p></div>
+        <div class="st-mn"><b>읽을 때 주의</b>1차 설문은 재실험 첫날(10.27)에 받았고, 2차는 주체·단서·소재가 함께 바뀐 묶음이다. 차이는 안 전체의 차이로 판정하였다.</div>
+      </div>
+    </div>
+    <div class="st-out" style="margin-top:5mm"><b><span>알아보기</span>의 차이는 <span class="dummy" style="color:#FF8A80!important">[작았고]</span>,<br>두 안의 차이는 <span>찾기·말하기</span>에서 <span class="dummy" style="color:#FF8A80!important">[2차 쪽으로]</span> 벌어졌다</b><small>정성 결과에서 단서별 이유를 확인<br>→ 정성 결과 · 주제 1</small></div>
+  </div>
+  <div class="foot-src">자료: 약산초 1·2차 설문(유효 응답 1차 <span class="dummy">[000]</span>명 · 2차 <span class="dummy">[000]</span>명)</div>
+  <div class="pno">65</div>
+</section>
+
+<!-- ================= p66 정성 ① 자료 구성 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정성 결과 · 자료</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료는 <em>워크숍 · 현장 인터뷰 · 등·하교 관찰</em><br>세 갈래로 모았다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="y-src">
+      <div class="c"><div class="h" style="background:#5B6B7A">어린이 워크숍<small>10.08 · 6학년 35명 · 실험 전</small></div>
+        <ul><li>시설물 카드 6종<b>75응답</b></li><li>워크맵 지도 의견<b>57건</b></li><li>시설물 이름 제안<b>51건</b></li><li>전봇대 관련 응답<b>14건</b></li></ul></div>
+      <div class="c"><div class="h" style="background:var(--r1)">현장 인터뷰<small>1차 · 재실험 · 2차 등·하굣길</small></div>
+        <ul><li>1차 인터뷰<b class="dummy">[00]명</b></li><li>2차 인터뷰<b class="dummy">[00]명</b></li><li>재실험 기간 인터뷰<b class="dummy">[00]명</b></li><li>설문 서술 응답<b class="dummy">[000]건</b></li></ul></div>
+      <div class="c"><div class="h" style="background:var(--r2)">등·하교 관찰<small>사전 9.17 · 1차 · 2차 같은 시간대</small></div>
+        <ul><li>관찰 회차<b class="dummy">[0]회</b></li><li>시설물 앞 멈춤·만짐<b class="dummy">[00]건</b></li><li>가리키기·이름 부르기<b class="dummy">[00]건</b></li><li>통행 불편 장면<b class="dummy">[00]건</b></li></ul></div>
+    </div>
+    <div class="st-cap"><b>워크숍은 디자인 재료를, 인터뷰와 관찰은 설치 후 반응을 남겼다.</b> 세 자료는 단위가 달라 합산하지 않았다.</div>
+
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:110mm 1fr;gap:6mm">
+      <div>
+        <div class="st-lb">1차 인터뷰 답변에 나타난 주요 단어</div>
+        <div class="st-fig" style="padding:1.6mm"><img src="img/01_약산초_1차단어.jpg" alt=""></div>
+        <div class="st-cap"><b>가장 크게 나타난 말은 ‘보이다’와 ‘빨간색’이었다.</b> 명사·동사·형용사 기본형의 출현 빈도를 글자 크기에 반영</div>
+      </div>
+      <div class="st-tx">
+        <p>1차 인터뷰 답변을 형태소 기본형으로 나누어 빈도를 세자 ‘보이다’, ‘빨간색’, ‘소리’, ‘눈’, ‘안전’, ‘쉽다’ 같은 말이 크게 나타났다. 어린이들은 시설물을 설명할 때 무엇이 보였는지와 어떤 색이었는지를 먼저 말하였다.</p>
+        <p>모든 발언은 장면 단위로 나누어 두 축으로 분류하였다. 하나는 위치를 말할 때 쓴 단서(색, 모양, 문구, 동물, 주변 가게·표지)이고, 다른 하나는 시설물에 대한 감정과 통행 반응(눈에 띔, 기억, 불안, 불편, 소재 느낌)이다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:4.6mm">발언을 나눈 두 개의 축</div>
+    <div class="y-code">
+      <div class="h">위치 단서<small>무엇으로 자리를 말했나</small></div>
+      <div class="tags"><span>색 이름<b>[00]</b></span><span>모양·형태<b>[00]</b></span><span>기둥 문구<b>[00]</b></span><span>동물 이름<b>[00]</b></span><span>주변 가게·표지<b>[00]</b></span></div>
+      <div class="h">반응<small>시설물을 어떻게 느꼈나</small></div>
+      <div class="tags e"><span>눈에 띔<b>[00]</b></span><span>기억 남/안 남<b>[00]</b></span><span>혼자일 때 불안<b>[00]</b></span><span>통행 불편<b>[00]</b></span><span>소재 느낌<b>[00]</b></span></div>
+    </div>
+    <div class="st-cap"><b>숫자는 각 코드가 붙은 발언·장면 수다.</b> 한 발언에 두 축의 코드가 함께 붙을 수 있다.</div>
+    <div class="st-tx st-c2" style="margin-top:4mm">
+      <p>워크숍 기록은 실험 전에 모은 제안이어서 효과의 증거로 쓰지 않았다. 대신 2차안의 어느 부분이 어떤 제안에서 나왔는지를 잇는 반영 이력으로 남겼고, 설치 후 인터뷰에서 같은 주제가 다시 나오는지를 확인하는 기준으로 썼다.</p>
+      <p>긍정적 반응만 모으지 않도록, 시설물을 기억하지 못한 응답과 불편을 말한 응답, 아무 반응이 없던 장면도 같은 비중으로 기록하였다. 분류가 애매한 발언은 조사 담당 <span class="dummy">[0]</span>인이 함께 검토해 정하였다.</p>
+      <p>1차 인터뷰 기록은 2차 디자인으로 바로 이어졌다. 색·모양이 눈에 들어왔다는 반응과 문구를 읽지 않았다는 반응을 워크숍의 색·동물·스펀지 제안과 함께 살펴, 2차 전봇대의 동물 5종·배경색·반사 시트·EVA 스펀지를 정하였다. 2차 인터뷰는 같은 질문 틀로 이 선택이 위치 인지와 설명 단서로 이어졌는지를 물었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 약산초 인터뷰·관찰 기록</div>
+  <div class="pno">66</div>
+</section>
+
+<!-- ================= p67 정성 ② 주제 1 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정성 결과 · 주제 1</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">1차에서 어린이들은 기둥에 적힌<br><em>글보다 색</em>으로 위치를 말하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 66mm;gap:4mm">
+      <div class="st-qw" style="grid-template-columns:1fr 1fr">
+        <div class="st-qc"><div class="q">“눈에 잘 띄었어요”</div><div class="who">1차 현장 인터뷰</div><div class="rd">색과 모양은 등굣길에서 바로 눈에 들어왔다.</div></div>
+        <div class="st-qc"><div class="q">“빨간색 앞이라고”</div><div class="who">1차 현장 인터뷰</div><div class="rd">위치를 어떻게 말하겠느냐는 물음에 색 이름으로 답하였다.</div></div>
+        <div class="st-qc dk"><div class="q">“뭐라고 써져있는거 보고 읽진 않았어요”</div><div class="who">1차 현장 인터뷰</div><div class="rd">기둥의 문구는 보았지만 읽지 않았다는 응답이 있었다.</div></div>
+        <div class="st-qc dk"><div class="q">“기억이 잘 안나요.”</div><div class="who">1차 현장 인터뷰</div><div class="rd">시설물은 보았어도 내용은 기억에 남지 않은 경우가 있었다.</div></div>
+      </div>
+      <div>
+        <div class="st-ph" style="height:64mm"><img src="img/01_약산초_1차인터뷰A.jpg" alt="" style="object-position:50% 25%"><span>1차 현장 인터뷰</span></div>
+        <div class="st-cap"><b>인터뷰는 등·하굣길 시설물 앞에서 진행하였다.</b></div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">디자인이 준 말과 어린이가 한 말</div>
+    <div class="y-say">
+      <div class="d"><i>1차 기둥 문구</i><b>난 지금 빨간색 앞</b></div><div class="ar">▶<small>줄여 말함</small></div><div class="k"><i>1차 어린이의 말</i><b>“빨간색 앞이라고”</b></div>
+      <div class="d"><i>2차 기둥</i><b class="k2">문구 없음 · 주황 배경 위 강아지</b></div><div class="ar">▶<small>이름 붙임</small></div><div class="k" style="background:#F1F3F5"><i>2차 어린이의 말</i><div class="quote-slot" style="background:#fff">응답자 <span class="dummy">[F]</span> · 2차 · 동물 그림을 부른 이름</div></div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">2차에서 같은 물음에 돌아온 말</div>
+    <div class="st-qw" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="quote-slot">응답자 <span class="dummy">[A]</span> · 2차 · 동물 이름으로 위치를 설명한 응답</div>
+      <div class="quote-slot">응답자 <span class="dummy">[B]</span> · 2차 · 배경색으로 위치를 설명한 응답</div>
+      <div class="quote-slot">응답자 <span class="dummy">[C]</span> · 2차 · 문구가 없어 불편했다는 응답</div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>1차 인터뷰에서 색과 모양은 분명한 단서였다. 어린이들은 시설물이 눈에 잘 띄었다고 답했고, 위치를 말해 보라는 물음에 기둥에 적힌 ‘난 지금 빨간색 앞’을 읽는 대신 그냥 색 이름을 댔다. 문구가 의도한 문장은 어린이의 입에서 더 짧은 말로 바뀌어 나왔다.</p>
+      <p>반대로 문구 자체는 단서가 되지 못하였다. 무언가 적혀 있는 것은 보았지만 읽지 않았다는 응답, 내용이 기억나지 않는다는 응답이 함께 나왔다. 2차에서 문구를 빼기로 한 결정은 이 반응에서 나왔고, 2차 인터뷰에서는 어린이들이 동물 이름과 배경색 가운데 무엇으로 위치를 말하는지를 <span class="dummy">[확인하였다]</span>.</p>
+      <p>2차의 응답은 <span class="dummy">[동물 이름]</span>이 중심이었다. 어린이들은 기둥을 <span class="dummy">[동물 이름]</span>으로 불렀고, 같은 동물을 두고 서로 다른 애칭을 쓰는 경우도 <span class="dummy">[있었다]</span>. 1차의 색 이름이 다섯 개의 비슷한 연필을 구분하는 데 그쳤다면, 2차의 동물 이름은 기둥 하나하나에 성격을 붙이는 말로 <span class="dummy">[쓰였다]</span>.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(1차 인터뷰 응답 수록) · 약산초 2차 인터뷰</div>
+  <div class="pno">67</div>
+</section>
+
+<!-- ================= p68 정성 ③ 주제 2 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정성 결과 · 주제 2</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">혼자 있을 때의 불안과 좁은 보도가<br><em>설치의 조건</em>을 다시 묻게 하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="y-th4">
+      <div class="c"><div class="h"><b>혼자일 때</b><span>1차 인터뷰</span></div>
+        <div class="qq">“사람이 없으면 좀 위험할 것 같아요”</div>
+        <p>시설물이 눈에 띄어도, 주변에 어른이 없으면 위험하다는 말이 나왔다. 위치를 말하는 일은 그 말을 들어 줄 사람이 있을 때 쓸모가 생긴다.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[G]</span> · 2차 · 혼자 걷는 구간에 대한 반응</div></div>
+      <div class="c"><div class="h"><span>워크숍</span><b>좁은 보도</b></div>
+        <div class="qq">전봇대 응답 14건 중 9건</div>
+        <p>전봇대에 대한 의견은 좁다, 지나가기 불편하다, 옮겨 달라로 모였다. 기둥을 꾸미는 일보다 기둥이 길을 막는 문제가 먼저 나왔다.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[H]</span> · 2차 · 감싼 기둥 옆 통행에 대한 반응</div></div>
+      <div class="c"><div class="h"><b>글과 그림</b><span>1차 인터뷰</span></div>
+        <div class="qq">“글씨랑 그림 둘 다”</div>
+        <p>글보다 색이 먼저 읽혔지만, 글과 그림이 함께 있기를 바라는 응답도 있었다. 문구를 뺀 2차에서 이 바람이 어떻게 나타났는지 따로 보았다.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[D]</span> · 2차 · 글이 없는 디자인에 대한 반응</div></div>
+      <div class="c"><div class="h"><span>워크숍 → 2차</span><b>소재와 촉감</b></div>
+        <div class="qq">스펀지 전봇대 제안 → EVA 10T</div>
+        <p>어린이가 제안한 부드러운 기둥은 2차에서 실제 소재가 되었다. 설치 뒤에는 손으로 만지는 반응과 통행 불편을 함께 물었다.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[E]</span> · 2차 · 스펀지 감싸기의 느낌</div></div>
+      <div class="mid"><b>디자인 바깥의<br>조건</b></div>
+    </div>
+    <div class="st-cap" style="margin-top:2.4mm"><b>네 주제 모두 ‘어디에, 어떤 몸으로 세울까’를 묻는 반응이었다.</b> 1차 인용은 1차 현장 인터뷰 응답</div>
+    <div class="st-split" style="margin-top:4mm;grid-template-columns:72mm 1fr;gap:6mm">
+      <div><div class="st-fig" style="padding:1.4mm"><img src="img/01_약산초_워크맵.jpg" alt=""></div><div class="st-cap"><b>워크맵 지도 의견 57건은 동쪽 정문–통학로 구간에 몰렸다.</b> 어린이 워크숍 워크맵</div></div>
+    <div class="st-tx">
+      <p>두 번째 주제는 디자인 바깥의 조건이었다. 어린이들은 혼자 걷는 길의 불안을 말했고, 기둥이 보도를 좁힌다고 느꼈다. 그림과 색은 위치를 알려 줄 수 있지만, 그 위치를 들어 줄 사람과 지나갈 폭까지 만들어 주지는 못한다. 워크숍에서도 전봇대에 대한 응답 14건 가운데 9건이 좁음·통행 방해·이전 요구였다.</p>
+      <p>이 반응은 설계 반영의 판정 기준을 바꾸었다. 요소마다 효과와 반응 외에 보행 유효폭, 설치 위치, 주변에 도움을 청할 사람이 있는 구간인지를 함께 따졌고, 소재는 촉감과 돌출, 고정 상태를 함께 확인하였다.</p>
+      <p>워크맵에서 어린이가 불편을 표시한 동쪽 정문–통학로 구간은 실험 기둥 A–E가 선 구간과 겹쳤다. 위치 단서를 세운 자리가 곧 보도가 좁다고 지적된 자리였으므로, 2차 감싸기를 설치한 뒤에는 보행폭·돌출·고정 상태를 함께 점검하였다.</p>
+    </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 약산초 2차 인터뷰</div>
+  <div class="pno">68</div>
+</section>
+
+<!-- ================= p69 정성 ④ 소결 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">정성 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료는 <em>‘눈에 띄는 것’과 ‘말로 부를 수 있는 것’</em>이<br>서로 다르다는 점을 보여 주었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="y-step">
+      <div class="rl"></div><div class="hh">1 · 알아보기<small>눈에 띈다</small></div><div class="hh">2 · 기억하기<small>나중에 떠오른다</small></div><div class="hh">3 · 이름 붙이기<small>짧은 말로 부른다</small></div><div class="hh" style="background:var(--navy)">4 · 설명하기<small>보호자에게 말한다</small></div>
+      <div class="rl"><span class="rtag r1">1차</span></div>
+      <div><span class="mk">●</span>색과 모양이 눈에 잘 띄었다</div>
+      <div><span class="mk">◐</span>문구는 기억나지 않는다는 응답</div>
+      <div><span class="mk">●</span>색 이름으로 불렀다</div>
+      <div><span class="mk">◐</span>색 이름으로 말했고 문구는 쓰지 않았다</div>
+      <div class="rl"><span class="rtag r2">2차</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[동물·배경색 식별]</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[동물 종류 기억]</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[동물 이름으로 부름]</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[동물 이름으로 설명]</span></div>
+    </div>
+    <div class="st-cap"><b>● 뚜렷하게 나타남 · ◐ 일부 나타남 · ○ 나타나지 않음.</b> 1차는 1차 현장 인터뷰, 2차는 2차 현장 인터뷰 기준</div>
+    <div class="st-split" style="margin-top:6mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">약산초의 어린이들에게 ‘잘 보이는 것’은 출발점일 뿐이었다. 위치를 말하는 데까지 이어지려면 그것을 짧은 말로 부를 수 있어야 했다.</p>
+        <p>1차의 연필형 지주는 눈에 띄는 데 성공하였다. 인터뷰에서는 무엇이 보였는지가 먼저 나왔고, 주요 단어에서도 ‘보이다’와 색 이름이 가장 크게 나타났다. 그러나 디자인이 준비한 문장, ‘난 지금 ○○색 앞’은 그대로 쓰이지 않았다. 어린이들은 문장을 읽는 대신 색 이름 하나를 골라 말하였다.</p>
+        <p>이 차이가 2차의 방향을 정하였다. 문장을 주는 대신 이름 붙일 거리를 주자는 것이다. 다섯 동물은 색보다 구체적인 이름을 가진 형태였고, 어린이들이 워크숍에서 시설물에 애칭을 붙이던 방식과도 맞았다. 2차 인터뷰에서 어린이들은 <span class="dummy">[동물 이름으로 기둥을 불렀고]</span>, 그 이름을 보호자에게 위치를 설명하는 말로 <span class="dummy">[옮겨 썼다]</span>.</p>
+        <p>정성 자료는 디자인의 바깥도 보여 주었다. 주변에 사람이 없을 때의 불안, 기둥이 좁히는 보도는 그림과 색으로 풀 수 없는 문제였다. 이 반응은 설치 위치와 보행폭, 그리고 위치를 들어 줄 어른이 있는 구간인지를 설계 반영의 조건으로 남겼다. 워크숍에서 전봇대를 두고 나온 좁음·통행 방해 의견 9건과도 같은 갈래의 반응이었다.</p>
+        <p>2차에서도 동물 이름을 쓰지 않은 응답이 <span class="dummy">[있었다]</span>. 동물을 헷갈리거나 위치를 설명하지 못한 응답 <span class="dummy">[00]</span>건은 주로 <span class="dummy">[저학년]</span>에서 나왔고, 이 반례는 짧은 이름 표기를 더할지 판단하는 근거로 남겼다. 반례를 지우지 않고 남긴 것은 판정이 잘된 응답만으로 내려지지 않게 하기 위해서였다.</p>
+        
+      </div>
+      <div>
+        <div class="st-mn"><b>정량과 맞춰 본 점</b>정량에서 차이가 컸던 ‘찾기·말하기’ 단계와, 정성에서 갈린 ‘이름 붙이기’ 단계가 <span class="dummy">[겹쳤다]</span>.</div>
+        <div class="st-mn"><b>반례</b>2차에서도 위치를 설명하지 못한 응답 <span class="dummy">[00]</span>건, 동물을 헷갈린 응답 <span class="dummy">[00]</span>건이 있었다.</div>
+        <div class="st-mn"><b>남은 물음</b>문구를 완전히 뺀 것이 맞았는가, 짧은 이름 표기를 더할 것인가는 요소별 판정에서 <span class="dummy">[수정 · 짧은 이름 표기 추가]</span>로 정리하였다.</div>
+        <div class="st-ph" style="height:62mm;margin-top:4mm"><img src="img/01_약산초_1차인터뷰B.jpg" alt="" style="object-position:50% 30%"><span>1차 현장 인터뷰</span></div>
+      </div>
+    </div>
+    <div class="st-out" style="margin-top:5mm"><b>위치 단서는 <span>‘보이는 것’</span>에서 <span>‘부를 수 있는 것’</span>으로,<br>그리고 좁은 보도와 혼자 걷는 길의 조건 안에서 작동해야 하였다</b><small>통합 해석에서<br>정량 결과와 맞춤</small></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 약산초 인터뷰 기록</div>
+  <div class="pno">69</div>
+</section>
+
+<!-- ================= p70 통합 해석 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">통합 해석</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">어린이안과 시민안은 알아보기에서 <span class="dummy">[비슷했고]</span>,<br><em>찾고 말하는 단계</em>에서 <span class="dummy">[갈렸다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-qa"><div class="qq"><i>Q</i><b>시민안과 어린이안은 그림 인지와 위치 설명에서 어떻게 다른가?</b></div></div>
+    <div class="y-conv" style="margin-top:5mm;row-gap:2mm">
+      <div class="k"><i>알아보기</i>통학로에서 시설물을 알아보았는가</div>
+      <div class="qn"><i>정량</i>인지 응답 비율 1차 <span class="dummy">[00]%</span> · 2차 <span class="dummy">[00]%</span></div>
+      <div class="ql"><i>정성</i>1차 “눈에 잘 띄었어요”. 2차 <span class="dummy">[반응 요약]</span></div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[두 안 모두 높았다 · 차이 작음]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>찾기</i>지도에서 그 자리를 찾았는가</div>
+      <div class="qn"><i>정량</i>지도 위치 정답률 1차 <span class="dummy">[00]%</span> · 2차 <span class="dummy">[00]%</span></div>
+      <div class="ql"><i>정성</i>다섯 연필은 형태가 같고, 다섯 동물은 형태가 다르다</div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[2차가 00%p 높았다]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>말하기</i>보호자에게 위치를 설명할 단서가 있었는가</div>
+      <div class="qn"><i>정량</i>문구 단서 1차 <span class="dummy">[00]%</span> · 동물 단서 2차 <span class="dummy">[00]%</span></div>
+      <div class="ql"><i>정성</i>1차는 문구 대신 색 이름 “빨간색 앞이라고”. 2차 <span class="dummy">[동물 이름]</span></div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[글을 빼도 설명은 줄지 않았다]</span></div>
+    </div>
+    <div class="basis" style="margin-top:5mm"><i>답의 근거</i>
+      <span>설문 유효 응답<b class="dummy">[000]명</b><small>1·2차 합계</small></span>
+      <span>현장 인터뷰<b class="dummy">[00]명</b><small>1·2차 합계</small></span>
+      <span>등·하교 관찰<b class="dummy">[0]회</b><small>사전·1차·2차</small></span>
+      <span>어린이 워크숍<b>35명</b><small>디자인 재료</small></span>
+    </div>
+    <div class="st-q" style="margin-top:5mm"><i>약산초의 답</i><b>어린이는 <span class="dummy">[부를 수 있는 이름]</span>으로 위치를 말하였다</b></div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>정량과 정성은 같은 단계에서 만났다. 알아보기에서 두 안은 <span class="dummy">[비슷했고]</span>, 어린이들도 <span class="dummy">[두 안 모두 눈에 띄었다고]</span> 말하였다. 차이는 그 자리를 다시 찾고 말로 설명하는 단계에서 <span class="dummy">[나타났고]</span>, 정성 자료는 그 이유를 <span class="dummy">[형태의 차이와 이름의 유무]</span>로 설명하였다. 정량은 차이의 크기를, 정성은 그 차이가 어떤 말로 나타났는지를 보여 주었다.</p>
+      <p>이 답은 ‘어린이가 디자인했기 때문에’라는 설명과는 거리를 두었다. 2차안은 주체·단서·소재가 함께 바뀐 묶음이고, 어린이가 디자인했다는 사실은 그 묶음이 만들어진 경로였다. 판정은 이 묶음을 요소로 다시 풀어 내렸다.</p>
+      <p>정량과 정성이 어긋난 곳도 기록하였다. 2차에서 동물을 헷갈렸거나 위치를 설명하지 못한 응답은 <span class="dummy">[00]</span>건이었고, 이 응답은 주로 <span class="dummy">[저학년·특정 기둥]</span>에서 나왔다. 이 반례는 수정 판정의 근거로 함께 넘겼다. 반례를 낸 응답의 학년과 기둥은 설문 기록에서 따로 확인하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 약산초 1·2차 설문·인터뷰 · 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">70</div>
+</section>
+
+<!-- ================= p71 가봉 판정 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">가봉 판정</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">두 안을 여덟 요소로 풀어<br><em>상설 · 수정 · 중지</em>를 하나씩 판정하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-jlg">
+      <div><span class="judge keep">상설 · 잘 맞았다</span><p>효과와 반응이 함께 확인되어 고정시설로 옮길 수 있는 요소</p></div>
+      <div><span class="judge fix">수정 · 고쳐 맞춘다</span><p>방향은 맞지만 기준·관리·통행 때문에 고쳐야 하는 요소</p></div>
+      <div><span class="judge next">중지 · 다음 실험의 조건</span><p>이번에는 맞지 않았고, 다음 실험의 조건으로 넘기는 요소</p></div>
+    </div>
+    <div class="st-jg" style="margin-top:4mm;--jh:31mm">
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_1차연필5색.jpg" alt="" style="object-position:10% 50%"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>다섯 색 연필 형태</h5><p>같은 연필 형태에 색만 달랐다. 인지 <span class="dummy">[00]%</span> · 정답률 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p63 · 정성 p67</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_1차현장.jpg" alt="" style="object-position:66% 56%;transform:scale(2.6);transform-origin:66% 56%"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>색 이름 문구</h5><p>보았지만 읽지 않았다는 응답이 있었다(1차 인터뷰)</p><div class="row"><span>정량 p63 · 정성 p67</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_1차도면.png" alt="" style="object-fit:cover;object-position:4% 30%;background:#fff"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>바닥 원형 시트</h5><p>기둥 주변을 영역으로 묶었고, 2차에서는 쓰지 않았다</p><div class="row"><span>정량 p64 · 관찰</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_2차동물5종.png" alt="" style="object-position:0% 50%"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>동물 그래픽 5종</h5><p>형태가 서로 다른 다섯 동물. 이름으로 설명한 응답 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p63 · 정성 p69</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_2차동물5종.png" alt="" style="object-position:75% 50%"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>고채도 배경색 5색</h5><p>인천 색채 기준(고채도 지양)과 맞춰야 하는 색</p><div class="row"><span>정량 p63 · 기준 p72</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_2차도면.png" alt="" style="object-position:100% 70%"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>EVA 스펀지 10T 감싸기</h5><p>어린이 제안 소재. 보행폭·고정·오염 확인 필요</p><div class="row"><span>정성 p68 · 관찰</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_2차시뮬.jpg" alt="" style="object-position:100% 60%"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>반사 시트 · 야간 윤곽</h5><p>동물 외 배경만 인쇄해 밤에 동물 윤곽이 드러남</p><div class="row"><span>관찰 · 정성 p68</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/01_약산초_워크숍1.jpg" alt=""><span class="rr rtag ws">과정</span></div><div class="tx"><h5>어린이 참여 디자인 과정</h5><p>워크숍 제안이 2차의 소재·단서·문구 결정이 되었다</p><div class="row"><span>워크숍 p53</span><span class="judge tbd">[판정]</span></div></div></div>
+    </div>
+    <div class="st-nums" style="grid-template-columns:repeat(3,1fr);margin-top:4mm">
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge keep">상설</span></span></div>
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge fix">수정</span></span></div>
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge next">중지 · 다음 조건</span></span></div>
+    </div>
+    <div class="st-tx" style="margin-top:4mm">
+      <p>판정은 요소마다 따로 내렸다. 2차안이 묶음으로 어떤 결과를 얻었든, 그 안의 배경색이나 감싸기 소재는 고정시설의 기준을 따로 통과해야 하기 때문이다. 판정 결과 상설 <span class="dummy">[0]</span>개, 수정 <span class="dummy">[0]</span>개, 중지 <span class="dummy">[0]</span>개로 나뉘었다. 어린이 참여 디자인 과정은 운영 방법에 해당하여, 표준모델의 운영편에 담을지를 따로 판정하였다.</p>
+      <p>1차 요소 셋은 2차에서 빼거나 바꾼 것이어서, 판정은 1차에서 확인된 반응과 2차의 대체 사양을 나란히 놓고 내렸다. 색 이름 문구는 2차에서 빠졌고, 바닥 원형 시트는 기존 보도블록으로, 다섯 색 연필은 다섯 동물로 바뀌었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 약산초 1·2차 설문·인터뷰·관찰 기록 종합</div>
+  <div class="pno">71</div>
+</section>
+
+<!-- ================= p72 설계 반영 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">01<small>약산초</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-01</span><span class="site">약산초등학교</span><span class="part">설계 반영</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></div>
+    <h2 class="hl">고정시설로 옮길 요소는 <em>색채 기준 · 보행폭 · 전신주 관리</em><br>세 조건으로 다시 걸렀다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 46mm;gap:6mm">
+      <div class="st-tx">
+        <p>판정은 세 가지 물음을 차례로 거쳤다. 실험에서 효과가 확인되었는가, 어린이와 보호자가 받아들였는가, 그리고 고정시설이 되었을 때 기준과 관리를 감당할 수 있는가. 앞의 두 물음은 정량·정성 결과가 답하였고, 마지막 물음은 인천시 공공디자인 기준과 시설물 관리 주체의 조건으로 따졌다.</p>
+        <p>마지막 물음에서 약산초는 분명한 제약을 안고 있었다. 실험에 쓴 열 가지 색은 1차 초록(2.5G 4/6)을 빼면 모두 채도 10 이상의 고채도 색이다. 인천시 공공디자인 기준은 원색과 고채도 색채를 지양하고 강조색을 면적의 10% 이내로 두게 하며, 전신주 도색은 최대 5m 높이 이하로, 하단 900mm는 오염을 줄이도록 저명도 무채색이나 저채도 색으로 하게 한다. 지면에서 1,800mm까지 감싼 2차안은 이 하단부 기준과 맞추어야 하였다.</p>
+        <p>전신주는 한국전력공사의 시설물이고, 보도는 유효폭 1.5m 이상을 지켜야 한다. EVA 스펀지 감싸기는 어린이가 제안한 부드러운 기둥이지만, 상설로 두려면 오염·훼손 때의 교체 주기와 고정 방식, 불법광고물 부착 방지 처리를 관리 주체와 정해야 한다. 2차 설문의 통행 불편 응답은 이 판단의 근거로 함께 썼다.</p>
+        <p>세 조건을 통과한 요소는 「어린이 참여형 안전시설물 표준디자인」으로 정리해 표준모델 설계편(최종 도면·재료, 색·그림·안내, 현장 적용 조건, 디자인 변경 이력)에 담았다. 고쳐 맞출 요소는 바뀐 사양과 그 이유를 함께 남겼고, 고정시설 대상 검토는 Ⅵ장으로 넘겼다.</p>
+      </div>
+      <div>
+        <div class="st-mn"><b>인천시 공공디자인 기준</b>원색·고채도·고명도 지양 · 강조색 10% 이내 · 전신주 도색 5m 이하, 하단 900mm 저명도 무채색 또는 저채도</div>
+        <div class="st-mn"><b>보행 · 관리</b>유효보도폭 1.5m 이상 · 파손 시 쉬운 교체 · 불법광고물 부착방지 처리</div>
+        <div class="st-mn"><b>협의 주체</b>인천시 · 약산초 · 한국전력공사</div>
+        <div class="st-mn"><b>실험 결과물</b>어린이 참여형 안전시설물 표준디자인</div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">요소별 판단 매트릭스</div>
+    <div class="st-dm">
+      <div class="hh">요소</div><div class="hh">효과(정량)</div><div class="hh">반응(정성)</div><div class="hh">기준 적합</div><div class="hh">관리 부담</div>
+      <div class="rk">동물 그래픽 5종</div><div class="dummy">[●]</div><div class="dummy">[●]</div><div class="dummy">[●]</div><div class="dummy">[●]</div>
+      <div class="rk">배경색 5색</div><div class="dummy">[●]</div><div class="dummy">[●]</div><div class="dummy">[채도 조정]</div><div class="dummy">[●]</div>
+      <div class="rk">EVA 감싸기</div><div class="dummy">[●]</div><div class="dummy">[●]</div><div class="dummy">[하단 900mm]</div><div class="dummy">[교체 주기]</div>
+      <div class="rk">반사 시트</div><div class="dummy">[●]</div><div class="dummy">[●]</div><div class="dummy">[●]</div><div class="dummy">[●]</div>
+    </div>
+    <div class="st-cap"><b>● 충족 · ◐ 부분 · ○ 미충족.</b> 효과는 정량 결과(p63–65), 반응은 정성 결과(p67–69), 기준은 공공디자인 가이드라인 체크리스트를 따랐다.</div>
+    <div class="st-lb" style="margin-top:4.6mm">다음 실험으로 넘긴 조건</div>
+    <div class="st-next">
+      <div><b>채도를 낮춘 배경색</b>인천 색채 기준 안의 배경색으로 바꿔도 어린이가 동물을 구별하고 위치를 말하는지를 다음 실험의 질문으로 남겼다.<small>근거 · 색채 기준(강조색 10% 이내)</small></div>
+      <div><b>하단 900mm 처리</b>하단부를 저채도로 두고 그래픽을 그 위로 올렸을 때 어린이 눈높이에서 보이는지를 확인 조건으로 넘겼다.<small>근거 · 전신주 도색 기준</small></div>
+      <div><b>짧은 이름 표기</b>문구 대신 동물 이름 한 단어를 더할지는 <span class="dummy">[수정 판정 결과]</span>에 따라 정하도록 넘겼다.<small>근거 · “글씨랑 그림 둘 다”</small></div>
+      <div><b>도움이 닿는 구간</b>어른의 통행이 있는 구간과 없는 구간을 나누어 위치 설명의 쓸모를 보도록 넘겼다.<small>근거 · “사람이 없으면 좀 위험할 것 같아요”</small></div>
+    </div>
+    <div class="st-out" style="margin-top:4mm"><b>약산초는 <span class="dummy">[요소]</span>를 상설, <span class="dummy">[요소]</span>를 수정으로 판정하고,<br><span class="dummy">[요소]</span>는 다음 실험의 조건으로 넘겼다</b><small>Ⅵ-01 설계 반영 판단<br>Ⅵ-03 고정시설 구현</small></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(공공디자인 가이드라인 체크리스트)</div>
+  <div class="pno">72</div>
+</section>
+
+</body>
+</html>

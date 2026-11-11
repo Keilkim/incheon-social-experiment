@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 창의디자인 사회실험 최종보고서 — Ⅳ장 07 연안여객터미널 1층 대합실</title>
+<!--
+================================================================================
+ Ⅳ 실험하다 · 거점편 07 연안여객터미널 1층 대합실 — p193(간지) ~ p216 (24쪽)
+================================================================================
+ 기준 모듈: part5_4장_도입_01약산초.html (p49–72)과 같은 24쪽 순서·쪽 머리·클래스 체계.
+  · 고정 레이아웃 st_module.css(.st-) 수정 없음. 거점 변수 body.st-07 { --st 편의색 #675F8C / --st-n 7 }.
+  · 이 파일 고유 장식은 .k- 접두사(<style> 하단). 실험 성격: 누적형(1차 A → 2차 A+B, 1차 바닥 사이니지 유지 + 수화물 보관공간 추가).
+ 상대 | 실제 | 소절        | 유형 | 주도 도식
+  1 | 193 | 간지        |  —   | 1차 시뮬레이션 + 질문형 카피
+  2 | 194 | 왜 여기인가 | 서술 | 리드+본문 + 사전조사 사진 + 카드
+  3 | 195 | 왜 여기인가 | 혼합 | 근거 4 → 실험 질문 + 이용 장벽→장치 매핑
+  4 | 196 | 기획의 변천 | 서술 | 버전 스트립(08.24→11.02) + 착수/실행 3카드
+  5 | 197 | 기획의 변천 | 혼합 | 항만공사 협의 조건 → 설치 사양 흐름
+  6 | 198 | 실험 설계   | 혼합 | 1·2차 대비(더한 요소) + 유지 조건
+  7 | 199 | 실험 설계   | 도식 | 지표 파이프 3 + 타임라인 + 표본 띠
+  8 | 200 | 1차 실험    | 혼합 | 출입구 시뮬레이션 콜아웃
+  9 | 201 | 1차 실험    | 혼합 | 5색 먼셀 팔레트 + 제작도 + 치수
+ 10 | 202 | 2차 실험    | 서술 | 사인 문안 3 + 도면 + 본문 + 사다리
+ 11 | 203 | 2차 실험    | 혼합 | 시뮬레이션 + 치수 + 변경 태그 6
+ 12 | 204 | 현장 배치   | 도식 | 세로판 재작도 대합실 + 5색 경로 + 원도 인셋
+ 13 | 205 | 운영 기록   | 혼합 | 운영 달력(11.11–14) + 회차 카드
+ 14 | 206 | 정량 표본   | 혼합 | 사전·1·2차 흐름 + 짐 크기 막대
+ 15 | 207 | 정량 지표   | 도식 | 선택 정확도·인지율 사전·1·2차 + 목적지별 막대
+ 16 | 208 | 정량 비교   | 혼합 | 짐 소지 이용객 퍼널 1·2차 + 시간대 + 외부 조건
+ 17 | 209 | 정량 소결   | 서술 | 기울기 차트 3 + 본문 + 소결 3
+ 18 | 210 | 정성 자료   | 혼합 | 자료 갈래 3 + 질문 매핑 + 코딩 태그
+ 19 | 211 | 정성 주제1  | 혼합 | 처음/다시 온 이용객 quote-slot 벽 + 단서 막대
+ 20 | 212 | 정성 주제2  | 도식 | 2×2 주제 + 중심 원
+ 21 | 213 | 정성 소결   | 서술 | 4단계 × 1·2차 판정 격자 + 본문
+ 22 | 214 | 통합 해석   | 혼합 | Q → 정량·정성 → 답
+ 23 | 215 | 가봉 판정   | 도식 | 요소 카드 8 + 판정 칩
+ 24 | 216 | 설계 반영   | 서술 | 기준 본문 + 판단 매트릭스 + 다음 조건
+ 실험 결과 값·방향어는 붉은 더미(.dummy), 시민 발언은 .quote-slot(심의도서에 연안 인터뷰 원문 없음).
+================================================================================
+
+
+-->
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="st_module.css">
+<style>
+/* ---------- 거점 변수 (07 연안여객터미널 · 편의) ---------- */
+body.st-07{--st:#675F8C;--st-l:#EFEDF4;--st-d:#1A2F4B;--st-n:7}
+
+/* ---------- 거점 고유 확장(k- 접두사, 이 파일에서만 사용) ---------- */
+.k-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm}
+.k-strip .st-ph{height:30mm}
+.k-wsph{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1.6mm}
+.k-cal svg,.k-svg svg{display:block}
+.k-two{display:grid;grid-template-columns:1fr 8mm 1fr;align-items:stretch}
+.k-two>div{border-radius:var(--rd);padding:3mm 3.4mm}
+.k-two .a{background:#EEF1F4}.k-two .b{background:var(--st);color:#fff}
+.k-two i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.14em;font-weight:800;opacity:.75}
+.k-two b{display:block;font-size:10pt;font-weight:900;margin:.6mm 0 1.6mm;color:var(--navy)}
+.k-two .b b{color:#fff}
+.k-two ul{list-style:none;font-size:7.2pt;line-height:1.55;font-weight:500}
+.k-two ul li{display:grid;grid-template-columns:20mm 1fr;border-top:.25mm solid rgba(26,47,75,.15);padding:1mm 0}
+.k-two .b ul li{border-color:rgba(255,255,255,.3)}
+.k-two ul li span{font-weight:800;opacity:.7}
+.k-two .vs{display:flex;align-items:center;justify-content:center;font-size:12pt;font-weight:900;color:var(--st);padding:0}
+.k-ba{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6mm}
+.k-ba .c{border-radius:var(--rd);overflow:hidden;background:#F3F6F8;display:flex;flex-direction:column}
+.k-ba .c .k{background:var(--navy);color:#fff;font-size:7.6pt;font-weight:900;padding:1.6mm 2.6mm}
+.k-ba .c .r{display:grid;grid-template-columns:22mm 1fr;gap:2mm;align-items:center;padding:2mm 2.6mm}
+.k-ba .c .r .st-ph{height:17mm;border-radius:var(--rd)}
+.k-ba .c .r .ic{height:17mm;border-radius:var(--rd);background:#EEF1F4;display:flex;align-items:center;justify-content:center;font-size:6.4pt;font-weight:800;color:var(--mute);text-align:center;line-height:1.3}
+.k-ba .c .r p{font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500}
+.k-ba .c .r p b{display:block;font-size:7.8pt;color:var(--navy);font-weight:900}
+.k-ba .c .r.b{background:var(--st-l)}
+.k-ba .c .r.b p b{color:var(--st-d)}
+.k-ba .c .dn{text-align:center;color:var(--st);font-weight:900;font-size:7pt;line-height:1;padding:.6mm 0;background:linear-gradient(#F3F6F8,var(--st-l))}
+.k-unit{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.k-unit div{background:#F3F6F8;border-radius:var(--rd);padding:2.6mm 3mm;font-size:7pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.k-unit div i{font-style:normal;font-size:6.4pt;font-weight:700;color:var(--st-d);margin-left:1.4mm}
+.k-unit div b{display:block;font-size:9.4pt;font-weight:900;color:var(--navy);margin:.4mm 0 1mm}
+.k-unit div em{font-style:normal;font-weight:900;color:var(--navy)}
+.k-src{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.k-src .c{border-radius:var(--rd);overflow:hidden;background:#F3F6F8}
+.k-src .c .h{padding:2.2mm 2.8mm;color:#fff;font-size:8.6pt;font-weight:900}
+.k-src .c .h small{display:block;font-size:6.2pt;font-weight:600;opacity:.85;margin-top:.2mm}
+.k-src .c ul{list-style:none;padding:2mm 2.8mm 2.4mm;font-size:6.9pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.k-src .c ul li{padding:1.5mm 0;border-bottom:.25mm solid var(--line);display:flex;justify-content:space-between;gap:2mm}
+.k-src .c ul li:last-child{border-bottom:0}
+.k-src .c ul li b{color:var(--navy);font-weight:900;white-space:nowrap}
+.k-conv{display:grid;grid-template-columns:1fr 1fr 6mm 52mm;gap:2mm;align-items:stretch}
+.k-conv>div{border-radius:var(--rd);padding:2.4mm 2.8mm;font-size:7.1pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.k-conv .k{grid-column:1/-1;display:flex;align-items:center;gap:2mm;padding:0;font-size:8.6pt;font-weight:900;color:var(--navy)}
+.k-conv .k i{font-style:normal;background:var(--st);color:#fff;font-size:6.6pt;font-weight:800;border-radius:var(--rd);padding:.3mm 1.8mm}
+.k-conv .qn{background:#F3F6F8}.k-conv .ql{background:var(--st-l)}
+.k-conv .qn i,.k-conv .ql i{display:block;font-style:normal;font-size:6pt;font-weight:800;letter-spacing:.1em;color:var(--mute);margin-bottom:.4mm}
+.k-conv .ar{display:flex;align-items:center;justify-content:center;color:var(--st);font-weight:900;padding:0}
+.k-conv .an{background:var(--navy);font-weight:700;color:#fff;display:flex;align-items:center}
+.k-conv .an .dummy{color:#FF8A80!important}
+.k-inset{position:absolute;background:#fff;border-radius:var(--rd);padding:1.4mm}
+.k-inset img{width:100%;display:block;border-radius:var(--rd)}
+.k-inset span{display:block;font-size:5.8pt;color:var(--mute);font-weight:600;margin-top:.8mm}
+.k-code{display:grid;grid-template-columns:26mm 1fr;row-gap:2mm;align-items:center}
+.k-code .h{font-size:7.6pt;font-weight:900;color:var(--navy)}
+.k-code .h small{display:block;font-size:6.2pt;font-weight:600;color:var(--mute)}
+.k-code .tags{display:flex;flex-wrap:wrap;row-gap:1mm;line-height:1.5}
+.k-code .tags span{font-size:7.4pt;font-weight:700;color:var(--navy)}
+.k-code .tags span+span::before{content:"·";margin:0 2mm;color:#9AA6B1;font-weight:800}
+.k-code .tags span b{color:var(--red);font-weight:900;margin-left:1mm}
+.k-code{border-top:.25mm solid var(--line);border-bottom:.25mm solid var(--line);padding:2.2mm 0}
+.k-th4{display:grid;grid-template-columns:1fr 1fr;gap:3mm;position:relative}
+.k-th4 .c{border-radius:var(--rd);background:#F3F6F8;padding:3.4mm 3.6mm;min-height:var(--thh,58mm)}
+.k-th4 .c:nth-child(1),.k-th4 .c:nth-child(3){padding-right:16mm}
+.k-th4 .c:nth-child(2),.k-th4 .c:nth-child(4){padding-left:16mm;text-align:right}
+.k-th4 .c .h{display:flex;align-items:baseline;gap:2mm;margin-bottom:1.4mm}
+.k-th4 .c:nth-child(2) .h,.k-th4 .c:nth-child(4) .h{justify-content:flex-end}
+.k-th4 .c .h b{font-size:10.4pt;font-weight:900;color:var(--navy)}
+.k-th4 .c .h span{font-size:6.6pt;font-weight:800;color:#fff;background:var(--st);border-radius:var(--rd);padding:.2mm 1.6mm}
+.k-th4 .c .qq{font-size:9.6pt;font-weight:800;color:var(--st-d);margin-bottom:1.4mm;line-height:1.4}
+.k-th4 .c p{font-size:7.4pt;line-height:1.55;color:#3D4A56;font-weight:500;margin-bottom:1.6mm}
+.k-th4 .c .quote-slot{text-align:left}
+.k-th4 .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36mm;height:36mm;border-radius:50%;background:var(--r2);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 2.4mm #fff}
+.k-th4 .mid i{font-style:normal;font-size:6pt;letter-spacing:.16em;color:#C9D7E6;font-weight:800}
+.k-th4 .mid b{font-size:9.6pt;font-weight:900;line-height:1.35;margin-top:.8mm}
+.k-step{display:grid;grid-template-columns:16mm repeat(4,1fr);gap:1.6mm;align-items:stretch}
+.k-step>div{border-radius:var(--rd);padding:2.2mm 2.4mm;font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500;background:#F3F6F8}
+.k-step .hh{background:var(--st);color:#fff;font-weight:800;font-size:7.4pt;text-align:center}
+.k-step .hh small{display:block;font-size:6pt;opacity:.8;font-weight:700}
+.k-step .rl{background:none;display:flex;align-items:center;justify-content:center;padding:0}
+.k-step .mk{display:block;font-size:9pt;font-weight:900;color:var(--red);line-height:1;margin-bottom:.8mm}
+.k-map{display:grid;grid-template-columns:1fr 7mm 1fr;row-gap:2.4mm;align-items:stretch}
+.k-map>div{border-radius:var(--rd);padding:2.8mm 3.2mm;font-size:7.2pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.k-map .e{background:#F3F6F8}
+.k-map .e i,.k-map .x i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.12em;font-weight:800;color:var(--mute);margin-bottom:.5mm}
+.k-map .e b{display:block;font-size:8.8pt;font-weight:900;color:var(--navy);margin-bottom:.6mm}
+.k-map .x{background:var(--st-l)}
+.k-map .x b{display:block;font-size:8.8pt;font-weight:900;color:var(--st-d);margin-bottom:.6mm}
+.k-map .ar{display:flex;align-items:center;justify-content:center;color:var(--st);font-weight:900;padding:0;font-size:10pt}
+.k-gal{display:grid;gap:2mm}
+.k-gal .st-ph{border-radius:var(--rd)}
+.k-msg{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.k-msg div{border-radius:var(--rd);background:var(--navy);color:#fff;padding:3mm 3.2mm}
+.k-msg div i{display:block;font-style:normal;font-size:6.4pt;font-weight:800;letter-spacing:.12em;color:#C9D7E6}
+.k-msg div b{display:block;font-size:13pt;font-weight:900;margin:.6mm 0 1mm;line-height:1.1}
+.k-msg div span{display:block;font-size:7.2pt;font-weight:600;line-height:1.45;color:#DCE6EF}
+.k-slope{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.k-slope .c{border-top:.5mm solid var(--navy);padding-top:2mm}
+.k-slope .c h5{font-size:8.2pt;font-weight:900;color:var(--navy)}
+.k-dw div{grid-template-columns:31mm 1fr!important}
+.st-nums.k-facts{border-top:.25mm solid var(--line)}
+.st-nums.k-facts>div{padding:2mm 2.4mm;text-align:left;display:flex;align-items:baseline;gap:1.8mm}
+.st-nums.k-facts b{display:inline;font-size:10.4pt;color:var(--navy);white-space:nowrap}
+.st-nums.k-facts b small{font-size:6.8pt}
+.st-nums.k-facts span{display:inline;margin:0;font-size:6.6pt;font-weight:600;color:#3D4A56}
+.st-chg.k-chg{grid-template-columns:1fr;gap:0;border-top:.5mm solid var(--navy)}
+.st-chg.k-chg .c{display:grid;grid-template-columns:27mm 1fr 1.25fr 1fr;align-items:baseline;border:0;border-bottom:.25mm solid var(--line);border-radius:0}
+.st-chg.k-chg .c .k{background:none;color:var(--navy);padding:1.7mm 0;font-size:7.4pt}
+.st-chg.k-chg .c .a{padding:1.7mm 2mm}
+.st-chg.k-chg .c .b{padding:1.7mm 2mm}
+.st-chg.k-chg .c .w{margin:0;background:none;padding:1.7mm 0 1.7mm 2mm;color:var(--mute)}
+.st-sum .it p em{margin-right:1.4mm}
+.k-dw div b{font-size:10.4pt!important}
+/* 간지 캡션: 바닥 사인 사진 위가 아니라 보라 띠 하단에 둔다 */
+.st-cover .st-cv-cap{top:auto;bottom:12.2mm;left:18mm;right:40mm;font-size:6.2pt;opacity:.78}
+.k-slope .c p{font-size:6.5pt;color:var(--mute);font-weight:600;line-height:1.4;margin:.4mm 0 1mm}
+
+</style>
+</head>
+<body class="st st-07">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="hatch-navy" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#1A2F4B"/></pattern><pattern id="hatch-blue" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#2E5A87"/></pattern><pattern id="hatch-pre" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#7D97B3"/></pattern><pattern id="hatch-gray" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#9AA6B1"/></pattern><pattern id="hatch-red" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#E5332A"/></pattern><pattern id="hatch-st" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#675F8C"/></pattern></defs></svg>
+
+<!-- ================= p193 거점 간지 · 07 연안여객터미널 ================= -->
+<section class="page odd st-cover">
+  <div class="st-cv-photo"><img src="img/07_연안_1차시뮬_사인합성.jpg" alt="" style="object-position:50% 70%"></div>
+  <div class="st-cv-tab"><span class="f">07 · 편의</span><span>Ⅳ 실험하다</span></div>
+  <div class="st-cv-cap">1차 실험 「발걸음은 가볍게」 바닥 통합 사이니지 적용 시뮬레이션(합성) · 연안여객터미널 1층 대합실 출입구</div>
+  <div class="st-cv-band">
+    <div class="st-cv-no">07</div>
+    <div class="st-cv-kick">편의 · 안내하는 인천</div>
+    <div class="st-cv-ttl">연안여객터미널</div>
+    <div class="st-cv-site">인천 제물포구 · 연안여객터미널 1층 대합실 · 바닥 통합 사이니지와 수화물 보관공간</div>
+    <div class="st-cv-q">여객은 바닥의 색 선을 따라 목적지를 찾고,<br>짐을 맡길 자리까지 갈 수 있을까</div>
+    <div class="st-cv-runs">
+      <div><i>1차 · 길을 찾다</i><b>「발걸음은 가볍게」</b><span>11.11(수)–12(목) 운영 · 바닥 통합 사이니지로 길찾기 개선</span></div>
+      <div><i>2차 · 짐을 맡기다</i><b>「두 손은 자유롭게」</b><span>11.13(금)–14(토) 운영 · 1차 유지 + 수화물 보관공간 조성</span></div>
+    </div>
+  </div>
+  <div class="pno">193</div>
+</section>
+
+<!-- ================= p194 왜 여기인가 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1층 대합실에는 대기와 짐이 한꺼번에 몰렸고,<br>이용객이 <em>목적지를 찾아가는 길</em>은 복잡하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split">
+      <div>
+        <p class="st-lead">연안여객터미널은 섬으로 가는 배를 기다리는 곳이다. 실험은 배를 타기 전 짧은 시간 동안 <em>여객이 매표소와 승선장, 화장실, 짐 맡길 곳을 얼마나 쉽게 찾는지</em>를 물었다.</p>
+        <div class="st-tx" style="margin-top:3.6mm">
+          <p>인천 제물포구의 연안여객터미널 1층 대합실에는 매표소 두 곳과 승선장 두 곳이 한쪽 벽을 따라 늘어서 있고, 양 끝에 화장실이, 한쪽 모서리에 수화물 보관소가 있다. 대합실 가운데는 대기 의자가 줄지어 놓였고, 출입구는 맞은편 벽에 났다. 2층에는 휴게공간인 라운지가 있다.</p>
+          <p>7월 29일, 8월 11일, 10월 7일 세 차례 현장조사에서 낮과 밤, 평일과 주말의 대합실을 기록하였다. 2층 휴게공간의 이용은 낮았고, 대기와 수하물은 1층에 몰렸다. 2층으로 가는 길에는 바닥의 분홍색 선과 ‘2층 고객 라운지 가는 길’ 배너가 이미 있었지만, 실제 이동으로 잘 이어지지 않았다.</p>
+          <p>이용객은 빠르게 늘고 있었다. 2025년 연안여객터미널 이용객은 1,081,234명으로 전년보다 약 24.6% 늘었다. 배 시간이 다가오면 인파가 한꺼번에 몰리고, 서로 다른 목적의 이용객이 같은 대합실에서 각자의 목적지를 찾는다.</p>
+          <p>안내는 이미 여러 겹이었다. 천장의 시설 안내판과 배너, 바닥의 분홍 선이 서로 다른 모양으로 붙어 있었고, 처음 온 이용객은 매표와 발권, 승선과 계단의 안내를 번갈아 찾아보아야 하였다. 실험은 안내판을 하나 더 다는 대신, 목적지마다 색을 정해 바닥에서 하나의 체계로 묶는 쪽을 택하였다.</p>
+          <p>9월 14일(월)에는 대합실 운영 시간 전체를 관찰하는 사전조사를 하여 실험 전 상태를 남겼다. 문제는 ‘복잡한 동선으로 목적지와 편의시설을 찾기 어렵고, 짐을 정리할 공간이 부족하다’로 정의하였고, 목표는 길찾기부터 짐 정리까지 편리한 대기 문화로 잡았다.</p>
+        </div>
+      </div>
+      <div>
+        <div class="st-ph" style="height:36mm"><img src="img/07_연안_사전_좌석.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>대합실 가운데를 대기 의자가 채웠다.</b><br>1층 대합실 기록</div>
+        <div class="st-ph" style="height:36mm;margin-top:3mm"><img src="img/07_연안_사전_분홍선.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>2층 라운지로 가는 분홍 선이 이미 있었다.</b><br>기존 안내환경 기록</div>
+        <div class="st-mn" style="margin-top:4mm"><b>현장을 본 날</b>현장조사 7.29 · 8.11 · 10.7<br>(낮·밤·평일·주말)<br>사전조사 9.14(월) 전일 수집</div>
+      </div>
+    </div>
+    <div class="st-prof" style="margin-top:6mm">
+      <div class="st-pc"><div class="t"><i>PEOPLE</i><b>사람</b></div><div class="big">108<small>만 명</small></div><div class="sub">2025년 이용객 1,081,234명</div>
+        <ul><li><b>승선 이용자</b> 1층 대합실에서 배를 기다림</li><li><b>짐을 든 이용객</b> 2차 실험의 주 대상</li></ul></div>
+      <div class="st-pc"><div class="t"><i>PLACE</i><b>공간</b></div><div class="big">5<small>곳</small></div><div class="sub">바닥 유도선이 안내한 목적지</div>
+        <ul><li><b>매표소 · 화장실</b> 수화물 보관소 · 2층 라운지 · 국군장병라운지</li><li><b>승선장</b> 한쪽 벽을 따라 매표소와 나란히 두 곳</li></ul></div>
+      <div class="st-pc"><div class="t"><i>PROBLEM</i><b>문제</b></div><div class="big">2<small>층</small></div><div class="sub">알려지지 않은 2층 대기 공간</div>
+        <ul><li><b>집중</b> 대기와 수하물이 1층에 몰림</li><li><b>안내</b> 기존 안내만으로 이동 유도가 어려움</li></ul></div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">사전 현장조사에서 기록한 대합실</div>
+    <div class="k-strip">
+      <div class="st-ph"><img src="img/07_연안_사전_매표.jpg" alt=""><span>매표 창구 앞</span></div>
+      <div class="st-ph"><img src="img/07_연안_사전_발권기.jpg" alt=""><span>무인 발권기</span></div>
+      <div class="st-ph"><img src="img/07_연안_사전_계단.jpg" alt=""><span>2층으로 가는 계단</span></div>
+      <div class="st-ph"><img src="img/07_연안_사전_승선장.jpg" alt=""><span>대합실 상부와 승선장 쪽</span></div>
+    </div>
+    <div class="st-cap"><b>매표·발권·승선·2층 계단이 한 대합실 안에 흩어져, 처음 온 이용객은 여러 안내를 번갈아 보아야 하였다.</b> 사전 현장조사 사진</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">194</div>
+</section>
+
+<!-- ================= p195 왜 여기인가 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">늘어난 이용객과 짐의 불편, 바닥 안내의 효과는<br><em>‘길찾기와 짐 보관’</em>이라는 하나의 실험 질문으로 모였다</h2>
+    <p class="lede">심의 과정에서 정리한 핵심 문제 지표는 이용객 증가, 짐으로 인한 불편, 이동 유도의 한계, 보관시설 이용 장벽이었다. 두 연구는 바닥 안내가 길찾기를 바꾸는 방식을 보여 주었다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+
+    <div class="st-ev">
+      <div class="st-ec"><span class="k">지역 통계</span><div class="n">24.6<small>%</small></div><p>2025년 연안여객터미널 이용객은 <b>1,081,234명</b>으로 전년보다 약 24.6% 늘었다.</p><div class="src">인천항만공사, 연안여객터미널 여객실적(2025)</div></div>
+      <div class="st-ec"><span class="k">연구 ①</span><div class="n">60<small>%</small></div><p>해외 철도역 조사에서 크고 무거운 짐을 든 승객 약 60%가 <b>쇼핑·식음시설 이용 때 짐으로 불편</b>을 겪었다.</p><div class="src">Rüger · Graf(2013)</div></div>
+      <div class="st-ec"><span class="k">현장 의견</span><div class="n">1<small>층 집중</small></div><p>2층 대기 공간의 위치와 기능이 충분히 알려지지 않아 이용객이 1층에 몰리고, <b>기존 안내만으로 이동을 유도하기 어렵다.</b></p><div class="src">인천항만공사 직원 의견</div></div>
+      <div class="st-ec"><span class="k">연구 ②</span><div class="n">18.29<small>%</small></div><p>기존 안내 사인에 <b>바닥 사인을 더하자</b> 목적지 탐색 시간이 18.29% 줄고 주저·우회 행동이 감소하였다.</p><div class="src">Chen 외(2026)</div></div>
+    </div>
+    <svg width="178mm" height="12mm" viewBox="0 0 178 12" style="display:block"><path d="M22 0 L84 9 M66 0 L87 9 M112 0 L91 9 M156 0 L94 9" stroke="#675F8C" stroke-width=".3" fill="none"/><path d="M85 8 L89 12 L93 8" fill="#675F8C"/></svg>
+    <div class="st-q"><i>연안여객터미널 실험 질문</i><b>통합 안내사인과 짐 보관·정리 공간은<br>이용객의 시설 이용과 대기 편의를 어떻게 바꾸는가?</b></div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>네 근거는 두 갈래의 문제를 가리켰다. 하나는 길이다. 이용객은 늘었고, 2층 대기 공간처럼 있는 시설도 알려지지 않았으며, 기존 안내판은 실제 이동으로 이어지지 않았다. 다른 하나는 짐이다. 짐을 든 사람은 시설을 쓰는 데 불편을 겪고, 보관시설이 있어도 찾기 어렵거나 쓰기 번거로우면 이용하지 않는다.</p>
+      <p>실험은 두 문제를 차례로 다루었다. 1차는 바닥에 목적지별 색 선을 깔아 길을 찾게 하고, 2차는 그 선을 그대로 둔 채 수화물 보관소에 짐을 내려놓고 정리할 자리를 더하였다. 길을 찾게 하는 것과 짐을 맡기게 하는 것이 같은 일인지가 이 거점의 질문이었다.</p>
+    </div>
+    <div class="st-lb" style="margin-top:4.4mm">보관시설을 쓰지 않는 세 가지 이유 → 실험에 옮긴 장치 · Rüger · Graf(2013)</div>
+    <div class="k-map">
+      <div class="e"><i>이용 장벽 ①</i><b>위치를 쉽게 찾지 못한다</b>수화물 보관시설이 어디 있는지 알기 어려우면 이용이 줄었다.</div>
+      <div class="ar">▶</div>
+      <div class="x"><i>1차 「발걸음은 가볍게」</i><b>주황색 수화물 보관소 유도선</b>출입구와 분기점에서 보관소까지 이어지는 바닥 선 29장</div>
+      <div class="e"><i>이용 장벽 ② · ③</i><b>보관함 크기 · 짐을 들어 올리는 부담</b>짐을 넣고 꺼내는 수고가 이용 편의를 좌우하였다.</div>
+      <div class="ar">▶</div>
+      <div class="x"><i>2차 「두 손은 자유롭게」</i><b>짐 정리 테이블과 책장</b>높이 1,000mm 테이블 4개, 1,165mm 책장 4개와 5×3m 바닥 영역</div>
+    </div>
+    <div class="st-lb" style="margin-top:4.4mm">문제에서 목표까지</div>
+    <div class="st-ladder4">
+      <div class="s"><i>문제 정의</i><b>복잡한 동선 ·<br>짐 정리 공간 부족</b></div><div class="ar">▶</div>
+      <div class="s"><i>1차 해법</i><b>통합 안내사인으로<br>길찾기 검증</b></div><div class="ar">▶</div>
+      <div class="s"><i>2차 해법</i><b>안내 유지 + 짐 보관·<br>정리 공간 추가</b></div><div class="ar">▶</div>
+      <div class="s on"><i>목표</i><b>길찾기부터 짐 정리까지<br>편리한 대기 문화</b></div>
+    </div>
+    <div class="st-tx" style="margin-top:4mm"><p>네 칸은 앞 칸을 지우지 않고 쌓였다. 1차의 바닥 사인은 2차에도 그대로 남았고, 2차는 그 위에 짐 보관·정리 공간만 더하였다. 1차 위에 요소를 더하는 누적형 구조여서, 2차의 변화는 같은 안내 위에서 짐 자리가 더한 몫으로 읽었다.</p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">195</div>
+</section>
+
+<!-- ================= p196 기획의 변천 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">‘2층으로 올려 보내는 라운지’로 출발한 기획은 네 번 고쳐<br><em>1층 바닥의 길과 짐 자리</em>로 좁혀졌다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split l">
+      <div class="st-ver">
+        <div class="v"><div class="d">08.24<small>초기 기획</small></div><h5>UP 2층 안심 라운지</h5><p>짐 정돈 + 2층 유도·휴게</p></div>
+        <div class="v"><div class="d">10.15<small>재정의</small></div><h5>대기 경험으로 다시 보기</h5><p>2층 리모델링 → 1층 대합실만 활용, 안정감보다 여행의 설렘</p></div>
+        <div class="v"><div class="d">10.15<small>콘텐츠안</small></div><h5>시각·청각 콘텐츠 제공</h5><p>1차 시각 · 2차 청각, 보는 설렘 → 듣는 설렘</p></div>
+        <div class="v"><div class="d">검토<small>2차 부서검토</small></div><h5>항만공사 협의 후 최종 수정</h5><p>통합 사이니지 + 정해진 장소에 짐 보관을 유도하는 보관소</p></div>
+        <div class="v now"><div class="d">11.02<small>실험 방향 협의</small></div><h5>바닥 통합 사인 · 수화물 보관소</h5><p>ALT 2·ALT 3 통합 디자인안, 인천항만공사 의견 반영</p></div>
+        <div class="v now"><div class="d">11.11–14<small>실행</small></div><h5>1차 2일 · 2차 2일</h5><p>1차 11.11–12, 2차 11.13–14, 전일 데이터 수집</p></div>
+      </div>
+      <div class="st-tx">
+        <p>8월 24일 초기 기획의 이름은 「UP 2층 안심 라운지」였다. 1층에 몰린 짐을 정돈하고 이용객을 2층 휴게공간으로 올려 보내는 구상이었다. 문제를 ‘1층의 혼잡’으로 보고, 답을 ‘2층으로의 분산’에서 찾았다.</p>
+        <p>10월 15일 기획은 방향을 틀었다. 2층 리모델링과 맞물려 실험 공간을 1층 대합실로 좁히고, 대기 시간을 견디는 안정감보다 여행을 앞둔 설렘을 주는 쪽으로 다시 정의하였다. 같은 날 정리한 안에서는 1차에 시각 콘텐츠, 2차에 청각 콘텐츠를 두어 ‘보는 설렘’과 ‘듣는 설렘’을 비교하려 하였다.</p>
+        <p>이 콘텐츠 비교안은 터미널을 관리하는 인천항만공사와의 협의에서 다시 바뀌었다. 2차 부서검토는 항만공사와 협의한 뒤 최종 기획안을 고치라고 하였고, 기획은 <b>쉬운 길 찾기를 위한 통합 사이니지</b>와 <b>정해진 장소에 짐 보관을 유도하는 수화물 보관소</b>로 정리되었다. 대기의 감성보다 이용객이 실제로 겪는 길과 짐의 불편이 질문이 되었다.</p>
+        <p>11월 2일 실험 방향 협의에서 두 개의 대안(ALT 2·ALT 3)을 하나의 디자인안으로 합쳤다. 1차 「발걸음은 가볍게」는 바닥 통합 사인으로 길찾기를 개선하고, 2차 「두 손은 자유롭게」는 같은 바닥 사인을 유지한 채 수화물 보관소를 조성한다. 실험명도 1차에서 2차로 ‘발걸음은 가볍게’에서 ‘두 손은 자유롭게’로 이어지게 지었다.</p>
+        <p>실행은 11월 11일(수)부터 14일(토)까지 나흘이었다. 1차를 이틀 운영한 뒤 바닥 사인을 그대로 두고 13일(금)부터 2차를 이어 붙였으며, 두 차수 모두 터미널 운영 시간 전체를 관찰하였다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">착수안에서 실행안으로 바뀐 것</div>
+    <div class="k-ba">
+      <div class="c"><div class="k">실험 공간</div>
+        <div class="r"><div class="st-ph"><img src="img/07_연안_변천5.jpg" alt="" style="object-fit:contain;background:#fff"></div><p><b>2층으로 유도</b>짐 정돈 + 2층 안심 라운지</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/07_연안_사전_좌석.jpg" alt=""></div><p><b>1층 대합실</b>이용객이 실제로 머무는 층</p></div></div>
+      <div class="c"><div class="k">다루는 경험</div>
+        <div class="r"><div class="st-ph"><img src="img/07_연안_변천9.jpg" alt=""></div><p><b>여행의 설렘</b>시각·청각 콘텐츠 부스</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/07_연안_변천11.jpg" alt="" style="object-fit:contain;background:#fff"></div><p><b>길과 짐</b>바닥 통합 사인과 보관소</p></div></div>
+      <div class="c"><div class="k">1·2차의 관계</div>
+        <div class="r"><div class="ic">시각 ⇄ 청각<br>콘텐츠 비교</div><p><b>두 매체 비교</b>같은 부스에서 매체만 바꿈</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/07_연안_2차시뮬.jpg" alt=""></div><p><b>누적형</b>1차 사인 유지 + 2차 보관공간</p></div></div>
+    </div>
+    <div class="st-shift" style="margin-top:5mm">
+      <div><i>착수 구상 · 08.24</i><b>이용객을 2층으로 올려 보낸다</b><br>혼잡을 다른 층으로 나누는 것이 질문</div>
+      <div class="ar">▶</div>
+      <div class="now"><i>실행한 실험 · 11.11–14</i><b>1층에서 길을 찾고 짐을 맡기게 한다</b><br>안내와 편의공간이 이용을 바꾸는지가 질문</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">196</div>
+</section>
+
+<!-- ================= p197 기획의 변천 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">인천항만공사와의 협의가 1차의 <em>목적지 다섯 곳</em>과<br>2차의 <em>수화물 보관공간</em>을 정하였다</h2>
+    <p class="lede">터미널은 인천항만공사가 관리하는 시설이다. 공문·설문·장소 협의를 거치며 항만공사가 짚은 이동 유도의 한계와 짐 보관의 필요가 설치물의 목적지와 위치가 되었다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+
+    <div class="k-wsph" style="height:44mm">
+      <div class="st-ph"><img src="img/07_연안_2장_반영전.jpg" alt=""><span>반영 전 · 휴게 부스형 구상</span></div>
+      <div class="st-ph"><img src="img/07_연안_2장_반영후.jpg" alt=""><span>반영 후 · 바닥 통합 사인</span></div>
+      <div class="st-ph"><img src="img/07_연안_2차시뮬.jpg" alt=""><span>2차 · 수화물 보관공간</span></div>
+    </div>
+    <div class="st-cap"><b>대합실 한가운데 부스를 두던 구상은 바닥의 길 안내와 벽 쪽 짐 자리로 바뀌었다.</b> 협의 전후 시뮬레이션</div>
+    <div class="st-nums k-facts" style="grid-template-columns:repeat(4,1fr);margin-top:3mm">
+      <div><b>136<small>장</small></b><span>유도선 안내사인 · 190×1,000</span></div>
+      <div><b>10<small>장</small></b><span>사각 정보 안내사인 · 500×500</span></div>
+      <div><b>5<small>곳</small></b><span>색으로 안내한 목적지</span></div>
+      <div><b>30<small>명</small></b><span>차수별 이용자 인터뷰 · <span style="white-space:nowrap">최소 참여인원</span></span></div>
+    </div>
+    <div class="st-flow" style="margin-top:4.4mm">
+      <div class="hdr"><div>협의·조사에서 나온 조건</div><div class="ar"></div><div>설치물에 반영한 것</div><div class="ar"></div><div>현장에서 확인한 것</div></div>
+      <div class="r"><div class="a"><b>이동 유도 한계<small>항만공사</small></b>2층 대기 공간이 알려지지 않아 1층에 집중, 기존 안내로는 이동이 어려움</div><div class="ar">▶</div><div class="b"><b>2층 라운지를 목적지 중 하나로</b>분홍 유도선 19장 · 정보 사인에 2층 라운지 표기</div><div class="ar">▶</div><div class="c">분홍 선을 따라 계단으로 간 이용객</div></div>
+      <div class="r"><div class="a"><b>최종 기획안 수정<small>2차 부서검토</small></b>항만공사 협의 후 통합 사이니지와 수화물 보관소로 정리</div><div class="ar">▶</div><div class="b"><b>1차 길찾기 · 2차 보관소</b>1차는 보관소를 포함한 길찾기 사인, 2차는 1차 유지 + 보관소 조성</div><div class="ar">▶</div><div class="c">보관소 인지와 이용의 차수별 변화</div></div>
+      <div class="r"><div class="a"><b>1층 대기·수하물 집중<small>사전 현장조사</small></b>대기와 짐이 1층 대합실에 몰린 초기 여건</div><div class="ar">▶</div><div class="b"><b>보관소 앞 5×3m 바닥 영역</b>짐을 내려놓을 자리를 바닥 색으로 구분</div><div class="ar">▶</div><div class="c">짐을 놓는 위치와 통로 확보</div></div>
+      <div class="r"><div class="a"><b>보관시설 이용 장벽<small>선행연구</small></b>위치 찾기, 보관함 크기, 짐을 들어 올리는 부담</div><div class="ar">▶</div><div class="b"><b>높이 1,000mm 정리 테이블</b>테이블 4개 · 책장 4개 · ‘짐은 차곡차곡’ 사인</div><div class="ar">▶</div><div class="c">짐을 정리하고 맡기는 행동</div></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.4mm">
+      <p>연안여객터미널은 시민 워크숍 대신 시설 관리 주체와의 협의가 기획을 다듬은 거점이었다. 인천항만공사는 2층 대기 공간이 쓰이지 않는 이유를 ‘알려지지 않았기 때문’으로 보았고, 실험은 이 판단을 받아 2층 라운지를 바닥 유도선의 목적지 다섯 곳 가운데 하나로 넣었다.</p>
+      <p>다섯 목적지는 이용객이 대합실에서 실제로 찾는 곳으로 정하였다. 매표소와 수화물 보관소, 2층 라운지, 화장실, 국군장병라운지다. 각각에 색 하나를 주어 바닥 선과 정보 사인에 같은 색을 썼다. 2차의 보관공간은 1차 주황 유도선이 가리키던 수화물 보관소 자리에 책장과 테이블을 놓아 꾸몄다.</p>
+      <p>재료는 모두 시트와 판재였다. 1차의 유도선 136장과 정보 사인 10장, 2차의 바닥 영역 사인과 벽면·책장 측면 사인은 모두 PVC 시트지로, 테이블 측면 사인은 폼보드로 만들었다. 바닥과 벽에 붙이고 떼는 방식이어서, 대합실 운영을 멈추지 않고 설치하고 걷어 낼 수 있었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">197</div>
+</section>
+
+<!-- ================= p198 실험 설계 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 1차 바닥 사이니지를 그대로 두고,<br><em>수화물 보관소에 짐 정리 공간만 더하였다</em></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-mir">
+      <div class="ph">
+        <div class="st-ph" style="height:46mm"><img src="img/07_연안_1차시뮬_사인합성.jpg" alt="" style="object-position:50% 80%"></div>
+        <div class="mid">더한 요소</div>
+        <div class="st-ph" style="height:46mm"><img src="img/07_연안_2차시뮬.jpg" alt="" style="object-position:50% 60%"></div>
+      </div>
+      <div class="hh"><div class="a">1차 「발걸음은 가볍게」<small>통합 바닥 사이니지를 통한 이동 편의 개선</small></div><div style="background:#fff"></div><div class="b">2차 「두 손은 자유롭게」<small>통합 안내체계와 수화물 보관공간 조성을 통한 이용 유도</small></div></div>
+      <div class="r"><div class="a">5색 유도선 136장</div><div class="m">바닥 길 안내</div><div class="b">같은 유도선 유지</div></div>
+      <div class="r"><div class="a">사각 정보 안내사인 10장</div><div class="m">분기점 안내</div><div class="b">같은 정보 사인 유지</div></div>
+      <div class="r"><div class="a">주황 유도선이 보관소까지</div><div class="m">보관소 표시</div><div class="b">+ 벽면 사인 1,275×580<small>‘가벼운 여행의 시작 수화물 보관함’</small></div></div>
+      <div class="r"><div class="a">없음</div><div class="m">짐 정리 공간</div><div class="b">테이블 4 · 책장 4 · 5×3m 바닥 영역</div></div>
+      <div class="r"><div class="a">목적지 선택 정확도 · 보관시설 인지율 · 이동 만족도</div><div class="m">조사 항목</div><div class="b">보관시설 이용률 · 짐 보관 의향 · 편의 만족도</div></div>
+      <div class="r"><div class="a">11.11(수) · 12(목) 전일</div><div class="m">수집일</div><div class="b">11.13(금) · 14(토) 전일</div></div>
+    </div>
+    <div class="st-keep" style="margin-top:3.6mm">
+      <div class="t">유지한 조건 <span>사전조사 · 1차 · 2차 모두 같게</span></div>
+      <div class="g">
+        <div><b>같은 대합실</b><small>1층 대합실<br>같은 출입구·분기점</small></div>
+        <div><b>같은 바닥 사인</b><small>1차 유도선을<br>2차에도 동일 유지</small></div>
+        <div><b>전일 관찰</b><small>터미널 운항·이용<br>시간대 전체</small></div>
+        <div><b>같은 관찰 지점</b><small>출입구 · 분기점<br>보관소 앞</small></div>
+        <div><b>같은 인터뷰</b><small>쉬운 길찾기·짐 정리<br>이용자 · 최소 각 30명</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>연안여객터미널도 1차 위에 2차를 더하는 누적형으로 설계하였다. 2차에도 1차의 바닥 통합 사이니지를 똑같이 유지하고 보관공간 디자인만 더한다는 원칙을 처음부터 적어 두었다. 그래서 사전과 1차의 차이는 <b>바닥 안내의 효과</b>로, 1차와 2차의 차이는 <b>짐 정리 공간을 더한 효과</b>로 읽었다.</p>
+      <p>두 차수가 묻는 것은 조금 달랐다. 1차는 이용객이 목적지를 바르게 고르고 보관소의 존재를 알게 되는지를, 2차는 알게 된 보관소에 실제로 짐을 맡기고 정리하는지를 보았다. 보관시설 인지율은 두 차수 모두 같은 방식으로 재어 두 단계를 잇는 지표로 썼다.</p>
+      <p>1차와 2차는 이틀씩 이어 붙여 운영하였다. 1차는 수·목요일, 2차는 금·토요일이어서 요일에 따른 이용객 구성의 차이가 결과에 섞일 수 있었다. 이 두 가지는 결과를 읽을 때 외부 조건으로 따로 적었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">198</div>
+</section>
+
+<!-- ================= p199 실험 설계 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">목적지 찾기 · 보관소 알아보기 · 짐 맡기기, <em>세 지표</em>를<br>사전 · 1차 · 2차 같은 전일 관찰로 재었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-pipe">
+      <div class="s"><div class="h"><i>지표 ①</i><b>목적지 찾기</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><rect x="6" y="13" width="28" height="3" rx=".6" fill="#B8C4CD"/><path d="M10 14.5 H30" stroke="#675F8C" stroke-width="1.2"/><path d="M27 12 L31 14.5 L27 17" fill="#675F8C"/><path d="M20 10 C16 5 17 2 20 2 C23 2 24 5 20 10Z" fill="#675F8C"/><circle cx="20" cy="4.6" r="1" fill="#fff"/></svg></div>
+        <dl><dt>무엇을</dt><dd>출입구에서 목적지를 바르게 고르고 바로 찾아갔는가</dd><dt>어떻게</dt><dd>이동행태 관찰 · 출입구·분기점</dd><dt>값</dt><dd><b>목적지 선택 정확도</b> · 탐색 시간 · 주저·우회 행동</dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ②</i><b>보관소 알아보기</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><rect x="9" y="4" width="22" height="12" rx=".6" fill="#E3E9F0"/><rect x="15" y="8" width="10" height="7" rx=".6" fill="#7D97B3"/><path d="M18 8 V6.4 H22 V8" stroke="#7D97B3" stroke-width=".8" fill="none"/><path d="M4 10 Q8 6 12 10" stroke="#675F8C" stroke-width=".5" fill="none"/></svg></div>
+        <dl><dt>무엇을</dt><dd>대합실 안 수화물 보관소의 위치를 알게 되었는가</dd><dt>어떻게</dt><dd>시설 인지율 조사 · 인터뷰</dd><dt>값</dt><dd><b>보관시설 인지율</b> · 분모는 해당 문항 응답자</dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ③</i><b>짐 맡기기·정리</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><path d="M5 11 H35 M8 11 V18 M32 11 V18" stroke="#675F8C" stroke-width="1" fill="none"/><rect x="10" y="4" width="8" height="7" rx=".6" fill="#7D97B3"/><rect x="20" y="6" width="6" height="5" rx=".6" fill="#B8C4CD"/><path d="M28 2 V9 M26 7 L28 9 L30 7" stroke="#1A2F4B" stroke-width=".6" fill="none"/></svg></div>
+        <dl><dt>무엇을</dt><dd>짐을 보관소에 맡기거나 정리 공간을 썼는가</dd><dt>어떻게</dt><dd>행동관찰 · 짐 정리 이용자 인터뷰</dd><dt>값</dt><dd><b>보관시설 이용률</b> · 짐 보관 의향 · 편의 만족도</dd></dl></div>
+    </div>
+    <div class="st-cap"><b>지표 ②는 두 차수를 잇는 다리였다.</b> 1차는 ①·②와 이동 만족도를, 2차는 ②·③과 편의 만족도를 중심으로 보았다.</div>
+
+    <div class="st-lb" style="margin-top:5mm">조사와 운영의 날짜</div>
+    <div class="k-cal">
+      <svg width="178mm" height="52mm" viewBox="0 0 178 52">
+        <line x1="4" y1="22" x2="104" y2="22" stroke="#C9D3DC" stroke-width=".5"/>
+        <line x1="112" y1="22" x2="174" y2="22" stroke="#C9D3DC" stroke-width=".5"/>
+        <path d="M105.5 19.6 L107.5 24.4 M108.5 19.6 L110.5 24.4" stroke="#9AA8B5" stroke-width=".4"/>
+        <g font-size="3" font-weight="800" fill="#6A7784"><text x="15.2" y="30">8월</text><text x="44.1" y="30">9월</text><text x="72" y="30">10월</text><text x="112" y="30">11월</text></g>
+        <path d="M15.2 20 V24 M44.1 20 V24 M72 20 V24" stroke="#C9D3DC" stroke-width=".4"/>
+        <g fill="#C9D3DC"><rect x="11.4" y="19" width="2" height="6" rx=".5"/><rect x="24.2" y="19" width="2" height="6" rx=".5"/><rect x="77.6" y="19" width="2" height="6" rx=".5"/></g>
+        <text x="28" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">현장조사 7.29 · 8.11 · 10.7</text>
+        <path d="M12.4 18.6 L20 13 M25.2 18.6 L28 13 M78.6 18.6 L42 13" stroke="#B9C3CB" stroke-width=".3"/>
+        <rect x="55" y="19" width="2.4" height="6" rx=".5" fill="url(#hatch-pre)"/>
+        <path d="M56.2 25.4 V36" stroke="#9AA8B5" stroke-width=".3"/><text x="56.2" y="40" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">9.14(월)</text><text x="56.2" y="44" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">사전조사 · 전일 수집</text>
+        <rect x="115.2" y="19" width="1.8" height="6" rx=".4" fill="url(#hatch-gray)"/>
+        <text x="116.1" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">11.2 실험 방향 협의</text><path d="M116.1 18.6 V13" stroke="#B9C3CB" stroke-width=".3"/>
+        <rect x="153" y="19" width="8.2" height="6" rx=".6" fill="#2E5A87"/>
+        <rect x="161.2" y="19" width="8.2" height="6" rx=".6" fill="#1A2F4B"/>
+        <text x="157.1" y="40" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">11.11–12</text><text x="157.1" y="44" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">1차 · 수·목 전일</text>
+        <path d="M157.1 25.4 V36" stroke="#9AA8B5" stroke-width=".3"/>
+        <text x="174" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="end">11.13–14</text><text x="174" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="end">2차 · 금·토 전일</text>
+      </svg>
+    </div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:4mm">
+      <div><b class="dummy">[000]<small class="dummy">건</small></b><span>사전조사<br>이동 관찰</span></div>
+      <div><b class="dummy">[000]<small class="dummy">건</small></b><span>1차 이동 관찰</span></div>
+      <div><b class="dummy">[000]<small class="dummy">건</small></b><span>2차 이동 관찰</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>이용자 인터뷰<br>(1·2차 합계 · 최소 각 30명)</span></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>수집일은 거점 공통 원칙에 터미널의 조건을 더해 정하였다. 사전·1차·2차 모두 터미널 운항과 이용 시간대 전체를 관찰하는 전일 수집으로 하였고, 평일과 주말을 함께 넣었다. 소상공인 365 입지분석에서 터미널 일대의 유동인구는 금·토요일에 가장 많았다. 2차 이틀은 이 금·토요일에 운영하였고, 1차는 바로 앞의 수·목요일에 두었다. 실험 전 기준값은 9월 14일(월) 사전조사에서 같은 지점·같은 방식으로 남겼다.</p>
+      <p>이동 관찰은 출입구에서 들어온 이용객이 어느 목적지로 향하는지, 중간에 멈추거나 되돌아가는지를 기록하였다. 인터뷰는 쉬운 길찾기와 짐 정리를 주제로 1차 <span class="dummy">[00]</span>명, 2차 <span class="dummy">[00]</span>명에게 물었고(최소 참여인원 차수별 30명), 2차에는 짐 보관 의사의 변화를 함께 물었다.</p>
+      <p>세 지표는 이용객의 한 번의 이동 안에서 이어진다. 목적지를 찾아야 보관소를 알게 되고, 보관소를 알아야 짐을 맡긴다. 결과도 이 순서로 읽었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">199</div>
+</section>
+
+<!-- ================= p200 1차 실험 「발걸음은 가볍게」 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">1차 실험 「발걸음은 가볍게」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1차는 출입구와 동선 분기점에 <em>다섯 색의 바닥 유도선</em> 136장과<br>정보 안내사인 10장을 붙였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-hero" style="height:104mm">
+      <img src="img/07_연안_1차시뮬_사인합성.jpg" alt="" style="object-position:50% 60%">
+      <svg viewBox="0 0 178 104" width="178mm" height="104mm"><g stroke="#fff" stroke-width=".45" fill="none"><path d="M48 12 L86 38"/><path d="M130 12 L104 70"/><path d="M130 86 L122 90"/><path d="M48 88 L62 80"/></g><g fill="#1A2F4B" stroke="#fff" stroke-width=".45"><circle cx="86" cy="38" r="1.4"/><circle cx="104" cy="70" r="1.4"/><circle cx="122" cy="90" r="1.4"/><circle cx="62" cy="80" r="1.4"/></g></svg>
+      <div class="st-co" style="left:4mm;top:4mm"><b><i>1</i>출입구에서 출발</b>대합실에 들어서는 자리부터 바닥 선이 시작됨</div>
+      <div class="st-co" style="left:130mm;top:4mm"><b><i>2</i>유도선 안내사인</b>폭 190 · 길이 1,000mm 띠를 목적지 방향으로 이어 붙임</div>
+      <div class="st-co" style="left:130mm;top:78mm"><b><i>3</i>사각 정보 안내사인</b>500×500mm, 목적지마다 한 장씩 이름·방향·픽토그램 표시</div>
+      <div class="st-co" style="left:4mm;top:80mm"><b><i>4</i>분기점에서 갈라짐</b>색마다 다른 방향으로 선이 나뉨</div>
+    </div>
+    <div class="st-cap"><b>출입구에서 들어온 이용객이 고개를 숙이지 않아도 발 앞에서 목적지 색을 고를 수 있게 하였다.</b> 1차 바닥 통합 사이니지 적용 시뮬레이션 · 1층 대합실 출입구</div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>1차 「발걸음은 가볍게」는 바닥 통합 안내 사이니지가 이용자의 길찾기 정확도를 높이고, 수화물 보관소의 인지성을 개선할 수 있는지를 물었다. 대합실의 출입구와 주요 동선 분기점에 바닥 사인을 설치하고, 색상과 픽토그램, 방향 표시로 주요 시설까지 이어지게 하였다.</p>
+      <p>바닥 사인은 두 종류다. 유도선 안내사인은 폭 190mm, 길이 1,000mm의 PVC 시트 띠로, 목적지 하나에 색 하나를 주어 모두 136장을 붙였다. 띠에는 위를 향한 겹화살표를 넣고, 일부 띠에는 목적지 이름을 국문과 영문으로 적었다. 사각 정보 안내사인은 500×500mm 시트로, 한 장에 목적지 하나의 이름과 방향, 픽토그램을 담았다. 다섯 목적지마다 한 종씩 두 장, 모두 10장을 붙였다.</p>
+      <p>색만 강조한 안내보다 색·그래픽·공간적 특징을 함께 쓴 안내가 올바른 방향 이동을 늘린다는 연구(Kalantari 외, 2022)를 따라, 색 선에는 화살표와 이름, 픽토그램을 함께 넣었다. 기존 안내판과 키오스크는 그대로 두고 바닥 안내를 더하였다. 운영은 11월 11일(수)부터 12일(목)까지였고, 두 날 모두 터미널 운영 시간 전체를 관찰하였다.</p>
+    </div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:4.6mm">
+      <div><b>136<small>장</small></b><span>유도선 안내사인<br>190×1,000 PVC</span></div>
+      <div><b>10<small>장</small></b><span>사각 정보 안내사인<br>500×500 PVC</span></div>
+      <div><b>5<small>색</small></b><span>목적지마다<br>색 하나</span></div>
+      <div><b>2<small>일</small></b><span>1차 운영<br>11.11–12 전일</span></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">200</div>
+</section>
+
+<!-- ================= p201 1차 실험 「발걸음은 가볍게」 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">1차 실험 「발걸음은 가볍게」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">다섯 색은 목적지 하나씩을 맡도록 <em>먼셀 기호</em>로 고정하고,<br>띠의 폭과 간격을 맞춰 제작하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-pal">
+      <div class="sw"><div class="c dk" style="background:#A9C1E6">국군장병라운지</div><div class="m">5PB 8/4<small>유도선 30장 · 5·9·16장</small></div></div>
+      <div class="sw"><div class="c" style="background:#6FAE8C">매표소</div><div class="m">5G 6.5/4<small>유도선 25장 · 11·1·13장</small></div></div>
+      <div class="sw"><div class="c" style="background:#D9823A">수화물 보관소</div><div class="m">5YR 6/10<small>유도선 29장 · 14·15장</small></div></div>
+      <div class="sw"><div class="c" style="background:#D9719F">2층 라운지</div><div class="m">5RP 6/10<small>유도선 19장 · 8·11장</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#F1F1F1">화장실</div><div class="m">N 9.5/0<small>유도선 33장 · 10·6·17장</small></div></div>
+    </div>
+    <div class="st-cap"><b>띠의 바탕은 N 4.5/0 회색, 글자는 N 10/0 흰색으로 다섯 색에 공통으로 썼다.</b> 목적지별 유도선 색과 수량 · 숫자는 띠 종류별 장수</div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:1fr 58mm">
+      <div><div class="st-fig"><img src="img/07_연안_1차사인도면.png" alt="" style="height:104mm;width:auto;margin:0 auto"></div>
+        <div class="st-cap"><b>윗줄은 목적지 이름이 적힌 띠, 가운데 줄은 화살표만 있는 띠, 아랫줄은 정보 안내사인이다.</b> 1차 바닥 통합 사이니지 제작도</div></div>
+      <div class="st-dims k-dw">
+        <div><b>190×1,000<small>mm</small></b><span>유도선 띠 한 장 · PVC 시트지</span></div>
+        <div><b>155<small>mm</small></b><span>띠와 띠 사이 간격</span></div>
+        <div><b>500×500<small>mm</small></b><span>사각 정보 안내사인 · 5종 × 2장</span></div>
+        <div><b>5PB 3/1</b><span>띠 위 물결 무늬 색</span></div>
+        <div><b>N 4.5/0</b><span>띠 바탕 · 다섯 색 공통</span></div>
+        <div><b>146<small>장</small></b><span>1차 바닥 사인 합계</span></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>색은 목적지의 이름표였다. 국군장병라운지는 옅은 파랑, 매표소는 초록, 수화물 보관소는 주황, 2층 라운지는 분홍, 화장실은 흰색으로 정하고 각각에 먼셀 기호를 붙여 제작과 설치에서 같은 색이 나오게 하였다. 색의 수를 목적지의 수와 맞추어, 이용객이 색 하나만 기억하면 끝까지 따라갈 수 있게 하였다.</p>
+      <p>띠의 바탕은 다섯 색 모두 같은 중간 회색으로 두어 바닥 위에서 색 화살표만 도드라지게 하였다. 수화물 보관소(5YR 6/10)와 2층 라운지(5RP 6/10)는 채도 10으로, 채도 0~4인 다른 세 색보다 강했다. 두 곳은 1차 가설의 보관소 인지와, 인천항만공사가 짚은 2층 이동 유도가 걸린 목적지였다. 띠 수량은 목적지마다 19장에서 33장까지 달랐다. 사각 정보 안내사인은 500×500mm 판 하나에 목적지 하나의 이름과 방향, 픽토그램을 담아 목적지마다 한 종씩 만들고, 유도선이 갈라지는 자리에 두어 띠의 색과 이름을 한 번 더 맞춰 보게 하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">201</div>
+</section>
+
+<!-- ================= p202 2차 실험 「두 손은 자유롭게」 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">2차 실험 「두 손은 자유롭게」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 수화물 보관소 앞에 <em>짐을 놓고 정리하는 자리</em>를 만들고,<br>‘배려’를 문구로 적었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="k-msg">
+      <div><i>벽면 사인 · 1,275×580</i><b>가벼운 여행의 시작</b><span>‘수화물 보관함’을 함께 적어 먼 곳에서도 보관소를 알아보게 하였다</span></div>
+      <div><i>테이블 측면 사인 · 600×1,000</i><b>짐은 차곡차곡</b><span>‘배려는 착착!’, ‘작은 정리, 큰 배려’를 함께 적었다</span></div>
+      <div><i>바닥 영역 사인 · 5,000×3,000</i><b>LUGGAGE STORAGE</b><span>‘수화물 보관함’을 테두리에 둘러 짐 내려놓는 자리를 바닥 색으로 구분하였다</span></div>
+    </div>
+    <div class="st-cap"><b>세 문구는 각각 멀리서 알아보기, 다가가 정리하기, 그 자리에 머물기를 맡았다.</b> 2차 사인 문안과 규격</div>
+    <div class="st-split l" style="margin-top:5mm;grid-template-columns:66mm 1fr">
+      <div><div class="st-fig" style="padding:1.6mm"><img src="img/07_연안_2차보관소도면.png" alt=""></div>
+        <div class="st-cap"><b>색은 남색 5PB 3/1, 주황 5YR 6/10, 흰색 N 10/0 세 가지로 줄였다.</b> 2차 수화물 보관공간 제작도</div>
+        <div class="st-mn" style="margin-top:4mm"><b>2차의 원칙</b>1차 바닥 통합 사이니지를 동일하게 유지하고, 보관공간 디자인만 추가</div></div>
+      <div class="st-tx">
+        <p>2차 「두 손은 자유롭게」는 수화물 보관소에 안내 사인과 짐 정리 공간을 마련하면 보관소의 이용률과 이용자 편의성이 높아질지를 물었다. 1차가 길을 알려 주었다면, 2차는 길 끝에서 짐을 내려놓을 이유와 자리를 주었다.</p>
+        <p>보관소 벽에는 1,275×580mm 벽면 사인을 붙였다. 말풍선 모양의 남색 판에 ‘가벼운 여행의 시작 수화물 보관함’을 적어, 대합실 건너편에서도 보관소가 어디인지 보이게 하였다. 바닥에는 5,000×3,000mm 주황색 영역 사인을 깔고 테두리에 ‘LUGGAGE STORAGE 수화물 보관함’을 둘러 적었다.</p>
+        <p>짐을 정리하는 자리에는 폭 1,200mm, 높이 1,000mm 테이블 4개와 높이 1,165mm 책장 4개를 놓았다. 선 채로 짐을 펼칠 수 있는 높이로, 선행연구가 보관시설 이용 장벽으로 꼽은 ‘짐을 들어 올리는 부담’과 맞닿는 장치였다. 테이블 옆면에는 ‘작은 정리, 큰 배려’와 ‘짐은 차곡차곡 배려는 착착!’을, 책장 옆면에는 주황색 짐 그림을 붙였다.</p>
+        <p>문구는 ‘배려’와 ‘손이 가벼운 여행’ 두 말을 축으로 썼다. 짐을 맡기는 일을 자기 편의이자 붐비는 대합실의 다른 이용객을 위한 일로 말하였다.</p>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>2차는 11월 13일(금)부터 14일(토)까지 운영하였다. 1차의 바닥 유도선 136장과 정보 안내사인 10장은 하나도 떼지 않았고, 주황색 유도선이 이제 실제로 짐을 맡길 수 있는 자리로 이어졌다.</p>
+      <p>2차에서 새로 본 것은 보관시설 이용률과 짐 보관 의향, 편의 만족도, 그리고 실제 이용행태였다. 인터뷰에서는 짐을 맡기기로 한 이유와 맡기지 않은 이유를 함께 물었다.</p>
+    </div>
+    <div class="st-lb" style="margin-top:4.4mm">길 끝에서 짐을 내려놓기까지</div>
+    <div class="st-ladder4">
+      <div class="s"><i>1차부터</i><b>주황 유도선<br>수화물 보관소 방향</b></div><div class="ar">▶</div>
+      <div class="s"><i>2차 · 멀리서</i><b>벽면 사인<br>가벼운 여행의 시작</b></div><div class="ar">▶</div>
+      <div class="s"><i>2차 · 가까이</i><b>바닥 영역 5×3m<br>짐을 내려놓는 자리</b></div><div class="ar">▶</div>
+      <div class="s on"><i>2차 · 정리</i><b>테이블 · 책장<br>짐은 차곡차곡</b></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">202</div>
+</section>
+
+<!-- ================= p203 2차 실험 「두 손은 자유롭게」 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">2차 실험 「두 손은 자유롭게」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 1차 위에 <em>벽면 사인 · 바닥 영역 · 책장과 테이블</em>을 더하고,<br>바닥 유도선은 그대로 두었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split" style="grid-template-columns:1fr 56mm">
+      <div><div class="st-ph" style="height:61mm"><img src="img/07_연안_2차시뮬.jpg" alt=""><span>2차 수화물 보관공간 시뮬레이션(합성)</span></div>
+        <div class="st-cap"><b>주황 유도선 끝에 주황 바닥 영역이 열리고, 그 뒤로 흰 책장과 테이블이 벽을 따라 섰다.</b> 2차 「두 손은 자유롭게」 시뮬레이션</div></div>
+      <div class="st-dims k-dw">
+        <div><b>1,275×580</b><span>벽면 사인 1장 · PVC</span></div>
+        <div><b>5,000×3,000</b><span>바닥 영역 사인 1장 · PVC</span></div>
+        <div><b style="font-size:9pt!important;letter-spacing:-.02em">1,200×600×1,000</b><span>테이블 4개</span></div>
+        <div><b>415×290×1,165</b><span>책장 4개</span></div>
+        <div><b>600×1,000</b><span>테이블 측면 사인 · 폼보드</span></div>
+        <div><b>290×277</b><span>책장 측면 사인 · PVC</span></div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:4.6mm">1차에 더한 것 · 바꾼 것</div>
+    <div class="st-chg k-chg">
+      <div class="c"><div class="k">보관소 표시</div><div class="a">1차 · 주황 유도선만</div><div class="b">+ 말풍선 벽면 사인 1,275×580</div><div class="w">근거 · 보관시설 위치 찾기 장벽</div></div>
+      <div class="c"><div class="k">짐 내려놓는 자리</div><div class="a">1차 · 없음</div><div class="b">주황 바닥 영역 5,000×3,000</div><div class="w">근거 · 1층 대기·수하물 집중</div></div>
+      <div class="c"><div class="k">정리 가구</div><div class="a">1차 · 없음</div><div class="b">테이블 4 · 책장 4, 높이 1,000·1,165</div><div class="w">근거 · 짐을 들어 올리는 부담</div></div>
+      <div class="c"><div class="k">문구</div><div class="a">1차 · 목적지 이름</div><div class="b">+ 짐은 차곡차곡 배려는 착착!</div><div class="w">근거 · ‘배려’, ‘손이 가벼운 여행’</div></div>
+      <div class="c"><div class="k">조사 항목</div><div class="a">선택 정확도 · 인지율 · 이동 만족도</div><div class="b">이용률 · 보관 의향 · 편의 만족도</div><div class="w">근거 · 2차 가설</div></div>
+      <div class="c"><div class="k">수집일</div><div class="a">11.11(수) · 12(목)</div><div class="b">11.13(금) · 14(토)</div><div class="w">근거 · 확정 운영 일정</div></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>2차가 더한 것은 모두 수화물 보관소 한 곳에 모였다. 대합실의 나머지, 곧 매표소와 승선장, 화장실, 2층 라운지로 가는 길은 1차와 똑같았다. 그래서 2차의 다른 목적지 지표는 1차와 거의 같아야 하고, 보관소 지표만 움직였다면 그 몫을 보관공간의 효과로 읽을 수 있었다. 2차 조사 항목을 보관시설 이용률·짐 보관 의향·편의 만족도로 바꾼 것도 이 때문이다.</p>
+      <p>바닥 영역은 짐을 놓는 자리이면서 통로와의 경계였다. 대합실의 통행을 막지 않도록 벽 쪽에 붙여 깔았고, 테이블과 책장은 벽을 따라 놓았다. 책장 측면과 테이블 측면에도 사인을 붙여, 가구 자체가 보관공간의 안내가 되게 하였다. 책장에 둔 짐의 관리와 분실 대응은 <span class="dummy">[운영 인력·안내 방식]</span>으로 정하였다. 2차 설치물은 12일 1차 운영을 마친 뒤 들였고, 13일부터 같은 바닥 사인 위에서 2차를 시작하였다.</p>
+    </div>
+    <div class="st-nums k-facts" style="grid-template-columns:repeat(4,1fr);margin-top:4.6mm">
+      <div><b>8<small>개</small></b><span>정리 가구(테이블 4 · 책장 4)</span></div>
+      <div><b>4<small>종</small></b><span>2차 사인 · 벽면·바닥·측면 2</span></div>
+      <div><b>15<small>㎡</small></b><span>바닥 영역 · 5,000×3,000</span></div>
+      <div><b>146<small>장</small></b><span>1차 바닥 사인 그대로 유지</span></div>
+    </div>
+    <div class="st-out" style="margin-top:4mm"><b>1차와 2차 사이에 달라진 것은 <span>수화물 보관소 한 곳</span>이었다.<br>그래서 2차의 보관소 지표 변화는 짐 자리가 더한 몫으로 읽었다</b><small>누적형 설계<br>A → A + B</small></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">203</div>
+</section>
+
+<!-- ================= p204 현장 배치 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">현장 배치</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">다섯 색 선은 두 출입구에서 출발해<br><em>매표소 · 승선장 · 화장실 · 수화물 보관소 · 2층</em>으로 갈라졌다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-plan" style="height:150mm"><svg viewBox="0 0 178 150" width="178mm" height="150mm"><defs><pattern id="kg" width="2.4" height="2.4" patternUnits="userSpaceOnUse"><rect width="2.4" height="2.4" fill="#FAFBFC"/><path d="M0 0 H2.4 V2.4" fill="none" stroke="#E3E8EC" stroke-width=".2"/></pattern></defs><rect x="20" y="6" width="84" height="140" rx=".6" fill="url(#kg)"/><rect x="20" y="10" width="9" height="14" fill="#D9823A"/><text x="24.5" y="17.0" font-size="2.7" font-weight="900" fill="#fff" text-anchor="middle" transform="rotate(-90 24.5 17.0)">수화물 보관소</text><rect x="20" y="28" width="9" height="20" fill="#C9D1D8"/><text x="24.5" y="38.0" font-size="2.7" font-weight="900" fill="#1A2F4B" text-anchor="middle" transform="rotate(-90 24.5 38.0)">승선장</text><rect x="20" y="52" width="9" height="24" fill="#C9D1D8"/><text x="24.5" y="64.0" font-size="2.7" font-weight="900" fill="#1A2F4B" text-anchor="middle" transform="rotate(-90 24.5 64.0)">매표소</text><rect x="20" y="80" width="9" height="24" fill="#C9D1D8"/><text x="24.5" y="92.0" font-size="2.7" font-weight="900" fill="#1A2F4B" text-anchor="middle" transform="rotate(-90 24.5 92.0)">매표소</text><rect x="20" y="108" width="9" height="20" fill="#C9D1D8"/><text x="24.5" y="118.0" font-size="2.7" font-weight="900" fill="#1A2F4B" text-anchor="middle" transform="rotate(-90 24.5 118.0)">승선장</text><rect x="40" y="6" width="34" height="5" fill="#DCE3E9"/><text x="57" y="9.8" font-size="2.7" font-weight="900" fill="#1A2F4B" text-anchor="middle">화장실</text><rect x="40" y="141" width="34" height="5" fill="#DCE3E9"/><text x="57" y="144.8" font-size="2.7" font-weight="900" fill="#1A2F4B" text-anchor="middle">화장실</text><g fill="#B9C3CB"><rect x="40" y="30.0" width="14" height="1.8"/><rect x="40" y="33.2" width="14" height="1.8"/><rect x="40" y="36.4" width="14" height="1.8"/><rect x="40" y="39.6" width="14" height="1.8"/><rect x="40" y="42.8" width="14" height="1.8"/></g><g fill="#B9C3CB"><rect x="58" y="30.0" width="14" height="1.8"/><rect x="58" y="33.2" width="14" height="1.8"/><rect x="58" y="36.4" width="14" height="1.8"/><rect x="58" y="39.6" width="14" height="1.8"/><rect x="58" y="42.8" width="14" height="1.8"/></g><g fill="#B9C3CB"><rect x="40" y="56.0" width="14" height="1.8"/><rect x="40" y="59.2" width="14" height="1.8"/><rect x="40" y="62.4" width="14" height="1.8"/><rect x="40" y="65.6" width="14" height="1.8"/><rect x="40" y="68.8" width="14" height="1.8"/></g><g fill="#B9C3CB"><rect x="58" y="56.0" width="14" height="1.8"/><rect x="58" y="59.2" width="14" height="1.8"/><rect x="58" y="62.4" width="14" height="1.8"/><rect x="58" y="65.6" width="14" height="1.8"/><rect x="58" y="68.8" width="14" height="1.8"/></g><g fill="#B9C3CB"><rect x="40" y="84.0" width="14" height="1.8"/><rect x="40" y="87.2" width="14" height="1.8"/><rect x="40" y="90.4" width="14" height="1.8"/><rect x="40" y="93.6" width="14" height="1.8"/><rect x="40" y="96.8" width="14" height="1.8"/></g><g fill="#B9C3CB"><rect x="58" y="84.0" width="14" height="1.8"/><rect x="58" y="87.2" width="14" height="1.8"/><rect x="58" y="90.4" width="14" height="1.8"/><rect x="58" y="93.6" width="14" height="1.8"/><rect x="58" y="96.8" width="14" height="1.8"/></g><g fill="#B9C3CB"><rect x="40" y="110.0" width="14" height="1.8"/><rect x="40" y="113.2" width="14" height="1.8"/><rect x="40" y="116.4" width="14" height="1.8"/><rect x="40" y="119.6" width="14" height="1.8"/><rect x="40" y="122.8" width="14" height="1.8"/></g><g fill="#B9C3CB"><rect x="58" y="110.0" width="14" height="1.8"/><rect x="58" y="113.2" width="14" height="1.8"/><rect x="58" y="116.4" width="14" height="1.8"/><rect x="58" y="119.6" width="14" height="1.8"/><rect x="58" y="122.8" width="14" height="1.8"/></g><g fill="#1A2F4B"><circle cx="36" cy="26" r="1.4"/><circle cx="36" cy="52" r="1.4"/><circle cx="36" cy="78" r="1.4"/><circle cx="36" cy="104" r="1.4"/><circle cx="36" cy="130" r="1.4"/><circle cx="78" cy="26" r="1.4"/><circle cx="78" cy="52" r="1.4"/><circle cx="78" cy="78" r="1.4"/><circle cx="78" cy="104" r="1.4"/><circle cx="78" cy="130" r="1.4"/></g><rect x="102" y="40" width="4" height="14" fill="#2E5A87"/><rect x="102" y="96" width="4" height="14" fill="#2E5A87"/><text x="108" y="49" font-size="2.8" font-weight="900" fill="#22476C">출입구 1</text><text x="108" y="105" font-size="2.8" font-weight="900" fill="#22476C">출입구 2</text><path d="M101 46 C90 46 88 30 82 22 L34 17" stroke="#D9823A" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M101 100 C88 98 86 66 82 60 L31 64" stroke="#6FAE8C" stroke-width="1.1" fill="none" stroke-linecap="round"/><path d="M101 48 C92 50 90 86 82 92 L31 92" stroke="#6FAE8C" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-dasharray="1.6 1"/><path d="M101 44 C94 40 92 12 70 12" stroke="#F1F1F1" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M101 44 C94 40 92 12 70 12" stroke="#9AA6B1" stroke-width="0.3" fill="none" stroke-linecap="round"/><path d="M101 102 C94 108 92 136 70 139" stroke="#F1F1F1" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M101 102 C94 108 92 136 70 139" stroke="#9AA6B1" stroke-width="0.3" fill="none" stroke-linecap="round"/><path d="M101 104 C80 112 60 124 48 128 L31 120" stroke="#A9C1E6" stroke-width="1.1" fill="none" stroke-linecap="round"/><path d="M101 42 C96 30 96 20 92 14" stroke="#D9719F" stroke-width="1.1" fill="none" stroke-linecap="round"/><rect x="88" y="8" width="12" height="6" rx=".6" fill="#D9719F"/><text x="94" y="12.2" font-size="2.5" font-weight="900" fill="#fff" text-anchor="middle">2층 ↑</text><text x="32" y="123.6" font-size="2.4" font-weight="800" fill="#1A2F4B">→ 국군장병라운지</text><g fill="#1A2F4B" stroke="#fff" stroke-width=".3"><rect x="90" y="41" width="4" height="4" rx=".6"/><rect x="90" y="98" width="4" height="4" rx=".6"/><rect x="82" y="70" width="4" height="4" rx=".6"/><rect x="70" y="24" width="4" height="4" rx=".6"/><rect x="60" y="118" width="4" height="4" rx=".6"/></g><g transform="translate(120 49)"><rect width="54" height="62" rx=".6" fill="#fff"/><text x="4" y="6.4" font-size="3" font-weight="900" fill="#1A2F4B">범례 · 목적지 색</text><rect x="4" y="11.0" width="7" height="3.2" rx=".6" fill="#A9C1E6"/><text x="13" y="13.7" font-size="2.7" font-weight="700" fill="#3D4A56">국군장병라운지 · 30장</text><rect x="4" y="17.4" width="7" height="3.2" rx=".6" fill="#6FAE8C"/><text x="13" y="20.099999999999998" font-size="2.7" font-weight="700" fill="#3D4A56">매표소 · 25장</text><rect x="4" y="23.8" width="7" height="3.2" rx=".6" fill="#D9823A"/><text x="13" y="26.5" font-size="2.7" font-weight="700" fill="#3D4A56">수화물 보관소 · 29장</text><rect x="4" y="30.200000000000003" width="7" height="3.2" rx=".6" fill="#D9719F"/><text x="13" y="32.900000000000006" font-size="2.7" font-weight="700" fill="#3D4A56">2층 라운지 · 19장</text><rect x="4" y="36.6" width="7" height="3.2" rx=".6" fill="#DCE3E9"/><path d="M4.6 38.2 H10.4" stroke="#9AA6B1" stroke-width=".3"/><text x="13" y="39.300000000000004" font-size="2.7" font-weight="700" fill="#3D4A56">화장실 · 33장</text><rect x="4" y="44" width="3.6" height="3.6" rx=".5" fill="#1A2F4B"/><text x="13" y="47" font-size="2.7" font-weight="700" fill="#3D4A56">사각 정보 사인 · 10장</text><rect x="4" y="50.5" width="7" height="3.6" fill="#2E5A87"/><text x="13" y="53.6" font-size="2.7" font-weight="700" fill="#3D4A56">출입구</text><text x="4" y="61" font-size="2.4" font-weight="600" fill="#8C98A3">개념 배치도 · 축척 없음 · 경로는 개념 표시</text></g></svg>
+      <div class="k-inset" style="left:120mm;top:4mm;width:54mm"><img src="img/07_연안_배치도원도.png" alt=""><span>심의도서 사인 배치 원도(가로판)</span></div>
+      <div class="k-inset" style="left:120mm;top:115mm;width:54mm;height:31mm;overflow:hidden"><img src="img/07_연안_2장_반영후.jpg" alt="" style="height:24mm;object-fit:cover"><span>출입구 바닥 사인 시뮬레이션</span></div>
+    </div>
+    <div class="st-cap"><b>가로로 긴 대합실을 세로축으로 돌려 그렸다. 왼쪽 벽에 수화물 보관소·승선장·매표소가, 오른쪽 벽에 두 출입구가 있다.</b> 세로판 재작도 개념 배치도 · 원도는 오른쪽 위</div>
+    <div class="st-pos" style="margin-top:3.4mm">
+      <div><b><i style="background:#D9823A">짐</i>수화물 보관소</b>대합실 한쪽 모서리 · 주황 29장 · 2차 보관공간</div>
+      <div><b><i style="background:#6FAE8C">표</i>매표소</b>왼쪽 벽 가운데 두 곳 · 초록 25장</div>
+      <div><b><i style="background:#D9719F">2F</i>2층 라운지</b>계단으로 이어지는 분홍 19장</div>
+      <div><b><i style="background:#9AA6B1">WC</i>화장실</b>대합실 양 끝 · 흰색 33장</div>
+      <div><b><i style="background:#A9C1E6;color:#1A2F4B">군</i>국군장병라운지</b>옅은 파랑 30장</div>
+    </div>
+    <div class="st-tx" style="margin-top:3.4mm">
+      <p>유도선은 두 출입구에서 시작해 대기 의자 사이 통로를 따라 놓였고, 동선이 갈라지는 다섯 지점에 사각 정보 안내사인을 붙였다. 선의 경로는 기둥과 의자 줄을 피해 그렸으며, 승선장 앞 대기선과 겹치는 구간은 <span class="dummy">[현장 조정 내용]</span>으로 정리하였다. 2층 라운지는 계단으로 이어지는 목적지여서 선을 계단 입구까지 이끌었고, 국군장병라운지 선의 끝 위치는 <span class="dummy">[원도 기준 위치]</span>였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">204</div>
+</section>
+
+<!-- ================= p205 설치·운영 기록 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">설치·운영 기록</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1차 이틀 뒤 <em>바닥 사인을 그대로 둔 채 2차를 이어</em>,<br>나흘 동안 터미널 운영 시간 전체를 관찰하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="k-cal">
+      <svg width="178mm" height="30mm" viewBox="0 0 178 30">
+        <g font-size="3.2" font-weight="800" fill="#6A7784" text-anchor="middle"><text x="38" y="5">월</text><text x="58" y="5">화</text><text x="78" y="5">수</text><text x="98" y="5">목</text><text x="118" y="5">금</text><text x="138" y="5">토</text><text x="158" y="5">일</text></g>
+        <text x="2" y="17" font-size="3.2" font-weight="900" fill="#1A2F4B">11월 9–15일</text>
+        <g fill="#F3F6F8"><rect x="29" y="8" width="18" height="13" rx=".6"/><rect x="49" y="8" width="18" height="13" rx=".6"/><rect x="149" y="8" width="18" height="13" rx=".6"/></g>
+        <g font-size="2.8" font-weight="700" fill="#9AA8B5" text-anchor="middle"><text x="38" y="15.4">11.9</text><text x="58" y="15.4">11.10</text><text x="158" y="15.4">11.15</text></g>
+        <rect x="69" y="8" width="38" height="13" rx=".6" fill="#2E5A87"/><text x="88" y="13.4" font-size="3.3" font-weight="900" fill="#fff" text-anchor="middle">1차 「발걸음은 가볍게」</text><text x="88" y="18" font-size="2.7" font-weight="600" fill="#fff" text-anchor="middle">11.11 – 11.12 · 전일 수집</text>
+        <rect x="109" y="8" width="38" height="13" rx=".6" fill="#1A2F4B"/><text x="128" y="13.4" font-size="3.3" font-weight="900" fill="#fff" text-anchor="middle">2차 「두 손은 자유롭게」</text><text x="128" y="18" font-size="2.7" font-weight="600" fill="#fff" text-anchor="middle">11.13 – 11.14 · 전일 수집</text>
+        <g fill="#1A2F4B"><circle cx="78" cy="25" r="1.4"/><circle cx="98" cy="25" r="1.4"/><circle cx="118" cy="25" r="1.4"/><circle cx="138" cy="25" r="1.4"/></g>
+        <g font-size="2.5" font-weight="800" fill="#1A2F4B"><text x="80" y="26">수집</text><text x="100" y="26">수집</text><text x="120" y="26">수집</text><text x="140" y="26">수집</text></g>
+        <text x="174" y="28.6" font-size="2.6" font-weight="700" fill="#6A7784" text-anchor="end">사전조사 9.14(월) 전일</text>
+      </svg></div>
+    <div class="st-cap"><b>네 날 모두 자료를 모았다. 1차는 수·목요일, 2차는 금·토요일이었다.</b> 운영 기간과 데이터 수집일이 같았다.</div>
+    <div class="st-log" style="margin-top:4.6mm;--lh:62mm">
+      <div class="c"><div class="st-ph"><img src="img/07_연안_1차시뮬_사인합성.jpg" alt="" style="object-position:55% 85%"><span>1차 출입구 바닥 사인</span></div>
+        <div class="t"><span class="rtag r1">1차</span>바닥 통합 사이니지</div>
+        <dl><dt>운영</dt><dd>11.11(수)–12(목)</dd><dt>위치</dt><dd>출입구 2 · 분기점 5</dd><dt>구성</dt><dd>유도선 136 · 정보 사인 10</dd><dt>수집</dt><dd>전일 이동 관찰 · 인터뷰</dd></dl></div>
+      <div class="c"><div class="st-ph"><img src="img/07_연안_2장_반영후.jpg" alt=""><span>1차 분기점 정보 사인</span></div>
+        <div class="t"><span class="rtag r1">1차</span>2차까지 유지</div>
+        <dl><dt>유지</dt><dd>11.11(수)–14(토)</dd><dt>원칙</dt><dd>2차에도 동일 유지</dd><dt>점검</dt><dd><span class="dummy">[들뜸·훼손 보수 내역]</span></dd><dt>협의</dt><dd>인천항만공사</dd></dl></div>
+      <div class="c"><div class="st-ph"><img src="img/07_연안_2차시뮬.jpg" alt=""><span>2차 보관공간 시뮬레이션</span></div>
+        <div class="t"><span class="rtag r2">2차</span>수화물 보관공간</div>
+        <dl><dt>운영</dt><dd>11.13(금)–14(토)</dd><dt>위치</dt><dd>수화물 보관소 자리</dd><dt>구성</dt><dd>벽면·바닥 사인 · 가구 8</dd><dt>수집</dt><dd>전일 이동 관찰 · 인터뷰</dd></dl></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>설치와 철거, 관찰과 인터뷰, 분석은 수행기관이 맡았고, 장소와 설치 방식은 인천항만공사와 공문·설문·장소 협의로 정하였다. 바닥 사인은 대합실 운영에 지장이 없도록 <span class="dummy">[운항 시작 전 시간대]</span>에 붙였고, 2차 가구는 12일 운영을 마친 뒤 설치하였다. 현장에는 거점 공통 원칙대로 안전요원을 3명 이상 두었고, 관찰자는 3인 이내로 이용객의 이동에 끼어들지 않고 기록만 하였다.</p>
+      <p>관찰은 출입구와 분기점, 보관소 앞에서 같은 방식으로 하였다. 결항이나 운항 지연, 단체 이용객 같은 특이사항은 <span class="dummy">[특이사항]</span>이었고, 해당 시간대의 이동 기록은 따로 표시하였다.</p>
+      <p>1차와 2차가 이틀씩 이어 붙어 있었기 때문에 바닥 사인은 나흘 내내 같은 자리에 있었다. 2차 자료는 보관공간을 더한 13일부터의 장면만 셌고, 1차 자료와 섞지 않았다. 12일까지의 기록은 1차로, 13일부터의 기록은 2차로 나누어 저장하였다.</p>
+    </div>
+    <div class="st-keep" style="margin-top:4.6mm">
+      <div class="t">현장 운영 원칙 <span>일곱 거점 공통 · 연안 적용</span></div>
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>안전요원 3명 이상</b><small>대상지별 배치<br>대합실 통행 안내</small></div>
+        <div><b>관찰자 3인 이내</b><small>비개입 관찰<br>같은 지점·같은 방식</small></div>
+        <div><b>전일 수집</b><small>터미널 운항·이용<br>시간대 전체</small></div>
+        <div><b>특이사항 기록</b><small>결항·지연·단체<br>사인 상태 점검</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">205</div>
+</section>
+
+<!-- ================= p206 정량 결과 · 표본 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정량 결과 · 표본</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">사전 · 1차 · 2차 전일 관찰에서 이동 사례 <span class="dummy">[000]</span>건과<br><em>이용자 인터뷰</em> <span class="dummy">[00]</span>명의 자료를 모았다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-chart">
+      <svg width="178mm" height="74mm" viewBox="0 0 178 74">
+        <g font-size="3.4" font-weight="900"><text x="0" y="14" fill="#6A7784">사전</text><text x="0" y="38" fill="#2E5A87">1차</text><text x="0" y="62" fill="#1A2F4B">2차</text></g>
+        <g id="rowK">
+          <rect x="14" y="4" width="46" height="16" rx=".6" fill="#F1F3F5"/><text x="37" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">이동 관찰 사례</text><text x="37" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[000]건</text>
+          <rect x="66" y="4" width="46" height="16" rx=".6" fill="#F1F3F5"/><text x="89" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">시설 인지율 응답</text><text x="89" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[000]명</text>
+          <rect x="118" y="4" width="46" height="16" rx=".6" fill="#F1F3F5"/><text x="141" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">이용자 인터뷰</text><text x="141" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[00]명</text>
+          <text x="167" y="11" font-size="2.8" font-weight="700" fill="#6A7784">제외</text><text x="167" y="16.4" font-size="3.6" font-weight="900" fill="#E5332A">[00]</text>
+        </g>
+        <use href="#rowK" y="24"/><use href="#rowK" y="48"/>
+      </svg></div>
+    <div class="st-cap"><b>세 차수 모두 같은 지점에서 같은 방식으로 관찰하였다.</b> 이동 관찰 가운데 단체 이동 <span class="dummy">[00]</span>건 · 결항·지연 시간대 <span class="dummy">[00]</span>건은 따로 표시</div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:96mm 1fr;gap:7mm">
+      <div>
+        <div class="st-lb">짐의 크기에 따른 관찰 사례</div>
+        <div class="st-chart"><svg width="96mm" height="62mm" viewBox="0 0 96 62">
+            <g stroke="#E3E8EC" stroke-width=".3"><line x1="8" y1="6" x2="96" y2="6"/><line x1="8" y1="19" x2="96" y2="19"/><line x1="8" y1="32" x2="96" y2="32"/><line x1="8" y1="45" x2="96" y2="45"/></g>
+            <line x1="8" y1="52" x2="96" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+            <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="6.4" y="7">[00]</text><text x="6.4" y="33">[00]</text><text x="6.4" y="53">0</text></g><rect x="13" y="26" width="6" height="26" fill="url(#hatch-pre)"/><rect x="20" y="26" width="6" height="26" fill="#2E5A87"/><rect x="27" y="26" width="6" height="26" fill="#1A2F4B"/><text x="16" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="23" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="30" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><rect x="41" y="26" width="6" height="26" fill="url(#hatch-pre)"/><rect x="48" y="26" width="6" height="26" fill="#2E5A87"/><rect x="55" y="26" width="6" height="26" fill="#1A2F4B"/><text x="44" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="51" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="58" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><rect x="69" y="26" width="6" height="26" fill="url(#hatch-pre)"/><rect x="76" y="26" width="6" height="26" fill="#2E5A87"/><rect x="83" y="26" width="6" height="26" fill="#1A2F4B"/><text x="72" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="79" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="86" y="24.4" font-size="2.3" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text>
+            <g font-size="2.9" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="23" y="57">큰 짐 소지</text><text x="51" y="57">작은 짐 소지</text><text x="79" y="57">짐 없음</text></g>
+            <g font-size="2.5" font-weight="700" fill="#56636E"><rect x="44" y="0" width="3" height="3" fill="url(#hatch-pre)"/><text x="48" y="2.7">사전</text><rect x="58" y="0" width="3" height="3" fill="#2E5A87"/><text x="62" y="2.7">1차</text><rect x="72" y="0" width="3" height="3" fill="#1A2F4B"/><text x="76" y="2.7">2차</text></g>
+          </svg></div>
+        <div class="st-cap"><b>짐의 크기에 따라 보관소를 찾는 이유가 달라 이용객을 나누어 보았다.</b> 막대 높이는 결과 입력 전 동일 표시</div>
+      </div>
+      <div class="st-tx">
+        <p>관찰 단위는 이용객 한 명 또는 함께 움직이는 한 무리의 이동이다. 출입구를 지나 첫 목적지에 닿을 때까지를 한 사례로 보고, 고른 방향과 멈춘 횟수, 되돌아간 여부를 적었다.</p>
+        <p>짐의 크기는 관찰자가 <span class="dummy">[바퀴 달린 가방·대형 짐 기준]</span>으로 나누었다. 큰 짐을 든 사례는 1차 <span class="dummy">[00]</span>건, 2차 <span class="dummy">[00]</span>건이었다.</p>
+        <p>시설 인지율 응답과 인터뷰는 대합실에서 대기 중인 이용객에게 받았다. 응답 수는 1차 <span class="dummy">[000]</span>명, 2차 <span class="dummy">[000]</span>명이었다.</p>
+        <p>1차 평일과 2차 금·토요일의 이용객 구성 차이는 단체·관광 이용 비율 <span class="dummy">[00]%</span> 대 <span class="dummy">[00]%</span>로 기록하였다.</p>
+        <p>결항이나 운항 지연이 있던 시간대의 사례는 차수마다 따로 표시해 표본에서 뺐다. 세 시점의 사례 수는 운항이 정상이던 시간대만의 값이며, 짐 크기 구분은 세 시점 모두 같은 관찰자 기준을 썼다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">섞지 않은 세 가지 단위</div>
+    <div class="k-unit">
+      <div><b>이동 사례 수<i>사례 단위 · 이동 관찰</i></b>사전 <span class="dummy">[000]</span> · 1차 <span class="dummy">[000]</span> · 2차 <span class="dummy">[000]</span>건. 선택 정확도·이용률의 분모</div>
+      <div><b>응답자 수<i>사람 단위 · 인지율 조사</i></b>1차 <span class="dummy">[000]</span>명 · 2차 <span class="dummy">[000]</span>명. 보관시설 인지율의 분모</div>
+      <div><b>의견 수<i>발언 단위 · 인터뷰</i></b>인터뷰 <span class="dummy">[00]</span>명(최소 차수별 30명)의 의견 <span class="dummy">[000]</span>건. 주제 분류에만 사용</div>
+    </div>
+    <div class="st-cap"><b>세 단위는 서로 더하거나 나누지 않았다.</b> 행동 지표의 분모는 관찰 사례, 인지 지표의 분모는 응답자다.</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 연안 사전·1·2차 관찰·인터뷰</div>
+  <div class="pno">206</div>
+</section>
+
+<!-- ================= p207 정량 결과 · 핵심 지표 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정량 결과 · 핵심 지표</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">목적지 선택 정확도는 사전 <span class="dummy">[00]%</span>에서 1차 <span class="dummy">[00]%</span>로,<br><em>보관시설 인지율</em>은 <span class="dummy">[00]%</span>에서 <span class="dummy">[00]%</span>로 <span class="dummy">[높아졌다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-kpi">
+      <div class="c"><h5>① 목적지 선택 정확도</h5><p>출입구에서 목적지 방향을 바르게 고른 사례의 비율. 0–100% 고정 축</p><div class="st-chart"><svg width="84mm" height="64mm" viewBox="0 0 84 64"><g stroke="#E3E8EC" stroke-width=".3"><line x1="10" y1="6" x2="84" y2="6"/><line x1="10" y1="17.5" x2="84" y2="17.5"/><line x1="10" y1="29" x2="84" y2="29"/><line x1="10" y1="40.5" x2="84" y2="40.5"/></g><line x1="10" y1="52" x2="84" y2="52" stroke="#1A2F4B" stroke-width=".5"/><g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="8" y="7">100%</text><text x="8" y="18.5">75</text><text x="8" y="30">50</text><text x="8" y="41.5">25</text><text x="8" y="53">0</text></g><rect x="16" y="29" width="14" height="23" fill="url(#hatch-pre)"/><rect x="40" y="29" width="14" height="23" fill="#2E5A87"/><rect x="64" y="29" width="14" height="23" fill="#1A2F4B"/><g font-size="3.6" fill="#E5332A" font-weight="900" text-anchor="middle"><text x="23" y="26">[00]%</text><text x="47" y="26">[00]%</text><text x="71" y="26">[00]%</text></g><g font-size="2.8" fill="#E5332A" font-weight="800" text-anchor="middle"><text x="35" y="12">[+00]%p</text><text x="59" y="12">[+00]%p</text></g><path d="M28 14 Q35 9 42 14 M52 14 Q59 9 66 14" stroke="#B9C3CB" stroke-width=".3" fill="none"/><g font-size="3" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="23" y="57">사전</text><text x="47" y="57">1차</text><text x="71" y="57">2차</text></g><g font-size="2.4" fill="#6A7784" font-weight="600" text-anchor="middle"><text x="23" y="61">9.14</text><text x="47" y="61">바닥 사인</text><text x="71" y="61">사인 유지</text></g></svg></div></div>
+      <div class="c"><h5>② 보관시설 인지율</h5><p>대합실 안 수화물 보관소의 위치를 안다고 답한 비율. 0–100% 고정 축</p><div class="st-chart"><svg width="84mm" height="64mm" viewBox="0 0 84 64"><g stroke="#E3E8EC" stroke-width=".3"><line x1="10" y1="6" x2="84" y2="6"/><line x1="10" y1="17.5" x2="84" y2="17.5"/><line x1="10" y1="29" x2="84" y2="29"/><line x1="10" y1="40.5" x2="84" y2="40.5"/></g><line x1="10" y1="52" x2="84" y2="52" stroke="#1A2F4B" stroke-width=".5"/><g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="8" y="7">100%</text><text x="8" y="18.5">75</text><text x="8" y="30">50</text><text x="8" y="41.5">25</text><text x="8" y="53">0</text></g><rect x="16" y="29" width="14" height="23" fill="url(#hatch-pre)"/><rect x="40" y="29" width="14" height="23" fill="#2E5A87"/><rect x="64" y="29" width="14" height="23" fill="#1A2F4B"/><g font-size="3.6" fill="#E5332A" font-weight="900" text-anchor="middle"><text x="23" y="26">[00]%</text><text x="47" y="26">[00]%</text><text x="71" y="26">[00]%</text></g><g font-size="2.8" fill="#E5332A" font-weight="800" text-anchor="middle"><text x="35" y="12">[+00]%p</text><text x="59" y="12">[+00]%p</text></g><path d="M28 14 Q35 9 42 14 M52 14 Q59 9 66 14" stroke="#B9C3CB" stroke-width=".3" fill="none"/><g font-size="3" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="23" y="57">사전</text><text x="47" y="57">1차</text><text x="71" y="57">2차</text></g><g font-size="2.4" fill="#6A7784" font-weight="600" text-anchor="middle"><text x="23" y="61">9.14</text><text x="47" y="61">바닥 사인</text><text x="71" y="61">+ 보관공간</text></g></svg></div></div>
+    </div>
+    <div class="st-cap"><b>①의 사전→1차는 바닥 안내의 몫, ②의 1차→2차는 보관공간의 몫으로 읽었다.</b> 2차에는 바닥 사인이 같았으므로 ①은 1차와 비슷해야 하였다.</div>
+    <div class="st-lb" style="margin-top:5mm">③ 목적지별 선택 정확도 · 사전 / 1차</div>
+    <div class="st-chart"><svg width="178mm" height="46mm" viewBox="0 0 178 46"><g font-size="2.6" font-weight="700" fill="#8C98A3" text-anchor="middle"><text x="50" y="4">0</text><text x="81" y="4">25</text><text x="112" y="4">50</text><text x="143" y="4">75</text><text x="174" y="4">100%</text></g><g stroke="#E3E8EC" stroke-width=".3"><path d="M50 6 V45 M81 6 V45 M112 6 V45 M143 6 V45 M174 6 V45"/></g><rect x="0" y="8.0" width="3" height="5.6" fill="#A9C1E6"/><text x="5" y="12.0" font-size="2.9" font-weight="800" fill="#1A2F4B">국군장병라운지</text><rect x="50" y="8.0" width="62" height="2.6" fill="url(#hatch-pre)"/><rect x="50" y="10.9" width="62" height="2.6" fill="#2E5A87"/><text x="114" y="10.3" font-size="2.4" font-weight="800" fill="#E5332A">사전 [00]%</text><text x="114" y="13.2" font-size="2.4" font-weight="800" fill="#E5332A">1차 [00]%</text><rect x="0" y="15.6" width="3" height="5.6" fill="#6FAE8C"/><text x="5" y="19.6" font-size="2.9" font-weight="800" fill="#1A2F4B">매표소</text><rect x="50" y="15.6" width="62" height="2.6" fill="url(#hatch-pre)"/><rect x="50" y="18.5" width="62" height="2.6" fill="#2E5A87"/><text x="114" y="17.9" font-size="2.4" font-weight="800" fill="#E5332A">사전 [00]%</text><text x="114" y="20.8" font-size="2.4" font-weight="800" fill="#E5332A">1차 [00]%</text><rect x="0" y="23.2" width="3" height="5.6" fill="#D9823A"/><text x="5" y="27.2" font-size="2.9" font-weight="800" fill="#1A2F4B">수화물 보관소</text><rect x="50" y="23.2" width="62" height="2.6" fill="url(#hatch-pre)"/><rect x="50" y="26.099999999999998" width="62" height="2.6" fill="#2E5A87"/><text x="114" y="25.5" font-size="2.4" font-weight="800" fill="#E5332A">사전 [00]%</text><text x="114" y="28.4" font-size="2.4" font-weight="800" fill="#E5332A">1차 [00]%</text><rect x="0" y="30.799999999999997" width="3" height="5.6" fill="#D9719F"/><text x="5" y="34.8" font-size="2.9" font-weight="800" fill="#1A2F4B">2층 라운지</text><rect x="50" y="30.799999999999997" width="62" height="2.6" fill="url(#hatch-pre)"/><rect x="50" y="33.699999999999996" width="62" height="2.6" fill="#2E5A87"/><text x="114" y="33.099999999999994" font-size="2.4" font-weight="800" fill="#E5332A">사전 [00]%</text><text x="114" y="36.0" font-size="2.4" font-weight="800" fill="#E5332A">1차 [00]%</text><rect x="0" y="38.4" width="3" height="5.6" fill="#9AA6B1"/><text x="5" y="42.4" font-size="2.9" font-weight="800" fill="#1A2F4B">화장실</text><rect x="50" y="38.4" width="62" height="2.6" fill="url(#hatch-pre)"/><rect x="50" y="41.3" width="62" height="2.6" fill="#2E5A87"/><text x="114" y="40.699999999999996" font-size="2.4" font-weight="800" fill="#E5332A">사전 [00]%</text><text x="114" y="43.6" font-size="2.4" font-weight="800" fill="#E5332A">1차 [00]%</text></svg></div>
+    <div class="st-cap"><b>다섯 목적지 가운데 정확도가 가장 크게 바뀐 곳은 <span class="dummy">[수화물 보관소]</span>였다.</b> 막대 길이는 결과 입력 전 동일 표시</div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>바닥 사인을 붙인 1차에서 목적지 선택 정확도는 사전 <span class="dummy">[00]%</span>에서 <span class="dummy">[00]%</span>로 <span class="dummy">[00]%p [높아졌고]</span>, 주저하거나 우회한 사례는 <span class="dummy">[00]</span>건에서 <span class="dummy">[00]</span>건이 되었다. 탐색 시간의 중앙값은 <span class="dummy">[00]</span>초에서 <span class="dummy">[00]</span>초로 바뀌었다.</p>
+      <p>보관시설 인지율은 1차에서 <span class="dummy">[00]%</span>, 보관공간을 더한 2차에서 <span class="dummy">[00]%</span>였다. 같은 바닥 사인을 유지한 2차의 목적지 선택 정확도는 <span class="dummy">[00]%</span>로 1차와 <span class="dummy">[비슷하였다]</span>.</p>
+    </div>
+    <div class="k-unit" style="margin-top:4.6mm">
+      <div><b>① 목적지 선택 정확도</b>첫 분기점에서 목적지 방향을 바르게 고른 사례 ÷ 목적지가 확인된 이동 사례</div>
+      <div><b>② 보관시설 인지율</b>보관소 위치를 바르게 답한 응답 ÷ 해당 문항 응답자</div>
+      <div><b>탐색 시간 · 주저·우회<i>보조 지표</i></b>출입구에서 목적지까지 걸린 시간, 멈춤·되돌아감 횟수</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 연안 사전·1·2차 이동 관찰 · 시설 인지율 조사</div>
+  <div class="pno">207</div>
+</section>
+
+<!-- ================= p208 정량 결과 · 조건 비교 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정량 결과 · 조건 비교</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">짐을 든 이용객 가운데 보관소 앞까지 온 비율은 <span class="dummy">[00]%</span>,<br>2차에는 그중 <em><span class="dummy">[00]%</span>가 짐을 맡기거나 정리하였다</em></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-lb">짐을 든 이용객의 이동 · 진입에서 짐 보관·정리까지</div>
+    <div class="st-chart"><svg width="178mm" height="44mm" viewBox="0 0 178 44"><text x="0" y="13" font-size="3.4" font-weight="900" fill="#2E5A87">1차</text><rect x="12.0" y="2" width="34" height="17" rx=".6" fill="#F1F3F5"/><text x="29.0" y="8.4" font-size="2.8" font-weight="800" fill="#56636E" text-anchor="middle">짐을 든 진입</text><text x="29.0" y="15.4" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[000]건</text><path d="M47.0 10.5 H52.5 M50.4 8.6 L52.6 10.5 L50.4 12.4" stroke="#675F8C" stroke-width=".35" fill="none"/><text x="49.7" y="18" font-size="2.4" font-weight="800" fill="#E5332A" text-anchor="middle">[00]%</text><rect x="53.5" y="2" width="34" height="17" rx=".6" fill="#F1F3F5"/><text x="70.5" y="8.4" font-size="2.8" font-weight="800" fill="#56636E" text-anchor="middle">보관소 방향 선택</text><text x="70.5" y="15.4" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[000]건</text><path d="M88.5 10.5 H94.0 M91.9 8.6 L94.1 10.5 L91.9 12.4" stroke="#675F8C" stroke-width=".35" fill="none"/><text x="91.2" y="18" font-size="2.4" font-weight="800" fill="#E5332A" text-anchor="middle">[00]%</text><rect x="95.0" y="2" width="34" height="17" rx=".6" fill="#F1F3F5"/><text x="112.0" y="8.4" font-size="2.8" font-weight="800" fill="#56636E" text-anchor="middle">보관소 앞 도착</text><text x="112.0" y="15.4" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[000]건</text><path d="M130.0 10.5 H135.5 M133.4 8.6 L135.6 10.5 L133.4 12.4" stroke="#675F8C" stroke-width=".35" fill="none"/><text x="132.7" y="18" font-size="2.4" font-weight="800" fill="#E5332A" text-anchor="middle">[00]%</text><rect x="136.5" y="2" width="34" height="17" rx=".6" fill="#1A2F4B"/><text x="153.5" y="8.4" font-size="2.8" font-weight="800" fill="#C9D7E6" text-anchor="middle">짐 보관 · 정리</text><text x="153.5" y="15.4" font-size="4.4" font-weight="900" fill="#FF8A80" text-anchor="middle">[000]건</text><text x="0" y="35" font-size="3.4" font-weight="900" fill="#1A2F4B">2차</text><rect x="12.0" y="24" width="34" height="17" rx=".6" fill="#F1F3F5"/><text x="29.0" y="30.4" font-size="2.8" font-weight="800" fill="#56636E" text-anchor="middle">짐을 든 진입</text><text x="29.0" y="37.4" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[000]건</text><path d="M47.0 32.5 H52.5 M50.4 30.6 L52.6 32.5 L50.4 34.4" stroke="#675F8C" stroke-width=".35" fill="none"/><text x="49.7" y="40" font-size="2.4" font-weight="800" fill="#E5332A" text-anchor="middle">[00]%</text><rect x="53.5" y="24" width="34" height="17" rx=".6" fill="#F1F3F5"/><text x="70.5" y="30.4" font-size="2.8" font-weight="800" fill="#56636E" text-anchor="middle">보관소 방향 선택</text><text x="70.5" y="37.4" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[000]건</text><path d="M88.5 32.5 H94.0 M91.9 30.6 L94.1 32.5 L91.9 34.4" stroke="#675F8C" stroke-width=".35" fill="none"/><text x="91.2" y="40" font-size="2.4" font-weight="800" fill="#E5332A" text-anchor="middle">[00]%</text><rect x="95.0" y="24" width="34" height="17" rx=".6" fill="#F1F3F5"/><text x="112.0" y="30.4" font-size="2.8" font-weight="800" fill="#56636E" text-anchor="middle">보관소 앞 도착</text><text x="112.0" y="37.4" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[000]건</text><path d="M130.0 32.5 H135.5 M133.4 30.6 L135.6 32.5 L133.4 34.4" stroke="#675F8C" stroke-width=".35" fill="none"/><text x="132.7" y="40" font-size="2.4" font-weight="800" fill="#E5332A" text-anchor="middle">[00]%</text><rect x="136.5" y="24" width="34" height="17" rx=".6" fill="#1A2F4B"/><text x="153.5" y="30.4" font-size="2.8" font-weight="800" fill="#C9D7E6" text-anchor="middle">짐 보관 · 정리</text><text x="153.5" y="37.4" font-size="4.4" font-weight="900" fill="#FF8A80" text-anchor="middle">[000]건</text></svg></div>
+    <div class="st-cap"><b>1차에는 보관소까지의 길만, 2차에는 길과 짐 자리가 함께 있었다.</b> 화살표 아래 숫자는 다음 단계로 이어진 비율 · 시간대 구분은 <span class="dummy">[운항표 기준]</span></div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:96mm 1fr;gap:7mm">
+      <div>
+        <div class="st-lb">운항 시간대별 보관소 이용률(짐을 든 이용객 기준)</div>
+        <div class="st-chart"><svg width="96mm" height="62mm" viewBox="0 0 96 62">
+  <g stroke="#E3E8EC" stroke-width=".3"><line x1="10" y1="6" x2="96" y2="6"/><line x1="10" y1="29" x2="96" y2="29"/></g>
+  <line x1="10" y1="52" x2="96" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+  <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="8" y="7">100%</text><text x="8" y="30">50</text><text x="8" y="53">0</text></g><rect x="15" y="29" width="9" height="23" fill="#2E5A87"/><rect x="25" y="29" width="9" height="23" fill="#1A2F4B"/><text x="19.5" y="27" font-size="2.4" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="29.5" y="27" font-size="2.4" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><rect x="43" y="29" width="9" height="23" fill="#2E5A87"/><rect x="53" y="29" width="9" height="23" fill="#1A2F4B"/><text x="47.5" y="27" font-size="2.4" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="57.5" y="27" font-size="2.4" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><rect x="71" y="29" width="9" height="23" fill="#2E5A87"/><rect x="81" y="29" width="9" height="23" fill="#1A2F4B"/><text x="75.5" y="27" font-size="2.4" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text><text x="85.5" y="27" font-size="2.4" fill="#E5332A" font-weight="800" text-anchor="middle">[00]</text>
+  <g font-size="2.9" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="24.5" y="57">오전 운항 전</text><text x="52.5" y="57">한낮</text><text x="80.5" y="57">오후 운항 전</text></g>
+  <g font-size="2.5" font-weight="700" fill="#56636E"><rect x="60" y="0" width="3" height="3" fill="#2E5A87"/><text x="64" y="2.7">1차</text><rect x="72" y="0" width="3" height="3" fill="#1A2F4B"/><text x="76" y="2.7">2차</text></g>
+</svg></div>
+        <div class="st-cap"><b>출항까지 남은 시간이 짐을 맡기는 결정에 걸려 있어 시간대를 나누었다.</b> 0–100% 고정 축 · 결과 입력 전 동일 높이</div>
+      </div>
+      <div class="st-tx">
+        <p>짐을 든 이용객 가운데 주황 유도선을 따라 보관소 쪽으로 방향을 고른 사례는 1차 <span class="dummy">[00]%</span>, 2차 <span class="dummy">[00]%</span>였다. 보관소 앞에 도착한 뒤 짐을 맡기거나 테이블에서 정리한 사례는 2차에 <span class="dummy">[00]</span>건이었다.</p>
+        <p>가장 많이 빠져나간 단계는 <span class="dummy">[보관소 앞 도착 → 짐 보관]</span>이었다. 보관소를 알고도 짐을 맡기지 않은 이유는 정성 자료에서 <span class="dummy">[출항까지 남은 시간 · 짐의 크기]</span>로 나타났다.</p>
+        <p>시간대별로는 <span class="dummy">[한낮]</span>의 이용률이 가장 <span class="dummy">[높았다]</span>.</p>
+      </div>
+    </div>
+    <div class="st-keep" style="margin-top:5mm">
+      <div class="t">결과를 읽을 때 함께 적은 외부 조건 <span>연안 1·2차</span></div>
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>수집 요일</b><small>1차 수·목 · 2차 금·토<br>이용객 구성이 다름</small></div>
+        <div><b>연속 운영</b><small>1차 바닥 사인 노출이<br>2차에 누적</small></div>
+        <div><b>운항 조건</b><small class="dummy">[결항·지연 시간대]</small></div>
+        <div><b>단체 이용</b><small class="dummy">[단체 승선 시간대 · 건수]</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>1차는 평일 이틀, 2차는 금·토요일이었다. 2차에 짐을 든 관광 이용객이 더 많았다면 보관소 이용률은 보관공간이 없어도 올라갈 수 있었다. 그래서 이용률은 짐을 든 이용객만 분모로 두고, 큰 짐과 작은 짐을 나누어 따로 계산하였다.</p>
+      <p>바닥 사인이 같았던 다른 목적지의 정확도는 요일 차이를 가늠하는 기준으로 썼다. 다른 목적지의 값이 1·2차에 <span class="dummy">[비슷했으므로]</span>, 보관소 지표의 차이를 보관공간의 몫으로 읽었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 연안 1·2차 이동 관찰</div>
+  <div class="pno">208</div>
+</section>
+
+<!-- ================= p209 정량 결과 · 소결 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정량 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">숫자로 보면, 바닥 선은 길을 <em><span class="dummy">[찾게]</span></em> 하였고<br>짐 자리는 보관소를 <em><span class="dummy">[쓰게]</span></em> 하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-nums" style="grid-template-columns:repeat(3,1fr)">
+      <div><b class="dummy">[+00]<small class="dummy">%p</small></b><span>바닥 안내의 몫<br>사전 → 1차 목적지 선택 정확도</span></div>
+      <div><b class="dummy">[+00]<small class="dummy">%p</small></b><span>보관공간의 몫<br>1차 → 2차 보관시설 이용률</span></div>
+      <div><b class="dummy">[−00]<small class="dummy">초</small></b><span>탐색 시간 중앙값<br>사전 → 1차</span></div>
+    </div>
+    <div class="k-slope" style="margin-top:5mm">
+      <div class="c"><h5>목적지 선택 정확도</h5><p>바닥 사인이 같은 1차·2차는 비슷해야 하는 지표</p><svg width="54mm" height="35mm" viewBox="0 0 54 40">
+      <g stroke="#E3E8EC" stroke-width=".3"><line x1="6" y1="4" x2="50" y2="4"/><line x1="6" y1="19" x2="50" y2="19"/><line x1="6" y1="34" x2="50" y2="34"/></g>
+      <g font-size="2.3" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="5" y="5">100</text><text x="5" y="20">50</text><text x="5" y="35">0</text></g>
+      <path d="M10 19 L28 19 L46 19" stroke="#B9C3CB" stroke-width=".5" stroke-dasharray="1 .8" fill="none"/>
+      <g fill="url(#hatch-red)"><circle cx="10" cy="19" r="1.6"/><circle cx="28" cy="19" r="1.6"/><circle cx="46" cy="19" r="1.6"/></g>
+      <g font-size="2.5" fill="#E5332A" font-weight="800" text-anchor="middle"><text x="10" y="15.4">[00]</text><text x="28" y="15.4">[00]</text><text x="46" y="15.4">[00]</text></g>
+      <g font-size="2.6" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="10" y="39">사전</text><text x="28" y="39">1차</text><text x="46" y="39">2차</text></g></svg></div>
+      <div class="c"><h5>보관시설 인지율</h5><p>1차에 오르고 2차에 한 번 더 오를 수 있는 지표</p><svg width="54mm" height="35mm" viewBox="0 0 54 40">
+      <g stroke="#E3E8EC" stroke-width=".3"><line x1="6" y1="4" x2="50" y2="4"/><line x1="6" y1="19" x2="50" y2="19"/><line x1="6" y1="34" x2="50" y2="34"/></g>
+      <g font-size="2.3" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="5" y="5">100</text><text x="5" y="20">50</text><text x="5" y="35">0</text></g>
+      <path d="M10 19 L28 19 L46 19" stroke="#B9C3CB" stroke-width=".5" stroke-dasharray="1 .8" fill="none"/>
+      <g fill="url(#hatch-red)"><circle cx="10" cy="19" r="1.6"/><circle cx="28" cy="19" r="1.6"/><circle cx="46" cy="19" r="1.6"/></g>
+      <g font-size="2.5" fill="#E5332A" font-weight="800" text-anchor="middle"><text x="10" y="15.4">[00]</text><text x="28" y="15.4">[00]</text><text x="46" y="15.4">[00]</text></g>
+      <g font-size="2.6" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="10" y="39">사전</text><text x="28" y="39">1차</text><text x="46" y="39">2차</text></g></svg></div>
+      <div class="c"><h5>보관시설 이용률</h5><p>짐을 든 이용객 기준 · 2차에 움직여야 하는 지표</p><svg width="54mm" height="35mm" viewBox="0 0 54 40">
+      <g stroke="#E3E8EC" stroke-width=".3"><line x1="6" y1="4" x2="50" y2="4"/><line x1="6" y1="19" x2="50" y2="19"/><line x1="6" y1="34" x2="50" y2="34"/></g>
+      <g font-size="2.3" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="5" y="5">100</text><text x="5" y="20">50</text><text x="5" y="35">0</text></g>
+      <path d="M10 19 L28 19 L46 19" stroke="#B9C3CB" stroke-width=".5" stroke-dasharray="1 .8" fill="none"/>
+      <g fill="url(#hatch-red)"><circle cx="10" cy="19" r="1.6"/><circle cx="28" cy="19" r="1.6"/><circle cx="46" cy="19" r="1.6"/></g>
+      <g font-size="2.5" fill="#E5332A" font-weight="800" text-anchor="middle"><text x="10" y="15.4">[00]</text><text x="28" y="15.4">[00]</text><text x="46" y="15.4">[00]</text></g>
+      <g font-size="2.6" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="10" y="39">사전</text><text x="28" y="39">1차</text><text x="46" y="39">2차</text></g></svg></div>
+    </div>
+    <div class="st-cap"><b>세 지표는 차수마다 움직여야 할 곳이 달랐다. 예상한 곳에서만 움직였는지가 판단의 기준이었다.</b> 빗살 표식은 결과 입력 전 자리</div>
+    <div class="st-tx" style="margin-top:4.6mm">
+      <p class="st-lead" style="margin-bottom:3mm">연안여객터미널의 숫자는 두 단계를 따로 답하였다. 길을 알려 주면 목적지를 더 잘 찾는가, 그리고 짐 자리를 만들면 보관소를 더 쓰는가.</p>
+    </div>
+    <div class="st-tx st-c2">
+      <p>첫 번째 답은 1차에서 나왔다. 바닥 유도선을 붙이자 출입구에서 목적지 방향을 바르게 고른 사례가 사전 <span class="dummy">[00]%</span>에서 <span class="dummy">[00]%</span>로 바뀌었고, 탐색 시간은 <span class="dummy">[00]</span>초 <span class="dummy">[줄었다]</span>. 정확도가 가장 크게 바뀐 목적지는 <span class="dummy">[수화물 보관소]</span>였고, 가장 작게 바뀐 곳은 <span class="dummy">[화장실]</span>이었다.</p>
+      <p>두 번째 답은 2차의 보관소 지표다. 보관시설 인지율은 <span class="dummy">[00]%</span>에서 <span class="dummy">[00]%</span>로, 짐을 든 이용객의 보관소 이용률은 <span class="dummy">[00]%</span>에서 <span class="dummy">[00]%</span>로 바뀌었다. 같은 기간 다른 목적지의 정확도는 <span class="dummy">[비슷하였다]</span>.</p>
+      <p>의향과 행동은 <span class="dummy">[엇갈렸다]</span>. 짐 보관 의향을 밝힌 응답은 <span class="dummy">[00]%</span>였지만 실제로 짐을 맡긴 사례는 <span class="dummy">[00]%</span>였다. 이 차이는 정성 자료의 ‘출항까지 남은 시간’과 함께 읽었다.</p>
+      <p>요일 조건은 남았다. 2차의 금·토요일에는 <span class="dummy">[관광 이용객]</span>이 많아, 보관공간의 몫 가운데 일부는 이용객 구성의 차이일 수 있다. 그래서 판정에서는 보관공간 요소를 다른 목적지 지표와 견주어 따로 보았다.</p>
+      <p>세 지표는 움직여야 할 시점이 서로 달랐다. 목적지 선택 정확도는 바닥 사인이 생긴 1차에 움직이고 2차에는 그대로여야 하며, 보관시설 인지율은 1차에 한 번, 벽면 사인과 바닥 영역이 생긴 2차에 한 번 더 오를 수 있다. 보관시설 이용률은 짐 자리가 생긴 2차에만 움직여야 한다. 실제 값은 <span class="dummy">[세 지표 모두 예상한 시점에 움직였다]</span>.</p>
+    </div>
+    <div class="st-lb" style="margin-top:4.6mm">정량 소결</div>
+    <div class="st-sum">
+      <div class="it"><b>1</b><p><em>바닥 안내</em>1차에서 목적지 선택 정확도가 <span class="dummy">[00]%p</span>, 탐색 시간이 <span class="dummy">[00]</span>초 바뀌었다.</p></div>
+      <div class="it"><b>2</b><p><em>보관공간</em>2차에서 보관소 이용률이 <span class="dummy">[00]%p</span> 바뀌었고, 다른 목적지 지표는 <span class="dummy">[그대로였다]</span>.</p></div>
+      <div class="it"><b>3</b><p><em>의향과 행동</em>짐 보관 의향 <span class="dummy">[00]%</span>와 실제 보관 <span class="dummy">[00]%</span> 사이의 차이가 남았다.</p></div>
+    </div>
+    <div class="st-out" style="margin-top:4mm"><b>길은 <span><span class="dummy" style="color:#FF8A80!important">[바닥 선]</span></span>이 열었고,<br>짐을 내려놓게 한 것은 <span><span class="dummy" style="color:#FF8A80!important">[정리할 자리]</span></span>였다</b><small>정성 결과와<br>통합 해석에서 맞춤</small></div>
+  </div>
+  <div class="foot-src">자료: 연안 사전·1·2차 이동 관찰 · 시설 인지율 조사</div>
+  <div class="pno">209</div>
+</section>
+
+<!-- ================= p210 정성 결과 · 자료 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정성 결과 · 자료</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료는 <em>길찾기 인터뷰 · 짐 정리 이용자 인터뷰 · 이동 관찰</em><br>세 갈래로 모았다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="k-src">
+      <div class="c"><div class="h" style="background:var(--st)">쉬운 길찾기 인터뷰<small>1·2차 최소 각 30명 · 목적지를 찾은 뒤</small></div>
+        <ul><li>1차 응답자<b class="dummy">[00]명</b></li><li>2차 응답자<b class="dummy">[00]명</b></li><li>처음 / 다시 온 이용객<b class="dummy">[00] / [00]</b></li><li>외국인 이용객<b class="dummy">[00]명</b></li></ul></div>
+      <div class="c"><div class="h" style="background:var(--navy)">짐 정리 이용자 인터뷰<small>짐 보관 의사 변화 · 편의 만족도</small></div>
+        <ul><li>1차 짐 소지 응답자<b class="dummy">[00]명</b></li><li>2차 짐 소지 응답자<b class="dummy">[00]명</b></li><li>보관소 이용자<b class="dummy">[00]명</b></li><li>이용하지 않은 이유<b class="dummy">[00]건</b></li></ul></div>
+      <div class="c"><div class="h" style="background:#7D97B3">이동 관찰 기록<small>출입구 · 분기점 · 보관소 앞</small></div>
+        <ul><li>사전 9.14 전일<b class="dummy">[000]건</b></li><li>1차 11.11–12 전일<b class="dummy">[000]건</b></li><li>2차 11.13–14 전일<b class="dummy">[000]건</b></li><li>주저·되돌아감 장면<b class="dummy">[00]건</b></li></ul></div>
+    </div>
+    <div class="st-cap"><b>인터뷰는 이유를, 관찰은 실제 경로를 담았다.</b> 두 인터뷰는 같은 날 같은 대합실에서 대상만 나누어 진행</div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:1fr 62mm">
+      <div>
+        <div class="st-lb">인터뷰에서 물은 것</div>
+        <div class="k-map">
+          <div class="e"><i>1차 · 길찾기</i><b>무엇을 보고 찾았나</b>바닥 선의 색, 화살표, 이름, 정보 사인 가운데 무엇을 따라갔는가</div><div class="ar">▶</div>
+          <div class="x"><i>2차 · 길찾기</i><b>같은 선을 다시 보았나</b>보관소 쪽 주황 선과 벽면 사인을 어디에서 처음 보았는가</div>
+          <div class="e"><i>1차 · 짐</i><b>짐을 맡길 생각이 있었나</b>보관소를 알게 된 뒤 짐 보관 의사가 바뀌었는가</div><div class="ar">▶</div>
+          <div class="x"><i>2차 · 짐</i><b>왜 맡겼고, 왜 맡기지 않았나</b>정리 테이블과 책장을 쓴 이유와 쓰지 않은 이유</div>
+        </div>
+      </div>
+      <div>
+        <div class="st-ph" style="height:30mm"><img src="img/07_연안_사전_출입.jpg" alt=""><span>대합실 출입 쪽 · 실험 전</span></div>
+        <div class="st-ph" style="height:30mm;margin-top:2mm"><img src="img/07_연안_사전_대합실A.jpg" alt=""><span>대합실 상부 · 실험 전</span></div>
+        <div class="st-cap"><b>인터뷰는 대기 의자와 보관소 앞에서 진행하였다.</b></div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">코딩의 두 축 · 누가 말했고 무엇을 말했나</div>
+    <div class="k-code">
+      <div class="h">누가<small>응답자 구분</small></div><div class="tags"><span>처음 온 이용객<b>[00]</b></span><span>다시 온 이용객<b>[00]</b></span><span>큰 짐 소지<b>[00]</b></span><span>동행·단체<b>[00]</b></span></div>
+      <div class="h">무엇을<small>주제 코드</small></div><div class="tags"><span>색<b>[00]</b></span><span>화살표·이름<b>[00]</b></span><span>정보 사인<b>[00]</b></span><span>2층 라운지<b>[00]</b></span><span>짐의 크기<b>[00]</b></span><span>출항 시간<b>[00]</b></span><span>배려 문구<b>[00]</b></span></div>
+      <div class="h">어떻게<small>반응의 결</small></div><div class="tags e"><span>쉬웠다<b>[00]</b></span><span>헷갈렸다<b>[00]</b></span><span>제안<b>[00]</b></span></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>길찾기 인터뷰는 목적지에 막 도착한 이용객에게, 짐 정리 인터뷰는 짐을 든 채 대기하거나 보관소 앞에 선 이용객에게 물었다. 응답은 먼저 처음 온 이용객과 다시 온 이용객으로 나누었다. 터미널에 익숙한 사람에게는 바닥 선이 필요 없을 수 있기 때문이다.</p>
+      <p>관찰 기록은 인터뷰에서 말로 나오지 않는 망설임과 망설인 자리를 보완하였다. 분기점에서 멈춘 사례, 다른 색 선을 따라가다 되돌아온 사례, 보관소 앞에서 짐을 내려놓았다가 다시 든 사례를 장면 단위로 적었다.</p>
+      <p>세 갈래의 자료는 같은 코드표로 묶었다. 누가 말했는지(처음 온 이용객·다시 온 이용객·큰 짐 소지·동행), 무엇을 말했는지(색·화살표·이름·정보 사인·짐 자리·출항 시간), 어떻게 말했는지(쉬웠다·헷갈렸다·제안)를 붙여, 정량 지표가 움직인 단계와 맞대어 읽었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 연안 1·2차 인터뷰·관찰 기록 · 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">210</div>
+</section>
+
+<!-- ================= p211 정성 결과 · 주제 1 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정성 결과 · 주제 1</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">이용객은 바닥 선을 <em><span class="dummy">[색]</span></em>보다 <em><span class="dummy">[화살표와 이름]</span></em>으로<br>따라갔다고 말하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split" style="grid-template-columns:1fr 1fr;gap:5mm">
+      <div>
+        <div class="st-lb">처음 온 이용객의 말</div>
+        <div class="st-qc"><div class="q" style="font-size:9.4pt">무엇을 보고 목적지를 찾았나</div><div class="who">주제 코드 · 색 · 화살표·이름</div>
+          <div class="quote-slot" style="margin-top:2mm">응답자 A · 1차 · 처음 온 이용객 · 매표소 찾기 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 B · 1차 · 처음 온 이용객 · 색 기억 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 C · 2차 · 외국인 이용객 · 영문 표기 관련</div></div>
+      </div>
+      <div>
+        <div class="st-lb">다시 온 이용객의 말</div>
+        <div class="st-qc dk"><div class="q" style="font-size:9.4pt">익숙한 길에서 바닥 선은 무엇이었나</div><div class="who">주제 코드 · 정보 사인 · 2층 라운지</div>
+          <div class="quote-slot" style="margin-top:2mm">응답자 D · 1차 · 다시 온 이용객 · 2층 라운지 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 E · 1차 · 다시 온 이용객 · 기존 안내판 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 F · 2차 · 다시 온 이용객 · 수화물 보관소 관련</div></div>
+      </div>
+    </div>
+    <div class="st-cap"><b>처음 온 이용객은 선을 <span class="dummy">[따라갔고]</span>, 다시 온 이용객은 선으로 <span class="dummy">[몰랐던 시설을 알게 되었다]</span>.</b> 1·2차 길찾기 인터뷰에서 고른 응답 자리</div>
+    <div class="st-lb" style="margin-top:5mm">디자인이 준 것 → 이용객이 쓴 말</div>
+    <div class="k-map">
+      <div class="e"><i>1차 · 색</i><b>목적지마다 색 하나</b>파랑·초록·주황·분홍·흰색</div><div class="ar">▶</div>
+      <div class="x"><i>이용객이 말한 단서</i><b class="dummy">[주황 선 · 분홍 선 …]</b>목적지를 설명할 때 색 이름을 쓴 응답 <span class="dummy">[00]</span>건</div>
+      <div class="e"><i>1차 · 이름과 화살표</i><b>국영문 이름 · 겹화살표</b>띠 위의 목적지 이름과 방향</div><div class="ar">▶</div>
+      <div class="x"><i>이용객이 말한 단서</i><b class="dummy">[‘화살표 따라’ · ‘글씨 보고’ …]</b>이름·화살표를 먼저 말한 응답 <span class="dummy">[00]</span>건</div>
+    </div>
+    <div class="st-split" style="margin-top:4.6mm;grid-template-columns:112mm 1fr;gap:6mm">
+      <div><div class="st-lb">길찾기 단서별 언급 수</div><div class="st-chart"><svg width="112mm" height="50mm" viewBox="0 0 112 50"><g font-size="2.7" font-weight="800" text-anchor="middle"><text x="46" y="3.4" fill="#2E5A87">처음 온 이용객</text><text x="74" y="3.4" fill="#1A2F4B">다시 온 이용객</text></g><line x1="60" y1="5" x2="60" y2="49" stroke="#1A2F4B" stroke-width=".4"/><rect x="36" y="7" width="24" height="4.6" fill="#2E5A87"/><rect x="60" y="7" width="24" height="4.6" fill="#1A2F4B"/><text x="34.6" y="10.5" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">[00]</text><text x="85.4" y="10.5" font-size="2.6" font-weight="800" fill="#E5332A">[00]</text><text x="0" y="10.5" font-size="2.8" font-weight="800" fill="#1A2F4B">색</text><rect x="36" y="14" width="24" height="4.6" fill="#2E5A87"/><rect x="60" y="14" width="24" height="4.6" fill="#1A2F4B"/><text x="34.6" y="17.5" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">[00]</text><text x="85.4" y="17.5" font-size="2.6" font-weight="800" fill="#E5332A">[00]</text><text x="0" y="17.5" font-size="2.8" font-weight="800" fill="#1A2F4B">화살표</text><rect x="36" y="21" width="24" height="4.6" fill="#2E5A87"/><rect x="60" y="21" width="24" height="4.6" fill="#1A2F4B"/><text x="34.6" y="24.5" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">[00]</text><text x="85.4" y="24.5" font-size="2.6" font-weight="800" fill="#E5332A">[00]</text><text x="0" y="24.5" font-size="2.8" font-weight="800" fill="#1A2F4B">목적지 이름</text><rect x="36" y="28" width="24" height="4.6" fill="#2E5A87"/><rect x="60" y="28" width="24" height="4.6" fill="#1A2F4B"/><text x="34.6" y="31.5" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">[00]</text><text x="85.4" y="31.5" font-size="2.6" font-weight="800" fill="#E5332A">[00]</text><text x="0" y="31.5" font-size="2.8" font-weight="800" fill="#1A2F4B">픽토그램</text><rect x="36" y="35" width="24" height="4.6" fill="#2E5A87"/><rect x="60" y="35" width="24" height="4.6" fill="#1A2F4B"/><text x="34.6" y="38.5" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">[00]</text><text x="85.4" y="38.5" font-size="2.6" font-weight="800" fill="#E5332A">[00]</text><text x="0" y="38.5" font-size="2.8" font-weight="800" fill="#1A2F4B">정보 사인</text><rect x="36" y="42" width="24" height="4.6" fill="#2E5A87"/><rect x="60" y="42" width="24" height="4.6" fill="#1A2F4B"/><text x="34.6" y="45.5" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">[00]</text><text x="85.4" y="45.5" font-size="2.6" font-weight="800" fill="#E5332A">[00]</text><text x="0" y="45.5" font-size="2.8" font-weight="800" fill="#1A2F4B">기존 안내판</text></svg></div>
+        <div class="st-cap"><b>두 집단이 가장 많이 말한 단서가 <span class="dummy">[달랐다]</span>.</b> 막대 길이는 결과 입력 전 동일 표시</div></div>
+      <div class="st-tx">
+        <p>목적지를 찾은 단서로 가장 많이 나온 것은 <span class="dummy">[화살표]</span>였고, 색만으로 찾았다는 응답은 <span class="dummy">[00]</span>건이었다. 외국인 응답자 <span class="dummy">[00]</span>명 가운데 영문 표기를 단서로 꼽은 사람은 <span class="dummy">[00]</span>명이었다.</p>
+        <p>다시 온 이용객에게 선이 알린 것은 <span class="dummy">[길보다 시설의 존재]</span>였다. 2층 라운지가 있는 줄 몰랐다는 응답이 <span class="dummy">[00]</span>건이었다.</p>
+        <p>처음 온 이용객은 <span class="dummy">[화살표와 이름]</span>을, 다시 온 이용객은 <span class="dummy">[색]</span>을 더 자주 길찾기의 단서로 꼽았다.</p>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>색은 <span class="dummy">[혼자서보다 다른 단서와 함께]</span> 쓰였다. 색 이름으로 목적지를 설명한 응답은 대개 <span class="dummy">[‘주황 화살표’처럼 화살표와 묶여]</span> 나왔고, 다섯 색 가운데 비슷해 보여 헷갈렸다는 응답은 <span class="dummy">[00]</span>건이었다.</p>
+      <p>기존 안내판과 바닥 선이 서로 다른 말을 한다는 응답은 <span class="dummy">[00]</span>건이었다. 이 반응은 고정시설로 옮길 때 기존 안내체계와 표기를 맞추는 조건으로 넘겼다.</p>
+    </div>
+    <div class="st-out" style="margin-top:4mm"><b>바닥 선은 <span><span class="dummy" style="color:#FF8A80!important">[색과 화살표, 이름이 함께]</span></span> 있을 때<br>목적지의 단서가 되었다</b><small>정성 소결 p213<br>판정 p215</small></div>
+  </div>
+  <div class="foot-src">자료: 연안 1·2차 쉬운 길찾기 인터뷰</div>
+  <div class="pno">211</div>
+</section>
+
+<!-- ================= p212 정성 결과 · 주제 2 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정성 결과 · 주제 2</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">짐의 크기, 동행, 출항까지 남은 시간, 2층이<br><em>짐을 맡기는 결정</em>을 다시 묻게 하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="k-th4" style="--thh:60mm">
+      <div class="c"><div class="h"><b>짐의 크기</b><span>책장</span></div><div class="qq">책장과 테이블에 맞는 짐이었나</div><p>책장은 415×290×1,165mm, 테이블은 높이 1,000mm였다. 큰 여행 가방과 작은 짐은 다른 자리가 필요할 수 있었다.</p><div class="quote-slot" style="margin-top:2mm">응답자 G · 2차 · 큰 짐 소지 · 보관 크기 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 H · 2차 · 작은 짐 소지 · 정리 테이블 관련</div></div>
+      <div class="c"><div class="h"><span>단체</span><b>동행과 단체</b></div><div class="qq">함께 온 사람이 있을 때 짐을 맡겼나</div><p>동행이 짐을 지키는지, 단체가 짐을 한곳에 모으는지에 따라 보관소의 쓸모가 달라지는지를 물었다.</p><div class="quote-slot" style="margin-top:2mm">응답자 I · 1차 · 동행 이용객 · 짐 지키기 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 J · 2차 · 단체 이용객 · 짐 모으기 관련</div></div>
+      <div class="c"><div class="h"><b>출항까지 남은 시간</b><span>운항</span></div><div class="qq">시간이 얼마 남았을 때 짐을 맡겼나</div><p>출항이 가까울수록 맡겼다 찾는 수고가 커진다. 남은 시간이 보관 결정에 걸리는지를 물었다.</p><div class="quote-slot" style="margin-top:2mm">응답자 K · 2차 · 출항 전 대기 · 보관 시간 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 L · 2차 · 출항 직전 · 미이용 이유 관련</div></div>
+      <div class="c"><div class="h"><span>분홍 선</span><b>2층 라운지</b></div><div class="qq">짐을 맡긴 뒤 2층으로 올라갔나</div><p>짐을 내려놓은 손으로 계단을 오를 수 있는지가 초기 기획의 질문이기도 하였다.</p><div class="quote-slot" style="margin-top:2mm">응답자 M · 1차 · 2층 라운지 이용 관련</div><div class="quote-slot" style="margin-top:2mm">응답자 N · 2차 · 짐 보관 후 이동 관련</div></div>
+      <div class="mid"><i>주제 2</i><b>짐을<br>맡기는 결정</b></div>
+    </div>
+    <div class="st-cap"><b>네 주제는 보관소의 위치보다, 이용객이 짐을 내려놓을지 정하는 조건을 묻는 틀이었다.</b> 왼쪽은 짐과 시간, 오른쪽은 사람과 이동에 관한 주제</div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:86mm 1fr">
+      <div><div class="st-ph" style="height:52mm"><img src="img/07_연안_2차시뮬.jpg" alt="" style="object-position:60% 70%"><span>2차 보관공간 시뮬레이션</span></div>
+        <div class="st-cap"><b>반응이 모인 자리는 <span class="dummy">[테이블 앞 · 바닥 영역 가장자리]</span>였다.</b> 짐 크기 <span class="dummy">[00]</span> · 시간 <span class="dummy">[00]</span> · 동행 <span class="dummy">[00]</span>건</div></div>
+      <div class="st-tx">
+        <p>짐의 크기에 대한 반응은 <span class="dummy">[큰 짐 소지 이용객]</span>에게서 많이 나왔다. 책장은 <span class="dummy">[작은 짐 보관에 쓰였고]</span>, 큰 가방은 <span class="dummy">[바닥 영역에 세워 두었다]</span>.</p>
+        <p>짐을 맡기지 않은 이유로 가장 많이 나온 것은 <span class="dummy">[출항까지 남은 시간]</span>이었다. 남은 시간이 <span class="dummy">[30분]</span> 이하일 때 이용률이 <span class="dummy">[낮았다]</span>. 짐을 맡긴 뒤 2층으로 간 사례는 <span class="dummy">[00]</span>건이었다. 동행이 짐을 지킨 경우 보관소를 쓰지 않은 사례는 <span class="dummy">[00]</span>건이었다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 연안 1·2차 짐 정리 이용자 인터뷰·관찰 기록</div>
+  <div class="pno">212</div>
+</section>
+
+<!-- ================= p213 정성 결과 · 소결 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">정성 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료에서 길을 안 뒤 짐을 내려놓기까지를 가른 것은<br><em><span class="dummy">[출항까지 남은 시간]</span></em>이었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="k-step">
+      <div class="rl"></div><div class="hh">1 · 알아보기<small>선을 본다</small></div><div class="hh">2 · 따라가기<small>목적지로 간다</small></div><div class="hh">3 · 도착하기<small>보관소를 찾는다</small></div><div class="hh" style="background:var(--navy)">4 · 내려놓기<small>짐을 맡긴다</small></div>
+      <div class="rl"><span class="rtag r1">1차</span></div>
+      <div><span class="mk">[●]</span><span class="dummy">[발 앞의 색 선을 봄]</span></div>
+      <div><span class="mk">[●]</span><span class="dummy">[화살표를 따라감]</span></div>
+      <div><span class="mk">[◐]</span><span class="dummy">[보관소를 알게 됨]</span></div>
+      <div><span class="mk">[○]</span><span class="dummy">[1차 보관 행동]</span></div>
+      <div class="rl"><span class="rtag r2">2차</span></div>
+      <div><span class="mk">[●]</span><span class="dummy">[1차와 같음]</span></div>
+      <div><span class="mk">[●]</span><span class="dummy">[1차와 같음]</span></div>
+      <div><span class="mk">[●]</span><span class="dummy">[벽면 사인으로 찾음]</span></div>
+      <div><span class="mk">[◐]</span><span class="dummy">[시간이 있을 때 맡김]</span></div>
+    </div>
+    <div class="st-cap"><b>● 뚜렷하게 나타남 · ◐ 일부 나타남 · ○ 나타나지 않음.</b> 1·2차 인터뷰와 이동 관찰을 함께 판정</div>
+    <div class="st-split" style="margin-top:6mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">인터뷰와 이동 관찰은 이용객의 행동을 알아보기·따라가기·도착하기·내려놓기 네 단계로 나누어 판정하였다. 보관소를 알고도 짐을 맡기지 않은 응답에서 가장 많이 나온 이유는 <span class="dummy">[출항까지 남은 시간]</span>이었다.</p>
+        <p>1차의 바닥 선이 뚜렷하게 나타난 단계는 <span class="dummy">[알아보기·따라가기]</span>였다. 발 앞의 색 선을 보았다는 응답이 <span class="dummy">[00]</span>건, 화살표와 이름을 따라 목적지에 닿았다는 응답이 <span class="dummy">[00]</span>건이었다. 보관소 앞에 도착한 뒤 짐을 맡긴 사례는 <span class="dummy">[00]</span>건이었다.</p>
+        <p>2차의 짐 자리는 도착하기와 내려놓기 단계를 겨냥한 장치였다. 벽면 사인과 주황 바닥 영역은 보관소를 <span class="dummy">[멀리서도 보이게]</span> 하였고, 테이블에서 짐을 정리한 사례는 <span class="dummy">[00]</span>건이었다. 짐을 맡기는 결정은 <span class="dummy">[출항까지 남은 시간과 동행 여부]</span>에 따라 <span class="dummy">[갈렸다]</span>.</p>
+        <p>맡긴 짐을 누가 지켜보는지, 출항 직전에 짐을 찾을 수 있는지를 말한 응답은 <span class="dummy">[00]</span>건이었다. 이 주제는 사인과 가구보다 운영에 걸린 것이어서, 보관공간의 관리 방식을 설계 반영의 조건으로 따로 넘겼다.</p>
+        <p>네 단계로 나누자 바닥 선과 짐 자리가 맡은 일이 갈렸다. 알아보기와 따라가기는 1차의 색 선이, 도착하기와 내려놓기는 2차의 벽면 사인과 바닥 영역, 정리 가구가 맡았다. 마지막 단계에서 <span class="dummy">[남은 시간과 동행, 짐을 지켜볼 사람 같은 운영 조건]</span>이 결정을 갈랐다는 점은 정량 지표만으로는 보이지 않던 부분이었다.</p>
+        <p>처음 온 이용객과 다시 온 이용객은 도움을 받은 단계가 <span class="dummy">[달랐다]</span>. 처음 온 이용객은 <span class="dummy">[알아보기와 따라가기]</span>에서, 다시 온 이용객은 <span class="dummy">[도착하기]</span>에서 바닥 선의 도움을 말하였다. 기존 안내판만 보고 움직인 사례는 <span class="dummy">[00]</span>건이었고, 주로 <span class="dummy">[다시 온 이용객]</span>에게서 나왔다.</p>
+      </div>
+      <div>
+        <div class="st-mn"><b>정량과 맞춰 본 점</b>정량에서 가장 많이 빠져나간 <span class="dummy">[도착 → 보관]</span> 단계와 정성의 <span class="dummy">[보관 결정]</span> 주제가 <span class="dummy">[겹쳤다]</span>.</div>
+        <div class="st-mn"><b>반례</b>보관소를 알고도 맡기지 않은 응답 <span class="dummy">[00]</span>건, 다른 색 선을 따라간 사례 <span class="dummy">[00]</span>건.</div>
+        <div class="st-mn"><b>남은 물음</b>맡긴 짐의 관리 주체와 방식은 판정에서 <span class="dummy">[수정 · 운영 방식 협의]</span>로 정리하였다.</div>
+        <div class="st-ph" style="height:54mm;margin-top:4mm"><img src="img/07_연안_사전_계단.jpg" alt=""><span>2층으로 이어지는 계단 · 실험 전</span></div>
+      </div>
+    </div>
+    <div class="st-out" style="margin-top:5mm"><b>바닥 선은 <span class="dummy" style="color:#FF8A80!important">[어디로]</span>에, 짐 자리는<br><span class="dummy" style="color:#FF8A80!important">[지금 맡겨도 되는가]</span>에 답하는 단서로 말해졌다</b><small>통합 해석에서<br>정량 결과와 맞춤</small></div>
+  </div>
+  <div class="foot-src">자료: 연안 1·2차 인터뷰·관찰 기록</div>
+  <div class="pno">213</div>
+</section>
+
+<!-- ================= p214 통합 해석 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">통합 해석</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">바닥 선은 <em><span class="dummy">[길찾기]</span></em>를, 짐 정리 공간은<br><em><span class="dummy">[보관소 이용]</span></em>을 바꾸었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-qa"><div class="qq"><i>Q</i><b>통합 안내사인과 짐 보관·정리 공간은 이용객의 시설 이용과 대기 편의를 어떻게 바꾸는가?</b></div></div>
+    <div class="k-conv" style="margin-top:5mm;row-gap:2mm">
+      <div class="k"><i>길찾기</i>목적지를 바르게, 빨리 찾았는가</div>
+      <div class="qn"><i>정량</i>선택 정확도 사전 <span class="dummy">[00]%</span> → 1차 <span class="dummy">[00]%</span> · 탐색 시간 <span class="dummy">[−00]초</span></div>
+      <div class="ql"><i>정성</i><span class="dummy">[화살표와 이름]</span>을 따라갔다는 응답</div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[1차에서 00%p 좋아졌다]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>보관소 인지</i>보관소가 있는 곳을 알게 되었는가</div>
+      <div class="qn"><i>정량</i>보관시설 인지율 사전 <span class="dummy">[00]%</span> → 1차 <span class="dummy">[00]%</span> → 2차 <span class="dummy">[00]%</span></div>
+      <div class="ql"><i>정성</i>2층 라운지·보관소를 <span class="dummy">[몰랐다]</span>는 다시 온 이용객</div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[두 단계 모두 올랐다]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>짐 보관</i>짐을 맡기고 정리하였는가</div>
+      <div class="qn"><i>정량</i>짐을 든 이용객 이용률 1차 <span class="dummy">[00]%</span> → 2차 <span class="dummy">[00]%</span></div>
+      <div class="ql"><i>정성</i>보관 결정을 가른 조건 <span class="dummy">[출항 시간 · 동행]</span></div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[2차에서 00%p · 시간 조건부]</span></div>
+    </div>
+    <div class="st-nums k-facts" style="grid-template-columns:repeat(4,1fr);margin-top:5mm">
+      <div><b class="dummy">[000]<small class="dummy">건</small></b><span>사전·1·2차 이동 관찰 합계</span></div>
+      <div><b class="dummy">[000]<small class="dummy">명</small></b><span>1·2차 시설 인지율 응답 합계</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>1·2차 이용자 인터뷰 합계</span></div>
+      <div><b>146<small>장</small></b><span>1차 바닥 사인 2차까지 유지</span></div>
+    </div>
+    <div class="st-q" style="margin-top:5mm"><i>연안여객터미널의 답</i><b>길은 발 앞의 <span class="dummy">[화살표와 이름]</span>이 열었고,<br>짐은 <span class="dummy">[시간이 있을 때 정리할 자리]</span>가 있을 때 내려놓았다</b></div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>정량과 정성은 단계마다 <span class="dummy">[다른 답]</span>을 냈다. 바닥 선을 붙인 1차에서 목적지 선택 정확도가 <span class="dummy">[올랐고]</span>, 선을 따라갔다는 응답은 <span class="dummy">[00]</span>건이었다. 보관소 인지율은 1차와 2차에 걸쳐 <span class="dummy">[두 번 올랐다]</span>.</p>
+      <p>2차의 보관소 이용률은 <span class="dummy">[00]%p</span> 바뀌었다. 정리 공간이 있어도 쓰이지 않은 사례 <span class="dummy">[00]</span>건은 주로 <span class="dummy">[출항까지 시간이 짧거나 동행이 짐을 지킨 경우]</span>였다. 요일 차이를 고려하면 이 몫 가운데 일부는 이용객 구성의 차이일 수 있어, 판정에서는 보관공간 요소를 따로 보았다.</p>
+      <p>정량과 정성이 어긋난 곳도 기록하였다. 짐 보관 의향은 <span class="dummy">[높았지만]</span> 실제 보관은 <span class="dummy">[00]%</span>에 그쳤다. 이 반례는 수정 판정의 근거로 넘겼다. 의향과 행동의 차이는 <span class="dummy">[보관공간의 형태보다 운영 조건]</span>에 걸린 것이어서, 고정시설로 옮길 때 짐 관리 방식을 함께 정하는 근거가 되었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 연안 사전·1·2차 관찰·인터뷰 · 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">214</div>
+</section>
+
+<!-- ================= p215 가봉 판정 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">가봉 판정</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">두 실험을 여덟 요소로 풀어<br><em>상설 · 수정 · 중지</em>를 하나씩 판정하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-jlg">
+      <div><span class="judge keep">상설 · 잘 맞았다</span><p>효과와 반응이 함께 확인되어 고정시설로 옮길 수 있는 요소</p></div>
+      <div><span class="judge fix">수정 · 고쳐 맞춘다</span><p>방향은 맞지만 기준·관리·통행 때문에 고쳐야 하는 요소</p></div>
+      <div><span class="judge next">중지 · 다음 실험의 조건</span><p>이번에는 맞지 않았고, 다음 실험의 조건으로 넘기는 요소</p></div>
+    </div>
+    <div class="st-jg" style="margin-top:4mm;--jh:31mm">
+      <div class="st-jc"><div class="th"><img src="img/07_연안_1차시뮬_사인합성.jpg" alt="" style="object-position:55% 88%"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>목적지별 5색 유도선</h5><p>색 하나에 목적지 하나 · 136장. 선택 정확도 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p207 · 정성 p211</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/07_연안_1차사인도면.png" alt="" style="object-position:50% 30%;object-fit:contain;background:#fff"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>국영문 이름 · 겹화살표</h5><p>띠 위의 이름과 방향. 단서 언급 <span class="dummy">[00]</span>건</p><div class="row"><span>정성 p211 · 기준 p216</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/07_연안_2장_반영후.jpg" alt="" style="object-position:60% 70%"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>사각 정보 안내사인</h5><p>분기점 500×500 · 5종 × 2장</p><div class="row"><span>정량 p207 · 관찰</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/07_연안_사전_계단.jpg" alt="" style="object-position:50% 50%"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>2층 라운지 분홍 유도선</h5><p>계단까지 19장. 2층 이동 <span class="dummy">[00]</span>건</p><div class="row"><span>정성 p212 · 관찰</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/07_연안_2차보관소도면.png" alt="" style="object-position:50% 5%;object-fit:contain;background:#fff"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>말풍선 벽면 사인</h5><p>1,275×580 · 가벼운 여행의 시작</p><div class="row"><span>정량 p209 · 정성 p213</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/07_연안_2차시뮬.jpg" alt="" style="object-position:50% 75%"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>주황 바닥 영역 5×3m</h5><p>짐을 내려놓는 자리와 통로의 경계</p><div class="row"><span>관찰 · 정성 p212</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/07_연안_2차시뮬.jpg" alt="" style="object-position:45% 55%"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>정리 테이블 · 책장</h5><p>테이블 4 · 책장 4. 이용률 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p208 · 정성 p212</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/07_연안_2차보관소도면.png" alt="" style="object-position:40% 45%;object-fit:contain;background:#fff"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>배려 문구</h5><p>짐은 차곡차곡 배려는 착착!</p><div class="row"><span>정성 p213</span><span class="judge tbd">[판정]</span></div></div></div>
+    </div>
+    <div class="st-nums" style="grid-template-columns:repeat(3,1fr);margin-top:4mm">
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge keep">상설</span></span></div>
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge fix">수정</span></span></div>
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge next">중지 · 다음 조건</span></span></div>
+    </div>
+    <div class="st-tx" style="margin-top:4mm">
+      <p>판정은 요소 단위로 내렸다. 1차 바닥 사인은 유도선의 색, 띠 위의 이름과 화살표, 분기점 정보 사인, 2층 라운지 유도선의 네 요소로, 2차 보관공간은 벽면 사인, 바닥 영역, 정리 가구, 배려 문구의 네 요소로 나누었다. 바닥 선이 길찾기를 바꾸었더라도 그 색의 채도와 영문 표기 방식은 고정시설의 기준을 따로 통과해야 하고, 정리 가구는 맡긴 짐의 관리 방식이 정해져야 상설이 될 수 있기 때문이다. 판정 결과 상설 <span class="dummy">[0]</span>개, 수정 <span class="dummy">[0]</span>개, 중지 <span class="dummy">[0]</span>개로 나뉘었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 연안 1·2차 관찰·인터뷰 기록 종합</div>
+  <div class="pno">215</div>
+</section>
+
+<!-- ================= p216 설계 반영 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">07<small>연안</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-07</span><span class="site">연안여객터미널 1층 대합실</span><span class="part">설계 반영</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></div>
+    <h2 class="hl">고정시설로 옮길 요소는 <em>색채 기준 · 사인 표기 · 터미널 관리</em><br>세 조건으로 다시 걸렀다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split">
+      <div class="st-tx">
+        <p>판정은 세 가지 물음을 차례로 거쳤다. 실험에서 효과가 확인되었는가, 이용객이 받아들였는가, 그리고 고정시설이 되었을 때 기준과 관리를 감당할 수 있는가. 앞의 두 물음은 정량·정성 결과가 답하였고, 마지막 물음은 인천시 공공디자인 기준과 터미널 관리 주체의 조건으로 따졌다.</p>
+        <p>색채에서 연안여객터미널은 이점과 제약을 함께 안고 있었다. 띠의 바탕 N 4.5/0은 기준이 권장하는 명도 6 이하의 무채색이었다. 그러나 수화물 보관소의 5YR 6/10과 2층 라운지의 5RP 6/10은 채도 10의 고채도 색으로, 원색과 고채도를 지양하는 기준과 맞추어야 하였다. 금지·주의·경고 같은 안전정보에는 안전색을 강조색으로 쓰게 한다.</p>
+        <p>사인 표기도 다시 보았다. 기준은 고딕 계열 서체를 기본으로 하고, 같은 매체 안에서 여러 서체를 쓰지 않으며, 가독성을 위해 영문 세로쓰기를 금지한다. 폭 190mm 띠에 목적지 이름을 길이 방향으로 적은 1차 유도선은 영문이 세로로 놓이는 띠여서, 고정시설에서는 표기 방향과 인식 거리에 맞는 최소 글자 크기를 정해야 하였다.</p>
+        <p>조건을 통과한 요소는 「공간 특성 및 이용자 중심의 길찾기 표준디자인」으로 정리해 표준모델 설계편(최종 도면·재료, 색·그림·안내, 현장 적용 조건, 디자인 변경 이력)에 담았다. 바닥 시트의 마모·들뜸 관리와 맡긴 짐의 관리 방식은 인천항만공사와 협의할 조건으로 남겼고, 고정시설 대상 검토는 Ⅵ장으로 넘겼다.</p>
+      </div>
+      <div>
+        <div class="st-mn"><b>색채 기준</b>원색·고채도·고명도 지양 · 명도 6 이하 무채색 권장 · 안전정보는 안전색 강조</div>
+        <div class="st-mn"><b>사인 표기 기준</b>고딕 계열 서체 · 같은 매체 안 서체 통일 · 영문 세로쓰기 금지 · 인식 거리별 최소 글자 크기</div>
+        <div class="st-mn"><b>관리 주체</b>인천항만공사 · 공문·설문·장소 협의</div>
+        <div class="st-mn"><b>실험 결과물</b>공간 특성 및 이용자 중심의 길찾기 표준디자인</div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">요소별 판단 매트릭스</div>
+    <div class="st-dm">
+      <div class="hh">요소</div><div class="hh">효과(정량)</div><div class="hh">반응(정성)</div><div class="hh">기준 적합</div><div class="hh">관리 부담</div>
+      <div class="rk">5색 유도선</div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[채도 10 두 색]</div><div class="dummy">[마모·들뜸]</div>
+      <div class="rk">국영문 이름 표기</div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[영문 방향]</div><div><span class="o"></span></div>
+      <div class="rk">사각 정보 사인</div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div>
+      <div class="rk">짐 정리 공간</div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[맡긴 짐 관리]</div>
+    </div>
+    <div class="st-cap"><b>빗살 원은 결과 입력 전 표시이며, 충족 ● · 부분 ◐ · 미충족 ○로 채운다.</b></div>
+    <div class="st-lb" style="margin-top:4.6mm">다음 실험으로 넘긴 조건</div>
+    <div class="st-next">
+      <div><b>채도를 낮춘 두 색</b>주황·분홍의 채도를 기준 안으로 낮춰도 보관소와 2층을 구별해 찾는지 다시 잰다.<small>근거 · 색채 기준(고채도 지양)</small></div>
+      <div><b>가로로 읽는 이름</b>띠의 이름을 가로쓰기 표지로 옮겼을 때 단서 역할이 유지되는지 본다.<small>근거 · 영문 세로쓰기 금지</small></div>
+      <div><b>같은 요일의 비교</b>1차와 2차를 같은 요일에 두어 이용객 구성의 차이를 지운다.<small>근거 · 1차 수·목 / 2차 금·토</small></div>
+      <div><b>출항 시간과 짐 보관</b>출항까지 남은 시간을 안내에 더했을 때 짐을 맡기는 결정이 바뀌는지 본다.<small>근거 · 정성 주제 2 · 출항까지 남은 시간</small></div>
+    </div>
+    <div class="st-out" style="margin-top:4mm"><b>연안여객터미널의 <span class="dummy" style="color:#FF8A80!important">[요소]</span>는 상설, <span class="dummy" style="color:#FF8A80!important">[요소]</span>는 수정,<br><span class="dummy" style="color:#FF8A80!important">[요소]</span>는 다음 실험의 조건으로 넘겼다</b><small>Ⅵ-01 설계 반영 판단<br>Ⅵ-03 고정시설 구현</small></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(공공디자인 가이드라인 체크리스트)</div>
+  <div class="pno">216</div>
+</section>
+
+</body>
+</html>

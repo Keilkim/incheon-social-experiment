@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 창의디자인 사회실험 최종보고서 — Ⅰ장 시안</title>
+<style>
+@font-face{font-family:P;font-weight:300;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-3Light.ttf')}
+@font-face{font-family:P;font-weight:400;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-4Regular.ttf')}
+@font-face{font-family:P;font-weight:500;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-5Medium.ttf')}
+@font-face{font-family:P;font-weight:600;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-6SemiBold.ttf')}
+@font-face{font-family:P;font-weight:700;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-7Bold.ttf')}
+@font-face{font-family:P;font-weight:800;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-8ExtraBold.ttf')}
+@font-face{font-family:P;font-weight:900;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-9Black.ttf')}
+:root{
+  --teal:#2E5A87; --teal-d:#22476C; --teal-l:#7D97B3; --sky:#E3E9F0; --sky2:#F2F5F8;
+  --navy:#1A2F4B; --navy-d:#13243A; --yellow:#C9D7E6; --ink:#1E2A35; --mute:#6A7784; --line:#D3DCE3;
+  --red:#E5332A; --red-l:#FBE9E8; --rd:.6mm;
+  --f-safe:#3A5F8E; --f-incl:#3F7A6E; --f-attr:#A67C45; --f-conv:#675F8C;
+}
+@page{size:210mm 297mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#8a949c}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:P,'Apple SD Gothic Neo',sans-serif;color:var(--ink);font-weight:400;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#fff;margin:0 auto 8mm;break-after:page}
+@media print{html,body{background:#fff}.page{margin:0}}
+.serif{font-family:'NanumMyeongjo',serif}
+.dummy{color:var(--red)!important}
+.pno{position:absolute;bottom:11mm;font-weight:800;font-size:11pt;color:var(--teal);font-style:oblique 10deg}
+.even .pno{left:16mm}.odd .pno{right:16mm}
+.foot-src{position:absolute;bottom:11.6mm;font-size:6.2pt;color:#8C98A3;font-weight:500}
+.even .foot-src{right:16mm}.odd .foot-src{left:16mm}
+
+/* nav */
+.nav{position:absolute;top:11mm;left:16mm;right:16mm;display:flex;border-top:.35mm solid var(--navy);padding-top:2mm;font-size:6.4pt;color:#A2ADB6;font-weight:600}
+.nav span{flex:1;position:relative}
+.nav span.on{color:var(--teal)}
+.nav span.on::before{content:"";position:absolute;left:0;right:15%;top:-2.35mm;height:.9mm;background:var(--teal)}
+
+/* section header */
+.hd{position:absolute;top:22mm;left:16mm;right:16mm}
+.sec{display:flex;align-items:center;gap:2.4mm;font-size:7.6pt;font-weight:700;color:var(--teal)}
+.sec .no{background:var(--teal);color:#fff;padding:.7mm 2.2mm;font-weight:800;letter-spacing:.04em}
+.hl{margin-top:3.4mm;font-size:16pt;line-height:1.36;font-weight:800;color:var(--navy);letter-spacing:-.025em}
+.hl em{font-style:normal;color:var(--teal)}
+.lede{margin-top:3mm;font-size:8.6pt;line-height:1.7;color:#3D4A56;font-weight:500;max-width:168mm}
+.body{position:absolute;left:16mm;right:16mm}
+
+/* ---------- 본문 서술 (r2) ---------- */
+.txt2{column-count:2;column-gap:8mm}
+.txt2 p,.txt1 p{font-size:8.6pt;line-height:1.76;color:#2E3B47;font-weight:500;word-break:keep-all}
+.txt2 p+p,.txt1 p+p{margin-top:2.4mm}
+.txt2 p b,.txt1 p b{color:var(--navy);font-weight:800}
+.txt2.sm p{font-size:8.4pt;line-height:1.72}
+.lbx{font-size:7pt;font-weight:700;color:var(--teal);letter-spacing:.1em;margin-bottom:2.4mm;display:flex;align-items:center;gap:2mm}
+.lbx::after{content:"";flex:1;height:.25mm;background:var(--line)}
+
+/* ---------- p6 paradigm ---------- */
+.rise{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm;align-items:end;height:82mm}
+.rise .col{position:relative;border-radius:var(--rd) var(--rd) 0 0;padding:3.8mm 3.4mm;color:var(--navy);display:flex;flex-direction:column}
+.rise .c1{height:44mm;background:#EEF1F4}
+.rise .c2{height:57mm;background:#E3E9F0}
+.rise .c3{height:70mm;background:#D2DDE8}
+.rise .c4{height:82mm;background:var(--teal);color:#fff}
+.rise .k{font-size:7pt;letter-spacing:.2em;font-weight:800;color:#93A2AF}
+.rise .c3 .k{color:var(--teal-d)}.rise .c4 .k{color:#C9D7E6}
+.rise h4{font-size:10pt;font-weight:800;margin:1.6mm 0 1.4mm;line-height:1.3}
+.rise p{font-size:7.1pt;line-height:1.5;font-weight:500;opacity:.9}
+.rise .ex{margin-top:auto;font-size:6.3pt;font-weight:700;line-height:1.4;border-top:.25mm solid rgba(26,47,75,.18);padding-top:1.4mm}
+.rise .c4 .ex{border-color:rgba(255,255,255,.4)}
+.rise .c4 .act{font-size:12.5pt;font-weight:900;letter-spacing:-.02em;margin-top:.6mm}
+.chain{display:flex;flex-wrap:wrap;gap:1mm;margin-top:1.4mm}
+.chain span{font-size:6.4pt;font-weight:700;background:rgba(255,255,255,.16);border-radius:var(--rd);padding:.5mm 1.8mm}
+.ground{height:.6mm;background:var(--navy)}
+.cmp{margin-top:7mm}
+.cmp .t{font-size:7.4pt;font-weight:800;color:var(--teal);letter-spacing:.08em;margin-bottom:2.4mm}
+.cmp .r{display:grid;grid-template-columns:30mm 1fr 8mm 1fr;align-items:center;border-top:.25mm solid var(--line);padding:2.6mm 0;font-size:8pt;font-weight:500;color:#4A5662}
+.cmp .r:last-child{border-bottom:.25mm solid var(--line)}
+.cmp .r b{font-weight:800;color:var(--navy);font-size:7.8pt}
+.cmp .r .ar{color:var(--teal);font-weight:900;text-align:center}
+.cmp .r .now{color:var(--navy);font-weight:800}
+.p6x{display:grid;grid-template-columns:1fr 50mm;gap:8mm;margin-top:8mm}
+.p6side .pq{border-top:.7mm solid var(--navy);padding-top:3mm;font-size:11pt;line-height:1.5;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.p6side .pq span{color:var(--teal)}
+.p6side .chg{margin-top:6mm}
+.p6side .chg .it{border-top:.25mm solid var(--line);padding:2.4mm 0}
+.p6side .chg .it:last-child{border-bottom:.25mm solid var(--line)}
+.p6side .chg .it b{display:block;font-size:7pt;font-weight:800;color:var(--teal);letter-spacing:.02em}
+.p6side .chg .it .f{display:block;font-size:7.3pt;color:#7D8892;font-weight:600;margin-top:.8mm}
+.p6side .chg .it .t{display:block;font-size:7.8pt;color:var(--navy);font-weight:800;margin-top:.4mm;line-height:1.45}
+.p6side .chg .it .t::before{content:"→ ";color:var(--teal);font-weight:900}
+.slog{margin-top:6mm;background:var(--navy);color:#fff;text-align:center;padding:4.4mm;font-size:11.6pt;font-weight:800;border-radius:var(--rd)}
+.slog span{color:#C9D7E6}
+
+/* ---------- p7 converge ---------- */
+.conv{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.conv .cc{border-radius:var(--rd);padding:3.4mm 3.2mm 3mm;display:flex;flex-direction:column;background:var(--sky2)}
+.conv .cc .k{font-size:6.8pt;font-weight:800;color:var(--teal);letter-spacing:.14em}
+.conv .cc h4{font-size:10.6pt;font-weight:800;color:var(--navy);margin:1mm 0 2.4mm}
+.ev{margin-bottom:2.2mm}
+.ev b{display:block;font-size:7.6pt;font-weight:800;color:var(--navy);margin-bottom:.8mm}
+.ev p{font-size:7pt;line-height:1.55;color:#56636E;font-weight:500}
+.conv .cc .so{margin-top:auto;background:var(--sky);border-radius:.3mm;padding:2.4mm;font-size:7.4pt;font-weight:700;color:var(--navy);line-height:1.5}
+.funnel{display:block;margin:1mm auto 0}
+.verdict{margin-top:1mm;background:var(--sky);border-radius:0;padding:4.6mm 5mm;text-align:center}
+.verdict b{display:block;font-size:12pt;font-weight:900;color:var(--navy);line-height:1.4}
+
+.cases{margin-top:5mm;border-top:.5mm solid var(--navy);padding-top:2.6mm}
+.p7t{margin-top:5mm}
+.cases .ct{font-size:8pt;font-weight:800;color:var(--navy);margin-bottom:3mm}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.case{background:#F3F6F8;border-radius:var(--rd);padding:2.8mm 3.2mm}
+.case .pl{font-size:6.8pt;font-weight:700;color:var(--teal);letter-spacing:.04em}
+.case h5{font-size:10pt;font-weight:800;color:var(--navy);margin:.8mm 0 1mm}
+.case p{font-size:7pt;line-height:1.5;color:#56636E;font-weight:500}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4mm;margin-top:2mm}
+.nums div{padding:1.2mm 1mm;text-align:center;border-left:.25mm solid #C9D3DB}
+.nums div:first-child{border-left:0}
+.nums b{display:block;font-size:13pt;font-weight:900;color:var(--teal);line-height:1}
+.nums b small{font-size:7.6pt}
+.nums span{display:block;font-size:6.2pt;color:var(--navy);font-weight:700;margin-top:1.2mm;line-height:1.35}
+.nums .fin b{color:var(--navy)}
+
+/* ---------- p8 radial ---------- */
+.radial{position:relative;height:112mm}
+.radial svg{position:absolute;inset:0}
+.radial .ctr{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42mm;height:42mm;border-radius:50%;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 3mm #fff}
+.radial .ctr i{font-style:normal;font-size:6.6pt;letter-spacing:.2em;color:var(--teal-l);font-weight:700}
+.radial .ctr b{font-size:11pt;font-weight:800;line-height:1.35;margin-top:1.4mm}
+.val{position:absolute;width:74mm}
+.val .n{font-size:20pt;font-weight:900;color:var(--teal);line-height:1;font-style:oblique 8deg}
+.val h4{font-size:10pt;font-weight:800;color:var(--navy);margin:1.4mm 0 1.4mm;line-height:1.35}
+.val p{font-size:7.3pt;line-height:1.6;color:#56636E;font-weight:500}
+.val .ev2{margin-top:2.2mm;display:inline-flex;gap:2mm;align-items:center;background:var(--sky);border-radius:var(--rd);padding:1mm 2.6mm 1mm 1mm;font-size:7.2pt;font-weight:700;color:var(--navy)}
+.val .ev2 i{font-style:normal;background:var(--teal);color:#fff;border-radius:.3mm;padding:.4mm 1.8mm;font-size:6.2pt}
+.v1{left:0;top:0}.v2{right:0;top:0;text-align:right}.v3{left:0;bottom:0}.v4{right:0;bottom:0;text-align:right;width:84mm}
+.p8t{margin-top:6mm}
+.three{display:grid;grid-template-columns:1fr 6mm 1fr 6mm 1fr;align-items:stretch;margin-top:6mm}
+.three .s{border-radius:var(--rd);overflow:hidden;text-align:center;display:flex;flex-direction:column}
+.three .s .q{background:#EEF2F5;padding:2.6mm 2mm;font-size:7.2pt;color:#56636E;font-weight:500;line-height:1.5;flex:1}
+.three .s .q b{display:block;font-size:8pt;color:var(--navy);font-weight:800;margin-bottom:.8mm}
+.three .s .a{background:var(--teal);color:#fff;padding:3mm 2mm;font-size:10pt;font-weight:800}
+.three .ar{display:flex;align-items:center;justify-content:center;color:var(--teal);font-weight:900}
+
+/* ---------- p9 ladder ---------- */
+.ladder{display:grid;grid-template-columns:62mm 10mm 1fr;row-gap:4.2mm}
+.ladder .st{padding:4.4mm 3.6mm}
+.ladder .lh{font-size:7pt;font-weight:800;letter-spacing:.12em;color:#93A2AF;padding-bottom:1mm;border-bottom:.3mm solid var(--line)}
+.ladder .lh.r{color:var(--teal)}
+.st{background:#F1F4F7;border-radius:var(--rd);padding:3.2mm 3.4mm;position:relative}
+.st .k{font-size:6.6pt;font-weight:800;letter-spacing:.14em;color:#93A2AF}
+.st h4{font-size:10.6pt;font-weight:800;color:var(--navy);margin:.8mm 0 .8mm}
+.st small{display:block;font-size:6.9pt;color:#6A7784;font-weight:600;line-height:1.5}
+.st5{background:#E4EAEF}
+.lk{display:flex;align-items:center;justify-content:center}
+.lk i{display:block;width:100%;height:.5mm;background:var(--teal);position:relative}
+.lk i::after{content:"";position:absolute;right:-.2mm;top:-1.2mm;width:2mm;height:2.9mm;background:var(--teal);clip-path:polygon(0 0,100% 50%,0 100%)}
+.dn{background:var(--sky);border-radius:var(--rd);padding:3mm 3.6mm;display:flex;flex-direction:column;justify-content:center}
+.dn p{font-size:8.2pt;line-height:1.6;color:var(--ink);font-weight:500}
+.dn p b{color:var(--navy);font-weight:800}
+.dn .tg{margin-top:1.4mm;display:flex;gap:1mm}
+.dn .tg span{font-size:6.2pt;font-weight:800;color:var(--teal);background:#fff;border-radius:.3mm;padding:.3mm 1.8mm}
+.dn.hl5{background:var(--teal)}
+.dn.hl5 p,.dn.hl5 p b{color:#fff}
+.dn.hl5 .tg span{background:rgba(255,255,255,.2);color:#fff}
+.p9t{margin-top:6mm}
+.ladder-note{margin-top:5mm;display:flex;gap:3mm;align-items:center;background:var(--navy);color:#fff;border-radius:var(--rd);padding:4mm 5mm}
+.ladder-note b{font-size:10.6pt;font-weight:800}
+.ladder-note .pill{display:flex;gap:1.4mm}
+.ladder-note .pill span{font-size:7.4pt;font-weight:800;border-radius:var(--rd);padding:.8mm 2.6mm}
+/* 판정 칩 문법: 상설=솔리드 / 수정=빗살(글자 둘레는 바탕색으로 비움) / 중지=옅은 회색 면 */
+.ladder-note .pill .keep{background:var(--teal);color:#fff}
+.ladder-note .pill .fix{color:#fff;background:repeating-linear-gradient(135deg,#5F7A99 0 .3mm,var(--navy) .3mm 1.3mm);text-shadow:0 0 .45mm var(--navy),0 0 .45mm var(--navy),0 0 .45mm var(--navy),0 0 .45mm var(--navy)}
+.ladder-note .pill .next{background:#E3E8EC;color:var(--navy)}
+
+/* ---------- p10 ACT ---------- */
+.act-row{display:flex;align-items:center;justify-content:space-between;margin-top:0}
+.act-c{width:46mm;text-align:center}
+.act-c .o{width:32mm;height:32mm;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;position:relative}
+.act-c .o b{font-size:36pt;font-weight:900;line-height:.9}
+.act-c .o i{font-style:normal;font-size:6.2pt;font-weight:600;letter-spacing:.06em;opacity:.9;margin-top:1mm}
+.act-c .o.a,.act-c .o.c{background:#2E5A87}
+.act-c .o.t{background:var(--navy)}
+.act-c h4{margin-top:2.4mm;font-size:8.6pt;font-weight:800;color:var(--navy);line-height:1.4}
+.act-link{flex:1;display:flex;align-items:center;justify-content:center;position:relative;margin-top:-14mm}
+.act-link::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:.3mm solid #7D97B3}
+.act-link span{position:relative;background:var(--sky);color:var(--navy);font-size:7pt;font-weight:800;padding:.8mm 2.4mm;border-radius:var(--rd);white-space:nowrap}
+.stmt{margin-top:10mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.stmt .it{display:grid;grid-template-columns:11mm 1fr;align-items:start;gap:2mm;padding:3mm;border-radius:var(--rd);background:#F3F6F8}
+.stmt .it b{font-size:20pt;font-weight:900;line-height:1;font-style:oblique 8deg}
+.stmt .it p{font-size:7.8pt;line-height:1.6;color:#3D4A56;font-weight:500}
+.stmt .it p em{font-style:normal;font-weight:800;color:var(--navy)}
+.with{margin-top:7mm;position:relative;background:var(--navy);border-radius:var(--rd);padding:6mm 6mm 5.4mm;color:#fff;overflow:hidden}
+.p10t{margin-top:7mm}
+.with .qt{font-size:13pt;font-weight:900;letter-spacing:-.02em;text-align:center}
+.with .qt span{color:#C9D7E6}
+.with .ppl{display:flex;justify-content:space-around;margin-top:4mm}
+.with .pp{text-align:center;width:30mm}
+.with .pp .fig{width:11mm;height:11mm;margin:0 auto;border-radius:50%;background:#7D97B3;position:relative}
+.with .pp .fig::after{content:"";position:absolute;left:50%;top:11.6mm;transform:translateX(-50%);width:14mm;height:5mm;border-radius:9mm 9mm 0 0;background:#7D97B3}
+.with .pp.y .fig,.with .pp.y .fig::after{background:#C9D7E6}
+.with .pp b{display:block;margin-top:7mm;font-size:8.2pt;font-weight:800}
+.with .pp small{display:block;font-size:6.6pt;opacity:.75;margin-top:.6mm;line-height:1.4}
+.origin{margin-top:3mm;font-size:6.8pt;color:var(--mute);font-weight:500;text-align:right}
+
+/* ---------- p11 hub ---------- */
+.hub{position:relative;height:136mm}
+.p11t{margin-top:7mm}
+.hub svg{position:absolute;inset:0}
+.hub .core{position:absolute;left:69mm;top:47mm;width:40mm;height:40mm;border-radius:50%;background:var(--teal);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 2.6mm var(--sky)}
+.hub .core b{font-size:12pt;font-weight:900;letter-spacing:-.01em}
+.hub .core small{font-size:6.8pt;font-weight:600;margin-top:1mm;opacity:.92;line-height:1.4}
+.node{position:absolute;width:56mm;background:var(--sky2);border-radius:var(--rd);padding:2.8mm 3mm}
+.node .h{display:flex;align-items:center;gap:2mm;margin-bottom:1.4mm}
+.node .h i{font-style:normal;width:7mm;height:7mm;border-radius:50%;background:var(--navy);color:#fff;font-size:6.4pt;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+.node .h b{font-size:9.6pt;font-weight:800;color:var(--navy)}
+.node .who{font-size:6.8pt;font-weight:700;color:var(--teal);line-height:1.45;margin-bottom:1.2mm}
+.node ul{list-style:none;font-size:6.9pt;line-height:1.55;color:#56636E;font-weight:500}
+.node ul li::before{content:"–";color:var(--teal);margin-right:1.2mm;font-weight:800}
+.gov-foot{position:absolute;left:16mm;right:16mm;bottom:22mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.gov-foot div{background:var(--sky);border-radius:var(--rd);padding:3mm 3.6mm;font-size:7.6pt;line-height:1.6;color:#3D4A56;font-weight:500}
+.gov-foot b{display:block;color:var(--navy);font-weight:800;font-size:8.2pt;margin-bottom:.6mm}
+
+/* ---------- p12 tree ---------- */
+.goal{background:var(--navy);color:#fff;border-radius:var(--rd);padding:4.4mm 5mm;text-align:center}
+.goal i{display:block;font-style:normal;font-size:6.8pt;letter-spacing:.2em;color:var(--teal-l);font-weight:700}
+.goal b{display:block;font-size:11.4pt;font-weight:800;margin-top:1.4mm;line-height:1.45}
+.stem{height:6mm;width:.5mm;background:var(--navy);margin:0 auto}
+.s3{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;position:relative}
+.s3::before{content:"";position:absolute;left:16.6%;right:16.6%;top:-3mm;height:.5mm;background:var(--navy)}
+.s3c{position:relative;background:var(--sky2);border-radius:var(--rd);padding:3.4mm 3.2mm}
+.s3c::before{content:"";position:absolute;left:50%;top:-3.4mm;width:.5mm;height:3mm;background:var(--navy)}
+.s3c .big{font-size:12.4pt;font-weight:900;color:var(--teal);letter-spacing:.01em}
+.s3c .ko{font-size:7.6pt;font-weight:800;color:var(--navy);margin-bottom:2.4mm}
+.s3c .it{border-top:.25mm solid var(--line);padding:1.6mm 0}
+.s3c .it b{display:block;font-size:7.6pt;font-weight:800;color:var(--navy)}
+.s3c .it small{display:block;font-size:6.7pt;color:#6A7784;line-height:1.45;font-weight:500}
+.down{display:flex;align-items:center;justify-content:center;gap:2.4mm;margin:4mm 0;font-size:7.6pt;font-weight:800;color:var(--teal)}
+.down::before,.down::after{content:"";flex:1;height:.3mm;background:var(--line)}
+.f4{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm}
+.p12t{margin-top:6mm}
+.dir4{margin-top:4.6mm;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm}
+.dir4 div{border-top:.6mm solid var(--navy);padding-top:1.8mm}
+.dir4 i{display:block;font-style:normal;font-size:6.2pt;font-weight:800;color:var(--teal);letter-spacing:.12em}
+.dir4 b{display:block;font-size:8.6pt;font-weight:800;color:var(--navy);margin-top:.6mm}
+.fc{border-radius:var(--rd);overflow:hidden;display:flex;flex-direction:column}
+.fc .top{color:#fff;padding:3.2mm 3mm}
+.fc .top i{display:block;font-style:normal;font-size:6.4pt;letter-spacing:.14em;font-weight:700;opacity:.9}
+.fc .top b{display:block;font-size:14pt;font-weight:900;margin-top:.4mm}
+.fc .top small{display:block;font-size:6.8pt;line-height:1.5;margin-top:1.4mm;font-weight:500;opacity:.95}
+.fc .lv{background:#F3F6F8;padding:2.4mm 2.4mm;display:flex;flex-direction:column;gap:1.6mm;flex:1}
+.leaf{background:#fff;border-radius:.3mm;padding:1.8mm 2.2mm}
+.leaf b{display:block;font-size:7.6pt;font-weight:800;color:var(--navy)}
+.leaf small{display:block;font-size:6.6pt;font-weight:700;margin-top:.3mm}
+
+/* ---------- p13 map ---------- */
+.map{position:relative;height:66mm;border-radius:var(--rd);overflow:hidden;background:var(--sky2)}
+.map svg{position:absolute;inset:0}
+.map .cap{position:absolute;right:3mm;bottom:2.4mm;font-size:6pt;color:#8C98A3;font-weight:600}
+.cards{margin-top:4mm;display:grid;grid-template-columns:1fr 1fr;gap:2.4mm}
+.sc{background:var(--sky2);border-radius:var(--rd);overflow:hidden;display:grid;grid-template-columns:20mm 1fr}
+.sc .th{position:relative}
+.sc .th .duo{position:absolute;inset:0}
+.sc .th .num{position:absolute;left:1.6mm;top:1.4mm;z-index:3;color:#fff;font-weight:900;font-size:11pt;font-style:oblique 8deg;text-shadow:0 0 1.6mm rgba(19,36,58,.6)}
+.sc .tx{padding:2.2mm 2.6mm}
+.sc .tx .row1{display:flex;align-items:center;gap:1.4mm;margin-bottom:.6mm}
+.sc .tx .fd{font-size:6pt;font-weight:800;color:#fff;border-radius:var(--rd);padding:.2mm 1.6mm}
+.sc .tx .sl{font-size:8.6pt;font-weight:900;color:var(--navy)}
+.sc .tx .pl{font-size:6.6pt;color:#6A7784;font-weight:600;margin-bottom:1.2mm}
+.sc .tx .ex{display:grid;grid-template-columns:7mm 1fr;font-size:6.6pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.sc .tx .ex i{font-style:normal;font-weight:800;color:var(--teal)}
+.sc .tx .cul{margin-top:1.2mm;font-size:6.8pt;font-weight:800;color:var(--navy)}
+.sc .tx .cul span{box-shadow:inset 0 -1.6mm 0 rgba(201,215,230,.6)}
+.duo{position:relative;overflow:hidden;background:#E9EEF2}
+.duo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88) contrast(1.03)}
+.legend{border-top:.5mm solid var(--navy);padding:2.2mm .4mm 0;font-size:6.8pt;color:#56636E;font-weight:600;line-height:1.7}
+.legend b{color:var(--navy);font-weight:800;font-size:7.6pt;display:block;margin-bottom:.8mm}
+.p13t{margin-top:5mm}
+.rel{margin-top:4mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.rel>div{border-radius:var(--rd);padding:3mm 3.4mm;display:grid;grid-template-columns:30mm 1fr;gap:3mm;align-items:center}
+.rel .cmpx{background:var(--sky)}
+.rel .accx{background:#F3F6F8}
+.rel svg{display:block}
+.rel b{display:block;font-size:9.4pt;font-weight:900;color:var(--navy)}
+.rel b span{color:var(--teal)}
+.rel small{display:block;font-size:6.9pt;line-height:1.5;color:#56636E;font-weight:600;margin-top:.8mm}
+.rel em{display:block;font-style:normal;font-size:7pt;font-weight:800;color:var(--navy);margin-top:1mm}
+.legend .sw{display:inline-block;width:2.6mm;height:2.6mm;border-radius:50%;margin:0 1.2mm 0 0;vertical-align:-.3mm}
+
+/* ---------- p14 snake ---------- */
+.snake{position:relative;height:124mm}
+.p14t{margin-top:6mm}
+.snake svg{position:absolute;inset:0}
+.ph{position:absolute;width:118mm}
+.ph .no{display:inline-block;font-size:7pt;font-weight:800;color:#fff;border-radius:var(--rd);padding:.4mm 2mm;margin-bottom:1.2mm}
+.ph h4{display:inline;font-size:10pt;font-weight:800;color:var(--navy)}
+.ph p{display:inline;font-size:7.3pt;color:#56636E;font-weight:500;line-height:1.5;margin-left:2mm}
+.grp{position:absolute;font-size:6.4pt;font-weight:800;letter-spacing:.06em;writing-mode:vertical-rl;color:var(--mute)}
+
+/* ---------- p15 lanes ---------- */
+.lanes{display:grid;grid-template-columns:14mm repeat(3,1fr);column-gap:2.4mm}
+.lanes .lh{font-size:7.4pt;font-weight:800;color:#fff;background:var(--navy);text-align:center;padding:1.8mm 0;border-radius:var(--rd) var(--rd) 0 0}
+.lanes .lh.blank{background:none}
+.grid-wrap{position:relative;height:154mm;margin-top:1.4mm}
+.p15t{margin-top:7mm}
+.mrow{position:absolute;left:0;right:0;border-top:.25mm solid var(--line)}
+.mrow b{position:absolute;left:0;top:1.4mm;font-size:13pt;font-weight:900;color:var(--teal);font-style:oblique 8deg}
+.mrow b small{font-size:6.6pt;font-weight:800;color:var(--navy)}
+.bar{position:absolute;border-radius:var(--rd);padding:1.6mm 2.2mm;font-size:7.2pt;font-weight:800;color:#fff;overflow:hidden}
+.bar small{display:block;font-size:6.2pt;font-weight:600;opacity:.9;margin-top:.3mm}
+/* 사전조사(기준값) = 빗살, 글자 자리는 위쪽 흰 띠 */
+.bar.pre{color:var(--navy);background:linear-gradient(#fff,#fff) top/100% 8.6mm no-repeat,repeating-linear-gradient(135deg,#A9BBCE 0 .3mm,#fff .3mm 1.3mm)}
+.evt{position:absolute;display:flex;gap:1.6mm;align-items:flex-start;font-size:7.2pt;font-weight:700;color:var(--navy);line-height:1.35}
+.evt::before{content:"";flex:none;width:2.4mm;height:2.4mm;border-radius:50%;background:var(--teal);margin-top:.4mm}
+.evt small{display:block;font-size:6.3pt;color:var(--mute);font-weight:600}
+.evt em{font-style:normal;color:var(--teal);font-weight:900;margin-right:1mm}
+
+/* ---------- p16 gantt ---------- */
+.gantt{position:relative}
+.gantt svg{display:block}
+.cond{margin-top:4.5mm;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm}
+.cond div{background:var(--sky);border-radius:var(--rd);padding:3.4mm 2.6mm;text-align:center}
+.cond b{display:block;font-size:9.6pt;font-weight:900;color:var(--navy)}
+.cond small{display:block;font-size:6.7pt;color:#56636E;font-weight:600;margin-top:1mm;line-height:1.45}
+.excp{margin-top:2.6mm;background:var(--red-l);border-radius:var(--rd);padding:3mm 3.6mm;display:grid;grid-template-columns:30mm 1fr;align-items:center;font-size:7.4pt;color:#3D4A56;font-weight:500;line-height:1.6}
+.excp b{color:var(--red);font-weight:800;font-size:8pt}
+.p16t{margin-top:4.5mm}
+.tally{margin-top:4mm;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.tally div{padding:3.4mm 2mm;text-align:center;border-right:.25mm solid var(--line)}
+.tally div:last-child{border-right:0}
+.tally b{display:block;font-size:20pt;font-weight:900;color:var(--teal);line-height:1}
+.tally b small{font-size:8pt;color:var(--navy);margin-left:.4mm}
+.tally span{display:block;font-size:7pt;font-weight:700;color:var(--navy);margin-top:1.4mm}
+</style>
+</head>
+<body>
+
+<!-- ================= p6 패러다임 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-01</span>디자인 사업의 패러다임 변화</div>
+    <h2 class="hl">인천은 ‘만들어 주는 디자인’에서<br><em>‘함께 실험하고 검증하는 디자인’</em>으로 사업 방식을 바꾸었다</h2>
+    <p class="lede">행정이 답을 정해 시설을 짓는 방식은 완공한 뒤에야 쓰임을 알 수 있었다. 이 사업은 시설을 먼저 완성하지 않고, 작은 개입을 시민이 직접 써 보게 한 뒤 무엇을 남길지 정하였다.</p>
+  </div>
+  <div class="body" style="top:74mm">
+    <div class="rise">
+      <div class="col c1"><span class="k">BEFORE</span><h4>공급·조성형<br>디자인</h4><p>행정이 문제를 정하고 전문가가 해결책을 설계</p></div>
+      <div class="col c2"><span class="k">TRANSITION</span><h4>참여·협업형<br>디자인</h4><p>이용자의 필요를 발견하고 다양한 주체가 함께 해결</p><div class="ex">서울시 「디자인거버넌스」 2015~</div></div>
+      <div class="col c3"><span class="k">NOW</span><h4>문제해결·행동유도형<br>디자인</h4><p>작고 빠른 개입을 통해 현장에서 가능성을 확인</p><div class="ex">강남구 강남역 「토끼굴」 개선<br>2023~2025</div></div>
+      <div class="col c4"><span class="k">NEXT</span><h4>검증하고 확산하는<br>디자인</h4>
+        <div class="chain"><span>문제</span><span>가설</span><span>작은 실험</span><span>관찰·측정</span><span>개선·확대</span></div>
+        <div class="ex">인천 창의디자인 사회실험 2026<div class="act">ACT Incheon</div></div></div>
+    </div>
+    <div class="ground"></div>
+
+    <div class="p6x">
+      <div class="txt1">
+        <p>공공디자인 사업은 오랫동안 <b>공급·조성형</b>으로 움직였다. 행정이 문제를 정하고 전문가가 해결책을 설계해 시설을 완성하는 방식이다. 이 방식에서는 시설이 실제로 어떻게 쓰이는지를 완공한 뒤에야 확인할 수 있었고, 맞지 않는 시설은 되돌리기 어려운 비용으로 남았다.</p>
+        <p>2015년 서울시 「디자인거버넌스」는 <b>참여·협업형</b>으로 방향을 넓혔다. 이용자의 필요를 먼저 발견하고 다양한 주체가 함께 해결하는 방식이다. 2023년부터 2025년까지 이어진 강남구 강남역 「토끼굴」 개선은 한 걸음 더 나아가, 작고 빠른 개입으로 현장에서 가능성을 확인하는 <b>문제해결·행동유도형</b> 디자인을 보여 주었다.</p>
+        <p>인천 창의디자인 사회실험은 그다음 단계인 <b>검증하고 확산하는 디자인</b>을 택하였다. 문제를 정의하고, 가설을 세우고, 작은 실험을 설치하고, 관찰·측정한 뒤 개선하거나 확대하는 순서다. 사업의 결과물은 어떤 디자인이 인천의 생활 조건에서 작동하는지를 가려내는 판단 근거였다.</p>
+        <p>이 순서는 일곱 거점에서 그대로 적용되었다. 거점마다 사전조사로 실험 전 기준값을 재고, 1차와 2차 실험을 같은 조건에서 운영한 뒤, 결과를 상설·수정·중지로 판단하였다. 잘 맞은 것은 고정시설과 표준모델(안)로 남기고, 맞지 않은 것은 다음 실험의 조건으로 기록하였다. 이 과정에서 시민은 문제를 찾고 관찰·평가에 참여하는 주체가 되었고, 행정은 확대 여부를 효과·관리·비용을 보고 판단하였다.</p>
+      </div>
+      <div class="p6side">
+        <div class="pq">좋은 디자인을 만드는 사업에서, <span>좋은 디자인을 찾아내는 시스템으로</span></div>
+        <div class="chg">
+          <div class="it"><b>누가 문제를 정했나</b><span class="f">행정과 전문가</span><span class="t">시민의 이용 경험에서 발견</span></div>
+          <div class="it"><b>언제 결정했나</b><span class="f">설계 단계에서 확정</span><span class="t">작은 실험 뒤 상설·수정·중지 판단</span></div>
+          <div class="it"><b>실패는 무엇이었나</b><span class="f">완공 뒤 남는 매몰 비용</span><span class="t">다음 실험의 조건이 되는 데이터</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">06</div>
+</section>
+
+<!-- ================= p7 당위성 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-01</span>사업 당위성</div>
+    <h2 class="hl">정책·계획·지역 조건을 살핀 결과,<br>세 방향 모두 <em>‘실제 이용으로 판단할 근거’</em>가 필요하였다</h2>
+  </div>
+  <div class="body" style="top:58mm">
+    <div class="conv">
+      <div class="cc"><span class="k">조사 ①</span><h4>정책 여건</h4>
+        <div class="ev"><b>창의디자인 사회실험 추진</b><p>안전·포용·매력·편의 4개 분야, 8개소 내외로 추진하며 시민·청년작가가 참여</p></div>
+        <div class="ev"><b>인천형 창의디자인 3S 전략</b><p>Sustainable·Social·Scalable, 곧 지속성·사회적 가치·확산 가능성을 현장에서 살핌</p></div>
+        <div class="ev"><b>작게 구현하고 실제 이용을 확인</b><p>가역적 설치와 관찰로 설계 조건을 검토하고, 확대 여부는 효과·관리·비용으로 판단</p></div>
+        <div class="so">시민 아이디어를 작게 실험하고 실제 이용으로 판단할 근거</div></div>
+      <div class="cc"><span class="k">조사 ②</span><h4>계획·선행연구</h4>
+        <div class="ev"><b>공공디자인 진흥계획 재정비</b><p>현장 이용 근거와 협업·운영 사례를 후속 검토에 제공</p></div>
+        <div class="ev"><b>사전·1차·2차 비교</b><p>관찰 단위·응답 분모·비교 조건을 먼저 정하고, 디자인 효과와 외부 조건을 구분</p></div>
+        <div class="ev"><b>지표별 설계·운영 원칙</b><p>인지·체류·행동과 체감 만족을 함께 기록하고 수정 이유도 남김</p></div>
+        <div class="so">계획·설계·관리 검토에 활용할 현장 실증 자료</div></div>
+      <div class="cc"><span class="k">조사 ③</span><h4>지역 조건</h4>
+        <div class="ev"><b>통학로·수변공간</b><p>약산초 위치 인지, 선인재단 청소년의 정서 경험, 굴포천 그늘·체류·시민참여</p></div>
+        <div class="ev"><b>항만·관광·유학생 생활권</b><p>터미널 안내와 대기, 차이나타운 그림 해석, 송도 유학생의 언어·교류</p></div>
+        <div class="ev"><b>상업가로의 흡연·휴게 공존</b><p>로데오거리의 구역 분리와 유도사인을 통한 공존과 이동</p></div>
+        <div class="so">거점의 생활 조건을 직접 관찰한 지역 맞춤 적용 근거</div></div>
+    </div>
+    <svg class="funnel" width="178mm" height="16mm" viewBox="0 0 178 16"><path d="M29 0 L84 13 M89 0 L89 13 M149 0 L94 13" stroke="#2E5A87" stroke-width=".55" fill="none"/><path d="M85 12 L89 16 L93 12" fill="#2E5A87"/></svg>
+    <div class="verdict"><b>인천의 생활 조건을 살피고, 시민과 실험하며,<br>후속 설계에 쓸 근거를 남기는 사업으로 설계하였다</b></div>
+    <div class="txt2 sm p7t">
+      <p>세 조사는 출발점이 달랐지만 같은 결론에 닿았다. 정책 여건은 4개 분야 8개소 내외의 사회실험과 3S 전략을 요구하면서, 확대 여부를 효과·관리·비용으로 판단하도록 하였다. 재정비 중인 공공디자인 진흥계획은 현장 이용 근거와 협업·운영 사례를 필요로 하였다. 세 조사 모두 시민이 실제로 쓰는 장면에서 판단할 근거를 요구한 셈이다.</p>
+      <p>지역 조건은 거점마다 달랐다. 통학로에서는 어린이의 위치 인지와 청소년의 정서 경험을, 수변에서는 그늘과 체류를, 항만·관광·유학생 생활권에서는 안내와 언어·교류를, 상업가로에서는 흡연과 휴게의 공존을 살폈고, 직접 관찰한 결과가 지역에 맞는 적용 근거가 되었다. 그래서 사업은 실험 결과를 <b>공공디자인 계획·기준·인증 검토에 되돌리고</b>, 효과가 확인된 <b>거점 1개소를 고정시설로 잇는</b> 구조로 짜였다.</p>
+    </div>
+
+    <div class="cases">
+      <div class="ct">앞선 사회실험은 작게 바꿔 보고, 숫자로 확인한 뒤, 상설로 남겼다</div>
+      <div class="cg">
+        <div class="case"><div class="pl">서울 강남구 · 강남역 「토끼굴」</div><h5>흡연 골목을 ‘만남의 숲길’로</h5><p>바닥에 초록 카펫을 깔고 식물을 놓아 흡연 장소로 인식되던 골목의 분위기를 바꿨다.</p>
+          <div class="nums"><div><b>34<small>%↓</small></b><span>1차 실험 후<br>흡연자</span></div><div><b>16<small>%↓</small></b><span>공간 폭 조정 후<br>흡연자</span></div><div class="fin"><b>상설</b><span>공간으로<br>재정비</span></div></div></div>
+        <div class="case"><div class="pl">일본 오사카 · 미도스지</div><h5>차로를 보행·자전거 공간으로</h5><p>자동차 측도를 임시로 막아 보행·자전거 공간으로 바꾸고 이용 행태와 교통 영향을 검증했다.</p>
+          <div class="nums"><div><b>6→4</b><span>차로<br>단계적 전환</span></div><div><b>60<small>%</small></b><span>보행자<br>“더 쉽고 안전”</span></div><div><b>80<small>%</small></b><span>자전거 이용자<br>“더 쉽고 안전”</span></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">07</div>
+</section>
+
+<!-- ================= p8 가치 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-02</span>사회실험으로 확인한 가치</div>
+    <h2 class="hl">시설의 수를 넘어, <em>시민의 감정과 행정이 달라지는 조건</em>을 확인하였다</h2>
+    <p class="lede">생활 속 문제에 디자인을 작게 적용하고 이용자의 경험으로 가능성을 확인한 결과, 사회실험은 행정에 네 가지 가치를 남겼다.</p>
+  </div>
+  <div class="body" style="top:64mm">
+    <div class="radial">
+      <svg viewBox="0 0 178 112" width="178mm" height="112mm"><circle cx="89" cy="56" r="32" fill="none" stroke="#D3DCE3" stroke-width=".25"/><path d="M0 56 H64 M114 56 H178 M89 0 V31 M89 81 V112" stroke="#D3DCE3" stroke-width=".25"/></svg>
+      <div class="ctr"><b>사회실험이 남긴<br>네 가지 가치</b></div>
+      <div class="val v1"><div class="n">01</div><h4>정책 실패 위험을 줄이고<br>예산을 아꼈다</h4><p>본 사업 전에 작은 단위로 먼저 시험해<br>예상하지 못한 부작용을 찾고 매몰 비용을 막았다.</p><div class="ev2"><i>이 사업</i>고쳐 맞출 요소 <span class="dummy">[00]</span>건 발견</div></div>
+      <div class="val v2"><div class="n">02</div><h4>객관적 데이터로<br>행정을 판단하였다</h4><p>현장 임시 적용으로 행동 변화와 피드백을<br>쌓아 사업의 타당성을 확인하였다.</p><div class="ev2"><i>이 사업</i>관찰·설문 자료 <span class="dummy">[0,000]</span>건</div></div>
+      <div class="val v3"><div class="ev2" style="margin:0 0 2.2mm"><i>이 사업</i>참여 시민 <span class="dummy">[0,000]</span>명</div><div class="n">03</div><h4>시민이 직접 참여해<br>정책 수용성을 높였다</h4><p>실제 이용자인 시민이 기획부터 평가까지<br>참여하여 현장 체감도를 높이고 저항을 줄였다.</p></div>
+      <div class="val v4"><div class="ev2" style="margin:0 0 2.2mm"><i>이 사업</i>표준모델(안) <span class="dummy">[0]</span>종 · 매뉴얼 4편(기획·설계·운영·관리)</div><div class="n">04</div><h4>검증된 해법을<br>표준화하여 확산하였다</h4><p>현장에서 입증된 과정을 매뉴얼로 만들어<br>비슷한 문제를 겪는 지역에 옮길 수 있게 하였다.</p></div>
+    </div>
+    <div class="txt2 p8t">
+      <p>모든 설치물은 작게 만들고 언제든 되돌릴 수 있게 하였다. 확대 여부는 효과·관리·비용을 보고 판단하였다. 고쳐 맞출 요소를 본 사업 전에 찾아내면, 완공 뒤에 남는 매몰 비용을 미리 막을 수 있다.</p>
+      <p>판단의 근거는 숫자로 남겼다. 거점마다 사전조사로 실험 전 기준값을 확보하고, 1·2차를 같은 요일·시간대·지점·방법으로 관찰해 디자인의 효과와 날씨·요일 같은 외부 조건을 구분하였다.</p>
+      <p>시민은 실험의 참여자였다. 인천시민디자인단과 주민참여위원회, 송도 러닝크루가 문제 발굴과 관찰·계수, 현장 피드백을 함께 맡았고, 약산초 어린이들은 워크숍에서 2차 실험의 안전 디자인을 직접 구상하였다.</p>
+      <p>검증된 과정은 표준모델(안)과 기획·설계·운영·관리 네 편의 매뉴얼로 정리하여, 비슷한 문제를 겪는 다른 지역에서도 쓸 수 있게 하였다.</p>
+    </div>
+    <div class="three">
+      <div class="s"><div class="q"><b>기획에서 물었다</b>무엇이 불편하고<br>어떤 변화가 필요한가</div><div class="a">도시의 경험을 읽고</div></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="q"><b>현장에서 확인하였다</b>행동 관찰·설문·인터뷰로<br>본 이용자의 이용 행태</div><div class="a">실험 근거를 쌓고</div></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="q"><b>설계에 남겼다</b>선택·수정의 근거와<br>운영·관리 조건</div><div class="a">인천형 모델로 연결하였다</div></div>
+    </div>
+  </div>
+  <div class="pno">08</div>
+</section>
+
+<!-- ================= p9 5단계 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-02</span>사회실험 방법 프로세스</div>
+    <h2 class="hl">공공디자인 사회실험의 5단계를<br><em>일곱 거점에서 그대로 밟았다</em></h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="ladder">
+      <div class="lh">사회실험 5단계</div><div></div><div class="lh r">이 사업에서 한 일</div>
+
+      <div class="st"><span class="k">STEP 1</span><h4>대상 설정</h4><small>실험 대상 공간과 문제 선정<br>공간적 대상 확정 · 물리적 환경 선정</small></div>
+      <div class="lk"><i></i></div>
+      <div class="dn"><p>현장조사와 시민 의견으로 <b>4개 분야 일곱 거점</b>을 확정하였다.</p><div class="tg"><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span></div></div>
+
+      <div class="st"><span class="k">STEP 2</span><h4>목표 수립</h4><small>해결과제·기대효과 설정<br>과제·목표 도출 · 유관주체 협력 · 의견 수렴</small></div>
+      <div class="lk"><i></i></div>
+      <div class="dn"><p>거점마다 바꾸고 싶은 <b>일상의 문화와 실험 질문</b>을 정하고 시민디자인단·관계부서와 조율하였다.</p><div class="tg"><span>Ⅲ 설계하다</span></div></div>
+
+      <div class="st"><span class="k">STEP 3</span><h4>계획 작성</h4><small>실행안·운영·평가지표 구체화<br>아이디어 도출 · 설치 디자인 · 시설물 제작</small></div>
+      <div class="lk"><i></i></div>
+      <div class="dn"><p><b>1·2차 실험안과 지표</b>, 설치 디자인을 만들고 사전조사로 실험 전 기준값을 확보하였다.</p><div class="tg"><span>Ⅲ 설계하다</span></div></div>
+
+      <div class="st"><span class="k">STEP 4</span><h4>적용 및 실증</h4><small>현장 적용 실험실 · 유연한 검토<br>실험 설치 · 효과 확인 · 개선 및 재실험</small></div>
+      <div class="lk"><i></i></div>
+      <div class="dn"><p>일곱 거점에서 <b>1·2차 실험 14회</b>를 운영하고, 약산초는 설치 위치를 바꿔 재실험하였다.</p><div class="tg"><span>Ⅳ 실험하다</span></div></div>
+
+      <div class="st st5"><span class="k">STEP 5</span><h4>평가 및 사업화 판단</h4><small>실시·검토·중지 결정<br>결과 평가·수치화 · 추진·수정·중지</small></div>
+      <div class="lk"><i></i></div>
+      <div class="dn hl5"><p>결과를 <b>상설·수정·중지</b>로 판단해 고정시설 1개소와 표준모델(안)로 연결하였다.</p><div class="tg"><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div></div>
+    </div>
+
+    <div class="ladder-note"><b>STEP 5의 판단 기준</b>
+      <div class="pill"><span class="keep">상설 · 잘 맞았다</span><span class="fix">수정 · 고쳐 맞춘다</span><span class="next">중지 · 다음 실험의 조건</span></div></div>
+    <div class="txt2 sm p9t">
+      <p>5단계는 인천연구원이 제시한 공공디자인 사회실험 추진체계다. 이 사업은 STEP 1–3을 기초조사·시민참여·실행계획 수립 기간에, STEP 4–5를 현장 사회실험과 성과 검증 기간에 밟았다.</p>
+      <p>STEP 4의 ‘개선 및 재실험’은 약산초에서 실제로 일어났다. 1차 뒤 설치 위치를 바꿔 10월 27일부터 29일까지 다시 실험하였다. STEP 5의 ‘추진·수정·중지’는 상설·수정·중지의 세 판정으로 옮겨, 일곱 거점의 결과를 같은 기준으로 가렸다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천연구원, 공공디자인 사회실험 적용 방안·추진체계 제시, 인천일보(2026.04)</div>
+  <div class="pno">09</div>
+</section>
+
+<!-- ================= p10 ACT ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-03</span>ACT Incheon</div>
+    <h2 class="hl">일곱 거점의 실험을 <em>‘ACT Incheon’</em>이라는<br>하나의 이름으로 묶었다</h2>
+    <p class="lede">ACT Incheon은 모든 실험을 감싸는 공동 언어다. 거점마다 질문과 장치는 달랐지만, 시민과 행정·기업이 함께 움직이는 한 사업으로 읽히도록 이름과 상징을 통일하였다.</p>
+  </div>
+  <div class="body" style="top:74mm">
+    <div class="act-row">
+      <div class="act-c"><div class="o a"><b>A</b><i>Active</i></div><h4>사람들을 움직이게 하는<br>활력</h4></div>
+      <div class="act-link"><span>로컬브랜드</span></div>
+      <div class="act-c"><div class="o c"><b>C</b><i>Connective</i></div><h4>주체들을 단단하게 묶는<br>연결</h4></div>
+      <div class="act-link"><span>기업 CSR</span></div>
+      <div class="act-c"><div class="o t"><b>T</b><i>Transformative</i></div><h4>도시의 선순환을 만드는<br>변화</h4></div>
+    </div>
+
+    <div class="txt2 p10t">
+      <p>사업은 일곱 거점의 실험을 <b>ACT Incheon</b>이라는 인천 도시실험 통합브랜드로 묶어 추진하였다. 거점마다 질문과 장치는 달랐지만, 모든 실험을 감싸는 하나의 공통 언어가 있어야 시민과 행정, 기업이 여러 개의 행사가 아닌 하나의 사업으로 알아볼 수 있었다.</p>
+      <p>세 글자는 사업이 지향한 세 가지 움직임이다. A(Active)는 사람들을 움직이게 하는 활력, C(Connective)는 주체들을 단단하게 묶는 연결, T(Transformative)는 도시의 선순환을 만드는 변화를 뜻한다. 세 글자 사이에는 로컬브랜드와 기업 CSR을 두어, 브랜드가 지역과 민간의 참여로 이어지게 하였다.</p>
+      <p>브랜드를 관통하는 핵심 철학은 <b>거버넌스</b>다. 행정이 제도적 플랫폼을 제공하고, 기업이 재원과 자원을 투입해 실행의 지속성을 이끌며, 시민의 주도적 참여가 도시를 움직이는 선순환 구조를 만든다. 이 구조를 갖춘 선도적 사회실험 모델을 만드는 것이 브랜드의 목표였다.</p>
+      <p>일곱 거점의 이름도 같은 문법으로 지었다. 살피는 인천, 공감하는 인천, 동행하는 인천, 친절한 인천, 만나는 인천, 어울리는 인천, 안내하는 인천. 시민이 그 장소에서 겪게 될 경험을 앞에 붙이고 끝을 모두 ‘인천’으로 맺어, 서로 다른 일곱 실험이 한 사업의 장면으로 읽히게 하였다.</p>
+      <p>브랜드 메시지는 ‘함께 만드는 도시의 변화, 선순환의 인천’으로 정하였다. 행정과 민간기업, 시민, 비영리재단이 각자의 자리에서 실험에 참여할 때 한 번의 변화가 다음 변화로 이어진다는 뜻을 담았다.</p>
+    </div>
+
+    <div class="with">
+      <div class="qt">“함께 만드는 도시의 변화, <span>선순환의 인천</span>”</div>
+      <div class="ppl">
+        <div class="pp"><div class="fig"></div><b>행정</b><small>제도적 플랫폼</small></div>
+        <div class="pp"><div class="fig"></div><b>민간기업</b><small>재원·자원 투입</small></div>
+        <div class="pp y"><div class="fig"></div><b>시민</b><small>주도적 참여</small></div>
+        <div class="pp y"><div class="fig"></div><b>비영리재단</b><small>현장 협력</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">10</div>
+</section>
+
+<!-- ================= p11 거버넌스 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-03</span>함께한 주체</div>
+    <h2 class="hl">행정·시민·작가·현장·기업이 <em>역할을 나누어</em><br>실험을 함께 운영하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="hub">
+      <svg viewBox="0 0 178 136" width="178mm" height="136mm">
+        <g stroke="#A9BBCE" stroke-width=".3" fill="none">
+          <path d="M89 47 V24"/><path d="M74 54 L56 40"/><path d="M104 54 L122 42"/>
+          <path d="M69 70 H56"/><path d="M109 70 H122"/><path d="M77 85 L62 104"/><path d="M101 85 L116 104"/>
+        </g>
+      </svg>
+      <div class="core"><b>ACT Incheon</b><small>인천 창의디자인<br>사회실험</small></div>
+
+      <div class="node" style="left:61mm;top:0"><div class="h"><i>행정</i><b>행정</b></div><div class="who">소관부서 · 군·구</div><ul><li>대상지 사용허가·점용·설치 협의</li><li>안전·민원·원상복구·이관</li></ul></div>
+      <div class="node" style="left:0;top:24mm"><div class="h"><i>자문</i><b>자문</b></div><div class="who">전문가 · 관계기관</div><ul><li>공공디자인 자문</li><li>인천항만공사 · 로데오거리 상인협회</li></ul></div>
+      <div class="node" style="left:122mm;top:24mm"><div class="h"><i>시민</i><b>시민</b></div><div class="who">인천시민디자인단 · 주민참여위원회 · 송도 러닝크루</div><ul><li>문제 발굴·생활체감 검증</li><li>관찰·계수 분담·현장 피드백</li></ul></div>
+      <div class="node" style="left:0;top:60mm"><div class="h"><i>협동</i><b>사회적협동조합</b></div><div class="who">이소</div><ul><li>향기 제품 제공(로데오·굴포천·연안여객터미널)</li></ul></div>
+      <div class="node" style="left:122mm;top:62mm"><div class="h"><i>예술</i><b>예술</b></div><div class="who">청년작가</div><ul><li>시민참여 아트 워크숍</li><li>작품 제공·공공미술</li></ul></div>
+      <div class="node" style="left:14mm;top:104mm"><div class="h"><i>기업</i><b>민간기업</b></div><div class="who">3M</div><ul><li>공간 구성 재료(바닥시트) 지원</li><li>업무협약 후 실험, ESG·CSV 연계</li></ul></div>
+      <div class="node" style="left:108mm;top:104mm"><div class="h"><i>현장</i><b>현장</b></div><div class="who">약산초 · 인천대 · 송도글로벌캠퍼스</div><ul><li>참여형 워크숍 참여 · 운영 거점 제공</li><li>학생 대상 설문 협조</li></ul></div>
+    </div>
+    <div class="txt2 p11t">
+      <p>사업은 다양한 이해관계자와의 협업을 필수 조건으로 삼았다. 인천광역시가 총괄기획을 맡고, 위즈플러스가 PM으로서 일곱 거점의 조정과 점검을 맡았다. 소관부서와 군·구는 대상지 사용허가와 점용·설치를 협의하고, 실험 중의 안전·민원과 실험 뒤의 원상복구·이관을 책임졌다.</p>
+      <p>시민의 역할은 사업의 전 범위에 걸쳤다. 인천시민디자인단과 주민참여위원회, 송도 러닝크루는 설문·인터뷰·워크숍·자문에 참여하였다. 청년작가는 시민참여 아트 워크숍을 진행하고 현장 연출을 함께 기획하였다. 약산초·인천대·송도글로벌캠퍼스는 참여형 워크숍과 운영 거점을 내주었고, 학교는 학생 설문에 협조하였다. 인천항만공사와 로데오거리 상인협회는 전문가와 함께 관계기관으로서 자문을 맡았다.</p>
+      <p>민간의 참여는 실물로 이어졌다. 3M은 업무협약을 맺고 약산초를 제외한 거점 가운데 가능한 곳에 바닥시트 등 공간 구성 재료를 부분 지원하였고, 사회적협동조합 이소는 로데오거리에 향기볼·패브릭 스프레이를, 굴포천에 패브릭 오일을, 연안여객터미널에 디퓨저를 제공하였다. 민간협력형 공공디자인의 실물 사례다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">11</div>
+</section>
+
+<!-- ================= p12 3S·4분야 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-04</span>3S 전략과 4개 분야</div>
+    <h2 class="hl">3S 전략 아래 <em>안전·포용·매력·편의</em> 4개 분야를 세우고,<br>분야마다 실험할 장소를 정하였다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="goal"><i>GOAL</i><b>실험적 디자인을 통한 행동 변화와 장소 경험의 전환으로<br>일상의 문화를 넓힌다</b></div>
+    <div class="stem"></div>
+    <div class="s3" style="margin-top:3mm">
+      <div class="s3c"><div class="big">SUSTAINABLE</div><div class="ko">지속가능성</div>
+        <div class="it"><b>이해관계자 연결</b><small>시민·행정·전문가의 협력 구조</small></div>
+        <div class="it"><b>공공·민간 협력</b><small>역할 분담으로 지속 가능한 추진체계</small></div>
+        <div class="it"><b>운영·관리의 지속</b><small>사업 이후에도 유지되는 운영모델</small></div></div>
+      <div class="s3c"><div class="big">SOCIAL</div><div class="ko">사회적 가치</div>
+        <div class="it"><b>사회문제 대응</b><small>지역사회가 마주한 생활 속 문제 해결</small></div>
+        <div class="it"><b>포용과 접근</b><small>누구나 함께 쓰는 포용적 공간 경험</small></div>
+        <div class="it"><b>시민 참여</b><small>시민이 공감하고 참여하는 체감형 실험</small></div></div>
+      <div class="s3c"><div class="big">SCALABLE</div><div class="ko">확산·성장</div>
+        <div class="it"><b>표준모델·매뉴얼</b><small>인천 전역 확산을 위한 운영·설계 매뉴얼</small></div>
+        <div class="it"><b>다른 생활권 적용</b><small>거점 특성을 반영한 적용 가능성 확보</small></div>
+        <div class="it"><b>사업 연계</b><small>유관 사업과 이어지는 확장과 성장</small></div></div>
+    </div>
+    <div class="down">4개 분야로 구체화하였다</div>
+    <div class="f4">
+      <div class="fc"><div class="top" style="background:var(--f-safe)"><b>안전</b><small>신체적·심리적 안전을 고려해 안심하고 이용하는 도시환경</small></div>
+        <div class="lv"><div class="leaf"><b>약산초등학교</b><small style="color:var(--f-safe)">살피는 인천</small></div><div class="leaf"><b>선인재단 등하굣길</b><small style="color:var(--f-safe)">공감하는 인천</small></div></div></div>
+      <div class="fc"><div class="top" style="background:var(--f-incl)"><b>포용</b><small>연령·국적·이용 특성과 관계없이 누구나 참여하고 소통하는 공간</small></div>
+        <div class="lv"><div class="leaf"><b>송도 캠퍼스타운역 일대</b><small style="color:var(--f-incl)">동행하는 인천</small></div><div class="leaf"><b>차이나타운 공중화장실</b><small style="color:var(--f-incl)">친절한 인천</small></div></div></div>
+      <div class="fc"><div class="top" style="background:var(--f-attr)"><b>매력</b><small>지역의 특성과 활동이 어우러지는 머물고 싶은 공간</small></div>
+        <div class="lv"><div class="leaf"><b>굴포천 제1교량(부흥교)<br>옆 산책로</b><small style="color:var(--f-attr)">만나는 인천</small></div></div></div>
+      <div class="fc"><div class="top" style="background:var(--f-conv)"><b>편의</b><small>이동·휴식·활동을 지원하는 편리하고 쾌적한 공간</small></div>
+        <div class="lv"><div class="leaf"><b>구월동 로데오거리·광장</b><small style="color:var(--f-conv)">어울리는 인천</small></div><div class="leaf"><b>연안여객터미널 1층 대합실</b><small style="color:var(--f-conv)">안내하는 인천</small></div></div></div>
+    </div>
+    <div class="txt2 p12t">
+      <p>3S 전략은 실험할 거리를 고르는 세 가지 물음이었다. 지속가능성은 시민·행정·전문가가 역할을 나누어 운영하고 사업 뒤에도 관리할 수 있는지를, 사회적 가치는 지역사회가 마주한 생활 문제에 답하고 누구나 함께 쓸 수 있는지를, 확산·성장은 표준모델과 매뉴얼로 다른 생활권에 옮길 수 있는지를 물었다. 4개 분야는 이 세 물음을 시민의 생활 경험으로 옮긴 분류로, 거점마다 바꾸고 싶은 일상의 문화를 하나씩 정하는 기준이 되었다.</p>
+      <p>거점은 시민 접근성과 가시성, 안전성, 활용성, 상징성, 사회실험의 파급력을 함께 따져 골랐다. 통학로와 하천, 항만, 상권처럼 시민이 실제로 쓰는 생활 공간을 대상으로 삼았고, 기존 공간을 실험하고, 인천의 조건에서 실험하고, 시민이 쓰는 상태로 실험하고, 민간과 함께 실험한다는 네 방향을 세웠다.</p>
+    </div>
+    <div class="dir4">
+      <div><b>기존을 실험한다</b></div>
+      <div><b>인천 조건에서 실험한다</b></div>
+      <div><b>시민이 쓰는 상태로 실험한다</b></div>
+      <div><b>민간과 함께 실험한다</b></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">12</div>
+</section>
+
+<!-- ================= p13 일곱 거점 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-04</span>일곱 거점</div>
+    <h2 class="hl">학교 앞 통학로에서 항구 대합실까지,<br><em>일곱 장소에서 일상의 문화</em>를 실험하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="map">
+      <svg viewBox="0 0 178 66" width="178mm" height="66mm">
+        <path d="M0 0 H46 C40 10 30 14 34 24 C38 32 30 40 40 46 C50 52 60 50 70 58 C76 62 80 66 80 66 H0 Z" fill="#E3E9F0"/>
+        <path d="M46 0 C40 10 30 14 34 24 C38 32 30 40 40 46 C50 52 60 50 70 58 C76 62 80 66 80 66" fill="none" stroke="#C3CED8" stroke-width=".3"/>
+        <text x="8" y="58" font-size="4" fill="#8FA3B8" font-family="P" font-weight="700" letter-spacing="1">서해</text>
+        <g font-family="P" font-size="2.9" fill="#A2ADB6" font-weight="600"><text x="44" y="10">제물포구</text><text x="84" y="34">미추홀구</text><text x="108" y="8">부평구</text><text x="112" y="40">남동구</text><text x="66" y="62">연수구</text></g>
+        <g font-family="P" font-weight="800">
+          <circle cx="40" cy="20" r="2.6" fill="#675F8C"/><text x="22" y="15" font-size="3.3" fill="#1A2F4B">07 연안여객터미널</text>
+          <circle cx="52" cy="26" r="2.6" fill="#3F7A6E"/><text x="47" y="33" font-size="3.3" fill="#1A2F4B">04 차이나타운</text>
+          <circle cx="66" cy="20" r="2.6" fill="#3A5F8E"/><text x="60" y="15" font-size="3.3" fill="#1A2F4B">02 선인재단</text>
+          <circle cx="78" cy="50" r="2.6" fill="#3F7A6E"/><text x="83" y="51" font-size="3.3" fill="#1A2F4B">03 송도 캠퍼스타운역</text>
+          <circle cx="118" cy="30" r="2.6" fill="#675F8C"/><text x="123" y="31" font-size="3.3" fill="#1A2F4B">06 로데오거리</text>
+          <circle cx="128" cy="45" r="2.6" fill="#3A5F8E"/><text x="133" y="46" font-size="3.3" fill="#1A2F4B">01 약산초등학교</text>
+          <circle cx="134" cy="13" r="2.6" fill="#A67C45"/><text x="139" y="14" font-size="3.3" fill="#1A2F4B">05 굴포천</text>
+        </g>
+      </svg>
+      <div class="cap">위치 개념도 · 축척 없음</div>
+    </div>
+    <div class="cards">
+      <div class="sc"><div class="th"><div class="duo"><img src="img/01_약산초.jpg"></div><span class="num">01</span></div><div class="tx"><div class="row1"><span class="fd" style="background:var(--f-safe)">안전</span><span class="sl">살피는 인천</span></div><div class="pl">약산초등학교 등굣길 · 남동구</div><div class="ex"><i>1차</i><span>「색연필 수비대」 어른이 생각한 안전 디자인</span><i>2차</i><span>「꿈꾸는 안전디자이너」 어린이가 구상한 디자인</span></div><div class="cul"><span>어린이 맞춤형 안전문화</span></div></div></div>
+      <div class="sc"><div class="th"><div class="duo"><img src="img/05_굴포천.jpg"></div><span class="num">05</span></div><div class="tx"><div class="row1"><span class="fd" style="background:var(--f-attr)">매력</span><span class="sl">만나는 인천</span></div><div class="pl">굴포천 제1교량(부흥교) 옆 산책로 · 부평구</div><div class="ex"><i>1차</i><span>「흐르는 인천」 그늘막·휴게공간 설치</span><i>2차</i><span>「함께 만드는 인천」 시민참여형 휴게공간</span></div><div class="cul"><span>함께 만들고 머무는 친수공간 문화</span></div></div></div>
+      <div class="sc"><div class="th"><div class="duo"><img src="img/02_선인재단.jpg"></div><span class="num">02</span></div><div class="tx"><div class="row1"><span class="fd" style="background:var(--f-safe)">안전</span><span class="sl">공감하는 인천</span></div><div class="pl">선인재단 등하굣길 · 미추홀구</div><div class="ex"><i>1차</i><span>「마음, 바라봄」 스티커 설문으로 정서·선호 조사</span><i>2차</i><span>「마음, 마주봄」 거울나무·긍정 문구</span></div><div class="cul"><span>마음을 돌아보는 등굣길 문화</span></div></div></div>
+      <div class="sc"><div class="th"><div class="duo"><img src="img/06_로데오.jpg"></div><span class="num">06</span></div><div class="tx"><div class="row1"><span class="fd" style="background:var(--f-conv)">편의</span><span class="sl">어울리는 인천</span></div><div class="pl">구월동 로데오거리·광장 · 남동구</div><div class="ex"><i>1차</i><span>「피어봄」 흡연·휴게 공간 분리</span><i>2차</i><span>「이어봄」 흡연존 유도 사이니지</span></div><div class="cul"><span>서로 배려하며 공존하는 거리 문화</span></div></div></div>
+      <div class="sc"><div class="th"><div class="duo"><img src="img/03_송도.jpg"></div><span class="num">03</span></div><div class="tx"><div class="row1"><span class="fd" style="background:var(--f-incl)">포용</span><span class="sl">동행하는 인천</span></div><div class="pl">송도 캠퍼스타운역 일대 · 연수구</div><div class="ex"><i>1차</i><span>「보고, 함께하다」 픽토그램 보도블록</span><i>2차</i><span>「읽고, 연결하다」 영문 병기 보도블록</span></div><div class="cul"><span>소속감을 높이는 러닝문화</span></div></div></div>
+      <div class="sc"><div class="th"><div class="duo"><img src="img/07_연안여객터미널.jpg"></div><span class="num">07</span></div><div class="tx"><div class="row1"><span class="fd" style="background:var(--f-conv)">편의</span><span class="sl">안내하는 인천</span></div><div class="pl">연안여객터미널 1층 대합실 · 제물포구</div><div class="ex"><i>1차</i><span>「발걸음은 가볍게」 바닥 통합 안내</span><i>2차</i><span>「두 손은 자유롭게」 짐 보관·정리 공간</span></div><div class="cul"><span>길찾기부터 짐 정리까지 편리한 대기 문화</span></div></div></div>
+      <div class="sc"><div class="th"><div class="duo"><img src="img/04_차이나타운.jpg"></div><span class="num">04</span></div><div class="tx"><div class="row1"><span class="fd" style="background:var(--f-incl)">포용</span><span class="sl">친절한 인천</span></div><div class="pl">차이나타운 공중화장실 · 제물포구</div><div class="ex"><i>1차</i><span>「그림으로 권유하는 에티켓」</span><i>2차</i><span>「그림으로 금지하는 에티켓」</span></div><div class="cul"><span>올바른 공공화장실 이용 문화</span></div></div></div>
+      <div class="legend"><b>읽는 법</b><span class="sw" style="background:var(--f-safe)"></span>안전 <span class="sw" style="background:var(--f-incl)"></span>포용 <span class="sw" style="background:var(--f-attr)"></span>매력 <span class="sw" style="background:var(--f-conv)"></span>편의<br>카드의 1차·2차는 같은 장소에서 이어 운영한 두 실험이다. 밑줄은 거점마다 바꾸려 한 일상의 문화다.</div>
+    </div>
+    <div class="txt2 sm p13t">
+      <p>일곱 거점은 학교 앞 통학로, 등하굣길 가로수길, 캠퍼스타운 보행로, 관광지 공중화장실, 하천 산책로, 상업가로, 항만 대합실로 장소의 성격이 모두 달랐다. 1·2차 실험의 관계도 장소에 맞추어 두 가지로 짰다.</p>
+      <p>비교형 거점은 같은 자리에 1차안과 2차안을 바꾸어 설치해 두 안을 견주었다. 누적형 거점은 1차 시설을 그대로 둔 채 2차에 요소를 더해, 변화가 쌓이는 과정을 확인하였다.</p>
+    </div>
+    <div class="rel">
+      <div class="cmpx"><svg viewBox="0 0 30 14" width="30mm" height="14mm"><rect x="1" y="3" width="10" height="8" rx=".5" fill="#2E5A87"/><text x="6" y="8.4" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle" font-family="P">1차</text><path d="M13 5.6 H17 M17 8.4 H13" stroke="#1A2F4B" stroke-width=".5"/><path d="M16 4.6 L17.6 5.6 L16 6.6Z M14 7.4 L12.4 8.4 L14 9.4Z" fill="#1A2F4B"/><rect x="19" y="3" width="10" height="8" rx=".5" fill="#1A2F4B"/><text x="24" y="8.4" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle" font-family="P">2차</text></svg>
+        <div><b>비교형 <span>3곳</span></b><small>같은 자리에 두 안을 바꾸어 설치</small><em>01 약산초 · 03 송도 · 04 차이나타운</em></div></div>
+      <div class="accx"><svg viewBox="0 0 30 14" width="30mm" height="14mm"><rect x="1" y="3" width="10" height="8" rx=".5" fill="#2E5A87"/><text x="6" y="8.4" font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle" font-family="P">1차</text><path d="M12.4 7 H16.4" stroke="#1A2F4B" stroke-width=".5"/><path d="M16 5.9 L17.8 7 L16 8.1Z" fill="#1A2F4B"/><rect x="19" y="3" width="10" height="8" rx=".5" fill="#2E5A87"/><rect x="23.6" y="3" width="5.4" height="8" rx=".5" fill="#1A2F4B"/><text x="21.3" y="8.4" font-size="3" font-weight="900" fill="#fff" text-anchor="middle" font-family="P">1</text><text x="26.3" y="8.4" font-size="3" font-weight="900" fill="#fff" text-anchor="middle" font-family="P">+2</text></svg>
+        <div><b>누적형 <span>4곳</span></b><small>1차 시설을 두고 2차에 요소를 더함</small><em>02 선인재단 · 05 굴포천 · 06 로데오 · 07 연안</em></div></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">13</div>
+</section>
+
+<!-- ================= p14 추진 단계 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-05</span>추진 경과</div>
+    <h2 class="hl">조사·협의·시민참여를 거쳐<br><em>일곱 단계</em>로 실험을 실행에 옮겼다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="snake">
+      <svg viewBox="0 0 178 124" width="178mm" height="124mm">
+        <path d="M10 12 H150 C164 12 164 29 150 29 H28 C14 29 14 46 28 46 H150 C164 46 164 63 150 63 H28 C14 63 14 80 28 80 H150 C164 80 164 97 150 97 H28 C14 97 14 114 28 114 H168" fill="none" stroke="#E3E9F0" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M10 12 H150 C164 12 164 29 150 29 H28 C14 29 14 46 28 46 H150 C164 46 164 63 150 63 H28 C21 63 17.5 67.25 17.5 71.5" fill="none" stroke="#7D97B3" stroke-width="1.1"/>
+        <path d="M17.5 71.5 C17.5 75.75 21 80 28 80 H150 C164 80 164 97 150 97 H28 C14 97 14 114 28 114 H168" fill="none" stroke="#1A2F4B" stroke-width="1.1"/>
+        <g font-family="P" font-weight="900" font-size="4" text-anchor="middle">
+          <circle cx="22" cy="12" r="4.6" fill="#7D97B3"/><text x="22" y="13.5" fill="#fff">01</text>
+          <circle cx="140" cy="29" r="4.6" fill="#7D97B3"/><text x="140" y="30.5" fill="#fff">02</text>
+          <circle cx="38" cy="46" r="4.6" fill="#7D97B3"/><text x="38" y="47.5" fill="#fff">03</text>
+          <circle cx="140" cy="63" r="4.6" fill="#7D97B3"/><text x="140" y="64.5" fill="#fff">04</text>
+          <circle cx="38" cy="80" r="4.6" fill="#2E5A87"/><text x="38" y="81.5" fill="#fff">05</text>
+          <circle cx="140" cy="97" r="4.6" fill="#1A2F4B"/><text x="140" y="98.5" fill="#fff">06</text>
+          <circle cx="38" cy="114" r="4.6" fill="#1A2F4B"/><text x="38" y="115.5" fill="#C9D7E6">07</text>
+        </g>
+      </svg>
+      <div class="ph" style="left:30mm;top:1mm"><h4>기초조사·현장조사</h4><p>사회문제·이용자·공간의 조건을 정리하였다.</p></div>
+      <div class="ph" style="left:20mm;top:18mm;text-align:right;width:112mm"><h4>포럼·시민참여</h4><p>시민디자인단과 이해관계자의 의견을 모았다.</p></div>
+      <div class="ph" style="left:46mm;top:35mm"><h4>주요 보고·기획 조정</h4><p>기획안을 네 차례 보완하였다.</p></div>
+      <div class="ph" style="left:20mm;top:52mm;text-align:right;width:112mm"><h4>관계부서 협의</h4><p>대상 범위와 설치·운영 조건을 검토하였다.</p></div>
+      <div class="ph" style="left:46mm;top:69mm"><h4>1차 사회실험</h4><p>참여 요소와 이용자 반응을 관찰하였다.</p></div>
+      <div class="ph" style="left:20mm;top:86mm;text-align:right;width:112mm"><h4>2차 사회실험</h4><p>비교·보완한 최종안의 경험을 확인하였다.</p></div>
+      <div class="ph" style="left:46mm;top:103mm"><h4>고정 구현·매뉴얼</h4><p>검증 근거를 설계·관리·확산으로 연결하였다.</p></div>
+      <div class="grp" style="right:-1mm;top:2mm;color:#7D97B3">기초조사·시민참여 및 실행계획 수립</div>
+      <div class="grp" style="right:-1mm;top:74mm;color:var(--navy)">현장 사회실험·검증 및 확산</div>
+    </div>
+    <div class="txt2 p14t">
+      <p>사업은 두 국면으로 진행되었다. 앞의 네 단계는 기초조사·시민참여와 실행계획 수립으로, 실험할 문제와 장소, 방법을 정하는 기간이었다. 뒤의 세 단계는 현장 사회실험과 성과 검증·확산으로, 실험을 운영하고 그 결과를 설계와 관리로 넘기는 기간이었다.</p>
+      <p>기초조사는 데스크리서치와 현장조사를 함께 썼다. 인천광역시 사회조사와 국가통계데이터포털, 읍·면·동 단위 행정 통계, 선행연구와 상위·유관 계획으로 사회문제의 규모와 대상을 정리하고, 자료마다 출처·기준연도·조사대상을 함께 기록하였다. 현장에서는 실제 이용 행태와 공간의 맥락을 관찰·기록하여 데스크리서치에서 세운 가설을 확인하고 구체화하였다.</p>
+      <p>시민의 의견은 창의디자인 포럼과 시민디자인단 워크숍에서 모았다. 기획안은 국장보고와 MP 자문을 거치며 1차부터 4차까지 보완되었고, 중간보고와 관계부서 협의, 시민디자인단 자문, 전문가 자문을 차례로 거치며 대상 범위와 설치·운영 조건이 정해졌다. 초기 8개 후보지 가운데 일곱 곳이 실험 거점으로 남았다.</p>
+      <p>사전기획은 문제·대상지 검토, 아이디어·실험 방향 탐색, 실행계획 구체화의 순서로 진행되었다. 생활권 문제와 이용자 경험을 정리한 뒤 거점별 디자인 대안과 시민참여·비교 방식을 탐색하고, 마지막으로 1·2차 비교 요소와 평가 항목, 설치·운영·기록 조건을 확정하였다. 단계마다 현장 여건과 관계기관 의견을 조율하고 설치 범위·참여 방식·평가 방법을 맞추었다. 이렇게 준비한 실험은 10월 20일 약산초에서 시작되었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">14</div>
+</section>
+
+<!-- ================= p15 월별 경과 ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-05</span>추진 경과</div>
+    <h2 class="hl">5월 착수부터 12월 완료까지,<br><em>여덟 달</em>의 주요 경과</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="lanes"><div class="lh blank"></div><div class="lh">보고·협의</div><div class="lh">시민참여</div><div class="lh">현장</div></div>
+    <div class="grid-wrap">
+      <div class="mrow" style="top:0mm"><b>5<small>월</small></b></div>
+      <div class="mrow" style="top:15mm"><b>6<small>월</small></b></div>
+      <div class="mrow" style="top:30mm"><b>7<small>월</small></b></div>
+      <div class="mrow" style="top:45mm"><b>8<small>월</small></b></div>
+      <div class="mrow" style="top:60mm"><b>9<small>월</small></b></div>
+      <div class="mrow" style="top:85mm"><b>10<small>월</small></b></div>
+      <div class="mrow" style="top:110mm"><b>11<small>월</small></b></div>
+      <div class="mrow" style="top:135mm"><b>12<small>월</small></b></div>
+      <div class="evt" style="left:17mm;top:5.0mm"><div><em>5.15</em>착수<small>사업 기간 시작</small></div></div>
+      <div class="evt" style="left:17mm;top:68.0mm"><div><em>9.11</em>중간보고</div></div>
+      <div class="evt" style="left:17mm;top:75.0mm"><div><em>9.18</em>관계부서 협의<small>설치·운영 조건 검토</small></div></div>
+      <div class="evt" style="left:17mm;top:86.0mm"><div><em>10.02</em>전문가 자문</div></div>
+      <div class="evt" style="left:17mm;top:115.0mm"><div><em class="dummy">11.[00]</em>공공디자인위원회 심의<small>사전검토 의견 9건 모두 반영</small></div></div>
+      <div class="evt" style="left:17mm;top:144.5mm"><div><em>12.30</em>사업 완료<small>최종 성과품 납품</small></div></div>
+      <div class="evt" style="left:74mm;top:26.0mm"><div><em>6.25</em>창의디자인 포럼</div></div>
+      <div class="evt" style="left:74mm;top:46.5mm"><div><em>8.05</em>시민디자인단 워크숍</div></div>
+      <div class="evt" style="left:74mm;top:83.0mm"><div><em>9.30</em>시민디자인단 자문</div></div>
+      <div class="evt" style="left:74mm;top:90.5mm"><div><em>10.08</em>약산초 어린이 워크숍<small>6학년 35명 참여</small></div></div>
+
+      <div class="bar" style="left:131mm;width:47mm;top:17.0mm;height:72.8mm;background:#E3E8EC;color:var(--navy)">현장조사<small>7개 거점 · 평일·주말·낮·밤 방문</small></div>
+      <div class="bar pre" style="left:144mm;width:34mm;top:60.0mm;height:50.0mm">사전조사<small>실험 전 기준값 확보</small></div>
+      <div class="bar" style="left:131mm;width:22mm;top:100.3mm;height:28.0mm;background:var(--teal)">1차<small>10.20~11.22</small></div>
+      <div class="bar" style="left:155mm;width:23mm;top:111.7mm;height:23.3mm;background:var(--navy)">2차<small>11.3~11월 말</small></div>
+      <div class="bar" style="left:131mm;width:47mm;top:135.6mm;height:16.8mm;background:#C9D7E6;color:var(--navy)">고정 구현·매뉴얼<small>성과품 정리·이관</small></div>
+    </div>
+    <div class="txt2 p15t">
+      <p>5월 15일 착수 뒤 여름까지는 조사와 시민참여가 중심이었다. 6월 25일 창의디자인 포럼으로 시민과 공무원에게 사회실험을 알렸고, 8월 5일 시민디자인단 워크숍에서 생활 속 문제와 아이디어를 모았다. 같은 기간 일곱 거점을 평일·주말, 낮·밤으로 나누어 방문하였다.</p>
+      <p>9월과 10월에는 보고·협의와 사전조사가 겹쳤다. 9월 11일 중간보고와 9월 18일 관계부서 협의, 9월 30일 시민디자인단 자문, 10월 2일 전문가 자문을 거치는 동안 거점별 사전조사로 실험 전 기준값을 잡았다. 10월 8일에는 약산초 6학년 어린이 35명이 워크숍에서 학교 주변의 문제와 안전 디자인을 제안하였다.</p>
+      <p>실험은 10월 20일 약산초 1차로 시작해 11월 말 송도 2차까지 이어졌다. 그 기간에 공공디자인위원회 심의를 거쳐 사전검토 의견 9건을 모두 반영하였다. 12월에는 고정 구현과 매뉴얼을 정리해 12월 30일 최종 성과품을 납품하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">15</div>
+</section>
+
+<!-- ================= p16 실험 캘린더 ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span class="on">Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅰ-05</span>실험 일정</div>
+    <h2 class="hl">일곱 거점 모두 사전조사·1차·2차를<br><em>같은 요일·같은 시간대</em>에 맞춰 진행하였다</h2>
+    <p class="lede">실험 전 기준값을 먼저 재고, 1차와 2차를 같은 조건에서 반복해 디자인의 효과와 날씨·요일 같은 외부 조건을 구분하였다.</p>
+  </div>
+  <div class="body" style="top:71mm">
+    <div class="gantt"><!--GANTT--><svg viewBox="0 0 178 114.5" width="178mm" height="114.5mm" font-family="P">
+<defs><pattern id="g-hatch-pre" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#7D97B3"/></pattern><pattern id="g-hatch-redo" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#2E5A87"/></pattern><pattern id="g-hatch-red" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#E5332A"/></pattern></defs>
+<rect x="44.15" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="45.69" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="54.92" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="56.46" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="65.69" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="67.23" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="76.46" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="78.00" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="87.23" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="88.77" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="98.00" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="99.54" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="108.77" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="110.31" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="119.54" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="121.08" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="130.31" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="131.85" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="141.08" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="142.62" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="151.85" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="153.38" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="162.62" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="164.15" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="173.38" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<rect x="174.92" y="16" width="1.54" height="98.5" fill="#F3F6F8"/>
+<line x1="38.00" x2="38.00" y1="10" y2="114.5" stroke="#1A2F4B" stroke-width=".3"/>
+<text x="39.20" y="14" font-size="3.6" font-weight="900" fill="#2E5A87">9월</text>
+<line x1="84.15" x2="84.15" y1="10" y2="114.5" stroke="#1A2F4B" stroke-width=".3"/>
+<text x="85.35" y="14" font-size="3.6" font-weight="900" fill="#2E5A87">10월</text>
+<line x1="131.85" x2="131.85" y1="10" y2="114.5" stroke="#1A2F4B" stroke-width=".3"/>
+<text x="133.05" y="14" font-size="3.6" font-weight="900" fill="#2E5A87">11월</text>
+<line x1="178" x2="178" y1="10" y2="114.5" stroke="#1A2F4B" stroke-width=".3"/>
+<rect x="38" y="1.6" width="4" height="2.4" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="43" y="3.7" font-size="2.6" font-weight="700" fill="#1A2F4B">사전조사</text>
+<rect x="57.8" y="1.6" width="4" height="2.4" rx=".3" fill="#2E5A87"/>
+<text x="62.8" y="3.7" font-size="2.6" font-weight="700" fill="#1A2F4B">1차</text>
+<rect x="72.2" y="1.6" width="4" height="2.4" rx=".3" fill="url(#g-hatch-redo)"/>
+<text x="77.2" y="3.7" font-size="2.6" font-weight="700" fill="#1A2F4B">재실험</text>
+<rect x="89.30000000000001" y="1.6" width="4" height="2.4" rx=".3" fill="#1A2F4B"/>
+<text x="94.30000000000001" y="3.7" font-size="2.6" font-weight="700" fill="#1A2F4B">2차</text>
+<text x="178" y="3.7" font-size="2.3" font-weight="600" fill="#8C98A3" text-anchor="end">회색 열 = 주말(토·일)</text>
+<line x1="0" x2="178" y1="18.00" y2="18.00" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="2.2" cy="23.15" r="1.5" fill="#3A5F8E"/>
+<text x="5" y="24.15" font-size="3.4" font-weight="800" fill="#1A2F4B">약산초등학교</text>
+<text x="5" y="28.15" font-size="2.3" font-weight="600" fill="#8C98A3">현장조사 7.29·8.11·8.27·9.15</text>
+<rect x="62.62" y="22.95" width="1.60" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="63.42" y="21.75" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">9.17</text>
+<rect x="113.38" y="22.95" width="4.62" height="3.6" rx=".3" fill="#2E5A87"/>
+<text x="115.69" y="21.75" font-size="2.4" font-weight="800" fill="#22476C" text-anchor="middle">10.20~22</text>
+<rect x="124.15" y="22.95" width="4.62" height="3.6" rx=".3" fill="url(#g-hatch-redo)"/>
+<text x="128.77" y="30.35" font-size="2.3" font-weight="700" fill="#22476C" text-anchor="end">10.27~29</text>
+<rect x="134.92" y="22.95" width="4.62" height="3.6" rx=".3" fill="#1A2F4B"/>
+<text x="134.92" y="30.35" font-size="2.4" font-weight="800" fill="#1A2F4B" text-anchor="start">11.3~5</text>
+<path d="M140.31 23.15 l1.4 1.6 -1.4 1.6 -1.4 -1.6z" fill="#7D97B3"/>
+<text x="142.31" y="22.15" font-size="2.2" font-weight="700" fill="#1A2F4B">11.6 학교 설문</text>
+<line x1="0" x2="178" y1="31.50" y2="31.50" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="2.2" cy="36.65" r="1.5" fill="#3A5F8E"/>
+<text x="5" y="37.65" font-size="3.4" font-weight="800" fill="#1A2F4B">선인재단</text>
+<text x="5" y="41.65" font-size="2.3" font-weight="600" fill="#8C98A3">현장조사 9.14·9.23</text>
+<rect x="105.69" y="36.45" width="1.60" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="106.49" y="35.25" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">10.15</text>
+<rect x="145.69" y="36.45" width="4.62" height="3.6" rx=".3" fill="#2E5A87"/>
+<text x="150.31" y="35.25" font-size="2.4" font-weight="800" fill="#22476C" text-anchor="end">11.10~12</text>
+<rect x="156.46" y="36.45" width="4.62" height="3.6" rx=".3" fill="#1A2F4B"/>
+<text x="158.77" y="43.85" font-size="2.4" font-weight="800" fill="#1A2F4B" text-anchor="middle">11.17~19</text>
+<line x1="0" x2="178" y1="45.00" y2="45.00" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="2.2" cy="50.15" r="1.5" fill="#3F7A6E"/>
+<text x="5" y="51.15" font-size="3.4" font-weight="800" fill="#1A2F4B">송도 캠퍼스타운역</text>
+<text x="5" y="55.15" font-size="2.3" font-weight="600" fill="#8C98A3">현장조사 9.23·10.7</text>
+<rect x="118.00" y="49.95" width="3.08" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="119.54" y="48.75" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">10.23~24</text>
+<rect x="161.08" y="49.95" width="3.08" height="3.6" rx=".3" fill="#2E5A87"/>
+<text x="164.15" y="48.75" font-size="2.4" font-weight="800" fill="#22476C" text-anchor="end">11.20~21</text>
+<rect x="171.85" y="49.95" width="3.08" height="3.6" rx=".3" fill="url(#g-hatch-red)"/>
+<text x="173.38" y="57.35" font-size="2.4" font-weight="800" fill="#E5332A" text-anchor="middle">11.[00]</text>
+<line x1="0" x2="178" y1="58.50" y2="58.50" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="2.2" cy="63.65" r="1.5" fill="#3F7A6E"/>
+<text x="5" y="64.65" font-size="3.4" font-weight="800" fill="#1A2F4B">차이나타운</text>
+<text x="5" y="68.65" font-size="2.3" font-weight="600" fill="#8C98A3">현장조사 7.29·8.24</text>
+<rect x="62.62" y="63.45" width="1.60" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="63.42" y="62.25" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">9.17</text>
+<rect x="138.00" y="63.45" width="1.60" height="3.6" rx=".3" fill="#2E5A87"/>
+<text x="139.54" y="62.25" font-size="2.4" font-weight="800" fill="#22476C" text-anchor="end">11.5</text>
+<rect x="139.54" y="63.45" width="1.60" height="3.6" rx=".3" fill="#1A2F4B"/>
+<text x="140.34" y="70.85" font-size="2.4" font-weight="800" fill="#1A2F4B" text-anchor="middle">11.6</text>
+<line x1="0" x2="178" y1="72.00" y2="72.00" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="2.2" cy="77.15" r="1.5" fill="#A67C45"/>
+<text x="5" y="78.15" font-size="3.4" font-weight="800" fill="#1A2F4B">굴포천</text>
+<text x="5" y="82.15" font-size="2.3" font-weight="600" fill="#8C98A3">현장조사 7.29·9.9·9.29</text>
+<rect x="62.62" y="76.95" width="1.60" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="63.42" y="75.75" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">9.17</text>
+<rect x="108.77" y="76.95" width="1.60" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="109.57" y="75.75" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">10.17</text>
+<rect x="162.62" y="76.95" width="3.08" height="3.6" rx=".3" fill="#2E5A87"/>
+<text x="165.69" y="75.75" font-size="2.4" font-weight="800" fill="#22476C" text-anchor="end">11.21~22</text>
+<rect x="165.69" y="76.95" width="1.60" height="3.6" rx=".3" fill="#1A2F4B"/>
+<text x="166.49" y="84.35" font-size="2.4" font-weight="800" fill="#1A2F4B" text-anchor="middle">11.23</text>
+<line x1="0" x2="178" y1="85.50" y2="85.50" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="2.2" cy="90.65" r="1.5" fill="#675F8C"/>
+<text x="5" y="91.65" font-size="3.4" font-weight="800" fill="#1A2F4B">로데오거리</text>
+<text x="5" y="95.65" font-size="2.3" font-weight="600" fill="#8C98A3">현장조사 7.29·8.27·9.29</text>
+<rect x="58.00" y="90.45" width="1.60" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="58.80" y="89.25" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">9.14</text>
+<rect x="153.38" y="90.45" width="4.62" height="3.6" rx=".3" fill="#2E5A87"/>
+<text x="158.00" y="89.25" font-size="2.4" font-weight="800" fill="#22476C" text-anchor="end">11.15~17</text>
+<rect x="158.00" y="90.45" width="6.15" height="3.6" rx=".3" fill="#1A2F4B"/>
+<text x="161.08" y="97.85" font-size="2.4" font-weight="800" fill="#1A2F4B" text-anchor="middle">11.18~21</text>
+<line x1="0" x2="178" y1="99.00" y2="99.00" stroke="#D3DCE3" stroke-width=".25"/>
+<circle cx="2.2" cy="104.15" r="1.5" fill="#675F8C"/>
+<text x="5" y="105.15" font-size="3.4" font-weight="800" fill="#1A2F4B">연안여객터미널</text>
+<text x="5" y="109.15" font-size="2.3" font-weight="600" fill="#8C98A3">현장조사 7.29·8.11·10.7</text>
+<rect x="58.00" y="103.95" width="1.60" height="3.6" rx=".3" fill="url(#g-hatch-pre)"/>
+<text x="58.80" y="102.75" font-size="2.4" font-weight="800" fill="#5C6F84" text-anchor="middle">9.14</text>
+<rect x="147.23" y="103.95" width="3.08" height="3.6" rx=".3" fill="#2E5A87"/>
+<text x="150.31" y="102.75" font-size="2.4" font-weight="800" fill="#22476C" text-anchor="end">11.11~12</text>
+<rect x="150.31" y="103.95" width="3.08" height="3.6" rx=".3" fill="#1A2F4B"/>
+<text x="151.85" y="111.35" font-size="2.4" font-weight="800" fill="#1A2F4B" text-anchor="middle">11.13~14</text>
+<line x1="0" x2="178" y1="112.50" y2="112.50" stroke="#1A2F4B" stroke-width=".35"/>
+</svg><!--/GANTT--></div>
+    <div class="cond">
+      <div><b>같은 요일</b><small>사전조사에서 정한 요일을<br>1·2차까지 유지</small></div>
+      <div><b>같은 시간대</b><small>등교·저녁·주말 낮 등<br>타깃이 나타나는 시간</small></div>
+      <div><b>같은 지점</b><small>같은 위치에서 계수하고<br>대조군을 동시에 관찰</small></div>
+      <div><b>같은 방법</b><small>같은 계수·설문 방법,<br>관찰자 3인 이내·비개입</small></div>
+    </div>
+    <div class="excp"><b>예외 · 협업 일정 우선</b><span>송도는 러닝크루 정기 러닝, 굴포천은 인천대 워크숍, 차이나타운은 관찰자 모집 일정에 맞추었다.</span></div>
+    <div class="tally">
+      <div><b>7<small>곳</small></b><span>사전조사</span></div>
+      <div><b>7<small>회</small></b><span>1차 실험</span></div>
+      <div><b>7<small>회</small></b><span>2차 실험</span></div>
+      <div><b>1<small>회</small></b><span>재실험(약산초)</span></div>
+    </div>
+    <div class="txt2 sm p16t">
+      <p>현장조사는 7월부터 10월까지 거점마다 평일·주말, 낮·밤을 모두 방문해 타깃이 나타나는 시간과 공간을 찾는 데 썼다. 사전조사는 그 시간대에서 최소 표본 수를 채워 실험 전 기준값을 잡았다.</p>
+      <p>시간대는 거점의 생활 리듬을 따랐다. 선인재단은 등교 시간인 07:30~08:50에 집중해 관찰하였고, 로데오거리는 표본 200을 채운 저녁 시간대에, 연안여객터미널은 운항 시간대를 고려해 전일 수집하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">16</div>
+</section>
+
+</body>
+</html>

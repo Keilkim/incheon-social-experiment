@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 창의디자인 사회실험 최종보고서 — Ⅳ장 거점편 04 차이나타운 공중화장실</title>
+<!--
+================================================================================
+ Ⅳ 실험하다 · 거점편 04 차이나타운 공중화장실 — p121–144 (24쪽, 기준 모듈 = part5_4장_도입_01약산초.html p49–72)
+================================================================================
+  · 고정 레이아웃 : st_module.css (.st-). 이 파일의 거점 변수 body.st-04 { --st 포용색 / --st-l / --st-d / --st-n:4 }
+  · 거점 고유 블록 : .c- 접두사(이 파일 <style> 안). 다른 거점 파일과 겹치지 않는다.
+  · 실험 성격     : 비교형(A⇄B) + 차수 안 비교. 차수 사이 = 어조(1차 권유형 11.5 목 / 2차 금지형 11.6 금),
+                    차수 안 = 길이(1컷 단일형 ⇄ 3컷 연속형), 주제 3(변기·휴지·소변기), 3개소(A·B·C) 동시 운영.
+ 상대 | 실제 | 소절          | 유형 | 주도 도식
+  1   | 121  | 거점 간지      |  —  | 부착 시뮬레이션 전면 사진 + 질문형 카피
+  2   | 122  | 왜 여기인가 ①  | 서술 | 리드+본문 4문단 + 사이드 사진 2 + 사람·공간·문제 카드 + 사전조사 띠
+  3   | 123  | 왜 여기인가 ②  | 혼합 | 근거 4 → 실험 질문 + 권유의 근거 ⇄ 금지의 근거 + 문제→목표 사다리
+  4   | 124  | 기획의 변천 ①  | 서술 | 단계 스트립(날짜 없는 문서 단계) + 본문 5문단 + 착수안/실행안 3카드
+  5   | 125  | 기획의 변천 ②  | 혼합 | 캐릭터 반영 전·후 + 3·2·2·12 숫자 띠 + 요구→반영→확인 흐름
+  6   | 126  | 실험 설계 ①    | 혼합 | 1·2차 거울 비교 + 유지 조건 5칸
+  7   | 127  | 실험 설계 ②    | 도식 | 지표 파이프 3 + 조사 흐름도 + 날짜 축 + 표본 띠
+  8   | 128  | 1차 ①          | 혼합 | 부착 시뮬레이션 + 콜아웃 4
+  9   | 129  | 1차 ②          | 혼합 | 주제 3 × (1컷 VS 3컷) 그림 행 + 다섯 색 먼셀
+ 10   | 130  | 2차 ①          | 서술 | 2차 그림 행 + 2단 본문 5문단
+ 11   | 131  | 2차 ②          | 혼합 | 주제별 1차→2차 1컷 대조 + 변경 태그 6
+ 12   | 132  | 현장 배치      | 도식 | 세로판 재작도 배치도(A–C) + 항공 인셋 + 칸 안 부착 위치
+ 13   | 133  | 설치·운영      | 혼합 | 이틀 운영 레인 + 기록 카드 3 + 운영 원칙 띠
+ 14   | 134  | 정량 ① 표본    | 혼합 | 모집→참여→유효 흐름 + 1인 스티커 구조 + 국적 막대 + 세 단위
+ 15   | 135  | 정량 ② 지표    | 도식 | 5점 평균 점그래프 2 + 형식 선택 100% 막대
+ 16   | 136  | 정량 ③ 비교    | 혼합 | 5점 분포(어조×길이) + 시설별 막대 + 외부 조건
+ 17   | 137  | 정량 ④ 소결    | 서술 | 숫자 띠 + 어조×길이 4칸 + 본문 + 소결 3
+ 18   | 138  | 정성 ① 자료    | 혼합 | 자료 갈래 3 + 말→기록 쉐브론 + 코딩 두 축
+ 19   | 139  | 정성 ② 주제1   | 혼합 | 의도한 뜻 → 읽은 뜻(인용 슬롯) 3행
+ 20   | 140  | 정성 ③ 주제2   | 도식 | 2×2 주제 카드 + 중심 원
+ 21   | 141  | 정성 ④ 소결    | 서술 | 4단계 × 4조건 판정 격자 + 본문
+ 22   | 142  | 통합 해석      | 혼합 | Q → 정량·정성 → 답 3행 + 노란 답 박스
+ 23   | 143  | 가봉 판정      | 도식 | 요소 카드 8 + 판정 칩(.judge.tbd)
+ 24   | 144  | 설계 반영      | 서술 | 본문 4문단 + 마진 노트 + 판단 매트릭스 + 다음 조건
+ 인용: 심의도서에 수록된 차이나타운 인터뷰 원문이 없어 모든 참여자 발언은 .quote-slot.
+================================================================================
+-->
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="st_module.css">
+<style>
+/* ---------- 거점 변수 (04 차이나타운 · 포용) ---------- */
+body.st-04{--st:#3F7A6E;--st-l:#E2F3EE;--st-d:#2F5E55;--st-n:4}
+body.st-04 .st-pc ul li{border-top-color:rgba(63,122,110,.22)}
+body.st-04 .st-qc .rd{border-top-color:rgba(63,122,110,.3)}
+
+.c-two{display:grid;grid-template-columns:1fr 8mm 1fr;align-items:stretch}
+.c-two>div{border-radius:var(--rd);padding:3mm 3.4mm}
+.c-two .a{background:#EEF1F4}.c-two .b{background:var(--st);color:#fff}
+.c-two i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.14em;font-weight:800;opacity:.75}
+.c-two b{display:block;font-size:10pt;font-weight:900;margin:.6mm 0 1.6mm;color:var(--navy)}
+.c-two .b b{color:#fff}
+.c-two ul{list-style:none;font-size:7.2pt;line-height:1.55;font-weight:500}
+.c-two ul li{display:grid;grid-template-columns:20mm 1fr;border-top:.25mm solid rgba(21,58,94,.15);padding:1mm 0}
+.c-two .b ul li{border-color:rgba(255,255,255,.3)}
+.c-two ul li span{font-weight:800;opacity:.7}
+.c-two .vs{display:flex;align-items:center;justify-content:center;font-size:12pt;font-weight:900;color:var(--st);padding:0}
+.c-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm}
+.c-strip .st-ph{height:30mm}
+.c-ba{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6mm}
+.c-ba .c{border-radius:var(--rd);overflow:hidden;background:var(--sky2);display:flex;flex-direction:column}
+.c-ba .c .k{background:var(--navy);color:#fff;font-size:7.6pt;font-weight:900;padding:1.6mm 2.6mm}
+.c-ba .c .r{display:grid;grid-template-columns:22mm 1fr;gap:2mm;align-items:center;padding:2mm 2.6mm}
+.c-ba .c .r .st-ph{height:17mm;border-radius:var(--rd)}
+.c-ba .c .r .ic{height:17mm;border-radius:var(--rd);background:#fff;display:flex;align-items:center;justify-content:center;font-size:6.4pt;font-weight:800;color:var(--mute);text-align:center;line-height:1.3;padding:0 1mm}
+.c-ba .c .r p{font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500}
+.c-ba .c .r p b{display:block;font-size:7.8pt;color:var(--navy);font-weight:900}
+.c-ba .c .r.b{background:var(--st-l)}
+.c-ba .c .r.b p b{color:var(--st-d)}
+.c-ba .c .dn{text-align:center;color:var(--st);font-weight:900;font-size:7pt;line-height:1;padding:.6mm 0}
+.c-unit{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.c-unit div{background:var(--st-l);border-radius:var(--rd);padding:2.6mm 3mm;font-size:7pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.c-unit div i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.14em;font-weight:800;color:var(--st-d)}
+.c-unit div b{display:block;font-size:9.4pt;font-weight:900;color:var(--navy);margin:.4mm 0 1mm}
+.c-unit div em{font-style:normal;font-weight:900;color:var(--navy)}
+.c-src{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.c-src .c{border-radius:var(--rd);overflow:hidden;background:var(--sky2)}
+.c-src .c .h{padding:2.2mm 2.8mm;color:#fff;font-size:8.6pt;font-weight:900}
+.c-src .c .h small{display:block;font-size:6.2pt;font-weight:600;opacity:.85;margin-top:.2mm}
+.c-src .c ul{list-style:none;padding:2mm 2.8mm 2.4mm;font-size:6.9pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.c-src .c ul li{padding:1.5mm 0;border-bottom:.25mm solid var(--line);display:flex;justify-content:space-between;gap:2mm}
+.c-src .c ul li:last-child{border-bottom:0}
+.c-src .c ul li b{color:var(--navy);font-weight:900;white-space:nowrap}
+.c-code{display:grid;grid-template-columns:24mm 1fr;row-gap:2mm;align-items:center}
+.c-code .h{font-size:7.6pt;font-weight:900;color:var(--navy)}
+.c-code .h small{display:block;font-size:6.2pt;font-weight:600;color:var(--mute)}
+.c-code .tags{display:flex;flex-wrap:wrap;gap:1.6mm}
+.c-code .tags span{font-size:7.2pt;font-weight:800;border-radius:var(--rd);padding:.8mm 2.6mm;background:var(--st-l);color:var(--st-d)}
+.c-code .tags span b{color:var(--red);font-weight:900;margin-left:1mm}
+.c-code .tags.e span{background:#E3E8EC;color:var(--navy)}
+.c-conv{display:grid;grid-template-columns:1fr 1fr 6mm 52mm;gap:2mm;align-items:stretch}
+.c-conv>div{border-radius:var(--rd);padding:2.4mm 2.8mm;font-size:7.1pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.c-conv .k{grid-column:1/-1;display:flex;align-items:center;gap:2mm;padding:0;font-size:8.6pt;font-weight:900;color:var(--navy)}
+.c-conv .k i{font-style:normal;background:var(--st);color:#fff;font-size:6.6pt;font-weight:800;border-radius:var(--rd);padding:.3mm 1.8mm}
+.c-conv .qn{background:#F3F6F8}.c-conv .ql{background:var(--st-l)}
+.c-conv .qn i,.c-conv .ql i{display:block;font-style:normal;font-size:6pt;font-weight:800;letter-spacing:.1em;color:var(--mute);margin-bottom:.4mm}
+.c-conv .ar{display:flex;align-items:center;justify-content:center;color:var(--st);font-weight:900;padding:0}
+.c-conv .an{background:var(--navy);font-weight:700;color:#fff;display:flex;align-items:center}
+.c-conv .an .dummy{color:#FF8A80!important}
+.c-th4{display:grid;grid-template-columns:1fr 1fr;gap:3mm;position:relative}
+.c-th4 .c{border-radius:var(--rd);background:#F3F6F8;padding:3.4mm 3.6mm;min-height:58mm}
+.c-th4 .c:nth-child(1),.c-th4 .c:nth-child(3){padding-right:16mm}
+.c-th4 .c:nth-child(2),.c-th4 .c:nth-child(4){padding-left:16mm;text-align:right}
+.c-th4 .c .h{display:flex;align-items:baseline;gap:2mm;margin-bottom:1.4mm}
+.c-th4 .c:nth-child(2) .h,.c-th4 .c:nth-child(4) .h{justify-content:flex-end}
+.c-th4 .c .h b{font-size:10.4pt;font-weight:900;color:var(--navy)}
+.c-th4 .c .h span{font-size:6.6pt;font-weight:800;color:#fff;background:var(--st);border-radius:var(--rd);padding:.2mm 1.6mm}
+.c-th4 .c .qq{font-size:9.6pt;font-weight:800;color:var(--st-d);margin-bottom:1.4mm;line-height:1.4}
+.c-th4 .c p{font-size:7.4pt;line-height:1.55;color:#3D4A56;font-weight:500;margin-bottom:1.6mm}
+.c-th4 .c .quote-slot{text-align:left}
+.c-th4 .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36mm;height:36mm;border-radius:50%;background:var(--r2);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 2.4mm #fff}
+.c-th4 .mid i{font-style:normal;font-size:6pt;letter-spacing:.16em;color:var(--teal-l);font-weight:800}
+.c-th4 .mid b{font-size:9.6pt;font-weight:900;line-height:1.35;margin-top:.8mm}
+.c-step{display:grid;grid-template-columns:18mm repeat(4,1fr);gap:1.6mm;align-items:stretch}
+.c-step>div{border-radius:var(--rd);padding:2.2mm 2.4mm;font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500;background:#F3F6F8}
+.c-step .hh{background:var(--st);color:#fff;font-weight:800;font-size:7.4pt;text-align:center}
+.c-step .hh small{display:block;font-size:6pt;opacity:.85;font-weight:700}
+.c-step .rl{background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;gap:.6mm;font-size:6.2pt;font-weight:800;color:var(--navy);text-align:center}
+.c-step .mk{display:block;font-size:9pt;font-weight:900;color:var(--red);line-height:1;margin-bottom:.8mm}
+.c-fun{display:grid;grid-template-columns:14mm 1fr 5mm 1fr 5mm 1fr;align-items:center;row-gap:2mm}
+.c-fun .lab{font-size:8pt;font-weight:900}
+.c-fun .st{border-radius:var(--rd);padding:2.4mm 3mm;background:#F1F3F5;text-align:center}
+.c-fun .st i{display:block;font-style:normal;font-size:6.4pt;font-weight:800;color:var(--mute)}
+.c-fun .st b{display:block;font-size:14pt;font-weight:900;color:var(--red);line-height:1.1;margin-top:.4mm}
+.c-fun .ar{text-align:center;color:var(--st);font-weight:900}
+.c-inset{position:absolute;background:#fff;border-radius:var(--rd);padding:1.4mm;box-shadow:0 .4mm 1.6mm rgba(0,0,0,.15)}
+.c-inset img{width:100%;display:block;border-radius:var(--rd)}
+.c-inset span{display:block;font-size:5.8pt;color:var(--mute);font-weight:600;margin-top:.8mm}
+.c-kit{display:grid;grid-template-columns:repeat(6,1fr);gap:1.6mm}
+.c-kit div{border-radius:var(--rd);padding:1.8mm 1.6mm 1.6mm;text-align:center;background:var(--sky2)}
+.c-kit div b{display:block;font-size:12pt;font-weight:900;color:var(--st-d);line-height:1}
+.c-kit div b small{font-size:6pt;color:var(--navy);margin-left:.3mm}
+.c-kit div span{display:block;font-size:6.6pt;font-weight:800;color:var(--navy);margin-top:.8mm}
+.c-kit div em{display:block;font-style:normal;font-size:5.8pt;font-weight:600;color:var(--mute);margin-top:.3mm;line-height:1.35}
+.c-kit div.rt{background:var(--st-l)}
+
+/* ---------- 차이나타운 쪽 고유 ---------- */
+.c-bai{display:grid;grid-template-columns:1fr 8mm 1fr;align-items:center}
+.c-bai .ar{text-align:center;color:var(--st);font-weight:900;font-size:12pt}
+.c-bai .st-ph img{object-fit:contain}
+.c-prh{display:grid;grid-template-columns:44mm 30mm 8mm 1fr;gap:2mm;font-size:6.6pt;font-weight:800;letter-spacing:.08em;color:var(--mute);padding-bottom:1mm;border-bottom:.25mm solid var(--line);margin-bottom:2mm}
+.c-pr{display:grid;grid-template-columns:44mm 30mm 8mm 1fr;gap:2mm;align-items:center;margin-bottom:2mm}
+.c-pr .lab{background:var(--st-l);border-radius:var(--rd);padding:2.4mm 3mm;height:100%;display:flex;flex-direction:column;justify-content:center}
+.c-pr .lab b{font-size:12pt;font-weight:900;color:var(--st);line-height:1;font-style:oblique 8deg}
+.c-pr .lab span{font-size:8.2pt;font-weight:900;color:var(--navy);margin-top:.8mm}
+.c-pr .lab small{font-size:6.6pt;font-weight:600;color:#56636E;margin-top:.6mm;line-height:1.4}
+.c-pr .pic{display:flex;align-items:center;justify-content:flex-start}
+.c-pr .pic img{height:100%;width:auto;max-width:100%;object-fit:contain;display:block}
+.c-pr .vs{text-align:center;font-size:7pt;font-weight:900;color:var(--mute)}
+.c-pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.c-pair{border-radius:var(--rd);padding:2.4mm;background:var(--sky2)}
+.c-pair .t{font-size:8pt;font-weight:900;color:var(--navy);margin-bottom:1.8mm;display:flex;gap:1.6mm;align-items:baseline}
+.c-pair .t b{color:var(--st);font-style:oblique 8deg;font-size:10pt}
+.c-pair .g{display:grid;grid-template-columns:1fr 5mm 1fr;align-items:center}
+.c-pair .g .st-ph{height:38mm;background:#fff}
+.c-pair .g .st-ph img{object-fit:contain}
+.c-pair .g .ar{text-align:center;color:var(--st);font-weight:900;font-size:8pt}
+.c-plc{display:grid;grid-template-columns:52mm 40mm 1fr;gap:3mm;align-items:stretch}
+.c-plc .st-ph{height:40mm}
+.c-plc .tx{display:flex;flex-direction:column;gap:1.6mm}
+.c-plc .tx p{background:#F3F6F8;border-radius:var(--rd);padding:1.8mm 2.4mm;font-size:6.8pt;line-height:1.45;color:#3D4A56;font-weight:500;flex:1}
+.c-plc .tx p b{display:block;font-size:7.6pt;font-weight:900;color:var(--st-d)}
+.c-mx{display:grid;grid-template-columns:26mm 1fr 1fr;gap:2mm}
+.c-mx .h{background:#F3F6F8;text-align:center;font-size:7.6pt;font-weight:900;color:var(--navy);padding:2mm;border-radius:var(--rd)}
+.c-mx .r{color:#fff;font-size:9pt;font-weight:900;border-radius:var(--rd);display:flex;flex-direction:column;justify-content:center;padding:0 3mm}
+.c-mx .r small{font-size:6.4pt;font-weight:700;opacity:.8}
+.c-mx .v{background:var(--sky2);border-radius:var(--rd);padding:2.6mm 3mm;display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.c-mx .v span{font-size:6.6pt;font-weight:700;color:var(--mute)}
+.c-mx .v span b{display:block;font-size:13pt;font-weight:900;color:var(--red);margin-top:.4mm}
+.c-chev{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.c-chev div{position:relative;background:var(--st-l);padding:2.6mm 5mm 2.6mm 6mm;font-size:6.8pt;line-height:1.45;color:#3D4A56;font-weight:500;clip-path:polygon(0 0,calc(100% - 3mm) 0,100% 50%,calc(100% - 3mm) 100%,0 100%,3mm 50%)}
+.c-chev div:first-child{clip-path:polygon(0 0,calc(100% - 3mm) 0,100% 50%,calc(100% - 3mm) 100%,0 100%);padding-left:3.4mm}
+.c-chev div:nth-child(even){background:#D1ECE3}
+.c-chev i{font-style:normal;font-size:9pt;font-weight:900;color:var(--st);margin-right:1mm}
+.c-chev b{font-size:7.8pt;font-weight:900;color:var(--navy);display:block;margin-bottom:.4mm}
+.c-chev i{display:block}
+.c-irh{display:grid;grid-template-columns:44mm 38mm 5mm 1fr 1fr;gap:2mm;font-size:6.6pt;font-weight:800;letter-spacing:.06em;color:var(--mute);padding-bottom:1mm;border-bottom:.25mm solid var(--line);margin-bottom:2mm}
+.c-ir{display:grid;grid-template-columns:44mm 38mm 5mm 1fr 1fr;gap:2mm;align-items:stretch;margin-bottom:2.4mm}
+.c-ir .st-ph{height:22mm}
+.c-ir .st-ph img{object-fit:contain}
+.c-ir .it{background:var(--st-l);border-radius:var(--rd);padding:2mm 2.6mm;font-size:6.8pt;line-height:1.4;color:#3D4A56;font-weight:500}
+.c-ir .it i{display:block;font-style:normal;font-size:5.8pt;font-weight:800;letter-spacing:.1em;color:var(--st-d)}
+.c-ir .it b{display:block;font-size:8.4pt;font-weight:900;color:var(--navy);margin:.3mm 0}
+.c-ir .ar{display:flex;align-items:center;justify-content:center;color:var(--st);font-weight:900;font-size:8pt}
+.c-ir .quote-slot{display:flex;align-items:center;font-size:6.7pt}
+.c-step .rl .rtag{margin-bottom:.4mm}
+.c-qs{display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;gap:2.4mm}
+.c-qs>div{border-radius:var(--rd);background:#F3F6F8;padding:2.6mm 3mm}
+.c-qs i{display:block;font-style:normal;font-size:10pt;font-weight:900;color:var(--st);font-style:oblique 8deg}
+.c-qs b{display:block;font-size:8pt;font-weight:900;color:var(--navy);margin:.6mm 0 .8mm;line-height:1.35}
+.c-qs span{font-size:6.6pt;font-weight:600;color:var(--mute)}
+.c-qs .rule{background:var(--sky);display:flex;flex-direction:column;gap:1.4mm}
+.c-qs .rule p{font-size:6.8pt;line-height:1.4;color:#3D4A56;font-weight:500}
+.c-qs .rule p b{display:inline;margin:0 1.4mm 0 0;font-size:7.4pt;color:var(--st-d)}
+/* p141 판정 격자 · p144 다음 조건 압축 */
+.c-step>div{padding:1.5mm 2.4mm}
+.c-step .mk{display:inline;font-size:8pt;margin:0 1.2mm 0 0}
+.c-step .hh{padding:1.8mm 2.4mm}
+.st-next.n4{grid-template-columns:repeat(4,1fr);gap:2mm}
+.st-next.n4 div{padding:2.2mm 2.4mm;font-size:6.8pt;line-height:1.5}
+.st-next.n4 div b{font-size:7.6pt}
+.st-dm.cp>div{padding:1.6mm 2.4mm}
+/* AI 티 정리: 양끝 맞춤 해제, 변경 카드 6개를 평평한 목록으로 */
+.st-tx{text-align:left}
+.st-chg.flat{grid-template-columns:1fr 1fr;column-gap:7mm;row-gap:0;border-top:.5mm solid var(--navy)}
+.st-chg.flat .c{border:0;border-bottom:.25mm solid var(--line);border-radius:0;background:none;display:grid;grid-template-columns:19mm 1fr;padding:2mm 0;align-content:start}
+.st-chg.flat .c .k{grid-row:1/4;background:none;color:var(--st-d);padding:0;font-size:7.8pt}
+.st-chg.flat .c .a{padding:0}
+.st-chg.flat .c .b{padding:.3mm 0 0}
+.st-chg.flat .c .w{background:none;padding:.6mm 0 0;color:var(--mute);margin-top:0}
+.c-src-line{margin-top:4mm;border-top:.25mm solid var(--line);border-bottom:.25mm solid var(--line);padding:2mm 0;font-size:7.2pt;line-height:1.6;color:#3D4A56;font-weight:500}
+.c-src-line b{color:var(--navy);font-weight:800;margin-right:2mm}
+</style>
+</head>
+<body class="st st-04">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="ct-hn" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#1A2F4B"/></pattern><pattern id="ct-hb" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#2E5A87"/></pattern><pattern id="ct-hg" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#9AA6B1"/></pattern><pattern id="ct-hr" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#E5332A"/></pattern><pattern id="ct-hp" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#A9BBCE"/></pattern><pattern id="ct-hl" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#7D97B3"/></pattern><pattern id="ct-hz" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width=".3" height="1.3" fill="#3F7A6E" fill-opacity=".45"/></pattern></defs></svg>
+
+<!-- ================= p121 거점 간지 · 04 차이나타운 ================= -->
+<section class="page odd st-cover">
+  <div class="st-cv-photo"><img src="img/04_차이나타운_부착시뮬.jpg" alt="" style="object-position:50% 40%"></div>
+  <div class="st-cv-tab"><span class="f">04 · 포용</span><span>Ⅳ 실험하다</span></div>
+  <div class="st-cv-cap">1차 실험 「그림으로 권유하는 에티켓」 휴지 주제 1컷·3컷 부착 시뮬레이션 · 차이나타운 공중화장실</div>
+  <div class="st-cv-band">
+    <div class="st-cv-no">04</div>
+    <div class="st-cv-kick">포용 · 친절한 인천</div>
+    <div class="st-cv-ttl">차이나타운 공중화장실</div>
+    <div class="st-cv-site">인천 제물포구 · 차이나타운 일대 공중화장실 3개소</div>
+    <div class="st-cv-q">말이 통하지 않는 화장실에서, 그림은<br>‘이렇게 해 주세요’와 ‘이러지 마세요’ 중 어느 쪽으로 더 잘 읽힐까</div>
+    <div class="st-cv-runs">
+      <div><i>1차 · 권유형 그림</i><b>「그림으로 권유하는 에티켓」</b><span>11.5(목) 1일 운영 · 조사 전 설치, 당일 설문, 종료 후 철거</span></div>
+      <div><i>2차 · 금지형 그림</i><b>「그림으로 금지하는 에티켓」</b><span>11.6(금) 1일 운영 · 같은 자리에 교체, 당일 설문</span></div>
+    </div>
+  </div>
+  <div class="pno">121</div>
+</section>
+
+<!-- ================= p122 왜 여기인가 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">차이나타운 화장실은 외국인 방문객이 가장 많이 드는 곳이었지만,<br>안내는 <em>한글 문장</em>에 머물러 있었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split">
+      <div>
+        <p class="st-lead">차이나타운은 인천을 찾는 외국인 관광객이 가장 많이 들르는 곳이다. 실험은 이곳 공중화장실에서 <em>말을 몰라도 그림만 보고 화장실 예절을 알아들을 수 있는지</em>를 물었다.</p>
+        <div class="st-tx" style="margin-top:3.6mm">
+          <p>차이나타운은 인천역 앞 진입관문에서 한중문화관교차로까지 이어지는 제물포구의 관광 구역이다. 짜장면박물관, 개항동행정복지센터, 한중문화관이 이 구역 안에 있고, 실험은 이 세 곳 가까이의 공중화장실에서 진행하였다. 인천시·인천관광공사(2025) 조사에서 인천을 찾은 외국인 관광객의 차이나타운 방문율은 59.7%로, 조사한 관광지 가운데 가장 높았다.</p>
+          <p>7월 29일과 8월 24일 현장조사에서 낮과 밤, 평일과 주말의 화장실을 기록하였다. 칸 문에는 ‘투입 금지’와 변기 막힘을 알리는 한글 문장 안내가 붙어 있었고, 세면대 옆 선반에는 마시다 둔 컵과 쓰고 남긴 휴지가 놓여 있었다. 외국인 방문객이 많이 드는 데 비해 다국어 안내 사이니지는 부족하였다. 9월 17일(목)에는 실험과 같은 당일 수집 방식으로 사전조사를 하여 실험 전 상태를 남겼다.</p>
+          <p>문제는 이용자의 매너보다 안내의 언어에 있었다. 2023년 인천을 찾은 중국인 관광객은 약 13만 5천 명으로 비교한 20개 국적 가운데 가장 많았지만, 인천 외국인 관광객의 언어소통 만족 비율은 57.1%로 조사한 12개 항목 중 가장 낮았다. 한글 문장은 이들에게 닿지 않았고, 그림으로 바꾸어도 뜻이 그대로 전해진다는 보장은 없었다. 안전표식 연구에서는 나이와 관계없이 그림 표식의 이해도가 권고 수준에 미치지 못하였다.</p>
+          <p>시민디자인단 아이디어에서 출발한 이 실험은 문제를 ‘외국인·관광객 등 언어·문화 차이를 극복하는 안내체계’로 정의하였다. 해법은 같은 화장실 예절을 두 가지 어조의 그림으로 보여 주는 것이었다. 1차는 바람직한 행동을 보여 주는 권유형, 2차는 주의할 행동을 보여 주는 금지형이다. 차수마다 한 장면으로 끝나는 1컷과 행동의 흐름을 잇는 3컷을 나란히 붙여, 어조와 길이가 이해와 경각심을 어떻게 바꾸는지 함께 보았다. 세 화장실은 모두 관광 동선 위에 있어, 같은 그림을 붙이면 시설에 따른 차이도 함께 볼 수 있었다.</p>
+        </div>
+      </div>
+      <div>
+        <div class="st-ph" style="height:38mm"><img src="img/04_차이나타운_사전_칸문.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>칸 문과 벽면에는 글자 위주의 표기가 많았다.</b><br>화장실 칸 문과 기존 표기 기록</div>
+        <div class="st-ph" style="height:38mm;margin-top:3mm"><img src="img/04_차이나타운_2장_세면대.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>세면대 주변에도 외국어 안내는 없었다.</b><br>세면대·편의시설 현황 기록</div>
+        <div class="st-mn" style="margin-top:4mm"><b>현장을 본 날</b>현장조사 7.29 · 8.24<br>(낮·밤·평일·주말)<br>사전조사 9.17(목) 당일 수집</div>
+      </div>
+    </div>
+    <div class="st-prof" style="margin-top:4mm">
+      <div class="st-pc"><div class="t"><i>PEOPLE</i><b>사람</b></div><div class="big">59.7<small>%</small></div><div class="sub">인천 외국인 관광객의 차이나타운 방문율</div>
+        <ul><li><b>약 13만 5천 명</b> 2023년 인천 방문 중국인 관광객</li><li>실험 참여 · 차수별 성인 외국인 50명 모집</li></ul></div>
+      <div class="st-pc"><div class="t"><i>PLACE</i><b>공간</b></div><div class="big">3<small>개소</small></div><div class="sub">짜장면박물관 · 개항동행정복지센터 · 한중문화관 인근</div>
+        <ul><li><b>칸 안</b> 변기 칸 문·측벽, 휴지통 옆, 소변기 옆</li><li><b>칸 밖</b> 화장실 밖 스티커 설문 공간</li></ul></div>
+      <div class="st-pc"><div class="t"><i>PROBLEM</i><b>문제</b></div><div class="big">57.1<small>%</small></div><div class="sub">언어소통 만족 비율 · 12개 항목 중 최하위</div>
+        <ul><li><b>언어</b> 기존 안내가 한글 문장 위주</li><li><b>해석</b> 그림 표식도 뜻이 혼동될 수 있음</li></ul></div>
+    </div>
+    <div class="st-lb" style="margin-top:3.6mm">사전 현장조사에서 기록한 공중화장실</div>
+    <div class="c-strip">
+      <div class="st-ph"><img src="img/04_차이나타운_사전_투입금지.jpg" alt="" style="object-position:50% 30%"><span>한글 투입 금지 안내</span></div>
+      <div class="st-ph"><img src="img/04_차이나타운_사전_선반.jpg" alt=""><span>선반 위에 남긴 컵</span></div>
+      <div class="st-ph"><img src="img/04_차이나타운_사전_휴지함.jpg" alt=""><span>휴지걸이와 휴지함</span></div>
+      <div class="st-ph"><img src="img/04_차이나타운_사전_세면대휴지.jpg" alt=""><span>세면대 위 휴지</span></div>
+    </div>
+    <div class="st-cap"><b>안내는 한글 문장으로 붙어 있었고, 쓰고 남긴 컵과 휴지가 세면대와 선반에 남았다.</b> 사전 현장조사 사진</div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">122</div>
+</section>
+
+<!-- ================= p123 왜 여기인가 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">네 가지 근거는 <em>‘그림이 말을 거는 방식’</em>이라는<br>하나의 실험 질문으로 모였다</h2><p class="lede">심의 과정에서 정리한 핵심 문제 지표는 연구 한 편과 지역 통계 세 개였다. 넷은 화장실 예절을 안내가 이용자에게 말을 거는 방식의 문제로 다시 보게 하였다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+
+    <div class="st-ev">
+      <div class="st-ec"><span class="k">연구</span><div class="n" style="font-size:15pt">의미 혼동</div><p>안전표식 연구에서 <b>나이를 불문하고</b> 그림 표식의 이해도가 권고 수준에 미치지 못해, 그림으로 준 정보도 오해될 수 있음을 확인하였다.</p><div class="src">Hancock 외(2004), Safety symbol comprehension</div></div>
+      <div class="st-ec"><span class="k">관광 통계 ①</span><div class="n">59.7<small>%</small></div><p>인천 외국인 관광객의 차이나타운 방문율은 <b>조사 관광지 가운데 가장 높았다.</b></p><div class="src">인천시·인천관광공사(2025)</div></div>
+      <div class="st-ec"><span class="k">방문객 통계</span><div class="n">13만5천<small>명</small></div><p>2023년 인천을 찾은 중국인 관광객은 약 13만 5천 명으로, <b>비교한 20개 국적 중 가장 많았다.</b></p><div class="src">질병관리청 2023년 통계</div></div>
+      <div class="st-ec"><span class="k">관광 통계 ②</span><div class="n">12<small>위</small></div><p>외국인 관광객의 언어소통 만족 비율은 57.1%로, <b>조사한 12개 항목 중 가장 낮았다.</b></p><div class="src">인천시·인천관광공사(2025)</div></div>
+    </div>
+    <svg width="178mm" height="13mm" viewBox="0 0 178 13" style="display:block"><path d="M22 0 L84 10 M66 0 L87 10 M112 0 L91 10 M156 0 L94 10" stroke="#3F7A6E" stroke-width=".3" fill="none"/><path d="M85 9 L89 13 L93 9" fill="#3F7A6E"/></svg>
+    <div class="st-q"><i>차이나타운 실험 질문</i><b>권유형과 금지형 그림의 의미 이해·경각심은 어떻게 다른가?</b></div>
+    <div class="st-tx st-c2" style="margin-top:5.4mm">
+      <p>네 근거는 서로 맞물렸다. 인천을 찾는 외국인, 특히 중국인 관광객은 차이나타운으로 몰렸지만 말로는 소통이 어려웠다. 그림은 말을 대신할 후보였으나, 그림 표식도 보는 사람에 따라 뜻이 다르게 읽힐 수 있었다. 질문은 ‘그림을 붙일 것인가’에서 ‘어떤 그림이 뜻을 덜 흐리게 전하는가’로 옮겨 갔다.</p>
+      <p>두 선행연구는 서로 다른 어조를 지지하였다. 화장실 17곳의 글·그림 안내 연구는 바른 행동을 보여 주는 안내가 행동을 이끌 수 있음을, 영어 단일언어 이용자 연구는 빨강과 금지 기호가 말을 몰라도 위험 신호로 읽힌다는 점을 보였다. 실험은 두 어조를 같은 화장실, 같은 세 가지 행동에 차례로 입혀 맞대었다.</p>
+      <p>근거마다 실험에서 맡은 몫도 달랐다. 방문율과 국적 통계는 누구에게 물을지를 정하였다. 차수마다 성인 외국인 50명을 모집하고, 중국인 조사 인력 4명을 시설별 외부 설문 자리에 둔 것은 이 때문이다. 언어소통 만족도와 표식 이해도 연구는 무엇을 물을지를 정하였다. 참여자는 그림이 무엇을 하라는 뜻인지 알아들었는지(이해도)와 조심해야겠다고 느꼈는지(경각심)를 같은 5점 척도에 따로 답하였다.</p>
+    </div>
+    <div class="c-two" style="margin-top:4.6mm">
+      <div class="a" style="background:#E2F3EE"><i>권유의 근거 · Sussman·Gifford(2012)</i><b>바른 행동을 보여 준다</b><ul><li><span>그림 속 장면</span>바르게 쓰는 모습과 깨끗한 결과</li><li><span>기호</span>연두 원형 · 체크</li><li><span>기대한 반응</span>따라 하고 싶은 행동</li></ul></div>
+      <div class="vs">⇄</div>
+      <div class="b" style="background:var(--navy)"><i>금지의 근거 · Smith-Jackson·Wogalter(2000)</i><b>잘못된 행동을 막는다</b><ul><li><span>그림 속 장면</span>잘못 쓰는 모습과 어지러운 결과</li><li><span>기호</span>빨강 원형 · 사선</li><li><span>기대한 반응</span>멈추게 하는 경고</li></ul></div>
+    </div>
+    <div class="st-cap"><b>두 어조는 각각의 근거를 가진 대안이었다. 실험은 어느 하나를 정답으로 두지 않고 같은 조건에서 맞대었다.</b></div>
+    <div class="st-lb" style="margin-top:4.6mm">문제에서 목표까지</div>
+    <div class="st-ladder4">
+      <div class="s"><i>문제 정의</i><b>언어·문화 차이를<br>극복하는 안내체계 필요</b></div><div class="ar">▶</div>
+      <div class="s"><i>1차 해법</i><b>권유형 픽토그램의<br>1컷·3컷 비교</b></div><div class="ar">▶</div>
+      <div class="s"><i>2차 해법</i><b>금지형 픽토그램의<br>1컷·3컷 비교</b></div><div class="ar">▶</div>
+      <div class="s on"><i>목표</i><b>올바른 공공화장실<br>이용 문화</b></div>
+    </div>
+    <div class="st-cap"><b>해법의 초점은 ‘어떤 어조와 길이로 그릴까’였다.</b> 기대효과는 일반형·단계별 픽토그램 비교를 통한 효과적인 안내 방식의 확산으로 정리하였다.</div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">123</div>
+</section>
+
+<!-- ================= p124 기획의 변천 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">‘유도형·금지형 사인 비교’로 출발한 기획은 캐릭터와 표현을 다듬어<br><em>권유형 1차, 금지형 2차</em>의 실험이 되었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split l">
+      <div class="st-ver">
+        <div class="v"><div class="d">사업 방향<small>거점 소개</small></div><h5>유도형·금지형 사인 비교</h5><p>더 효과적인 안내 방식을 찾는 실험으로 출발</p></div>
+        <div class="v"><div class="d">실험 요약<small>1·2차 구분</small></div><h5>두 어조 × 두 길이</h5><p>두 어조 모두 1컷·3컷 효과를 비교하는 틀</p></div>
+        <div class="v"><div class="d">2차 부서검토<small>캐릭터</small></div><h5>파도말랑·물안개몽 → BI 캐릭터</h5><p>인천 바다 모티프 캐릭터를 사회실험 BI 기반으로 교체</p></div>
+        <div class="v"><div class="d">제1회 심의<small>표현</small></div><h5>권장·금지 행동의 구분</h5><p>권유형에서 금지 표시를 지우고 캐릭터 행동을 바꿈</p></div>
+        <div class="v now"><div class="d">실행계획<small>최종안</small></div><h5>권유형 1차 · 금지형 2차</h5><p>같은 3개소·3주제·문항 · 차수별 참여자 50명</p></div>
+        <div class="v now"><div class="d">11.05–11.06<small>실행</small></div><h5>1차 · 2차 각 1일</h5><p>11.5(목) 권유형, 11.6(금) 금지형 · 당일 수집</p></div>
+      </div>
+      <div class="st-tx">
+        <p>사업 방향을 정리하던 단계에서 차이나타운 거점은 ‘그림으로 이해되는 공중화장실 에티켓’이라는 이름으로, 유도형·금지형 사인을 비교해 더 효과적인 안내 방식을 찾는 실험으로 소개되었다. 무엇을 붙일지는 처음부터 정해져 있었고, 질문은 <b>어떤 어조로 말할 것인가</b>에 있었다. 화장실이라는 장소와 그림이라는 수단은 기획 내내 바뀌지 않았다.</p>
+        <p>거점별 실험을 한 표로 묶은 실험 요약에서 이 거점의 해법은 권유형·금지형 픽토그램의 1컷·3컷 효과 비교로 정리되었다. 한 장면짜리 단일형(1컷)과 세 장면을 잇는 연속형(3컷)을 두 어조 모두에서 비교하는 틀은 이때 이미 갖추어졌다. 차수 안에서는 길이를, 차수 사이에서는 어조를 비교하는 두 겹의 구조다.</p>
+        <p>2차 부서검토에서 캐릭터가 바뀌었다. 처음 그림은 인천 바다의 파도와 물안개를 모티프로 한 ‘파도말랑’과 ‘물안개몽’이었다. 검토 의견에 따라 사회실험의 취지와 공공디자인의 목적에 맞는 <b>사회실험 BI 기반 캐릭터</b>로 교체하였고, 올바른 휴지 처리와 변기 이용 행태를 이 캐릭터와 픽토그램으로 그렸다. 색은 다섯 가지로 묶어 먼셀 기호를 붙였다.</p>
+        <p>제1회 공공디자인위원회 심의에서는 권장 행동과 금지 행동이 한눈에 구분되도록 그림을 간결하게 고치라는 의견이 나왔다. 권유형 그림에 남아 있던 금지 표시를 지우고 캐릭터의 행동을 바꾸어, 권유형에는 체크만, 금지형에는 원형·사선만 남겼다. 한 장에 두 어조가 섞이면 비교 자체가 흐려지기 때문이다.</p>
+        <p>실행계획에서 1차는 권유형, 2차는 금지형으로 짜였다. 관람은 변기·휴지·소변기 세 주제의 세 쌍으로 구성하였다. 두 차수는 같은 세 곳의 화장실과 같은 부착면, 같은 문항과 척도를 썼고, 차수마다 별도의 참여자 50명을 모집해 중복 참여를 막았다. 1차는 11월 5일(목), 2차는 11월 6일(금)에 하루씩 운영하였다. 그림은 조사 전에 붙이고 조사가 끝나면 떼어, 하룻밤을 넘겨 남겨 두지 않았다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">무엇이 바뀌었나 · 착수안과 실행안</div>
+    <div class="c-ba">
+      <div class="c"><div class="k">캐릭터</div>
+        <div class="r"><div class="st-ph"><img src="img/04_차이나타운_2장_반영전.jpg" alt="" style="object-position:28% 45%"></div><p><b>파도말랑 · 물안개몽</b>인천 바다의 파도·물안개 모티프</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/04_차이나타운_캐릭터.png" alt="" style="object-fit:contain;background:#fff"></div><p><b>사회실험 BI 캐릭터</b>행동과 결과를 보여 주는 주 캐릭터</p></div></div>
+      <div class="c"><div class="k">어조의 구분</div>
+        <div class="r"><div class="ic">권유 장면 안에<br>금지 표시 공존</div><p><b>두 어조가 한 장에</b>권장·금지 행동 구분이 흐림</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/04_차이나타운_1차_1컷1.png" alt="" style="object-fit:contain;background:#fff"></div><p><b>체크만 / 원형·사선만</b>차수마다 한 어조</p></div></div>
+      <div class="c"><div class="k">부착과 설문의 자리</div>
+        <div class="r"><div class="ic">관계기관<br>협의</div><p><b>화장실 안 부착 허용</b>제물포문화재단 · 개항동행정복지센터</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="ic" style="background:#fff;color:var(--st-d)">안에서 보고<br>밖에서 답함</div><p><b>화장실 밖 설문</b>11.5 권유형 · 11.6 금지형 같은 방식</p></div></div>
+    </div>
+    <div class="st-shift" style="margin-top:5mm">
+      <div><i>착수 구상</i><b>유도형과 금지형 중 무엇이 효과적인가</b><br>사인의 종류를 고르는 질문</div>
+      <div class="ar">▶</div>
+      <div class="now"><i>실행한 실험 · 11.05–11.06</i><b>같은 세 행동을 두 어조·두 길이로 그려 맞댄다</b><br>이해와 경각심이 어디서 갈리는지 묻는 질문</div>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">124</div>
+</section>
+
+<!-- ================= p125 기획의 변천 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">부서검토와 심의, 가이드라인의 네 가지 요구가<br><em>그림의 재료</em>가 되었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-bai">
+      <div><div class="st-ph" style="height:52mm;background:#fff"><img src="img/04_차이나타운_2장_반영전.jpg" alt="" style="object-fit:contain"></div><div class="st-cap"><b>반영 전 · 인천 바다를 모티프로 한 파도말랑·물안개몽</b></div></div>
+      <div class="ar">▶</div>
+      <div><div class="st-ph" style="height:52mm;background:#fff"><img src="img/04_차이나타운_캐릭터.png" alt="" style="object-fit:contain;padding:3mm"></div><div class="st-cap"><b>반영 후 · 사회실험 BI 기반 주 캐릭터</b></div></div>
+    </div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:3.4mm">
+      <div><b>3<small>주제</small></b><span>변기 · 휴지 · 소변기</span></div>
+      <div><b>2<small>어조</small></b><span>권유형 · 금지형</span></div>
+      <div><b>2<small>길이</small></b><span>1컷 단일형 · 3컷 연속형</span></div>
+      <div><b>12<small>종</small></b><span>실험에 쓴 그림<br>3주제 × 2어조 × 2길이</span></div>
+    </div>
+    <div class="st-flow" style="margin-top:4.6mm">
+      <div class="hdr"><div>검토·심의에서 나온 요구</div><div class="ar"></div><div>그림에 반영한 것</div><div class="ar"></div><div>현장에서 확인한 것</div></div>
+      <div class="r"><div class="a"><b>캐릭터 검토<small>2차 부서검토</small></b>사회실험의 취지와 공공디자인 목적에 맞는 캐릭터</div><div class="ar">▶</div><div class="b"><b>BI 기반 캐릭터로 교체</b>올바른 휴지 처리·변기 이용 행태를 캐릭터와 픽토그램으로</div><div class="ar">▶</div><div class="c">캐릭터가 행동의 주인공으로 읽히는지</div></div>
+      <div class="r"><div class="a"><b>권장·금지 구분<small>제1회 심의</small></b>권장·금지 행동이 구분되도록 그림을 간결하게</div><div class="ar">▶</div><div class="b"><b>권유형의 금지 표시 삭제</b>캐릭터 행동을 바꾸고 차수마다 한 어조만</div><div class="ar">▶</div><div class="c">두 어조를 서로 다른 뜻으로 읽는지</div></div>
+      <div class="r"><div class="a"><b>색상·서체 기준<small>부서검토</small></b>시각매체 색상의 먼셀 색기호와 서체 명시</div><div class="ar">▶</div><div class="b"><b>다섯 색 먼셀 고정</b>N 1/ · 5PB 3/6 · 5PB 5/12 · 5R 4/12 · 10GY 7/14</div><div class="ar">▶</div><div class="c">체크·원형 기호를 색과 함께 알아보는지</div></div>
+      <div class="r"><div class="a"><b>다국어·픽토그램<small>가이드라인</small></b>문자 위주보다 쉽게 이해되는 픽토그램 권장</div><div class="ar">▶</div><div class="b"><b>글 없는 그림</b>행동과 결과를 장면만으로 표현</div><div class="ar">▶</div><div class="c">말을 몰라도 뜻이 전해지는지</div></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>네 가지 요구는 그림의 서로 다른 부분을 고쳤다. 캐릭터 검토는 그림의 주인공을, 심의 의견은 그림의 어조를, 색상 기준은 기호의 색을, 가이드라인은 글자를 덜어 내는 방향을 정하였다. 처음의 파도·물안개 캐릭터는 인천 바다를 담은 형태였고, 교체한 BI 캐릭터는 팔다리와 표정으로 행동과 그 결과를 직접 그릴 수 있는 형태였다.</p>
+      <p>그림에 글자는 넣지 않았다. 대신 같은 캐릭터가 같은 물건 앞에서 다른 행동을 하도록 하여, 어조의 차이가 장면과 기호에서만 생기게 하였다. 현장에서는 이 네 부분이 실제로 뜻을 전하는지를 각각 물었고, 그 답은 정량의 이해도·경각심과 인터뷰의 그림 해석으로 나누어 모았다.</p>
+      <p>색의 역할도 이때 나누었다. 반영 전 캐릭터에 쓰던 검정(N 1/)·진한 남색(5PB 3/6)·파랑(5PB 5/12)·빨강(5R 4/12)의 네 색에 연두(10GY 7/14)를 더해 다섯 색으로 묶었다. 검정은 문자·표정·윤곽선, 남색은 물체·화살표·강조, 파랑은 캐릭터 몸체에만 쓰고, 빨강과 연두는 금지와 권유의 원형 기호에만 남겨 어조를 드러내는 색이 다른 곳에 섞이지 않게 하였다.</p>
+      <p>이렇게 정리한 그림은 모두 12종이다. 세 주제를 두 어조와 두 길이로 그려 한 차수에 6종씩 같은 화장실에 붙였고, 차수 사이에는 그림만 바꾸고 크기와 부착면, 1컷·3컷의 배열은 그대로 두었다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">125</div>
+</section>
+
+<!-- ================= p126 실험 설계 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1·2차는 <em>그림의 어조</em>만 바꾸고,<br>장소·주제·길이·문항은 그대로 두었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-mir">
+      <div class="ph">
+        <div class="st-ph" style="height:34mm;background:#fff"><img src="img/04_차이나타운_1차_3컷2.png" alt="" style="object-fit:contain;padding:2mm"></div>
+        <div class="mid">바꾼 요소</div>
+        <div class="st-ph" style="height:34mm;background:#fff"><img src="img/04_차이나타운_2차_3컷2.png" alt="" style="object-fit:contain;padding:2mm"></div>
+      </div>
+      <div class="hh"><div class="a">1차 「그림으로 권유하는 에티켓」<small>권유형 · 바람직한 행동을 보여 줌</small></div><div style="background:#fff"></div><div class="b">2차 「그림으로 금지하는 에티켓」<small>금지형 · 주의할 행동을 보여 줌</small></div></div>
+      <div class="r"><div class="a">바른 행동을 권함</div><div class="m">어조</div><div class="b">잘못된 행동을 막음</div></div>
+      <div class="r"><div class="a">바르게 앉기 · 휴지통에 넣기<small>소변기에 한 걸음 다가서기</small></div><div class="m">장면</div><div class="b">변기 위에 올라서기 · 변기에 휴지 버리기<small>소변기에서 멀리 서서 사용하기</small></div></div>
+      <div class="r"><div class="a">연두 원형 · 체크<small>10GY 7/14</small></div><div class="m">기호</div><div class="b">빨강 원형 · 사선<small>5R 4/12</small></div></div>
+      <div class="r"><div class="a">웃는 얼굴 · 반짝임</div><div class="m">표정·결과</div><div class="b">땀 · 당황한 얼굴 · 흘린 물</div></div>
+      <div class="r"><div class="a">1컷 단일형 ⇄ 3컷 연속형</div><div class="m">차수 안 비교</div><div class="b">1컷 단일형 ⇄ 3컷 연속형</div></div>
+      <div class="r"><div class="a">11.5(목)</div><div class="m">운영일</div><div class="b">11.6(금)</div></div>
+    </div>
+    <div class="st-keep" style="margin-top:3.6mm">
+      <div class="t">유지한 조건 <span>1차 · 2차 모두 같게</span></div>
+      <div class="g">
+        <div><b>같은 3개소</b><small>A·B·C 공중화장실<br>3개소 동시 운영</small></div>
+        <div><b>같은 3주제</b><small>변기 · 휴지 · 소변기<br>같은 캐릭터</small></div>
+        <div><b>같은 부착면</b><small>그림의 대상물<br>옆 벽·문</small></div>
+        <div><b>같은 문항·척도</b><small>선택 + 이해도·경각심<br>공통 5점 척도</small></div>
+        <div><b>같은 모집 기준</b><small>성인 외국인 50명<br>중복 참여 제외</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>실험이 알고 싶었던 것은 같은 행동을 ‘이렇게 하세요’로 보여 줄 때와 ‘이렇게 하지 마세요’로 보여 줄 때, 외국인 이용자가 그 뜻을 얼마나 정확히 읽고 얼마나 주의를 느끼는가였다. 바꾼 것은 어조 하나였다. 권유형은 바른 행동과 깨끗한 결과에 연두 체크를, 금지형은 잘못된 행동과 어지러운 결과에 빨강 원형·사선을 그렸다.</p>
+      <p>차수 안에는 또 하나의 비교를 넣었다. 같은 주제를 한 장면짜리 1컷과, 행동 전·행동·결과를 잇는 3컷으로 나란히 붙여 어느 쪽을 고르는지, 각각을 얼마나 이해하고 경계하는지를 물었다. 결과는 어조(차수 사이)와 길이(차수 안)의 두 겹으로 읽었다. 1컷과 3컷은 같은 면에 나란히 붙여, 참여자가 한 자리에서 두 형식을 함께 보게 하였다.</p>
+      <p>두 차수는 서로 다른 사람에게 물었다. 같은 사람이 두 어조를 모두 보면 앞의 그림이 뒤의 판단을 끌고 가기 때문에, 차수마다 참여자를 따로 모집하고 중복 참여를 제외하였다. 대신 두 집단의 차이가 결과를 흔들지 않도록 장소·주제·부착면·문항·척도를 묶어 두었고, 국적과 연령 구성은 결과를 읽을 때 함께 적었다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">126</div>
+</section>
+
+<!-- ================= p127 실험 설계 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">고르기 · 알아듣기 · 경계하기, <em>세 지표</em>를<br>화장실 밖 스티커 보드 한 장으로 재었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-pipe">
+      <div class="s"><div class="h"><i>지표 ①</i><b>형식 선택</b></div><div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><rect x="5" y="4" width="11" height="12" rx=".6" fill="#fff"/><rect x="20" y="4" width="15" height="12" rx=".6" fill="#fff"/><circle cx="27.5" cy="10" r="2.6" fill="#3F7A6E"/><path d="M26.3 10 L27.2 11 L29 9" stroke="#fff" stroke-width=".7" fill="none"/><text x="10.5" y="11.4" font-size="3.6" font-weight="900" fill="#3F7A6E" text-anchor="middle">1</text></svg></div>
+        <dl><dt>무엇을</dt><dd>같은 주제의 1컷과 3컷 가운데 더 알기 쉬운 쪽</dd><dt>어떻게</dt><dd>주제마다 선택 스티커 1개</dd><dt>값</dt><dd><b>선택 수·비율</b> · 분모는 그 주제의 유효 선택</dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ②</i><b>이해도</b></div><div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><g fill="#fff"><circle cx="8" cy="10" r="2.6"/><circle cx="14" cy="10" r="2.6"/><circle cx="20" cy="10" r="2.6"/><circle cx="26" cy="10" r="2.6"/></g><circle cx="32" cy="10" r="2.6" fill="#3F7A6E"/><g font-size="2.4" font-weight="800" fill="#2F5E55" text-anchor="middle"><text x="8" y="16.6">1</text><text x="14" y="16.6">2</text><text x="20" y="16.6">3</text><text x="26" y="16.6">4</text><text x="32" y="16.6">5</text></g><text x="20" y="4.6" font-size="2.6" font-weight="800" fill="#2F5E55" text-anchor="middle">알아들었다</text></svg></div>
+        <dl><dt>무엇을</dt><dd>그림이 전하는 행동을 알아들었는가</dd><dt>어떻게</dt><dd>1컷·3컷 각각 5점 척도 스티커</dd><dt>값</dt><dd><b>5점별 응답 수·비율</b> · 평균은 보조로</dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ③</i><b>경각심</b></div><div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><path d="M20 2.6 L30 17 H10 Z" fill="#3F7A6E"/><path d="M20 7.6 V12.4" stroke="#fff" stroke-width="1.1" stroke-linecap="round"/><circle cx="20" cy="14.6" r=".7" fill="#fff"/><g fill="#3F7A6E"><circle cx="6" cy="16" r="1"/><circle cx="34" cy="16" r="1"/></g></svg></div>
+        <dl><dt>무엇을</dt><dd>그 행동을 조심해야겠다고 느꼈는가</dd><dt>어떻게</dt><dd>1컷·3컷 각각 5점 척도 스티커</dd><dt>값</dt><dd><b>5점별 응답 수·비율</b> · 평균은 보조로</dd></dl></div>
+    </div>
+    <div class="st-cap"><b>주제마다 스티커 다섯 개(선택 1 · 이해도 2 · 경각심 2)를 같은 순서로 붙였다.</b> 선택의 이유와 그림 해석은 스티커 뒤에 이어진 심층 인터뷰에서 말로 들었다.</div>
+    <div class="st-lb" style="margin-top:3.6mm">조사 흐름 · 안에서 보고, 밖에서 답하고, 이유를 말한다</div>
+    <div class="st-fig" style="padding:1.6mm 10mm"><img src="img/04_차이나타운_조사흐름.png" alt=""></div>
+    <div class="st-cap"><b>화장실 안에서 세 쌍을 본 참여자가 밖으로 나와 보드에 스티커를 붙이고, 응답 뒤 심층 인터뷰로 이유를 확인하였다.</b> 조사 흐름 구상도</div>
+    <div class="st-lb" style="margin-top:3.4mm">측정과 운영의 날짜</div>
+    <svg width="178mm" height="30mm" viewBox="0 0 178 30" style="display:block">
+      <line x1="4" y1="14" x2="174" y2="14" stroke="#C9D3DC" stroke-width=".5"/>
+      <g font-size="3" font-weight="800" fill="#6A7784"><text x="4" y="22">7월</text><text x="40" y="22">8월</text><text x="76" y="22">9월</text><text x="112" y="22">10월</text><text x="146" y="22">11월</text></g>
+      <path d="M38.5 11 V17 M74.5 11 V17 M110.5 11 V17 M144.5 11 V17" stroke="#9AA8B5" stroke-width=".4"/>
+      <rect x="35" y="11" width="2.4" height="6" rx=".5" fill="#C9D3DC"/><text x="36.2" y="8" font-size="3" font-weight="900" fill="#1A2F4B" text-anchor="middle">7.29</text><text x="36.2" y="4" font-size="2.6" font-weight="700" fill="#6A7784" text-anchor="middle">현장조사</text>
+      <rect x="66" y="11" width="2.4" height="6" rx=".5" fill="#C9D3DC"/><text x="67.2" y="8" font-size="3" font-weight="900" fill="#1A2F4B" text-anchor="middle">8.24</text><text x="67.2" y="4" font-size="2.6" font-weight="700" fill="#6A7784" text-anchor="middle">현장조사</text>
+      <rect x="93" y="11" width="2.4" height="6" rx=".5" fill="url(#ct-hl)"/><text x="94.2" y="8" font-size="3" font-weight="900" fill="#1A2F4B" text-anchor="middle">9.17(목)</text><text x="94.2" y="4" font-size="2.6" font-weight="700" fill="#6A7784" text-anchor="middle">사전조사</text>
+      <rect x="148.7" y="11" width="2.4" height="6" rx=".5" fill="#2E5A87"/><rect x="151.4" y="11" width="2.4" height="6" rx=".5" fill="#1A2F4B"/>
+      <path d="M149.9 17.4 V24" stroke="#2E5A87" stroke-width=".3"/><text x="142" y="28" font-size="3" font-weight="900" fill="#2E5A87" text-anchor="end">11.5(목) 1차 권유형</text><path d="M149.9 24 H142.6" stroke="#2E5A87" stroke-width=".3"/>
+      <path d="M152.6 10.6 V6" stroke="#1A2F4B" stroke-width=".3"/><text x="151" y="4.6" font-size="3" font-weight="900" fill="#1A2F4B" text-anchor="end">11.6(금) 2차 금지형</text>
+    </svg>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:3.4mm">
+      <div><b>50<small>명</small></b><span>차수별 모집 계획<br>성인 외국인</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>1차 유효 응답</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>2차 유효 응답</span></div>
+      <div><b>4<small>명</small></b><span>중국인 조사 인력<br>시설별 외부 설문</span></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.4mm">
+      <p>날짜는 다른 거점과 다른 원칙을 따랐다. 차이나타운은 참여자를 모집해 조사하는 방식이어서, 사전조사·1차·2차를 모두 당일 수집으로 하고 일정을 관찰자 모집과 부착 방식에 맞추어 수행기관 내부 일정으로 정하였다. 1차와 2차는 이틀 연속, 목요일과 금요일에 운영하였다.</p>
+      <p>참여 대상은 차수마다 성인 외국인 50명으로 계획하였고, 내국인 응답은 따로 받아 외국인 결과와 섞지 않았다. 1인은 한 개소에서 세 쌍을 보고 응답하였으며, 세 곳을 동시에 운영해 한 시설에 사람이 몰리지 않게 하였다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">127</div>
+</section>
+
+<!-- ================= p128 1차 실험 「그림으로 권유하는 에티켓」 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">1차 실험 「그림으로 권유하는 에티켓」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1차는 그림의 대상물 바로 옆에<br><em>바른 행동 그림</em>을 1컷과 3컷으로 나란히 붙였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-hero" style="height:128mm">
+      <img src="img/04_차이나타운_부착시뮬.jpg" alt="" style="object-position:50% 45%">
+      <svg viewBox="0 0 178 128" width="178mm" height="128mm"><g stroke="#fff" stroke-width=".45" fill="none"><path d="M44 22 L34 40"/><path d="M100 22 L76 38"/><path d="M152 70 L126 100"/><path d="M152 30 L162 54"/></g><g fill="#fff"><circle cx="34" cy="40" r="1.4"/><circle cx="76" cy="38" r="1.4"/><circle cx="126" cy="100" r="1.4"/><circle cx="162" cy="54" r="1.4"/></g></svg>
+      <div class="st-co" style="left:5mm;top:4mm"><b><i>1</i>1컷 단일형</b>휴지를 휴지통에 넣는 한 장면과 연두 체크</div>
+      <div class="st-co" style="left:62mm;top:4mm"><b><i>2</i>3컷 연속형</b>변기 앞 → 휴지통으로 → 체크. 행동 전·행동·결과</div>
+      <div class="st-co" style="left:128mm;top:4mm"><b><i>4</i>기존 안내와 겹침 방지</b>칸 안의 필수 안내와 떨어진 면을 골랐다</div>
+      <div class="st-co" style="left:128mm;top:72mm"><b><i>3</i>대상물 인접면</b>휴지걸이·휴지통 옆 벽에 두어 그림과 물건을 함께 보게 함</div>
+    </div>
+    <div class="st-cap"><b>그림이 가리키는 물건과 그림을 한 시야에 두어, 보는 즉시 무엇에 대한 안내인지 알 수 있게 하였다.</b> 휴지 주제 부착 시뮬레이션 · 차이나타운 공중화장실 칸 안</div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>1차 「그림으로 권유하는 에티켓」은 화장실에서 지켜야 할 행동을 바르게 해내는 모습으로 보여 주었다. 주제는 변기에서 바르게 앉기, 휴지를 휴지통으로, 소변기 앞으로 가까이의 세 가지였다. 주제마다 한 장면으로 끝나는 1컷과 행동의 흐름을 세 장면으로 잇는 3컷을 같은 면에 나란히 붙였다. 휴지 그림은 시설마다 휴지 처리 방침을 확인한 뒤 적용하였다.</p>
+      <p>부착면은 그림이 가리키는 물건을 따라 정하였다. 변기 그림은 양변기 칸 안쪽 문이나 측벽 가운데 들어가서 쓰기 전에 보이는 면에, 휴지 그림은 휴지통·휴지걸이 옆 면에, 소변기 그림은 변기·소변기 옆 행동 직전의 시야에 두었다. 칸 안에 이미 붙어 있는 필수 안내와는 겹치지 않게 하였고, 최종 위치는 시설 담당자와 협의해 정하였다. 성별 공간마다 같은 세 종을 볼 수 있게 배치하였다.</p>
+      <p>높이는 법정값으로 미리 정하지 않았다. 현장에서 시야를 확인해 붙인 뒤 그 측정값을 기록하였고, 다음 날 2차 그림을 같은 자리에 바꿔 붙이는 기준으로 썼다. 1차는 11월 5일(목) 하루, 조사 전에 설치하고 조사가 끝난 뒤 철거하였다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">128</div>
+</section>
+
+<!-- ================= p129 1차 실험 「그림으로 권유하는 에티켓」 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">1차 실험 「그림으로 권유하는 에티켓」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">3컷에는 <em>행동 전 · 행동 · 결과</em>를 잇고,<br>1컷에는 바른 행동의 한 장면만 남겼다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-prh"><div>주제와 전달 내용</div><div>단일형 1컷</div><div></div><div>연속형 3컷</div></div>
+    <div class="c-pr"><div class="lab"><b>1</b><span>변기에서 내려와 앉기</span><small>뚜껑을 올리고 바르게 앉도록 권유</small></div>
+      <div class="pic s" style="height:32mm"><img src="img/04_차이나타운_1차_1컷1.png" alt=""></div><div class="vs">VS</div>
+      <div class="pic" style="height:32mm"><img src="img/04_차이나타운_1차_3컷1.png" alt=""></div></div>
+    <div class="c-pr"><div class="lab"><b>2</b><span>휴지를 휴지통으로</span><small>휴지를 휴지통에 넣도록 권유</small></div>
+      <div class="pic s" style="height:32mm"><img src="img/04_차이나타운_1차_1컷2.png" alt=""></div><div class="vs">VS</div>
+      <div class="pic" style="height:32mm"><img src="img/04_차이나타운_1차_3컷2.png" alt=""></div></div>
+    <div class="c-pr"><div class="lab"><b>3</b><span>소변기 앞으로 가까이</span><small>소변기에 한 걸음 다가서도록 권유</small></div>
+      <div class="pic s" style="height:32mm"><img src="img/04_차이나타운_1차_1컷3.png" alt=""></div><div class="vs">VS</div>
+      <div class="pic" style="height:32mm"><img src="img/04_차이나타운_1차_3컷3.png" alt=""></div></div>
+    <div class="st-cap"><b>세 주제 모두 같은 캐릭터가 같은 물건 앞에서 바른 행동을 하고, 끝에 연두 체크가 붙는다.</b> 1차 디자인 6종(3주제 × 1컷·3컷)</div>
+    <div class="st-lb" style="margin-top:4.4mm">색채 적용 기준 · 다섯 색을 먼셀 기호로 고정</div>
+    <div class="st-pal">
+      <div class="sw"><div class="c" style="background:#141414">검정</div><div class="m">N 1/<small>문자·표정·윤곽선</small></div></div>
+      <div class="sw"><div class="c" style="background:#1D2F5E">진한 남색</div><div class="m">5PB 3/6<small>물체·화살표·강조</small></div></div>
+      <div class="sw"><div class="c" style="background:#1479EE">파랑</div><div class="m">5PB 5/12<small>주 캐릭터 몸체</small></div></div>
+      <div class="sw" style="opacity:.55"><div class="c" style="background:#E0262D">빨강</div><div class="m">5R 4/12<small>금지 원형·사선 · 2차</small></div></div>
+      <div class="sw"><div class="c" style="background:#2DBA2D">연두</div><div class="m">10GY 7/14<small>권유 원형·체크 · 1차</small></div></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.4mm">
+      <p>3컷은 이야기의 순서를 따랐다. 변기 주제는 뚜껑을 올리는 장면, 앉는 장면, 바르게 앉아 웃는 장면으로, 휴지 주제는 변기 앞에서 휴지를 든 장면, 휴지통으로 가져가는 장면, 손을 털고 돌아서는 장면으로 이어진다. 장면 사이에는 진한 남색 화살표(›)를 두어 읽는 방향을 정하였다. 1컷은 이 가운데 바른 행동이 드러나는 한 장면을 골라 체크를 붙였다.</p>
+      <p>색은 다섯 가지로 묶고 부서검토 의견에 따라 먼셀 기호를 붙였다. 캐릭터 몸체는 파랑(5PB 5/12), 문자·표정·윤곽선은 검정(N 1/), 물체와 화살표는 진한 남색(5PB 3/6)이다. 1차에 쓴 기호색은 연두(10GY 7/14) 하나였고, 2차의 빨강(5R 4/12)은 이때 쓰지 않았다. 휴지 그림은 시설별 휴지 처리 방침을 확인한 뒤 적용하였다.</p>
+      <p>소변기 주제는 멀리 선 장면, 한 걸음 다가서는 장면, 가까이 서서 주변이 깨끗한 장면으로 이어진다. 세 주제 모두 1컷과 3컷을 같은 부착면에 나란히 붙여, 참여자가 같은 행동을 두 길이로 한자리에서 견주어 보게 하였다. 부착 높이는 법정값으로 미리 정하지 않고 현장에서 시야를 확인한 뒤 잰 값을 기록해 두었다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">129</div>
+</section>
+
+<!-- ================= p130 2차 실험 「그림으로 금지하는 에티켓」 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">2차 실험 「그림으로 금지하는 에티켓」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 같은 세 행동을<br><em>하지 말아야 할 장면</em>으로 뒤집어 그렸다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-prh"><div>주제와 전달 내용</div><div>단일형 1컷</div><div></div><div>연속형 3컷</div></div>
+    <div class="c-pr"><div class="lab"><b>1</b><span>변기에서 내려와 앉기</span><small>변기 위에 올라서는 행동을 금지</small></div>
+      <div class="pic s" style="height:24mm"><img src="img/04_차이나타운_2차_1컷1.png" alt=""></div><div class="vs">VS</div>
+      <div class="pic" style="height:24mm"><img src="img/04_차이나타운_2차_3컷1.png" alt=""></div></div>
+    <div class="c-pr"><div class="lab"><b>2</b><span>휴지를 휴지통으로</span><small>휴지를 변기 안에 버리는 행동을 금지</small></div>
+      <div class="pic s" style="height:24mm"><img src="img/04_차이나타운_2차_1컷2.png" alt=""></div><div class="vs">VS</div>
+      <div class="pic" style="height:24mm"><img src="img/04_차이나타운_2차_3컷2.png" alt=""></div></div>
+    <div class="c-pr"><div class="lab"><b>3</b><span>소변기 앞으로 가까이</span><small>소변기에서 멀리 서서 사용하는 행동을 금지</small></div>
+      <div class="pic s" style="height:24mm"><img src="img/04_차이나타운_2차_1컷3.png" alt=""></div><div class="vs">VS</div>
+      <div class="pic" style="height:24mm"><img src="img/04_차이나타운_2차_3컷3.png" alt=""></div></div>
+    <div class="st-cap"><b>주제와 캐릭터는 1차와 같고, 장면은 잘못된 행동과 그 결과로, 기호는 빨강 원형·사선으로 바뀌었다.</b> 2차 디자인 6종</div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>2차 「그림으로 금지하는 에티켓」은 1차와 같은 주제, 같은 캐릭터, 같은 부착면을 쓰고 어조만 바꾸었다. 1차가 바른 행동을 보여 주며 따라 하기를 권했다면, 2차는 화장실에서 생기기 쉬운 잘못된 행동을 그대로 보여 주고 그 위에 금지 표시를 얹었다.</p>
+      <p>변기 주제는 변기 위에 올라서서 쪼그려 앉는 행동을 금지하였다. 3컷은 변기 앞에서 머뭇거리는 장면, 변기 위에 올라선 장면, 땀을 흘리는 캐릭터와 빨간 금지 표시로 이어진다. 1차에서 뚜껑을 올리고 바르게 앉던 캐릭터가 2차에서는 하지 말아야 할 행동의 주인공이 되었다.</p>
+      <p>휴지 주제는 휴지를 변기 안에 버리는 행동을 금지하였다. 3컷의 마지막 장면은 변기에서 물이 넘치는 모습이다. 1차의 휴지통 그림과 마찬가지로 휴지 그림은 시설마다 휴지 처리 방침을 확인한 뒤 붙였다. 시설의 방침과 그림이 어긋나면 같은 그림이 그 화장실에서는 틀린 안내가 되기 때문이다.</p>
+      <p>소변기 주제는 소변기에서 멀리 떨어져 서서 쓰는 행동을 금지하였다. 3컷은 바닥에 물이 떨어지는 장면에서 시작해 당황한 캐릭터, 금지 표시로 끝난다. 결과를 보여 주는 구성은 1차와 같았고, 그 결과가 깨끗함에서 어지러움으로 바뀌었다.</p>
+      <p>색과 기호도 어조를 따랐다. 1차의 연두 원형·체크(10GY 7/14)는 빨강 원형·사선(5R 4/12)으로, 웃는 얼굴은 땀과 놀란 표정으로 바뀌었다. 금지·주의·경고 같은 안전정보에는 안전색을 강조색으로 쓰도록 한 인천시 공공디자인 기준과 같은 방향의 선택이었다. 캐릭터 몸체의 파랑과 윤곽선의 검정은 두 차수에서 같게 두었다.</p>
+      <p>금지형 그림에도 글자는 넣지 않았다. 무엇을 하지 말라는지는 장면이, 하지 말라는 뜻은 빨강 원형·사선이 맡았으므로, 참여자가 그림만 보고 두 가지를 모두 읽어 낼 수 있는지가 2차의 물음이 되었다. 문자 위주의 표기보다 쉽게 이해되는 픽토그램을 권장하는 인천시 기준과도 같은 방향이었다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">130</div>
+</section>
+
+<!-- ================= p131 2차 실험 「그림으로 금지하는 에티켓」 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">2차 실험 「그림으로 금지하는 에티켓」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 1차에서 <em>장면과 기호</em>만 바꾸고,<br>캐릭터·주제·부착면은 그대로 두었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-pairs">
+      <div class="c-pair"><div class="t"><b>1</b>변기에서 내려와 앉기</div>
+      <div class="g"><div class="st-ph"><img src="img/04_차이나타운_1차_1컷1.png" alt=""><span>1차 권유</span></div><div class="ar">▶</div><div class="st-ph"><img src="img/04_차이나타운_2차_1컷1.png" alt=""><span>2차 금지</span></div></div></div>
+      <div class="c-pair"><div class="t"><b>2</b>휴지를 휴지통으로</div>
+      <div class="g"><div class="st-ph"><img src="img/04_차이나타운_1차_1컷2.png" alt=""><span>1차 권유</span></div><div class="ar">▶</div><div class="st-ph"><img src="img/04_차이나타운_2차_1컷2.png" alt=""><span>2차 금지</span></div></div></div>
+      <div class="c-pair"><div class="t"><b>3</b>소변기 앞으로 가까이</div>
+      <div class="g"><div class="st-ph"><img src="img/04_차이나타운_1차_1컷3.png" alt=""><span>1차 권유</span></div><div class="ar">▶</div><div class="st-ph"><img src="img/04_차이나타운_2차_1컷3.png" alt=""><span>2차 금지</span></div></div></div>
+    </div>
+    <div class="st-cap"><b>같은 캐릭터가 같은 물건 앞에 서 있고, 달라진 것은 행동과 기호, 표정이다.</b> 1컷 단일형 기준 1·2차 대조</div>
+    <div class="st-split" style="margin-top:4.6mm;grid-template-columns:1fr 64mm;gap:6mm">
+      <div class="st-tx">
+        <p>2차는 1차의 부착면을 그대로 썼다. 1차 철거 때 기록해 둔 위치와 높이에 맞추어, 11월 6일(금) 조사 전에 같은 자리에 2차 그림을 붙였다. 그림의 크기와 1컷·3컷의 배열도 1차와 같았다.</p>
+        <p>1차와 견주면 바뀐 것은 네 가지였다. 그림 속 행동, 기호와 그 색, 캐릭터의 표정, 3컷 마지막 장면의 결과다. 넷은 모두 어조를 바꾸는 데 필요한 변화였고, 캐릭터와 주제, 부착면과 문항은 바꾸지 않았다. 참여자는 1차와 겹치지 않는 새 50명으로 모집하였다.</p>
+        <p>두 차수의 차이는 어조 하나의 효과로 읽되, 차수마다 참여자가 다르다는 점을 함께 적었다. 응답 집단의 국적·연령 구성이 다르면 그 차이를 결과 해석의 조건으로 남겼다. 응답은 1차와 같은 보드 양식과 같은 5점 척도로 받았다.</p>
+        <p>세 주제의 금지 장면은 실험이 정한 세 가지 에티켓에 하나씩 대응한다. 변기 위에 올라서기는 변기 사용 에티켓, 변기에 휴지 버리기는 휴지 에티켓, 소변기에서 멀리 서기는 청결 에티켓에 대응한다. 1차의 권유 장면은 이 세 행동의 바른 모습이었으므로, 두 차수는 같은 세 행동의 앞면과 뒷면을 보여 준 셈이다.</p>
+      </div>
+      <div class="st-fig" style="padding:2mm"><img src="img/04_차이나타운_2차_3컷3.png" alt=""><div class="st-cap" style="margin-top:1.4mm"><b>2차 소변기 주제 3컷.</b> 물이 튀는 장면 → 당황 → 금지 표시</div></div>
+    </div>
+    <div class="st-chg flat" style="margin-top:4.6mm">
+      <div class="c"><div class="k">그림 속 행동</div><div class="a">바르게 쓰는 모습</div><div class="b">잘못 쓰는 모습</div><div class="w">근거 · 권유형 ↔ 금지형 표현 교체</div></div>
+      <div class="c"><div class="k">기호</div><div class="a">연두 원형·체크 10GY 7/14</div><div class="b">빨강 원형·사선 5R 4/12</div><div class="w">근거 · 안전정보에 안전색 강조</div></div>
+      <div class="c"><div class="k">표정</div><div class="a">웃는 얼굴 · 반짝임</div><div class="b">땀 · 놀람 · 당황</div><div class="w">근거 · 행동과 결과를 보여 주는 주 캐릭터</div></div>
+      <div class="c"><div class="k">3컷의 끝</div><div class="a">깨끗한 결과</div><div class="b">흘린 물 · 넘친 변기</div><div class="w">근거 · 결과 장면으로 이유를 전달</div></div>
+      <div class="c"><div class="k">참여자</div><div class="a">1차 성인 외국인 50명</div><div class="b">겹치지 않는 새 50명</div><div class="w">근거 · 차수별 별도 모집 · 중복 참여 제외</div></div>
+      <div class="c"><div class="k">그대로 둔 것</div><div class="a" style="text-decoration:none">캐릭터 · 3주제 · 부착면</div><div class="b">문항 · 5점 척도 · 3개소</div><div class="w">근거 · 같은 장소·배치·문항·척도 유지</div></div>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">131</div>
+</section>
+
+<!-- ================= p132 현장 배치 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">현장 배치</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">실험은 차이나타운 안쪽 세 곳의 공중화장실(A–C)에서<br><em>같은 날 동시에</em> 운영하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-plan" style="height:112mm">
+      <svg viewBox="0 0 178 112" width="178mm" height="112mm">
+  <rect x="0" y="0" width="178" height="112" fill="#EEF2F5"/>
+  <path d="M0 0 H22 V112 H0Z" fill="#DCE6EE"/><text x="11" y="60" font-size="3" font-weight="700" fill="#8C98A3" text-anchor="middle" transform="rotate(-90 11 60)">인천역 · 철도 방면</text>
+  <path d="M30 6 L60 6 L104 104 L74 104 Z" fill="url(#ct-hz)"/>
+  <path d="M60 6 L96 30 L112 104 L104 104 Z" fill="#E7EEF3"/>
+  <path d="M44 4 L90 108" stroke="#fff" stroke-width="3.4"/><path d="M44 4 L90 108" stroke="#D3DBE2" stroke-width=".4" stroke-dasharray="2 1.6"/>
+  <g fill="#E1E7EC"><rect x="114" y="8" width="56" height="20" rx=".6"/><rect x="118" y="34" width="52" height="22" rx=".6"/><rect x="120" y="62" width="50" height="40" rx=".6"/></g>
+  <rect x="132" y="70" width="34" height="12" rx=".6" fill="#D6DEE6"/><text x="149" y="77.4" font-size="2.9" font-weight="800" fill="#56636E" text-anchor="middle">제물포구청 신포청사</text>
+  <rect x="24" y="2" width="22" height="7" rx=".6" fill="#1A2F4B"/><text x="35" y="6.6" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">인천역</text>
+  <rect x="49" y="10" width="34" height="7" rx=".6" fill="#fff"/><text x="66" y="14.6" font-size="2.9" font-weight="800" fill="#1A2F4B" text-anchor="middle">차이나타운 진입관문</text>
+  <rect x="62" y="102" width="34" height="7" rx=".6" fill="#fff"/><text x="79" y="106.6" font-size="2.9" font-weight="800" fill="#1A2F4B" text-anchor="middle">한중문화관교차로</text>
+  <text x="96" y="56" font-size="3" font-weight="800" fill="#2F5E55" transform="rotate(66 96 56)">차이나타운 일대</text>
+  <g font-size="3.4" font-weight="900" fill="#fff" text-anchor="middle">
+    <circle cx="54" cy="34" r="3.6" fill="#2E5A87"/><text x="54" y="35.2">A</text>
+    <circle cx="62" cy="48" r="3.6" fill="#2E5A87"/><text x="62" y="49.2">B</text>
+    <circle cx="78" cy="84" r="3.6" fill="#2E5A87"/><text x="78" y="85.2">C</text>
+  </g>
+  <g font-size="2.9" font-weight="800" fill="#1A2F4B"><text x="58.6" y="30.4">짜장면박물관 인근</text><text x="66.6" y="47">개항동행정복지센터 인근</text><text x="82.6" y="83">한중문화관 인근</text></g>
+  <g transform="translate(166 100)"><circle r="5" fill="#fff"/><path d="M1.6 2.6 L-0.6 -3.6 L-1.4 2.8Z" fill="#1A2F4B"/><text x="-4.8" y="-1.8" font-size="2.6" font-weight="800" fill="#1A2F4B">N</text></g>
+</svg>
+      <div class="c-inset" style="left:118mm;top:4mm;width:56mm"><img src="img/04_차이나타운_항공.jpg" alt=""><span>심의도서 항공사진 원도 · A–C 위치</span></div>
+    </div>
+    <div class="st-cap"><b>세 화장실은 인천역 앞 진입관문에서 한중문화관교차로로 내려가는 관광 동선 위에 놓였다.</b> 세로판 재작도 개념 배치도(축척 없음)</div>
+    <div class="st-pos" style="grid-template-columns:repeat(3,1fr);margin-top:3mm">
+      <div><b><i>A</i>짜장면박물관 인근</b>진입관문에서 가장 가까운 구역 북쪽 구간</div>
+      <div><b><i>B</i>개항동행정복지센터 인근</b>A에서 남쪽으로 이어지는 구역 가운데 구간</div>
+      <div><b><i>C</i>한중문화관 인근</b>구역 남쪽 끝, 한중문화관교차로 방면</div>
+    </div>
+    <div class="st-lb" style="margin-top:4.4mm">칸 안의 부착 위치 · 그림이 가리키는 물건 옆</div>
+    <div class="c-plc">
+      <div class="st-ph"><img src="img/04_차이나타운_P1P2.jpg" alt=""><span>P1 변기 칸 문 · P2 휴지통 옆</span></div>
+      <div class="st-ph"><img src="img/04_차이나타운_P4.jpg" alt="" style="object-position:50% 40%"><span>소변기 위 벽면</span></div>
+      <div class="tx">
+        <p><b>P1 변기</b>양변기 칸 안쪽 문·측벽 가운데 들어가서 쓰기 전에 보이는 면 · 기존 필수 안내와 겹침 방지</p>
+        <p><b>P2 휴지</b>휴지통·휴지걸이 옆 면 · 시설의 휴지 처리 방침과 그림 일치 확인</p>
+        <p><b>P3 소변기</b>변기·소변기 옆 행동 직전의 시야 · 성별 공간마다 같은 3종을 볼 수 있게</p>
+      </div>
+    </div>
+    <div class="st-tx" style="margin-top:3.6mm">
+      <p>세 곳은 1인 1개소 원칙으로 동시에 운영하였다. 참여자는 한 화장실에서 세 쌍을 보고 나와 그 화장실 밖의 보드에 응답하였고, 같은 사람이 다른 곳을 다시 돌지 않게 하였다. 화장실 내부 부착과 외부 설문은 관계기관과 미리 협의해 허용을 받았다. 실제 시설별 설치 위치와 높이 측정값은 <span class="dummy">[A 000mm · B 000mm · C 000mm]</span>였다.</p>
+      <p>세 곳은 인천역 앞 진입관문에서 한중문화관교차로까지 이어지는 구역 안에 앞·가운데·끝으로 나뉘어 놓였다. 세 시설에 같은 그림을 같은 방식으로 붙였으므로, 시설마다 결과가 달라지면 칸 구조나 이용객 구성이 그 차이를 만들었을 가능성을 함께 따졌다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">132</div>
+</section>
+
+<!-- ================= p133 설치·운영 기록 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">설치·운영 기록</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">두 차수는 이틀 연속 하루씩, <em>조사 전 설치 · 종료 후 철거</em>로<br>같은 자리를 바꿔 썼다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <svg width="178mm" height="50mm" viewBox="0 0 178 50" style="display:block">
+  <g font-size="3.2" font-weight="900"><text x="0" y="14" fill="#2E5A87">11.5(목)</text><text x="0" y="19" font-size="2.7" font-weight="700" fill="#6A7784">1차 권유형</text><text x="0" y="38" fill="#1A2F4B">11.6(금)</text><text x="0" y="43" font-size="2.7" font-weight="700" fill="#6A7784">2차 금지형</text></g>
+  <g font-size="2.7" font-weight="800" fill="#6A7784" text-anchor="middle"><text x="40" y="4">조사 전</text><text x="78" y="4">화장실 안</text><text x="114" y="4">화장실 밖</text><text x="146" y="4">응답 뒤</text><text x="169" y="4">종료 후</text></g>
+  <g>
+    <rect x="24" y="7" width="30" height="14" rx=".6" fill="#E2F3EE"/><text x="39" y="13" font-size="3" font-weight="900" fill="#2F5E55" text-anchor="middle">설치</text><text x="39" y="17.6" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">A·B·C 동시 · 높이 기록</text>
+    <rect x="56" y="7" width="44" height="14" rx=".6" fill="#2E5A87"/><text x="78" y="13" font-size="3" font-weight="900" fill="#fff" text-anchor="middle">세 쌍 관람</text><text x="78" y="17.6" font-size="2.5" font-weight="700" fill="#fff" text-anchor="middle">권유형 1컷 · 3컷 × 3주제</text>
+    <rect x="102" y="7" width="24" height="14" rx=".6" fill="#E3E9F0"/><text x="114" y="13" font-size="3" font-weight="900" fill="#22476C" text-anchor="middle">스티커 설문</text><text x="114" y="17.6" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">주제당 5개</text>
+    <rect x="128" y="7" width="36" height="14" rx=".6" fill="url(#ct-hp)"/><text x="146" y="13" font-size="3" font-weight="900" fill="#22476C" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">심층 인터뷰</text><text x="146" y="17.6" font-size="2.5" font-weight="700" fill="#3D4A56" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">선택 이유 · 그림 해석</text>
+    <rect x="166" y="7" width="12" height="14" rx=".6" fill="#C9D1D8"/><text x="172" y="15.4" font-size="2.8" font-weight="900" fill="#1A2F4B" text-anchor="middle">철거</text>
+  </g>
+  <g transform="translate(0 24)">
+    <rect x="24" y="7" width="30" height="14" rx=".6" fill="#E2F3EE"/><text x="39" y="13" font-size="3" font-weight="900" fill="#2F5E55" text-anchor="middle">같은 자리 교체</text><text x="39" y="17.6" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">1차 측정값 기준</text>
+    <rect x="56" y="7" width="44" height="14" rx=".6" fill="#1A2F4B"/><text x="78" y="13" font-size="3" font-weight="900" fill="#fff" text-anchor="middle">세 쌍 관람</text><text x="78" y="17.6" font-size="2.5" font-weight="700" fill="#fff" text-anchor="middle">금지형 1컷 · 3컷 × 3주제</text>
+    <rect x="102" y="7" width="24" height="14" rx=".6" fill="#E3E9F0"/><text x="114" y="13" font-size="3" font-weight="900" fill="#1A2F4B" text-anchor="middle">스티커 설문</text><text x="114" y="17.6" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">같은 문항·척도</text>
+    <rect x="128" y="7" width="36" height="14" rx=".6" fill="url(#ct-hp)"/><text x="146" y="13" font-size="3" font-weight="900" fill="#1A2F4B" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">심층 인터뷰</text><text x="146" y="17.6" font-size="2.5" font-weight="700" fill="#3D4A56" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">선택 이유 · 그림 해석</text>
+    <rect x="166" y="7" width="12" height="14" rx=".6" fill="#C9D1D8"/><text x="172" y="15.4" font-size="2.8" font-weight="900" fill="#1A2F4B" text-anchor="middle">철거</text>
+  </g>
+  <path d="M39 21.6 V30" stroke="#3F7A6E" stroke-width=".3" stroke-dasharray="1 .7"/><path d="M37.6 28.4 L39 31 L40.4 28.4" fill="#3F7A6E"/>
+</svg>
+    <div class="st-cap"><b>두 날 모두 같은 순서로 운영하였고, 2차는 1차를 떼어 낸 자리에 그대로 붙였다.</b> 운영 시간 1차 <span class="dummy">[00:00–00:00]</span> · 2차 <span class="dummy">[00:00–00:00]</span></div>
+    <div class="st-log" style="margin-top:4.6mm;--lh:40mm">
+      <div class="c"><div class="st-ph"><img src="img/04_차이나타운_부착시뮬.jpg" alt="" style="object-position:40% 35%"><span>1차 부착 시뮬레이션</span></div>
+        <div class="t"><span class="rtag r1">1차</span>그림으로 권유하는 에티켓</div>
+        <dl><dt>운영</dt><dd>11.5(목) 1일</dd><dt>장소</dt><dd>A·B·C 3개소 동시</dd><dt>그림</dt><dd>권유형 3주제 × 1컷·3컷</dd><dt>참여</dt><dd><span class="dummy">[00]</span>명 · 중복 제외</dd></dl></div>
+      <div class="c"><div class="st-ph" style="background:#fff"><img src="img/04_차이나타운_2차_3컷1.png" alt="" style="object-fit:contain;padding:3mm"><span>2차 변기 주제 3컷</span></div>
+        <div class="t"><span class="rtag r2">2차</span>그림으로 금지하는 에티켓</div>
+        <dl><dt>운영</dt><dd>11.6(금) 1일</dd><dt>장소</dt><dd>1차와 같은 자리</dd><dt>그림</dt><dd>금지형 3주제 × 1컷·3컷</dd><dt>참여</dt><dd><span class="dummy">[00]</span>명 · 1차와 겹치지 않음</dd></dl></div>
+      <div class="c"><div class="st-ph" style="background:#fff"><img src="img/04_차이나타운_조사흐름.png" alt="" style="object-fit:cover;object-position:52% 50%"><span>화장실 밖 스티커 보드</span></div>
+        <div class="t"><span class="rtag ws">조사</span>외부 설문 · 인터뷰</div>
+        <dl><dt>인력</dt><dd>중국인 조사 인력 4명</dd><dt>배치</dt><dd>시설별 외부 설문 장소</dd><dt>도구</dt><dd>스티커 보드 · A3 기록판</dd><dt>인터뷰</dt><dd><span class="dummy">[00]</span>명 · 응답 직후</dd></dl></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>설치·교체·철거와 외부 설문 공간은 제물포문화재단과 개항동행정복지센터의 협조로 마련하였다. 화장실 안에는 그림만 붙이고, 응답과 인터뷰는 모두 화장실 밖에서 받아 이용을 방해하지 않게 하였다. 중국인 조사 인력 4명이 시설별 외부 설문 장소에 서서 참여 안내와 인터뷰를 맡았다. 보드 응답을 마친 참여자에게는 이어서 심층 인터뷰를 요청하였다.</p>
+      <p>일정은 관찰자 모집과 부착 방식에 맞추어 수행기관 내부 일정으로 정하였다. 이틀 모두 같은 순서를 지켰고, 시설별 설치 높이와 부착면은 1차 설치 때 기록한 값을 2차에 그대로 썼다. 운영 중 특이사항은 <span class="dummy">[날씨 · 관광객 혼잡 · 시설 점검 시간 등]</span>이었다.</p>
+    </div>
+    <div class="st-keep" style="margin-top:4.6mm">
+      <div class="t">현장 운영 원칙 <span>일곱 거점 공통 · 차이나타운 적용</span></div>
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>안전요원 3명 이상</b><small>대상지별 배치<br>설치·운영·철거 동안</small></div>
+        <div><b>당일 설치·철수</b><small>조사 전 설치<br>종료 후 철거</small></div>
+        <div><b>높이는 측정값</b><small>법정값 임의 지정 없이<br>현장 시야 확인 후 기록</small></div>
+        <div><b>중복 참여 제외</b><small>차수별 별도 모집<br>1인 1개소</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.4mm">
+      <p>참여자는 성인 외국인으로 한정하였고, 내국인 응답은 따로 받아 외국인 결과와 섞지 않았다. 1차에 참여한 사람은 2차 모집에서 제외하여, 같은 사람이 두 어조를 모두 보는 일이 없게 하였다.</p>
+      <p>1차 참여자 <span class="dummy">[00]</span>명, 2차 참여자 <span class="dummy">[00]</span>명 가운데 중복 참여로 확인되어 제외한 응답은 <span class="dummy">[0]</span>건이었다. 시설별 응답 수는 A <span class="dummy">[00]</span>명 · B <span class="dummy">[00]</span>명 · C <span class="dummy">[00]</span>명으로 나뉘었다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">133</div>
+</section>
+
+<!-- ================= p134 정량 결과 · 표본 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정량 결과 · 표본</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">차수마다 성인 외국인 50명을 모집해<br>1차 <span class="dummy">[00]</span>명, 2차 <span class="dummy">[00]</span>명의 <em>유효 응답</em>을 얻었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-chart"><svg width="178mm" height="48mm" viewBox="0 0 178 48"><g transform="translate(0 0)"><text x="0" y="13" font-size="3.4" font-weight="900" fill="#2E5A87">1차</text>
+      <rect x="12" y="4" width="44" height="16" rx=".6" fill="url(#ct-hp)"/><text x="34" y="11" font-size="3" font-weight="700" fill="#3D4A56" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">모집 계획</text><text x="34" y="17.4" font-size="5" font-weight="900" fill="#2F5E55" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">50명</text>
+      <path d="M57.5 12 H63.5 M61.6 10 L63.8 12 L61.6 14" stroke="#3F7A6E" stroke-width=".3" fill="none"/>
+      <rect x="65" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="87" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">참여</text><text x="87" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[00]명</text>
+      <path d="M110.5 12 H116.5 M114.6 10 L116.8 12 L114.6 14" stroke="#3F7A6E" stroke-width=".3" fill="none"/>
+      <rect x="118" y="4" width="44" height="16" rx=".6" fill="#2E5A87"/><text x="140" y="11" font-size="3" font-weight="700" fill="#fff" text-anchor="middle">유효 응답</text><text x="140" y="17.4" font-size="5" font-weight="900" fill="#FF8A80" text-anchor="middle">[00]명</text>
+      <text x="166" y="11" font-size="2.8" font-weight="700" fill="#6A7784">제외</text><text x="166" y="16.4" font-size="3.6" font-weight="900" fill="#E5332A">[0]</text></g><g transform="translate(0 24)"><text x="0" y="13" font-size="3.4" font-weight="900" fill="#1A2F4B">2차</text>
+      <rect x="12" y="4" width="44" height="16" rx=".6" fill="url(#ct-hp)"/><text x="34" y="11" font-size="3" font-weight="700" fill="#3D4A56" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">모집 계획</text><text x="34" y="17.4" font-size="5" font-weight="900" fill="#2F5E55" text-anchor="middle" stroke="#fff" stroke-width=".8" stroke-linejoin="round" paint-order="stroke">50명</text>
+      <path d="M57.5 12 H63.5 M61.6 10 L63.8 12 L61.6 14" stroke="#3F7A6E" stroke-width=".3" fill="none"/>
+      <rect x="65" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="87" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">참여</text><text x="87" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[00]명</text>
+      <path d="M110.5 12 H116.5 M114.6 10 L116.8 12 L114.6 14" stroke="#3F7A6E" stroke-width=".3" fill="none"/>
+      <rect x="118" y="4" width="44" height="16" rx=".6" fill="#1A2F4B"/><text x="140" y="11" font-size="3" font-weight="700" fill="#fff" text-anchor="middle">유효 응답</text><text x="140" y="17.4" font-size="5" font-weight="900" fill="#FF8A80" text-anchor="middle">[00]명</text>
+      <text x="166" y="11" font-size="2.8" font-weight="700" fill="#6A7784">제외</text><text x="166" y="16.4" font-size="3.6" font-weight="900" fill="#E5332A">[0]</text></g></svg></div>
+    <div class="st-cap"><b>모집 계획은 두 차수 모두 성인 외국인 50명으로 같았다.</b> 내국인 응답은 별도 <span class="dummy">[00]</span>명 · 외국인 결과와 섞지 않음</div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:94mm 1fr;gap:7mm">
+      <div>
+        <div class="st-lb">한 사람이 남긴 스티커</div>
+        <svg width="94mm" height="58mm" viewBox="0 0 94 58" style="display:block">
+  <circle cx="7" cy="6" r="3" fill="#1A2F4B"/><path d="M2 16 Q7 9 12 16Z" fill="#1A2F4B"/><text x="7" y="21" font-size="2.4" font-weight="800" fill="#1A2F4B" text-anchor="middle">1인</text>
+  <text x="22" y="12.4" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="end">변기</text><circle cx="28" cy="11" r="3.2" fill="#3F7A6E"/><circle cx="41" cy="11" r="3.2" fill="#A9BBCE"/><circle cx="54" cy="11" r="3.2" fill="url(#ct-hl)"/><circle cx="67" cy="11" r="3.2" fill="#A9BBCE"/><circle cx="80" cy="11" r="3.2" fill="url(#ct-hl)"/><text x="22" y="27.4" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="end">휴지</text><circle cx="28" cy="26" r="3.2" fill="#3F7A6E"/><circle cx="41" cy="26" r="3.2" fill="#A9BBCE"/><circle cx="54" cy="26" r="3.2" fill="url(#ct-hl)"/><circle cx="67" cy="26" r="3.2" fill="#A9BBCE"/><circle cx="80" cy="26" r="3.2" fill="url(#ct-hl)"/><text x="22" y="42.4" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="end">소변기</text><circle cx="28" cy="41" r="3.2" fill="#3F7A6E"/><circle cx="41" cy="41" r="3.2" fill="#A9BBCE"/><circle cx="54" cy="41" r="3.2" fill="url(#ct-hl)"/><circle cx="67" cy="41" r="3.2" fill="#A9BBCE"/><circle cx="80" cy="41" r="3.2" fill="url(#ct-hl)"/><text x="28" y="52" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">선택</text><text x="41" y="52" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">1컷 이해</text><text x="54" y="52" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">1컷 경각</text><text x="67" y="52" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">3컷 이해</text><text x="80" y="52" font-size="2.5" font-weight="700" fill="#56636E" text-anchor="middle">3컷 경각</text>
+  <text x="92" y="12" font-size="2.6" font-weight="800" fill="#6A7784" text-anchor="end">주제당</text><text x="92" y="18" font-size="5" font-weight="900" fill="#2F5E55" text-anchor="end">5개</text>
+  <text x="92" y="32" font-size="2.6" font-weight="800" fill="#6A7784" text-anchor="end">1인 합계</text><text x="92" y="38" font-size="5" font-weight="900" fill="#E5332A" text-anchor="end">[00]개</text>
+</svg>
+        <div class="st-cap"><b>초록 선택 · 하늘 이해도 · 빗살 경각심.</b> 한 사람의 스티커 여러 개를 여러 사람으로 세지 않았다.</div>
+      </div>
+      <div class="st-tx">
+        <p>유효 응답은 <span class="dummy">[세 주제의 선택·이해도·경각심 스티커를 모두 붙인 응답]</span>으로 정하였다. 일부 주제만 붙였거나 같은 칸에 두 개를 붙인 응답은 그 주제에서만 제외하고, 문항마다 남은 수를 그 문항의 분모로 썼다. 이 기준은 두 차수에 같게 적용하였다.</p>
+        <p>보드의 스티커는 사람별로 이어지지 않는다. 그래서 같은 사람이 1컷과 3컷을 어떻게 다르게 평가했는지 짝지어 보지 않고, 주제·형식별 분포를 차수끼리 맞대었다. 인터뷰와 보드 응답의 연결 방식은 <span class="dummy">[응답자 번호 부여 여부]</span>였다.</p>
+        <p>참여자의 국적은 1차 중국 <span class="dummy">[00]%</span>·기타 <span class="dummy">[00]%</span>, 2차 중국 <span class="dummy">[00]%</span>·기타 <span class="dummy">[00]%</span>였다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">참여자 국적 · 연령 구성</div>
+    <svg width="178mm" height="22mm" viewBox="0 0 178 22" style="display:block">
+      
+      <text x="0" y="6.6" font-size="3.2" font-weight="900" fill="#2E5A87">1차</text><text x="0" y="17.6" font-size="3.2" font-weight="900" fill="#1A2F4B">2차</text>
+      <rect x="12" y="2" width="80" height="6" fill="#C9D1D8"/><rect x="92" y="2" width="40" height="6" fill="url(#ct-hg)"/><rect x="132" y="2" width="46" height="6" fill="#EEF1F4"/>
+      <rect x="12" y="13" width="80" height="6" fill="#C9D1D8"/><rect x="92" y="13" width="40" height="6" fill="url(#ct-hg)"/><rect x="132" y="13" width="46" height="6" fill="#EEF1F4"/>
+      <g font-size="2.7" font-weight="800" fill="#E5332A" text-anchor="middle"><text x="52" y="6.2">중국 [00]%</text><text x="112" y="6.2">기타 아시아 [00]%</text><text x="155" y="6.2">그 밖 [00]%</text><text x="52" y="17.2">중국 [00]%</text><text x="112" y="17.2">기타 아시아 [00]%</text><text x="155" y="17.2">그 밖 [00]%</text></g>
+    </svg>
+    <div class="st-cap"><b>두 차수의 참여 집단은 국적과 연령 구성을 함께 적어 결과 해석의 조건으로 남겼다.</b> 연령은 20대 <span class="dummy">[00]%</span> · 30대 <span class="dummy">[00]%</span> · 40대 이상 <span class="dummy">[00]%</span></div>
+    <div class="st-lb" style="margin-top:4.4mm">섞지 않은 세 가지 단위</div>
+    <div class="c-unit">
+      <div><i>사람 단위 · 설문</i><b>응답자 수</b>모집 계획 <em>50명</em> → 1차 유효 <span class="dummy">[00]명</span> · 2차 유효 <span class="dummy">[00]명</span></div>
+      <div><i>스티커 단위 · 보드</i><b>선택·평가 건수</b>주제당 <em>5개</em>. 1차 <span class="dummy">[000]개</span> · 2차 <span class="dummy">[000]개</span>. 분포 집계에만 사용</div>
+      <div><i>발언 단위 · 인터뷰</i><b>이유·해석 발언</b>인터뷰 <span class="dummy">[00]명</span>의 발언 <span class="dummy">[00]건</span>. 주제 분류에만 사용</div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4mm">
+      <p>세 단위를 나눈 것은 같은 숫자가 다른 뜻으로 읽히지 않게 하기 위해서였다. 한 사람이 주제마다 다섯 개씩 스티커를 붙이므로 보드에는 사람 수보다 훨씬 많은 스티커가 남는다. 주제마다 남긴 다섯 개는 형식 선택 1개와 1컷·3컷의 이해도·경각심 각 1개다.</p>
+      <p>그래서 형식 선택과 5점 평가의 비율은 스티커 단위로, 참여 규모는 사람 단위로, 인터뷰의 주제는 발언 단위로만 적었고, 세 단위의 수를 서로 더하지 않았다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 차이나타운 1·2차 스티커 설문(유효 응답 1차 <span class="dummy">[00]</span>명 · 2차 <span class="dummy">[00]</span>명)</div>
+  <div class="pno">134</div>
+</section>
+
+<!-- ================= p135 정량 결과 · 핵심 지표 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정량 결과 · 핵심 지표</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">이해도는 권유형 <span class="dummy">[0.0]</span>점 · 금지형 <span class="dummy">[0.0]</span>점,<br><em>경각심</em>은 금지형이 <span class="dummy">[0.0]점 [높았다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-kpi">
+      <div class="c"><h5>① 이해도 평균 (5점 척도)</h5><p>그림이 전하는 행동을 알아들었다는 응답 · 세 주제 합산 · 분모: 문항 유효 응답</p><svg width="86mm" height="62mm" viewBox="0 0 86 62"><line x1="26.0" y1="4" x2="26.0" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="26.0" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">1</text><line x1="40.5" y1="4" x2="40.5" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="40.5" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">2</text><line x1="55.0" y1="4" x2="55.0" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="55.0" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">3</text><line x1="69.5" y1="4" x2="69.5" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="69.5" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">4</text><line x1="84.0" y1="4" x2="84.0" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="84.0" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">5</text><text x="23" y="11.1" font-size="2.8" font-weight="800" fill="#2E5A87" text-anchor="end">권유형 · 1컷</text><line x1="26" y1="10" x2="84" y2="10" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="10" r="2.2" fill="url(#ct-hr)"/><text x="59" y="7.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="23" y="22.1" font-size="2.8" font-weight="800" fill="#2E5A87" text-anchor="end">권유형 · 3컷</text><line x1="26" y1="21" x2="84" y2="21" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="21" r="2.2" fill="url(#ct-hr)"/><text x="59" y="18.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="23" y="33.1" font-size="2.8" font-weight="800" fill="#1A2F4B" text-anchor="end">금지형 · 1컷</text><line x1="26" y1="32" x2="84" y2="32" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="32" r="2.2" fill="url(#ct-hr)"/><text x="59" y="29.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="23" y="44.1" font-size="2.8" font-weight="800" fill="#1A2F4B" text-anchor="end">금지형 · 3컷</text><line x1="26" y1="43" x2="84" y2="43" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="43" r="2.2" fill="url(#ct-hr)"/><text x="59" y="40.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="84" y="60" font-size="2.5" fill="#8C98A3" font-weight="700" text-anchor="end">5점 = 매우 그렇다</text></svg></div>
+      <div class="c"><h5>② 경각심 평균 (5점 척도)</h5><p>그 행동을 조심해야겠다고 느낀 정도 · 세 주제 합산 · 분모: 문항 유효 응답</p><svg width="86mm" height="62mm" viewBox="0 0 86 62"><line x1="26.0" y1="4" x2="26.0" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="26.0" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">1</text><line x1="40.5" y1="4" x2="40.5" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="40.5" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">2</text><line x1="55.0" y1="4" x2="55.0" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="55.0" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">3</text><line x1="69.5" y1="4" x2="69.5" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="69.5" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">4</text><line x1="84.0" y1="4" x2="84.0" y2="50" stroke="#E3E8EC" stroke-width=".3"/><text x="84.0" y="55" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">5</text><text x="23" y="11.1" font-size="2.8" font-weight="800" fill="#2E5A87" text-anchor="end">권유형 · 1컷</text><line x1="26" y1="10" x2="84" y2="10" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="10" r="2.2" fill="url(#ct-hr)"/><text x="59" y="7.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="23" y="22.1" font-size="2.8" font-weight="800" fill="#2E5A87" text-anchor="end">권유형 · 3컷</text><line x1="26" y1="21" x2="84" y2="21" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="21" r="2.2" fill="url(#ct-hr)"/><text x="59" y="18.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="23" y="33.1" font-size="2.8" font-weight="800" fill="#1A2F4B" text-anchor="end">금지형 · 1컷</text><line x1="26" y1="32" x2="84" y2="32" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="32" r="2.2" fill="url(#ct-hr)"/><text x="59" y="29.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="23" y="44.1" font-size="2.8" font-weight="800" fill="#1A2F4B" text-anchor="end">금지형 · 3컷</text><line x1="26" y1="43" x2="84" y2="43" stroke="#F1F3F5" stroke-width="2.4" stroke-linecap="round"/><circle cx="55" cy="43" r="2.2" fill="url(#ct-hr)"/><text x="59" y="40.4" font-size="2.6" font-weight="800" fill="#E5332A">[0.0]</text><text x="84" y="60" font-size="2.5" fill="#8C98A3" font-weight="700" text-anchor="end">5점 = 매우 그렇다</text></svg></div>
+    </div>
+    <div class="st-kpi" style="grid-template-columns:1fr;margin-top:4mm">
+      <div class="c"><h5>③ 형식 선택 · 더 알기 쉬운 쪽으로 고른 비율</h5><p>주제마다 1컷과 3컷 가운데 하나를 고른 스티커 · 분모: 그 주제의 유효 선택 · 점선은 50%</p><svg width="178mm" height="72mm" viewBox="0 0 178 72"><line x1="42" y1="2" x2="42" y2="64" stroke="#E3E8EC" stroke-width=".3"/><text x="42" y="69" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">0</text><line x1="75" y1="2" x2="75" y2="64" stroke="#E3E8EC" stroke-width=".3"/><text x="75" y="69" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">25</text><line x1="108" y1="2" x2="108" y2="64" stroke="#E3E8EC" stroke-width=".3"/><text x="108" y="69" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">50</text><line x1="141" y1="2" x2="141" y2="64" stroke="#E3E8EC" stroke-width=".3"/><text x="141" y="69" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">75</text><line x1="174" y1="2" x2="174" y2="64" stroke="#E3E8EC" stroke-width=".3"/><text x="174" y="69" font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle">100%</text><text x="2" y="12" font-size="3.2" font-weight="900" fill="#1A2F4B">변기</text><text x="39" y="8.4" font-size="2.7" font-weight="800" fill="#2E5A87" text-anchor="end">1차 권유</text><rect x="42" y="4" width="66" height="6" fill="#C9D1D8"/><rect x="108" y="4" width="66" height="6" fill="url(#ct-hg)"/><text x="45" y="8.4" font-size="2.6" font-weight="800" fill="#E5332A">1컷 [00]%</text><text x="171" y="8.4" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">3컷 [00]%</text><text x="39" y="16.4" font-size="2.7" font-weight="800" fill="#1A2F4B" text-anchor="end">2차 금지</text><rect x="42" y="12" width="66" height="6" fill="#C9D1D8"/><rect x="108" y="12" width="66" height="6" fill="url(#ct-hg)"/><text x="45" y="16.4" font-size="2.6" font-weight="800" fill="#E5332A">1컷 [00]%</text><text x="171" y="16.4" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">3컷 [00]%</text><text x="2" y="33" font-size="3.2" font-weight="900" fill="#1A2F4B">휴지</text><text x="39" y="29.4" font-size="2.7" font-weight="800" fill="#2E5A87" text-anchor="end">1차 권유</text><rect x="42" y="25" width="66" height="6" fill="#C9D1D8"/><rect x="108" y="25" width="66" height="6" fill="url(#ct-hg)"/><text x="45" y="29.4" font-size="2.6" font-weight="800" fill="#E5332A">1컷 [00]%</text><text x="171" y="29.4" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">3컷 [00]%</text><text x="39" y="37.4" font-size="2.7" font-weight="800" fill="#1A2F4B" text-anchor="end">2차 금지</text><rect x="42" y="33" width="66" height="6" fill="#C9D1D8"/><rect x="108" y="33" width="66" height="6" fill="url(#ct-hg)"/><text x="45" y="37.4" font-size="2.6" font-weight="800" fill="#E5332A">1컷 [00]%</text><text x="171" y="37.4" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">3컷 [00]%</text><text x="2" y="54" font-size="3.2" font-weight="900" fill="#1A2F4B">소변기</text><text x="39" y="50.4" font-size="2.7" font-weight="800" fill="#2E5A87" text-anchor="end">1차 권유</text><rect x="42" y="46" width="66" height="6" fill="#C9D1D8"/><rect x="108" y="46" width="66" height="6" fill="url(#ct-hg)"/><text x="45" y="50.4" font-size="2.6" font-weight="800" fill="#E5332A">1컷 [00]%</text><text x="171" y="50.4" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">3컷 [00]%</text><text x="39" y="58.4" font-size="2.7" font-weight="800" fill="#1A2F4B" text-anchor="end">2차 금지</text><rect x="42" y="54" width="66" height="6" fill="#C9D1D8"/><rect x="108" y="54" width="66" height="6" fill="url(#ct-hg)"/><text x="45" y="58.4" font-size="2.6" font-weight="800" fill="#E5332A">1컷 [00]%</text><text x="171" y="58.4" font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="end">3컷 [00]%</text><line x1="108" y1="1" x2="108" y2="65" stroke="#1A2F4B" stroke-width=".4" stroke-dasharray="1 .8"/></svg></div>
+    </div>
+    <div class="st-cap"><b>평균은 5점 분포(다음 쪽)를 보조하는 값으로만 썼고, 선택 비율의 분모는 주제마다 다르다.</b> 선택 비율의 점선은 50%</div>
+    <div class="st-tx st-c2" style="margin-top:4mm">
+      <p>이해도 평균은 권유형 <span class="dummy">[0.0]</span>점, 금지형 <span class="dummy">[0.0]</span>점으로 두 어조의 차이는 <span class="dummy">[0.0]</span>점이었다. 경각심은 금지형이 <span class="dummy">[0.0]</span>점으로 권유형보다 <span class="dummy">[0.0]점 [높았다]</span>. 같은 어조 안에서는 3컷의 이해도가 1컷보다 <span class="dummy">[0.0]점 [높았다]</span>.</p>
+      <p>더 알기 쉬운 쪽을 고르게 하자 3컷을 고른 비율은 1차 <span class="dummy">[00]%</span>, 2차 <span class="dummy">[00]%</span>였고, 주제별로는 <span class="dummy">[휴지]</span>에서 3컷 선택이 가장 많았고 <span class="dummy">[소변기]</span>에서 가장 적었다. 이 순서는 두 차수에서 <span class="dummy">[같았다]</span>.</p>
+      <p>세 지표는 서로 다른 것을 물었다. 이해도는 그림이 전하는 행동을 알아들었는지를, 경각심은 그 행동을 조심해야겠다고 느꼈는지를, 형식 선택은 두 형식 가운데 어느 쪽이 더 알기 쉬운지를 물었다. 이해도는 높지만 경각심은 낮은 그림, 선택은 많이 받았지만 이해도는 낮은 형식이 따로 나타날 수 있었으므로, 결과는 세 지표를 나란히 놓고 읽었다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 차이나타운 1·2차 스티커 설문(유효 응답 1차 <span class="dummy">[00]</span>명 · 2차 <span class="dummy">[00]</span>명)</div>
+  <div class="pno">135</div>
+</section>
+
+<!-- ================= p136 정량 결과 · 조건별 비교 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정량 결과 · 조건별 비교</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">5점 응답의 분포로 보면, 금지형의 경각심은<br><em>높은 점수 쪽</em>으로 <span class="dummy">[더 몰렸다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-lb">이해도 · 경각심 5점 응답 분포 · 어조 × 길이</div>
+    <div class="st-chart"><svg width="178mm" height="60mm" viewBox="0 0 178 60"><text x="64" y="4" font-size="3.2" font-weight="900" fill="#1A2F4B" text-anchor="middle">이해도</text><text x="27" y="13.4" font-size="2.8" font-weight="800" fill="#2E5A87" text-anchor="end">권유형 · 1컷</text><rect x="30" y="9" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="36.8" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="43.6" y="9" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="50.4" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="57.2" y="9" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="64.0" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="70.8" y="9" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="77.6" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="84.39999999999999" y="9" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="91.19999999999999" y="13.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><text x="27" y="24.4" font-size="2.8" font-weight="800" fill="#2E5A87" text-anchor="end">권유형 · 3컷</text><rect x="30" y="20" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="36.8" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="43.6" y="20" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="50.4" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="57.2" y="20" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="64.0" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="70.8" y="20" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="77.6" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="84.39999999999999" y="20" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="91.19999999999999" y="24.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><text x="27" y="35.4" font-size="2.8" font-weight="800" fill="#1A2F4B" text-anchor="end">금지형 · 1컷</text><rect x="30" y="31" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="36.8" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="43.6" y="31" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="50.4" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="57.2" y="31" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="64.0" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="70.8" y="31" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="77.6" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="84.39999999999999" y="31" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="91.19999999999999" y="35.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><text x="27" y="46.4" font-size="2.8" font-weight="800" fill="#1A2F4B" text-anchor="end">금지형 · 3컷</text><rect x="30" y="42" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="36.8" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="43.6" y="42" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="50.4" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="57.2" y="42" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="64.0" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="70.8" y="42" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="77.6" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="84.39999999999999" y="42" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="91.19999999999999" y="46.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><line x1="64" y1="7" x2="64" y2="53" stroke="#1A2F4B" stroke-width=".4" stroke-dasharray="1 .8"/><text x="36.8" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">1점</text><text x="50.4" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">2점</text><text x="64.0" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">3점</text><text x="77.6" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">4점</text><text x="91.19999999999999" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">5점</text><text x="144" y="4" font-size="3.2" font-weight="900" fill="#1A2F4B" text-anchor="middle">경각심</text><rect x="110" y="9" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="116.8" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="123.6" y="9" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="130.4" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="137.2" y="9" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="144.0" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="150.79999999999998" y="9" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="157.6" y="13.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="164.39999999999998" y="9" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="171.2" y="13.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><rect x="110" y="20" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="116.8" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="123.6" y="20" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="130.4" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="137.2" y="20" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="144.0" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="150.79999999999998" y="20" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="157.6" y="24.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="164.39999999999998" y="20" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="171.2" y="24.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><rect x="110" y="31" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="116.8" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="123.6" y="31" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="130.4" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="137.2" y="31" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="144.0" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="150.79999999999998" y="31" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="157.6" y="35.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="164.39999999999998" y="31" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="171.2" y="35.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><rect x="110" y="42" width="13.6" height="6.4" fill="#B9C3CB" stroke="#fff" stroke-width=".3"/><text x="116.8" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="123.6" y="42" width="13.6" height="6.4" fill="#D3DBE2" stroke="#fff" stroke-width=".3"/><text x="130.4" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="137.2" y="42" width="13.6" height="6.4" fill="#EEF1F4" stroke="#fff" stroke-width=".3"/><text x="144.0" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="150.79999999999998" y="42" width="13.6" height="6.4" fill="#A9BBCE" stroke="#fff" stroke-width=".3"/><text x="157.6" y="46.4" font-size="2.3" font-weight="800" fill="#E5332A" text-anchor="middle">[00]</text><rect x="164.39999999999998" y="42" width="13.6" height="6.4" fill="#3F7A6E" stroke="#fff" stroke-width=".3"/><text x="171.2" y="46.4" font-size="2.3" font-weight="800" fill="#FF8A80" text-anchor="middle">[00]</text><line x1="144" y1="7" x2="144" y2="53" stroke="#1A2F4B" stroke-width=".4" stroke-dasharray="1 .8"/><text x="116.8" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">1점</text><text x="130.4" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">2점</text><text x="144.0" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">3점</text><text x="157.6" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">4점</text><text x="171.2" y="58" font-size="2.5" font-weight="700" fill="#6A7784" text-anchor="middle">5점</text></svg></div>
+    <div class="st-cap"><b>가운데 점선이 3점(보통)이다. 오른쪽 짙은 칸이 넓을수록 ‘그렇다’ 쪽 응답이 많다.</b> 칸 너비는 응답 비율 · 분모: 문항 유효 응답</div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:86mm 1fr;gap:6mm">
+      <div>
+        <div class="st-lb">시설별 경각심 평균</div>
+        <svg width="86mm" height="66mm" viewBox="0 0 86 66"><g stroke="#E3E8EC" stroke-width=".3"><line x1="8" y1="4" x2="86" y2="4"/><line x1="8" y1="17" x2="86" y2="17"/><line x1="8" y1="30" x2="86" y2="30"/><line x1="8" y1="43" x2="86" y2="43"/></g><line x1="8" y1="56" x2="86" y2="56" stroke="#1A2F4B" stroke-width=".5"/><g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="7" y="5">5</text><text x="7" y="30.6">3</text><text x="7" y="57">1</text></g><rect x="14" y="30" width="9" height="26" fill="#2E5A87"/><rect x="24" y="30" width="9" height="26" fill="#1A2F4B"/><text x="18.5" y="27.6" font-size="2.5" font-weight="800" fill="#E5332A" text-anchor="middle">[0.0]</text><text x="28.5" y="27.6" font-size="2.5" font-weight="800" fill="#E5332A" text-anchor="middle">[0.0]</text><circle cx="23.5" cy="61.6" r="2.4" fill="#2E5A87"/><text x="23.5" y="62.7" font-size="3" font-weight="900" fill="#fff" text-anchor="middle">A</text><rect x="40" y="30" width="9" height="26" fill="#2E5A87"/><rect x="50" y="30" width="9" height="26" fill="#1A2F4B"/><text x="44.5" y="27.6" font-size="2.5" font-weight="800" fill="#E5332A" text-anchor="middle">[0.0]</text><text x="54.5" y="27.6" font-size="2.5" font-weight="800" fill="#E5332A" text-anchor="middle">[0.0]</text><circle cx="49.5" cy="61.6" r="2.4" fill="#2E5A87"/><text x="49.5" y="62.7" font-size="3" font-weight="900" fill="#fff" text-anchor="middle">B</text><rect x="66" y="30" width="9" height="26" fill="#2E5A87"/><rect x="76" y="30" width="9" height="26" fill="#1A2F4B"/><text x="70.5" y="27.6" font-size="2.5" font-weight="800" fill="#E5332A" text-anchor="middle">[0.0]</text><text x="80.5" y="27.6" font-size="2.5" font-weight="800" fill="#E5332A" text-anchor="middle">[0.0]</text><circle cx="75.5" cy="61.6" r="2.4" fill="#2E5A87"/><text x="75.5" y="62.7" font-size="3" font-weight="900" fill="#fff" text-anchor="middle">C</text></svg>
+        <div class="st-cap"><b>파랑 1차 권유형 · 남색 2차 금지형.</b> 시설마다 칸 구조와 이용객이 달라 따로 나누어 보았다.</div>
+      </div>
+      <div>
+        <div class="st-tx">
+          <p>평균만 보면 어조의 차이가 작아 보일 수 있어 5점 응답의 분포를 함께 보았다. 금지형 경각심에서 4·5점 응답은 <span class="dummy">[00]%</span>로 권유형의 <span class="dummy">[00]%</span>보다 <span class="dummy">[많았다]</span>. 이해도의 4·5점 응답은 두 어조에서 <span class="dummy">[비슷하였다]</span>.</p>
+          <p>시설별로 나누어도 어조의 차이는 <span class="dummy">[세 곳 모두 같은 방향이었다]</span>. 차이가 가장 큰 곳은 <span class="dummy">[C]</span>였고, 이 시설은 <span class="dummy">[이용객 구성·칸 구조]</span>가 달랐다. 시설마다 응답 수가 달라, 시설별 평균은 응답 수와 함께 읽었다. 응답 수가 적은 시설의 평균은 차이를 읽는 데 쓰지 않았다.</p>
+        </div>
+        <div class="st-mn" style="margin-top:3mm"><b>1·2점을 준 응답</b>그림의 뜻을 낮게 평가한 응답은 1차 <span class="dummy">[00]</span>건, 2차 <span class="dummy">[00]</span>건이었고, 이유는 인터뷰에서 따로 확인하였다.</div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:4.6mm">결과를 흔들 수 있었던 외부 조건</div>
+    <div class="st-keep">
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>요일</b><small>1차 목요일 · 2차 금요일<br>이틀 연속 운영</small></div>
+        <div><b>참여 집단</b><small>차수별 별도 모집<br>국적 구성 <span class="dummy">[차이]</span></small></div>
+        <div><b>시설</b><small>같은 3개소 · 성별 공간<br>같은 3종 배치</small></div>
+        <div><b>날씨·혼잡</b><small class="dummy">[1차 맑음 · 2차 흐림 등]</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.4mm">
+      <p>가장 크게 작용할 수 있었던 조건은 참여 집단이 달랐다는 점이다. 두 차수의 국적 구성은 <span class="dummy">[비슷하였고]</span>, 중국인 응답만 따로 보아도 어조의 차이는 <span class="dummy">[같은 방향이었다]</span>. 차수마다 참여자를 새로 모집한 설계에서 이 차이는 피할 수 없었으므로, 국적 구성을 결과와 함께 적었다.</p>
+      <p>요일은 목요일과 금요일로 하루 차이였다. 평일 이틀을 연달아 쓴 것은 두 참여 집단의 조건을 가깝게 두는 데 <span class="dummy">[도움이 되었다]</span>. 두 날 모두 같은 세 곳을 같은 순서로 조사하였고, 날씨와 혼잡은 시설별 조사 기록에 따로 남겼다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 차이나타운 1·2차 스티커 설문(유효 응답 1차 <span class="dummy">[00]</span>명 · 2차 <span class="dummy">[00]</span>명)</div>
+  <div class="pno">136</div>
+</section>
+
+<!-- ================= p137 정량 결과 · 소결 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정량 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">숫자로 보면, 어조는 <span class="dummy">[경각심]</span>을,<br>길이는 <span class="dummy">[이해도]</span>를 <em>더 크게 갈랐다</em></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-lb">어조 × 길이, 네 칸으로 본 결과</div>
+    <div class="c-mx">
+      <div class="e"></div><div class="h">1컷 단일형</div><div class="h">3컷 연속형</div>
+      <div class="r" style="background:var(--r1)">권유형<small>1차</small></div>
+      <div class="v"><span>이해 <b>[0.0]</b></span><span>경각 <b>[0.0]</b></span><span>선택 <b>[00]%</b></span></div>
+      <div class="v"><span>이해 <b>[0.0]</b></span><span>경각 <b>[0.0]</b></span><span>선택 <b>[00]%</b></span></div>
+      <div class="r" style="background:var(--r2)">금지형<small>2차</small></div>
+      <div class="v"><span>이해 <b>[0.0]</b></span><span>경각 <b>[0.0]</b></span><span>선택 <b>[00]%</b></span></div>
+      <div class="v"><span>이해 <b>[0.0]</b></span><span>경각 <b>[0.0]</b></span><span>선택 <b>[00]%</b></span></div>
+    </div>
+    <div class="st-cap"><b>가로로 읽으면 길이의 차이, 세로로 읽으면 어조의 차이다.</b> 이해·경각은 5점 평균, 선택은 그 형식을 고른 비율</div>
+    <div class="st-split" style="margin-top:5mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">차이나타운의 정량 결과는 두 방향으로 읽었다. 같은 길이에서 어조를 바꾸면 무엇이 달라졌는가, 같은 어조에서 길이를 바꾸면 무엇이 달라졌는가.</p>
+        <p>어조의 차이는 이해도보다 경각심에서 <span class="dummy">[컸다]</span>. 두 어조 모두 그림의 뜻은 <span class="dummy">[대체로 알아들었고]</span>, 이해도 평균의 차이는 <span class="dummy">[0.0]</span>점에 머물렀다. 반면 경각심은 금지형에서 <span class="dummy">[0.0]</span>점 <span class="dummy">[높았고]</span>, 4·5점 응답도 <span class="dummy">[더 많았다]</span>.</p>
+        <p>길이의 차이는 이해도에서 <span class="dummy">[드러났다]</span>. 행동 전·행동·결과를 잇는 3컷은 두 어조 모두에서 1컷보다 이해도가 <span class="dummy">[높았고]</span>, 더 알기 쉬운 쪽으로 3컷을 고른 비율도 <span class="dummy">[00]%</span>였다. 한 장면만 보여 주는 1컷은 <span class="dummy">[휴지]</span> 주제에서 뜻이 가장 <span class="dummy">[덜 전해졌다]</span>.</p>
+        <p>다만 두 차수는 참여자가 다르고, 이틀 연속이지만 요일도 달랐다. 그래서 어조의 차이는 두 집단의 차이를 포함한 값으로 보았고, 그림의 어느 부분이 뜻을 전했는지는 인터뷰의 그림 해석으로 넘겼다.</p>
+      <p>두 비교의 바탕은 같은 3개소·3주제·문항·척도였다. 바꾼 것이 어조 하나였으므로 같은 길이 안에서 두 어조를 맞대면 어조의 차이를, 같은 어조 안에서 두 길이를 맞대면 길이의 차이를 읽을 수 있었다. 네 칸 표의 가로와 세로는 이 두 비교를 그대로 옮긴 것이다.</p>
+        <p>세 주제를 나누어 보아도 큰 흐름은 <span class="dummy">[같았다]</span>. 어조의 차이는 <span class="dummy">[변기]</span> 주제에서, 길이의 차이는 <span class="dummy">[휴지]</span> 주제에서 가장 컸다. 휴지 주제는 시설별 휴지 처리 방침을 확인한 뒤 그림을 붙였으므로 시설별 응답을 함께 적어 두었다.</p>
+        <p>정량 소결은 판정의 한쪽 근거였다. 숫자가 가리킨 방향이 인터뷰의 그림 해석과 맞으면 그 요소를 상설 쪽에, 방향은 맞지만 표준이나 시설 조건이 걸리면 수정 쪽에, 숫자와 해석이 어긋나면 다음 실험의 조건 쪽에 두었다. 어조와 길이 가운데 어느 쪽이 더 크게 갈랐는지는 그래서 요소별 판정의 출발점이 되었다.</p>
+        <p>내국인 응답 <span class="dummy">[00]</span>명은 외국인 결과와 섞지 않고 따로 집계하였다. 같은 그림을 말이 통하는 이용자가 어떻게 읽었는지는 외국인 결과를 읽을 때 곁에 두는 참고값으로만 썼다.</p>
+      </div>
+      <div class="st-sum">
+        <div class="it"><b>1</b><p><em>이해</em><br>두 어조의 이해도 차 <span class="dummy">[±0.0]</span>점. 3컷이 1컷보다 <span class="dummy">[높음]</span></p></div>
+        <div class="it"><b>2</b><p><em>경각심</em><br>금지형이 권유형보다 <span class="dummy">[0.0]</span>점 <span class="dummy">[높음]</span></p></div>
+        <div class="it"><b>3</b><p><em>선택</em><br>3컷 선택 <span class="dummy">[00]%</span> · <span class="dummy">[휴지]</span> 주제에서 가장 많음</p></div>
+        <div class="st-mn"><b>읽을 때 주의</b>스티커는 사람별로 이어지지 않아 개인 안의 차이는 계산하지 않았고, 어조의 차이에는 두 참여 집단의 차이가 함께 들어 있다.</div>
+      </div>
+    </div>
+    <div class="st-out" style="margin-top:5mm"><b>그림의 <span>뜻</span>은 어조보다 <span class="dummy" style="color:#FF8A80!important">[길이]</span>가,<br>그림의 <span>무게</span>는 길이보다 <span class="dummy" style="color:#FF8A80!important">[어조]</span>가 더 크게 바꾸었다</b><small>그림의 어느 부분이 뜻을 전했는지<br>→ 정성 결과 · 주제 1</small></div>
+
+  </div>
+  <div class="foot-src">자료: 차이나타운 1·2차 스티커 설문(유효 응답 1차 <span class="dummy">[00]</span>명 · 2차 <span class="dummy">[00]</span>명)</div>
+  <div class="pno">137</div>
+</section>
+
+<!-- ================= p138 정성 결과 · 자료 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정성 결과 · 자료</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료는 두 차수의 <em>심층 인터뷰</em>와<br>시설별 조사 기록에서 모았다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-src">
+      <div class="c"><div class="h" style="background:var(--r1)">1차 심층 인터뷰<small>11.5(목) · 권유형 · 스티커 응답 직후</small></div>
+        <ul><li>인터뷰 참여<b class="dummy">[00]명</b></li><li>선택 이유 발언<b class="dummy">[00]건</b></li><li>그림 해석 발언<b class="dummy">[00]건</b></li><li>개선 의견<b class="dummy">[00]건</b></li></ul></div>
+      <div class="c"><div class="h" style="background:var(--r2)">2차 심층 인터뷰<small>11.6(금) · 금지형 · 스티커 응답 직후</small></div>
+        <ul><li>인터뷰 참여<b class="dummy">[00]명</b></li><li>선택 이유 발언<b class="dummy">[00]건</b></li><li>그림 해석 발언<b class="dummy">[00]건</b></li><li>개선 의견<b class="dummy">[00]건</b></li></ul></div>
+      <div class="c"><div class="h" style="background:#5B6B7A">시설별 조사 기록<small>A·B·C · 중국인 조사 인력 4명</small></div>
+        <ul><li>참여 거절·중도 이탈<b class="dummy">[00]건</b></li><li>안내 중 질문<b class="dummy">[00]건</b></li><li>부착 상태 점검<b class="dummy">[0]회</b></li><li>특이사항<b class="dummy">[00]건</b></li></ul></div>
+    </div>
+    <div class="st-cap"><b>인터뷰는 스티커가 고른 것의 ‘이유’를, 조사 기록은 응답이 나온 ‘조건’을 남겼다.</b> 세 자료는 단위가 달라 합산하지 않았다.</div>
+    <div class="st-lb" style="margin-top:5mm">말이 기록이 되기까지</div>
+    <div class="c-chev">
+      <div><i>1</i><b>응답 언어</b>중국어 <span class="dummy">[00]%</span> · 영어 <span class="dummy">[00]%</span> · 한국어 <span class="dummy">[00]%</span></div>
+      <div><i>2</i><b>현장 기록</b>시설별 조사원이 응답 직후 받아 적음</div>
+      <div><i>3</i><b>번역 대조</b><span class="dummy">[번역·원문 대조 방식]</span></div>
+      <div><i>4</i><b>장면 단위 분류</b>해석 단서 × 반응, 두 축으로 코딩</div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>인터뷰는 스티커를 다 붙인 참여자에게 이어서 물었다. 두 그림 가운데 왜 그쪽이 더 알기 쉬웠는지, 그림이 무엇을 하라는 것으로 보였는지, 고치면 좋을 점이 있는지의 세 가지다. 중국인 조사 인력이 응답자의 언어로 묻고 기록하였다. 질문과 그 순서는 두 차수 모두 같게 두어, 어조가 달라도 같은 물음에 대한 답을 견줄 수 있게 하였다.</p>
+      <p>그림 해석은 정답과 맞대어 보았다. 설계에서 의도한 행동(바르게 앉기, 휴지통에 넣기, 가까이 서기와 그 반대)과 참여자가 말한 행동이 같으면 ‘바로 이해’, 다르면 ‘다르게 이해’로 나누었다. 다르게 읽힌 그림은 그 이유가 된 장면이나 기호를 함께 적었다. 1차와 2차는 같은 기준으로 나누어, 두 어조의 해석을 같은 칸에서 견줄 수 있게 하였다.</p>
+      <p>시설별 조사 기록은 응답이 나온 조건을 남겼다. 참여를 거절하거나 중간에 그만둔 경우, 안내 중에 나온 질문, 그림이 떨어지거나 젖지 않았는지 점검한 횟수를 적어, 현장 사정이 응답의 차이를 만들었을 가능성을 가려냈다. 이 기록은 정량 결과의 시설별 차이를 읽을 때 함께 쓰였다.</p>
+    </div>
+    <div class="st-lb" style="margin-top:4.4mm">발언을 나눈 두 개의 축</div>
+    <div class="c-code">
+      <div class="h">해석 단서<small>무엇을 보고 뜻을 읽었나</small></div>
+      <div class="tags"><span>캐릭터 표정<b>[00]</b></span><span>체크·원형 기호<b>[00]</b></span><span>화살표 순서<b>[00]</b></span><span>변기·휴지통 그림<b>[00]</b></span><span>색<b>[00]</b></span></div>
+      <div class="h">반응<small>그림을 어떻게 느꼈나</small></div>
+      <div class="tags e"><span>바로 이해<b>[00]</b></span><span>다르게 이해<b>[00]</b></span><span>주의하게 됨<b>[00]</b></span><span>불편·불쾌<b>[00]</b></span><span>친근함<b>[00]</b></span></div>
+    </div>
+    <div class="st-cap"><b>숫자는 각 코드가 붙은 발언 수다.</b> 한 발언에 두 축의 코드가 함께 붙을 수 있다. 분류가 애매한 발언은 조사 담당 <span class="dummy">[0]</span>인이 함께 검토해 정하였다.</div>
+    <div class="st-lb" style="margin-top:4.6mm">인터뷰의 세 질문과 해석 판정</div>
+    <div class="c-qs">
+      <div><i>Q1</i><b>왜 그쪽이 더 알기 쉬웠나</b><span>1컷·3컷 선택의 이유</span></div>
+      <div><i>Q2</i><b>그림은 무엇을 하라는 것인가</b><span>그림 해석 · 의도한 행동과 대조</span></div>
+      <div><i>Q3</i><b>무엇을 고치면 좋겠나</b><span>개선 의견</span></div>
+      <div class="rule"><p><b>바로 이해</b>말한 행동 = 의도한 행동</p><p><b>다르게 이해</b>말한 행동 ≠ 의도한 행동 → 원인 장면·기호 기록</p></div>
+    </div>
+    <div class="st-cap"><b>Q2의 답을 정답과 맞대어 해석의 정확도를 나누었고, Q1·Q3는 선택과 개선의 이유로 분류하였다.</b></div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 차이나타운 인터뷰·조사 기록</div>
+  <div class="pno">138</div>
+</section>
+
+<!-- ================= p139 정성 결과 · 주제 1 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정성 결과 · 주제 1</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">참여자들은 그림의 뜻을 <span class="dummy">[기호보다 결과 장면]</span>에서<br><em>먼저 읽어 냈다</em></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-irh"><div>3컷 그림</div><div>의도한 뜻</div><div></div><div>1차 참여자가 읽은 뜻</div><div>2차 참여자가 읽은 뜻</div></div>
+    <div class="c-ir"><div class="st-ph" style="background:#fff"><img src="img/04_차이나타운_1차_3컷1.png" alt=""></div>
+      <div class="it"><i>설계가 의도한 뜻</i><b>바르게 앉기</b>뚜껑을 올리고 변기에 앉는다</div><div class="ar">▶</div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[A]</span> · 1차 · 「바르게 앉기」 그림을 읽은 말</span></div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[D]</span> · 2차 · 같은 주제 금지형을 읽은 말</span></div></div>
+    <div class="c-ir"><div class="st-ph" style="background:#fff"><img src="img/04_차이나타운_1차_3컷2.png" alt=""></div>
+      <div class="it"><i>설계가 의도한 뜻</i><b>휴지통에 넣기</b>쓴 휴지는 휴지통에 버린다</div><div class="ar">▶</div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[B]</span> · 1차 · 「휴지통에 넣기」 그림을 읽은 말</span></div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[E]</span> · 2차 · 같은 주제 금지형을 읽은 말</span></div></div>
+    <div class="c-ir"><div class="st-ph" style="background:#fff"><img src="img/04_차이나타운_1차_3컷3.png" alt=""></div>
+      <div class="it"><i>설계가 의도한 뜻</i><b>가까이 서기</b>소변기에 한 걸음 다가선다</div><div class="ar">▶</div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[C]</span> · 1차 · 「가까이 서기」 그림을 읽은 말</span></div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[F]</span> · 2차 · 같은 주제 금지형을 읽은 말</span></div></div>
+    <div class="st-cap"><b>같은 그림을 본 사람이 그 뜻을 어떤 말로 옮겼는지를 주제마다 모았다.</b> 1·2차 심층 인터뷰 · 응답 직후 기록</div>
+    <div class="st-lb" style="margin-top:5mm">뜻을 다르게 읽은 경우</div>
+    <div class="st-qw" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="quote-slot"><span>응답자 <span class="dummy">[G]</span> · 1차 · 1컷만 보고 행동을 다르게 읽은 응답</span></div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[H]</span> · 2차 · 금지 표시를 다른 뜻으로 읽은 응답</span></div>
+      <div class="quote-slot"><span>응답자 <span class="dummy">[I]</span> · 2차 · 휴지 그림이 시설 규칙과 다르다고 말한 응답</span></div>
+    </div>
+    <div class="st-lb" style="margin-top:4.6mm">뜻을 읽을 때 든 단서</div>
+    <svg width="178mm" height="40mm" viewBox="0 0 178 40" style="display:block"><text x="44" y="6.6" font-size="2.9" font-weight="800" fill="#1A2F4B" text-anchor="end">결과 장면(깨끗함·흘린 물)</text><rect x="47" y="3.0" width="50" height="2.8" fill="#2E5A87"/><rect x="47" y="6.0" width="50" height="2.8" fill="#1A2F4B"/><text x="99" y="5.4" font-size="2.5" font-weight="800" fill="#E5332A">1차 [00]%</text><text x="99" y="8.4" font-size="2.5" font-weight="800" fill="#E5332A">2차 [00]%</text><text x="44" y="14.0" font-size="2.9" font-weight="800" fill="#1A2F4B" text-anchor="end">캐릭터 표정</text><rect x="47" y="10.4" width="50" height="2.8" fill="#2E5A87"/><rect x="47" y="13.4" width="50" height="2.8" fill="#1A2F4B"/><text x="99" y="12.8" font-size="2.5" font-weight="800" fill="#E5332A">1차 [00]%</text><text x="99" y="15.8" font-size="2.5" font-weight="800" fill="#E5332A">2차 [00]%</text><text x="44" y="21.400000000000002" font-size="2.9" font-weight="800" fill="#1A2F4B" text-anchor="end">체크 · 원형·사선 기호</text><rect x="47" y="17.8" width="50" height="2.8" fill="#2E5A87"/><rect x="47" y="20.8" width="50" height="2.8" fill="#1A2F4B"/><text x="99" y="20.2" font-size="2.5" font-weight="800" fill="#E5332A">1차 [00]%</text><text x="99" y="23.200000000000003" font-size="2.5" font-weight="800" fill="#E5332A">2차 [00]%</text><text x="44" y="28.800000000000004" font-size="2.9" font-weight="800" fill="#1A2F4B" text-anchor="end">화살표 순서</text><rect x="47" y="25.200000000000003" width="50" height="2.8" fill="#2E5A87"/><rect x="47" y="28.200000000000003" width="50" height="2.8" fill="#1A2F4B"/><text x="99" y="27.6" font-size="2.5" font-weight="800" fill="#E5332A">1차 [00]%</text><text x="99" y="30.6" font-size="2.5" font-weight="800" fill="#E5332A">2차 [00]%</text><text x="44" y="36.2" font-size="2.9" font-weight="800" fill="#1A2F4B" text-anchor="end">변기·휴지통 그림</text><rect x="47" y="32.6" width="50" height="2.8" fill="#2E5A87"/><rect x="47" y="35.6" width="50" height="2.8" fill="#1A2F4B"/><text x="99" y="35.0" font-size="2.5" font-weight="800" fill="#E5332A">1차 [00]%</text><text x="99" y="38.0" font-size="2.5" font-weight="800" fill="#E5332A">2차 [00]%</text><line x1="47" y1="1" x2="47" y2="39" stroke="#1A2F4B" stroke-width=".4"/><g font-size="2.6" font-weight="700" fill="#56636E"><rect x="128" y="3" width="3" height="3" fill="#2E5A87"/><text x="132.4" y="5.6">1차 권유형</text><rect x="150" y="3" width="3" height="3" fill="#1A2F4B"/><text x="154.4" y="5.6">2차 금지형</text></g><text x="128" y="14" font-size="2.6" font-weight="700" fill="#6A7784">그림 해석 발언 중 그 단서를 든 비율</text><text x="128" y="18" font-size="2.6" font-weight="700" fill="#6A7784">복수 응답 · 분모: 해석 발언 수</text></svg>
+    <div class="st-tx st-c2" style="margin-top:3.4mm">
+      <p>참여자들이 그림의 뜻을 말할 때 가장 자주 든 단서는 <span class="dummy">[3컷 마지막 장면의 결과]</span>였다. 깨끗한 바닥과 웃는 얼굴, 혹은 흘린 물과 당황한 얼굴이 ‘왜 그렇게 해야 하는지’를 먼저 알려 주었고, 체크와 원형·사선은 그 뒤에 <span class="dummy">[확인하는 표시]</span>로 읽혔다.</p>
+      <p>1컷은 주제에 따라 갈렸다. 변기와 소변기 그림은 한 장면만으로도 뜻이 <span class="dummy">[잘 전해졌지만]</span>, 휴지 그림은 휴지를 넣는 장면만으로는 <span class="dummy">[휴지를 어디에 버리라는 것인지]</span>가 덜 분명하다는 응답이 <span class="dummy">[나왔다]</span>.</p>
+      <p>금지형을 본 2차 참여자들은 빨간 원형·사선을 <span class="dummy">[바로 금지로 읽었다]</span>. 다만 무엇을 금지하는지는 장면을 보고서야 알 수 있었고, 3컷에서는 금지된 행동이 어떤 결과로 이어지는지가 함께 보여 <span class="dummy">[이유까지 설명할 수 있었다]</span>는 응답이 이어졌다.</p>
+      <p>주제마다 같은 그림을 본 1차·2차 참여자의 말을 나란히 놓아, 같은 장면이 어조에 따라 어떻게 다르게 읽혔는지를 견주었다. 다르게 읽힌 경우는 그 원인이 된 장면이나 기호와 함께 따로 모았고, 그 수는 1차 <span class="dummy">[00]</span>건, 2차 <span class="dummy">[00]</span>건이었다. 이 반례는 수정 판정의 근거로 넘겼다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 차이나타운 1·2차 심층 인터뷰</div>
+  <div class="pno">139</div>
+</section>
+
+<!-- ================= p140 정성 결과 · 주제 2 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정성 결과 · 주제 2</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">그림의 뜻은 휴지 처리 방침과 기존 한글 안내,<br>곧 <em>그림 바깥의 규칙</em>과 함께 <span class="dummy">[읽혔다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-th4">
+      <div class="c"><div class="h"><b>휴지 처리 방침</b><span>설치 전 확인</span></div>
+        <div class="qq">시설별 처리 방침을 확인한 뒤 적용</div>
+        <p>휴지를 휴지통에 버리는 화장실과 그렇지 않은 화장실이 섞여 있으면, 같은 그림이 어떤 곳에서는 틀린 안내가 된다. 휴지 그림은 시설의 방침과 맞춘 뒤에만 붙였다.</p>
+        <div class="quote-slot"><span>응답자 <span class="dummy">[J]</span> · 1·2차 · 휴지 처리 방법에 대한 질문</span></div></div>
+      <div class="c"><div class="h"><span>설치 전 확인</span><b>기존 한글 안내</b></div>
+        <div class="qq">기존 필수 안내와 겹치지 않게</div>
+        <p>칸 안에는 투입 금지와 변기 막힘을 알리는 한글 문장 안내가 이미 붙어 있었다. 새 그림은 그와 다른 면에 두었고, 두 안내가 같은 말을 하는지 다른 말을 하는지를 함께 물었다.</p>
+        <div class="quote-slot"><span>응답자 <span class="dummy">[K]</span> · 1·2차 · 한글 안내와 그림을 함께 본 반응</span></div></div>
+      <div class="c"><div class="h"><b>어조의 감정</b><span>1·2차 비교</span></div>
+        <div class="qq">친근함과 불편함 사이</div>
+        <p>권유형의 웃는 얼굴과 금지형의 당황한 얼굴은 같은 행동을 다른 감정으로 전하였다. 경각심이 높은 그림이 불편하게 느껴지는지, 친근한 그림이 가볍게 지나쳐지는지를 따로 보았다.</p>
+        <div class="quote-slot"><span>응답자 <span class="dummy">[L]</span> · 2차 · 금지형 그림의 느낌</span></div></div>
+      <div class="c"><div class="h"><span>1·2차 비교</span><b>빨강과 연두</b></div>
+        <div class="qq">색만으로 구분되는가</div>
+        <p>권유는 연두 체크, 금지는 빨강 원형·사선이었다. 두 어조를 나누는 일을 색이 맡았는지, 체크와 사선의 형태가 맡았는지를 그림 해석의 단서에서 확인하였다.</p>
+        <div class="quote-slot"><span>응답자 <span class="dummy">[M]</span> · 1·2차 · 기호의 색과 모양을 말한 응답</span></div></div>
+      <div class="mid"><i>주제 2</i><b>그림이<br>놓인 자리</b></div>
+    </div>
+    <div class="st-cap" style="margin-top:2.4mm"><b>네 주제 모두 ‘그림이 어떤 규칙과 함께 붙어 있는가’를 묻는 반응이었다.</b></div>
+    <div class="st-split" style="margin-top:4mm;grid-template-columns:64mm 1fr;gap:6mm">
+      <div><div class="st-ph" style="height:46mm"><img src="img/04_차이나타운_사전_투입금지.jpg" alt="" style="object-position:50% 20%"><span>칸 문의 기존 한글 안내</span></div><div class="st-cap"><b>칸 문에는 한글 문장 안내가 이미 붙어 있었다.</b> 사전 현장조사</div></div>
+      <div class="st-tx">
+        <p>두 번째 주제는 그림 바깥의 규칙이었다. 참여자들은 <span class="dummy">[그림 하나만 보지 않고]</span> 칸 문에 붙은 한글 안내, 휴지통이 있는지 없는지, 변기 옆 버튼의 표시를 함께 보며 그림의 뜻을 <span class="dummy">[짐작하였다]</span>. 그림과 시설의 규칙이 어긋난 곳에서는 <span class="dummy">[그림의 뜻도 흔들렸다]</span>.</p>
+        <p>그래서 설계 반영 판정에서는 요소마다 이해도와 경각심 외에 시설의 휴지 처리 방침, 기존 안내와의 관계, 성별 공간마다 같은 3종을 볼 수 있는지를 함께 따졌고, 어조의 구분이 색에만 기대지 않는지도 확인하였다.</p>
+        <p>이 주제는 실험 전부터 설계에 들어 있던 두 조건과 이어진다. 휴지 그림은 시설별 휴지 처리 방침을 확인한 뒤에만 붙였고, 변기 그림은 칸 안의 필수 안내와 겹치지 않는 면을 골랐다. 인터뷰는 이 두 조건이 그림의 뜻에 <span class="dummy">[영향을 주었는지]</span>를 참여자의 말로 확인한 자료다.</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 차이나타운 1·2차 심층 인터뷰</div>
+  <div class="pno">140</div>
+</section>
+
+<!-- ================= p141 정성 결과 · 소결 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">정성 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료는 그림을 <em>알아듣는 일</em>과 <em>조심하게 되는 일</em>이<br><span class="dummy">[서로 다른 단서]</span>에서 일어난다는 점을 보여 주었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="c-step">
+      <div class="rl"></div><div class="hh">1 · 알아보기<small>무엇을 그렸나</small></div><div class="hh">2 · 알아듣기<small>무슨 행동인가</small></div><div class="hh">3 · 조심하기<small>주의를 느낀다</small></div><div class="hh" style="background:var(--navy)">4 · 받아들이기<small>따르겠다 · 불편하다</small></div>
+      <div class="rl"><span class="rtag r1">1차</span>권유 1컷</div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div>
+      <div class="rl"><span class="rtag r1">1차</span>권유 3컷</div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div>
+      <div class="rl"><span class="rtag r2">2차</span>금지 1컷</div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div>
+      <div class="rl"><span class="rtag r2">2차</span>금지 3컷</div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div><div><span class="mk">[●]</span><span class="dummy">[반응 요약]</span></div>
+    </div>
+    <div class="st-cap"><b>● 뚜렷하게 나타남 · ◐ 일부 나타남 · ○ 나타나지 않음.</b> 1·2차 심층 인터뷰의 발언 분류 기준</div>
+    <div class="st-split" style="margin-top:5mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">차이나타운의 참여자들에게 그림의 뜻을 알아듣는 일과 그 행동을 조심하게 되는 일은 <span class="dummy">[같은 순간에 일어나지 않았다]</span>.</p>
+        <p>그림이 무엇을 그렸는지는 두 어조 모두 <span class="dummy">[쉽게 알아보았다]</span>. 변기·휴지통·소변기와 파란 캐릭터는 글자 없이 그린 형태였다. 차이는 그 다음 단계에서 생겼다. 무슨 행동을 하라는 것인지는 <span class="dummy">[3컷의 순서와 결과 장면]</span>이 알려 주었고, 조심해야겠다는 느낌은 <span class="dummy">[빨간 금지 표시와 당황한 표정]</span>이 만들었다.</p>
+        <p>권유형은 <span class="dummy">[친근하다]</span>는 말을 많이 들었지만, 그만큼 <span class="dummy">[가볍게 지나치기 쉽다]</span>는 말도 함께 나왔다. 금지형은 주의를 끌었지만 일부 참여자는 <span class="dummy">[자신을 탓하는 것처럼 느꼈다]</span>고 답하였다. 두 어조의 장단은 <span class="dummy">[받아들이는 단계에서 갈렸다]</span>.</p>
+        <p>정성 자료는 그림 바깥의 조건도 보여 주었다. 휴지 처리 방침과 기존 한글 안내, 성별 공간마다 다른 구조는 그림이 같아도 읽히는 뜻을 <span class="dummy">[바꾸었다]</span>. 이 반응은 표준디자인으로 옮길 때 그림과 함께 시설 조건별 규칙도 정해야 한다는 근거로 남겼다.</p>
+      <p>네 단계 격자는 참여자의 발언을 단계별로 옮긴 것이다. 한 발언이 두 단계에 걸치면 양쪽에 모두 적었고, 칸마다 반응이 뚜렷한지, 일부만 나타났는지, 나타나지 않았는지를 세 가지 표시로 나누었다.</p>
+        <p>발언은 1·2차 심층 인터뷰에서 모았다. 인터뷰는 스티커 응답을 마친 직후 화장실 밖 설문 자리에서 이어졌고, 고른 형식의 이유와 그림이 무슨 뜻으로 보였는지를 물었다. 1차 <span class="dummy">[00]</span>명, 2차 <span class="dummy">[00]</span>명이 답하였고, 발언 <span class="dummy">[00]</span>건을 네 단계에 나누어 적었다. 어느 단계에도 들지 않는 발언은 따로 모았고, 발언을 남긴 참여자의 스티커 응답과는 <span class="dummy">[응답자 번호]</span>로 이어 읽었다.</p>
+        <p>판정으로 넘길 때는 단계의 깊이를 보았다. 두 어조에서 모두 ‘받아들이기’까지 뚜렷하게 이어진 요소는 상설 쪽에, ‘알아듣기’나 ‘조심하기’에서 멈춘 요소는 수정 쪽에, 한쪽 어조에서만 나타난 반응은 다음 실험의 조건 쪽에 두었다.</p>
+      </div>
+      <div>
+        <div class="st-mn"><b>정량과 맞춰 본 점</b>정량에서 길이가 가른 이해도, 어조가 가른 경각심이 정성의 ‘알아듣기’와 ‘조심하기’ 단계와 <span class="dummy">[겹쳤다]</span>.</div>
+        <div class="st-mn"><b>반례</b>3컷을 보고도 뜻을 다르게 읽은 응답 <span class="dummy">[00]</span>건, 금지 표시를 다른 뜻으로 읽은 응답 <span class="dummy">[00]</span>건이 있었다.</div>
+        <div class="st-mn"><b>남은 물음</b>권유와 금지를 한 장에 함께 둘 것인가는 요소별 판정에서 <span class="dummy">[다음 실험의 조건]</span>으로 정리하였다.</div>
+        <div class="st-ph" style="height:40mm;margin-top:4mm"><img src="img/04_차이나타운_P4.jpg" alt="" style="object-position:50% 35%"><span>소변기 위 기존 안내</span></div>
+      </div>
+    </div>
+    <div class="st-out" style="margin-top:5mm"><b><span>뜻</span>은 <span class="dummy" style="color:#FF8A80!important">[장면의 순서와 결과]</span>에서, <span>무게</span>는 <span class="dummy" style="color:#FF8A80!important">[기호와 표정]</span>에서 왔고,<br>둘 다 시설의 규칙과 어긋나지 않을 때 작동하였다</b><small>통합 해석에서<br>정량 결과와 맞춤</small></div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료 · 차이나타운 인터뷰 기록</div>
+  <div class="pno">141</div>
+</section>
+
+<!-- ================= p142 통합 해석 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">통합 해석</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">권유형과 금지형은 알아듣기에서 <span class="dummy">[비슷했고]</span>,<br><em>조심하고 받아들이는 단계</em>에서 <span class="dummy">[갈렸다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-qa"><div class="qq"><i>Q</i><b>권유형과 금지형 그림의 의미 이해·경각심은 어떻게 다른가?</b></div></div>
+    <div class="c-conv" style="margin-top:5mm;row-gap:2mm">
+      <div class="k"><i>이해</i>그림이 전하는 행동을 알아들었는가</div>
+      <div class="qn"><i>정량</i>이해도 평균 권유 <span class="dummy">[0.0]</span> · 금지 <span class="dummy">[0.0]</span> · 3컷이 <span class="dummy">[0.0]</span> 높음</div>
+      <div class="ql"><i>정성</i>뜻은 <span class="dummy">[3컷의 순서와 결과 장면]</span>에서 읽힘</div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[어조보다 길이가 이해를 갈랐다]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>경각심</i>그 행동을 조심해야겠다고 느꼈는가</div>
+      <div class="qn"><i>정량</i>경각심 평균 권유 <span class="dummy">[0.0]</span> · 금지 <span class="dummy">[0.0]</span> · 4·5점 <span class="dummy">[00]%</span></div>
+      <div class="ql"><i>정성</i>빨강 원형·사선과 당황한 표정이 <span class="dummy">[주의를 끌었다]</span></div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[금지형이 0.0점 높았다]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>받아들임</i>그 그림을 화장실 안내로 받아들였는가</div>
+      <div class="qn"><i>정량</i>3컷 선택 <span class="dummy">[00]%</span> · 1·2점 응답 <span class="dummy">[00]</span>건</div>
+      <div class="ql"><i>정성</i>권유형 <span class="dummy">[친근함]</span> · 금지형 <span class="dummy">[불편함]</span>이 함께 나옴</div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[두 어조의 장단이 갈렸다]</span></div>
+    </div>
+    <div class="c-src-line"><b>답의 근거 자료(1·2차 합계)</b>스티커 설문 유효 응답 <span class="dummy">[000]명</span> · 심층 인터뷰 <span class="dummy">[00]명</span> · 보드에 붙은 스티커 <span class="dummy">[000]개</span> · 같은 날 동시 운영 3개소(A · B · C)</div>
+    <div class="st-q" style="margin-top:5mm"><i>차이나타운의 답</i><b>말이 통하지 않는 화장실에서 예절을 전한 것은 <span class="dummy">[금지 표시보다 결과를 보여 주는 장면]</span>이었다</b></div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>정량과 정성은 같은 자리에서 만났다. 이해도에서 어조의 차이는 <span class="dummy">[작았고]</span>, 참여자들도 <span class="dummy">[두 어조 모두 무슨 그림인지 알았다]</span>고 말하였다. 차이는 그 행동을 조심하게 되는 단계와 그 그림을 받아들이는 단계에서 <span class="dummy">[나타났고]</span>, 정성 자료는 그 이유를 <span class="dummy">[기호·표정과 결과 장면]</span>으로 설명하였다.</p>
+      <p>결과는 한 어조가 모든 단계에서 앞섰다는 쪽으로 <span class="dummy">[모이지 않았다]</span>. 두 어조는 <span class="dummy">[서로 다른 단계에서 힘을 가졌고]</span>, 길이(1컷·3컷)는 어조와 따로 뜻의 전달을 <span class="dummy">[바꾸었다]</span>. 판정은 두 안을 요소로 다시 풀어 내렸다.</p>
+      <p>정량과 정성이 어긋난 곳도 기록하였다. 경각심 점수가 높았지만 불편하다고 답한 응답은 <span class="dummy">[00]</span>건이었고, 주로 <span class="dummy">[금지형 3컷의 결과 장면]</span>에서 나왔다. 이 반례는 수정 판정의 근거로 함께 넘겼다.</p>
+      <p>답은 세 단계로 나누어 적었다. 알아듣기는 이해도와 그림 해석이, 조심하기는 경각심과 기호·표정에 대한 말이, 받아들이기는 형식 선택과 친근함·불편함의 말이 맡았고, 한 단계의 결과로 다른 단계를 대신하지 않았다. 판정은 이 세 단계를 기준으로 요소마다 내렸다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 차이나타운 1·2차 스티커 설문·인터뷰 · 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">142</div>
+</section>
+
+<!-- ================= p143 가봉 판정 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">가봉 판정</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">두 어조의 그림을 여덟 요소로 풀어<br><em>상설 · 수정 · 중지</em>를 하나씩 판정하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-jlg">
+      <div><span class="judge keep">상설 · 잘 맞았다</span><p>효과와 반응이 함께 확인되어 표준디자인으로 옮길 수 있는 요소</p></div>
+      <div><span class="judge fix">수정 · 고쳐 맞춘다</span><p>방향은 맞지만 표준·색 구분·시설 조건 때문에 고쳐야 하는 요소</p></div>
+      <div><span class="judge next">중지 · 다음 실험의 조건</span><p>이번에는 맞지 않았고, 다음 실험의 조건으로 넘기는 요소</p></div>
+    </div>
+    <div class="st-jg" style="margin-top:4mm;--jh:31mm">
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_캐릭터.png" alt="" style="object-fit:contain;object-position:20% 50%;background:#fff"><span class="rr rtag ws">공통</span></div><div class="tx"><h5>BI 기반 주 캐릭터</h5><p>두 차수에 같이 쓴 파란 캐릭터. 행동과 결과를 표정으로 전함</p><div class="row"><span>정성 p139 · p141</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_1차_3컷1.png" alt="" style="object-fit:contain;object-position:0% 50%;background:#fff"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>권유형 3컷</h5><p>행동 전·행동·결과와 연두 체크. 이해도 <span class="dummy">[0.0]</span>점</p><div class="row"><span>정량 p135 · 정성 p139</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_1차_1컷2.png" alt="" style="object-fit:contain;object-position:50% 50%;background:#fff"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>권유형 1컷</h5><p>바른 행동 한 장면. 3컷 대비 선택 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p135</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_2차_3컷2.png" alt="" style="object-fit:contain;object-position:0% 50%;background:#fff"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>금지형 3컷</h5><p>잘못된 행동과 그 결과. 경각심 <span class="dummy">[0.0]</span>점</p><div class="row"><span>정량 p136 · 정성 p141</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_2차_1컷1.png" alt="" style="object-fit:contain;object-position:50% 50%;background:#fff"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>금지형 1컷</h5><p>금지 행동 한 장면과 원형·사선. 이해도 <span class="dummy">[0.0]</span>점</p><div class="row"><span>정량 p135</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_1차_1컷3.png" alt="" style="object-fit:cover;object-position:100% 0%;background:#fff"><span class="rr rtag r1">1차</span></div><div class="tx"><h5>연두 원형·체크</h5><p>권유의 표시. 적색·녹색 계열 지양 기준과 맞춰야 함</p><div class="row"><span>정성 p140 · 기준 p144</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_2차_1컷2.png" alt="" style="object-fit:cover;object-position:100% 0%;background:#fff"><span class="rr rtag r2">2차</span></div><div class="tx"><h5>빨강 원형·사선</h5><p>금지의 표시. 안전정보 안전색 기준과 같은 방향</p><div class="row"><span>정성 p140 · 기준 p144</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/04_차이나타운_P1P2.jpg" alt="" style="object-fit:cover;object-position:50% 60%;background:#fff"><span class="rr rtag ws">과정</span></div><div class="tx"><h5>대상물 옆 부착 · 측정값 높이</h5><p>물건 옆 면에 붙이고 높이는 현장 측정값으로 기록</p><div class="row"><span>현장 p132 · p133</span><span class="judge tbd">[판정]</span></div></div></div>
+    </div>
+    <div class="st-nums" style="grid-template-columns:repeat(3,1fr);margin-top:4mm">
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge keep">상설</span></span></div>
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge fix">수정</span></span></div>
+      <div><b class="dummy">[0]<small class="dummy">개</small></b><span><span class="judge next">중지 · 다음 조건</span></span></div>
+    </div>
+    <div class="st-tx" style="margin-top:4mm">
+      <p>판정은 요소 단위로 내렸다. 한 어조가 전체로 더 나았더라도, 그 안의 기호색이나 장면 길이는 공공시각매체의 기준을 따로 통과해야 하기 때문이다. 판정 결과 상설 <span class="dummy">[0]</span>개, 수정 <span class="dummy">[0]</span>개, 중지 <span class="dummy">[0]</span>개로 나뉘었다. 부착 위치와 높이를 정하는 방식은 시설물보다 운영 방법에 가까워, 표준모델의 운영편에 담을지를 따로 판정하였다.</p>
+      <p>카드마다 판정의 근거가 된 쪽을 함께 적었다. 정량 근거는 이해도·경각심·형식 선택의 값이고, 정성 근거는 그림 해석과 받아들임에 대한 말이다. 기호색처럼 공공디자인 기준과 맞춰야 하는 요소는 다음 쪽의 판단 매트릭스에서 기준 항목과 함께 다시 걸렀다.</p>
+    </div>
+
+  </div>
+  <div class="foot-src">자료: 차이나타운 1·2차 스티커 설문·인터뷰·조사 기록 종합</div>
+  <div class="pno">143</div>
+</section>
+
+<!-- ================= p144 설계 반영 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">04<small>차이나타운</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-04</span><span class="site">차이나타운 공중화장실</span><span class="part">설계 반영</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></div>
+    <h2 class="hl">표준디자인으로 옮길 그림은 <em>픽토그램 표준 · 색 구분 · 시설 방침</em><br>세 조건으로 다시 걸렀다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+
+    <div class="st-split" style="grid-template-columns:1fr 46mm;gap:6mm">
+      <div class="st-tx">
+        <p>판정은 효과가 확인되었는가, 외국인 이용자가 받아들였는가, 상설 안내가 되었을 때 기준과 관리를 감당할 수 있는가의 세 물음을 거쳤다. 앞의 두 물음은 정량과 정성 결과가 답하였고, 마지막 물음은 인천시 공공디자인 기준과 화장실 관리 주체의 조건으로 따졌다.</p>
+        <p>인천시 공공디자인 기준은 다국어 표기를 원칙으로 하고 문자보다 픽토그램을 권장하되, 픽토그램은 국제표준(ISO)이나 국가표준(KS A 0902)을 적용하고 형태를 바꾸지 않도록 한다. BI 캐릭터로 그린 이번 그림은 표준 픽토그램이 아니어서, 상설로 옮기려면 규칙을 알리는 표준 기호와 이유를 보여 주는 캐릭터 장면의 역할을 나누어야 하였다.</p>
+        <p>색도 걸렀다. 기준은 색약자와 고령자를 위해 적색·녹색 계열을 지양하고, 구별하기 어려운 색을 중요한 기호에 쓰지 않게 한다. 권유에 연두(10GY 7/14), 금지에 빨강(5R 4/12)을 쓴 이번 그림은 체크와 원형·사선의 형태만으로 두 어조가 구분되는지가 상설의 조건이 되었다.</p>
+        <p>휴지 처리 방침과 기존 필수 안내는 화장실마다 달랐다. 그래서 표준디자인에는 방침별 휴지 그림과 부착면 규칙, 현장 측정값으로 높이를 정하는 방식을 함께 담았다.</p>
+        <p>관리 주체의 조건도 함께 따졌다. 이번 실험은 제물포문화재단과 개항동행정복지센터의 협조로 화장실 안 부착과 밖의 설문을 허락받아, 하루씩 붙였다가 떼는 방식으로 운영하였다. 상설 안내가 되면 그림을 누가 교체하고 훼손을 누가 점검하는지가 먼저 정해져야 하므로, 관리 부담 항목은 두 기관과 협의한 <span class="dummy">[관리 방식]</span>을 기준으로 평가하였다. 실험의 그림은 기존 필수 안내와 겹치지 않는 면을 골라 붙였고, 이 원칙은 상설 안내의 부착 규칙에도 그대로 옮겼다. 세 조건을 통과한 요소는 「다문화 공공화장실 에티켓 픽토그램」으로 정리해 표준모델 설계편에 담았고, 고정시설 검토는 Ⅵ장으로 넘겼다.</p>
+      </div>
+      <div>
+        <div class="st-mn"><b>인천시 공공디자인 기준</b>다국어 표기 원칙 · 픽토그램 권장 · ISO 또는 KS A 0902 적용, 형태 변형 금지</div>
+        <div class="st-mn"><b>색 · 안전정보</b>적색·녹색 계열 지양 · 식별하기 어려운 색을 중요한 기호에 사용 금지 · 금지·주의·경고는 안전색 강조</div>
+        <div class="st-mn"><b>협의 주체</b>제물포문화재단 · 개항동행정복지센터<br>설치·교체·철거, 외부 설문 공간</div>
+        <div class="st-mn"><b>실험 결과물</b>다문화 공공화장실 에티켓 픽토그램</div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">요소별 판단 매트릭스</div>
+    <div class="st-dm cp">
+      <div class="hh">요소</div><div class="hh">효과(정량)</div><div class="hh">반응(정성)</div><div class="hh">기준 적합</div><div class="hh">관리 부담</div>
+      <div class="rk">3컷 연속 장면</div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[표준 기호 병기]</div><div><span class="o"></span></div>
+      <div class="rk">금지 원형·사선</div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div>
+      <div class="rk">연두 체크 · 빨강 대비</div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[형태 구분 확인]</div><div><span class="o"></span></div>
+    </div>
+    <div class="st-cap"><b>충족 ● · 부분 ◐ · 미충족 ○. 칸 안의 글은 그 항목에 붙은 조건이다.</b> 휴지 그림은 시설 방침별 변형으로 따로 관리</div>
+    <div class="st-lb" style="margin-top:4mm">다음 실험으로 넘긴 조건</div>
+    <div class="st-next n4">
+      <div><b>색에 기대지 않는 구분</b>연두·빨강을 같은 명도의 무채색으로 바꿔도 체크와 사선만으로 두 어조를 나누는지 다시 잰다.<small>근거 · 적색·녹색 계열 지양 기준</small></div>
+      <div><b>표준 기호 + 캐릭터 3컷</b>ISO·KS 표준 기호 옆에 캐릭터 3컷을 둘 때 이해도가 유지되는지 확인한다.<small>근거 · 픽토그램 표준 적용 기준</small></div>
+      <div><b>권유와 금지의 한 장 배치</b>두 어조를 한 장에 함께 둘지 <span class="dummy">[판정 결과]</span>에 따라 정한다.<small>근거 · 받아들임 단계의 장단</small></div>
+      <div><b>국적과 시간대 넓히기</b>중국인 중심 표본을 다른 국적·주말 관광객으로 넓혀 같은 결과가 나오는지 본다.<small>근거 · 차수별 참여 집단 차이</small></div>
+    </div>
+    <div class="st-out" style="margin-top:4mm"><b>차이나타운 설계 반영에서 <span class="dummy">[요소]</span>는 상설, <span class="dummy">[요소]</span>는 수정,<br><span class="dummy">[요소]</span>는 다음 실험의 조건으로 넘겼다</b><small>Ⅵ-01 설계 반영 판단<br>Ⅵ-03 고정시설 구현</small></div>
+
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(공공디자인 가이드라인 체크리스트)</div>
+  <div class="pno">144</div>
+</section>
+
+</body>
+</html>

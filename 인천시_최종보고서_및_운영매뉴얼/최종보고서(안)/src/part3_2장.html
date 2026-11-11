@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 창의디자인 사회실험 최종보고서 — Ⅱ장 시안</title>
+<link rel="stylesheet" href="common.css">
+<style>
+/* ---------- Ⅱ장 공통: 읽는 본문 ---------- */
+.tx p{font-size:8.7pt;line-height:1.78;color:#33414D;font-weight:400;margin-bottom:2.3mm;text-align:left}
+.tx p:last-child{margin-bottom:0}
+.tx p b{font-weight:700;color:var(--navy)}
+.tx h5{font-size:9pt;font-weight:800;color:var(--navy);margin:0 0 1.4mm;display:flex;align-items:center;gap:1.8mm;break-after:avoid}
+.tx h5 i{font-style:normal;font-size:9pt;font-weight:800;color:var(--teal)}
+.tx h5 small{font-size:6.8pt;font-weight:600;color:var(--mute)}
+.tx .blk{break-inside:avoid;margin-bottom:3.4mm}
+.c2{column-count:2;column-gap:8mm}
+.lede2{font-size:9.4pt;line-height:1.72;font-weight:600;color:var(--navy);word-break:keep-all}
+.cap2{font-size:6.8pt;color:var(--mute);font-weight:600;line-height:1.5;margin-top:1.6mm}
+.cap2 b{color:var(--navy);font-weight:800}
+.ph{overflow:hidden;border-radius:var(--rd);background:#E5EAEE}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.rule{height:.5mm;background:var(--navy);margin:0 0 3mm}
+
+/* ---------- p18 조사 체계 ---------- */
+.p18{display:grid;grid-template-columns:1fr 62mm;gap:8mm}
+.circ{position:relative;width:62mm;height:62mm;margin:2mm auto 0}
+.circ .ph{position:absolute;inset:0;border-radius:50%}
+.circ .ov{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(19,36,58,.62) 0 34%,rgba(19,36,58,.2) 70%,rgba(19,36,58,0) 100%);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-size:9.6pt;font-weight:800;line-height:1.45}
+.tags4{display:grid;grid-template-columns:1fr 1fr;gap:1.8mm;margin-top:4mm}
+.tags4 span{background:var(--sky);border-radius:var(--rd);text-align:center;padding:1.2mm 0;font-size:7.4pt;font-weight:800;color:var(--navy)}
+.dr{margin-top:5mm;border-top:.25mm solid var(--line)}
+.dr div{border-bottom:.25mm solid var(--line);padding:2mm 0;font-size:7pt;line-height:1.5;color:#56636E;font-weight:500}
+.dr div b{display:block;font-size:7.6pt;color:var(--navy);font-weight:800}
+.flow4{position:absolute;left:16mm;right:16mm;bottom:62mm;display:grid;grid-template-columns:repeat(4,1fr);gap:2mm}
+.flow4 div{position:relative;background:#F3F6F8;border-radius:var(--rd);padding:2.6mm 3mm}
+.flow4 div:not(:last-child)::after{content:'▶';position:absolute;right:-2.2mm;top:50%;transform:translateY(-50%);font-size:6pt;color:var(--teal);z-index:2}
+.flow4 i{font-style:oblique 8deg;font-size:9pt;font-weight:900;color:var(--teal)}
+.flow4 b{display:block;font-size:8pt;font-weight:800;color:var(--navy);margin:.6mm 0 .4mm}
+.flow4 small{display:block;font-size:6.6pt;color:#56636E;font-weight:600;line-height:1.4}
+.flow4 div:last-child{background:var(--teal)}.flow4 div:last-child i,.flow4 div:last-child b,.flow4 div:last-child small{color:#fff}
+.stat4{position:absolute;left:16mm;right:16mm;bottom:22mm;display:grid;grid-template-columns:repeat(4,1fr);border-top:.5mm solid var(--navy)}
+.stat4>div{padding:3.2mm 3mm 0;border-right:.25mm solid var(--line)}
+.stat4>div:last-child{border-right:0}
+.stat4 b{display:block;font-size:19pt;font-weight:900;color:var(--teal);line-height:1;letter-spacing:-.02em}
+.stat4 b small{font-size:8.4pt;color:var(--navy);margin-left:.4mm}
+.stat4 p{font-size:7pt;line-height:1.45;color:var(--navy);font-weight:700;margin-top:1.6mm}
+.stat4 em{display:block;font-style:normal;font-size:6pt;color:#8C98A3;font-weight:600;margin-top:1mm}
+.stat4 .t{position:absolute;top:-6.4mm;left:0;font-size:7pt;font-weight:800;color:var(--teal);letter-spacing:.08em}
+
+/* ---------- p19 방문 기록 ---------- */
+.vis{padding:1mm 0 1mm}
+.vleg{display:flex;flex-wrap:wrap;gap:1.4mm 3.2mm;justify-content:center;margin-top:2.4mm;font-size:6.6pt;font-weight:700;color:var(--navy)}
+.vleg span{display:inline-flex;align-items:center;gap:1mm}
+.vleg i{display:inline-block;width:2.6mm;height:2.6mm;border-radius:50%}
+.vleg small{color:var(--mute);font-weight:600}
+.strip3{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2mm;margin-top:5mm}
+.strip3 .ph{height:40mm}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);margin-top:5mm;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.rules>b.rt{grid-column:1/-1;font-size:7pt;font-weight:800;color:var(--teal);padding:2mm 0 0}
+.rules div{padding:2mm 3mm 2.6mm 0;margin-right:3mm;border-right:.25mm solid var(--line)}
+.rules div:last-child{border-right:0;margin-right:0}
+.rules div b{display:block;font-size:8.4pt;font-weight:800;color:var(--navy);margin:0 0 .8mm}
+.rules div p{font-size:6.9pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.rules div p span{display:block;margin-top:1.2mm;color:var(--teal-d);font-weight:700}
+.rules div p span em{font-style:normal;color:var(--navy);font-weight:800;margin-right:1mm}
+
+/* ---------- p20 세 갈래 ---------- */
+.hero{position:relative;height:94mm}
+.hero .ph{position:absolute;inset:0;border-radius:var(--rd)}
+.hero .lb2{position:absolute;left:3mm;bottom:3mm;background:rgba(19,36,58,.85);color:#fff;font-size:7pt;font-weight:700;padding:1.4mm 2.6mm;border-radius:var(--rd);line-height:1.45}
+.hero .lb2 b{color:var(--yellow);font-weight:800}
+.gnum{margin:3.4mm 0 0;background:#F3F6F8;border-radius:var(--rd);padding:2.6mm 3mm;break-inside:avoid}
+
+/* ---------- p21 폴라로이드 ---------- */
+.band3{display:grid;grid-template-columns:24mm 1fr;gap:3mm;margin-bottom:4.6mm;align-items:start}
+.band3 .bl{padding:1mm 0}
+.band3 .bl b{display:block;font-size:11pt;font-weight:900;color:var(--teal-d);line-height:1.25}
+.band3 .bl small{display:block;font-size:6.6pt;color:var(--mute);font-weight:600;margin-top:1mm;line-height:1.45}
+.pols{display:flex;gap:3.4mm;align-items:flex-start}
+.pol{background:#fff;padding:1.6mm 1.6mm 0;box-shadow:0 .5mm 2mm rgba(20,40,60,.22);flex:none}
+.pol .ph{border-radius:0}
+.pol .pc{font-size:6.4pt;line-height:1.38;color:#3D4A56;font-weight:600;padding:1.6mm .4mm 2mm}
+.pol .pc b{display:block;font-size:7pt;font-weight:800;color:var(--navy)}
+.pol .pc b em{font-style:normal;color:var(--teal)}
+.pol .pc .ini{display:inline-block;font-size:5.8pt;font-weight:800;color:var(--navy);background:var(--sky);border-radius:var(--rd);padding:0 1.2mm;margin-left:1mm;vertical-align:.2mm}
+.r1{transform:rotate(-1.6deg)}.r2{transform:rotate(1.2deg)}.r3{transform:rotate(-.6deg)}.r4{transform:rotate(1.8deg)}
+
+/* ---------- p22 참여 타임라인 ---------- */
+.tl{position:relative;padding-left:22mm}
+.tl::before{content:"";position:absolute;left:9mm;top:2mm;bottom:2mm;width:.5mm;background:var(--teal)}
+.tli{position:relative;display:grid;grid-template-columns:52mm 1fr;gap:5mm;margin-bottom:5.2mm}
+.tli .dt{position:absolute;left:-22mm;top:0;width:19mm;text-align:center}
+.tli .dt b{display:block;font-size:14pt;font-weight:900;color:var(--teal);font-style:oblique 8deg;line-height:1;background:#fff;padding:1mm 0}
+.tli .dt small{display:block;font-size:6.4pt;font-weight:700;color:var(--navy);margin-top:.6mm}
+.tli .ph{height:43mm}
+.tli h4{font-size:10.4pt;font-weight:800;color:var(--navy);margin-bottom:1.4mm}
+.tli h4 span{font-size:7pt;color:var(--teal);font-weight:700;margin-left:1.6mm}
+.duo2{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm}
+.duo2 .ph{height:43mm}
+.roles{border-top:.5mm solid var(--navy);padding-top:2.6mm;display:grid;grid-template-columns:30mm 1fr;gap:3mm;align-items:start}
+.roles>b{font-size:8.6pt;font-weight:800;color:var(--navy);line-height:1.4}
+.roles ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1.6mm 4mm}
+.roles li{font-size:7.2pt;line-height:1.45;color:#3D4A56;font-weight:500;padding-left:3mm;position:relative}
+.roles li::before{content:"";position:absolute;left:0;top:1.4mm;width:1.4mm;height:1.4mm;border-radius:50%;background:var(--teal)}
+.roles li b{display:block;color:var(--navy);font-weight:800}
+
+/* ---------- p23 출처 ---------- */
+.src3{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:5mm}
+.src3 .s h5{font-size:9pt;font-weight:800;color:var(--navy);padding-top:2mm;border-top:1mm solid;margin-bottom:1.6mm}
+.src3 .s p{font-size:8.6pt;line-height:1.76;color:#33414D;font-weight:400;text-align:left}
+.pq{margin-top:5mm;display:grid;grid-template-columns:16mm 1fr;gap:3mm;align-items:start;background:var(--sky);border-radius:0;padding:4mm 5mm}
+.pq .qm{font-size:34pt;line-height:.8;color:var(--teal);font-weight:900;font-family:'NanumMyeongjo',serif}
+.pq p{font-size:10.4pt;line-height:1.6;color:var(--navy);font-weight:700}
+.pq small{display:block;font-size:6.8pt;color:var(--mute);font-weight:600;margin-top:1.4mm}
+
+/* ---------- p24 어린이 워크숍 ---------- */
+.ws{display:grid;grid-template-columns:1.45fr 1fr;gap:2mm;height:68mm}
+.ws .ph{height:68mm}
+.ws .r{display:grid;grid-template-rows:1fr 1fr;gap:2mm}
+.ws .r .ph{height:33mm}
+.wnum{display:grid;grid-template-columns:repeat(4,1fr);border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line);margin:4.4mm 0 4.6mm}
+.wnum div{padding:2.6mm 2mm;border-right:.25mm solid var(--line);text-align:center}
+.wnum div:last-child{border-right:0}
+.wnum b{display:block;font-size:18pt;font-weight:900;color:var(--teal);line-height:1}
+.wnum b small{font-size:8pt;color:var(--navy);margin-left:.3mm}
+.wnum span{display:block;font-size:6.9pt;color:var(--navy);font-weight:700;margin-top:1.2mm;line-height:1.35}
+
+/* ---------- p25 사례 ---------- */
+.cs{display:grid;grid-template-columns:50mm 1fr 56mm;gap:4mm;padding:3.4mm 0;border-bottom:.25mm solid var(--line);align-items:start}
+.cs:first-child{border-top:.5mm solid var(--navy)}
+.cs .ph{height:39mm;position:relative}
+.cs .ty{position:absolute;left:1.6mm;top:1.6mm;font-size:6.2pt;font-weight:800;color:#fff;background:var(--navy);padding:.3mm 1.8mm;border-radius:var(--rd)}
+.cs .pl{font-size:6.8pt;font-weight:700;color:var(--teal)}
+.cs h5{font-size:9.6pt;font-weight:800;color:var(--navy);margin:.6mm 0 1.4mm;line-height:1.35}
+.cs p{font-size:7.4pt;line-height:1.62;color:#3D4A56;font-weight:500;word-break:keep-all}
+.cs p b{color:var(--navy);font-weight:800}
+.cs .so{margin-top:1.6mm;font-size:7pt;font-weight:800;color:var(--teal-d)}
+.rn{display:grid;grid-template-rows:repeat(3,auto);border-top:.25mm solid var(--line)}
+.rn div{display:grid;grid-template-columns:19mm 1fr;align-items:center;padding:1.7mm 0;border-bottom:.25mm solid var(--line)}
+.rn b{font-size:10.4pt;font-weight:800;color:var(--navy);line-height:1}
+.rn b small{font-size:6.6pt}
+.rn span{font-size:6.5pt;color:var(--navy);font-weight:700;line-height:1.35}
+
+/* ---------- p26 사례 적용 ---------- */
+.link4{display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:6mm;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line)}
+.lk4{padding:2.4mm 3mm 2.6mm 0;margin-right:3mm;border-right:.25mm solid var(--line)}
+.lk4:last-child{border-right:0;margin-right:0}
+.lk4 .a{font-size:6.8pt;font-weight:600;line-height:1.4;color:var(--mute)}
+.lk4 .a b{display:block;font-size:9.4pt;font-weight:900;color:var(--teal)}
+.lk4 .m{color:var(--teal);font-size:8pt;font-weight:900;padding:.6mm 0}
+.lk4 .c{font-size:7.2pt;line-height:1.55;color:#3D4A56;font-weight:600}
+.lk4 .c b{color:var(--navy);font-weight:800}
+.apply{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:1mm}
+.apply .ph{height:54mm}
+.apply .ph.wh2{background:#F3F6F8}.apply .ph.wh2 img,.apply .ph.wh img{mix-blend-mode:multiply}.apply .ph.wh2 img{object-fit:contain}
+.apply .ph.wh{height:26.2mm;background:#F3F6F8}
+.apply .ph.wh img{object-fit:contain}
+.notmv{margin-top:3mm;background:repeating-linear-gradient(135deg,#9AA6B1 0 .3mm,#fff .3mm 1.3mm) left top/2.6mm 100% no-repeat,#F3F6F8;border-radius:var(--rd);padding:3mm 4mm 3mm 6.4mm;display:grid;grid-template-columns:30mm 1fr;gap:3mm;align-items:center}
+.notmv b{font-size:8.6pt;font-weight:800;color:var(--navy)}
+.notmv p{font-size:7.6pt;line-height:1.6;color:#3D4A56;font-weight:500}
+
+/* ---------- p27 스윔레인 ---------- */
+.swim{position:relative;width:178mm}
+.swim svg{position:absolute;left:0;top:0}
+.sb{position:absolute;border-radius:var(--rd);background:#fff;padding:1.5mm 2.2mm;overflow:hidden}
+.sb.fin{background:var(--navy)}
+.sb b{display:block;font-size:7.2pt;font-weight:800;color:var(--navy);line-height:1.3;white-space:nowrap}
+.sb b i{font-style:oblique 8deg;font-weight:900;color:var(--navy);margin-right:1.4mm}
+.sb.act b i{color:var(--teal)}
+.sb.fin b,.sb.fin small{color:#fff}.sb.fin b i{color:var(--yellow)}
+.sb small{display:block;font-size:6.3pt;line-height:1.36;color:#5B6874;font-weight:600;margin-top:.5mm}
+.swnote{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:5mm}
+
+/* ---------- p28 의견 매트릭스 ---------- */
+.mx{display:grid;grid-template-columns:28mm repeat(3,1fr) 15mm;gap:1.4mm}
+.mx .h{background:var(--navy);color:#fff;border-radius:var(--rd);padding:2mm 2mm;text-align:center}
+.mx .h b{display:block;font-size:8pt;font-weight:800}
+.mx .h small{display:block;font-size:6.2pt;opacity:.85;font-weight:600;margin-top:.3mm}
+.mx .h.bl{background:none}
+.mx .rh{display:flex;flex-direction:column;justify-content:center;padding:1.6mm 0}
+.mx .rh b{font-size:8.4pt;font-weight:800;color:var(--navy);line-height:1.3}
+.mx .rh small{font-size:6.2pt;color:var(--mute);font-weight:600;line-height:1.35;margin-top:.4mm}
+.mx .cell{background:#F3F6F8;border-radius:var(--rd);padding:2mm 2.2mm;font-size:6.9pt;line-height:1.62;min-height:23mm}
+.mx .cell span{font-weight:600;color:var(--navy)}
+.mx .cell span:not(:last-child)::after{content:"\00a0· ";color:#A9B4BD;font-weight:600}
+.mx .cell span.k{color:var(--teal-d);font-weight:800}
+.mx .cell span.pt{font-weight:800;background:repeating-linear-gradient(135deg,var(--teal) 0 .3mm,transparent .3mm 1.3mm) left bottom/100% .9mm no-repeat;padding-bottom:.9mm}
+.mx .cell span.pt::after{background:#F3F6F8;padding-bottom:.9mm}
+.mx .cell.doc span{color:#6A7784}
+.mx .sum{display:flex;align-items:center;justify-content:center;font-size:15pt;font-weight:900;color:var(--teal);font-style:oblique 8deg}
+.mx .sum.doc{color:#9AA8B4}
+.mx .ft{text-align:center;font-size:12pt;font-weight:900;color:var(--navy);padding:1.4mm 0;border-top:.5mm solid var(--navy)}
+.mx .ft small{display:block;font-size:6.2pt;color:var(--mute);font-weight:700}
+.mleg{display:flex;gap:4mm;justify-content:flex-end;margin-top:2mm;font-size:6.4pt;color:var(--mute);font-weight:600}
+.mleg span{color:var(--navy);font-weight:600}
+.mleg span.k{color:var(--teal-d);font-weight:800}
+.mleg span.pt{font-weight:800;background:repeating-linear-gradient(135deg,var(--teal) 0 .3mm,transparent .3mm 1.3mm) left bottom/100% .9mm no-repeat;padding-bottom:.9mm}
+
+/* ---------- p29 비포·애프터 ---------- */
+.ba{display:grid;grid-template-columns:40mm 5mm 40mm 1fr;gap:0 2.4mm;align-items:center;padding:3mm 0;border-bottom:.25mm solid var(--line)}
+.ba:first-of-type{border-top:.5mm solid var(--navy)}
+.ba .ph{height:34mm;position:relative}
+.ba .ph em{position:absolute;left:1.2mm;top:1.2mm;font-style:normal;font-size:5.8pt;font-weight:800;padding:.2mm 1.6mm;border-radius:var(--rd);background:#fff;color:var(--mute)}
+.ba .ph.af em{background:var(--teal);color:#fff}
+.ba+.ba .ph em{display:none}
+.ba .ar{color:var(--teal);font-weight:900;font-size:11pt;text-align:center}
+.ba .ph.cn img{object-fit:contain;background:#fff}
+.ba .t h5{font-size:9.2pt;font-weight:800;color:var(--navy);margin-bottom:1.2mm;display:flex;align-items:center;gap:1.6mm}
+.ba .t .q{font-size:6.9pt;line-height:1.5;color:#4A5763;font-weight:600;background:#F3F6F8;border-radius:var(--rd);padding:1.3mm 2.2mm;margin-bottom:1.4mm}
+.ba .t .a{font-size:7.3pt;line-height:1.55;color:var(--navy);font-weight:600;padding:0 .4mm}
+
+/* ---------- p30 진단 종합 ---------- */
+.eq{display:grid;grid-template-columns:1fr 7mm 1fr 7mm 1fr 7mm 1.1fr;align-items:center;margin-bottom:5mm}
+.eq .o{border-radius:var(--rd);padding:4mm 2mm;text-align:center;background:var(--sky)}
+.eq .o b{display:block;font-size:9.4pt;font-weight:900;color:var(--navy)}
+.eq .o small{display:block;font-size:6.4pt;color:#56636E;font-weight:600;margin-top:.6mm;line-height:1.35}
+.eq .o.res{background:var(--navy)}.eq .o.res b{color:#fff}.eq .o.res small{color:#C9D7E6}
+.eq .op{text-align:center;font-size:14pt;font-weight:900;color:var(--teal)}
+.dg{display:grid;grid-template-columns:31mm 31mm 1fr 6mm 1fr;align-items:stretch;column-gap:1.6mm}
+.dg .gh{font-size:6.8pt;font-weight:800;color:var(--teal);letter-spacing:.06em;padding-bottom:1.4mm;border-bottom:.4mm solid var(--navy)}
+.dg .grp{grid-column:1/-1;font-size:7pt;font-weight:800;color:var(--navy);background:#F3F6F8;padding:1.1mm 2.4mm;margin-top:2mm;border-radius:var(--rd);display:flex;align-items:center;gap:2mm}
+.dg .grp small{font-size:6.7pt;font-weight:600;color:#4A5763}
+.dg .c{padding:3mm 0;border-bottom:.25mm solid var(--line);font-size:7.3pt;line-height:1.45;color:#3D4A56;font-weight:600;display:flex;flex-direction:column;justify-content:center}
+.dg .c.n{flex-direction:row;align-items:center;justify-content:flex-start;gap:1.6mm;font-weight:800;color:var(--navy);font-size:7.8pt;white-space:nowrap}
+.dg .c.n i{font-style:normal;width:5.6mm;height:5.6mm;border-radius:50%;color:#fff;font-size:6.2pt;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none}
+.dg .c.o{color:var(--navy);font-weight:800;display:block;align-self:center;line-height:1.6}
+.dg .c.o span{box-shadow:inset 0 -1.6mm 0 rgba(201,215,230,.55)}
+.dg .c.a{color:var(--teal);font-weight:900;align-items:center;font-size:9pt}
+.verdict2{background:var(--navy);color:#fff;border-radius:var(--rd);padding:4.2mm 5mm;text-align:center;font-size:11pt;font-weight:800;line-height:1.5}
+.verdict2 span{color:#C9D7E6}
+</style>
+</head>
+<body>
+
+<!-- ================= p17 간지 ================= -->
+<section class="page odd divider">
+  <div class="horizon"></div>
+  <div class="num serif">Ⅱ</div>
+  <div class="kick">찾다</div>
+  <div class="ttl">조사와<br>시민참여</div>
+  <div class="q">인천의 문제는 어디에서, 누구의 말로 드러났는가</div>
+  <ol>
+    <li>현장조사<span>18</span></li>
+    <li>포럼과 시민워크숍<span>22</span></li>
+    <li>국내외 사례<span>25</span></li>
+    <li>관계부서 협의와 심의 반영<span>27</span></li>
+    <li>진단 종합<span>30</span></li>
+  </ol>
+</section>
+
+<!-- ================= p18 조사 체계 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-01</span>현장조사</div>
+    <h2 class="hl">통계와 문헌으로 문제의 크기를 먼저 읽고,<br><em>그 가설이 현장에서 맞는지</em> 직접 확인하였다</h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="p18">
+      <div class="tx">
+        <p class="lede2" style="margin-bottom:3.4mm">조사는 두 갈래로 진행하였다. 기존 자료로 사회문제의 배경과 범위를 짚는 데스크리서치, 그리고 실제 이용 행태와 공간의 맥락을 직접 보고 기록하는 현장조사다.</p>
+        <p>데스크리서치에서는 인천광역시 사회조사와 국가통계데이터포털, 읍·면·동 단위 행정 통계, 인구·이용·환경 현황 자료를 모았다. 관련 연구보고서와 학술 논문, 국내외 유사 사례와 이론도 함께 읽었다. 언론 보도와 지역 이슈, 민선 9기 시정 정책과 최근 시책사업, 비슷한 규모 지자체의 계획까지 살폈다. 자료마다 출처·기준연도·조사대상을 함께 적어, 문제의 규모와 대상, 이론적 근거를 거점별로 한데 모았다.</p>
+        <p>데스크리서치가 세운 것은 가설이었다. 구월동 음식점 흡연 단속이 일곱 달 동안 1,387건에 이른다는 보도는 로데오거리의 흡연이 널리 퍼진 문제라는 근거가 되었고, 외국인 관광객의 차이나타운 방문율이 조사 관광지 가운데 가장 높다는 통계는 그림 안내가 필요하다는 판단을 뒷받침하였다. 그러나 숫자만으로는 사람들이 그 장소에서 실제로 어떻게 움직이는지 알 수 없었다.</p>
+        <p>근거의 층위는 거점마다 달랐다. 약산초는 남동구가 2022~2024년 생활안전 CCTV 537개소를 설치했다는 보도와 경로의 지형지물에 이름을 붙이면 어린이의 길찾기 오류가 줄었다는 연구에서, 선인재단은 인천의 정신건강 고위험군 학생이 3년 연속 늘었다는 교육청 통계에서, 연안여객터미널은 큰 짐을 든 승객의 약 60%가 쇼핑·식음시설 이용에 불편을 겪었다는 해외 철도역 조사에서 출발점을 찾았다.</p>
+        <p>그래서 현장조사는 <b>조사 일시, 관찰 구간, 이용 행태, 인터뷰</b> 네 가지를 기록 단위로 삼았다. 낮과 밤, 평일과 주말을 나누어 같은 장소를 여러 번 찾았고, 가설과 맞지 않는 장면이 보이면 기획 방향을 고쳤다. 정량 자료로 지표를 세우고 정성 관찰로 그 지표를 다듬는 이 방식은 사전조사와 1·2차 실험까지 그대로 이어졌다.</p>
+      </div>
+      <div>
+        <div class="circ"><div class="ph"><img src="img/00_2장_조사체계.jpg" alt=""></div><div class="ov">수립한 가설을<br>현장에서 검증</div></div>
+        <div class="tags4"><span>조사 일시</span><span>관찰 구간</span><span>이용 행태</span><span>인터뷰</span></div>
+        <div class="dr">
+          <div><b>통계 분석</b>사회조사 · 국가통계 · 행정 통계 · 인구·이용·환경 현황</div>
+          <div><b>선행연구·문헌</b>연구보고서 · 학술 논문 · 국내외 사례와 이론</div>
+          <div><b>보도·이슈</b>언론 보도 · 지역 이슈 · 최신 동향</div>
+          <div><b>상위·유관계획</b>민선 9기 시정 정책 · 시책사업 · 타 지자체 계획</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flow4"><div><i>01</i><b>조사 기반 이슈 도출</b><small>통계·문헌·지역 현안에서 핵심 문제</small></div><div><i>02</i><b>거점별 기획 방향</b><small>방향·전략과 검증 지표 수립</small></div><div><i>03</i><b>1차 실험 시범 적용</b><small>우선 적용안으로 전략 검증</small></div><div><i>04</i><b>2차 실험 비교·보완</b><small>현장 반응으로 최종안 정리</small></div></div>
+  <div class="stat4">
+    <span class="t">숫자가 먼저 보여 준 문제</span>
+    <div><b>1,387<small>건</small></b><p>구월동 음식점 흡연 단속<br>(2024년 1~7월, 월평균 약 198건)</p><em>경기일보 보도</em></div>
+    <div><b>59.7<small>%</small></b><p>인천 외국인 관광객의<br>차이나타운 방문율</p><em>인천시·인천관광공사(2025)</em></div>
+    <div><b>63.5<small>%</small></b><p>인천경제자유구역 외국인이 꼽은<br>교류의 어려움 ‘언어소통 장애’</p><em>인천경제자유구역청(2024)</em></div>
+    <div><b>36.9<small>%</small></b><p>인천 중·고교생<br>스트레스 인지율</p><em>질병관리청(2023)</em></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(사회실험 조사체계·거점별 세부계획)</div>
+  <div class="pno">18</div>
+</section>
+
+<!-- ================= p19 방문 기록 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-01</span>현장조사</div>
+    <h2 class="hl">7월 29일부터 10월 7일까지 <em>열흘 동안 열아홉 차례</em><br>거점을 다시 찾아 관찰할 요일과 시간을 골랐다</h2>
+    <p class="lede">착수 직후 6~8월의 현장조사가 후보지의 상태를 기록하였다면, 7월 말부터 다시 시작한 2차 현장조사는 실험을 어느 요일, 어느 시간, 어느 지점에서 할지 정하는 조사였다.</p>
+  </div>
+  <div class="body" style="top:70mm">
+    <div class="vis"><svg viewBox="0 0 178 66" width="178mm" height="66mm" font-family="P"><rect x="4.4" y="2" width="15.2" height="45" rx=".6" fill="#F2F5F8"/><line x1="4.4" x2="19.6" y1="59.5" y2="59.5" stroke="#2E5A87" stroke-width=".3"/><text x="12.0" y="64.6" font-size="3.4" font-weight="900" fill="#2E5A87" text-anchor="middle">7월</text><rect x="20.8" y="2" width="48.0" height="45" rx=".6" fill="#F6F8FA"/><line x1="20.8" x2="68.8" y1="59.5" y2="59.5" stroke="#2E5A87" stroke-width=".3"/><text x="44.8" y="64.6" font-size="3.4" font-weight="900" fill="#2E5A87" text-anchor="middle">8월</text><rect x="70.0" y="2" width="80.8" height="45" rx=".6" fill="#F2F5F8"/><line x1="70.0" x2="150.8" y1="59.5" y2="59.5" stroke="#2E5A87" stroke-width=".3"/><text x="110.4" y="64.6" font-size="3.4" font-weight="900" fill="#2E5A87" text-anchor="middle">9월</text><rect x="152.0" y="2" width="15.2" height="45" rx=".6" fill="#F6F8FA"/><line x1="152.0" x2="167.2" y1="59.5" y2="59.5" stroke="#2E5A87" stroke-width=".3"/><text x="159.6" y="64.6" font-size="3.4" font-weight="900" fill="#2E5A87" text-anchor="middle">10월</text><line x1="2" x2="176" y1="47" y2="47" stroke="#1A2F4B" stroke-width=".3"/><circle cx="12.0" cy="42.0" r="3.2" fill="#3A5F8E"/><text x="12.0" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">01</text><circle cx="12.0" cy="34.4" r="3.2" fill="#3F7A6E"/><text x="12.0" y="35.45" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">04</text><circle cx="12.0" cy="26.8" r="3.2" fill="#A67C45"/><text x="12.0" y="27.85" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">05</text><circle cx="12.0" cy="19.2" r="3.2" fill="#675F8C"/><text x="12.0" y="20.25" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">06</text><circle cx="12.0" cy="11.6" r="3.2" fill="#675F8C"/><text x="12.0" y="12.65" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">07</text><text x="12.0" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">7.29</text><text x="12.0" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(수)</text><circle cx="28.4" cy="42.0" r="3.2" fill="#3A5F8E"/><text x="28.4" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">01</text><circle cx="28.4" cy="34.4" r="3.2" fill="#675F8C"/><text x="28.4" y="35.45" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">07</text><text x="28.4" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">8.11</text><text x="28.4" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(화)</text><circle cx="44.8" cy="42.0" r="3.2" fill="#3F7A6E"/><text x="44.8" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">04</text><text x="44.8" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">8.24</text><text x="44.8" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(월)</text><circle cx="61.2" cy="42.0" r="3.2" fill="#3A5F8E"/><text x="61.2" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">01</text><circle cx="61.2" cy="34.4" r="3.2" fill="#675F8C"/><text x="61.2" y="35.45" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">06</text><text x="61.2" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">8.27</text><text x="61.2" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(목)</text><circle cx="77.6" cy="42.0" r="3.2" fill="#A67C45"/><text x="77.6" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">05</text><text x="77.6" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">9.9</text><text x="77.6" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(수)</text><circle cx="94.0" cy="42.0" r="3.2" fill="#3A5F8E"/><text x="94.0" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">02</text><text x="94.0" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">9.14</text><text x="94.0" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(월)</text><circle cx="110.4" cy="42.0" r="3.2" fill="#3A5F8E"/><text x="110.4" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">01</text><text x="110.4" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">9.15</text><text x="110.4" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(화)</text><circle cx="126.8" cy="42.0" r="3.2" fill="#3A5F8E"/><text x="126.8" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">02</text><circle cx="126.8" cy="34.4" r="3.2" fill="#3F7A6E"/><text x="126.8" y="35.45" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">03</text><text x="126.8" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">9.23</text><text x="126.8" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(수)</text><circle cx="143.2" cy="42.0" r="3.2" fill="#A67C45"/><text x="143.2" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">05</text><circle cx="143.2" cy="34.4" r="3.2" fill="#675F8C"/><text x="143.2" y="35.45" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">06</text><text x="143.2" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">9.29</text><text x="143.2" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(화)</text><circle cx="159.6" cy="42.0" r="3.2" fill="#3F7A6E"/><text x="159.6" y="43.05" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">03</text><circle cx="159.6" cy="34.4" r="3.2" fill="#675F8C"/><text x="159.6" y="35.45" font-size="2.9" font-weight="800" fill="#fff" text-anchor="middle">07</text><text x="159.6" y="52" font-size="3.3" font-weight="800" fill="#1A2F4B" text-anchor="middle">10.7</text><text x="159.6" y="56" font-size="2.5" font-weight="600" fill="#6A7784" text-anchor="middle">(수)</text><text x="17.0" y="5.6" font-size="2.6" font-weight="700" fill="#1A2F4B">하루 다섯 거점</text></svg>
+      <div class="vleg">
+        <span><i style="background:var(--f-safe)"></i>01 약산초 <small>4회</small></span>
+        <span><i style="background:var(--f-safe)"></i>02 선인재단 <small>2회</small></span>
+        <span><i style="background:var(--f-incl)"></i>03 송도 <small>2회</small></span>
+        <span><i style="background:var(--f-incl)"></i>04 차이나타운 <small>2회</small></span>
+        <span><i style="background:var(--f-attr)"></i>05 굴포천 <small>3회</small></span>
+        <span><i style="background:var(--f-conv)"></i>06 로데오거리 <small>3회</small></span>
+        <span><i style="background:var(--f-conv)"></i>07 연안여객터미널 <small>3회</small></span>
+      </div>
+    </div>
+    <div class="tx c2" style="margin-top:5mm">
+      <p>가장 자주 찾은 곳은 약산초였다. 7월 29일, 8월 11일, 8월 27일, 9월 15일 네 차례 통학로에 나가 등·하굣길 시간대의 흐름을 지켜보았다. 로데오거리·굴포천·연안여객터미널은 세 차례, 선인재단·송도·차이나타운은 두 차례씩 찾았다. 7월 29일에는 하루에 다섯 거점을 차례로 돌았다.</p>
+      <p>방문이 거듭될수록 결정은 구체적이 되었다. 송도는 상권 자료에서 일요일 유동인구가 가장 적다는 점을 확인해 금·토요일을 골랐고, 연안여객터미널은 운항과 이용 시간대에 맞춰 하루 전체를 기록하기로 하였다. 이렇게 고른 요일과 시간대는 사전조사와 1·2차 실험에 그대로 옮겨졌다.</p>
+    </div>
+    <div class="rules">
+      <b class="rt">관찰 요일·시간을 고른 네 가지 기준</b><div><b>타겟이 나타나는 때</b><p>기획 대상이 충분히 보이는 시간과 공간을 고른다.<span><em>약산초</em>평일 등·하굣길</span></p></div>
+      <div><b>관찰할 수 있는 상태</b><p>시야·조명·날씨가 관찰과 계수를 허락하는 조건.<span><em>로데오거리</em>저녁 시간대</span></p></div>
+      <div><b>최소 표본 충족</b><p>거점 특성마다 기준이 다르므로 현장에서 확인한다.<span><em>굴포천</em>주말 낮, 교량 하부 대조군</span></p></div>
+      <div><b>오차 범위 조절</b><p>유동인구가 비슷한 요일끼리 5~10% 범위에서 맞춘다.<span><em>선인재단</em>등교 07:30~08:50</span></p></div>
+    </div>
+    <div class="strip3"><div class="ph"><img src="img/00_2장_현장조사.jpg" alt=""></div><div class="ph"><img src="img/01_약산초_사전_007.jpg" alt=""></div><div class="ph"><img src="img/01_약산초_사전_008.jpg" alt=""></div></div>
+    <div class="cap2"><b>현장조사 장면과 약산초 통학로 기록.</b> 같은 통학로를 다른 날, 다른 시간에 다시 찾아 관찰 조건을 비교하였다.</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(운영·일정·조건관리)</div>
+  <div class="pno">19</div>
+</section>
+
+<!-- ================= p20 세 갈래 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-01</span>현장조사</div>
+    <h2 class="hl">현장의 문제는 장소마다 달랐지만,<br><em>알아보기·머물기·함께 쓰기</em>의 어려움으로 모였다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="hero"><div class="ph"><img src="img/05_굴포천_2장_교량하부.jpg" alt=""></div>
+      <div class="lb2"><b>굴포천 제1교량 하부</b> · 산책로에서 유일한 그늘이었다. 사람들은 햇빛 아래 산책로를 지나 콘크리트 그늘로 모였다.</div></div>
+    <div class="tx c2" style="margin-top:5mm">
+      <div class="blk"><h5>알아보기 어렵다<small>경계·안내·위치</small></h5>
+      <p>약산초 통학로에서는 폐자재와 적치물이 학교 경계를 가려 어디부터가 학교 앞인지 알아보기 어려웠고, 걸을 수 있는 폭도 좁았다. 차이나타운 공중화장실은 외국인 방문객이 많은 데 비해 다국어 안내가 부족하였다. 연안여객터미널은 2층에 휴게공간이 있었지만 위치와 기능이 알려지지 않아 대기 승객과 수하물이 1층으로 몰렸다. 터미널을 관리하는 인천항만공사 직원도 기존 안내만으로는 실제 이동을 이끌기 어렵다고 보았다.</p></div>
+      <div class="blk"><h5>머물기 어렵다<small>그늘·자리·머물 이유</small></h5>
+      <p>굴포천 제1교량(부흥교) 옆 산책로에는 교량 하부 말고는 그늘이 없었다. 현장 보행자 설문에서 방문 목적 1위는 휴식이었지만 앉을 자리도 그늘도 없어, 보행자들은 양산을 쓰고 교량 하부로 향하였고, 산책로에는 배변 방치와 악취 같은 쾌적성 문제도 남아 있었다. 송도 캠퍼스타운역 일대 보행축은 지나가는 길로만 쓰였고, 그늘과 머물 거리가 부족하였다. 초기 후보지였던 인천항 1·8부두와 선인재단 경사 구간에서도 쉴 자리와 머물 이유가 부족하다는 기록이 남았다.</p></div>
+      <div class="blk"><h5>함께 쓰기 어렵다<small>서로 다른 이용의 혼재</small></h5>
+      <p>구월동 로데오거리에서는 보행로 흡연 때문에 흡연자와 비흡연자의 동선이 섞였다. 광장 좌석 가까이에 흡연시설이 있어 쉬려는 사람과 담배를 피우려는 사람이 한 공간을 나눠 썼고, 거리 곳곳에서 꽁초 투기가 기록되었다.</p></div>
+      <p>세 갈래는 그대로 실험의 질문이 되었다. 알아보기 어려운 곳에서는 그림과 색으로 위치와 행동을 알리는 방법을, 머물기 어려운 곳에서는 그늘과 자리를, 함께 쓰기 어려운 곳에서는 구역을 나누고 길을 안내하는 방법을 시험하였다.</p>
+      <div class="gnum"><b style="font-size:7pt;color:var(--f-attr);font-weight:800">굴포천 현장조사 · 보행자 설문</b>
+        <div style="display:flex;gap:10mm;margin-top:1.4mm"><div><b style="font-size:15pt;font-weight:900;color:var(--navy);line-height:1">35<small style="font-size:7pt">%</small></b><small style="display:block;font-size:6.2pt;color:var(--mute);font-weight:600">방문 목적 1위<br>‘휴식’</small></div><div><b style="font-size:15pt;font-weight:900;color:var(--navy);line-height:1">20<small style="font-size:7pt">분</small></b><small style="display:block;font-size:6.2pt;color:var(--mute);font-weight:600">평균 휴식 체류<br>(약)</small></div></div></div>
+
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(사전 현장조사)</div>
+  <div class="pno">20</div>
+</section>
+
+<!-- ================= p21 사진 콜라주 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-01</span>현장조사</div>
+    <h2 class="hl">적치물에 가린 학교 앞, 그늘 없는 산책로, 섞여 쓰는 광장에서<br><em>문제는 사진 속 장면으로 먼저 드러났다</em></h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="band3">
+      <div class="bl"><b>알아보기<br>어렵다</b><small>경계·안내·위치</small></div>
+      <div class="pols">
+        <div class="pol r1" style="width:54mm"><div class="ph" style="height:45mm"><img src="img/01_약산초_2장_적치물.jpg" alt=""></div><div class="pc"><b><em>약산초</em> | 적치물과 학교 경계</b>폐자재·적치물로 경계가 가려지고 통학로가 좁았다.</div></div>
+        <div class="pol r2" style="width:46mm"><div class="ph" style="height:45mm"><img src="img/04_차이나타운_2장_세면대.jpg" alt=""></div><div class="pc"><b><em>차이나타운</em> | 공중화장실</b>방문객에 비해 다국어 안내가 부족하였다.</div></div>
+        <div class="pol r3" style="width:46mm"><div class="ph" style="height:45mm"><img src="img/07_연안_2장_대합실.jpg" alt=""></div><div class="pc"><b><em>연안여객터미널</em> | 1층 대합실</b>2층이 알려지지 않아 대기·수하물이 몰렸다.</div></div>
+      </div>
+    </div>
+    <div class="band3">
+      <div class="bl"><b>머물기<br>어렵다</b><small>그늘·자리·머물 이유</small></div>
+      <div class="pols">
+        <div class="pol r2" style="width:35mm"><div class="ph" style="height:40mm"><img src="img/05_굴포천_2장_산책로.jpg" alt=""></div><div class="pc"><b><em>굴포천</em> | 개방 산책로</b>교량 하부 말고는 그늘이 없었다.</div></div>
+        <div class="pol r4" style="width:35mm"><div class="ph" style="height:40mm"><img src="img/03_송도_2장_보행축.jpg" alt=""></div><div class="pc"><b><em>송도</em> | 가로수 보행축</b>통행 위주로 쓰이고 체류 콘텐츠가 부족하였다.</div></div>
+        <div class="pol r1" style="width:35mm"><div class="ph" style="height:40mm"><img src="img/02_선인재단_2장_경사로.jpg" alt=""></div><div class="pc"><b><em>선인재단</em><span class="ini">초기 후보</span></b>경사 구간에 그늘·쉴 자리가 부족하였다.</div></div>
+        <div class="pol r3" style="width:35mm"><div class="ph" style="height:40mm"><img src="img/00_인천항_2장_부두광장.jpg" alt=""></div><div class="pc"><b><em>인천항 1·8부두</em><span class="ini">초기 후보</span></b>체류와 활동을 유도할 요소가 없었다.</div></div>
+      </div>
+    </div>
+    <div class="band3">
+      <div class="bl"><b>함께 쓰기<br>어렵다</b><small>흡연과 휴식의 혼재</small></div>
+      <div class="pols">
+        <div class="pol r4" style="width:58mm"><div class="ph" style="height:46mm"><img src="img/06_로데오_2장_벤치.jpg" alt=""></div><div class="pc"><b><em>로데오거리</em> | 광장 목재 좌석</b>쉬는 사람 곁에 흡연시설이 함께 놓여 있었다.</div></div>
+        <div class="pol r1" style="width:48mm"><div class="ph" style="height:46mm"><img src="img/06_로데오_2장_흡연시설.jpg" alt=""></div><div class="pc"><b><em>로데오거리</em> | 보행로 흡연시설</b>흡연자와 비흡연자의 동선이 섞였다.</div></div>
+        <div class="tx" style="flex:1;padding:1mm 0 0 1mm"><p style="font-size:7.8pt;line-height:1.7">인천항 1·8부두는 실험 거점에서 빠졌고, 선인재단은 처음 살핀 경사 구간이 아닌 등굣길 가로수길에서 실험하였다.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="tx" style="position:absolute;left:16mm;right:16mm;bottom:22mm"><p>사전 현장조사는 사진을 쌓는 일에서 시작하였다. 초기 후보 여덟 곳의 공간 상태와 이용 장면을 같은 방식으로 남겼고, 이 사진은 거점을 정하는 근거이자 실험 전의 기준 장면이 되었다.</p></div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(사전 현장조사 사진)</div>
+  <div class="pno">21</div>
+</section>
+
+<!-- ================= p22 포럼·워크숍·자문 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-02</span>포럼과 시민워크숍</div>
+    <h2 class="hl">포럼으로 사업의 방식을 알리고,<br><em>시민디자인단과 함께</em> 문제를 고르고 실험안을 다듬었다</h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="tl">
+      <div class="tli"><div class="dt"><b>06.25</b><small>포럼</small></div>
+        <div class="ph"><img src="img/00_2장_포럼.jpg" alt=""></div>
+        <div class="tx"><h4>창의디자인 포럼<span>참석 <span class="dummy">[000]</span>명</span></h4>
+          <p>시민과 공무원에게 사회실험이 무엇인지 알리고 인식을 넓히는 교육의 자리로 열었다. 포럼과 함께 인천시민디자인단과 청년작가가 참여하는 다자간 협업 체계(협업 TFT)를 꾸렸고, 이후의 워크숍과 자문은 이 체계 안에서 이어졌다.</p></div></div>
+      <div class="tli"><div class="dt"><b>08.05</b><small>워크숍</small></div>
+        <div class="ph"><img src="img/00_2장_워크숍.jpg" alt=""></div>
+        <div class="tx"><h4>시민디자인단 워크숍<span>시민디자인단 <span class="dummy">[00]</span>명</span></h4>
+          <p>인천시민디자인단과 이해관계자의 의견을 모았다. 시민디자인단은 생활 속에서 겪은 문제를 꺼내 놓고 거점의 쓰임을 함께 살폈다. 시민디자인단의 아이디어는 약산초 1차 실험 「색연필 수비대」와 차이나타운 공중화장실 그림 안내의 바탕이 되었다.</p></div></div>
+      <div class="tli" style="margin-bottom:4mm"><div class="dt"><b>09.30</b><small>시민 자문</small><b style="margin-top:2mm">10.02</b><small>전문가 자문</small></div>
+        <div class="duo2"><div class="ph"><img src="img/00_2장_자문회의.jpg" alt=""></div><div class="ph"><img src="img/00_2장_협의회의.jpg" alt=""></div></div>
+        <div class="tx"><h4>시민디자인단 자문 · 전문가 자문</h4>
+          <p>9월 30일에는 시민디자인단이, 10월 2일에는 전문가가 거점별 실험안을 검토하였다. 전문가 자문에서 송도 안내 실험은 1차를 픽토그램과 숫자, 2차를 영문 텍스트로 나누어 비교하는 구조로 정리되었다.</p></div></div>
+    </div>
+    <div class="roles">
+      <b>시민디자인단이<br>실험에서 맡은 일</b>
+      <ul>
+        <li><b>문제 발굴·생활체감 검증</b>거점 선정과 실험안 자문</li>
+        <li><b>1차 시민안</b>약산초 「색연필 수비대」</li>
+        <li><b>계수 분담</b>선인재단 갈림길·도착점</li>
+        <li><b>계수·인식조사</b>굴포천 두 그늘, 사전·사후</li>
+        <li><b>설치 참여</b>로데오거리 1차 실험</li>
+        <li><b>현장 피드백</b>관찰 기록과 의견 전달</li>
+      </ul>
+    </div>
+    <div class="tx c2" style="margin-top:3.4mm"><p>제1회 공공디자인위원회 심의에서는 참여가 학교와 학생에 치우쳤다는 의견이 나왔다. 사업단은 학생 외 일반 시민도 설문·인터뷰·참여형 워크숍·현장 설치에 기본적으로 참여하도록 범위를 밝히고, 그 구조를 거버넌스에 담았다.</p><p>참여의 몫도 주체별로 나누었다. 행정은 대상지 사용을 허가하고, 학교와 현장기관은 학생 설문을 도왔으며, 청년작가는 시민참여 아트 워크숍을 이끌었다. 주민참여위원회와 송도 러닝크루도 시민 쪽 주체로 관찰과 현장 피드백에 함께하였다.</p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(추진경과·거버넌스·심의의견 조치결과)</div>
+  <div class="pno">22</div>
+</section>
+
+<!-- ================= p23 아이디어의 출처 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-02</span>포럼과 시민워크숍</div>
+    <h2 class="hl">일곱 실험 가운데 네 개는 <em>시민의 제안·민원·지역 연구</em>에서<br>출발하였다</h2>
+    <p class="lede">나머지 세 거점은 데스크리서치와 현장 관찰, 관계기관 협의에서 문제를 찾았다. 어느 경로로 들어왔든 모든 실험은 같은 조사와 협의를 거쳐 실험안이 되었다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+    <svg viewBox="0 0 178 86" width="178mm" height="86mm" font-family="P"><defs><pattern id="h3-gray" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#9AA6B1"/></pattern></defs><path d="M56 0 C84.0 0 84.0 0 112 0 L112 11 C84.0 11 84.0 11 56 11 Z" fill="#1A2F4B" opacity=".16"/><path d="M56 11 C84.0 11 84.0 14.5 112 14.5 L112 25.5 C84.0 25.5 84.0 22 56 22 Z" fill="#1A2F4B" opacity=".16"/><path d="M56 28 C84.0 28 84.0 29 112 29 L112 40 C84.0 40 84.0 39 56 39 Z" fill="#2E5A87" opacity=".18"/><path d="M56 45 C84.0 45 84.0 43.5 112 43.5 L112 54.5 C84.0 54.5 84.0 56 56 56 Z" fill="#7D97B3" opacity=".26"/><path d="M56 62 C84.0 62 84.0 62 112 62 L112 84 C84.0 84 84.0 84 56 84 Z" fill="url(#h3-gray)" opacity=".55"/><rect x="53.4" y="0" width="2.6" height="22" fill="#1A2F4B"/><text x="51.4" y="10.7" font-size="3.6" font-weight="800" fill="#1A2F4B" text-anchor="end">시민디자인단 아이디어</text><text x="51.4" y="14.6" font-size="2.6" font-weight="600" fill="#6A7784" text-anchor="end">시민이 낸 생활 속 제안</text><rect x="53.4" y="28" width="2.6" height="11" fill="#2E5A87"/><text x="51.4" y="33.2" font-size="3.6" font-weight="800" fill="#1A2F4B" text-anchor="end">시민 민원</text><text x="51.4" y="37.1" font-size="2.6" font-weight="600" fill="#6A7784" text-anchor="end">구월동 흡연 민원</text><rect x="53.4" y="45" width="2.6" height="11" fill="#7D97B3"/><text x="51.4" y="50.2" font-size="3.6" font-weight="800" fill="#1A2F4B" text-anchor="end">지역 연구</text><text x="51.4" y="54.1" font-size="2.6" font-weight="600" fill="#6A7784" text-anchor="end">부평구 생태하천 연구</text><rect x="53.4" y="62" width="2.6" height="22" fill="url(#h3-gray)"/><text x="51.4" y="72.7" font-size="3.6" font-weight="800" fill="#1A2F4B" text-anchor="end">현장조사·기관 협의</text><text x="51.4" y="76.6" font-size="2.6" font-weight="600" fill="#6A7784" text-anchor="end">데스크리서치와 현장 관찰</text><rect x="112" y="0" width="2.6" height="11" fill="#3A5F8E"/><text x="117" y="5.1" font-size="3.5" font-weight="900" fill="#3A5F8E">01 <tspan fill="#1A2F4B" font-weight="800">약산초</tspan></text><text x="117" y="9.0" font-size="2.6" font-weight="600" fill="#6A7784">「색연필 수비대」 시민안</text><rect x="112" y="14.5" width="2.6" height="11.0" fill="#3F7A6E"/><text x="117" y="19.6" font-size="3.5" font-weight="900" fill="#3F7A6E">04 <tspan fill="#1A2F4B" font-weight="800">차이나타운</tspan></text><text x="117" y="23.5" font-size="2.6" font-weight="600" fill="#6A7784">그림 안내 에티켓</text><rect x="112" y="29" width="2.6" height="11" fill="#675F8C"/><text x="117" y="34.1" font-size="3.5" font-weight="900" fill="#675F8C">06 <tspan fill="#1A2F4B" font-weight="800">로데오거리</tspan></text><text x="117" y="38.0" font-size="2.6" font-weight="600" fill="#6A7784">흡연·휴게 구역 분리</text><rect x="112" y="43.5" width="2.6" height="11.0" fill="#A67C45"/><text x="117" y="48.6" font-size="3.5" font-weight="900" fill="#A67C45">05 <tspan fill="#1A2F4B" font-weight="800">굴포천</tspan></text><text x="117" y="52.5" font-size="2.6" font-weight="600" fill="#6A7784">그늘·머무름 자리</text><rect x="112" y="62" width="2.6" height="22" fill="url(#h3-gray)"/><text x="117" y="72.6" font-size="3.5" font-weight="900" fill="#9AA8B4">02·03·07 <tspan fill="#1A2F4B" font-weight="800">그 밖의 세 거점</tspan></text><text x="117" y="76.5" font-size="2.6" font-weight="600" fill="#6A7784">선인재단 · 송도 · 연안여객터미널</text></svg>
+    <div class="src3">
+      <div class="s"><h5 style="border-color:#1A2F4B">시민디자인단 아이디어</h5>
+        <p>약산초의 1차안은 시민디자인단이 만든 안이었다. 전신주 지주를 다섯 색 연필 모양으로 감싸고 바닥에 색·패턴·문구를 더해 학교 앞을 알아보게 하자는 제안이 「색연필 수비대」가 되었다. 차이나타운 공중화장실의 그림 안내도 시민디자인단의 아이디어에서 시작하였다.</p></div>
+      <div class="s"><h5 style="border-color:#2E5A87">시민 민원</h5>
+        <p>로데오거리 실험은 구월동 흡연 문제에 대한 시민 민원을 계기로 기획하였다. 2023년 인천시가 금연 대상 시설 58,236개소를 점검한 결과 금연구역 내 흡연이 488건 적발되었고, 흡연과 휴게를 나누는 공존 문화가 필요하다는 결론에 이르렀다.</p></div>
+      <div class="s"><h5 style="border-color:#7D97B3">지역 연구</h5>
+        <p>굴포천은 부평구 생태하천 연구에서 출발하였다. 복원 이후 생태하천으로 알려졌지만, 산책로에는 그늘도 앉을 자리도 없었다. 주민의 체감은 홍보와 달랐고, 이 간극이 그늘·머무름 실험의 질문이 되었다.</p></div>
+    </div>
+    <div class="pq"><div class="qm">“</div><div><p>생태하천이라고 대대적으로 홍보했지만 풀도 없고 생태가 살아난 느낌이 들지 않아요.</p><small>출근길에 굴포천을 산책하는 주민 · 중부일보(2026.5.21) 보도</small></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:3mm"><div class="quote-slot">시민디자인단 A · 워크숍 · 통학로 아이디어 관련</div><div class="quote-slot">로데오거리 인근 시민 · 민원 · 흡연 관련</div></div>
+    <div class="tx" style="margin-top:4.4mm;border-top:.25mm solid var(--line);padding-top:3.4mm"><p><b>나머지 세 거점</b>은 현장에서 경로를 좁혔다. 선인재단은 초기 후보였던 경사 구간 대신 청소년이 매일 지나는 등굣길 가로수길로 실험 장소를 옮겼다. 송도 캠퍼스타운역 일대는 유학생이 함께 달리는 러닝 코스로 범위를 정하고 송도 러닝크루의 정기 러닝 일정에 맞추었다. 연안여객터미널은 2층 휴게공간이 알려지지 않아 1층에 대기와 짐이 몰린다는 인천항만공사 직원의 의견과 현장 관찰에서 출발하였다.</p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(전체 실험 요약·거점별 세부계획)</div>
+  <div class="pno">23</div>
+</section>
+
+<!-- ================= p24 약산초 어린이 워크숍 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-02</span>포럼과 시민워크숍</div>
+    <h2 class="hl">약산초 6학년 35명이 낸 <em>시설물 응답 75건과 지도 의견 57건</em>이<br>2차 실험의 전봇대 디자인을 바꾸었다</h2>
+  </div>
+  <div class="body" style="top:56mm">
+    <div class="ws">
+      <div class="ph"><img src="img/01_약산초_워크숍3.jpg" alt=""></div>
+      <div class="r"><div class="ph"><img src="img/01_약산초_워크맵.jpg" alt="" style="object-position:50% 40%"></div><div class="ph"><img src="img/01_약산초_워크숍1.jpg" alt=""></div></div>
+    </div>
+    <div class="cap2"><b>10월 8일 약산초 어린이 안전디자인 워크숍.</b> 학교 주변을 그린 워크맵 위에 위험한 곳과 바꾸고 싶은 곳을 표시하고, 모둠별로 해결 방법을 발표하였다.</div>
+    <div class="wnum">
+      <div><b>35<small>명</small></b><span>6학년 2반 18명<br>5반 17명</span></div>
+      <div><b>75<small>건</small></b><span>시설물에 대한<br>응답</span></div>
+      <div><b>57<small>건</small></b><span>워크맵 위<br>지도 의견</span></div>
+      <div><b>9<small>/14</small></b><span>전봇대 응답 중<br>좁음·통행 방해·이전 요구</span></div>
+    </div>
+    <div class="tx c2">
+      <p>10월 8일 1·2교시, 약산초등학교 6학년 2반과 5반 어린이 35명이 워크숍에 참여하였다. 어린이들은 공공디자인이 무엇인지 먼저 알아본 뒤, 우리 학교 주변의 안전 문제를 서로 이야기하고 안전을 지키는 방법을 직접 말해 보았다. 도구는 시설물별 워크숍 카드와 학교 주변을 그린 워크맵이었다.</p>
+      <p>워크숍의 목적은 세 가지였다. 어린이가 생각하는 학교 주변 문제를 모으고, 어린이 방식의 해결책과 이름을 받고, 그렇게 고른 구체적인 이유를 듣는 것이다. 1차 실험 「색연필 수비대」가 시민이 만든 안이었다면, 이 워크숍은 어린이가 직접 안을 만드는 2차 실험 「꿈꾸는 안전디자이너」의 출발점이었다.</p>
+      <p>응답은 구체적이었다. 전봇대에 관한 응답 14건 가운데 9건은 좁다, 통행을 막는다, 옮겨 달라는 요구였고, 그 불편을 풀 방법으로 스펀지로 감싼 전봇대가 제안되었다. 서로 다른 색과 형광색, 동물 귀를 단 시설을 제안한 응답도 있었다. 이름 제안 51건 가운데 10건은 애칭이나 의인화였고, 지도 의견은 정문에서 통학로로 이어지는 동쪽 구간에 몰렸다. 시설물 응답을 주제별로 나누면 기능과 상태를 설명한 응답이 17행, 재질이나 형태를 바꾸자는 응답이 15행이었다.</p>
+      <p>제안은 2차 설계에 그대로 들어갔다. 전봇대는 EVA 스펀지 10T로 감쌌고, 색과 동물에 관한 여러 제안은 동물 5종과 배경색으로 정리하였다. 문구 없이 그림과 색만으로 장소를 구분하게 하였으며, 현장에서는 어린이가 이 시설을 어떻게 부르는지, 보호자에게 위치를 설명할 때 동물과 색을 단서로 쓰는지를 확인하였다.</p>
+      <div class="quote-slot" style="margin-top:2.4mm">어린이 A · 워크숍 · 전봇대 관련 제안</div><div class="quote-slot" style="margin-top:1.6mm">어린이 B · 워크숍 · 동물·색 관련 제안</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(약산초 워크숍 결과)</div>
+  <div class="pno">24</div>
+</section>
+
+<!-- ================= p25 국내외 사례 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-03</span>국내외 사례</div>
+    <h2 class="hl">국내외 네 사례는 모두 작은 장치로 행동을 바꾸고<br><em>그 변화를 숫자로 확인</em>하였다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="cs"><div class="ph"><img src="img/00_2장_사례_문래.jpg" alt=""><span class="ty">참여</span></div>
+      <div><div class="pl">서울 영등포구 · 문래청소년센터</div><h5>청소년 휴대폰 과의존 개선 디자인 실험</h5>
+        <p>청소년의 스마트폰 사용시간이 늘며 자기조절이 어려워지고 또래 간 대면 소통이 줄었다. 휴대폰 보관함과 놀이·체험 활동을 잇고, 미션형 활동과 디지털 휴식존을 둔 <b>참여형 공간디자인 실험</b>을 운영하였다.</p><div class="so">청소년이 직접 참여하는 실험</div></div>
+      <div class="rn"><div><b>84.2<small>%</small></b><span>일상 복귀 후<br>스마트폰 사용 조절</span></div><div><b>14.4<small>%↓</small></b><span>참여 청소년 과의존도<br>(전년 대비)</span></div><div><b>19.6<small>%↓</small></b><span>통제력 약한 중학생<br>과의존도(전년 대비)</span></div></div></div>
+    <div class="cs"><div class="ph"><img src="img/00_2장_사례_삼화.jpg" alt=""><span class="ty">민간 협력</span></div>
+      <div><div class="pl">서울 강남구 × 삼화페인트</div><h5>보행약자 안전 카펫 · 복지관 대기 공간 디자인</h5>
+        <p>대치1단지 안의 보행로와 차로 구분이 희미해 어르신들이 보행 위험에 노출되었다. 삼화페인트와 <b>ESG 업무협약</b>을 맺고 보행약자 안전 카펫과 복지관 대기 공간을 디자인하였다.</p><div class="so">민간기업의 재료와 행정의 현장을 묶은 협업</div></div>
+      <div class="rn"><div><b>66.7<small>%↓</small></b><span>보행자 사고위험<br>발생 건수</span></div><div><b>52.3<small>%↓</small></b><span>도로 위<br>무단횡단율</span></div><div><b>51.6<small>%↓</small></b><span>복지관 위험<br>발생 건수</span></div></div></div>
+    <div class="cs"><div class="ph"><img src="img/00_2장_사례_뱅크스타운.jpg" alt=""><span class="ty">지속 프로그램</span></div>
+      <div><div class="pl">호주 시드니 · 캔터베리 뱅크스타운</div><h5>무단투기 대응 캠페인 후 예약수거 서비스 홍보</h5>
+        <p>길거리 대형 폐기물 무단투기에 주민 90% 이상이 해결을 원하였다. 데이터로 투기 핫스팟을 짚고, 투기물에 경고 테이프와 불법 스티커를 붙인 뒤 <b>예약수거 서비스</b>를 알리는 교육 중심 접근을 택하였다.</p><div class="so">캠페인에서 멈추지 않고 서비스로 이어 감</div></div>
+      <div class="rn"><div><b>39<small>%↓</small></b><span>한 해 동안의<br>무단투기율</span></div><div><b>6,768<small>건</small></b><span>수거 건수<br>(캠페인 인원 350만 명)</span></div><div><b>43<small>%</small></b><span>본인에 의한<br>자발적 수거</span></div></div></div>
+    <div class="cs"><div class="ph"><img src="img/00_2장_사례_리스본.jpg" alt=""><span class="ty">넛지</span></div>
+      <div><div class="pl">포르투갈 · 리스본</div><h5>댄싱 신호등, 보행자 안전 유도 사회실험</h5>
+        <p>보행자 신호 무시와 무단횡단이 잦아 학교 통학로가 교통사고 위험에 노출되었다. 신호를 기다리는 시민이 부스에서 춤을 추면 신호등 캐릭터가 따라 추게 한 <b>넛지 디자인</b>으로 기다림 자체를 바꾸었다.</p><div class="so">금지 대신 주의를 끌어 행동을 유도</div></div>
+      <div class="rn"><div><b>81<small>%↑</small></b><span>보행자<br>신호 준수율</span></div><div><b>440<small>억 뷰</small></b><span>미디어 노출<br>통합 조회</span></div><div><b style="font-size:10pt">어워즈</b><span>행동경제학<br>넛지 사례 수상</span></div></div></div>
+    <div class="tx" style="margin-top:4.4mm"><p>네 사례는 규모와 분야가 달랐지만 순서는 같았다. 먼저 문제가 일어나는 장소와 사람을 데이터로 짚고, 작은 장치로 사람들이 다르게 움직이게 한 뒤, 그 변화를 숫자로 확인하였다. 확인된 변화는 뱅크스타운처럼 상시 서비스로 이어지거나, 강남구 토끼굴 사례처럼 상설 공간으로 다시 정비되었다.</p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(주요 사례)</div>
+  <div class="pno">25</div>
+</section>
+
+<!-- ================= p26 사례에서 가져온 것 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-03</span>국내외 사례</div>
+    <h2 class="hl">네 사례에서 <em>효과를 낸 조건</em>을 골라<br>인천의 실험 방식에 옮겼다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="link4">
+      <div class="lk4"><div class="a"><b>참여</b>문래청소년센터</div><div class="m">↓</div><div class="c"><b>약산초</b> 어린이 워크숍<br><b>선인재단</b> 청소년 스티커 설문</div></div>
+      <div class="lk4"><div class="a"><b>민간 협력</b>강남구 × 삼화페인트</div><div class="m">↓</div><div class="c"><b>3M</b> 업무협약·바닥시트<br><b>이소</b> 향 제품 제공</div></div>
+      <div class="lk4"><div class="a"><b>넛지</b>리스본 · 강남 토끼굴</div><div class="m">↓</div><div class="c"><b>차이나타운</b> 권유형·금지형 그림<br><b>로데오거리</b> 흡연존·유도사인</div></div>
+      <div class="lk4"><div class="a"><b>지속</b>캔터베리 뱅크스타운</div><div class="m">↓</div><div class="c"><b>고정시설</b> 1개소 구현<br><b>표준모델(안)</b>·운영 매뉴얼</div></div>
+    </div>
+    <div class="tx c2">
+      <div class="blk"><h5><i>참여</i>대상이 직접 만든다</h5>
+      <p>문래청소년센터 사례는 청소년이 실험에 직접 참여할 때 스스로 행동을 조절하게 된다는 점을 보여 주었다. 인천은 이 조건을 학교 앞 거점에 옮겼다. 약산초에서는 6학년 어린이가 워크숍으로 2차 실험안을 만들었고, 선인재단에서는 등굣길 청소년이 스티커 설문으로 고른 색과 문구가 2차 거울나무의 색·긍정 문구·높이를 정하였다.</p></div>
+      <div class="blk"><h5><i>민간 협력</i>기업이 재료를 댄다</h5>
+      <p>삼화페인트 사례에서는 민간기업이 ESG 업무협약으로 재료를 대고 행정이 현장을 열었다. 인천도 3M과 업무협약을 맺은 뒤 실험을 진행하고 바닥시트를 쓰는 거점에서 협업하였다. 사회적협동조합 이소는 로데오거리의 향기볼·패브릭 스프레이, 굴포천의 패브릭 오일, 연안여객터미널의 디퓨저를 제공하였다.</p></div>
+      <div class="blk"><h5><i>넛지</i>글보다 그림·향·사인</h5>
+      <p>리스본의 댄싱 신호등은 금지 문구를 늘리는 대신 기다리는 시간을 바꾸어 신호 준수율을 높였다. 인천의 실험도 경고문보다 그림·색·향·사인으로 행동을 이끄는 쪽을 택하였다. 차이나타운은 권유형 그림과 금지형 그림을 차례로 붙여 비교하였고, 로데오거리는 흡연존을 눈에 띄게 만든 뒤 유도사인으로 그곳까지 안내하였다.</p></div>
+      <div class="blk"><h5><i>지속</i>실험 뒤에 남긴다</h5>
+      <p>뱅크스타운은 캠페인에서 멈추지 않고 예약수거 서비스로 이어 갔다. 인천은 실험 결과를 상설·수정·중지로 판단하고, 효과가 확인된 거점 1개소를 고정시설로 구현하였으며, 거점별 표준모델(안)과 사회실험 운영 매뉴얼로 정리하였다.</p></div>
+    </div>
+    <div class="apply"><div><div class="ph wh2"><img src="img/01_약산초_2차동물5종.png" alt=""></div><div class="cap2"><b>참여를 옮긴 약산초 2차 동물 5종.</b> 어린이 워크숍의 동물·색 제안을 다섯 동물과 배경색으로 정리하였다.</div></div><div><div class="ph wh"><img src="img/04_차이나타운_ch3_1차권유형.png" alt=""></div><div class="ph wh" style="margin-top:1.6mm"><img src="img/04_차이나타운_ch3_2차금지형.png" alt=""></div><div class="cap2"><b>넛지를 옮긴 차이나타운 1차 권유형(위)과 2차 금지형(아래).</b> 같은 에티켓을 두 문법의 그림으로 비교하였다.</div></div></div>
+    <div class="notmv"><b>옮기지 않은 것</b><p>시설을 먼저 짓고 효과를 나중에 보는 순서는 가져오지 않았다. 인천의 실험은 비용을 최소로 하고 되돌릴 수 있는 작은 설치로 시작해, 잘 맞은 것을 상설로 옮기는 순서를 택하였다.</p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(주요 사례·거버넌스)</div>
+  <div class="pno">26</div>
+</section>
+
+<!-- ================= p27 협의 스윔레인 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-04</span>관계부서 협의와 심의 반영</div>
+    <h2 class="hl">중간보고부터 공공디자인위원회 심의까지,<br><em>의견이 들어올 때마다 실험안을 고쳐</em> 다시 검토받았다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="swim" style="height:179.0mm"><svg viewBox="0 0 178 179.0" width="178mm" height="179.0mm" font-family="P"><defs><marker id="ah" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="3" markerHeight="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#2E5A87"/></marker></defs><rect x="0" y="0" width="56" height="179.0" rx=".6" fill="#F3F5F7"/><rect x="0" y="0" width="56" height="11.4" rx=".6" fill="#1A2F4B"/><text x="28.0" y="5.3" font-size="3.6" font-weight="800" fill="#fff" text-anchor="middle">관계부서·기관</text><text x="28.0" y="9.1" font-size="2.3" font-weight="600" fill="#fff" fill-opacity=".85" text-anchor="middle">소관부서 · 군·구 · 인천항만공사 · 인천대</text><rect x="61" y="0" width="56" height="179.0" rx=".6" fill="#E3E9F0"/><rect x="61" y="0" width="56" height="11.4" rx=".6" fill="#2E5A87"/><text x="89.0" y="5.3" font-size="3.6" font-weight="800" fill="#fff" text-anchor="middle">사업단</text><text x="89.0" y="9.1" font-size="2.3" font-weight="600" fill="#fff" fill-opacity=".85" text-anchor="middle">인천시 총괄기획 · 총괄 PM</text><rect x="122" y="0" width="56" height="179.0" rx=".6" fill="#F3F5F7"/><rect x="122" y="0" width="56" height="11.4" rx=".6" fill="#1A2F4B"/><text x="150.0" y="5.3" font-size="3.6" font-weight="800" fill="#fff" text-anchor="middle">위원회·전문가</text><text x="150.0" y="9.1" font-size="2.3" font-weight="600" fill="#fff" fill-opacity=".85" text-anchor="middle">공공디자인위원회 · 자문위원</text><path d="M89.0 28.0 L89.0 29.7 L28.0 29.7 L28.0 30.9" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M28.0 44.4 L28.0 46.099999999999994 L150.0 46.099999999999994 L150.0 47.3" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M150.0 60.8 L150.0 62.49999999999999 L28.0 62.49999999999999 L28.0 63.69999999999999" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M28.0 77.19999999999999 L28.0 78.89999999999999 L89.0 78.89999999999999 L89.0 80.1" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M89.0 93.6 L89.0 95.3 L28.0 95.3 L28.0 96.5" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M28.0 110.0 L28.0 111.69999999999999 L89.0 111.69999999999999 L89.0 112.89999999999999" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M89.0 126.39999999999999 L89.0 128.1 L150.0 128.1 L150.0 129.29999999999998" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M150.0 142.79999999999998 L150.0 144.5 L89.0 144.5 L89.0 145.7" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/><path d="M89.0 159.2 L89.0 160.89999999999998 L150.0 160.89999999999998 L150.0 162.1" stroke="#2E5A87" stroke-width=".3" fill="none" marker-end="url(#ah)"/></svg><div class="sb act" style="left:63mm;top:15.0mm;width:52mm;height:13mm"><b><i>09.11</i>중간보고 · 국장보고 · MP 자문</b><small>기획안을 1~4차에 걸쳐 보완</small></div><div class="sb ask" style="left:2mm;top:31.4mm;width:52mm;height:13mm"><b><i>09.18</i>관계부서 협의</b><small>대상 범위 · 설치 · 운영 조건 검토</small></div><div class="sb ask" style="left:124mm;top:47.8mm;width:52mm;height:13mm"><b><i>10.02</i>전문가 자문</b><small>송도 안내를 1차 픽토그램·숫자, 2차 영문으로 나눔</small></div><div class="sb ask" style="left:2mm;top:64.19999999999999mm;width:52mm;height:13mm"><b><i>1차</i>부서검토 의견 17건</b><small>체크리스트 · 공통 안전관리 · 당일 설치·철거 원칙</small></div><div class="sb act" style="left:63mm;top:80.6mm;width:52mm;height:13mm"><b><i>조치</i>굴포천 와이어 그늘막을 파라솔로</b><small>로데오 주취자 충돌방지 · 기존 꽁초함 활용</small></div><div class="sb ask" style="left:2mm;top:97.0mm;width:52mm;height:13mm"><b><i>2차</i>부서검토 의견 11건</b><small>송도 구간 확장 · 굴포천 인천대 협업 · 연안 항만공사 협의</small></div><div class="sb act" style="left:63mm;top:113.39999999999999mm;width:52mm;height:13mm"><b><i>조치</i>송도 보도블록 교체 대신 시트지</b><small>차이나타운 BI 캐릭터 · 연안 1·2차 구성 확정</small></div><div class="sb ask" style="left:124mm;top:129.79999999999998mm;width:52mm;height:13mm"><b><i>제1회</i>공공디자인위원회 심의 9건</b><small>반영 8 · 부분반영 1 — 영문 대비 · 흡연 연기 · 보행폭</small></div><div class="sb act" style="left:63mm;top:146.2mm;width:52mm;height:13mm"><b><i>조치</i>로데오 부스 벽 높이 · 제연기</b><small>시안 확대 · 동일 조건 수집 규칙 기재</small></div><div class="sb fin" style="left:124mm;top:162.6mm;width:52mm;height:13mm"><b><i>제2회</i>공공디자인위원회 심의</b><small>11.<span class="dummy">[00]</span> · 보완 도서 <span class="dummy">[의결 결과]</span></small></div></div>
+    <div class="swnote tx">
+      <p>의견은 세 방향에서 들어왔다. 소관부서와 군·구, 인천항만공사 같은 관계기관은 장소를 내주는 쪽으로서 범위·안전·원상복구를 물었고, 공공디자인위원회와 전문가는 비교 조건과 표현을 짚었다. 사업단은 의견을 받을 때마다 도서와 도면을 고쳐 다음 검토에 올렸다.</p>
+      <p>그 결과 실험의 형태가 바뀐 곳이 적지 않았다. 굴포천의 그늘막은 와이어 대신 파라솔이 되었고, 송도의 안내는 보도블록 교체가 아닌 시트지 부착으로 정해졌다. 연안여객터미널은 항만공사 협의를 거쳐 1차 길찾기 사이니지, 2차 수화물보관소 조성의 순서로 확정되었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(부서검토·심의의견 조치결과)</div>
+  <div class="pno">27</div>
+</section>
+
+<!-- ================= p28 의견 37건 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-04</span>관계부서 협의와 심의 반영</div>
+    <h2 class="hl">세 차례 검토에서 받은 의견 37건 가운데<br><em>28건은 실험의 방법·안전·디자인</em>에 관한 것이었다</h2>
+  </div>
+  <div class="body" style="top:54mm">
+    <div class="mx">
+      <div class="h bl"></div>
+      <div class="h"><b>1차 부서검토</b><small>17건 · 반영 17</small></div>
+      <div class="h"><b>2차 부서검토</b><small>11건 · 반영 11</small></div>
+      <div class="h"><b>제1회 위원회 심의</b><small>9건 · 반영 8 · 부분반영 1</small></div>
+      <div class="h bl"></div>
+
+      <div class="rh"><b>디자인·<br>거점 실행안</b><small>시안·규격·구간</small></div>
+      <div class="cell"><span>색상 먼셀·서체 기준</span></div>
+      <div class="cell"><span>약산초 먼셀 표기</span><span>디자인 항목표</span><span>선인 거울나무 규격</span><span class="k">송도 구간 확장</span><span class="k">송도 시트지 부착</span><span class="k">굴포천 인천대 협업</span><span class="k">차이나 BI 캐릭터</span><span class="k">로데오 alt 1 도면</span><span class="k">연안 1·2차 구성</span></div>
+      <div class="cell"><span class="pt">송도 영문 대비</span><span class="k">차이나 권유·금지 구분</span><span>시안 사이즈 확대</span></div>
+      <div class="sum">13</div>
+
+      <div class="rh"><b>안전·운영</b><small>구조·철거·연기</small></div>
+      <div class="cell"><span>공통 안전관리</span><span>철거·원상복구</span><span>로데오 안전성</span><span class="k">굴포천 그늘막</span></div>
+      <div class="cell"></div>
+      <div class="cell"><span>선인 모서리·보행폭</span><span>굴포천 파라솔 고정</span><span class="k">로데오 흡연 연기</span></div>
+      <div class="sum">7</div>
+
+      <div class="rh"><b>실험 설계·방법</b><small>가설·참여·비교 조건</small></div>
+      <div class="cell"><span>약산초 2차 별도 구성</span><span>대상지 선정 근거</span><span>최종 결과물</span><span>참여·시범구현 방식</span><span>기간·장소·협의</span></div>
+      <div class="cell"></div>
+      <div class="cell"><span>완료 실험 표기</span><span>시민 참여 범위</span><span>동일 조건 수집</span></div>
+      <div class="sum">8</div>
+
+      <div class="rh"><b style="color:#6A7784">도서 정합</b><small>쪽수·표기·명칭</small></div>
+      <div class="cell doc"><span>체크리스트</span><span>쪽번호</span><span>오타·오기</span><span>장소명</span><span>사업개요</span><span>쪽 제외</span><span>성과품 명칭</span></div>
+      <div class="cell doc"><span>쪽수 확인</span><span>사업비</span></div>
+      <div class="cell doc"></div>
+      <div class="sum doc">9</div>
+
+      <div></div><div class="ft">17</div><div class="ft">11</div><div class="ft">9</div><div class="ft" style="color:var(--teal)">37<small>건</small></div>
+    </div>
+    <div class="mleg"><span class="k">실험 형태가 바뀐 의견</span><span class="pt">부분반영</span><span>도서·도면에 기재</span></div>
+    <div class="tx c2" style="margin-top:5mm">
+      <p>1차 부서검토 17건 가운데 7건은 도서의 틀을 바로잡는 의견이었고, 나머지 10건은 실험의 설계와 안전, 색상·서체 기준을 물었다. 공공디자인 가이드라인 체크리스트와 쪽번호, 장소명 같은 표기를 정리하는 한편, 대상지 선정 근거와 최종 결과물, 시민참여 방식, 상주 인력을 포함한 공통 안전관리와 당일 설치·철거 원칙을 쪽을 더해 보완하였다. 굴포천 그늘막과 로데오거리의 안전성 검토는 실험 시설을 바꾸는 계기가 되었다.</p>
+      <p>2차 부서검토 11건은 대부분 거점의 실행안을 겨누었다. 실험 장소별 설치 품목의 규격과 재질을 정리하고, 송도 구간과 굴포천 협업 방식, 차이나타운 캐릭터, 로데오거리 배너 도면, 연안여객터미널의 1·2차 구성을 바꾸었다. 제1회 심의 9건은 안전과 비교 조건을 짚었다. 실험 전·후를 같은 조건에서 재도록 사전조사부터 2차 실험까지의 요일·시간 규칙을 거점별 운영 계획에 명시하였다.</p>
+      <p>제1회 심의 9건 가운데 송도의 영문 글자 두께와 배경 대비 의견만 부분반영으로 남았다. 전문가 자문에서 1차는 픽토그램과 숫자, 2차는 영문 텍스트로 비교하는 구조가 이미 정해져 있어, 화살표·픽토그램 병기 대신 영문 글자의 두께와 배경 대비를 높이는 데 그쳤다. 나머지 8건은 모두 도서와 도면에 반영하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(부서검토·심의의견 조치결과)</div>
+  <div class="pno">28</div>
+</section>
+
+<!-- ================= p29 비포·애프터 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-04</span>관계부서 협의와 심의 반영</div>
+    <h2 class="hl">의견을 반영하자 네 거점에서<br><em>그늘의 형태, 실험 구간, 캐릭터, 공간 구성</em>이 달라졌다</h2>
+    <p class="lede">관계부서와 위원회 의견을 거친 네 거점은 실험 시설의 구조와 범위, 표현 방식이 바뀌었다. 설치물 전반의 바닥 표시와 글씨 크기도 위원회 의견에 따라 키웠다.</p>
+  </div>
+  <div class="body" style="top:67mm">
+    <div class="ba"><div class="ph"><img src="img/05_굴포천_2장_반영전.jpg" alt=""><em>반영 전</em></div><div class="ar">▶</div><div class="ph af"><img src="img/05_굴포천_2장_반영후.jpg" alt=""><em>반영 후</em></div>
+      <div class="t"><h5><span class="fd attr">매력</span>굴포천</h5><div class="q">계절에 따른 설치 안전성과 안전펜스 부착 방식의 구조적 안전성을 검토하고, 인천대와 협업할 것</div><div class="a">와이어로 매단 그늘막을 파라솔로 바꾸고, 파라솔 8개·그늘막 4개로 구성하였다. 인천대 산업디자인학과가 아트 의자를 만들었다.</div></div></div>
+    <div class="ba"><div class="ph cn"><img src="img/03_송도_2장_반영전.jpg" alt=""><em>반영 전</em></div><div class="ar">▶</div><div class="ph af cn"><img src="img/03_송도_2장_반영후.jpg" alt=""><em>반영 후</em></div>
+      <div class="t"><h5><span class="fd incl">포용</span>송도 캠퍼스타운역 일대</h5><div class="q">연세대·인천가톨릭대 등 글로벌캠퍼스로 구간을 넓히고, 보도블록 교체 시 원상복구 방법을 밝힐 것</div><div class="a">연세대 국제캠퍼스 방면 구간을 글로벌캠퍼스 일대로 넓히고, 교차로·횡단보도·회전 구간별 거리와 설치 위치를 정하였다. 보도블록은 교체하지 않고 시트지를 붙였다.</div></div></div>
+    <div class="ba"><div class="ph cn"><img src="img/04_차이나타운_2장_반영전.jpg" alt=""><em>반영 전</em></div><div class="ar">▶</div><div class="ph af cn"><img src="img/04_차이나타운_2장_반영후.jpg" alt=""><em>반영 후</em></div>
+      <div class="t"><h5><span class="fd incl">포용</span>차이나타운</h5><div class="q">캐릭터를 재검토하고, 권장 행동과 금지 행동이 구분되도록 그림을 간결하게 할 것</div><div class="a">파도·물안개 캐릭터를 사회실험 BI 기반 캐릭터로 바꾸었다. 권유형에서는 금지 표시를 빼고 캐릭터의 행동을 바꾸어 두 유형을 분명히 갈랐다.</div></div></div>
+    <div class="ba"><div class="ph"><img src="img/07_연안_2장_반영전.jpg" alt=""><em>반영 전</em></div><div class="ar">▶</div><div class="ph af"><img src="img/07_연안_2장_반영후.jpg" alt=""><em>반영 후</em></div>
+      <div class="t"><h5><span class="fd conv">편의</span>연안여객터미널</h5><div class="q">인천항만공사와 협의한 뒤 최종 기획안을 수정할 것</div><div class="a">항만공사 협의를 거쳐 쉬운 길찾기를 위한 통합 사이니지와 짐 보관을 이끄는 수화물보관소로 바꾸었다. 1차는 사이니지, 2차는 1차를 유지한 채 보관소를 더하였다.</div></div></div>
+    <div class="tx c2" style="margin-top:4mm"><p>이 밖에 선인재단 거울나무는 골판지 소재의 경관 조형물 3그루로 규격과 보행폭을 밝혔고, 로데오거리 흡연 부스는 상점이 밀집한 면의 벽을 높이고 제연기를 함께 두어 연기가 보행로와 휴게공간으로 흘러들지 않게 하였다. 약산초 시설물에는 다섯 색과 동물 배경색의 먼셀 기호를 모두 적어 제작 색을 고정하였다.</p><p>세 곳의 의견은 도면과 제작 사양으로 반영하였다. 거울나무의 규격과 보행폭, 흡연 부스의 벽 높이와 제연기, 시설물의 먼셀 색 기호가 도서에 적히면서 제작과 설치의 기준이 정해졌다.</p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(부서검토 조치결과 반영 전·후)</div>
+  <div class="pno">29</div>
+</section>
+
+<!-- ================= p30 진단 종합 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span class="on">Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span>Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅱ-05</span>진단 종합</div>
+    <h2 class="hl">장소의 조건에 시민의 말과 관찰한 행동을 겹치자,<br><em>거점마다 디자인이 바꿀 수 있는 경험</em>이 드러났다</h2>
+    <p class="lede">현장조사·포럼·워크숍·협의에서 모은 단서를 장소의 조건, 이용자의 말, 관찰한 행동 세 갈래로 나누어 겹쳐 보았다. 세 갈래가 한 지점에서 만나는 곳이 그 거점의 디자인 기회였다.</p>
+  </div>
+  <div class="body" style="top:67mm">
+    <div class="eq">
+      <div class="o"><b>장소의 조건</b><small>물리적 환경과<br>공간의 특성</small></div><div class="op">+</div>
+      <div class="o"><b>이용자의 말</b><small>생활 속 경험과<br>필요·기대</small></div><div class="op">+</div>
+      <div class="o"><b>관찰한 행동</b><small>실제 이용 장면과<br>공간 이용 방식</small></div><div class="op">=</div>
+      <div class="o res"><b>디자인 기회</b><small>실험으로 확인할<br>하나의 경험</small></div>
+    </div>
+    <div class="dg">
+      <div class="gh">거점</div><div class="gh">이용자 · 공간</div><div class="gh">말과 행동의 단서</div><div class="gh"></div><div class="gh">디자인 기회</div>
+      <div class="grp"><span class="fd safe">안전</span>학교 앞과 등굣길<small>아이들이 알아보는 장소, 청소년이 편안함을 느끼는 요소</small></div>
+      <div class="c n"><i style="background:var(--f-safe)">01</i>약산초</div><div class="c">어린이 · 통학로</div><div class="c">적치물에 가린 학교 경계, 좁은 통학로와 사각지대</div><div class="c a">→</div><div class="c o"><span>그림·색으로 쉬운 위치 인지</span><br><span>어린이 맞춤 표현</span></div>
+      <div class="c n"><i style="background:var(--f-safe)">02</i>선인재단</div><div class="c">청소년 · 가로수길</div><div class="c">등굣길 청소년의 정서 경험과 머무름</div><div class="c a">→</div><div class="c o"><span>거울·색·조명·긍정 문구 등</span><br><span>심리적 안전 요소</span></div>
+      <div class="grp"><span class="fd incl">포용</span>언어와 문화가 다른 이용자<small>그림으로 읽는 안내, 함께 달리며 시작하는 교류</small></div>
+      <div class="c n"><i style="background:var(--f-incl)">03</i>송도</div><div class="c">외국인 유학생 · 러닝코스</div><div class="c">언어와 교류의 문턱, 지나가기만 하는 보행축</div><div class="c a">→</div><div class="c o"><span>언어를 넘는 안내와</span><br><span>함께 달리는 공동 활동</span></div>
+      <div class="c n"><i style="background:var(--f-incl)">04</i>차이나타운</div><div class="c">외국인 이용자 · 공중화장실</div><div class="c">부족한 다국어 안내, 그림의 의미 해석 차이</div><div class="c a">→</div><div class="c o"><span>권유형·금지형 그림의 비교</span></div>
+      <div class="grp"><span class="fd attr">매력</span>머물고 싶은 수변<small>그늘과 자리, 시민이 함께 만드는 장소</small></div>
+      <div class="c n"><i style="background:var(--f-attr)">05</i>굴포천</div><div class="c">시니어 · 친수공간</div><div class="c">휴식이 방문 목적 1위인데 그늘·자리가 없음</div><div class="c a">→</div><div class="c o"><span>그늘과 자리, 시민이 함께</span><br><span>만드는 머무름</span></div>
+      <div class="grp"><span class="fd conv">편의</span>이동·휴식·대기를 돕는 공간<small>흡연과 휴식의 공존, 짐이 가벼운 기다림</small></div>
+      <div class="c n"><i style="background:var(--f-conv)">06</i>로데오거리</div><div class="c">흡연자·비흡연자 · 가로</div><div class="c">분산된 흡연과 휴식의 혼재, 흡연 민원</div><div class="c a">→</div><div class="c o"><span>흡연·휴게 구역 분리와 유도사인</span></div>
+      <div class="c n"><i style="background:var(--f-conv)">07</i>연안여객터미널</div><div class="c">승선 이용자 · 1층 대합실</div><div class="c">알려지지 않은 2층, 1층에 몰린 대기와 짐</div><div class="c a">→</div><div class="c o"><span>통합 안내사인과</span><br><span>짐 보관·정리 공간</span></div>
+    </div>
+    <div class="tx c2" style="margin-top:4.4mm"><p>약산초에서는 적치물에 가린 학교 경계와 어린이가 보호자에게 위치를 설명하는 방식이 만나 그림과 색으로 알아보는 통학로가 기회가 되었고, 굴포천에서는 방문 목적 1위가 휴식인데 그늘은 교량 하부뿐이라는 조건이 그늘과 자리를 시험할 이유가 되었다.</p><p>시설과 프로그램은 각 거점의 경험을 바꾸는 수단으로 정하였다. 그래서 일곱 거점의 디자인 기회는 이용자가 무엇을 알아보고, 어디에 머물고, 어떻게 움직이는가로 적었다. 이 기회가 거점마다 하나의 실험 질문이 되었고, 1·2차 실험은 그 질문에 답할 수 있게 짜였다. <b>무엇을 만들 것인가에 앞서, 어떤 경험을 확인할 것인가를 먼저 정한 것이다.</b></p></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(현황 종합·전체 실험 요약)</div>
+  <div class="pno">30</div>
+</section>
+
+</body>
+</html>

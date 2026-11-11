@@ -1,0 +1,1219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 창의디자인 사회실험 최종보고서 — Ⅳ장 · 03 송도 캠퍼스타운역 일대</title>
+<!--
+ Ⅳ 실험하다 · 거점편 03 송도 캠퍼스타운역 일대(p97–120). 기준 모듈: part5_4장_도입_01약산초.html p49–72 · st_module.css
+ 거점 변수 body.st-03 { --st 포용색 · --st-n 3 }. 실험 성격: 비교형(같은 순환 코스, 같은 자리 바닥 사인을 1차 픽토그램 → 2차 영문·한국어 병기로 바꿈)
+ 그래서 사인 4종 짝 비교, 순환 코스 배치도, 사인 종류별 이해도 점 그래프, 5점 척도 분포를 도식으로 썼다.
+ site-only 클래스는 .k- (약산초 .y- 문법 복제) 와 .s3- 접두사.
+-->
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="st_module.css">
+<style>
+body.st-03{--st:#3F7A6E;--st-l:#E3F4EF;--st-d:#2F5E55;--st-n:3}
+/* ---------- 약산초 쪽 고유 ---------- */
+.k-wsph{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1.6mm;height:46mm}
+.k-wsph .st-ph{height:46mm}
+.k-cal svg{display:block}
+.k-src{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.k-src .c{border-radius:var(--rd);overflow:hidden;background:var(--sky2)}
+.k-src .c .h{padding:2.2mm 2.8mm;color:#fff;font-size:8.6pt;font-weight:900}
+.k-src .c .h small{display:block;font-size:6.2pt;font-weight:600;opacity:.85;margin-top:.2mm}
+.k-src .c ul{list-style:none;padding:2mm 2.8mm 2.4mm;font-size:6.9pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.k-src .c ul li{padding:1.5mm 0;border-bottom:.25mm solid var(--line);display:flex;justify-content:space-between;gap:2mm}
+.k-src .c ul li:last-child{border-bottom:0}
+.k-src .c ul li b{color:var(--navy);font-weight:900;white-space:nowrap}
+.k-conv{display:grid;grid-template-columns:1fr 1fr 6mm 52mm;gap:2mm;align-items:stretch}
+.k-conv>div{border-radius:var(--rd);padding:2.4mm 2.8mm;font-size:7.1pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.k-conv .k{grid-column:1/-1;display:flex;align-items:center;gap:2mm;padding:0;font-size:8.6pt;font-weight:900;color:var(--navy)}
+.k-conv .k i{font-style:normal;background:var(--st);color:#fff;font-size:6.6pt;font-weight:800;border-radius:var(--rd);padding:.3mm 1.8mm}
+.k-conv .qn{background:#F3F6F8}.k-conv .ql{background:var(--st-l)}
+.k-conv .qn i,.k-conv .ql i{display:block;font-style:normal;font-size:6pt;font-weight:800;letter-spacing:.1em;color:var(--mute);margin-bottom:.4mm}
+.k-conv .ar{display:flex;align-items:center;justify-content:center;color:var(--st);font-weight:900;padding:0}
+.k-conv .an{background:var(--navy);font-weight:700;color:#fff;display:flex;align-items:center}
+.k-conv .an .dummy{color:#FF8A80!important}
+.k-inset{position:absolute;right:4mm;bottom:4mm;width:50mm;background:#fff;border-radius:var(--rd);padding:1.4mm;box-shadow:0 .4mm 1.6mm rgba(0,0,0,.15)}
+.k-inset img{width:100%;display:block;border-radius:.3mm}
+.k-inset span{display:block;font-size:5.8pt;color:var(--mute);font-weight:600;margin-top:.8mm}
+.k-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm}
+.k-strip .st-ph{height:30mm}
+.k-two{display:grid;grid-template-columns:1fr 8mm 1fr;align-items:stretch}
+.k-two>div{border-radius:var(--rd);padding:3mm 3.4mm}
+.k-two .a{background:#EEF1F4}.k-two .b{background:var(--st);color:#fff}
+.k-two i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.14em;font-weight:800;opacity:.75}
+.k-two b{display:block;font-size:10pt;font-weight:900;margin:.6mm 0 1.6mm;color:var(--navy)}
+.k-two .b b{color:#fff}
+.k-two ul{list-style:none;font-size:7.2pt;line-height:1.55;font-weight:500}
+.k-two ul li{display:grid;grid-template-columns:20mm 1fr;border-top:.25mm solid rgba(21,58,94,.15);padding:1mm 0}
+.k-two .b ul li{border-color:rgba(255,255,255,.3)}
+.k-two ul li span{font-weight:800;opacity:.7}
+.k-two .vs{display:flex;align-items:center;justify-content:center;font-size:12pt;font-weight:900;color:var(--st);padding:0}
+.k-ba{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6mm}
+.k-ba .c{border-radius:var(--rd);overflow:hidden;background:var(--sky2);display:flex;flex-direction:column}
+.k-ba .c .k{background:var(--navy);color:#fff;font-size:7.6pt;font-weight:900;padding:1.6mm 2.6mm}
+.k-ba .c .r{display:grid;grid-template-columns:22mm 1fr;gap:2mm;align-items:center;padding:2mm 2.6mm}
+.k-ba .c .r .st-ph{height:17mm;border-radius:.3mm}
+.k-ba .c .r .ic{height:17mm;border-radius:.3mm;background:repeating-linear-gradient(135deg,#C3CED8 0 .3mm,#fff .3mm 1.3mm);text-shadow:0 0 .45mm #fff,0 0 .45mm #fff,0 0 .45mm #fff;display:flex;align-items:center;justify-content:center;font-size:6.4pt;font-weight:800;color:var(--mute);text-align:center;line-height:1.3}
+.k-ba .c .r p{font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500}
+.k-ba .c .r p b{display:block;font-size:7.8pt;color:var(--navy);font-weight:900}
+.k-ba .c .r.b{background:var(--st-l)}
+.k-ba .c .r.b p b{color:var(--st-d)}
+.k-ba .c .dn{text-align:center;color:var(--st);font-weight:900;font-size:7pt;line-height:1;padding:.6mm 0;background:none}
+.k-unit{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm}
+.k-unit div{background:#F3F6F8;border-radius:var(--rd);padding:2.6mm 3mm;font-size:7pt;line-height:1.5;color:#3D4A56;font-weight:500}
+.k-unit div i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.14em;font-weight:800;color:var(--st)}
+.k-unit div b{display:block;font-size:9.4pt;font-weight:900;color:var(--navy);margin:.4mm 0 1mm}
+.k-unit div em{font-style:normal;font-weight:900;color:var(--navy)}
+.k-fun{display:grid;grid-template-columns:12mm 1fr 5mm 1fr 5mm 1fr;align-items:center;row-gap:2mm}
+.k-fun .lab{font-size:8pt;font-weight:900}
+.k-fun .st{border-radius:var(--rd);padding:2.4mm 3mm;background:#F1F3F5;text-align:center}
+.k-fun>.st:nth-child(6){background:var(--r1)}.k-fun>.st:nth-child(12){background:var(--r2)}
+.k-fun>.st:nth-child(6n) i{color:#C9D7E6}.k-fun>.st:nth-child(6n) b{color:#FF8A80}
+.k-fun .st i{display:block;font-style:normal;font-size:6.4pt;font-weight:800;color:var(--mute)}
+.k-fun .st b{display:block;font-size:14pt;font-weight:900;color:var(--red);line-height:1.1;margin-top:.4mm}
+.k-fun .ar{text-align:center;color:var(--st);font-weight:900}
+.k-code{display:grid;grid-template-columns:24mm 1fr;row-gap:2mm;align-items:center}
+.k-code .h{font-size:7.6pt;font-weight:900;color:var(--navy)}
+.k-code .h small{display:block;font-size:6.2pt;font-weight:600;color:var(--mute)}
+.k-code .tags{display:flex;flex-wrap:wrap;gap:1.6mm}
+.k-code .tags span{font-size:7.2pt;font-weight:800;border-radius:var(--rd);padding:.8mm 2.6mm;background:var(--st-l);color:var(--st-d)}
+.k-code .tags span b{color:var(--red);font-weight:900;margin-left:1mm}
+.k-code .tags.e span{background:#EEF2F6;color:var(--navy)}
+.k-say{display:grid;grid-template-columns:1fr 9mm 1fr;align-items:stretch;row-gap:2.4mm}
+.k-say>div{border-radius:var(--rd);padding:3mm 3.4mm}
+.k-say .d{background:#EEF1F4}
+.k-say .d i,.k-say .k i{display:block;font-style:normal;font-size:6.2pt;letter-spacing:.12em;font-weight:800;color:var(--mute);margin-bottom:.8mm}
+.k-say .d b{font-size:11pt;font-weight:900;color:var(--mute)}
+.k-say .d b.k2{text-decoration:none;color:var(--navy)}
+.k-say .k{background:var(--sky)}
+.k-say .k b{font-size:12pt;font-weight:900;color:var(--navy)}
+.k-say .ar{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--st);font-weight:900;padding:0;font-size:10pt}
+.k-say .ar small{font-size:5.8pt;font-weight:800;color:var(--mute);margin-top:.6mm}
+.k-th4{display:grid;grid-template-columns:1fr 1fr;gap:3mm;position:relative}
+.k-th4 .c{border-radius:var(--rd);background:#F3F6F8;padding:3.4mm 3.6mm;min-height:60mm}
+.k-th4 .c:nth-child(1),.k-th4 .c:nth-child(3){padding-right:16mm}
+.k-th4 .c:nth-child(2),.k-th4 .c:nth-child(4){padding-left:16mm}
+.k-th4 .c:nth-child(2),.k-th4 .c:nth-child(4){text-align:right}
+.k-th4 .c .h{display:flex;align-items:baseline;gap:2mm;margin-bottom:1.4mm}
+.k-th4 .c:nth-child(2) .h,.k-th4 .c:nth-child(4) .h{justify-content:flex-end}
+.k-th4 .c .h b{font-size:10.4pt;font-weight:900;color:var(--navy)}
+.k-th4 .c .h span{font-size:6.6pt;font-weight:800;color:#fff;background:var(--st);border-radius:var(--rd);padding:.2mm 1.6mm}
+.k-th4 .c .qq{font-size:10pt;font-weight:800;color:var(--st-d);margin-bottom:1.4mm;line-height:1.4}
+.k-th4 .c p{font-size:7.4pt;line-height:1.55;color:#3D4A56;font-weight:500;margin-bottom:1.6mm}
+.k-th4 .c .quote-slot{text-align:left}
+.k-th4 .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36mm;height:36mm;border-radius:50%;background:var(--r2);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 2.4mm #fff}
+.k-th4 .mid i{font-style:normal;font-size:6pt;letter-spacing:.16em;color:#C9D7E6;font-weight:800}
+.k-th4 .mid b{font-size:9.6pt;font-weight:900;line-height:1.35;margin-top:.8mm}
+.k-step{display:grid;grid-template-columns:16mm repeat(4,1fr);gap:1.6mm;align-items:stretch}
+.k-step>div{border-radius:var(--rd);padding:2.2mm 2.4mm;font-size:7pt;line-height:1.45;color:#3D4A56;font-weight:500;background:#F3F6F8}
+.k-step .hh{background:var(--st);color:#fff;font-weight:800;font-size:7.4pt;text-align:center}
+.k-step .hh small{display:block;font-size:6pt;opacity:.8;font-weight:700}
+.k-step .rl{background:none;display:flex;align-items:center;justify-content:center;padding:0}
+.k-step .mk{display:block;font-size:11pt;font-weight:900;color:var(--st);line-height:1;margin-bottom:.8mm}
+.k-step .mk.dummy{font-size:9pt}
+
+
+/* ---------- 송도 쪽 고유 ---------- */
+.s3-pair{display:grid;grid-template-columns:20mm repeat(4,1fr);gap:2mm;align-items:center}
+.s3-pair.sm{grid-template-columns:24mm repeat(4,31mm);justify-content:center;column-gap:4mm}
+.s3-pair .lab{font-size:7.4pt;font-weight:900;line-height:1.3}
+.s3-pair .lab small{display:block;font-size:6pt;font-weight:700;color:var(--mute)}
+.s3-pair .sg{background:var(--sky2);border-radius:var(--rd);padding:1.4mm}
+.s3-pair .sg img{width:100%;display:block;border-radius:.3mm}
+.s3-pair .nm{font-size:6.6pt;font-weight:800;color:var(--navy);text-align:center;line-height:1.35}
+.s3-pair .nm small{display:block;font-size:5.9pt;font-weight:600;color:var(--mute)}
+.s3-scale{display:grid;grid-template-columns:34mm 1fr 30mm;row-gap:2.6mm;align-items:center}
+.s3-scale .q{font-size:7.4pt;font-weight:800;color:var(--navy);line-height:1.35}
+.s3-scale .q small{display:block;font-size:6pt;font-weight:600;color:var(--mute)}
+.s3-scale .v{font-size:6.6pt;font-weight:800;color:var(--red);text-align:right;line-height:1.5}
+.k-th4 .c .qq.dummy{font-size:9pt}
+.s3-th4big .c{min-height:68mm}
+/* AI 티 정리: 좁은 단 양끝맞춤 해제, 판정 개수는 범례 안에 */
+.st-tx{text-align:left}
+.st-jlg .jn{float:right;font-size:12pt;font-weight:900;line-height:1;color:var(--navy)}
+.st-jlg .jn small{font-size:6.6pt;margin-left:.3mm}
+/* 치수 표: 'mm' 단위가 둘째 줄로 갈라지지 않게 */
+.st-dims div{grid-template-columns:25mm 1fr}
+.st-dims div b{white-space:nowrap}
+/* STYLE_2: 2차 인용 자리 = 남색 솔리드 */
+.s3-q2{background:var(--navy)!important;color:#C9D7E6!important}.s3-q2 .dummy{color:#FF8A80!important}
+</style>
+</head>
+<body class="st st-03">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="hatch-pre" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#7D97B3"/></pattern><pattern id="hatch-navy" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#1A2F4B"/></pattern><pattern id="hatch-blue" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#2E5A87"/></pattern><pattern id="hatch-gray" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#9AA6B1"/></pattern><pattern id="hatch-red" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#E5332A"/></pattern></defs></svg>
+
+<!-- ================= p97 거점 간지 · 03 송도 ================= -->
+<section class="page odd st-cover">
+  <div class="st-cv-photo"><img src="img/03_송도_1차시뮬.jpg" alt="" style="object-position:50% 55%"></div>
+  <div class="st-cv-tab"><span class="f">03 · 포용</span><span>Ⅳ 실험하다</span></div>
+  <div class="st-cv-cap">1차 실험 「보고, 함께하다」 적용 시뮬레이션(합성) · 송도 글로벌캠퍼스 일대 보행로</div>
+  <div class="st-cv-band">
+    <div class="st-cv-no">03</div>
+    <div class="st-cv-kick">포용 · 동행하는 인천</div>
+    <div class="st-cv-ttl" style="font-size:25pt;top:18mm">송도 캠퍼스타운역 일대</div>
+    <div class="st-cv-site">인천 연수구 · 송도 글로벌캠퍼스 순환 러닝 코스 · 바닥 사인 967장</div>
+    <div class="st-cv-q">처음 온 도시의 길에서, 유학생을 함께 달리게 하는 것은<br>그림일까, 글자일까</div>
+    <div class="st-cv-runs">
+      <div><i>1차 · 픽토그램 안내</i><b>「보고, 함께하다」</b><span>11.20(금)–21(토) · 러닝크루 정기 러닝 · 그림·숫자 바닥 사인</span></div>
+      <div><i>2차 · 영문·한국어 병기 안내</i><b>「읽고, 연결하다」</b><span><span class="dummy" style="color:#FF8A80!important">11.[00](금)–[00](토)</span> · 러닝크루 정기 러닝 · 같은 자리 사인 교체</span></div>
+    </div>
+  </div>
+  <div class="pno">97</div>
+</section>
+
+<!-- ================= p98 왜 여기인가 ① (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">유학생이 모여 사는 글로벌캠퍼스의 보행로는<br><em>지나가는 길</em>에 머물러 있었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split">
+      <div>
+        <p class="st-lead">송도 글로벌캠퍼스 일대에는 여러 나라에서 온 유학생이 산다. 실험은 이들이 매일 걷는 넓은 보행로에서 <em>러닝이라는 공공의 활동에 함께 들어올 수 있게 하는 안내</em>가 무엇인지를 물었다.</p>
+        <div class="st-tx" style="margin-top:3.6mm">
+          <p>대상지는 인천 연수구 송도 캠퍼스타운역 일대다. 역에서 연세대 국제캠퍼스와 인천가톨릭대 등 글로벌캠퍼스 대학들로 이어지는 넓은 가로수 보행축이 있고, 가운데 식재 구간을 두고 양쪽으로 포장 보행로가 나 있다. 보도는 200×200mm 블록으로 포장되어 있고, 벤치와 가로수가 보행로 가장자리를 따라 놓여 있다.</p>
+          <p>9월 23일과 10월 7일 캠퍼스타운 일대를 두 차례 조사하며 낮과 밤, 평일과 주말의 보행로를 기록하였다. 길은 넓고 잘 정비되어 있었지만, 이용은 통행 위주였다. 그늘과 머무를 거리가 부족해 공간의 활성도는 낮았고, 대학 안팎의 다중언어 안내 표지는 제한적이었다.</p>
+          <p>문제는 사람에게서 시작되었다. 국내 유학생의 약 40%가 우울감과 외로움을 경험하고, 국내 체류 외국인이 겪는 어려움은 언어와 외로움이 가장 컸다. 인천경제자유구역에 사는 외국인은 한국인과 교류하기 어려운 가장 큰 이유로 언어소통 장애를 꼽았다. 사업은 문제를 ‘외국인 유학생의 일상 속 운동 진입장벽과 생활권 교류 기회 부족’으로 정의하였다.</p>
+          <p>해법으로 고른 매개는 러닝이었다. 달리기는 언어가 달라도 함께할 수 있는 활동이고, 송도에는 정기적으로 함께 달리는 러닝크루가 있다. 실험은 글로벌캠퍼스를 한 바퀴 도는 순환 코스의 바닥에 안내 사인을 붙이고, 1차는 픽토그램으로, 2차는 영문과 한국어 병기로 같은 자리의 안내를 바꾸어, 어느 쪽이 길을 더 잘 이해하게 하고 함께 달리고 싶게 하는지 비교하였다.</p>
+        </div>
+      </div>
+      <div>
+        <div class="st-ph" style="height:36mm"><img src="img/03_송도_사전_020.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>넓은 가로수 보행축은 통행 위주로 쓰였다.</b><br>송도 유학생 실험 구간 · 가로수 보행축</div>
+        <div class="st-ph" style="height:36mm;margin-top:3mm"><img src="img/03_송도_사전_022.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="st-cap"><b>개방된 포장 광장에도 머무를 거리가 적었다.</b><br>그늘·체류 콘텐츠 부족 기록</div>
+        <div class="st-mn" style="margin-top:4mm"><b>현장을 본 날</b>현장조사 9.23 · 10.7<br>(캠퍼스타운 2회 · 낮·밤·평일·주말)<br>사전조사 10.23(금) · 24(토) 러닝 시간대</div>
+      </div>
+    </div>
+    <div class="st-prof" style="margin-top:5mm">
+      <div class="st-pc"><div class="t"><i>PEOPLE</i><b>사람</b></div><div class="big">40<small>%</small></div><div class="sub">국내 유학생 우울감·외로움 경험</div>
+        <ul><li><b>외국인 유학생</b> 글로벌캠퍼스·연세대 일대</li><li>송도 러닝크루 · 차수별 인터뷰 <b>30명</b></li></ul></div>
+      <div class="st-pc"><div class="t"><i>PLACE</i><b>공간</b></div><div class="big">967<small>장</small></div><div class="sub">순환 코스 바닥 사인 · 11개 구간</div>
+        <ul><li><b>가로수 보행축</b> 200×200mm 보도블록</li><li>횡단보도 11곳 · 회전 지점 4곳</li></ul></div>
+      <div class="st-pc"><div class="t"><i>PROBLEM</i><b>문제</b></div><div class="big">63.5<small>%</small></div><div class="sub">교류가 어려운 이유 ‘언어소통 장애’</div>
+        <ul><li><b>다중언어 안내</b> 대학 안팎에서 제한적</li><li>문화적응 스트레스 · 심리적 고립</li></ul></div>
+    </div>
+    <div class="st-lb" style="margin-top:4.6mm">사전 현장조사에서 기록한 보행로</div>
+    <div class="k-strip">
+      <div class="st-ph"><img src="img/03_송도_사전_018.jpg" alt=""><span>보행로와 식재 구간</span></div>
+      <div class="st-ph"><img src="img/03_송도_사전_021.jpg" alt=""><span>벤치가 놓인 가장자리</span></div>
+      <div class="st-ph"><img src="img/03_송도_사전_024.jpg" alt=""><span>점자블록이 놓인 축</span></div>
+      <div class="st-ph"><img src="img/03_송도_사전_025.jpg" alt=""><span>가로수 아래 보행로</span></div>
+    </div>
+    <div class="st-cap"><b>넓은 폭과 곧은 축, 가로수 그늘은 달리기에 맞는 조건이었지만, 길을 알려 주는 말은 거의 없었다.</b> 사전 현장조사 사진</div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">98</div>
+</section>
+
+<!-- ================= p99 왜 여기인가 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">왜 여기인가</span><span class="st-step"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">네 가지 근거는 <em>‘언어의 문턱을 무엇으로 낮출까’</em>라는<br>하나의 실험 질문으로 모였다</h2>
+    <p class="lede">심의 과정에서 정리한 핵심 문제 지표는 통계 세 개와 연구였다. 통계는 언어가 외로움과 교류 단절의 가장 큰 이유임을, 연구는 그림과 글자가 각각 다른 방식으로 그 문턱을 낮춘다는 점을 보여 주었다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+    <div class="st-ev">
+      <div class="st-ec"><span class="k">통계 ①</span><div class="n">40<small>%</small></div><p>국내 유학생의 약 40%가 <b>우울감과 외로움</b>을 경험하였다.</p><div class="src">통계청 통계개발원</div></div>
+      <div class="st-ec"><span class="k">통계 ②</span><div class="n">43.4<small>%</small></div><p>국내 체류 외국인이 겪는 어려움은 <b>언어 43.4%</b>, 외로움 28.8%가 압도적 상위였다.</p><div class="src">통계청 통계개발원</div></div>
+      <div class="st-ec"><span class="k">통계 ③</span><div class="n">63.5<small>%</small></div><p>인천경제자유구역 거주·근무 외국인은 한국인과 교류가 어려운 가장 큰 이유로 <b>언어소통 장애</b>를 꼽았다.</p><div class="src">인천경제자유구역청 생활여건 만족도 조사(2024)</div></div>
+      <div class="st-ec"><span class="k">연구</span><div class="n">2<small>편</small></div><p>무채색 바탕에서는 <b>단순한 픽토그램</b>의 시인성이 좋았고, 다국어 표지는 정보 전달과 함께 <b>정서적 지지와 소속감</b>에 기여하였다.</p><div class="src">Shiraishi(2009) · 장인철(2026)</div></div>
+    </div>
+    <svg width="178mm" height="13mm" viewBox="0 0 178 13" style="display:block"><path d="M22 0 L84 10 M66 0 L87 10 M112 0 L91 10 M156 0 L94 10" stroke="#3F7A6E" stroke-width=".5" fill="none"/><path d="M85 9 L89 13 L93 9" fill="#3F7A6E"/></svg>
+    <div class="st-q"><i>송도 실험 질문</i><b>그림·숫자 안내와 영어·발음·공동 활동은 이해와 소통을 어떻게 돕는가?</b></div>
+
+    <div class="st-tx st-c2" style="margin-top:5.4mm">
+      <p>세 통계는 같은 쪽을 가리켰다. 유학생과 외국인 주민에게 언어는 정보의 문제이기 전에 관계의 문제였다. 길을 묻지 못하는 사람은 함께 달리자는 말도 건네기 어렵다. 유학생의 문화적응 스트레스 연구에서도 한국어 학습과 의사소통, 대인관계가 주요 주제로 나타났다.</p>
+      <p>두 연구는 서로 다른 해법을 내놓았다. 픽토그램은 언어를 해석하지 않고도 바로 알아보게 하고, 다국어 글자는 구체적인 정보와 함께 ‘이 길이 나를 위해 쓰였다’는 느낌을 준다. 실험은 두 해법을 같은 길, 같은 자리에 차례로 놓고 맞대어 보았다.</p>
+      <p>비교의 틀도 이 단계에서 정하였다. 두 안은 같은 400×400mm 바닥 사인으로 같은 순환 코스의 같은 967개 자리에 붙이고, 바꾸는 것은 사인 안의 내용 하나로 두었다. 1차는 그림과 숫자만으로, 2차는 영문과 한국어 병기의 글자로만 길을 알려, 두 해법의 차이가 다른 조건에 섞이지 않게 하였다.</p>
+    </div>
+
+    <div class="k-two" style="margin-top:4mm">
+      <div class="a"><i>1차 · 보는 안내</i><b>픽토그램 · 숫자</b><ul><li><span>읽는 방식</span>해석 없이 즉각 인지</li><li><span>근거</span>Shiraishi(2009) 시인성 비교</li><li><span>기대</span>경로 이해 · 러닝 참여 장벽 완화</li></ul></div>
+      <div class="vs">⇄</div>
+      <div class="b"><i>2차 · 읽는 안내</i><b>영문 중심 · 한국어 병기</b><ul><li><span>읽는 방식</span>구체적인 말로 이해</li><li><span>근거</span>장인철(2026) 다중언어 경관</li><li><span>기대</span>정보 이해 · 소통과 유대감</li></ul></div>
+    </div>
+    <div class="st-cap"><b>송도 실험은 같은 자리의 안내를 그림에서 글자로 바꿔 놓고 비교하는 쪽을 택하였다.</b></div>
+    <div class="st-lb" style="margin-top:4.6mm">문제에서 목표까지</div>
+    <div class="st-ladder4">
+      <div class="s"><i>문제 정의</i><b>유학생의 운동 진입장벽과<br>생활권 교류 기회 부족</b></div><div class="ar">▶</div>
+      <div class="s"><i>1차 해법</i><b>픽토그램 중심 보도블록<br>안내의 정보 전달</b></div><div class="ar">▶</div>
+      <div class="s"><i>2차 해법</i><b>영문 중심 보도블록<br>안내의 정보 전달</b></div><div class="ar">▶</div>
+      <div class="s on"><i>목표</i><b>소속감을 높이는<br>러닝문화</b></div>
+    </div>
+    <div class="st-cap"><b>기대효과는 안내 방식에 따른 유학생의 경로 이해도와 참여 효과를 비교하는 것으로 정리하였다.</b></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">99</div>
+</section>
+
+<!-- ================= p100 기획의 변천 ① (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">유학생의 언어·교류 장벽에서 출발한 기획은<br>구간을 넓히며 <em>두 안내 방식의 비교</em>로 좁혀졌다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split l">
+      <div class="st-ver">
+        <div class="v"><div class="d">06.11<small>착수보고</small></div><h5>착수 문제의식</h5><p>유학생의 언어·교류 장벽</p></div>
+        <div class="v"><div class="d">09.09<small>중간보고</small></div><h5>러닝 공간 구체화</h5><p>순환 러닝 코스와 안내 지점 · 연세대 국제캠퍼스 방면 구간</p></div>
+        <div class="v"><div class="d">검토<small>2차 부서검토</small></div><h5>글로벌캠퍼스로 구간 확장</h5><p>교차로·횡단보도·직진·회전 구간 구분 · 보도블록 교체 대신 시트 부착</p></div>
+        <div class="v"><div class="d">10.15<small>기획</small></div><h5>안내 방식 비교</h5><p>픽토그램형 ↔ 영문·한국어 병기형</p></div>
+        <div class="v now"><div class="d">검토<small>사전검토 · 심의</small></div><h5>영문 두께·대비 강화</h5><p>1차 픽토그램·숫자, 2차 영문 텍스트 구조는 유지(부분 반영)</p></div>
+        <div class="v now"><div class="d">11.20–<small>실행</small></div><h5>1차 · 2차 러닝</h5><p>1차 11.20–21, 2차 <span class="dummy">11.[00]–[00]</span> 금·토 · 러닝크루 정기 러닝</p></div>
+      </div>
+      <div class="st-tx">
+        <p>6월 11일 착수보고의 출발점은 장소보다 사람이었다. 유학생이 한국 생활에서 부딪히는 언어와 교류의 장벽을 문제로 놓고, 그 장벽을 낮출 일상의 활동을 찾았다. 이 단계에서는 무엇을 어디에 설치할지보다 어떤 활동이 언어 없이도 사람을 이어 줄 수 있는지가 질문이었다.</p>
+        <p>9월 9일 중간보고에서 활동은 러닝으로 정해졌고, 장소는 순환 러닝 코스와 안내 지점으로 구체화되었다. 당시 실험 구간은 캠퍼스타운역에서 연세대 국제캠퍼스 방면으로 이어지는 공원 구간이었고, 러닝 동선을 분리해 3m마다 표준 보도블록을 설치하는 안이었다.</p>
+        <p>2차 부서검토에서 두 가지가 바뀌었다. 하나는 범위다. 연세대와 인천가톨릭대 등 글로벌캠퍼스 일대까지 구간을 넓히라는 의견에 따라, 실험 구간은 글로벌캠퍼스를 한 바퀴 도는 순환 코스로 다시 그려졌고, 주요 교차로와 횡단보도, 직진과 회전 구간을 나누어 구간별 거리와 설치 위치를 정하였다. 다른 하나는 방식이다. 보도블록을 교체하면 원상복구가 문제가 되므로, 블록은 그대로 두고 그 위에 시트를 붙이는 방식으로 바꾸었고, 구간 안의 개수와 위치, 동선 연결을 표기하였다.</p>
+        <p>10월 15일 기획에서 비교의 틀이 섰다. 같은 코스, 같은 자리에 1차는 픽토그램형, 2차는 영문·한국어 병기형 사인을 붙여 안내 방식만 바꾸는 구조다.</p>
+        <p>위원회 사전검토와 심의에서는 영문 글자의 두께와 바탕 대비를 높이고 방향 화살표와 픽토그램을 함께 표시하라는 의견이 나왔다. 두께와 대비는 반영했지만, 화살표와 픽토그램을 영문 사인에 더하면 두 안의 차이가 흐려진다. 전문가 자문을 거쳐 1차는 픽토그램과 숫자, 2차는 영문 텍스트로 두는 구조를 유지하고 의견은 부분 반영으로 정리하였다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">무엇이 바뀌었나 · 중간보고안과 실행안</div>
+    <div class="k-ba">
+      <div class="c"><div class="k">구간</div>
+        <div class="r"><div class="st-ph"><img src="img/03_송도_2장_반영전.jpg" alt=""></div><p><b>공원 한 구간</b>연세대 국제캠퍼스 방면</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/03_송도_2장_반영후.jpg" alt=""></div><p><b>순환 코스</b>글로벌캠퍼스 일대 11개 구간</p></div></div>
+      <div class="c"><div class="k">설치 방식</div>
+        <div class="r"><div class="ic">표준 보도블록<br>3m마다 설치</div><p><b>블록 교체</b>원상복구 부담</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/03_송도_부착상세.jpg" alt="" style="object-position:30% 40%"></div><p><b>바닥 시트 부착</b>400×400 · 약 6m 간격</p></div></div>
+      <div class="c"><div class="k">비교하는 것</div>
+        <div class="r"><div class="st-ph"><img src="img/03_송도_1차사인_직진.png" alt="" style="object-fit:contain;background:#fff"></div><p><b>그림 · 숫자</b>1차 픽토그램 사인</p></div><div class="dn">▼</div>
+        <div class="r b"><div class="st-ph"><img src="img/03_송도_2차사인_직진.png" alt="" style="object-fit:contain;background:#fff"></div><p><b>영문 + 한국어</b>2차 같은 자리 교체</p></div></div>
+    </div>
+    <div class="st-shift" style="margin-top:5mm">
+      <div><i>착수 구상 · 06.11</i><b>유학생과 함께할 활동을 찾는다</b><br>무엇이 언어 없이 사람을 잇는지가 질문</div>
+      <div class="ar">▶</div>
+      <div class="now"><i>실행한 실험 · 11.20–<span class="dummy">11.[00]</span></i><b>그림과 글자 중 무엇이 길을 열어 주는지 비교한다</b><br>같은 코스에서 안내 방식만 바꿈</div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">100</div>
+</section>
+
+<!-- ================= p101 기획의 변천 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">기획의 변천</span><span class="st-step"><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">러닝크루 · 대학 · 경제청과의 협의가<br><em>날짜 · 쉼터 · 부착 방식</em>을 정하였다</h2>
+    <p class="lede">송도 실험은 협업 주체의 일정이 실험 일정보다 앞섰다. 러닝크루의 정기 러닝에 실험을 얹고, 대학과 경제청이 쉼터와 장소를 맡았다.</p>
+  </div>
+  <div class="body" style="top:66mm">
+    <div class="s2-four" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.6mm">
+      <div class="st-ph" style="height:30mm;background:var(--sky2)"><img src="img/03_송도_변천_문제의식.jpg" alt="" style="object-fit:contain;padding:1.4mm"><span>1 언어·교류 장벽</span></div>
+      <div class="st-ph" style="height:30mm;background:var(--sky2)"><img src="img/03_송도_변천_러닝공간.jpg" alt="" style="object-fit:contain;padding:1.4mm"><span>2 순환 러닝 코스</span></div>
+      <div class="st-ph" style="height:30mm;background:var(--sky2)"><img src="img/03_송도_변천_안내비교.jpg" alt="" style="object-fit:contain;padding:1.4mm"><span>3 안내 방식 비교</span></div>
+      <div class="st-ph" style="height:30mm;background:var(--sky2)"><img src="img/03_송도_변천_교류.jpg" alt="" style="object-fit:contain;padding:1.4mm"><span>4 이해·참여·교류</span></div>
+    </div>
+    <div class="st-cap"><b>네 단계의 구상도. 문제는 처음부터 ‘교류’였고, 러닝과 바닥 사인은 그 교류로 가는 수단이었다.</b> 착수 문제의식 → 러닝 공간 → 안내 방식 비교 → 효과 검증 단계별 개념도</div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:3mm">
+      <div><b>11<small>개 구간</small></b><span>순환 코스 구간<br>길이 합 약 5.5km</span></div>
+      <div><b>967<small>장</small></b><span>400×400 바닥 사인<br>3M 바닥 시트지</span></div>
+      <div><b>2<small>일씩</small></b><span>금·토 러닝 시간대<br>1차 · 2차</span></div>
+      <div><b>30<small>명</small></b><span>차수별 러닝 참여자<br>현장 인터뷰</span></div>
+    </div>
+
+    <div class="st-flow" style="margin-top:4.6mm">
+      <div class="hdr"><div>협업 주체의 조건</div><div class="ar"></div><div>실험에 반영한 것</div><div class="ar"></div><div>현장에서 확인한 것</div></div>
+      <div class="r"><div class="a"><b>송도 러닝크루<small>정기 러닝</small></b>정해진 요일·시간에 함께 달림</div><div class="ar">▶</div><div class="b"><b>1차 11.20–21 · 2차 <span class="dummy" style="color:#FF8A80!important">11.[00]–[00]</span></b>정기 러닝 일정에 실험을 맞춤</div><div class="ar">▶</div><div class="c">참여 인원과 유학생 비율</div></div>
+      <div class="r"><div class="a"><b>전문가 자문<small>러닝크루</small></b>코스·안내·발음·부착 위치 확인</div><div class="ar">▶</div><div class="b"><b>1차 그림·숫자 / 2차 영문</b>비교 구조 유지, 영문 두께·대비 강화</div><div class="ar">▶</div><div class="c">달리며 읽히는 크기와 위치</div></div>
+      <div class="r"><div class="a"><b>인천대<small>간이 쉼터</small></b>러너 스테이션 캠프에 아트 의자</div><div class="ar">▶</div><div class="b"><b>러너 스테이션 캠프</b>부스 · 간이 쉼터 · 음수 제공</div><div class="ar">▶</div><div class="c">달린 뒤 머무름과 대화</div></div>
+      <div class="r"><div class="a"><b>경제청<small>도시디자인단 · 개발계획총괄과</small></b>장소·시설물 설치 협의</div><div class="ar">▶</div><div class="b"><b>보도블록 위 시트 부착</b>교체 없이 붙이고 떼어 냄</div><div class="ar">▶</div><div class="c">부착 상태 · 제거 뒤 바닥</div></div>
+    </div>
+
+    <div class="st-tx st-c2" style="margin-top:4.6mm;text-align:left">
+      <p>날짜를 정한 것은 러닝크루였다. 유학생이 혼자 바닥 사인을 따라 달리는 장면보다, 정기 러닝에 유학생이 함께 들어오는 장면이 실험의 질문에 가까웠다. 1차는 러닝크루의 11월 20~21일 정기 러닝에 맞추었고, 2차도 러닝크루와 일정을 조율해 11월 <span class="dummy">[00]~[00]</span>일 금·토 정기 러닝에 맞추었다.</p>
+      <p>요일은 데이터가 뒷받침하였다. 소상공인 365로 본 이 구역의 유동인구는 일요일에 가장 적었고, 러닝 행사를 무리 없이 운영하려면 사람이 다소 덜 붐비는 금·토가 맞았다. 사전조사도 같은 금·토 러닝 시간대에 하였다.</p>
+      <p>장소와 시설은 경제청과 정하였다. 실험 구간이 인천경제자유구역 안의 보행로여서, 도시디자인단과 개발계획총괄과와 장소·시설물 설치를 협의하고, 보도블록을 바꾸지 않고 시트를 붙였다 떼는 방식으로 원상복구를 약속하였다. 달린 뒤 쉬어 갈 러너 스테이션 캠프의 간이 쉼터에는 인천대의 아트 의자를 두었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">101</div>
+</section>
+
+<!-- ================= p102 실험 설계 ① (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1·2차는 <em>안내의 언어</em>만 바꾸고,<br>코스 · 자리 · 크기 · 색 · 요일은 그대로 두었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-mir">
+      <div class="ph">
+        <div class="st-ph" style="height:48mm"><img src="img/03_송도_1차시뮬.jpg" alt="" style="object-position:40% 70%"></div>
+        <div class="mid">바꾼 요소</div>
+        <div class="st-ph" style="height:48mm"><img src="img/03_송도_2차시뮬.jpg" alt="" style="object-position:40% 75%"></div>
+      </div>
+      <div class="hh"><div class="a">1차 「보고, 함께하다」<small>픽토그램 중심 · 언어의 장벽을 낮추는 포용의 러닝길</small></div><div style="background:#fff"></div><div class="b">2차 「읽고, 연결하다」<small>영문 중심 · 소통과 유대감을 넓히는 동행의 러닝길</small></div></div>
+      <div class="r"><div class="a">그림 · 화살표 · 숫자</div><div class="m">안내의 언어</div><div class="b">영문 + 한국어 병기<small>화살표·그림 없이 글자로</small></div></div>
+      <div class="r"><div class="a">화살표 + 줄무늬</div><div class="m">직진</div><div class="b">GO STRAIGHT · 직진</div></div>
+      <div class="r"><div class="a">휘어진 화살표</div><div class="m">회전</div><div class="b">TURN LEFT · 왼쪽으로</div></div>
+      <div class="r"><div class="a">보행자 · 횡단보도 그림 + 20 m</div><div class="m">횡단보도</div><div class="b">CROSSWALK · 횡단보도 · 20 m</div></div>
+      <div class="r"><div class="a">화살표 + 남녀 픽토그램</div><div class="m">화장실</div><div class="b">RESTROOM · 화장실</div></div>
+      <div class="r"><div class="a">글자 없음(숫자만)</div><div class="m">서체</div><div class="b">YOON GOTHIC 360 · KoPubWorld 돋움 Pro Bold</div></div>
+    </div>
+    <div class="st-keep" style="margin-top:3.6mm">
+      <div class="t">유지한 조건 <span>사전조사 · 1차 · 2차 모두 같게</span></div>
+      <div class="g">
+        <div><b>같은 코스</b><small>글로벌캠퍼스 순환<br>11개 구간</small></div>
+        <div><b>같은 자리</b><small>967장 같은 위치<br>약 6m 간격</small></div>
+        <div><b>같은 크기·색</b><small>400×400 · N 3/0 바탕<br>축광 네온 3색</small></div>
+        <div><b>같은 요일</b><small>금·토<br>러닝 시간대</small></div>
+        <div><b>같은 문항</b><small>이해도·참여 의사<br>5점 척도</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>송도가 알고 싶었던 것은 ‘안내의 언어’가 유학생의 길 이해와 참여를 바꾸는가였다. 그래서 두 차수는 같은 코스의 같은 자리에, 같은 크기와 같은 색의 사인을 붙였다. 바뀐 것은 사인 안의 내용이다. 1차는 화살표와 그림, 숫자로만, 2차는 영문을 크게 쓰고 그 아래에 한국어를 병기해 글자로만 안내하였다. 2차에서 화살표를 뺀 것도 두 안의 차이를 분명히 하기 위해서다.</p>
+      <p>비교를 흔들 수 있는 조건은 묶어 두었다. 두 차수 모두 금·토 러닝 시간대에 러닝크루의 러닝으로 운영했고, 같은 문항과 같은 5점 척도로 이해도와 참여 의사를 물었다. 다만 두 차수의 날짜는 러닝크루 정기 러닝에 따라 <span class="dummy">[0]</span>주 떨어져 있었고, 1차에 참여한 사람이 2차에도 달렸을 수 있다. 이 두 가지는 결과를 읽을 때 외부 조건으로 따로 적었다.</p>
+      <p>운영 방식도 두 차수가 같았다. 러닝크루의 진행, 러너 스테이션 캠프의 부스와 쉼터, 캠프 인력 2명과 횡단보도 안전관리 인력을 1·2차에 똑같이 두었다. 2차 설문에는 만족도와 커뮤니티 연결 의향 문항을 더했지만, 두 안의 비교는 두 차수에 함께 물은 문항으로만 하였다. 그래서 1·2차의 차이는 <b>안내 방식의 차이</b>로 읽었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">102</div>
+</section>
+
+<!-- ================= p103 실험 설계 ② (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">실험 설계</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">알아보기 · 길 고르기 · 이해와 참여,<br><em>세 지표</em>를 같은 코스에서 두 번 재었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-pipe">
+      <div class="s"><div class="h"><i>지표 ①</i><b>안내 인지율</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><rect x="13" y="6" width="14" height="10" rx=".6" fill="#3E3E3E" transform="skewX(-12)"/><path d="M19 14 V9 M17 11 L19 8.6 L21 11" stroke="#fff" stroke-width="1" fill="none"/><circle cx="31" cy="5" r="2.4" fill="none" stroke="#3F7A6E" stroke-width=".7"/><path d="M29 6.6 L23 10" stroke="#3F7A6E" stroke-width=".5" stroke-dasharray=".8 .6"/></svg></div>
+        <dl><dt>무엇을</dt><dd>달리거나 걸으며 바닥 사인을 알아보았는가</dd><dt>어떻게</dt><dd>행동관찰 · 시선·읽기·멈춤</dd><dt>값</dt><dd><b>인지 비율</b> · 분모는 관찰한 통행</dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ②</i><b>경로 선택 정확도</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><path d="M20 18 V10 L10 3 M20 10 L30 3" stroke="#A9BBCE" stroke-width="1.4" fill="none"/><path d="M20 18 V10 L30 3" stroke="#3F7A6E" stroke-width="1.4" fill="none"/><path d="M27.4 2.4 L30.6 2.6 L29.8 5.6" fill="none" stroke="#3F7A6E" stroke-width=".8"/></svg></div>
+        <dl><dt>무엇을</dt><dd>회전 지점과 횡단보도에서 안내대로 길을 골랐는가</dd><dt>어떻게</dt><dd>갈림길 행동관찰</dd><dt>값</dt><dd><b>바르게 고른 비율</b> · 분모는 확인한 선택</dd></dl></div>
+      <div class="ar">▶</div>
+      <div class="s"><div class="h"><i>지표 ③</i><b>이해도 · 참여 의사</b></div>
+        <div class="ic"><svg width="40mm" height="20mm" viewBox="0 0 40 20"><g fill="none" stroke="#3F7A6E" stroke-width=".6"><circle cx="8" cy="10" r="2.6"/><circle cx="15" cy="10" r="2.6"/><circle cx="22" cy="10" r="2.6"/><circle cx="29" cy="10" r="2.6"/></g><circle cx="36" cy="10" r="2.6" fill="#3F7A6E"/><g font-size="2.6" font-weight="800" fill="#3F7A6E" text-anchor="middle"><text x="8" y="17">1</text><text x="36" y="17">5</text></g></svg></div>
+        <dl><dt>무엇을</dt><dd>안내를 이해했는가, 또 달리고 싶은가</dd><dt>어떻게</dt><dd>5점 척도 문항 · 러닝 뒤 현장 인터뷰</dd><dt>값</dt><dd><b>5점 분포 · 평균</b> · 교류 의향은 인터뷰</dd></dl></div>
+    </div>
+    <div class="st-cap"><b>2차에는 만족도, 참여 지속 의사, 커뮤니티 연결 의향을 묻는 문항을 더하였다.</b> 세 지표는 1·2차 모두 같은 관찰 기준과 같은 척도를 썼다.</div>
+
+    <div class="st-lb" style="margin-top:5mm">측정과 운영의 날짜</div>
+    <div class="k-cal"><svg width="178mm" height="50mm" viewBox="0 0 178 50"><line x1="4" y1="22" x2="174" y2="22" stroke="#C9D3DC" stroke-width=".5"/><path d="M60.0 19 V25" stroke="#9AA8B5" stroke-width=".4"/><path d="M117.9 19 V25" stroke="#9AA8B5" stroke-width=".4"/><text x="4" y="30" font-size="3" font-weight="800" fill="#6A7784">9월</text><text x="61.0" y="30" font-size="3" font-weight="800" fill="#6A7784">10월</text><text x="118.9" y="30" font-size="3" font-weight="800" fill="#6A7784">11월</text><rect x="45.1" y="19" width="1.9" height="6" rx=".6" fill="#C9D3DC"/><rect x="71.2" y="19" width="1.9" height="6" rx=".6" fill="#C9D3DC"/><text x="46.0" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">9.23</text><text x="46.0" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">현장조사</text><text x="72.1" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">10.7</text><text x="72.1" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">현장조사</text><rect x="101.1" y="19" width="3.7" height="6" rx=".6" fill="url(#hatch-pre)"/><text x="103.0" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="middle">10.23–24</text><text x="103.0" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="middle">사전조사 · 러닝 시간대</text><rect x="153.4" y="19" width="3.7" height="6" rx=".6" fill="#2E5A87"/><text x="155.3" y="15" font-size="3.1" font-weight="900" fill="#1A2F4B" text-anchor="end">11.20–21</text><text x="155.3" y="11" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="end">1차 픽토그램안</text><rect x="166.5" y="19" width="3.7" height="6" rx=".6" fill="url(#hatch-red)"/><path d="M168.4 25.4 V33" stroke="#9AA8B5" stroke-width=".3"/><text x="168.4" y="37" font-size="3.1" font-weight="900" fill="#E5332A" text-anchor="end">11.[00]–[00]</text><text x="168.4" y="41" font-size="2.8" font-weight="700" fill="#6A7784" text-anchor="end">2차 영문·한국어 병기안 · 금·토</text></svg></div>
+
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:4mm">
+      <div><b>30<small>명</small></b><span>1차 최소 인터뷰<br>러닝 참여자</span></div>
+      <div><b>30<small>명</small></b><span>2차 최소 인터뷰<br>러닝 참여자</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>1차 러닝 참여 인원<br>러닝크루 · 유학생 · 시민</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>2차 러닝 참여 인원<br>러닝크루 · 유학생 · 시민</span></div>
+    </div>
+
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>관찰은 회전 지점과 횡단보도 구역 <span class="dummy">[0]</span>곳에서 하였다. 사인 앞에서 고개를 숙여 보거나 속도를 늦춘 경우를 ‘알아봄’으로, 회전 지점과 횡단보도에서 안내 방향대로 간 경우를 ‘바른 선택’으로 미리 정해 두고 셌다.</p>
+      <p>5점 척도는 러닝을 마친 뒤 캠프에서 받았다. 정보를 얼마나 이해했는지, 다시 함께 달리고 싶은지를 묻고, 차수별로 러닝 참여자 30명 이상을 현장 인터뷰하였다. 전문 러닝크루의 자문은 코스와 안내 위치를 확인하는 데 썼다.</p>
+      <p>실험 전 기준은 10월 23~24일 사전조사에서 같은 금·토 러닝 시간대에 기록해 두었다. 사인이 없는 상태의 통행과 이용 모습이 두 차수의 출발점이다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">103</div>
+</section>
+
+<!-- ================= p104 1차 실험 ① (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">1차 실험 「보고, 함께하다」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1차는 순환 코스 바닥에 <em>그림과 숫자만으로</em><br>길을 알려 주는 사인을 붙였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-hero" style="height:132mm">
+      <img src="img/03_송도_1차시뮬.jpg" alt="">
+      <svg viewBox="0 0 178 132" width="178mm" height="132mm"><g stroke="#fff" stroke-width=".45" fill="none"><path d="M50 30 L57 98"/><path d="M96 80 L84 103"/><path d="M128 30 L140 40"/><path d="M150 96 L128 109"/></g><g fill="#2E5A87" stroke="#fff" stroke-width=".45"><circle cx="57" cy="98" r="1.4"/><circle cx="84" cy="103" r="1.4"/><circle cx="140" cy="40" r="1.4"/><circle cx="128" cy="109" r="1.4"/></g></svg>
+      <div class="st-co" style="left:28mm;top:6mm"><b><i>1</i>직진 사인</b>400×400 바닥 시트. 화살표와 줄무늬로 달리는 방향을 알림</div>
+      <div class="st-co" style="left:76mm;top:64mm"><b><i>2</i>안전 라바콘 h600</b>12개. 러닝 동선과 보행 동선을 가름</div>
+      <div class="st-co" style="left:118mm;top:6mm;width:52mm"><b><i>3</i>러너 스테이션 캠프</b>이동식 판매대(부스) W1,400×D650×H2,200 허니콤보드 · 간이 쉼터 · 음수 제공</div>
+      <div class="st-co" style="left:130mm;top:84mm"><b><i>4</i>회전 사인</b>휘어진 화살표로 꺾는 지점을 미리 알림</div>
+    </div>
+    <div class="st-cap"><b>사인은 러닝 동선 양쪽 가장자리, 연석에서 1m 떨어진 자리에 약 6m마다 붙였다.</b> 1차 적용 시뮬레이션(합성) · 송도 글로벌캠퍼스 일대 보행로</div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>1차 「보고, 함께하다」는 픽토그램으로 언어의 장벽을 낮추는 안이다. 글로벌캠퍼스를 한 바퀴 도는 순환 코스의 바닥에 400×400mm 사인을 붙이고, 방향과 코너, 화장실, 횡단보도, 주의 구간을 아이콘과 단순한 기호로만 표시하였다. 언어를 해석하지 않아도 달리는 중에 바로 알아볼 수 있게 하는 것이 목표였다.</p>
+      <p>사인은 네 종류였다. 곧게 달리는 구간의 직진, 꺾는 지점을 미리 알리는 회전, 횡단보도까지의 거리를 숫자로 알리는 ‘20 m’ 예고, 그리고 가까운 화장실 방향이다. 직진 사인이 952장으로 가장 많았고, 횡단보도 11장, 우회전 3장, 좌회전 1장이 코스의 꺾임과 건널목을 따라 놓였다.</p>
+      <p>1차는 11월 20일(금)과 21일(토) 송도 러닝크루의 정기 러닝에 맞춰 운영하였다. 러너 스테이션 캠프에는 진행 인력 2명이 현장 관리와 음수 제공을 맡았고, 횡단보도 구역마다 규모에 따라 1~2명의 안전관리 인력을 두었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">104</div>
+</section>
+
+<!-- ================= p105 1차 실험 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">1차 실험 「보고, 함께하다」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">네 사인은 <em>짙은 회색 바탕에 축광 네온색</em>으로 만들고,<br>보도블록 2×2칸에 맞춰 붙였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-pal" style="grid-template-columns:repeat(6,1fr)">
+      <div class="sw"><div class="c" style="background:#3E3E3E">바탕</div><div class="m">N 3/0<small>모든 사인의 바탕</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#CFE8BE">네온 그린</div><div class="m">축광 시트<small>직진 화살표</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#EDD2BE">네온 오렌지</div><div class="m">2.5YR 6/14<small>회전 화살표 · 축광</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#C0DCEB">네온 블루</div><div class="m">10B 7/12<small>화장실 · 축광</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#E0E8BE">연두</div><div class="m">5GY 8/10<small>거리 숫자 · 화살표</small></div></div>
+      <div class="sw"><div class="c dk" style="background:#fff">흰색</div><div class="m">N 10/0<small>보행자 · 횡단보도</small></div></div>
+    </div>
+    <div class="st-fig" style="margin-top:3mm;padding:2mm"><img src="img/03_송도_1차사인4종.png" alt="" style="height:58mm;width:auto;margin:0 auto"></div>
+    <div class="st-cap"><b>네온 시트는 빛을 머금었다가 내는 축광 시트로, 해가 진 뒤에도 사인이 보이게 하였다.</b> 1차 표준 보도블록 디자인(픽토그램) 4종 · 각 400×400mm</div>
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:1fr 56mm">
+      <div><div class="st-fig" style="padding:1.4mm"><img src="img/03_송도_부착상세.jpg" alt="" style="height:52mm;object-fit:cover"></div>
+        <div class="st-cap"><b>벤치와 식재를 피해 연석에서 1m 떨어진 자리에, 진행 방향을 따라 약 6m마다 붙였다.</b> 부착 상세 · 중앙 식재 구간 양쪽 러닝 폭 확보</div></div>
+      <div class="st-dims">
+        <div><b>400×400<small>mm</small></b><span>사인 크기 · 보도블록 2×2칸</span></div>
+        <div><b>200×200<small>mm</small></b><span>현장 보도블록 한 칸</span></div>
+        <div><b>1<small>m</small></b><span>연석에서 띄운 거리</span></div>
+        <div><b>약 6<small>m</small></b><span>사인 부착 간격</span></div>
+        <div><b>967<small>장</small></b><span>직진 952 · 횡단보도 11 · 우회전 3 · 좌회전 1</span></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>바탕은 모든 사인에 같은 짙은 회색(N 3/0)을 썼다. 무채색 바탕에서는 단순한 픽토그램과 부분 강조형의 시인성이 좋고 색을 많이 쓰면 오히려 시인성이 떨어진다는 연구를 따른 것이다. 기호의 색은 종류마다 하나씩만 주어, 직진은 네온 그린, 회전은 네온 오렌지, 화장실은 네온 블루로 구분하였다.</p>
+      <p>967장 가운데 952장이 직진 사인이어서, 코스를 달리는 동안 가장 자주 보이는 것은 네온 그린의 직진 화살표였다. 회전과 횡단보도, 화장실 사인은 색을 달리해 이어지는 직진 사인 사이에서 따로 눈에 띄게 하였다.</p>
+      <p>사인은 3M 바닥 시트지에 인쇄해 잘라 붙이고, 위에는 미끄럼 방지 바닥 그래픽 필름을 덧씌웠다. 현장 보도블록 2×2칸에 맞춘 크기여서 블록 줄눈을 기준으로 붙이면 위치가 흐트러지지 않았다. 보도블록은 교체하지 않았다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">105</div>
+</section>
+
+<!-- ================= p106 2차 실험 ① (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">2차 실험 「읽고, 연결하다」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 그림을 빼고 <em>영문과 한국어</em>로만<br>같은 자리의 길을 알려 주었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 64mm;gap:5mm;align-items:start">
+      <div class="st-fig" style="padding:2.4mm 8mm"><img src="img/03_송도_2차사인4종.png" alt=""></div>
+      <div>
+        <div class="st-pal" style="grid-template-columns:1fr 1fr;gap:1.6mm">
+          <div class="sw"><div class="c dk" style="background:#fff;font-size:9pt">Aa</div><div class="m">YOON GOTHIC 360<small>영문 서체</small></div></div>
+          <div class="sw"><div class="c dk" style="background:#fff;font-size:9pt">가나</div><div class="m">KoPubWorld 돋움 Pro Bold<small>한국어 서체</small></div></div>
+          <div class="sw"><div class="c dk" style="background:#D6D6D6">회색</div><div class="m">N 8.5/0<small>2차에 더한 색</small></div></div>
+          <div class="sw"><div class="c" style="background:#3E3E3E">바탕</div><div class="m">N 3/0<small>1차와 같음</small></div></div>
+        </div>
+        <div class="st-cap"><b>영문은 크고 굵게, 한국어는 그 아래에 작게 두었다.</b> 2차 표준 보도블록 디자인(영문·한국어 병기) 4종과 서체·추가 색</div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:5mm;text-align:left">
+      <p>2차 「읽고, 연결하다」는 영문 안내로 소통과 유대감을 넓히는 안이다. 1차 사인이 붙었던 967개의 자리에 같은 크기, 같은 바탕의 사인을 다시 붙이되, 안의 내용을 글자로 바꾸었다. 직진은 ‘GO STRAIGHT’, 회전은 ‘TURN LEFT’, 횡단보도는 ‘CROSSWALK’와 거리 ‘20 m’, 화장실은 ‘RESTROOM’이다.</p>
+      <p>영문 아래에는 한국어를 병기하였다. ‘직진’, ‘왼쪽으로’, ‘횡단보도’, ‘화장실’이다. 한국어 병기는 유학생이 달리며 한국어 낱말을 함께 읽고, 러닝크루와 같은 말로 길을 부를 수 있게 하려는 장치였다. 러닝 중 인사와 대화가 일어나는지는 1차와 같은 기준으로 관찰하였다.</p>
+      <p>위원회 사전검토와 심의 의견에 따라 영문 글자는 굵기를 키우고 바탕과의 대비를 높였다. 영문은 YOON GOTHIC 360, 한국어는 KoPubWorld 돋움 Pro Bold로 짰고, 색은 1차와 같은 네온 그린·오렌지·블루·연두·흰색을 그대로 쓰면서 한국어 병기에 밝은 회색(N 8.5/0)을 더하였다. 다만 영문 사인에 화살표와 픽토그램을 함께 넣으라는 의견은, 두 안의 차이를 지키기 위해 반영하지 않았다.</p>
+      <p>2차의 문항에는 정보 이해도와 러닝 참여 의사에 더해, 이동 정확도, 만족도, 참여를 이어 갈 의사, 그리고 지역의 러닝 커뮤니티와 이어지고 싶은지를 묻는 질문을 넣었다. 1차가 ‘길을 알았는가’를 물었다면, 2차는 ‘함께하고 싶어졌는가’까지 물었다. 두 안을 맞대는 비교는 두 차수에 함께 물은 이해도와 참여 의사 문항으로 하였다.</p>
+    </div>
+    <div class="st-rule"></div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr)">
+      <div><b>967<small>장</small></b><span>1차와 같은 자리<br>같은 수량</span></div>
+      <div><b>2<small>개 언어</small></b><span>영문 중심<br>한국어 병기</span></div>
+      <div><b>0<small>개</small></b><span>화살표 · 픽토그램<br>글자로만 안내</span></div>
+      <div><b>+1<small>색</small></b><span>N 8.5/0<br>한국어 병기 회색</span></div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">106</div>
+</section>
+
+<!-- ================= p107 2차 실험 ② (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">2차 실험 「읽고, 연결하다」</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">2차는 같은 자리에서 <em>그림과 화살표를 글자로 바꾸고</em>,<br>크기 · 바탕 · 운영은 1차와 같게 두었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 52mm;gap:5mm">
+      <div><div class="st-ph" style="height:46mm"><img src="img/03_송도_2차시뮬.jpg" alt="" style="object-position:50% 70%"></div>
+        <div class="st-cap"><b>같은 자리의 사인이 글자로 바뀌고, 캠프 부스는 그대로 섰다.</b> 2차 적용 시뮬레이션(합성)</div></div>
+      <div class="st-dims">
+        <div><b>400×400<small>mm</small></b><span>1차와 같은 크기</span></div>
+        <div><b>N 3/0<small></small></b><span>1차와 같은 바탕</span></div>
+        <div><b>12<small>개</small></b><span>안전 라바콘 h600</span></div>
+        <div><b>1<small>개소</small></b><span>이동식 판매대(부스) · 러너 스테이션</span></div>
+        <div><b>2<small>일</small></b><span>금·토 러닝 시간대</span></div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">같은 자리, 다른 언어의 사인 4종</div>
+    <div class="s3-pair sm" style="grid-template-columns:24mm repeat(4,27mm)">
+      <div class="lab" style="color:var(--r1)">1차<small>픽토그램</small></div>
+      <div class="sg"><img src="img/03_송도_1차사인_직진.png" alt=""></div><div class="sg"><img src="img/03_송도_1차사인_좌회전.png" alt=""></div><div class="sg"><img src="img/03_송도_1차사인_횡단보도.png" alt=""></div><div class="sg"><img src="img/03_송도_1차사인_화장실.png" alt=""></div>
+      <div class="lab" style="color:var(--r2)">2차<small>영문·한국어</small></div>
+      <div class="sg"><img src="img/03_송도_2차사인_직진.png" alt=""></div><div class="sg"><img src="img/03_송도_2차사인_좌회전.png" alt=""></div><div class="sg"><img src="img/03_송도_2차사인_횡단보도.png" alt=""></div><div class="sg"><img src="img/03_송도_2차사인_화장실.png" alt=""></div>
+      <div></div><div class="nm">직진<small>S · 952장</small></div><div class="nm">회전<small>R 3장 · L 1장</small></div><div class="nm">횡단보도 예고<small>C · 11장</small></div><div class="nm">화장실<small>방향 안내</small></div>
+    </div>
+    <div class="st-chg" style="margin-top:4.6mm">
+      <div class="c"><div class="k">직진</div><div class="a">화살표 + 줄무늬</div><div class="b">GO STRAIGHT · 직진</div><div class="w">근거 · 영문 안내형 가설</div></div>
+      <div class="c"><div class="k">회전</div><div class="a">휘어진 화살표</div><div class="b">TURN LEFT · 왼쪽으로</div><div class="w">근거 · 화살표 없이 글자로 비교</div></div>
+      <div class="c"><div class="k">횡단보도</div><div class="a">보행자 그림 + 20 m</div><div class="b">CROSSWALK · 횡단보도 · 20 m</div><div class="w">근거 · 숫자는 두 안 모두 유지</div></div>
+      <div class="c"><div class="k">글자</div><div class="a">숫자만</div><div class="b">굵은 영문 + 한국어 병기</div><div class="w">근거 · 영문 두께·대비 강화 의견</div></div>
+      <div class="c"><div class="k">색</div><div class="a">축광 네온 3색 + 연두·흰색</div><div class="b">같은 색 + N 8.5/0 회색</div><div class="w">근거 · 한국어 병기 구분</div></div>
+      <div class="c"><div class="k">화장실</div><div class="a">화살표 + 남녀 픽토그램</div><div class="b">RESTROOM · 화장실</div><div class="w">근거 · 그림 기호를 낱말로 대체</div></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.4mm">
+      <p>2차 사인은 1차에서 무엇을 뺐는지가 먼저 보이도록 만들었다. 직진의 화살표와 줄무늬, 회전의 휘어진 화살표, 화장실의 남녀 그림이 모두 글자로 바뀌었고, 횡단보도의 ‘20 m’ 숫자만 두 안에 똑같이 남았다. 거리 숫자는 그림과 글자 어느 쪽에도 속하지 않는 정보여서 비교에서 뺄 이유가 없었다. 사인 4종을 같은 자리끼리 짝지어 보면, 두 안의 차이는 기호를 읽느냐 낱말을 읽느냐 하나로 좁혀진다.</p>
+      <p>바닥에서 바뀐 것은 사인 안쪽뿐이다. 400×400mm 크기와 짙은 회색 바탕, 라바콘 12개와 러너 스테이션 부스 1개소는 1차와 같게 두었다. 러닝크루의 정기 러닝과 캠프 운영도 같았다. 2차 가설의 ‘소통과 유대감’은 운영을 바꾸지 않고, 같은 러닝 안에서 글자 사인이 인사와 대화를 더 이끌어 내는지로 확인하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">107</div>
+</section>
+
+<!-- ================= p108 현장 배치 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">현장 배치</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">사인 967장은 글로벌캠퍼스를 도는 <em>11개 구간</em>에,<br>꺾임과 건널목마다 종류를 바꾸어 놓였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-plan" style="height:150mm">
+      <svg viewBox="0 0 178 150" width="178mm" height="150mm"><rect x="0" y="0" width="178" height="150" fill="#EEF2F5"/><path d="M67.6 12.0 L98.5 34.5 L155.5 48.0 L118.0 99.9 L91.0 135.0 L16.0 79.5 Z" fill="#E1E7EC"/><text x="78.0" y="70.0" font-size="3.6" font-weight="900" fill="#56636E" text-anchor="middle">송도 글로벌캠퍼스 일대</text><text x="78.0" y="75.0" font-size="2.8" font-weight="700" fill="#8C98A3" text-anchor="middle">연세대 국제캠퍼스 · 인천가톨릭대 등</text><path d="M67.6 12.0 L98.5 34.5 L155.5 48.0 L118.0 99.9 L91.0 135.0 L16.0 79.5 L67.6 12.0" fill="none" stroke="#3F7A6E" stroke-width="2.6" stroke-linejoin="round"/><path d="M67.6 12.0 L98.5 34.5 L155.5 48.0 L118.0 99.9 L91.0 135.0 L16.0 79.5 L67.6 12.0" fill="none" stroke="#fff" stroke-width=".45" stroke-dasharray="1.6 1.6" stroke-linejoin="round"/><g><rect x="82.2" y="15.8" width="13.6" height="7" rx=".6" fill="#fff"/><text x="89.0" y="18.6" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">1.9km</text><text x="89.0" y="21.9" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 315</text></g><g><rect x="151.2" y="50.7" width="13.6" height="7" rx=".6" fill="#fff"/><text x="158.0" y="53.6" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">296m</text><text x="158.0" y="56.8" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 49</text></g><g><rect x="138.8" y="68.9" width="13.6" height="7" rx=".6" fill="#fff"/><text x="145.6" y="71.8" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">300m</text><text x="145.6" y="75.0" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 49</text></g><g><rect x="125.7" y="87.0" width="13.6" height="7" rx=".6" fill="#fff"/><text x="132.5" y="89.9" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">370m</text><text x="132.5" y="93.1" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 61</text></g><g><rect x="103.4" y="117.7" width="13.6" height="7" rx=".6" fill="#fff"/><text x="110.2" y="120.6" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">950.5m</text><text x="110.2" y="123.8" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 158</text></g><g><rect x="72.2" y="126.4" width="13.6" height="7" rx=".6" fill="#fff"/><text x="79.0" y="129.3" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">330m</text><text x="79.0" y="132.5" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 54</text></g><g><rect x="46.0" y="107.0" width="13.6" height="7" rx=".6" fill="#fff"/><text x="52.8" y="109.9" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">530m</text><text x="52.8" y="113.1" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 88</text></g><g><rect x="18.7" y="87.5" width="13.6" height="7" rx=".6" fill="#fff"/><text x="25.5" y="90.5" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">73m</text><text x="25.5" y="93.6" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 12</text></g><g><rect x="0.9" y="64.9" width="13.6" height="7" rx=".6" fill="#fff"/><text x="7.7" y="67.8" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">490m</text><text x="7.7" y="71.0" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 81</text></g><g><rect x="21.6" y="38.9" width="13.6" height="7" rx=".6" fill="#fff"/><text x="28.4" y="41.8" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">140m</text><text x="28.4" y="45.0" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 23</text></g><g><rect x="38.1" y="18.6" width="13.6" height="7" rx=".6" fill="#fff"/><text x="44.9" y="21.5" font-size="2.6" font-weight="900" fill="#1A2F4B" text-anchor="middle">120m</text><text x="44.9" y="24.7" font-size="2.4" font-weight="700" fill="#2F5E55" text-anchor="middle">S 19</text></g><rect x="144.4" y="59.3" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="146.1" y="61.8" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="131.3" y="77.4" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="133.0" y="80.0" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="119.3" y="94.0" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="121.0" y="96.6" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="110.9" y="105.2" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="112.6" y="107.8" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="60.8" y="112.2" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="62.5" y="114.8" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="35.3" y="93.3" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="37.0" y="95.9" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="29.8" y="57.5" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="31.5" y="60.1" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="36.0" y="49.5" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="37.7" y="52.0" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="48.4" y="33.2" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="50.1" y="35.8" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="53.0" y="27.2" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="54.7" y="29.7" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><rect x="72.1" y="14.8" width="3.4" height="3.4" rx=".5" fill="#2E5A87"/><text x="73.8" y="17.4" font-size="2.4" font-weight="900" fill="#fff" text-anchor="middle">C</text><circle cx="67.6" cy="12.0" r="4.4" fill="#1A2F4B" opacity=".16"/><circle cx="67.6" cy="12.0" r="2.4" fill="#1A2F4B"/><text x="67.6" y="13.0" font-size="2.8" font-weight="900" fill="#fff" text-anchor="middle">R</text><circle cx="155.5" cy="48.0" r="4.4" fill="#1A2F4B" opacity=".16"/><circle cx="155.5" cy="48.0" r="2.4" fill="#1A2F4B"/><text x="155.5" y="49.0" font-size="2.8" font-weight="900" fill="#fff" text-anchor="middle">R</text><circle cx="16.0" cy="79.5" r="4.4" fill="#1A2F4B" opacity=".16"/><circle cx="16.0" cy="79.5" r="2.4" fill="#1A2F4B"/><text x="16.0" y="80.5" font-size="2.8" font-weight="900" fill="#fff" text-anchor="middle">R</text><circle cx="118.0" cy="99.9" r="4.4" fill="#1A2F4B" opacity=".16"/><circle cx="118.0" cy="99.9" r="2.4" fill="#1A2F4B"/><text x="118.0" y="100.9" font-size="2.8" font-weight="900" fill="#fff" text-anchor="middle">L</text><circle cx="65.3" cy="28.2" r="6" fill="#5B6B7A"/><text x="65.3" y="29.1" font-size="2.5" font-weight="900" fill="#fff" text-anchor="middle">캠프</text><path d="M58.3 24.2 L61.3 26.2" stroke="#5B6B7A" stroke-width=".3"/><path d="M125.0 37.9 l4 1 l-1.6 -2.4" fill="none" stroke="#1A2F4B" stroke-width=".6"/><g transform="translate(166 138)"><circle r="5" fill="#fff"/><path d="M0 -3.6 L1.8 2.4 L0 1.2 L-1.8 2.4Z" fill="#1A2F4B"/><text x="-1.1" y="-5.8" font-size="2.6" font-weight="800" fill="#1A2F4B">N</text></g></svg>
+      <div class="k-inset" style="right:4mm;left:auto;top:4mm;bottom:auto;width:46mm"><img src="img/03_송도_항공.jpg" alt=""><span>항공사진 · 순환 코스 일대</span></div>
+    </div>
+    <div class="st-cap"><b>가장 긴 구간은 북쪽 1.9km(직진 315장), 가장 짧은 구간은 서쪽 73m(직진 12장)였다.</b> 개념 배치도(축척 없음) · 구간 길이와 직진 사인 수는 배치계획 기준</div>
+    <div class="st-pos" style="margin-top:3.4mm">
+      <div><b><i style="background:#3F7A6E">S</i>직진 952장</b>곧은 구간 약 6m마다</div>
+      <div><b><i style="background:#2E5A87">C</i>횡단보도 11장</b>건널목 앞 ‘20 m’ 예고</div>
+      <div><b><i style="background:#1A2F4B">R</i>우회전 3장</b>코스의 큰 꺾임 세 곳</div>
+      <div><b><i style="background:#1A2F4B">L</i>좌회전 1장</b>동쪽 구간의 좌회전 지점</div>
+      <div><b><i style="background:#5B6B7A">캠</i>러너 스테이션</b>부스·간이 쉼터 · 인력 2명</div>
+    </div>
+    <div class="st-tx" style="margin-top:3.4mm">
+      <p>코스는 글로벌캠퍼스 일대를 한 바퀴 도는 순환 코스로, 11개 구간의 길이를 더하면 약 5.5km다. 사인은 곧은 구간에 직진을 약 6m마다 놓고, 횡단보도 11곳 앞에는 거리를 알리는 횡단보도 사인을, 큰 꺾임 네 곳에는 회전 사인을 두었다. 러너 스테이션 캠프는 코스 북서쪽 구간에 세웠고, 횡단보도 구역마다 1~2명의 안전관리 인력을 배치하였다.</p>
+      <p>구간마다 사인 수가 다른 것은 길이 때문이다. 1.9km의 북쪽 구간에는 직진 사인 315장이, 950.5m의 남동쪽 구간에는 158장이 놓였고, 73m의 짧은 서쪽 구간에는 12장만 놓였다. 회전 사인은 우회전 세 곳과 동쪽 구간의 좌회전 한 곳에만 두어, 바닥의 사인 종류가 바뀌는 지점이 곧 코스가 꺾이는 지점이 되게 하였다. 1·2차는 이 배치를 그대로 쓰고 사인 안의 내용만 바꾸었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">108</div>
+</section>
+
+<!-- ================= p109 설치·운영 기록 (혼합형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">설치·운영 기록</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1·2차 모두 <em>러닝크루 정기 러닝</em>의 금·토에 맞춰<br>사인을 붙이고, 달리고, 떼어 냈다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="k-cal"><svg width="178mm" height="54mm" viewBox="0 0 178 54"><g font-size="3.2" font-weight="800" fill="#6A7784" text-anchor="middle"><text x="38" y="5">월</text><text x="58" y="5">화</text><text x="78" y="5">수</text><text x="98" y="5">목</text><text x="118" y="5">금</text><text x="138" y="5">토</text><text x="158" y="5">일</text></g><g font-size="3.2" font-weight="900" fill="#1A2F4B"><text x="2" y="17">10월 넷째 주</text><text x="2" y="32">11월 셋째 주</text><text x="2" y="47" fill="#E5332A">11월 [0]째 주</text></g><g fill="#F3F6F8"><rect x="29" y="8" width="18" height="13" rx=".6"/><rect x="49" y="8" width="18" height="13" rx=".6"/><rect x="69" y="8" width="18" height="13" rx=".6"/><rect x="89" y="8" width="18" height="13" rx=".6"/><rect x="109" y="8" width="18" height="13" rx=".6"/><rect x="129" y="8" width="18" height="13" rx=".6"/><rect x="149" y="8" width="18" height="13" rx=".6"/><rect x="29" y="23" width="18" height="13" rx=".6"/><rect x="49" y="23" width="18" height="13" rx=".6"/><rect x="69" y="23" width="18" height="13" rx=".6"/><rect x="89" y="23" width="18" height="13" rx=".6"/><rect x="109" y="23" width="18" height="13" rx=".6"/><rect x="129" y="23" width="18" height="13" rx=".6"/><rect x="149" y="23" width="18" height="13" rx=".6"/><rect x="29" y="38" width="18" height="13" rx=".6"/><rect x="49" y="38" width="18" height="13" rx=".6"/><rect x="69" y="38" width="18" height="13" rx=".6"/><rect x="89" y="38" width="18" height="13" rx=".6"/><rect x="109" y="38" width="18" height="13" rx=".6"/><rect x="129" y="38" width="18" height="13" rx=".6"/><rect x="149" y="38" width="18" height="13" rx=".6"/></g><text x="30.5" y="11.4" font-size="2.6" font-weight="700" fill="#9AA8B5">19</text><text x="50.5" y="11.4" font-size="2.6" font-weight="700" fill="#9AA8B5">20</text><text x="70.5" y="11.4" font-size="2.6" font-weight="700" fill="#9AA8B5">21</text><text x="90.5" y="11.4" font-size="2.6" font-weight="700" fill="#9AA8B5">22</text><text x="110.5" y="11.4" font-size="2.6" font-weight="700" fill="#9AA8B5">23</text><text x="130.5" y="11.4" font-size="2.6" font-weight="700" fill="#9AA8B5">24</text><text x="150.5" y="11.4" font-size="2.6" font-weight="700" fill="#9AA8B5">25</text><text x="30.5" y="26.4" font-size="2.6" font-weight="700" fill="#9AA8B5">16</text><text x="50.5" y="26.4" font-size="2.6" font-weight="700" fill="#9AA8B5">17</text><text x="70.5" y="26.4" font-size="2.6" font-weight="700" fill="#9AA8B5">18</text><text x="90.5" y="26.4" font-size="2.6" font-weight="700" fill="#9AA8B5">19</text><text x="110.5" y="26.4" font-size="2.6" font-weight="700" fill="#9AA8B5">20</text><text x="130.5" y="26.4" font-size="2.6" font-weight="700" fill="#9AA8B5">21</text><text x="150.5" y="26.4" font-size="2.6" font-weight="700" fill="#9AA8B5">22</text><rect x="109" y="8" width="38" height="13" rx=".6" fill="url(#hatch-pre)"/><text x="128" y="13.6" font-size="3.3" font-weight="900" fill="#1A2F4B" text-anchor="middle" stroke="#fff" stroke-width=".7" stroke-linejoin="round" paint-order="stroke">사전조사 10.23 · 24</text><text x="128" y="18.2" font-size="2.7" font-weight="700" fill="#1A2F4B" text-anchor="middle" stroke="#fff" stroke-width=".7" stroke-linejoin="round" paint-order="stroke">러닝 시간대 · 같은 지점 계수</text><rect x="109" y="23" width="38" height="13" rx=".6" fill="#2E5A87"/><text x="128" y="28.4" font-size="3.3" font-weight="900" fill="#fff" text-anchor="middle">1차 「보고, 함께하다」</text><text x="128" y="33" font-size="2.7" font-weight="600" fill="#fff" text-anchor="middle">11.20 · 21 · 러닝크루 정기 러닝</text><rect x="109" y="38" width="38" height="13" rx=".6" fill="#1A2F4B"/><text x="128" y="43.4" font-size="3.3" font-weight="900" fill="#fff" text-anchor="middle">2차 「읽고, 연결하다」</text><text x="128" y="48" font-size="2.7" font-weight="600" fill="#FF8A80" text-anchor="middle">11.[00] · [00] · 일정 조율</text><rect x="149" y="8" width="18" height="43" rx=".6" fill="#E3E8EC"/><text x="158" y="28" font-size="2.7" font-weight="800" fill="#6A7784" text-anchor="middle">일요일</text><text x="158" y="32" font-size="2.5" font-weight="700" fill="#8C98A3" text-anchor="middle">유동인구</text><text x="158" y="35.6" font-size="2.5" font-weight="700" fill="#8C98A3" text-anchor="middle">최저 · 제외</text></svg></div>
+    <div class="st-cap"><b>세 번 모두 금·토 러닝 시간대에 운영하였다.</b> 2차 날짜는 <span class="dummy">11.[00]–[00]</span>, 1차와의 간격은 <span class="dummy">[0]</span>주였다.</div>
+
+    <div class="st-log" style="margin-top:4.6mm;--lh:40mm">
+      <div class="c"><div class="st-ph"><img src="img/03_송도_사전_019.jpg" alt=""><span>사전 현장조사</span></div>
+        <div class="t"><span class="rtag r0">사전</span>사전조사</div>
+        <dl><dt>일시</dt><dd>10.23(금) · 24(토)</dd><dt>시간</dt><dd>러닝 시간대</dd><dt>기록</dt><dd>통행·이용 · 사인 없는 상태</dd><dt>통행</dt><dd><span class="dummy">[0,000]</span>건</dd></dl></div>
+      <div class="c"><div class="st-ph"><img src="img/03_송도_1차시뮬.jpg" alt="" style="object-position:30% 80%"><span>1차 적용 시뮬레이션(합성)</span></div>
+        <div class="t"><span class="rtag r1">1차</span>보고, 함께하다</div>
+        <dl><dt>운영</dt><dd>11.20(금) · 21(토)</dd><dt>설치</dt><dd>픽토그램 사인 967장</dd><dt>참여</dt><dd>러닝 <span class="dummy">[00]</span>명 · 유학생 <span class="dummy">[00]</span>명</dd><dt>인터뷰</dt><dd><span class="dummy">[00]</span>명</dd></dl></div>
+      <div class="c"><div class="st-ph"><img src="img/03_송도_2차시뮬.jpg" alt="" style="object-position:30% 85%"><span>2차 적용 시뮬레이션(합성)</span></div>
+        <div class="t"><span class="rtag r2">2차</span>읽고, 연결하다</div>
+        <dl><dt>운영</dt><dd><span class="dummy">11.[00](금) · [00](토)</span></dd><dt>설치</dt><dd>영문·한국어 사인 967장</dd><dt>참여</dt><dd>러닝 <span class="dummy">[00]</span>명 · 유학생 <span class="dummy">[00]</span>명</dd><dt>인터뷰</dt><dd><span class="dummy">[00]</span>명</dd></dl></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>사인은 운영 전에 붙이고 운영을 마친 뒤 떼어 냈다. 3M 바닥 시트지는 보도블록 위에 붙이는 방식이어서, 1차 사인을 떼어 낸 같은 자리에 2차 사인을 다시 붙일 수 있었다. 부착과 제거는 <span class="dummy">[00]</span>명이 <span class="dummy">[0]</span>시간에 걸쳐 진행했고, 제거 뒤 바닥에 남은 자국은 <span class="dummy">[없었다]</span>.</p>
+      <p>1차와 2차의 날짜 사이에는 러닝크루의 일정이 놓였다. 2차는 러닝크루의 다음 정기 일정에 맞추어 날짜를 정하였다. 날짜가 달라지면 날씨와 해 지는 시각도 달라지므로, 두 차수의 조건을 함께 적었다. 날씨와 특이사항은 1차 <span class="dummy">[맑음]</span>, 2차 <span class="dummy">[흐림]</span>으로 기록하였다.</p>
+      <p>2차 사인은 1차 사인을 떼어 낸 967개 자리에 같은 크기, 같은 간격으로 다시 붙였다. 보도블록 2×2칸에 맞춘 크기여서 줄눈을 기준으로 같은 자리를 찾을 수 있었다. 운영 중 들뜨거나 떨어진 사인은 1차 <span class="dummy">[00]</span>장, 2차 <span class="dummy">[00]</span>장이었다.</p>
+    </div>
+    <div class="st-keep" style="margin-top:4.6mm">
+      <div class="t">현장 운영 원칙 <span>일곱 거점 공통 · 송도 적용</span></div>
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>캠프 인력 2명</b><small>현장 관리 · 음수 제공<br>러너 스테이션 상주</small></div>
+        <div><b>횡단보도 1~2명</b><small>규모에 따라 배치<br>현장 안전관리</small></div>
+        <div><b>같은 요일·시간대</b><small>금·토 러닝 시간대<br>사전조사와 같은 패턴</small></div>
+        <div><b>협업 일정 우선</b><small>러닝크루 정기 러닝<br>데이터 축적 일정</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">109</div>
+</section>
+
+<!-- ================= p110 정량 ① 표본 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정량 결과 · 표본</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">1차 <span class="dummy">[00]</span>명, 2차 <span class="dummy">[00]</span>명이 함께 달렸고,<br>그 가운데 유학생 <span class="dummy">[00]</span>명 · <span class="dummy">[00]</span>명이 <em>문항에 답하였다</em></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-chart">
+      <svg width="178mm" height="50mm" viewBox="0 0 178 50">
+        <g font-size="3.4" font-weight="900"><text x="0" y="14" fill="#2E5A87">1차</text><text x="0" y="38" fill="#1A2F4B">2차</text></g>
+        <g>
+          <rect x="12" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="34" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">러닝 참여</text><text x="34" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[00]명</text>
+          <path d="M57.5 12 H63.5 M61.6 10 L63.8 12 L61.6 14" stroke="#3F7A6E" stroke-width=".6" fill="none"/>
+          <rect x="65" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="87" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">그중 외국인 유학생</text><text x="87" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[00]명</text>
+          <path d="M110.5 12 H116.5 M114.6 10 L116.8 12 L114.6 14" stroke="#3F7A6E" stroke-width=".6" fill="none"/>
+          <rect x="118" y="4" width="44" height="16" rx=".6" fill="#2E5A87"/><text x="140" y="11" font-size="3" font-weight="700" fill="#C9D7E6" text-anchor="middle">5점 척도 유효 응답</text><text x="140" y="17.4" font-size="5" font-weight="900" fill="#FF8A80" text-anchor="middle">[00]명</text>
+          <text x="165" y="11" font-size="2.8" font-weight="700" fill="#6A7784">인터뷰</text><text x="165" y="16.4" font-size="3.6" font-weight="900" fill="#E5332A">[00]명</text>
+        </g>
+        <g transform="translate(0 24)">
+          <rect x="12" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="34" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">러닝 참여</text><text x="34" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[00]명</text>
+          <path d="M57.5 12 H63.5 M61.6 10 L63.8 12 L61.6 14" stroke="#3F7A6E" stroke-width=".6" fill="none"/>
+          <rect x="65" y="4" width="44" height="16" rx=".6" fill="#F1F3F5"/><text x="87" y="11" font-size="3" font-weight="700" fill="#56636E" text-anchor="middle">그중 외국인 유학생</text><text x="87" y="17.4" font-size="5" font-weight="900" fill="#E5332A" text-anchor="middle">[00]명</text>
+          <path d="M110.5 12 H116.5 M114.6 10 L116.8 12 L114.6 14" stroke="#3F7A6E" stroke-width=".6" fill="none"/>
+          <rect x="118" y="4" width="44" height="16" rx=".6" fill="#1A2F4B"/><text x="140" y="11" font-size="3" font-weight="700" fill="#C9D7E6" text-anchor="middle">5점 척도 유효 응답</text><text x="140" y="17.4" font-size="5" font-weight="900" fill="#FF8A80" text-anchor="middle">[00]명</text>
+          <text x="165" y="11" font-size="2.8" font-weight="700" fill="#6A7784">인터뷰</text><text x="165" y="16.4" font-size="3.6" font-weight="900" fill="#E5332A">[00]명</text>
+        </g>
+      </svg>
+    </div>
+    <div class="st-cap"><b>참여자는 러닝크루와 유학생, 현장에서 합류한 시민으로 이루어졌다.</b> 최소 인터뷰 인원은 차수별 30명 · 두 차수 모두 참여한 사람 <span class="dummy">[00]</span>명</div>
+
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:96mm 1fr;gap:7mm">
+      <div>
+        <div class="st-lb">응답자의 한국어 사용 수준</div>
+        <div class="st-chart">
+          <svg width="96mm" height="64mm" viewBox="0 0 96 58">
+            
+            <g stroke="#E3E8EC" stroke-width=".3"><line x1="8" y1="6" x2="96" y2="6"/><line x1="8" y1="19" x2="96" y2="19"/><line x1="8" y1="32" x2="96" y2="32"/></g>
+            <line x1="8" y1="45" x2="96" y2="45" stroke="#1A2F4B" stroke-width=".5"/>
+            <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="6.4" y="7">[00]</text><text x="6.4" y="46">0</text></g>
+            <g><rect x="14" y="22" width="9" height="23" fill="#2E5A87"/><rect x="24" y="22" width="9" height="23" fill="#1A2F4B"/>
+            <rect x="42" y="22" width="9" height="23" fill="#2E5A87"/><rect x="52" y="22" width="9" height="23" fill="#1A2F4B"/>
+            <rect x="70" y="22" width="9" height="23" fill="#2E5A87"/><rect x="80" y="22" width="9" height="23" fill="#1A2F4B"/></g>
+            <g font-size="2.5" fill="#E5332A" font-weight="800" text-anchor="middle"><text x="18.5" y="20.4">[00]</text><text x="28.5" y="20.4">[00]</text><text x="46.5" y="20.4">[00]</text><text x="56.5" y="20.4">[00]</text><text x="74.5" y="20.4">[00]</text><text x="84.5" y="20.4">[00]</text></g>
+            <g font-size="2.9" fill="#1A2F4B" font-weight="800" text-anchor="middle"><text x="23.5" y="50">거의 못 함</text><text x="51.5" y="50">일상 대화</text><text x="79.5" y="50">능숙</text></g>
+            <g font-size="2.6" font-weight="700" fill="#56636E"><rect x="60" y="0" width="3" height="3" fill="#2E5A87"/><text x="64" y="2.7">1차</text><rect x="72" y="0" width="3" height="3" fill="#1A2F4B"/><text x="76" y="2.7">2차</text></g>
+          </svg>
+        </div>
+        <div class="st-cap"><b>한국어를 읽을 수 있는 사람이 많을수록 2차의 한국어 병기가 유리해질 수 있어 함께 보았다.</b> 막대 위 값은 응답자 수</div>
+      </div>
+      <div class="st-tx">
+        <p>유효 응답은 <span class="dummy">[러닝을 마치고 두 척도 문항에 모두 답한 사람]</span>으로 정하였다. 러닝 도중 이탈했거나 코스를 일부만 달린 <span class="dummy">[00]</span>명은 이해도 문항에서 제외하였다.</p>
+        <p>응답자는 출신 국가 대신 한국어 사용 수준으로 나누었다. 같은 유학생이라도 한국어를 읽을 수 있는지에 따라 2차 사인의 한국어 병기를 받아들이는 정도가 다를 수 있기 때문이다. 러닝 경험과 송도 거주 기간도 함께 물었다.</p>
+        <p>1차와 2차 모두 참여한 사람은 <span class="dummy">[00]</span>명이었다. 이들은 2차에서 이미 코스를 알고 달렸으므로, 경로 선택 정확도는 처음 달린 사람과 나누어 보았다.</p>
+        <p>인터뷰는 차수별 러닝 참여자 30명 이상을 대상으로 하였고, 러닝을 마친 직후 캠프에서 받아 달린 기억이 흐려지기 전에 사인을 떠올리게 하였다. 응답 언어는 영어와 한국어 가운데 편한 쪽을 고르게 하였다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">섞지 않은 세 가지 단위</div>
+    <div class="k-unit">
+      <div><i>사람 단위 · 척도 문항</i><b>응답자 수</b>1차 <span class="dummy">[00]명</span> · 2차 <span class="dummy">[00]명</span>. 비율·평균의 분모는 문항별 유효 응답</div>
+      <div><i>사건 단위 · 행동관찰</i><b>통행 · 선택 수</b>사인 앞 통행 <span class="dummy">[000]건</span>, 갈림길 선택 <span class="dummy">[000]건</span>. 같은 사람이 여러 번 셈될 수 있음</div>
+      <div><i>발언 단위 · 인터뷰</i><b>발언 · 장면 수</b>인터뷰 <span class="dummy">[00]명</span>의 발언 <span class="dummy">[000]건</span>, 인사·대화 장면 <span class="dummy">[00]건</span>. 주제 분류에만 사용</div>
+    </div>
+    <div class="st-cap"><b>세 단위는 서로 더하거나 나누지 않았다.</b></div>
+    <div class="st-keep" style="margin-top:4mm;border-color:var(--line)">
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>중도 이탈</b><small>코스 일부만 달린<br><span class="dummy">[00]</span>명 이해도 제외</small></div>
+        <div><b>응답 언어</b><small>영어 <span class="dummy">[00]</span>% · 한국어 <span class="dummy">[00]</span>%<br>편한 언어로 응답</small></div>
+        <div><b>다시 달린 사람</b><small>두 차수 모두 참여<br><span class="dummy">[00]</span>명 따로 표시</small></div>
+        <div><b>관찰 대조</b><small>두 관찰자 계수 일치<br><span class="dummy">[00]</span>%</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 현장 설문·관찰·인터뷰</div>
+  <div class="pno">110</div>
+</section>
+
+<!-- ================= p111 정량 ② 핵심 지표 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정량 결과 · 핵심 지표</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">경로 선택 정확도는 1차 <span class="dummy">[00]%</span>, 2차 <span class="dummy">[00]%</span>로<br><em>영문·한국어 병기안이</em> <span class="dummy">[00]%p [높았다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-kpi">
+      <div class="c"><h5>① 안내 인지율</h5><p>사인 앞을 지난 통행 가운데 사인을 보거나 속도를 늦춘 비율 · 분모: 관찰 통행</p>
+        <svg width="86mm" height="66mm" viewBox="0 0 86 62">
+          
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="10" y1="4" x2="86" y2="4"/><line x1="10" y1="16" x2="86" y2="16"/><line x1="10" y1="28" x2="86" y2="28"/><line x1="10" y1="40" x2="86" y2="40"/></g>
+          <line x1="10" y1="52" x2="86" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="8" y="5">100%</text><text x="8" y="17">75</text><text x="8" y="29">50</text><text x="8" y="41">25</text><text x="8" y="53">0</text></g>
+          <rect x="22" y="28" width="18" height="24" fill="#2E5A87"/><rect x="56" y="28" width="18" height="24" fill="#1A2F4B"/>
+          <text x="31" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text><text x="65" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text>
+          <text x="31" y="57.4" font-size="3" font-weight="800" fill="#2E5A87" text-anchor="middle">1차 픽토그램</text><text x="65" y="57.4" font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="middle">2차 영문·한국어</text>
+          <text x="48" y="12" font-size="3" font-weight="800" fill="#E5332A" text-anchor="middle">[±00]%p</text>
+        </svg></div>
+      <div class="c"><h5>② 경로 선택 정확도</h5><p>회전 지점·횡단보도에서 안내 방향대로 간 비율 · 분모: 확인한 선택</p>
+        <svg width="86mm" height="66mm" viewBox="0 0 86 62">
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="10" y1="4" x2="86" y2="4"/><line x1="10" y1="16" x2="86" y2="16"/><line x1="10" y1="28" x2="86" y2="28"/><line x1="10" y1="40" x2="86" y2="40"/></g>
+          <line x1="10" y1="52" x2="86" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="8" y="5">100%</text><text x="8" y="17">75</text><text x="8" y="29">50</text><text x="8" y="41">25</text><text x="8" y="53">0</text></g>
+          <rect x="22" y="28" width="18" height="24" fill="#2E5A87"/><rect x="56" y="28" width="18" height="24" fill="#1A2F4B"/>
+          <text x="31" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text><text x="65" y="25" font-size="4.4" font-weight="900" fill="#E5332A" text-anchor="middle">[00]%</text>
+          <text x="31" y="57.4" font-size="3" font-weight="800" fill="#2E5A87" text-anchor="middle">1차 픽토그램</text><text x="65" y="57.4" font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="middle">2차 영문·한국어</text>
+          <text x="48" y="12" font-size="3" font-weight="800" fill="#E5332A" text-anchor="middle">[±00]%p</text>
+        </svg></div>
+    </div>
+    <div class="st-kpi" style="grid-template-columns:1fr;margin-top:4mm">
+      <div class="c"><h5>③ 5점 척도 · 정보 이해도와 러닝 참여 의사</h5><p>1 전혀 아니다 ~ 5 매우 그렇다 · 분모: 문항 유효 응답</p>
+        <svg width="178mm" height="54mm" viewBox="0 0 178 54">
+          <g font-size="3.2" font-weight="800" fill="#1A2F4B" text-anchor="end"><text x="38" y="8.6">정보 이해도</text><text x="38" y="21.6">정보 이해도</text><text x="38" y="34.6">러닝 참여 의사</text><text x="38" y="47.6">러닝 참여 의사</text></g>
+          <g font-size="2.7" font-weight="800" text-anchor="start"><text x="40" y="8.6" fill="#2E5A87">1차</text><text x="40" y="21.6" fill="#1A2F4B">2차</text><text x="40" y="34.6" fill="#2E5A87">1차</text><text x="40" y="47.6" fill="#1A2F4B">2차</text></g>
+          <g stroke="#fff" stroke-width=".4">
+            <g fill="#EEF1F4"><rect x="48" y="3" width="22" height="8"/><rect x="48" y="16" width="22" height="8"/><rect x="48" y="29" width="22" height="8"/><rect x="48" y="42" width="22" height="8"/></g>
+            <g fill="#DCE3E9"><rect x="70" y="3" width="22" height="8"/><rect x="70" y="16" width="22" height="8"/><rect x="70" y="29" width="22" height="8"/><rect x="70" y="42" width="22" height="8"/></g>
+            <g fill="#C9D1D8"><rect x="92" y="3" width="22" height="8"/><rect x="92" y="16" width="22" height="8"/><rect x="92" y="29" width="22" height="8"/><rect x="92" y="42" width="22" height="8"/></g>
+            <g fill="#AEB8C2"><rect x="114" y="3" width="22" height="8"/><rect x="114" y="16" width="22" height="8"/><rect x="114" y="29" width="22" height="8"/><rect x="114" y="42" width="22" height="8"/></g>
+            <g fill="#8C98A3"><rect x="136" y="3" width="22" height="8"/><rect x="136" y="16" width="22" height="8"/><rect x="136" y="29" width="22" height="8"/><rect x="136" y="42" width="22" height="8"/></g>
+          </g>
+          <g font-size="2.8" font-weight="900" fill="#E5332A" text-anchor="middle">
+            <text x="59" y="8.2">[00]%</text><text x="81" y="8.2">[00]%</text><text x="103" y="8.2">[00]%</text><text x="125" y="8.2">[00]%</text><text x="147" y="8.2" fill="#fff">[00]%</text>
+            <text x="59" y="21.2">[00]%</text><text x="81" y="21.2">[00]%</text><text x="103" y="21.2">[00]%</text><text x="125" y="21.2">[00]%</text><text x="147" y="21.2" fill="#fff">[00]%</text>
+            <text x="59" y="34.2">[00]%</text><text x="81" y="34.2">[00]%</text><text x="103" y="34.2">[00]%</text><text x="125" y="34.2">[00]%</text><text x="147" y="34.2" fill="#fff">[00]%</text>
+            <text x="59" y="47.2">[00]%</text><text x="81" y="47.2">[00]%</text><text x="103" y="47.2">[00]%</text><text x="125" y="47.2">[00]%</text><text x="147" y="47.2" fill="#fff">[00]%</text>
+          </g>
+          <g font-size="2.9" font-weight="900" fill="#E5332A"><text x="161" y="8.4">평균 [0.0]</text><text x="161" y="21.4">평균 [0.0]</text><text x="161" y="34.4">평균 [0.0]</text><text x="161" y="47.4">평균 [0.0]</text></g>
+          <g font-size="2.6" font-weight="700" fill="#8C98A3" text-anchor="middle"><text x="59" y="53.6">1</text><text x="81" y="53.6">2</text><text x="103" y="53.6">3</text><text x="125" y="53.6">4</text><text x="147" y="53.6">5</text></g>
+        </svg></div>
+    </div>
+    <div class="st-cap"><b>세 지표 모두 0–100% 또는 1–5점의 같은 축으로 그렸다.</b> 비율 차이는 퍼센트포인트(%p)로 적었다.</div>
+    <div class="st-tx" style="margin-top:4mm">
+      <p>사인을 알아본 비율은 1차 <span class="dummy">[00]%</span>, 2차 <span class="dummy">[00]%</span>로 두 안 모두 <span class="dummy">[높았다]</span>. 차이는 회전 지점과 횡단보도에서 길을 고르는 단계에서 <span class="dummy">[나타났다]</span>. 정보 이해도에서 4점 이상을 고른 비율은 1차 <span class="dummy">[00]%</span>, 2차 <span class="dummy">[00]%</span>였고, 러닝 참여 의사는 두 차수 모두 평균 <span class="dummy">[0.0]</span>점 안팎으로 <span class="dummy">[비슷하였다]</span>.</p>
+      <p>5점 척도는 평균보다 분포를 먼저 보았다. 같은 평균이라도 ‘보통’에 몰린 경우와 양 끝으로 갈린 경우는 다르게 읽어야 하기 때문이다. 차이가 오차 범위 안에 든 지표는 두 안이 같은 수준인 것으로 보았다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 현장 설문·관찰(유효 응답 1차 <span class="dummy">[00]</span>명 · 2차 <span class="dummy">[00]</span>명)</div>
+  <div class="pno">111</div>
+</section>
+
+<!-- ================= p112 정량 ③ 조건 비교 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정량 결과 · 조건별 비교</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">사인 종류별로 나누면, 두 안의 차이는<br><em class="dummy">[회전 지점]</em>에서 <span class="dummy">[가장 컸다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 1fr;gap:6mm">
+      <div>
+        <div class="st-lb">사인 종류별 정보 이해도(4점 이상 비율)</div>
+        <svg width="86mm" height="62mm" viewBox="0 0 86 62">
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="22" y1="2" x2="22" y2="52"/><line x1="38" y1="2" x2="38" y2="52"/><line x1="54" y1="2" x2="54" y2="52"/><line x1="70" y1="2" x2="70" y2="52"/><line x1="86" y1="2" x2="86" y2="52"/></g>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="middle"><text x="22" y="57">0</text><text x="38" y="57">25</text><text x="54" y="57">50</text><text x="70" y="57">75</text><text x="86" y="57" text-anchor="end">100%</text></g>
+          <g font-size="3.2" font-weight="900" fill="#1A2F4B"><text x="0" y="9">직진</text><text x="0" y="21">회전</text><text x="0" y="33">횡단보도</text><text x="0" y="45">화장실</text></g>
+          <g stroke="#C9D1D8" stroke-width="1.6" stroke-linecap="round"><line x1="44" y1="8" x2="60" y2="8"/><line x1="44" y1="20" x2="60" y2="20"/><line x1="44" y1="32" x2="60" y2="32"/><line x1="44" y1="44" x2="60" y2="44"/></g>
+          <g fill="#2E5A87"><circle cx="44" cy="8" r="1.9"/><circle cx="44" cy="20" r="1.9"/><circle cx="44" cy="32" r="1.9"/><circle cx="44" cy="44" r="1.9"/></g>
+          <g fill="#1A2F4B"><circle cx="60" cy="8" r="1.9"/><circle cx="60" cy="20" r="1.9"/><circle cx="60" cy="32" r="1.9"/><circle cx="60" cy="44" r="1.9"/></g>
+          <g font-size="2.6" font-weight="800" fill="#E5332A"><text x="63" y="9">[00]→[00]</text><text x="63" y="21">[00]→[00]</text><text x="63" y="33">[00]→[00]</text><text x="63" y="45">[00]→[00]</text></g>
+        </svg>
+        <div class="st-cap"><b><span style="color:#2E5A87">●</span> 1차 · ● 2차.</b> 사인 종류별 정보 이해도 문항(5점 척도 4점 이상) 기준</div>
+      </div>
+      <div>
+        <div class="st-lb">한국어 사용 수준별 경로 선택 정확도</div>
+        <svg width="86mm" height="62mm" viewBox="0 0 86 62">
+          
+          <g stroke="#E3E8EC" stroke-width=".3"><line x1="8" y1="4" x2="86" y2="4"/><line x1="8" y1="16" x2="86" y2="16"/><line x1="8" y1="28" x2="86" y2="28"/><line x1="8" y1="40" x2="86" y2="40"/></g>
+          <line x1="8" y1="52" x2="86" y2="52" stroke="#1A2F4B" stroke-width=".5"/>
+          <g font-size="2.6" fill="#8C98A3" font-weight="700" text-anchor="end"><text x="7" y="5">100</text><text x="7" y="29">50</text><text x="7" y="53">0</text></g>
+          <rect x="14" y="28" width="9" height="24" fill="#2E5A87"/><rect x="24" y="28" width="9" height="24" fill="#1A2F4B"/>
+          <rect x="40" y="28" width="9" height="24" fill="#2E5A87"/><rect x="50" y="28" width="9" height="24" fill="#1A2F4B"/>
+          <rect x="66" y="28" width="9" height="24" fill="#2E5A87"/><rect x="76" y="28" width="9" height="24" fill="#1A2F4B"/>
+          <g font-size="2.6" font-weight="800" fill="#E5332A" text-anchor="middle"><text x="18.5" y="25.6">[00]</text><text x="28.5" y="25.6">[00]</text><text x="44.5" y="25.6">[00]</text><text x="54.5" y="25.6">[00]</text><text x="70.5" y="25.6">[00]</text><text x="80.5" y="25.6">[00]</text></g>
+          <g font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="middle"><text x="23.5" y="57">거의 못 함</text><text x="49.5" y="57">일상 대화</text><text x="75.5" y="57">능숙</text></g>
+        </svg>
+        <div class="st-cap"><b>블루 1차 · 남색 2차.</b> 한국어를 거의 못 하는 응답자에게도 2차가 도움이 되었는지 따로 보았다.</div>
+      </div>
+    </div>
+    <div class="st-split" style="margin-top:4mm;grid-template-columns:86mm 1fr;gap:6mm">
+      <div>
+        <div class="st-lb">처음 달린 사람과 두 번 달린 사람 · 경로 선택 정확도</div>
+        <svg width="86mm" height="32mm" viewBox="0 0 86 32">
+          <g font-size="3" font-weight="800" fill="#1A2F4B" text-anchor="end"><text x="19" y="9">처음 달림</text><text x="19" y="25">두 번 달림</text></g>
+          <g><rect x="22" y="3" width="38" height="4.4" fill="#2E5A87"/><rect x="22" y="8.2" width="38" height="4.4" fill="#1A2F4B"/><rect x="22" y="19" width="38" height="4.4" fill="#EEF1F4"/><rect x="22" y="24.2" width="38" height="4.4" fill="#1A2F4B"/></g>
+          <g font-size="2.8" font-weight="800" fill="#E5332A"><text x="62" y="6.6">1차 [00]%</text><text x="62" y="11.8">2차 [00]%</text><text x="62" y="22.6">1차 해당 없음</text><text x="62" y="27.8">2차 [00]%</text></g>
+          <line x1="22" y1="1" x2="22" y2="31" stroke="#1A2F4B" stroke-width=".4"/>
+        </svg>
+      </div>
+      <div class="st-tx"><p>2차에 다시 달린 <span class="dummy">[00]</span>명은 코스를 이미 알았다. 처음 달린 사람만 놓고 보면 2차의 정확도는 <span class="dummy">[00]%</span>로, 전체 값과의 차이는 <span class="dummy">[00]%p</span>였다. 코스를 아는 효과는 <span class="dummy">[크지 않았다]</span>.</p></div>
+    </div>
+    <div class="st-lb" style="margin-top:4mm">결과를 흔들 수 있었던 외부 조건</div>
+    <div class="st-keep" style="border-color:var(--line)">
+      <div class="g" style="grid-template-columns:repeat(4,1fr)">
+        <div><b>날짜 간격</b><small>1차 11.20–21<br>2차 <span class="dummy">11.[00]–[00]</span></small></div>
+        <div><b>다시 달린 사람</b><small>두 차수 모두 참여<br><span class="dummy">[00]</span>명 · 코스를 앎</small></div>
+        <div><b>참여 구성</b><small>유학생 비율<br>1차 <span class="dummy">[00]</span>% · 2차 <span class="dummy">[00]</span>%</small></div>
+        <div><b>날씨 · 일몰</b><small class="dummy">[1차 맑음 · 2차 흐림 · 일몰 00:00]</small></div>
+      </div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>전체 차이가 특정 사인 하나에서 생긴 것인지 보려고 사인 종류별로 나누었다. 직진 사인은 두 안 모두 <span class="dummy">[쉽게 읽혔고]</span>, 차이는 <span class="dummy">[회전과 화장실]</span> 사인에서 <span class="dummy">[컸다]</span>. 그림의 휘어진 화살표보다 ‘TURN LEFT · 왼쪽으로’가 <span class="dummy">[꺾는 방향을 더 분명히 알렸다]</span>.</p>
+      <p>한국어 사용 수준으로 나누면, 한국어를 거의 못 하는 응답자에서도 2차의 정확도가 <span class="dummy">[00]%p [높았다]</span>. 영문이 중심이었기 때문에 한국어 병기는 이 집단에 <span class="dummy">[방해가 되지 않았다]</span>.</p>
+      <p>외부 조건 가운데 가장 크게 작용한 것은 <span class="dummy">[다시 달린 사람]</span>이었다. 두 차수는 같은 러닝크루가 같은 방식으로 운영했으므로, 이 조건을 덜어 낸 뒤 남은 차이를 <span class="dummy">[안내 방식의 차이]</span>로 적었다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 현장 설문·관찰(유효 응답 1차 <span class="dummy">[00]</span>명 · 2차 <span class="dummy">[00]</span>명)</div>
+  <div class="pno">112</div>
+</section>
+
+<!-- ================= p113 정량 ④ 소결 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정량 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+    <h2 class="hl">숫자로 보면, 두 안의 차이는 알아보기보다<br><em>길을 고르는 단계</em>에서 <span class="dummy">[더 컸다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-nums" style="grid-template-columns:repeat(3,1fr)">
+      <div><b class="dummy">[±00]<small class="dummy">%p</small></b><span>안내 인지율<br>2차 − 1차</span></div>
+      <div><b class="dummy">[±00]<small class="dummy">%p</small></b><span>경로 선택 정확도<br>2차 − 1차</span></div>
+      <div><b class="dummy">[±0.0]<small class="dummy">점</small></b><span>러닝 참여 의사 평균<br>2차 − 1차</span></div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">세 단계를 거치며 남은 비율</div>
+    <div class="k-fun">
+      <div class="lab" style="color:var(--r1)">1차</div><div class="st"><i>사인을 알아보았다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>바른 길을 골랐다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>이해했다(4점 이상)</i><b>[00]%</b></div>
+      <div class="lab" style="color:var(--r2)">2차</div><div class="st"><i>사인을 알아보았다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>바른 길을 골랐다</i><b>[00]%</b></div><div class="ar">▶</div><div class="st"><i>이해했다(4점 이상)</i><b>[00]%</b></div>
+    </div>
+    <div class="st-cap"><b>세 단계를 모두 통과한 비율을 차수별로 이어 보았다.</b> 각 단계의 분모는 앞 단계를 통과한 통행·응답</div>
+    <div class="st-split" style="margin-top:5mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">송도의 정량 결과는 세 단계로 읽었다. 사인을 알아보았는가, 그 사인을 보고 바른 길을 골랐는가, 그리고 안내를 이해했고 다시 달리고 싶어졌는가.</p>
+        <p>첫 단계에서 두 안은 <span class="dummy">[비슷하였다]</span>. 두 안은 같은 크기, 같은 바탕, 같은 축광 네온색이었고, 인지율의 차이는 <span class="dummy">[00]%p</span>에 머물렀다. <span class="dummy">[무엇이 그려졌는가보다 바닥에 무엇이든 있었는가가 더 컸다]</span>.</p>
+        <p>둘째 단계에서 차이가 <span class="dummy">[벌어졌다]</span>. 경로 선택 정확도는 2차가 <span class="dummy">[00]%p [높았고]</span>, 그 차이는 <span class="dummy">[회전 지점]</span>에서 가장 컸다. 달리는 중에 휘어진 화살표의 방향을 읽는 것보다 ‘LEFT’라는 낱말을 읽는 쪽이 <span class="dummy">[빨랐다]</span>.</p>
+        <p>셋째 단계는 이해와 참여다. 정보 이해도의 4점 이상 비율은 2차가 <span class="dummy">[00]%p [높았지만]</span>, 러닝 참여 의사는 두 차수 모두 평균 <span class="dummy">[0.0]</span>점으로 <span class="dummy">[비슷하였다]</span>. 함께 달리고 싶은 마음은 사인의 언어보다 러닝 자체와 사람에게서 <span class="dummy">[왔다]</span>.</p>
+        <p>세 단계를 이어 보면 차이가 생긴 자리와 사라진 자리가 드러났다. 1차는 알아보기에서 <span class="dummy">[00]%</span>를 남기고 길 고르기에서 <span class="dummy">[00]%</span>로 줄었으며, 2차는 같은 단계에서 <span class="dummy">[00]%</span>를 남겼다. 마지막 이해 단계까지 남은 비율의 차이는 <span class="dummy">[00]%p</span>였다.</p>
+        <p>다만 2차 사인은 영문과 한국어 병기를 한 장에 담았고, 2차에는 다시 달린 사람이 섞여 있었다. 처음 달린 사람만 놓고 보아도 차이의 방향은 <span class="dummy">[같았다]</span>. 그러나 영문과 한국어 병기 가운데 무엇이 차이를 만들었는지는 숫자만으로 가르지 않고 인터뷰로 넘겼다.</p>
+      </div>
+      <div class="st-sum">
+        <div class="it"><b>1</b><p><em>알아보기</em><br>두 안 모두 인지율 <span class="dummy">[00]%</span> 이상. 차이 <span class="dummy">[±00]%p</span></p></div>
+        <div class="it"><b>2</b><p><em>길 고르기</em><br>정확도 2차가 <span class="dummy">[00]%p [높음]</span> · <span class="dummy">[회전 지점]</span>에서 최대</p></div>
+        <div class="it"><b>3</b><p><em>이해·참여</em><br>이해도 <span class="dummy">[±00]%p</span> · 참여 의사 <span class="dummy">[비슷]</span></p></div>
+        <div class="st-mn"><b>읽을 때 주의</b>2차 사인은 영문과 한국어 병기를 한 장에 담았다. 두 요소의 몫은 정성 자료로 나누어 보았다.</div>
+      </div>
+    </div>
+    <div class="st-out" style="margin-top:5mm"><b><span>알아보기</span>의 차이는 <span class="dummy" style="color:#FF8A80!important">[작았고]</span>,<br>두 안의 차이는 <span>길 고르기</span>에서 <span class="dummy" style="color:#FF8A80!important">[2차 쪽으로]</span> 벌어졌다</b><small>정성 결과에서 그림과 글자의 이유를 확인<br>→ 정성 결과 · 주제 1</small></div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 현장 설문·관찰(유효 응답 1차 <span class="dummy">[00]</span>명 · 2차 <span class="dummy">[00]</span>명)</div>
+  <div class="pno">113</div>
+</section>
+
+<!-- ================= p114 정성 ① 자료 구성 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정성 결과 · 자료</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료는 <em>러너 인터뷰 · 러닝크루 자문 · 코스 관찰</em><br>세 갈래로 모았다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="k-src">
+      <div class="c"><div class="h" style="background:var(--r1)">러닝 참여자 인터뷰<small>1·2차 러닝 뒤 · 러너 스테이션 캠프</small></div>
+        <ul><li>1차 인터뷰<b class="dummy">[00]명</b></li><li>2차 인터뷰<b class="dummy">[00]명</b></li><li>그중 유학생<b class="dummy">[00]명</b></li><li>1·2차 모두 참여<b class="dummy">[00]명</b></li></ul></div>
+      <div class="c"><div class="h" style="background:#4F7396">전문 러닝크루 자문<small>코스·안내·발음·부착 위치</small></div>
+        <ul><li>자문 회차<b class="dummy">[0]회</b></li><li>코스 조정 의견<b class="dummy">[00]건</b></li><li>사인 위치 의견<b class="dummy">[00]건</b></li><li>표기·발음 의견<b class="dummy">[00]건</b></li></ul></div>
+      <div class="c"><div class="h" style="background:var(--r2)">코스 관찰<small>사전 10.23–24 · 1차 · 2차 같은 시간대</small></div>
+        <ul><li>관찰 지점<b class="dummy">[0]곳</b></li><li>사인 앞 멈춤·확인<b class="dummy">[00]건</b></li><li>길 잘못 듦<b class="dummy">[00]건</b></li><li>인사·대화 장면<b class="dummy">[00]건</b></li></ul></div>
+    </div>
+    <div class="st-cap"><b>인터뷰는 이유를, 자문은 달리는 사람의 기준을, 관찰은 말하지 않은 반응을 남겼다.</b> 세 자료는 단위가 달라 합산하지 않았다.</div>
+
+    <div class="st-split" style="margin-top:5mm;grid-template-columns:86mm 1fr;gap:6mm">
+      <div>
+        <div class="st-lb">인터뷰에서 보여 준 사인</div>
+        <div class="s3-pair" style="grid-template-columns:repeat(4,1fr);gap:1.4mm">
+          <div class="sg"><img src="img/03_송도_1차사인_좌회전.png" alt=""></div><div class="sg"><img src="img/03_송도_2차사인_좌회전.png" alt=""></div><div class="sg"><img src="img/03_송도_1차사인_화장실.png" alt=""></div><div class="sg"><img src="img/03_송도_2차사인_화장실.png" alt=""></div>
+        </div>
+        <div class="st-cap"><b>같은 자리의 1·2차 사인을 나란히 보여 주고, 무엇이 더 쉬웠는지 이유를 물었다.</b> 회전 · 화장실 사인</div>
+      </div>
+      <div class="st-tx">
+        <p>인터뷰는 러닝을 마친 뒤 캠프에서 진행하였다. 달리는 중에 무엇을 보고 길을 알았는지, 헷갈린 곳이 있었는지, 다시 함께 달리고 싶은지를 묻고, 2차에서는 1차의 사인과 2차의 사인을 나란히 보여 주며 어느 쪽이 쉬웠는지 이유를 들었다.</p>
+        <p>질문은 영어와 한국어로 준비하고, 응답자가 편한 언어로 답하게 하였다. 원문은 응답한 언어 그대로 적고, 한국어 번역은 따로 붙였다.</p>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:4.6mm">발언을 나눈 두 개의 축</div>
+    <div class="k-code">
+      <div class="h">길을 안 단서<small>무엇으로 길을 알았나</small></div>
+      <div class="tags"><span>그림·화살표<b>[00]</b></span><span>숫자 20 m<b>[00]</b></span><span>영문 낱말<b>[00]</b></span><span>한국어 낱말<b>[00]</b></span><span>앞사람·러닝크루<b>[00]</b></span></div>
+      <div class="h">교류의 반응<small>함께 달리며 무엇이 있었나</small></div>
+      <div class="tags e"><span>인사·말 걸기<b>[00]</b></span><span>사인을 같이 읽음<b>[00]</b></span><span>다시 달리고 싶음<b>[00]</b></span><span>혼자 달림·어색함<b>[00]</b></span><span>한국어 배우기<b>[00]</b></span></div>
+    </div>
+    <div class="st-cap"><b>숫자는 각 코드가 붙은 발언·장면 수다.</b> 한 발언에 두 축의 코드가 함께 붙을 수 있다.</div>
+    <div class="st-lb" style="margin-top:4.6mm">러닝을 마친 뒤 캠프에서 물은 것</div>
+    <div class="st-next">
+      <div><b><span class="rtag r1">1차</span> 길을 안 방법</b>달리는 중에 무엇을 보고 길을 알았는가. 헷갈린 곳은 어디였는가.<small>단서 축 코딩 · 사인 종류별 정리</small></div>
+      <div><b><span class="rtag r2">2차</span> 두 안의 비교</b>1차와 2차의 같은 자리 사인 중 어느 쪽이 쉬웠는가, 왜 그런가.<small>사인 사진을 나란히 보여 줌</small></div>
+      <div><b><span class="rtag r1">1차</span><span class="rtag r2">2차</span> 다시 달리고 싶은가</b>다음 러닝에도 참여하고 싶은가. 누구와 함께 달렸는가.<small>교류 축 코딩 · 5점 척도와 대조</small></div>
+      <div><b><span class="rtag r2">2차</span> 지역과 이어짐</b>한국어 낱말을 써 보았는가. 러닝 커뮤니티와 이어지고 싶은가.<small>2차에 더한 질문</small></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4mm">
+      <p>‘앞사람·러닝크루’를 단서 코드에 따로 둔 것은, 함께 달리는 사람이 사인보다 먼저 길을 알려 주는 경우가 <span class="dummy">[많았기]</span> 때문이다. 사인이 길을 알려 준 경우와 사람이 길을 알려 준 경우를 나누어야 사인의 몫을 볼 수 있었다.</p>
+      <p>긍정적 반응만 모으지 않도록, 사인을 보지 못했다는 응답과 길을 잘못 든 장면, 혼자 달리며 어색했다는 응답도 같은 비중으로 기록하였다. 분류가 애매한 발언은 조사 담당 <span class="dummy">[0]</span>인이 함께 검토해 정하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 참여자 인터뷰 · 러닝크루 자문 · 코스 관찰 기록</div>
+  <div class="pno">114</div>
+</section>
+
+<!-- ================= p115 정성 ② 주제 1 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정성 결과 · 주제 1</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">그림은 <span class="dummy">[빨리 보였고]</span>, 글자는 <span class="dummy">[확실하게 읽혔다]</span>고,<br>유학생들은 <em>두 안의 쓰임</em>을 나누어 말하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 58mm;gap:6mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">두 안을 모두 겪은 유학생들은 그림과 글자를 낫고 못함으로 가르지 않았다. 그림은 <span class="dummy">[빨리 보이는 안내]</span>로, 글자는 <span class="dummy">[확실히 읽히는 안내]</span>로 말하였다.</p>
+        <p>1차 인터뷰에서 그림 사인은 <span class="dummy">[바로 눈에 들어왔다]</span>는 말이 많았다. 직진 화살표와 화장실 그림은 해석이 <span class="dummy">[필요 없었다]</span>. 다만 휘어진 화살표는 달리는 속도에서 방향을 읽어 내야 했고, 꺾는 지점에서 <span class="dummy">[잠깐 멈추거나 앞사람을 따라갔다]</span>는 응답이 나왔다.</p>
+        <p>2차의 영문 사인은 <span class="dummy">[읽는 데 한 박자가 더 걸렸지만]</span>, 일단 읽으면 뜻이 <span class="dummy">[확실하였다]</span>. ‘LEFT’처럼 짧은 낱말은 <span class="dummy">[달리면서도 읽혔고]</span>, 한국어 병기를 소리 내어 따라 읽은 유학생도 <span class="dummy">[있었다]</span>. 반대로 ‘CROSSWALK’처럼 긴 낱말은 <span class="dummy">[속도를 늦춰야 읽혔다]</span>.</p>
+        <p>차이가 가장 분명하게 드러난 곳은 회전 지점이었다. 1차 러너는 휘어진 화살표를 보고 방향을 머릿속에서 한 번 옮겨야 했고, 그 사이 <span class="dummy">[앞사람을 따라간]</span> 경우가 많았다. 2차 러너는 ‘TURN LEFT · 왼쪽으로’를 그대로 읽었다고 말하였다. 정량에서 경로 선택 정확도의 차이가 <span class="dummy">[가장 컸던]</span> 자리와 같은 곳이었다.</p>
+        <p>응답의 결은 한국어 수준에 따라서도 달랐다. 한국어를 읽을 수 있는 유학생은 병기된 낱말을 <span class="dummy">[따라 읽었고]</span>, 한국어를 거의 못 하는 유학생은 <span class="dummy">[영문만 보고 달렸다]</span>고 답하였다. 한국어 병기가 길 찾기를 방해했다는 응답은 <span class="dummy">[00]</span>건이었다.</p>
+        <p>두 안을 나란히 본 유학생 가운데 <span class="dummy">[00]</span>명은 그림과 글자가 함께 있기를 바랐다. 위원회 사전검토에서 나왔던 방향 화살표·픽토그램을 함께 표시하라는 의견과 같은 방향의 반응이었고, 설계 반영에서 다시 다루었다.</p>
+      </div>
+      <div>
+        <div class="st-ph" style="height:44mm"><img src="img/03_송도_2차시뮬.jpg" alt="" style="object-position:35% 80%"><span>2차 적용 시뮬레이션(합성)</span></div>
+        <div class="st-cap"><b>인터뷰는 러닝을 마친 뒤 캠프에서 진행하였다.</b></div>
+        <div class="st-lb" style="margin-top:3.4mm">응답 자리</div>
+        <div class="quote-slot">응답자 <span class="dummy">[A]</span> · 1차 · 그림 사인을 알아본 순간</div>
+        <div class="quote-slot" style="margin-top:1.8mm">응답자 <span class="dummy">[B]</span> · 1차 · 회전 화살표가 헷갈렸다는 응답</div>
+        <div class="quote-slot s3-q2" style="margin-top:1.8mm">응답자 <span class="dummy">[C]</span> · 2차 · 영문 낱말이 확실했다는 응답</div>
+        <div class="quote-slot s3-q2" style="margin-top:1.8mm">응답자 <span class="dummy">[D]</span> · 2차 · 글자가 달리며 읽기 어려웠다는 응답</div>
+        <div class="quote-slot" style="margin-top:1.8mm">응답자 <span class="dummy">[G]</span> · 2차 · 그림과 글자가 함께 있기를 바란 응답</div>
+        <div class="quote-slot" style="margin-top:1.8mm">응답자 <span class="dummy">[H]</span> · 2차 · 사인보다 앞사람을 따라갔다는 응답</div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">사인이 준 말과 러너가 한 말 · 회전 지점</div>
+    <div class="k-say">
+      <div class="d"><i>1차 회전 사인</i><b class="k2">휘어진 화살표</b></div><div class="ar">▶<small>방향을 해석함</small></div><div class="k" style="background:#F1F3F5"><i>1차 러너의 말</i><div class="quote-slot" style="background:#fff">응답자 <span class="dummy">[E]</span> · 1차 · 꺾는 방향을 말로 옮긴 응답</div></div>
+      <div class="d"><i>2차 회전 사인</i><b class="k2">TURN LEFT · 왼쪽으로</b></div><div class="ar">▶<small>그대로 읽음</small></div><div class="k" style="background:#F1F3F5"><i>2차 러너의 말</i><div class="quote-slot" style="background:#fff">응답자 <span class="dummy">[F]</span> · 2차 · 한국어 ‘왼쪽으로’를 따라 읽은 응답</div></div>
+    </div>
+    <div class="st-cap"><b>같은 자리의 회전 사인을 두고 1차 러너는 방향을 옮겨 말했고, 2차 러너는 사인의 낱말을 그대로 말하였다.</b> 1·2차 러닝 참여자 인터뷰</div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 참여자 인터뷰</div>
+  <div class="pno">115</div>
+</section>
+
+<!-- ================= p116 정성 ③ 주제 2 (도식형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정성 결과 · 주제 2</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">함께 달린 사람과 나눈 인사가<br><em>사인 바깥의 교류</em>를 보여 주었다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="k-th4 s3-th4big">
+      <div class="c"><div class="h"><b>인사와 말 걸기</b><span>1·2차 관찰</span></div>
+        <div class="qq">인사·대화 장면 1차 <span class="dummy">[00]</span> · 2차 <span class="dummy">[00]</span>건</div>
+        <p>두 차수 모두 같은 러닝크루의 정기 러닝으로 운영하고, 러너 스테이션에서 달린 뒤 이어진 인사와 대화를 같은 기준으로 기록하였다.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[J]</span> · 처음 만난 러너와 나눈 말</div></div>
+      <div class="c"><div class="h"><span>1·2차 인터뷰</span><b>혼자 달릴 때</b></div>
+        <div class="qq">혼자 참여 <span class="dummy">[00]</span>%</div>
+        <p>러닝크루를 처음 만난 유학생은 혼자 달리는 시간이 <span class="dummy">[길었다]</span>. 사인은 길을 알려 주었지만 옆 사람까지 만들어 주지는 <span class="dummy">[못했다]</span>.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[K]</span> · 혼자 달린 경험</div></div>
+      <div class="c"><div class="h"><b>배우는 한국어</b><span>2차 인터뷰</span></div>
+        <div class="qq">‘직진’ · ‘왼쪽으로’ · ‘화장실’</div>
+        <p>한국어 병기는 같은 말로 길을 부르는 장치였다. 유학생이 한국어 낱말을 따라 읽었는지, 대화에서 썼는지를 보았다.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[L]</span> · 2차 · 한국어 낱말을 써 본 경험</div></div>
+      <div class="c"><div class="h"><span>관찰 · 자문</span><b>건널목의 안전</b></div>
+        <div class="qq">횡단보도 예고 ‘20 m’</div>
+        <p>두 안 모두 횡단보도 20m 앞에서 거리를 알렸다. 러닝크루 자문에서는 건널목 앞 속도를 줄이는 데 숫자가 쓰였는지를 함께 보았다.</p>
+        <div class="quote-slot">응답자 <span class="dummy">[M]</span> · 건널목 앞에서 속도를 줄인 경험</div></div>
+      <div class="mid"><i>THEME 2</i><b>사인 바깥의<br>교류</b></div>
+    </div>
+    <div class="st-cap" style="margin-top:2.4mm"><b>네 주제 모두 ‘누구와, 어떤 말로 함께 달릴까’를 묻는 반응이었다.</b> 1·2차 러닝 참여자 인터뷰 · 러닝크루 자문 · 코스 관찰</div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:4.4mm">
+      <div><b class="dummy">[00]<small class="dummy">건</small></b><span>인사·대화 장면<br>1차 · 같은 러닝 운영</span></div>
+      <div><b class="dummy">[00]<small class="dummy">건</small></b><span>인사·대화 장면<br>2차 · 같은 러닝 운영</span></div>
+      <div><b class="dummy">[00]<small class="dummy">건</small></b><span>한국어 낱말을<br>써 보았다는 응답</span></div>
+      <div><b class="dummy">[00]<small class="dummy">건</small></b><span>‘20 m’를 보고<br>속도를 줄인 응답</span></div>
+    </div>
+    <div class="st-tx st-c2" style="margin-top:4.6mm">
+      <p>두 번째 주제는 사인 바깥의 교류였다. 함께 달리고 싶은 마음은 사인의 언어보다 옆에서 달리는 사람에게서 <span class="dummy">[먼저]</span> 생겼다. 인사·대화 장면 가운데 사인의 낱말이 계기가 된 장면은 1차 <span class="dummy">[00]</span>건, 2차 <span class="dummy">[00]</span>건이었고, 나머지 <span class="dummy">[00]</span>건은 <span class="dummy">[러닝크루의 진행에서 시작되었다]</span>.</p>
+      <p>이 반응은 판정 기준을 넓혔다. 요소마다 길 안내의 효과 외에, 사람 사이의 말을 여는지, 러닝크루 없이도 작동하는지, 건널목에서 속도를 줄이게 하는지를 함께 따졌다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 참여자 인터뷰 · 러닝크루 자문 · 코스 관찰 기록</div>
+  <div class="pno">116</div>
+</section>
+
+<!-- ================= p117 정성 ④ 소결 (서술형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">정성 결과 · 소결</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i><i></i></span></div>
+    <h2 class="hl">정성 자료에서 <em>‘길을 아는 것’과 ‘함께 달리는 것’</em>은<br><span class="dummy">[서로 다른 단계였다]</span></h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="k-step">
+      <div class="rl"></div><div class="hh">1 · 알아보기<small>사인이 보인다</small></div><div class="hh">2 · 길 고르기<small>방향을 안다</small></div><div class="hh">3 · 말로 부르기<small>같은 말을 쓴다</small></div><div class="hh" style="background:var(--navy)">4 · 함께하기<small>인사하고 같이 달린다</small></div>
+      <div class="rl"><span class="rtag r1">1차</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[그림이 바로 보임]</span></div>
+      <div><span class="mk dummy">[◐]</span><span class="dummy">[회전에서 머뭇거림]</span></div>
+      <div><span class="mk dummy">[○]</span><span class="dummy">[부를 말이 없음]</span></div>
+      <div><span class="mk dummy">[◐]</span><span class="dummy">[러닝크루와 함께일 때만]</span></div>
+      <div class="rl"><span class="rtag r2">2차</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[글자도 잘 보임]</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[낱말로 방향 확인]</span></div>
+      <div><span class="mk dummy">[●]</span><span class="dummy">[한국어 낱말 따라 읽음]</span></div>
+      <div><span class="mk dummy">[◐]</span><span class="dummy">[인사·대화 늘었음]</span></div>
+    </div>
+    <div class="st-cap"><b>● 뚜렷하게 나타남 · ◐ 일부 나타남 · ○ 나타나지 않음.</b> 1·2차 러닝 참여자 인터뷰와 코스 관찰 기준</div>
+    <div class="st-split" style="margin-top:6mm">
+      <div class="st-tx">
+        <p class="st-lead" style="margin-bottom:3mm">송도의 유학생들에게 바닥 사인은 길을 알려 주는 데서 끝나지 않았다. 사인에 적힌 말이 함께 달리는 사람과 나눌 수 있는 말이 될 때, 길 안내는 <span class="dummy">[교류의 시작이 되었다]</span>.</p>
+        <p>1차의 픽토그램은 <span class="dummy">[보이는 데 성공하였다]</span>. 직진과 화장실은 해석이 <span class="dummy">[필요 없었다]</span>. 그러나 그림에는 부를 말이 없었다. 유학생은 길을 알았지만, 그 길을 옆 사람에게 말로 확인할 낱말을 갖지 못했고, 꺾는 지점에서는 <span class="dummy">[앞사람을 따라갔다]</span>.</p>
+        <p>2차의 영문·한국어 병기는 그 낱말을 주었다. ‘LEFT’와 ‘왼쪽으로’는 방향을 확실히 알려 주는 동시에, 유학생과 러닝크루가 <span class="dummy">[같은 말로 길을 부르게 하였다]</span>. 2차 인터뷰에서 유학생들은 <span class="dummy">[한국어 낱말을 따라 읽었고]</span>, 그 말로 <span class="dummy">[인사를 건넸다]</span>.</p>
+        <p>정성 자료는 함께 달리는 일이 사인만으로 생기지 않는다는 점도 보여 주었다. 러닝크루를 처음 만난 유학생은 혼자 달리는 시간이 <span class="dummy">[길었고]</span>, 다시 달리고 싶은 마음은 <span class="dummy">[사인보다 그날 만난 사람에게서 나왔다]</span>. 사인은 교류의 소재였고, 교류를 만든 것은 <span class="dummy">[러닝크루와 함께 달린 시간]</span>이었다.</p>
+        <p>1·2차는 같은 러닝크루, 같은 캠프에서 운영되었다. 그래서 두 차수 사이 인사와 대화의 차이는 사인이 준 낱말에서 비롯된 몫으로 읽었고, 그 차이는 <span class="dummy">[00]</span>건이었다.</p>
+        <p>2차의 글자에도 반례가 있었다. 긴 낱말은 <span class="dummy">[달리며 읽기 어려웠고]</span>, 그림과 글자가 함께 있기를 바란 응답이 <span class="dummy">[00]</span>건이었다. 이 반례는 병기형 사인을 판단하는 근거로 남겼다.</p>
+      </div>
+      <div>
+        <div class="st-mn"><b>정량과 맞춰 본 점</b>정량에서 차이가 컸던 ‘길 고르기’ 단계와, 정성에서 갈린 ‘말로 부르기’ 단계가 <span class="dummy">[겹쳤다]</span>.</div>
+        <div class="st-mn"><b>반례</b>2차에서도 긴 낱말을 놓친 장면 <span class="dummy">[00]</span>건, 그림을 바란 응답 <span class="dummy">[00]</span>건이 있었다.</div>
+        <div class="st-mn"><b>남은 물음</b>러닝크루 없이 혼자 달리는 유학생에게도 같은 효과가 나는가는 <span class="dummy">[다음 실험의 조건]</span>으로 정리하였다.</div>
+        <div class="st-ph" style="height:58mm;margin-top:4mm"><img src="img/03_송도_사전_023.jpg" alt=""><span>사전 현장조사</span></div>
+      </div>
+    </div>
+    <div class="st-out" style="margin-top:5mm"><b>길 안내는 <span>‘보이는 것’</span>에서 <span>‘같이 부를 수 있는 말’</span>로,<br>그리고 함께 달리는 사람 사이에서 <span class="dummy">[교류가 되었다]</span></b><small>통합 해석에서<br>정량 결과와 맞춤</small></div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 러닝 참여자 인터뷰 · 코스 관찰 기록</div>
+  <div class="pno">117</div>
+</section>
+
+<!-- ================= p118 통합 해석 (혼합형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">통합 해석</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">픽토그램안과 영문·한국어 병기안은 알아보기에서 <span class="dummy">[비슷했고]</span>,<br><em>길을 고르고 말로 부르는 단계</em>에서 <span class="dummy">[갈렸다]</span></h2>
+  </div>
+  <div class="body" style="top:58mm">
+    <div class="st-qa"><div class="qq"><i>Q</i><b>그림·숫자 안내와 영어·발음·공동 활동은 이해와 소통을 어떻게 돕는가?</b></div></div>
+    <div class="k-conv" style="margin-top:5mm;row-gap:2mm">
+      <div class="k"><i>알아보기</i>달리며 바닥 사인을 알아보았는가</div>
+      <div class="qn"><i>정량</i>인지율 1차 <span class="dummy">[00]%</span> · 2차 <span class="dummy">[00]%</span></div>
+      <div class="ql"><i>정성</i>그림은 <span class="dummy">[바로 보였고]</span>, 글자도 <span class="dummy">[잘 보였다]</span></div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[두 안 모두 높았다 · 차이 작음]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>길 고르기</i>꺾임과 건널목에서 바른 길을 골랐는가</div>
+      <div class="qn"><i>정량</i>정확도 1차 <span class="dummy">[00]%</span> · 2차 <span class="dummy">[00]%</span> · <span class="dummy">[회전]</span>에서 최대</div>
+      <div class="ql"><i>정성</i>휘어진 화살표는 해석, ‘LEFT’는 그대로 읽음</div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[2차가 00%p 높았다]</span></div>
+      <div class="k" style="margin-top:2.4mm"><i>이해 · 소통</i>안내를 이해했고, 함께 달리고 말을 나누었는가</div>
+      <div class="qn"><i>정량</i>이해도 4점 이상 <span class="dummy">[00]→[00]%</span> · 참여 의사 <span class="dummy">[0.0]→[0.0]</span></div>
+      <div class="ql"><i>정성</i>한국어 낱말 따라 읽기 · 인사 · 혼자 달린 시간</div>
+      <div class="ar">▶</div><div class="an"><span class="dummy">[이해는 늘고 참여는 비슷했다]</span></div>
+    </div>
+    <div class="st-nums" style="grid-template-columns:repeat(4,1fr);margin-top:5mm">
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>척도 유효 응답<br>1·2차 합계</span></div>
+      <div><b class="dummy">[00]<small class="dummy">명</small></b><span>러닝 참여자 인터뷰<br>1·2차 합계</span></div>
+      <div><b class="dummy">[000]<small class="dummy">건</small></b><span>갈림길 선택 관찰<br>1·2차 합계</span></div>
+      <div><b>967<small>장</small></b><span>같은 자리<br>바닥 사인</span></div>
+    </div>
+    <div class="st-q" style="margin-top:5mm"><i>송도의 답</i><b>유학생의 길을 열어 준 것은 그림의 빠르기보다<br><span class="dummy">[함께 부를 수 있는 낱말]</span>이었다</b></div>
+    <div class="st-tx st-c2" style="margin-top:5mm">
+      <p>정량과 정성은 같은 단계에서 만났다. 알아보기에서 두 안은 <span class="dummy">[비슷했고]</span>, 차이는 꺾임과 건널목에서 길을 고르는 단계에서 <span class="dummy">[나타났다]</span>. 정성 자료는 그 이유를 <span class="dummy">[그림을 해석하는 시간과 낱말을 읽는 확실성의 차이]</span>로 설명하였다.</p>
+      <p>이 답은 ‘영어가 그림보다 낫다’는 결론과 거리를 두었다. 2차안은 영문과 한국어 병기를 한 장에 담은 안이고, 참여 의사의 차이는 <span class="dummy">[작았다]</span>. 판정은 두 안을 사인 종류와 표기 요소로 다시 풀어 내렸다.</p>
+      <p>두 차수는 같은 코스와 같은 자리, 같은 러닝 운영에서 안내 방식만 달랐다. 그래서 단계마다 나타난 차이는 안내 방식의 차이로 읽었고, 다시 달린 사람의 몫은 따로 덜어 내어 확인하였다.</p>
+      <p>어긋난 곳도 기록하였다. 2차에서 긴 낱말을 놓치거나 그림을 바란 응답은 <span class="dummy">[00]</span>건이었고, 주로 <span class="dummy">[한국어·영어 모두 서툰 응답자]</span>에서 나왔다. 이 반례는 수정 판정의 근거로 함께 넘겼다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 설문·관찰·인터뷰 · 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</div>
+  <div class="pno">118</div>
+</section>
+
+<!-- ================= p119 가봉 판정 (도식형) ================= -->
+<section class="page odd">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">가봉 판정</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i></i></span></div>
+    <h2 class="hl">두 안을 여덟 요소로 풀어<br><em>상설 · 수정 · 중지</em>를 하나씩 판정하였다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-jlg">
+      <div><b class="jn dummy">[0]<small>개</small></b><span class="judge keep">상설 · 잘 맞았다</span><p>효과와 반응이 함께 확인되어 고정시설로 옮길 수 있는 요소</p></div>
+      <div><b class="jn dummy">[0]<small>개</small></b><span class="judge fix">수정 · 고쳐 맞춘다</span><p>방향은 맞지만 기준·관리·통행 때문에 고쳐야 하는 요소</p></div>
+      <div><b class="jn dummy">[0]<small>개</small></b><span class="judge next">중지 · 다음 실험의 조건</span><p>이번에는 맞지 않았고, 다음 실험의 조건으로 넘기는 요소</p></div>
+    </div>
+    <div class="st-jg" style="margin-top:4mm;--jh:35mm">
+      <div class="st-jc"><div class="th"><img src="img/03_송도_1차사인_직진.png" alt=""><span class="rr rtag r1">1차</span></div><div class="tx"><h5>픽토그램 직진 사인</h5><p>해석 없이 바로 보임. 인지 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p111 · 정성 p115</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/03_송도_1차사인_좌회전.png" alt=""><span class="rr rtag r1">1차</span></div><div class="tx"><h5>휘어진 화살표 회전 사인</h5><p>달리며 방향을 해석해야 함. 정확도 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p112 · 정성 p115</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/03_송도_1차사인_횡단보도.png" alt=""><span class="rr rtag r1">1·2차</span></div><div class="tx"><h5>횡단보도 예고 ‘20 m’</h5><p>두 안 모두 쓴 숫자. 건널목 앞 감속</p><div class="row"><span>정성 p116 · 관찰</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/03_송도_2차사인_좌회전.png" alt=""><span class="rr rtag r2">2차</span></div><div class="tx"><h5>영문 낱말 회전 사인</h5><p>‘TURN LEFT’ 그대로 읽힘. 정확도 <span class="dummy">[00]%</span></p><div class="row"><span>정량 p112 · 정성 p115</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/03_송도_2차사인_화장실.png" alt=""><span class="rr rtag r2">2차</span></div><div class="tx"><h5>한국어 병기</h5><p>같은 말로 길을 부름. 따라 읽음 <span class="dummy">[00]</span>건</p><div class="row"><span>정성 p116–117</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/03_송도_1차사인_화장실.png" alt=""><span class="rr rtag r1">1·2차</span></div><div class="tx"><h5>축광 네온색 · N 3/0 바탕</h5><p>야간 시인성. 인천 색채 기준과 맞춰야 함</p><div class="row"><span>관찰 · 기준 p120</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/03_송도_부착상세.jpg" alt="" style="object-position:40% 30%"><span class="rr rtag r1">1·2차</span></div><div class="tx"><h5>400×400 바닥 시트 · 6m 간격</h5><p>블록 교체 없이 부착·제거. 내구성 확인 필요</p><div class="row"><span>운영 p109 · 기준 p120</span><span class="judge tbd">[판정]</span></div></div></div>
+      <div class="st-jc"><div class="th"><img src="img/03_송도_1차시뮬.jpg" alt="" style="object-position:85% 30%"><span class="rr rtag ws">운영</span></div><div class="tx"><h5>러너 스테이션 캠프</h5><p>부스·간이 쉼터·음수 제공. 1·2차 같은 운영</p><div class="row"><span>정성 p116 · 운영 p109</span><span class="judge tbd">[판정]</span></div></div></div>
+    </div>
+    <div class="st-tx" style="margin-top:4mm">
+      <p>판정은 요소 단위로 내렸다. 한 안이 전체로 더 나았더라도, 그 안의 축광 네온색이나 바닥 시트는 고정시설의 기준을 따로 통과해야 하기 때문이다. 두 안에 함께 쓴 요소는 1·2차 결과를 함께 보고 판정하였다. 판정 결과 상설 <span class="dummy">[0]</span>개, 수정 <span class="dummy">[0]</span>개, 중지 <span class="dummy">[0]</span>개로 나뉘었다. 러너 스테이션 캠프는 시설물보다 운영 거점에 가까워, 표준모델 운영편에 담을지를 따로 판정하였다.</p>
+    </div>
+  </div>
+  <div class="foot-src">자료: 송도 1·2차 설문·관찰·인터뷰 기록 종합</div>
+  <div class="pno">119</div>
+</section>
+
+<!-- ================= p120 설계 반영 (서술형) ================= -->
+<section class="page even">
+  <div class="nav"><span>들어가기</span><span>Ⅰ 묻다</span><span>Ⅱ 찾다</span><span>Ⅲ 설계하다</span><span class="on">Ⅳ 실험하다</span><span>Ⅴ 검증하다</span><span>Ⅵ 남기다</span></div>
+  <div class="st-thumb">03<small>송도</small></div>
+  <div class="hd">
+    <div class="sec"><span class="no">Ⅳ-03</span><span class="site">송도 캠퍼스타운역 일대</span><span class="part">설계 반영</span><span class="st-step"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span></div>
+    <h2 class="hl">고정시설로 옮길 요소는 <em>표기 순서 · 색채 기준 · 보도 관리</em><br>세 조건으로 다시 걸렀다</h2>
+  </div>
+  <div class="body" style="top:52mm">
+    <div class="st-split" style="grid-template-columns:1fr 48mm;gap:6mm">
+      <div class="st-tx">
+        <p>판정은 효과, 수용, 기준과 관리라는 세 물음을 차례로 거쳤다. 앞의 둘은 정량·정성 결과가, 마지막은 인천시 공공디자인 기준과 보도 관리 주체의 조건이 답하였다. 두 안을 같은 자리에서 맞대어 본 실험이었으므로, 고정시설의 사인은 한 안을 고르기보다 두 안에서 잘 맞은 요소를 모으는 방식으로 정하였다.</p>
+        <p>첫째는 표기 순서다. 실험은 그림과 글자를 일부러 나누었지만, 고정시설에서는 둘을 나눌 이유가 없다. 인천시 공공디자인 기준도 다국어 표기를 원칙으로 하면서 문자 위주의 표기보다 쉽게 이해되는 픽토그램을 권장한다. 결과가 <span class="dummy">[회전 지점의 글자 효과]</span>를 보였고 그림과 글자를 함께 바란 응답도 나온 만큼, 픽토그램과 영문, 한국어를 한 사인 안에 어떤 순서와 크기로 둘지를 다시 정하였다.</p>
+        <p>둘째는 색채다. 축광 네온 그린·오렌지·블루는 밤에도 <span class="dummy">[잘 보였지만]</span>, 인천시 공공디자인 기준은 원색과 고채도 색을 지양하고 강조색을 면적의 10% 이내로 두게 한다. 짙은 회색 바탕은 유지하되, 기호의 색을 기준 안의 채도로 낮추어도 야간 시인성이 남는지를 확인해야 하였다.</p>
+        <p>셋째는 보도 관리다. 실험은 보도블록을 교체하지 않고 시트를 붙였다 떼는 방식으로 원상복구를 지켰다. 고정시설에서는 시트의 미끄럼과 마모, 교체 주기를 관리 주체인 경제청과 정해야 한다. 세 조건을 통과한 요소는 「외국인 친화형 보행안내 표준디자인」으로 정리해 표준모델 설계편에 담았고, 고정시설 대상 검토는 Ⅵ장으로 넘겼다.</p>
+      </div>
+      <div>
+        <div class="st-mn"><b>인천시 공공디자인 기준</b>다국어 표기 원칙 · 문자 위주보다 픽토그램 권장 · 원색·고채도·고명도 지양 · 강조색 10% 이내</div>
+        <div class="st-mn"><b>보도 · 관리</b>바닥포장 무채색·간결한 패턴 · 젖어도 미끄럽지 않게 · 보도블록 원상 유지</div>
+        <div class="st-mn"><b>협의 주체</b>인천경제자유구역청(도시디자인단 · 개발계획총괄과) · 송도 러닝크루</div>
+        <div class="st-mn"><b>실험 결과물</b>외국인 친화형 보행안내 표준디자인</div>
+      </div>
+    </div>
+    <div class="st-lb" style="margin-top:5mm">요소별 판단 매트릭스</div>
+    <div class="st-dm">
+      <div class="hh">요소</div><div class="hh">효과(정량)</div><div class="hh">반응(정성)</div><div class="hh">기준 적합</div><div class="hh">관리 부담</div>
+      <div class="rk">회전 사인 · 표기</div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[병기 순서]</div><div><span class="o"></span></div>
+      <div class="rk">한국어 병기</div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div>
+      <div class="rk">축광 네온색</div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[채도 조정]</div><div><span class="o"></span></div>
+      <div class="rk">바닥 시트 부착</div><div><span class="o"></span></div><div><span class="o"></span></div><div><span class="o"></span></div><div class="dummy">[교체 주기]</div>
+    </div>
+    <div class="st-cap"><b>충족 ● · 부분 ◐ · 미충족 ○.</b> 효과·반응은 1·2차 결과, 기준 적합은 공공디자인 가이드라인 체크리스트 기준</div>
+    <div class="st-lb" style="margin-top:4.6mm">다음 실험으로 넘긴 조건</div>
+    <div class="st-next">
+      <div><b>그림 + 글자 병기</b>픽토그램과 짧은 영문·한국어를 한 사인에 둔 병기형을 같은 코스에서 다시 잰다.<small>근거 · 심의 의견과 2차 인터뷰</small></div>
+      <div><b>채도를 낮춘 기호색</b>인천 색채 기준 안의 색으로 바꿔도 해 진 뒤 사인이 보이는지 확인한다.<small>근거 · 색채 기준(강조색 10% 이내)</small></div>
+      <div><b>러닝크루 없이 혼자</b>운영 주체 없이 혼자 달리는 유학생에게도 같은 효과가 나는지 나누어 본다.<small>근거 · 혼자 달린 응답자의 반응</small></div>
+      <div><b>짧은 낱말</b>‘CROSSWALK’처럼 긴 낱말을 짧게 바꿨을 때 달리며 읽히는지 다시 잰다.<small>근거 · 긴 낱말을 놓친 장면</small></div>
+    </div>
+    <div class="st-out" style="margin-top:4mm"><b>송도에서 <span class="dummy">[요소]</span>는 상설, <span class="dummy">[요소]</span>는 수정으로 정하고,<br><span class="dummy">[요소]</span>는 다음 실험의 조건으로 넘겼다</b><small>Ⅵ-01 설계 반영 판단<br>Ⅵ-03 고정시설 구현</small></div>
+  </div>
+  <div class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료(공공디자인 가이드라인 체크리스트)</div>
+  <div class="pno">120</div>
+</section>
+
+</body>
+</html>
