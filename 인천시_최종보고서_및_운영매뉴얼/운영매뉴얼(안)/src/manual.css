@@ -1,0 +1,243 @@
+/* 인천 창의디자인 사회실험 운영매뉴얼 — 공통 디자인 시스템 (B5 182×257mm, A·B·H 단일 소스)
+   STYLE_2(formal): 외곽선 최소화 · 솔리드(주요·실측·현재) / 빗살(비교·사전·계획·대조·보조) · 노랑 없음 · 사진 원색 · 모서리 0.6mm 이하
+   SVG 빗살: <pattern id="hatch-blue" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><line x1="0" y1="0" x2="0" y2="1.3" stroke="#2E5A87" stroke-width=".3"/></pattern>
+   기준 지면: m1_기획.html 6–9쪽. 이 파일은 합의 없이 고치지 않는다.
+   쪽 고유 스타일은 각 HTML의 <style>에 두고, 선택자를 쪽 클래스(.pg08 등)로 묶는다. */
+
+/* ── 글꼴 (보고서 common.css와 같은 선언) ── */
+@font-face{font-family:P;font-weight:200;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-2ExtraLight.ttf')}
+@font-face{font-family:P;font-weight:300;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-3Light.ttf')}
+@font-face{font-family:P;font-weight:400;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-4Regular.ttf')}
+@font-face{font-family:P;font-weight:500;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-5Medium.ttf')}
+@font-face{font-family:P;font-weight:600;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-6SemiBold.ttf')}
+@font-face{font-family:P;font-weight:700;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-7Bold.ttf')}
+@font-face{font-family:P;font-weight:800;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-8ExtraBold.ttf')}
+@font-face{font-family:P;font-weight:900;src:url('file:///Users/chokogamja/Library/Fonts/Paperlogy-9Black.ttf')}
+
+/* ── 변수 ── */
+:root{
+  /* 보고서 패밀리 */
+  --teal:#2E5A87; --teal-d:#22476C; --navy:#1A2F4B; --navy-d:#13243A; --yellow:#C9D7E6; /* STYLE_2: 노랑 폐지. 남색 면 위 강조 글자 전용 옅은 블루 */
+  --ink:#1E2A35; --ink2:#3D4A56; --mute:#6A7784; --line:#D3DCE3; --line2:#B8C4CD;
+  --gray-bg:#F3F6F8; --sky:#E3E9F0; --sky2:#F2F5F8; --case-bg:#EEF2F6; --case-sub:#4A6378;
+  --red:#E5332A;
+  /* 분야 4색 (사례 칩 전용, 글자 함께) */
+  --f-safe:#3A5F8E; --f-incl:#3F7A6E; --f-attr:#A67C45; --f-conv:#675F8C;
+  /* 4편 색 + 서식 */
+  --p1:#2E5A87; --p2:#1A2F4B; --p3:#4F7396; --p4:#5B6B7A; --p5:#77838E; /* 흰 글자 대비 3.9:1 (v1 #8C98A3은 2.9:1) */
+  /* 판형·그리드 (mm) */
+  --pw:182mm; --ph:257mm; --top:26mm; --bot:18mm; --in:16mm; --out:14mm;
+  --col:112mm; --gut:6mm; --side:34mm; --half:54mm;
+  /* 간격 두 가지 */
+  --g1:2.5mm; --g2:6mm;
+  /* 기본 편 색 (쪽 클래스 .p1–.p5가 덮어씀) */
+  --pc:var(--p1); --pct:var(--p1); --pcf:#fff;
+}
+.p1{--pc:var(--p1);--pct:var(--p1);--pcf:#fff}
+.p2{--pc:var(--p2);--pct:var(--p2);--pcf:#fff}
+.p3{--pc:var(--p3);--pct:var(--p3);--pcf:#fff}
+.p4{--pc:var(--p4);--pct:var(--p4);--pcf:#fff}
+.p5{--pc:var(--p5);--pct:#6E7A85;--pcf:#fff}
+
+/* ── 판형 ── */
+@page{size:182mm 257mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#8a949c}
+body{font-family:P,'Apple SD Gothic Neo',sans-serif;color:var(--ink);font-weight:400;font-size:8.3pt;line-height:1.72;
+  word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-align:left;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:182mm;height:257mm;position:relative;overflow:hidden;background:#fff;margin:0 auto 8mm;break-after:page;page-break-after:always}
+.page:last-of-type{break-after:auto}
+@media print{html,body{background:#fff}.page{margin:0}}
+p,li,dd,.lede,.note,.cap{text-wrap:pretty}
+h1,h2,h3,.hl{text-wrap:balance}
+em{font-style:normal}
+img{display:block;max-width:100%}
+
+/* ── 판면 그리드 ──
+   홀수(오른쪽): 본문 단 x16–128, 여백 단 x134–168 / 짝수(왼쪽): 여백 단 x14–48, 본문 단 x54–166
+   위치는 top만 쪽마다 인라인으로 준다. 본문은 아래 239mm(=257-18)를 넘지 않는다. */
+.main,.side,.full,.hd,.half-l,.half-r{position:absolute}
+.odd .main,.odd .hd{left:16mm;width:112mm}
+.even .main,.even .hd{left:54mm;width:112mm}
+.odd .side{left:134mm;width:34mm}
+.even .side{left:14mm;width:34mm}
+.odd .full,.odd .hd.wide{left:16mm;width:152mm}
+.even .full,.even .hd.wide{left:14mm;width:152mm}
+.hd{top:26mm}
+/* 본문 단 안 2단 (54mm × 2, 간격 4mm) */
+.cols2{display:grid;grid-template-columns:54mm 54mm;column-gap:4mm}
+/* 간격: 묶음 안 2.5mm / 묶음 사이 6mm */
+.stack>*+*{margin-top:var(--g2)}
+.tight>*+*{margin-top:var(--g1)}
+.main p+p,.full p+p{margin-top:var(--g1)}
+
+/* ── 편 내비 ── */
+.nav{position:absolute;top:9mm;width:152mm;display:flex;border-top:.35mm solid var(--navy);padding-top:1.6mm;
+  font-size:6pt;line-height:1.3;color:#A2ADB6;font-weight:600}
+.odd .nav{left:16mm}.even .nav{left:14mm}
+.nav span{flex:1;position:relative}
+.nav span:last-child{flex:.6}
+.nav span.on{color:var(--pct);font-weight:800}
+.nav span.on::before{content:"";position:absolute;left:0;width:16mm;top:-2.25mm;height:.9mm;background:var(--pc)}
+
+/* ── 엄지 탭 (바깥쪽 끝, 5×20mm, 현재 편만) ── */
+.tab{position:absolute;width:5mm;height:20mm;background:var(--pc);color:var(--pcf);
+  writing-mode:vertical-rl;text-orientation:upright;display:flex;align-items:center;justify-content:center;
+  font-size:6.4pt;font-weight:800;letter-spacing:.5mm;line-height:1}
+.odd .tab{right:0}.even .tab{left:0}
+.p1 .tab{top:50mm}.p2 .tab{top:72mm}.p3 .tab{top:94mm}.p4 .tab{top:116mm}.p5 .tab{top:138mm}
+
+/* ── 절 머리 ── */
+.sec{display:flex;align-items:center;gap:2.2mm;font-size:7.4pt;line-height:1.3;font-weight:700;color:var(--pct)}
+.sec .no{background:var(--pc);color:var(--pcf);padding:.6mm 2mm;font-weight:800;letter-spacing:.03em}
+.hl{margin-top:3mm;font-size:14pt;line-height:1.36;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.hl em{color:var(--teal)}
+.lede{margin-top:2.6mm;font-size:8.2pt;line-height:1.65;font-weight:500;color:var(--ink2)}
+
+/* ── 본문 글 ── */
+.tx{font-size:8.3pt;line-height:1.72}
+.tx b,.tx strong{font-weight:700;color:var(--navy)}
+.h3{font-size:8.6pt;line-height:1.4;font-weight:800;color:var(--navy);margin-bottom:1.4mm}
+.cap{font-size:6.4pt;line-height:1.45;color:var(--mute);font-weight:500;margin-top:1.2mm}
+.dg{font-size:7pt;line-height:1.45}           /* 표·도식 글 */
+
+/* ── 쪽번호 · 버전 표시 · 자료 출처 ── */
+.pno{position:absolute;bottom:10mm;display:flex;align-items:baseline;gap:2.2mm;
+  font-size:10pt;line-height:1;font-weight:800;font-style:oblique 10deg;color:var(--teal)}
+.odd .pno{right:14mm;flex-direction:row-reverse}
+.even .pno{left:14mm}
+.vt{font-style:normal;font-size:6pt;font-weight:600;color:#8C98A3;display:inline-flex;align-items:center;gap:1mm;letter-spacing:0}
+.vt::before{content:"A";display:inline-flex;align-items:center;justify-content:center;width:3.4mm;height:3.4mm;border-radius:50%;
+  background:#77838E;color:#fff;font-size:5.6pt;font-weight:800;line-height:1}
+.v-B .vt::before{content:"B"}.v-H .vt::before{content:"H"}
+.foot-src{position:absolute;bottom:10mm;font-size:6pt;line-height:1.2;color:#8C98A3;font-weight:500}
+.odd .foot-src{left:16mm}.even .foot-src{right:16mm}
+
+/* ── 버전 블록 ── */
+.v-A [data-v]:not([data-v~="A"]),
+.v-B [data-v]:not([data-v~="B"]),
+.v-H [data-v]:not([data-v~="H"]){display:none!important}
+.vslot{position:relative}
+.vslot>[data-v]{position:absolute;inset:0;overflow:hidden}
+/* 원 안 버전 글자 (블록 머리용) */
+.vc{display:inline-flex;align-items:center;justify-content:center;width:3.6mm;height:3.6mm;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:5.8pt;font-weight:800;line-height:1;font-style:normal}
+.vc::before{content:"A"}.v-B .vc::before{content:"B"}.v-H .vc::before{content:"H"}
+
+/* ── 누가 하는가 (여백 단 34×44mm, 절 첫 쪽에만) ── */
+.who{width:34mm;height:44mm;background:var(--gray-bg);border-radius:.6mm}
+.who::before{content:"누가 하는가";position:absolute;left:3mm;top:2.6mm;font-size:7pt;font-weight:800;color:var(--navy);line-height:1.2}
+.who::after{content:"A";position:absolute;right:3mm;top:2.3mm;width:3.6mm;height:3.6mm;border-radius:50%;background:var(--navy);
+  color:#fff;font-size:5.8pt;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
+.v-B .who::after{content:"B"}.v-H .who::after{content:"H"}
+.who.vslot>[data-v]{inset:8.4mm 3mm 2.4mm 3mm}
+.who dl{display:block}
+.who dt{font-size:6pt;line-height:1.3;font-weight:800;color:var(--pct)}
+.who dd{font-size:6.8pt;line-height:1.42;font-weight:600;color:var(--ink);height:6.9mm;overflow:hidden}
+.who dd+dt{margin-top:1.5mm}
+
+/* ── 인천 사례 박스 (쪽당 2개 이하, 놓는 자리를 쪽마다 바꿈) ── */
+.case{background:var(--case-bg);border-radius:.6mm;padding:3mm}
+.case .ch{display:flex;align-items:center;flex-wrap:wrap;gap:1.2mm 1.4mm;font-size:7pt;line-height:1.3;font-weight:700;color:var(--navy);margin-bottom:1.6mm}
+.case .ch .t{font-weight:800;margin-right:.6mm}
+.case p{font-size:7.4pt;line-height:1.62;color:var(--ink)}
+.case p+p{margin-top:1.4mm}
+.case .more{margin-top:1.6mm;font-size:6.4pt;line-height:1.4;color:var(--case-sub);font-weight:600}
+.site{display:inline-flex;align-items:center;justify-content:center;width:4.2mm;height:4.2mm;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:5.8pt;font-weight:800;line-height:1;letter-spacing:-.02em}
+.fd{display:inline-block;font-size:6pt;line-height:1.35;font-weight:800;color:#fff;border-radius:.6mm;padding:.2mm 1.5mm}
+.fd.safe{background:var(--f-safe)}.fd.incl{background:var(--f-incl)}.fd.attr{background:var(--f-attr)}.fd.conv{background:var(--f-conv)}
+
+/* ── 핵심 지침 띠 (절마다 1개 이하) ── */
+.rule{background:var(--navy);color:#fff;border-radius:.6mm;padding:3.2mm 4mm;font-size:8.6pt;line-height:1.55;font-weight:700}
+.rule em{color:var(--yellow);font-weight:800}
+
+/* ── 체크리스트 ── */
+.chk{width:100%;border-top:.5mm solid var(--navy)}
+.chk .grp{font-size:7.4pt;line-height:1.3;font-weight:700;color:var(--navy);padding:2.6mm 0 1.2mm;border-bottom:.25mm solid var(--line)}
+.chk .row{display:grid;grid-template-columns:3.2mm 1fr auto;column-gap:2.6mm;align-items:start;padding:1.7mm 0;border-bottom:.25mm solid var(--line);
+  font-size:8pt;line-height:1.5}
+.chk .row::before{content:"";width:3.2mm;height:3.2mm;border:.25mm solid var(--navy);margin-top:.5mm;background:#fff}
+.chk .ref{font-size:6.4pt;line-height:1.5;color:var(--mute);font-weight:600;white-space:nowrap;padding-top:.3mm}
+
+/* ── 표 (편집 괘선: 위 0.5mm 남색 + 0.25mm 회색) ── */
+.tbl{width:100%;border-collapse:collapse;font-size:7pt;line-height:1.45}
+.tbl thead th{border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2);font-weight:700;color:var(--navy);text-align:left;padding:1.4mm 1.6mm;vertical-align:bottom}
+.tbl td{border-bottom:.25mm solid var(--line);padding:1.4mm 1.6mm;vertical-align:top}
+
+/* ── 서식 프레임 (서식 모음 55–72쪽) ── */
+.form{border:.35mm solid var(--navy);background:#fff}
+.form .fhd{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:3mm;padding:2.6mm 3mm;border-bottom:.35mm solid var(--navy)}
+.form .fno{background:var(--p5);color:#fff;font-size:7.4pt;font-weight:800;padding:.6mm 2mm;line-height:1.3}
+.form .fname{font-size:11pt;font-weight:800;color:var(--navy);line-height:1.3}
+.form .fwhen{grid-column:2;font-size:6.4pt;color:var(--mute);font-weight:600}
+.form table{width:100%;border-collapse:collapse;table-layout:fixed}
+.form th,.form td{border:.25mm solid var(--line2);height:7mm;padding:.8mm 1.6mm;vertical-align:top;font-size:7pt;line-height:1.35;text-align:left}
+.form th{background:var(--gray-bg);font-size:7.2pt;font-weight:700;color:var(--navy)}
+.form th small,.form .hint{display:block;font-size:6pt;font-weight:500;color:var(--mute);line-height:1.3}
+.form td{background:#fff}
+.form tr:first-child>*{border-top:0}
+.form tr>*:first-child{border-left:0}.form tr>*:last-child{border-right:0}
+.form .ex{border-top:.35mm solid var(--navy);padding:1.8mm 3mm;font-size:6.6pt;line-height:1.45;background:var(--sky2);color:var(--ink)}
+.form .ex b{color:var(--navy);font-weight:800;margin-right:1.6mm}
+
+/* ── 주의 상자 (쪽당 1개, 책 전체 8개 이하) ── */
+.warn{background:var(--gray-bg);border-radius:.6mm;padding:2.8mm 3.2mm;font-size:7.6pt;line-height:1.6}
+.warn .wt{display:inline-flex;align-items:center;gap:1.2mm;font-weight:800;color:var(--navy);margin-right:1.6mm}
+.warn .wt::before{content:"!";display:inline-flex;align-items:center;justify-content:center;width:3.8mm;height:3.8mm;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:6.6pt;font-weight:900;line-height:1}
+
+/* ── 여백 노트 · 서식 연결 ── */
+.note{font-size:6.4pt;line-height:1.5;color:var(--ink2);font-weight:500;padding-left:3.2mm;position:relative}
+.note::before{content:"⊕";position:absolute;left:0;top:0;color:var(--teal);font-weight:700}
+.note b{color:var(--navy);font-weight:700}
+.to-form{font-size:6.8pt;line-height:1.5;font-weight:700;color:var(--navy)}
+.to-form .fno{display:inline-block;background:var(--p5);color:#fff;font-size:6pt;font-weight:800;padding:.2mm 1.4mm;line-height:1.35;margin-right:1.4mm;white-space:nowrap}
+.to-form .pg{display:inline-block;margin-left:1.4mm;color:var(--mute);font-weight:600;white-space:nowrap}
+
+/* ── 판정 칩 (보고서와 같은 3종 + 미정) ── */
+.judge{display:inline-block;font-size:7pt;line-height:1.3;font-weight:800;border-radius:.6mm;padding:.5mm 2.6mm}
+.judge.keep{background:var(--navy);color:#fff}
+.judge.fix{color:var(--navy);background:linear-gradient(#fff,#fff) center/calc(100% - 1.4mm) calc(100% - 1.4mm) no-repeat,repeating-linear-gradient(135deg,var(--teal) 0 .3mm,#fff .3mm 1.3mm)}
+.judge.next{background:#E3E8EC;color:var(--navy)}
+.judge.tbd{background:#FBE9E8;color:var(--red)}
+
+/* ── 붉은 더미 ── */
+.dummy{color:var(--red)!important}
+
+/* ── 사진 ── */
+.ph{position:relative;overflow:hidden;background:var(--gray-bg)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.duo{position:relative;overflow:hidden;background:var(--gray-bg)}
+.duo img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.03)}
+.duo::after{display:none}
+
+/* ── 빗살 (비교·사전·계획·대조·보조. 데이터·분류에만) ── */
+.hatch{--hc:var(--teal);background:repeating-linear-gradient(135deg,var(--hc) 0 .3mm,#fff .3mm 1.3mm)}
+.hatch.navy{--hc:var(--navy)}.hatch.blue{--hc:var(--teal)}.hatch.gray{--hc:#9AA6B1}.hatch.red{--hc:var(--red)}
+.hatch.soft{--hc:#C3CED8}
+.hatch.lbl{background:linear-gradient(#fff,#fff) center/calc(100% - 1.4mm) calc(100% - 1.4mm) no-repeat,repeating-linear-gradient(135deg,var(--hc) 0 .3mm,#fff .3mm 1.3mm)}
+
+/* ── 간지 (짝수 쪽, 전면 사진 원색 + 아래 남색 그라데이션) ── */
+.divider .bg{position:absolute;inset:0}
+.divider .bg img{object-position:var(--focus,50% 50%)}
+/* 아래: 목차 자리 남색 그라데이션. 위: 흰 제목 가독용 옅은 남색 그늘(사진 가운데는 원색 그대로) */
+.divider .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,36,58,.74) 0,rgba(19,36,58,.56) 26%,rgba(19,36,58,0) 39%,rgba(19,36,58,0) 42%,rgba(19,36,58,.65) 58%,rgba(19,36,58,.94) 76%,#13243A 100%)}
+.divider .part{position:absolute;left:16mm;top:24mm;font-size:60pt;line-height:1;font-weight:200;color:#fff;letter-spacing:-.01em}
+.divider .pname{position:absolute;left:17mm;top:49mm;font-size:26pt;line-height:1.2;font-weight:300;color:#fff}
+.divider .q{position:absolute;left:17mm;top:64mm;width:110mm;font-size:9.5pt;line-height:1.6;font-weight:500;color:#fff}
+.divider .secs{position:absolute;left:17mm;right:16mm;bottom:22mm;list-style:none;border-top:.25mm solid rgba(255,255,255,.4)}
+.divider .secs li{display:grid;grid-template-columns:12mm 1fr auto;align-items:baseline;padding:2.1mm 0;border-bottom:.25mm solid rgba(255,255,255,.22);
+  font-size:8.6pt;line-height:1.3;font-weight:500;color:#fff}
+.divider .secs li b{justify-self:start;font-size:7.4pt;font-weight:800;background:var(--pc);color:var(--pcf);padding:.5mm 1.8mm;letter-spacing:.03em}
+.divider .secs li i{font-style:normal;font-weight:700;font-size:8pt;opacity:.9}
+.divider .phcap{position:absolute;bottom:10mm;font-size:6pt;color:rgba(255,255,255,.8);font-weight:500}
+.even.divider .phcap{left:17mm}.odd.divider .phcap{right:16mm}
+
+/* ── QA 모드 (?qa=1) ── */
+.qa .vslot{outline:.2mm dashed rgba(229,51,42,.5)}
+.qa .qa-over{outline:.6mm solid var(--red)!important}
+.qa .qa-bottom{outline:.6mm solid #E58A2A!important}
+#qa-out{display:none}
+.qa #qa-out{display:block;width:182mm;margin:0 auto 8mm;padding:4mm;background:#fff;font:7pt/1.5 Menlo,monospace;color:var(--red);white-space:pre-wrap}

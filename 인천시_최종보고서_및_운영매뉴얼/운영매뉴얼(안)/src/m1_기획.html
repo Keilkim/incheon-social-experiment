@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 사회실험 운영매뉴얼 · PART 01 기획하기</title>
+<link rel="stylesheet" href="manual.css">
+<script id="vscript">
+(function(){
+  var q=new URLSearchParams(location.search), v=(q.get('v')||'A').toUpperCase();
+  if(!/^(A|B|H)$/.test(v)) v='A';
+  var N={A:'시민참여중심형',B:'지자체추진중심형',H:'하이브리드형'};
+  var r=document.documentElement, qa=!!q.get('qa');
+  r.classList.add('v-'+v); r.dataset.ver=v; if(qa) r.classList.add('qa');
+  var MM=96/25.4;
+  function pno(el){var s=el&&el.closest('section.page'),p=s&&s.querySelector('.pno');return p?(p.firstChild&&p.firstChild.nodeValue||'').trim():'?';}
+  function runQA(){
+    var out=[],n=0;
+    document.querySelectorAll('.vslot>[data-v]').forEach(function(b){
+      n++; b.style.setProperty('display','block','important');
+      var over=[b].concat([].slice.call(b.querySelectorAll('*'))).some(function(e){
+        return e.clientHeight>0&&(e.scrollHeight>e.clientHeight+1||e.scrollWidth>e.clientWidth+1);});
+      b.style.removeProperty('display');
+      if(over){b.classList.add('qa-over');out.push('QA-OVERFLOW '+pno(b)+'쪽 '+b.getAttribute('data-v'));}
+    });
+    document.querySelectorAll('section.page').forEach(function(pg){
+      if(pg.classList.contains('divider')||pg.classList.contains('cover')) return;
+      var top=pg.getBoundingClientRect().top, low=0;
+      pg.querySelectorAll('.main,.side,.full,.hd').forEach(function(c){
+        var b=c.getBoundingClientRect().bottom;
+        c.querySelectorAll('*').forEach(function(d){var r=d.getBoundingClientRect();if(r.height>0)b=Math.max(b,r.bottom);});
+        var mm=(b-top)/MM; low=Math.max(low,mm);
+        if(mm>239.5){c.classList.add('qa-bottom');out.push('QA-BOTTOM '+pno(c)+'쪽 '+c.className.split(' ')[0]+' '+mm.toFixed(1)+'mm');}
+      });
+      if(low<192.75) out.push('QA-EMPTY '+pno(pg)+'쪽 내용 끝 '+low.toFixed(1)+'mm (아래 1/4 이상 빈 곳)');
+      if(pg.scrollHeight>pg.clientHeight+1||pg.scrollWidth>pg.clientWidth+1) out.push('QA-PAGE '+pno(pg)+'쪽 판 밖으로 넘침');
+    });
+    out.push('QA-DONE 버전 '+v+' · 블록 '+n+'개 · 쪽 '+document.querySelectorAll('section.page').length+'개');
+    var pre=document.getElementById('qa-out')||document.body.appendChild(document.createElement('pre'));
+    pre.id='qa-out'; pre.textContent=out.join('\n'); out.forEach(function(l){console.log(l)});
+  }
+  function glue(root){ /* 한글 줄바꿈: 가운뎃점(·)이 줄 첫머리에 오지 않게 앞 글자에 붙인다 */
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),t;
+    while(t=w.nextNode()){var x=t.nodeValue;if(x.indexOf('\u00b7')<0)continue;
+      t.nodeValue=x.replace(/\s\u00b7\s/g,'\u00a0\u00b7 ').replace(/([^\s\u2060])\u00b7/g,'$1\u2060\u00b7');}
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    document.body.classList.add('v-'+v); glue(document.body);
+    document.querySelectorAll('[data-vname]').forEach(function(e){
+      var m=e.getAttribute('data-vname'); e.textContent=m==='full'?v+' · '+N[v]:m==='letter'?v:N[v];
+    });
+    document.title='인천 사회실험 운영매뉴얼 '+v+' '+N[v];
+  });
+  if(qa) window.addEventListener('load',function(){(document.fonts?document.fonts.ready:Promise.resolve()).then(runQA)});
+})();
+</script>
+<style>
+/* ── m1 쪽 고유 스타일 (선택자는 쪽 클래스로 묶는다) ── */
+
+/* 7쪽(서술형): 글이 먼저, 2단 흐름은 작게, 사례는 본문 아래 전폭 */
+.pg07 .flow{display:grid;grid-template-columns:52mm 8mm 52mm;align-items:start}
+.pg07 .st{border-top:.5mm solid var(--navy)}
+.pg07 .sh{display:flex;align-items:baseline;gap:1.6mm;padding:1.4mm 0 1mm;font-size:7.6pt;font-weight:800;color:var(--navy);line-height:1.3;border-bottom:.25mm solid var(--line)}
+.pg07 .sh b{font-size:7pt;color:var(--teal);font-weight:800}
+.pg07 .st ul{list-style:none}
+.pg07 .st li{display:grid;grid-template-columns:13mm 1fr;column-gap:1.4mm;padding:.75mm 0;border-bottom:.25mm solid var(--line);font-size:6.8pt;line-height:1.42;color:var(--ink)}
+.pg07 .st li b{font-weight:700;color:var(--navy)}
+.pg07 .ar{display:flex;flex-direction:column;align-items:center;gap:1mm;padding-top:9mm}
+.pg07 .ar span{font-size:5.8pt;line-height:1.3;font-weight:700;color:var(--teal);text-align:center}
+.pg07 .case.wide{width:152mm;display:grid;grid-template-columns:106mm 34mm;column-gap:6mm;align-items:end}
+.pg07 .case.wide .more{margin-top:0}
+
+/* 8쪽: 요일 × 낮·밤 격자 */
+.pg08 .grid{position:relative;height:70mm;margin-top:2mm}
+.pg08 .grid svg{position:absolute;left:0;top:0;width:112mm;height:70mm;overflow:visible}
+.pg08 .lab{position:absolute;font-size:7pt;line-height:1.3;font-weight:700;color:var(--navy)}
+.pg08 .lab.c{width:13mm;text-align:center}
+.pg08 .lab.s{font-size:6.2pt;font-weight:600;color:var(--mute)}
+.pg08 .call{position:absolute;font-size:6.6pt;line-height:1.4;font-weight:600;color:var(--ink)}
+.pg08 .call b{display:block;color:var(--navy);font-weight:800}
+.pg08 .key{position:absolute;display:flex;gap:4mm;font-size:6.4pt;font-weight:600;color:var(--ink2);line-height:1.3}
+.pg08 .key i{display:inline-block;width:2.8mm;height:2.8mm;border-radius:50%;margin-right:1mm;vertical-align:-.4mm}
+.pg08 .key .o{background:#A9BBCE}.pg08 .key .f{border-radius:0;width:3.4mm;background:var(--teal)}
+.pg08 .chain{position:absolute;display:flex;align-items:center;gap:1.6mm;font-size:7pt;font-weight:700;color:var(--navy);line-height:1.3}
+.pg08 .chain span{padding:.6mm 2mm;border-radius:.6mm;background:var(--sky)}
+.pg08 .chain span.on{background:var(--teal);color:#fff}
+.pg08 .chain em{color:var(--mute);font-weight:600;font-size:6.4pt}
+.pg08 .look .h3{font-size:7.4pt}
+.pg08 .look ul{list-style:none;border-top:.5mm solid var(--navy)}
+.pg08 .look li{display:grid;grid-template-columns:2.6mm 1fr;padding:1.4mm 0;border-bottom:.25mm solid var(--line);font-size:6.6pt;line-height:1.45;color:var(--ink)}
+.pg08 .look li::before{content:"";width:1.2mm;height:1.2mm;background:var(--teal);margin-top:1.3mm}
+.pg08 .chain .to{display:inline-block;width:1.4mm;height:1.6mm;background:var(--navy);clip-path:polygon(0 0,100% 50%,0 100%);margin:0 -.4mm}
+
+/* 9쪽: 6기준 × 후보지 점수 매트릭스 */
+.pg09 .mx{width:112mm;border-collapse:collapse;table-layout:fixed}
+.pg09 .mx col.g{width:7mm}.pg09 .mx col.k{width:22mm}.pg09 .mx col.d{width:35mm}.pg09 .mx col.c{width:12mm}
+.pg09 .mx th,.pg09 .mx td{font-size:6.8pt;line-height:1.38;padding:1.9mm 1.4mm;vertical-align:middle;text-align:left}
+.pg09 .mx thead th{border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2);font-weight:700;color:var(--navy);font-size:6.6pt}
+.pg09 .mx thead th.c{text-align:center}
+.pg09 .mx tbody td{border-bottom:.25mm solid var(--line)}
+.pg09 .mx td.g{background:var(--sky);color:var(--navy);font-weight:800;font-size:6pt;line-height:1.25;text-align:center;writing-mode:vertical-rl;letter-spacing:.2mm;padding:1mm .6mm;border-bottom:.6mm solid #fff}
+.pg09 .mx td.k{font-weight:800;color:var(--navy);font-size:7.2pt}
+.pg09 .mx td.d{color:var(--ink2);font-weight:500}
+.pg09 .mx td.c{text-align:center;color:#B9C3CB;font-size:5.2pt;letter-spacing:0;white-space:nowrap;padding-left:0;padding-right:0;border-left:.25mm solid var(--line)}
+.pg09 .mx tr.req td{background:#F8FAFB}
+.pg09 .mx tr.req td.k{color:var(--navy)}
+.pg09 .mx tr.req td.c{color:var(--navy);font-size:7.4pt;letter-spacing:0}
+.pg09 .mx tr.sum td{border-top:.35mm solid var(--navy);font-weight:800;color:var(--navy)}
+.pg09 .mx tr.why td{height:12mm;vertical-align:top}
+.pg09 .mx .sym{font-size:6.2pt;font-weight:600;color:var(--ink2);display:block;margin-top:.4mm}
+
+/* 10쪽(서술형): 큰 사진 하나 + 작은 사진 둘, 글은 사진 아래, 사례는 여백 단 */
+.pg10 .mosaic{display:grid;grid-template-columns:92mm 58mm;grid-template-rows:26.5mm 26.5mm;gap:2mm;height:55mm}
+.pg10 .mosaic .ph{position:relative}
+.pg10 .mosaic .big{grid-row:1/3}
+.pg10 .mosaic .vb{position:absolute;left:0;top:0;background:var(--navy);color:#fff;font-size:7pt;font-weight:800;line-height:1.3;padding:.8mm 2.2mm}
+.pg10 .caps{display:grid;grid-template-columns:92mm 58mm;column-gap:2mm;margin-top:1.4mm}
+.pg10 .caps p{font-size:6.4pt;line-height:1.45;color:var(--mute);font-weight:500}
+.pg10 .caps b{color:var(--navy);font-weight:700}
+
+/* 11쪽: 한 뿌리에서 네 갈래로 나뉘는 나무 */
+.pg11 .tree{position:relative;height:76mm}
+.pg11 .tree svg{position:absolute;left:0;top:0;width:112mm;height:76mm}
+.pg11 .root{position:absolute;left:0;top:27mm;width:25mm;height:22mm;background:var(--teal);color:#fff;border-radius:.6mm;padding:2.6mm 2.4mm;font-size:7.6pt;line-height:1.35;font-weight:800}
+.pg11 .root small{display:block;font-size:6.2pt;font-weight:600;margin-top:1mm;line-height:1.35}
+.pg11 .br{position:absolute;left:36mm;width:76mm;border-top:.25mm solid var(--line2);padding-top:1.2mm}
+.pg11 .br .n{display:flex;align-items:baseline;gap:1.8mm;font-size:8pt;font-weight:800;color:var(--navy);line-height:1.3}
+.pg11 .br .n i{font-style:normal;font-size:7pt;color:var(--teal);font-weight:800}
+.pg11 .br .n span{margin-left:auto;font-size:5.8pt;font-weight:600;color:var(--mute)}
+.pg11 .br p{font-size:6.8pt;line-height:1.45;color:var(--ink2);margin-top:.5mm}
+.pg11 .br p b{color:var(--navy);font-weight:700}
+.pg11 .br.main-dir{border-top-color:var(--navy)}
+
+/* 12쪽: 질문 문장 해부 + 일곱 질문 목록 */
+.pg12 .ana{border-top:.5mm solid var(--navy);padding-top:2.4mm}
+.pg12 .ana .h3{font-size:7.4pt;margin-bottom:2.6mm}
+.pg12 .ana .h3 span{font-weight:600;color:var(--mute);font-size:6.6pt;margin-left:1.6mm}
+.pg12 .sent{display:flex;flex-wrap:wrap;column-gap:1.4mm;row-gap:3.2mm}
+.pg12 .seg{display:flex;flex-direction:column}
+.pg12 .seg b{font-size:10.4pt;line-height:1.35;font-weight:700;color:var(--navy);padding-bottom:1.1mm;border-bottom:.8mm solid var(--navy)}
+.pg12 .seg.key b{border-bottom-color:var(--teal);color:var(--teal-d)}
+.pg12 .seg span{font-size:6.4pt;line-height:1.3;font-weight:800;color:var(--navy);margin-top:1mm}
+.pg12 .seg.key span{color:var(--teal-d)}
+.pg12 .seg span i{font-style:normal;font-weight:500;color:var(--mute);margin-left:1mm}
+.pg12 .next{display:grid;grid-template-columns:15mm 1fr;margin-top:3.4mm;padding-top:2mm;border-top:.25mm solid var(--line);font-size:7.2pt;line-height:1.5;color:var(--ink2)}
+.pg12 .next b{font-size:6.6pt;font-weight:800;color:var(--navy)}
+.pg12 .ql{border-top:.5mm solid var(--navy)}
+.pg12 .ql .t{font-size:7.4pt;font-weight:800;color:var(--navy);padding:1.6mm 0 1.2mm;border-bottom:.25mm solid var(--line2);line-height:1.3}
+.pg12 .ql li{display:grid;grid-template-columns:5.6mm 17mm 1fr;align-items:baseline;padding:1.25mm 0;border-bottom:.25mm solid var(--line);font-size:7pt;line-height:1.42;list-style:none}
+.pg12 .ql li .site{align-self:start;margin-top:.1mm}
+.pg12 .ql li b{font-weight:800;color:var(--navy);font-size:6.8pt}
+.pg12 .ql li span:not(.site){color:var(--ink)}
+.pg12 .nw{white-space:nowrap}
+
+/* 13쪽: 비교형·누적형 두 도식 + 7거점 배정표 */
+.pg13 .two{display:grid;grid-template-columns:54mm 54mm;column-gap:4mm}
+.pg13 .dia .h3{font-size:8pt;margin-bottom:2mm;display:flex;align-items:baseline;gap:1.6mm}
+.pg13 .dia .h3 small{font-size:6.4pt;font-weight:600;color:var(--mute)}
+.pg13 .stage{position:relative;height:36mm;background:var(--gray-bg);border-radius:.6mm}
+.pg13 .stage .blk{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;font-size:6.8pt;line-height:1.3;font-weight:800;border-radius:.6mm}
+.pg13 .blk.a{background:var(--teal);color:#fff}
+/* 1차 = 블루 솔리드, 2차 = 남색 솔리드 (보고서 1장 간트와 같은 차수 문법) */
+.pg13 .blk.b,.pg13 .blk.add{background:var(--navy);color:#fff}
+.pg13 .stage .lb{position:absolute;font-size:6pt;line-height:1.3;font-weight:700;color:var(--mute)}
+.pg13 .stage .base{position:absolute;left:3mm;right:3mm;bottom:3.4mm;border-top:.3mm solid var(--navy);padding-top:.8mm;font-size:6pt;font-weight:700;color:var(--navy);line-height:1.2}
+.pg13 .stage svg{position:absolute;overflow:visible}
+.pg13 .ex{margin-top:2mm;font-size:6.8pt;line-height:1.48;color:var(--ink2)}
+.pg13 .ex .site{width:3.8mm;height:3.8mm;font-size:5.4pt;vertical-align:-.6mm;margin-right:1mm}
+.pg13 .ex b{color:var(--navy);font-weight:800}
+.pg13 .asg{width:152mm;border-collapse:collapse;table-layout:fixed}
+.pg13 .asg th,.pg13 .asg td{font-size:7pt;line-height:1.38;padding:1.25mm 1.6mm;text-align:left;vertical-align:middle}
+.pg13 .asg thead th{border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2);font-weight:700;color:var(--navy);font-size:6.6pt}
+.pg13 .asg td{border-bottom:.25mm solid var(--line)}
+.pg13 .asg td.g{background:var(--sky);color:var(--navy);font-weight:800;font-size:7pt;text-align:center;border-bottom:.6mm solid #fff;line-height:1.3}
+.pg13 .asg td.g small{display:block;font-size:6pt;font-weight:600}
+.pg13 .asg td.s{font-weight:800;color:var(--navy);white-space:nowrap}
+.pg13 .asg .sx{display:flex;align-items:center;gap:1.4mm}
+.pg13 .asg td.s .site{width:3.8mm;height:3.8mm;font-size:5.4pt;flex:none}
+.pg13 .asg td.op{text-align:center;color:var(--teal);font-weight:800;font-size:8pt;padding:0}
+.pg13 .asg td.k{color:var(--ink2);font-weight:500}
+
+/* 14쪽(서술형): 글 사이 사례, 여백 단 작은 표 */
+.pg14 .mini{width:34mm;border-collapse:collapse}
+.pg14 .mini caption{text-align:left;font-size:6.6pt;font-weight:800;color:var(--navy);line-height:1.35;padding-bottom:1.4mm}
+.pg14 .mini td{font-size:6.2pt;line-height:1.4;padding:1.1mm 0;border-bottom:.25mm solid var(--line);vertical-align:top;color:var(--ink2)}
+.pg14 .mini tr:first-child td{border-top:.5mm solid var(--navy)}
+.pg14 .mini td b{display:block;color:var(--navy);font-weight:800;font-size:6.4pt}
+.pg14 .mini td.n{text-align:right;font-weight:800;color:var(--navy);white-space:nowrap;padding-left:1mm;font-size:6.6pt}
+.pg14 .mini td.n small{display:block;font-size:5.8pt;font-weight:600;color:var(--mute)}
+
+/* 15쪽: 허브 도식 (상자 없이 글 묶음 + 선) */
+.pg15 .hub{position:relative;height:124mm}
+.pg15 .hub svg{position:absolute;left:0;top:0;width:112mm;height:124mm}
+.pg15 .ctr{position:absolute;left:39mm;top:45mm;width:34mm;height:34mm;border-radius:50%;background:var(--teal);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3mm}
+.pg15 .ctr b{font-size:8.4pt;font-weight:800;line-height:1.3}
+.pg15 .ctr span{font-size:6.2pt;font-weight:600;line-height:1.4;margin-top:1.2mm}
+.pg15 .nd{position:absolute;width:35mm;font-size:6.6pt;line-height:1.42;color:var(--ink2)}
+.pg15 .nd h4{font-size:8pt;font-weight:800;color:var(--navy);line-height:1.3}
+.pg15 .nd small{display:block;font-size:6pt;font-weight:600;color:var(--mute);line-height:1.35;margin:.3mm 0 .8mm}
+.pg15 .nd .dec{display:block;margin-top:.8mm;font-weight:800;color:var(--navy)}
+.pg15 .nd.r{text-align:right}
+.pg15 .nd.gap h4{color:var(--mute)}
+.pg15 .key{position:absolute;right:0;bottom:0;font-size:6pt;color:var(--mute);font-weight:600;line-height:1.3}
+
+/* 16쪽(서술형): 사진은 여백 단, 사례는 본문 사이와 여백 단 */
+.pg16 .side .ph{height:66mm}
+.pg16 .side .ph img{object-position:40% 50%}
+
+/* 17쪽(체크리스트): 넘길 것 */
+.pg17 .hand{border-top:.5mm solid var(--navy);padding-top:2mm}
+.pg17 .hand .h3{font-size:7.4pt;margin-bottom:1.6mm}
+.pg17 .hand ol{list-style:none}
+.pg17 .hand li{display:grid;grid-template-columns:1fr auto;padding:1.3mm 0;border-bottom:.25mm solid var(--line);font-size:6.6pt;line-height:1.45;color:var(--ink)}
+.pg17 .hand li i{font-style:normal;font-weight:600;color:var(--mute)}
+.pg17 .hand .to{display:flex;align-items:center;gap:1.6mm;margin-top:2.4mm;font-size:7pt;font-weight:800;color:var(--navy);line-height:1.3}
+.pg17 .hand .to .chip{background:var(--p2);color:#fff;padding:.5mm 1.8mm;font-size:6.6pt}
+.pg17 .chk .row{padding:1.9mm 0}
+.pg17 .chk .row small{display:block;font-size:6.6pt;line-height:1.45;color:var(--mute);font-weight:500;margin-top:.3mm}
+</style>
+</head>
+<body>
+
+<!-- ================= 6쪽 PART 01 간지 (짝수) ================= -->
+<section class="page even p1 divider pg06">
+  <div class="bg duo" style="--focus:36% 50%"><img src="img/01_약산초_1차현장.jpg" alt="약산초 통학로"></div>
+  <div class="shade"></div>
+  <div class="tab">기획</div>
+  <div class="part">PART.1</div>
+  <div class="pname">기획하기</div>
+  <p class="q">누가, 어디에서, 어떤 불편을 겪는가</p>
+  <ol class="secs">
+    <li><b>1-1</b><span>사회문제 진단</span><i>7</i></li>
+    <li><b>1-2</b><span>거점 선정 기준</span><i>9</i></li>
+    <li><b>1-3</b><span>가설 설정 방법</span><i>12</i></li>
+    <li><b>1-4</b><span>협업 구조 구축</span><i>15</i></li>
+    <li><b>점검</b><span>기획을 마치기 전에 확인할 열 가지</span><i>17</i></li>
+  </ol>
+  <p class="phcap">약산초등학교 앞 통학로</p>
+</section>
+
+<!-- ================= 7쪽 1-1 사회문제 진단 (홀수 · 서술형 · W) ================= -->
+<section class="page odd p1 pg07">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-1</span>사회문제 진단</div>
+    <h2 class="hl">문제의 범위는 <em>통계와 문헌</em>으로 잡고 현장에서 확인한다</h2>
+    <p class="lede">현장에 먼저 나가면 눈앞의 불편만 크게 보인다. 통계와 문헌으로 문제의 규모와 대상을 먼저 잡아야 현장에서 무엇을 확인할지 정할 수 있다.</p>
+  </div>
+
+  <div class="main stack" style="top:57mm">
+    <div class="tx">
+      <p>진단은 데스크리서치로 시작한다. 통계, 선행연구와 문헌, 보도자료, 상위·유관계획에서 문제의 규모와 대상, 이론적 근거를 모은다. 시 전체 통계는 문제의 크기를 보여 주지만 거점 한 곳의 사정까지 말해 주지는 않는다. 그래서 통계마다 공간 범위와 집계 단위를 함께 적고, 거점 단위 자료가 없으면 없다는 사실도 적는다.</p>
+      <p>보도자료에 실린 수치는 처음 조사한 기관과 연도를 찾아 옮긴다. 같은 주제의 수치가 자료마다 다르면 두 값을 모두 적고, 조사 시점과 대상이 어떻게 다른지 옆에 쓴다. 문헌에서 가져온 이론은 이 장소에서 무엇을 확인할지로 바꿔 한 줄씩 적어 둔다.</p>
+      <p>이렇게 모은 자료로 현장에서 확인할 질문을 정한다. 통계가 가리키는 대상이 실제로 그 장소를 지나는지, 언제 가장 많이 나타나는지를 현장조사에서 본다. 관찰 구간은 지도에 미리 그려 가고, 통계가 가리킨 대상 말고도 그 자리를 함께 쓰는 사람을 적는다. 현장에서 통계와 다른 장면을 보면 진단을 고치고, 고친 이유를 함께 적는다.</p>
+    </div>
+
+    <p class="rule">통계 한 줄에도 <em>출처·기준연도·조사대상</em>을 함께 적는다</p>
+
+    <div class="flow">
+      <div class="st">
+        <div class="sh"><b>1</b>데스크리서치</div>
+        <ul>
+          <li><b>통계</b><span>사회조사, 국가통계, 행정 통계</span></li>
+          <li><b>선행연구</b><span>연구보고서, 논문, 국내외 사례</span></li>
+          <li><b>보도자료</b><span>언론 보도, 지역 이슈와 현안</span></li>
+          <li><b>상위계획</b><span>시정 정책, 시책사업, 유관계획</span></li>
+        </ul>
+      </div>
+      <div class="ar">
+        <svg width="8mm" height="6mm" viewBox="0 0 8 6"><path d="M.5 3H6.6" stroke="#2E5A87" stroke-width=".3"/><path d="M5.6 1.6 7.6 3 5.6 4.4z" fill="#2E5A87"/></svg>
+        <span>확인할<br>질문</span>
+      </div>
+      <div class="st">
+        <div class="sh"><b>2</b>현장조사</div>
+        <ul>
+          <li><b>일시</b><span>날짜, 요일, 시작과 끝 시각</span></li>
+          <li><b>구간</b><span>지도에 표시한 관찰 범위</span></li>
+          <li><b>이용 행태</b><span>지나간 사람, 머문 사람, 피해 간 곳</span></li>
+          <li><b>인터뷰</b><span>이용자에게 묻는 짧은 질문과 답</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="case wide">
+      <div>
+        <div class="ch"><span class="t">인천에서는</span><span class="site">02</span><span class="fd safe">안전</span>선인재단</div>
+        <p>선인재단 거점은 인천 정신건강 고위험군 학생이 3년 연속 늘었다는 인천시교육청 통계(2024)에서 출발하였다. 질병관리청이 2023년 인천 중·고교생 2,927명을 조사한 스트레스 인지율 36.9%와 우울감 경험률 26.3%도 조사대상과 함께 적었다. 9.14·9.23 현장조사를 거쳐, 사전조사부터 등교 시간 07:30–08:50에 맞춰 통학로를 집중 관찰하였다.</p>
+      </div>
+      <p class="more">결과는 최종보고서 73–96쪽</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:57mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>주민모임·시민디자인단이 불편을 모은다</dd><dt>함께한다</dt><dd>동 행정복지센터·구청 자료 담당</dd><dt>정한다</dt><dd>모임 회의에서 진단 범위를 정한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>담당 부서가 과제와 자료 범위를 잡는다</dd><dt>함께한다</dt><dd>수행사·관계부서가 자료를 모은다</dd><dt>정한다</dt><dd>담당 부서가 진단 범위를 확정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>조정자가 제안과 과제를 한데 모은다</dd><dt>함께한다</dt><dd>제안 시민·관련 부서가 자료를 낸다</dd><dt>정한다</dt><dd>공동 회의에서 진단 범위를 정한다</dd></dl>
+    </div>
+    <div class="tight">
+      <p class="note"><b>데스크리서치</b> 이미 나와 있는 통계·문헌·보도·계획을 모아 읽는 조사</p>
+      <p class="note"><b>집계 단위</b> 시·구·동처럼 통계를 묶은 공간 범위. 거점 하나보다 넓은 경우가 많다</p>
+      <p class="note">현장에 나갈 요일과 시간대 정하기 · 8쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">07 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 8쪽 1-1 사회문제 진단 (짝수 · 혼합형) ================= -->
+<section class="page even p1 pg08">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-1</span>사회문제 진단</div>
+    <h2 class="hl">현장은 <em>평일·주말, 낮·밤</em>에 모두 나가 대상이 나타나는 때를 찾는다</h2>
+    <p class="lede">같은 장소라도 요일과 시간에 따라 지나는 사람이 다르다. 실험 대상이 가장 많이 나타나는 칸을 찾아야 사전조사와 1·2차 실험의 요일과 시간대를 정할 수 있다.</p>
+  </div>
+
+  <div class="main stack" style="top:63mm">
+    <div class="grid">
+      <!-- 격자: 왼쪽 라벨 14mm, 칸 13mm × 7, 행 11mm × 2. 글은 HTML로 겹쳐 놓는다 -->
+      <svg viewBox="0 0 112 70">
+        <defs><marker id="m1-ar8" viewBox="0 0 4 4" refX="3.6" refY="2" markerWidth="4" markerHeight="4" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 4 2 0 4z" fill="#1A2F4B"/></marker></defs>
+        <!-- 평일·주말 괄호 -->
+        <path d="M14.5 3.2V2H78.5V3.2" fill="none" stroke="#8C98A3" stroke-width=".25"/>
+        <path d="M79.5 3.2V2H105.5V3.2" fill="none" stroke="#8C98A3" stroke-width=".25"/>
+        <!-- 칸 -->
+        <g fill="#F3F6F8" stroke="#fff" stroke-width=".6">
+          <rect x="14" y="13" width="13" height="11"/><rect x="27" y="13" width="13" height="11"/><rect x="40" y="13" width="13" height="11"/><rect x="53" y="13" width="13" height="11"/><rect x="66" y="13" width="13" height="11"/>
+          <rect x="79" y="13" width="13" height="11" fill="#E3E9F0"/><rect x="92" y="13" width="13" height="11" fill="#E3E9F0"/>
+          <rect x="14" y="24" width="13" height="11" fill="#DCE5EC"/><rect x="27" y="24" width="13" height="11" fill="#DCE5EC"/><rect x="40" y="24" width="13" height="11" fill="#DCE5EC"/><rect x="53" y="24" width="13" height="11" fill="#DCE5EC"/><rect x="66" y="24" width="13" height="11" fill="#DCE5EC"/>
+          <rect x="79" y="24" width="13" height="11" fill="#D3DDE7"/><rect x="92" y="24" width="13" height="11" fill="#D3DDE7"/>
+        </g>
+        <!-- 나가 볼 칸 표시 -->
+        <g fill="#A9BBCE">
+          <circle cx="20.5" cy="18.5" r="2"/><circle cx="33.5" cy="18.5" r="2"/><circle cx="46.5" cy="18.5" r="2"/><circle cx="59.5" cy="18.5" r="2"/><circle cx="72.5" cy="18.5" r="2"/><circle cx="85.5" cy="18.5" r="2"/><circle cx="98.5" cy="18.5" r="2"/>
+          <circle cx="33.5" cy="29.5" r="2"/><circle cx="46.5" cy="29.5" r="2"/><circle cx="59.5" cy="29.5" r="2"/><circle cx="72.5" cy="29.5" r="2"/><circle cx="85.5" cy="29.5" r="2"/><circle cx="98.5" cy="29.5" r="2"/>
+        </g>
+        <!-- 고른 칸 -->
+        <rect x="14.3" y="24.3" width="12.4" height="10.4" fill="#2E5A87"/>
+        <circle cx="20.5" cy="29.5" r="2" fill="#fff"/>
+        <!-- 지시선 -->
+        <path d="M20.5 43.5H30" fill="none" stroke="#2E5A87" stroke-width=".3"/>
+        <!-- 고른 칸이 사전조사 칸으로 이어지는 화살표 -->
+        <path d="M20.5 35.4V60.6" fill="none" stroke="#1A2F4B" stroke-width=".3" marker-end="url(#m1-ar8)"/>
+      </svg>
+      <span class="lab s" style="left:14mm;top:-1.6mm;width:65mm;text-align:center">평일</span>
+      <span class="lab s" style="left:79mm;top:-1.6mm;width:26mm;text-align:center">주말</span>
+      <span class="lab c" style="left:14mm;top:7.6mm">월</span><span class="lab c" style="left:27mm;top:7.6mm">화</span><span class="lab c" style="left:40mm;top:7.6mm">수</span><span class="lab c" style="left:53mm;top:7.6mm">목</span><span class="lab c" style="left:66mm;top:7.6mm">금</span><span class="lab c" style="left:79mm;top:7.6mm">토</span><span class="lab c" style="left:92mm;top:7.6mm">일</span>
+      <span class="lab" style="left:0;top:16.6mm">낮</span>
+      <span class="lab" style="left:0;top:27.6mm">밤</span>
+      <div class="key" style="left:52mm;top:37mm"><span><i class="o"></i>나가 본 칸</span><span><i class="f"></i>대상이 가장 많이 나타난 칸</span></div>
+      <p class="call" style="left:31mm;top:41.4mm;width:80mm"><b>월요일 저녁</b>로데오거리는 이 칸에서 사전조사 표본을 채웠다</p>
+      <div class="chain" style="left:14mm;top:61.2mm"><span class="on">고른 칸</span><i class="to"></i><span>사전조사</span><i class="to"></i><span>1차</span><i class="to"></i><span>2차</span><em>같은 요일·시간대·지점 · 34쪽</em></div>
+    </div>
+
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">06</span><span class="fd conv">편의</span>구월동 로데오거리·광장</div>
+      <p>로데오거리는 2024년 1–7월 구월동 음식점 흡연 단속이 1,387건이었다는 보도(경기일보)를 출발점으로 삼았다. 7.29·8.27·9.29 세 차례 현장조사에서 평일과 주말, 낮과 밤을 모두 살핀 뒤 사전조사를 9.14(월) 저녁에 진행하였다.</p>
+      <p class="more">결과는 최종보고서 169–192쪽</p>
+    </div>
+
+    <div class="tx">
+      <p>현장조사는 요일과 시간대를 넓게 잡고 시작한다. 평일과 주말, 낮과 밤에 각각 한 번 이상 나가고, 칸마다 일시와 구간, 지나간 사람과 머문 사람, 짧은 인터뷰를 같은 기록지에 적는다. 인터뷰는 그 자리를 지나는 이유와 머무는 시간처럼 관찰로 알 수 없는 것만 짧게 묻는다. 등굣길은 평일 아침에, 상업가로는 저녁에 대상이 몰리듯 장소마다 찾는 칸이 다르다.</p>
+      <p>기록은 칸 단위로 묶는다. 같은 칸에 두 번 이상 나갔다면 날짜별로 따로 적고, 날씨와 주변 행사처럼 그날만의 사정도 옆에 적어 둔다. 이 기록이 사전조사 칸을 고른 근거가 된다.</p>
+      <p>대상이 가장 많이 나타난 칸이 사전조사의 요일과 시간대가 된다. 협업 주체의 일정 때문에 칸을 바꿔야 하면 바꾼 칸과 이유를 함께 적는다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:63mm">
+    <div class="look">
+      <p class="h3">현장에서 함께 볼 것</p>
+      <ul>
+        <li>대상이 나타나는 시간과 공간</li>
+        <li>시야·조명·날씨 등 관찰하고 셀 수 있는 상태. 셀 수 없는 칸은 사전조사 후보에서 뺀다</li>
+        <li>설치물을 둘 바닥과 벽, 남는 통행 폭. 사진으로 남겨 설계에 넘긴다</li>
+      </ul>
+    </div>
+    <div class="tight">
+      <p class="note"><b>사전조사</b> 실험 전에 같은 요일·시간대·지점에서 기준값을 재는 조사</p>
+      <p class="note"><b>표본</b> 한 번의 조사에서 세거나 응답을 받은 사람 수. 필요한 수는 거점마다 사전조사에서 정한다</p>
+    </div>
+    <p class="to-form"><span class="fno">서식 01</span>사회문제 진단표<span class="pg">55쪽</span></p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">08 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 9쪽 1-2 거점 선정 기준 (홀수 · 도식형 · W) ================= -->
+<section class="page odd p1 pg09">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-2</span>거점 선정 기준</div>
+    <h2 class="hl">후보지는 <em>여섯 기준</em>으로 나란히 놓고 비교한다</h2>
+    <p class="lede">후보지를 하나씩 따로 보면 먼저 본 곳, 가 본 곳이 유리해진다. 같은 표에 놓고 같은 척도로 매기면 고른 이유와 고르지 않은 이유가 함께 남는다.</p>
+  </div>
+
+  <div class="main" style="top:57mm">
+    <table class="mx">
+      <colgroup><col class="g"><col class="k"><col class="d"><col class="c"><col class="c"><col class="c"><col class="c"></colgroup>
+      <thead><tr><th colspan="2">기준</th><th>무엇을 보는가</th><th class="c">후보 가</th><th class="c">후보 나</th><th class="c">후보 다</th><th class="c">후보 라</th></tr></thead>
+      <tbody>
+        <tr><td class="g" rowspan="2">닿는가</td><td class="k">시민 접근성</td><td class="d">실험 대상이 일상 동선에서 걸어서 닿는다</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td></tr>
+        <tr><td class="k">가시성</td><td class="d">지나가는 사람 눈에 설치물이 들어온다</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td></tr>
+        <tr><td class="g" rowspan="2">할 수 있는가</td><td class="k">안전성</td><td class="d">설치와 관찰 중에도 보행·차량 동선이 안전하다</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td></tr>
+        <tr><td class="k">활용성</td><td class="d">실험 기간에 장소를 쓰고 1·2차에 바꿔 놓을 수 있다</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td></tr>
+        <tr><td class="g" rowspan="2">퍼지는가</td><td class="k">상징성</td><td class="d">주민과 방문객이 이름으로 아는 장소다</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td></tr>
+        <tr><td class="k">사회실험 파급력</td><td class="d">같은 문제를 가진 장소가 다른 생활권에도 있다</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td><td class="c">○○○○○</td></tr>
+        <tr class="sum"><td colspan="3">합계</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+        <tr class="req"><td colspan="2" class="k">필수 조건</td><td class="d">장소 사용 확인, 관리기관 협의<span class="sym">● 확보 · ◐ 협의 중 · ○ 미확인</span></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+        <tr class="why"><td colspan="3" class="k">고르지 않은 이유</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+      </tbody>
+    </table>
+
+    <p class="rule" style="margin-top:var(--g2)">총점이 높아도 <em>장소 사용 확인</em>이 비어 있으면 거점으로 정하지 않는다</p>
+
+    <div class="tx" style="margin-top:var(--g2)">
+      <p>후보지마다 여섯 기준에 같은 척도로 1–5점을 매기고, 매긴 사람과 날짜를 표 아래에 적는다. 기준마다 무게를 달리 두려면 점수를 매기기 전에 정한다. 현장을 한 번도 보지 않은 후보지는 점수 칸을 비워 두고 현장조사 뒤에 채운다.</p>
+      <p>장소 사용과 관리기관 협의는 점수에 더하지 않고 확보, 협의 중, 미확인 세 단계로 따로 표시한다. 고르지 않은 후보지도 이유를 적어 두면 다음 실험의 후보 목록이 된다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:57mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>시민이 후보지를 찾아 점수를 매긴다</dd><dt>함께한다</dt><dd>장소 관리기관이 사용 조건을 알린다</dd><dt>정한다</dt><dd>관리기관 사용 확인 뒤 모임이 정한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>담당 부서·수행사가 후보지를 매긴다</dd><dt>함께한다</dt><dd>소관부서·군·구가 장소 조건을 낸다</dd><dt>정한다</dt><dd>담당 부서가 점수를 보고 확정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>조정자가 후보지와 점수표를 모은다</dd><dt>함께한다</dt><dd>시민·소관부서·관리기관이 매긴다</dd><dt>정한다</dt><dd>점수를 공개한 공동 회의에서 정한다</dd></dl>
+    </div>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span></div>
+      <p>안전·포용·매력·편의 네 분야에서 8개소 내외의 거점을 찾는 것으로 시작하였다. 후보지는 여섯 기준으로 골랐고, 최종 거점은 7곳으로 정하였다.</p>
+      <p>부서검토에서 대상지별 사회문제에 따른 선정 근거와 사유를 밝히라는 의견을 받아, 계획 요약에 거점마다 선정 근거를 적었다.</p>
+    </div>
+    <p class="to-form"><span class="fno">서식 02</span>거점 선정 평가표<span class="pg">56쪽</span></p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">09 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 10쪽 1-2 거점 선정 기준 (짝수 · 서술형) ================= -->
+<section class="page even p1 pg10">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-2</span>거점 선정 기준</div>
+    <h2 class="hl">후보지는 현장을 확인하며 <em>줄이고, 옮기고, 범위를 좁힌다</em></h2>
+    <p class="lede">첫 후보 목록은 지도와 자료로 만든 목록이다. 현장에서 대상과 공간을 확인하면 뺄 곳, 자리를 옮길 곳, 실험 범위를 좁힐 곳이 드러난다.</p>
+  </div>
+
+  <div class="full" style="top:57mm">
+    <div class="mosaic">
+      <div class="ph big"><img src="img/02_선인재단_ch3_초기후보.jpg" alt="선인재단 일원 초기 검토 위치" style="object-position:50% 60%"><span class="vb">옮긴다</span></div>
+      <div class="ph"><img src="img/00_인천항부두_ch3_광장.jpg" alt="인천항 1·8부두 외부 광장" style="object-position:50% 55%"><span class="vb">줄인다</span></div>
+      <div class="ph"><img src="img/07_연안_2장_대합실.jpg" alt="연안여객터미널 1층 대합실" style="object-position:50% 60%"><span class="vb">좁힌다</span></div>
+    </div>
+    <div class="caps">
+      <p><b>선인재단 일원의 초기 검토 위치.</b> 경사로와 계단이 이어지는 접근 동선이다.</p>
+      <p><b>위 · 인천항 1·8부두 외부 광장.</b><br><b>아래 · 연안여객터미널 1층 대합실.</b></p>
+    </div>
+  </div>
+
+  <div class="main" style="top:126mm">
+    <div class="tx">
+      <p>후보지 목록은 현장조사를 거치며 바뀐다. 현장에서는 세 가지를 본다. 9쪽 표의 점수가 현장과 맞는지, 실험 대상이 그 자리를 실제로 지나는지, 설치와 관찰을 할 공간이 남는지다. 거점마다 사진을 쌓고 공간과 이용 상태를 기록한 뒤, 후보지마다 그대로 둘지, 뺄지, 자리를 옮길지, 범위를 좁힐지를 정한다.</p>
+      <p>빼는 후보지는 현장에서 확인한 여건을 기록으로 남기고 목록에서 내린다. 같은 문제를 다루면서 대상이 실제로 지나는 자리가 따로 있으면 그 자리로 옮긴다. 공간 전체를 쓰기 어렵거나 이용이 한쪽에 몰려 있으면 이용이 몰린 범위로 좁힌다. 옮기거나 좁힌 뒤에는 여섯 기준 점수와 장소 사용 확인을 새 위치로 다시 매긴다.</p>
+      <p>범위를 좁히면 실험 질문의 장소와 대상도 함께 고치고, 관찰 지점과 설문 장소가 새 범위 안에 들어오는지 지도에서 다시 확인한다.</p>
+      <p>바뀐 내용은 처음 위치, 바뀐 위치, 바꾼 날짜와 이유를 한 줄씩 적는다. 빠진 후보지의 조사 기록도 지우지 않는다. 실행안과 섞이지 않게 초기 후보지 기록으로 따로 묶어 두면 다음 실험의 후보 목록이 된다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:126mm">
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span></div>
+      <p>착수 때 후보지는 8곳이었다. 인천항 1·8부두는 외부 광장과 실내 대공간을 조사해 초기 후보지 기록으로 남기고, 실험 거점에는 넣지 않았다.</p>
+      <p>선인재단은 경사로·계단 구간에서 제물포역 인근 학교 정문 앞 통학로로 옮겼다.</p>
+      <p>연안여객터미널은 2층 휴게공간 이용이 낮고 1층에 대기와 수하물이 몰려, 실험 범위를 1층 대합실로 좁혔다.</p>
+    </div>
+    <div class="tight">
+      <p class="note"><b>초기 후보지 기록</b> 거점에서 빠진 후보지의 현장 사진과 여건 기록</p>
+      <p class="note">여섯 기준으로 다시 매기기 · 9쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">10 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 11쪽 1-2 거점 선정 기준 (홀수 · 혼합형) ================= -->
+<section class="page odd p1 pg11">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-2</span>거점 선정 기준</div>
+    <h2 class="hl">고른 장소가 <em>무엇을 시험하는지</em> 네 방향 중에서 적어 둔다</h2>
+    <p class="lede">같은 장소라도 무엇을 확인하려는지에 따라 잴 것과 함께할 주체가 달라진다. 방향을 먼저 적어 두면 질문과 협업 상대를 정할 때 기준이 된다.</p>
+  </div>
+
+  <div class="main stack" style="top:57mm">
+    <div class="tree">
+      <svg viewBox="0 0 112 76">
+        <defs><marker id="m1-ar11" viewBox="0 0 4 4" refX="3.6" refY="2" markerWidth="3.4" markerHeight="3.4" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 4 2 0 4z" fill="#1A2F4B"/></marker></defs>
+        <g fill="none" stroke="#1A2F4B" stroke-width=".3">
+          <path d="M25 38H30.5"/>
+          <path d="M30.5 3.6V61.6"/>
+          <path d="M30.5 3.6H35.4" marker-end="url(#m1-ar11)"/>
+          <path d="M30.5 22.6H35.4" marker-end="url(#m1-ar11)"/>
+          <path d="M30.5 41.6H35.4" marker-end="url(#m1-ar11)"/>
+          <path d="M30.5 61.6H35.4" marker-end="url(#m1-ar11)"/>
+        </g>
+      </svg>
+      <div class="root">고른 장소<small>확인할 질문의 초안과 함께 적는다</small></div>
+      <div class="br" style="top:0"><div class="n"><i>1</i>기존을 실험한다<span>함께 볼 조사 · 계획·선행연구</span></div>
+        <p>이미 있는 시설·안내·계획을 실제 이용으로 다시 확인한다. <b>적을 것</b> 무엇이 이미 있고 무엇을 바꾸는가</p></div>
+      <div class="br" style="top:19mm"><div class="n"><i>2</i>인천 조건에서 실험한다<span>함께 볼 조사 · 지역 조건</span></div>
+        <p>통학·하천·항만·상권처럼 그 장소의 이용 조건에서 확인한다. <b>적을 것</b> 결과에 영향을 줄 지역 조건</p></div>
+      <div class="br" style="top:38mm"><div class="n"><i>3</i>시민이 쓰는 상태로 실험한다<span>함께 볼 조사 · 계획·선행연구</span></div>
+        <p>시민이 실제로 쓰고 함께 만드는 상태에서 확인한다. <b>적을 것</b> 누가 쓰고, 누가 함께 만드는가</p></div>
+      <div class="br" style="top:58mm"><div class="n"><i>4</i>민간과 함께 실험한다<span>함께 볼 조사 · 정책 여건·계획</span></div>
+        <p>기업·단체가 재료와 제품을 내는 상태로 확인한다. <b>적을 것</b> 누가 무엇을 내고, 실험 뒤 누가 잇는가</p></div>
+    </div>
+
+    <div class="tx">
+      <p>방향은 거점을 고른 직후, 실험 질문을 쓰기 전에 적는다. 한 장소가 두세 방향에 함께 걸리는 일이 많으므로 해당하는 방향을 모두 적고, 측정과 협업을 이끌 방향 하나에 표시해 둔다.</p>
+      <p>기존을 실험한다면 바꾸기 전 상태를 사전조사로 남긴다. 시민이 쓰는 상태로 실험한다면 참여할 사람과 일정을 기획 단계에서 확보한다. 민간과 함께 실험한다면 협업 상대가 내는 재료와 제품을 실험 조건에 넣고, 실험이 끝난 뒤 이어 갈 주체도 함께 적는다. 적어 둔 방향은 질문 문장과 협업 구조의 출발점이 된다.</p>
+    </div>
+
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">05</span><span class="fd attr">매력</span>굴포천 제1교량(부흥교) 옆 산책로</div>
+      <p>굴포천은 기존을 실험하는 방향, 인천 조건에서 실험하는 방향, 시민이 쓰는 상태로 실험하는 방향에 함께 묶였다. 민간과 함께 실험하는 방향에 묶인 로데오거리에서는 3M이 바닥 사인 시트를 지원하였다.</p>
+    </div>
+  </div>
+
+  <aside class="side tight" style="top:57mm">
+    <p class="note"><b>3S</b> 지속가능성·사회적 가치·확산. 네 방향을 고를 때 함께 보는 인천의 전략</p>
+    <p class="note">인천은 네 방향으로 실증 자료를 쌓고, 실험 하나는 고정시설로 잇도록 계획하였다</p>
+    <p class="note">질문 문장 쓰기 · 12쪽<br>협업 구조 그리기 · 15쪽</p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">11 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 12쪽 1-3 가설 설정 방법 (짝수 · 혼합형 · W) ================= -->
+<section class="page even p1 pg12">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-3</span>가설 설정 방법</div>
+    <h2 class="hl">실험 질문은 <em>누가, 어디서, 무엇이 달라지는지</em>를 한 문장에 담는다</h2>
+    <p class="lede">질문 한 문장에 대상과 장소, 바꾸는 요소와 확인할 변화가 모두 들어 있어야 관찰 지점과 설문 문항을 정할 수 있다.</p>
+  </div>
+
+  <div class="main stack" style="top:63mm">
+    <div class="ana">
+      <p class="h3">네 자리로 나누어 읽기<span>굴포천 1차 가설</span></p>
+      <div class="sent">
+        <div class="seg"><b>햇빛 산책로에</b><span>장소</span></div>
+        <div class="seg key"><b>파라솔 그늘·스툴·책·소리·향이 있으면,</b><span>바꾸는 요소<i>설치하거나 더하는 것</i></span></div>
+        <div class="seg"><b>지나치던 사람이</b><span>대상</span></div>
+        <div class="seg"><b>그늘을 골라 머물게 되지 않을까?</b><span>확인할 변화<i>세거나 물어볼 수 있는 것</i></span></div>
+      </div>
+      <p class="next"><b>2차 가설</b>1차 시설물을 그대로 두고 청년작가와 시민이 스툴을 함께 꾸미면, 참여한 사람과 지나치던 사람이 더 오래 머물고 내 자리로 느끼지 않을까?</p>
+    </div>
+
+    <div class="tx">
+      <p>질문은 한 문장으로 쓰고 네 자리를 채운다. 대상은 그 자리를 실제로 지나는 사람으로 좁혀 쓰고, 장소는 지도에 그릴 수 있는 범위로 쓴다. 바꾸는 요소는 그림·언어·조명·그늘·사인·콘텐츠처럼 달라지는 것을 적는다. 확인할 변화는 세어 볼 수 있는 행동이나 물어서 답을 받을 수 있는 생각으로 적는다. 해결안의 이름을 문제 자리에 쓰지 않는다.</p>
+      <p>질문이 정해지면 1차와 2차 가설을 '~하면, ~할까?' 꼴로 나누어 쓴다. 가설마다 근거가 된 통계나 선행연구를 한 줄 붙여 두면 결과를 읽을 때 무엇과 견줄지 분명해진다.</p>
+    </div>
+
+    <div class="ql">
+      <p class="t">인천의 실험 질문 일곱 개</p>
+      <ol>
+        <li><span class="site">01</span><b>장소 인식</b><span>시민안과 어린이안은 그림 인지와 위치 설명에서 어떻게 다른가?</span></li>
+        <li><span class="site">02</span><b>정서안정</b><span>거울·색·조명의 어떤 요소를 선호하며, 선별한 최종안은 어떻게 경험되는가?</span></li>
+        <li><span class="site">03</span><b>언어·교류</b><span>그림·숫자 안내와 영어·발음·공동 활동은 이해와 소통을 어떻게 돕는가?</span></li>
+        <li><span class="site">04</span><b>쉬운 이해</b><span>권유형과 금지형 그림의 의미 이해·경각심은 어떻게 다른가?</span></li>
+        <li><span class="site">05</span><b>그늘·체류</b><span>그늘과 자리가 머무름을, 시민 제작이 참여와 장소 인식을 바꾸는가?</span></li>
+        <li><span class="site">06</span><b>흡연·휴게</b><span>구역 분리와 유도사인이 흡연존 이용과 휴게공간 사용을 바꾸는가?</span></li>
+        <li><span class="site">07</span><b>대기 편의</b><span>통합 안내사인과 짐 보관·정리 공간 제공이 이용객의 시설 이용과 대기 편의에 어떤 변화를 만드는가?</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:63mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>시민이 불편을 질문 한 문장으로 쓴다</dd><dt>함께한다</dt><dd>전문가가 자문으로 질문을 다듬는다</dd><dt>정한다</dt><dd>자문을 확인한 뒤 모임이 정한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>수행사가 질문과 1·2차 가설을 쓴다</dd><dt>함께한다</dt><dd>담당 부서·전문가가 문장을 검토한다</dd><dt>정한다</dt><dd>담당 부서가 질문을 확정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>조정자·전문가가 질문 초안을 쓴다</dd><dt>함께한다</dt><dd>시민·부서가 바꿀 요소를 제안한다</dd><dt>정한다</dt><dd>공동 회의에서 질문을 정한다</dd></dl>
+    </div>
+    <div class="tight">
+      <p class="note"><b>가설</b> 질문에 대한 잠정적인 답. <span class="nw">'~하면, ~할까?'</span> 꼴로 1차와 2차를 따로 쓴다</p>
+      <p class="note"><b>바꾸는 요소</b> 실험 전과 1·2차 사이에 달라지는 것. 함께 바뀌는 요소가 여럿이면 모두 적는다</p>
+      <p class="note">1·2차를 엮는 방식 정하기 · 13쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">12 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 13쪽 1-3 가설 설정 방법 (홀수 · 도식형) ================= -->
+<section class="page odd p1 pg13">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-3</span>가설 설정 방법</div>
+    <h2 class="hl">1차와 2차는 <em>바꿔서 비교할지, 더해서 쌓을지</em> 먼저 정한다</h2>
+    <p class="lede">두 차수를 어떻게 엮느냐에 따라 설치 계획과 결과를 읽는 법이 함께 정해진다.</p>
+  </div>
+
+  <div class="main" style="top:57mm">
+    <div class="two">
+      <div class="dia">
+        <p class="h3">비교형<small>같은 자리에서 안을 바꾼다</small></p>
+        <div class="stage">
+          <span class="lb" style="left:5mm;top:2.4mm">1차</span><span class="lb" style="left:33mm;top:2.4mm">2차</span>
+          <div class="blk a" style="left:5mm;top:7mm;width:16mm;height:16mm">1차 안</div>
+          <div class="blk b" style="left:33mm;top:7mm;width:16mm;height:16mm"><span>2차 안</span></div>
+          <svg style="left:21.6mm;top:11mm;width:11mm;height:8mm" viewBox="0 0 11 8"><path d="M.6 2.4H9.4M10.4 2.4 8.4 1.1V3.7zM10.4 5.6H1.6M.6 5.6 2.6 4.3V6.9z" fill="#1A2F4B" stroke="#1A2F4B" stroke-width=".3"/></svg>
+          <div class="base">같은 자리 · 1차 안을 걷고 2차 안을 놓는다</div>
+        </div>
+        <p class="ex"><span class="site">04</span><b>차이나타운</b> 1차 권유형 그림, 2차 금지형 그림. 두 차수 모두 같은 주제 3종을 1컷·3컷 3쌍으로 같은 자리에 붙이고 같은 문항과 척도로 물었다.</p>
+      </div>
+      <div class="dia">
+        <p class="h3">누적형<small>1차 위에 요소를 더한다</small></p>
+        <div class="stage">
+          <span class="lb" style="left:5mm;top:2.4mm">1차</span><span class="lb" style="left:33mm;top:2.4mm">2차</span>
+          <div class="blk a" style="left:5mm;top:14.5mm;width:16mm;height:8.5mm">1차 시설</div>
+          <div class="blk add" style="left:33mm;top:7mm;width:16mm;height:7mm"><span>더한 요소</span></div>
+          <div class="blk a" style="left:33mm;top:14.5mm;width:16mm;height:8.5mm">1차 시설</div>
+          <svg style="left:21.6mm;top:15mm;width:11mm;height:8mm" viewBox="0 0 11 8"><path d="M.6 4H9.4M10.4 4 8.4 2.7V5.3z" fill="#1A2F4B" stroke="#1A2F4B" stroke-width=".3"/></svg>
+          <div class="base">같은 자리 · 1차 시설은 그대로 둔다</div>
+        </div>
+        <p class="ex"><span class="site">02</span><b>선인재단</b> 1차 스티커 설문으로 거울·색·조명 같은 요소에 대한 반응을 모으고, 2차에 그 응답으로 만든 거울나무 3그루를 세웠다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="full" style="top:119mm">
+    <table class="asg">
+      <colgroup><col style="width:17mm"><col style="width:42mm"><col style="width:41mm"><col style="width:9mm"><col style="width:43mm"></colgroup>
+      <thead><tr><th>유형</th><th>거점</th><th>1차</th><th></th><th>2차</th></tr></thead>
+      <tbody>
+        <tr><td class="g" rowspan="3">비교형<small>3곳</small></td><td class="s"><span class="sx"><span class="site">01</span>약산초</span></td><td class="k">시민 디자인안</td><td class="op">↔</td><td class="k">어린이 디자인안</td></tr>
+        <tr><td class="s"><span class="sx"><span class="site">03</span>송도 캠퍼스타운역 일대</span></td><td class="k">그림·숫자 보도블록</td><td class="op">↔</td><td class="k">영어·한글발음 보도블록</td></tr>
+        <tr><td class="s"><span class="sx"><span class="site">04</span>차이나타운</span></td><td class="k">권유형 그림</td><td class="op">↔</td><td class="k">금지형 그림</td></tr>
+        <tr><td class="g" rowspan="4">누적형<small>4곳</small></td><td class="s"><span class="sx"><span class="site">02</span>선인재단</span></td><td class="k">거울·색·조명 반응 조사</td><td class="op">+</td><td class="k">거울나무</td></tr>
+        <tr><td class="s"><span class="sx"><span class="site">05</span>굴포천</span></td><td class="k">그늘·머무름 자리</td><td class="op">+</td><td class="k">대학 협업 수업</td></tr>
+        <tr><td class="s"><span class="sx"><span class="site">06</span>구월동 로데오거리·광장</span></td><td class="k">흡연·휴게 공간 분리</td><td class="op">+</td><td class="k">시간·방향 안내 유도사인</td></tr>
+        <tr><td class="s"><span class="sx"><span class="site">07</span>연안여객터미널</span></td><td class="k">길 안내 통합사이니지</td><td class="op">+</td><td class="k">짐 보관 공간 조성</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="main stack" style="top:179mm">
+    <div class="tx">
+      <p>1·2차 관계는 실험 질문을 쓴 직후에 정한다. 두 안 가운데 하나를 고를 때는 비교형으로, 한 시설에 요소를 더해 단계별 변화를 볼 때는 누적형으로 짠다. 어느 쪽이든 요일·시간대·지점·조사 방법은 사전조사부터 2차까지 바꾸지 않는다.</p>
+    </div>
+    <div class="warn"><span class="wt">주의</span>비교형에서 그림·문구·소재처럼 함께 바뀌는 요소가 여럿이면 차이를 요소 하나의 효과로 나누어 읽을 수 없다. 함께 바뀐 요소를 모두 적어 두고 두 안 전체의 차이로 읽는다.</div>
+  </div>
+
+  <aside class="side tight" style="top:57mm">
+    <p class="note"><b>비교형</b> 같은 자리에 1차 안과 2차 안을 바꾸어 설치하고 두 안을 견주는 방식</p>
+    <p class="note"><b>누적형</b> 1차 시설을 그대로 두고 2차에 요소를 더해 단계별 변화를 쌓는 방식</p>
+    <p class="note">같은 요일·시간대로 일정 잡기 · 34쪽</p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">13 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 14쪽 1-3 가설 설정 방법 (짝수 · 서술형) ================= -->
+<section class="page even p1 pg14">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-3</span>가설 설정 방법</div>
+    <h2 class="hl">지표는 <em>행동 기록과 이용자 의견</em>을 짝지어 정하고 대조 구간도 함께 정한다</h2>
+    <p class="lede">행동만 세면 왜 그렇게 움직였는지 알 수 없고, 의견만 들으면 실제로 그렇게 움직였는지 알 수 없다. 둘을 짝지어 정하고 설치물의 영향을 받지 않는 구간도 함께 잰다.</p>
+  </div>
+
+  <div class="main stack" style="top:63mm">
+    <div class="tx">
+      <p>지표는 실험 질문의 '확인할 변화'에서 뽑는다. 먼저 이용·시선·체류·이동처럼 관찰로 셀 수 있는 행동을 정하고, 그 행동을 설명할 설문·인터뷰 문항을 하나씩 짝지어 붙인다. 체류 인원과 체류 시간을 센다면 그 자리를 어떻게 느꼈는지, 왜 머물렀는지를 함께 묻는다.</p>
+      <p>지표마다 세는 단위와 분모를 먼저 정한다. 한 사람을 한 번 셀지 지날 때마다 셀지, 응답률의 분모를 지나간 사람으로 둘지 응답한 사람으로 둘지 정해 실험 설계서에 적는다. 측정 시작과 끝 시각, 척도, 무응답 처리도 같은 자리에 적는다. 정하지 못한 값은 빈칸으로 남기고 0으로 바꾸지 않는다.</p>
+    </div>
+    <p class="rule">행동 기록 하나에 <em>그 행동을 설명할 질문</em> 하나를 짝짓는다</p>
+    <div class="tx">
+      <p>대조 구간은 실험 구간과 가까워 같은 날씨와 유동을 겪되 설치물이 보이지 않는 곳으로 고른다. 실험 구간과 같은 시간에 같은 방법으로 세고, 사전조사부터 2차까지 같은 자리를 쓴다. 결과는 사전조사 기준값에서 1차, 2차로 이어지는 변화와 대조 구간과의 차이로 읽는다.</p>
+    </div>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">05</span><span class="fd attr">매력</span>굴포천 제1교량(부흥교) 옆 산책로</div>
+      <p>산책로 한쪽에 파라솔 그늘과 자리를 두고, 반대쪽 산책로와 교량 하부를 대조 구간으로 삼았다. 체류 인원·체류 시간·멈춤률은 교량 하부와 같은 시간에 계수하였고, 그늘 체감과 머무는 이유는 인터뷰로 물었다.</p>
+      <p class="more">결과는 최종보고서 145–168쪽</p>
+    </div>
+    <div class="tx">
+      <p>조사 방법마다 최소 참여인원도 정한다. 설문은 응답할 수 있는 사람 수에서, 인터뷰와 워크숍은 진행할 수 있는 인원에서 출발한다. 1·2차에 같은 사람이 두 번 응답하면 안 되는 실험은 중복 참여를 빼는 방법을 함께 적는다. 실제로 받은 응답 수는 운영 기록에 따로 적어 최소 참여인원과 견준다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:63mm">
+    <table class="mini">
+      <caption>실험 전에 정한 최소 참여인원</caption>
+      <tr><td><b>약산초</b>1·2차 전교생 설문</td><td class="n">556명</td></tr>
+      <tr><td><b>약산초</b>어린이 안전디자인 워크숍</td><td class="n">35명</td></tr>
+      <tr><td><b>차이나타운</b>외국인 스티커 설문·보충 인터뷰</td><td class="n">50명<small>차수별</small></td></tr>
+      <tr><td><b>굴포천</b>1차 체류 시민 인터뷰</td><td class="n">30명</td></tr>
+    </table>
+    <div class="tight">
+      <p class="note"><b>대조 구간</b> 설치물의 영향을 받지 않으면서 같은 시간과 날씨를 겪는 비교 구간</p>
+      <p class="note"><b>기준값</b> 사전조사에서 잰 실험 전의 값</p>
+      <p class="note">결과를 읽는 법 · 42쪽</p>
+    </div>
+    <p class="to-form"><span class="fno">서식 03</span>실험 설계서<span class="pg">57쪽</span></p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">14 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 15쪽 1-4 협업 구조 구축 (홀수 · 도식형 · W) ================= -->
+<section class="page odd p1 pg15">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-4</span>협업 구조 구축</div>
+    <h2 class="hl">협업 주체마다 <em>맡을 일과 정할 일</em>을 나눠 적는다</h2>
+    <p class="lede">명단만 있으면 누가 무엇을 하고 누가 허락하는지 현장에서 다시 묻게 된다. 주체마다 맡는 일과 정하는 일을 나누어 적고, 맡을 주체가 없는 일부터 찾는다.</p>
+  </div>
+
+  <div class="main stack" style="top:57mm">
+    <div class="hub">
+      <svg viewBox="0 0 112 124">
+        <g fill="none" stroke="#1A2F4B" stroke-width=".3">
+          <path d="M47 47.6 31 22"/><path d="M56 45V23"/><path d="M65 47.6 81 22"/>
+          <path d="M39 62H35.5"/><path d="M73 62H76.5"/>
+          <path d="M44.7 74.7 31 90"/><path d="M56 79V90"/>
+        </g>
+        <path d="M67.3 74.7 81 90" fill="none" stroke="#9AA6B1" stroke-width=".3" stroke-dasharray="1 .8"/>
+        <g fill="#1A2F4B"><circle cx="31" cy="22" r=".9"/><circle cx="56" cy="23" r=".9"/><circle cx="81" cy="22" r=".9"/><circle cx="35.5" cy="62" r=".9"/><circle cx="76.5" cy="62" r=".9"/><circle cx="31" cy="90" r=".9"/><circle cx="56" cy="90" r=".9"/></g>
+        <circle cx="81" cy="90" r=".9" fill="#C9D1D8"/>
+      </svg>
+      <div class="ctr"><b>총괄기획 · 조정</b><span>인천광역시 총괄기획<br>위즈플러스 PM·조정·점검</span></div>
+
+      <div class="nd" style="left:0;top:0"><h4>시민</h4><small>시민디자인단·주민참여위원회·송도 러닝크루</small>문제 발굴·생활체감 검증, 관찰·계수 분담, 설문·인터뷰·워크숍·자문</div>
+      <div class="nd" style="left:38.5mm;top:0;text-align:center"><h4>행정</h4><small>소관부서·군·구</small>점용·설치 협의, 안전·민원·원상복구·이관<span class="dec">◇ 대상지 사용허가</span></div>
+      <div class="nd r" style="left:77mm;top:0"><h4>현장</h4><small>약산초·인천대·송도글로벌캠퍼스</small>학생 대상 설문 협조, 참여형 워크숍 참여·운영 거점 제공</div>
+      <div class="nd" style="left:0;top:52mm;width:33mm"><h4>예술</h4><small>청년작가</small>시민참여 아트 워크숍, 작품 제공·공공미술</div>
+      <div class="nd r" style="left:79mm;top:52mm;width:33mm"><h4>민간기업</h4><small>3M</small>공간구성 재료 부분 지원, 업무협약 후 실험</div>
+      <div class="nd" style="left:0;top:92mm"><h4>자문·관계기관</h4><small>전문가·인천항만공사·로데오거리 상인협회</small>공공디자인 자문, 관계기관 협의</div>
+      <div class="nd" style="left:38.5mm;top:92mm;text-align:center"><h4>사회적협동조합</h4><small>이소</small>향기볼·패브릭 스프레이·패브릭 오일·디퓨저 제공</div>
+      <div class="nd r gap" style="left:77mm;top:92mm"><h4>빈 자리</h4><small>맡을 주체가 없는 일</small>먼저 찾아 협업 상대를 더하거나 실험 규모를 줄인다</div>
+      <p class="key">◇ 정하는 일 · 점선은 아직 비어 있는 자리</p>
+    </div>
+
+    <div class="tx">
+      <p>협업 구조는 이름보다 일로 그린다. 기획·설계·운영·관리에 필요한 일을 먼저 늘어놓고 맡을 주체를 하나씩 잇는다. 허가·승인·심의처럼 정하는 일은 권한이 있는 주체 하나에 두고 ◇로 표시한다. 한 사람이 여러 일을 맡으면 그 사람이 빠질 때 대신할 사람도 적는다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:57mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>모임 대표가 도움받을 곳을 찾는다</dd><dt>함께한다</dt><dd>요청할 행정·기업·학교가 참여한다</dd><dt>정한다</dt><dd>요청받은 쪽의 회신으로 정한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>담당 부서가 협업 기관을 정리한다</dd><dt>함께한다</dt><dd>관계기관·기업·학교가 참여한다</dd><dt>정한다</dt><dd>공문·협약으로 역할을 확정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>조정자가 주체별 역할안을 짠다</dd><dt>함께한다</dt><dd>참여 주체 전체가 맡을 일을 낸다</dd><dt>정한다</dt><dd>역할 합의서로 함께 확정한다</dd></dl>
+    </div>
+    <div class="tight">
+      <p class="note">도식은 인천 사회실험의 협업 구조다. 주체 이름 아래 회색 글씨는 인천에서 그 자리를 맡은 곳이다</p>
+      <p class="note">요청·협의·약속 순서 · 16쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">15 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 16쪽 1-4 협업 구조 구축 (짝수 · 서술형) ================= -->
+<section class="page even p1 pg16">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">1-4</span>협업 구조 구축</div>
+    <h2 class="hl">협업은 <em>요청, 협의, 약속</em> 순서로 만들고 일정은 협업 주체에 맞춘다</h2>
+    <p class="lede">협업 상대는 실험팀의 일정과 조건을 모른다. 무엇을 언제까지 바라는지 요청하고, 허용 범위를 협의하고, 문서로 약속해야 현장에서 엇갈리지 않는다.</p>
+  </div>
+
+  <div class="main stack" style="top:63mm">
+    <div class="tx">
+      <p><b>요청</b> 맡길 일, 필요한 날짜, 회신 기한을 적어 보낸다. 상대에 따라 묻는 것을 달리한다. 관리기관에는 장소 사용과 설치 범위를, 학교에는 학생 참여와 수업 일정을, 기업에는 지원할 재료와 제품을 묻는다.</p>
+      <p><b>협의</b> 결과는 허용된 것과 허용되지 않은 것을 나누어 적는다. 회의에 참석했거나 관심을 보인 것을 동의로 적지 않는다. 협업 상태는 후보, 접촉, 협의, 확정, 제공, 종료로 나누어 기록하고, 회신이 없으면 협의 중으로 둔다.</p>
+      <p><b>약속</b> 공문, 업무협약, 역할 합의서처럼 남는 형태로 맺는다. 지원은 현금, 현물, 대여, 인력, 공간으로 나누어 적고 같은 지원을 두 번 세지 않는다.</p>
+      <p><b>일정</b> 실험일은 사전조사와 같은 요일·시간대로 잡는다. 협업 주체의 정기 활동이나 수업이 실험에 필요한 경우에는 협업 주체의 일정을 먼저 따르고, 달라진 요일과 시간을 기록해 결과를 읽을 때 함께 본다.</p>
+      <p><b>연락</b> 협업이 정해지면 주체마다 담당자와 대신할 사람, 연락처, 연락하는 순서를 한 장에 적는다. 설치하는 날과 실험하는 날에는 현장 책임자가 이 순서대로 연락한다.</p>
+      <p><b>변경</b> 협의한 내용이 바뀌면 바뀐 날짜와 내용, 알려 온 주체를 적고 관련된 다른 주체에게도 그날 알린다. 협업 주체가 빠지면 그 주체가 맡던 일을 빈 자리로 옮기고 다시 맡을 곳을 찾는다.</p>
+    </div>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span></div>
+      <p>3M과는 업무협약을 맺은 뒤 실험을 진행하였다. 사회적협동조합 이소는 로데오거리에 향기볼과 패브릭 스프레이, 굴포천에 패브릭 오일, 연안여객터미널에 디퓨저를 제공하였다.</p>
+      <p>송도는 러닝크루 정기 러닝에, 굴포천은 인천대 워크숍 일정에 실험일을 맞췄다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:63mm">
+    <figure>
+      <div class="ph"><img src="img/00_2장_워크숍.jpg" alt="시민디자인단 워크숍"></div>
+      <figcaption class="cap">8.5 시민디자인단 워크숍</figcaption>
+    </figure>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">04</span><span class="fd incl">포용</span>차이나타운</div>
+      <p>제물포문화재단·개항동행정복지센터와 픽토그램의 설치·교체·철거, 외부 설문 공간을 협의하였다. 협의 결과 화장실 내부 픽토그램 부착과 화장실 외부 설문이 허용되었다.</p>
+    </div>
+    <p class="to-form"><span class="fno">서식 04</span>협업 역할·연락표<span class="pg">58쪽</span></p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">16 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 17쪽 점검 (홀수 · 체크리스트) ================= -->
+<section class="page odd p1 pg17">
+  <div class="nav"><span class="on">기획하기</span><span>설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">기획</div>
+  <div class="hd">
+    <div class="sec"><span class="no">점검</span>기획하기</div>
+    <h2 class="hl">기획을 마치기 전에 <em>열 가지</em>를 확인한다</h2>
+    <p class="lede">네 절에서 정한 것이 서식에 적혀 있어야 설계 담당이 같은 내용을 이어받는다. 표시하지 못한 항목은 오른쪽에 적힌 쪽으로 돌아가 채운다.</p>
+  </div>
+
+  <div class="main" style="top:57mm">
+    <div class="chk">
+      <p class="grp">문제와 장소</p>
+      <div class="row"><span>문제의 규모와 대상을 통계·문헌으로 잡고, 수치마다 출처·기준연도·조사대상을 적었다<small>평일·주말, 낮·밤 현장조사로 대상이 가장 많이 나타나는 칸을 찾았다</small></span><span class="ref">서식 01 · 55쪽</span></div>
+      <div class="row"><span>후보지를 여섯 기준으로 한 표에 놓고 매겼고, 장소 사용 확인과 고르지 않은 이유를 따로 적었다<small>장소 사용 확인이 비어 있는 후보지는 총점과 관계없이 거점으로 정하지 않았다</small></span><span class="ref">서식 02 · 56쪽</span></div>
+      <p class="grp">질문과 비교</p>
+      <div class="row"><span>실험 질문 한 문장에 대상·장소·바꾸는 요소·확인할 변화가 모두 들어 있다<small>1차와 2차 가설을 '~하면, ~할까?' 꼴로 나누어 썼다</small></span><span class="ref">12쪽</span></div>
+      <div class="row"><span>1·2차를 비교형으로 할지 누적형으로 할지 정했고, 함께 바뀌는 요소를 모두 적었다</span><span class="ref">13쪽</span></div>
+      <p class="grp">측정</p>
+      <div class="row"><span>행동 기록마다 그 행동을 설명할 설문·인터뷰 문항을 짝지었고, 세는 단위와 분모를 정했다<small>정하지 못한 값은 0으로 바꾸지 않고 빈칸으로 두었다</small></span><span class="ref">서식 03 · 57쪽</span></div>
+      <div class="row"><span>실험 구간과 같은 시간에 같은 방법으로 셀 대조 구간을 정했다</span><span class="ref">서식 03 · 57쪽</span></div>
+      <div class="row"><span>조사 방법마다 최소 참여인원과 중복 참여를 빼는 방법을 정했다</span><span class="ref">서식 03 · 57쪽</span></div>
+      <p class="grp">협업</p>
+      <div class="row"><span>협업 주체마다 맡는 일과 정하는 일을 나누었고, 맡을 주체가 없는 일이 남지 않았다</span><span class="ref">서식 04 · 58쪽</span></div>
+      <div class="row"><span>주체마다 담당자와 연락처, 연락하는 순서를 적은 연락체계를 만들었다<small>담당자가 빠질 때 대신할 사람도 적었다</small></span><span class="ref">서식 04 · 58쪽</span></div>
+      <div class="row"><span>협업 주체의 일정을 먼저 따를 실험일과 그 이유를 적었다</span><span class="ref">16쪽</span></div>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:57mm">
+    <div class="hand">
+      <p class="h3">설계로 넘기는 네 가지</p>
+      <ol>
+        <li>사회문제 진단표<i>55쪽</i></li>
+        <li>거점 선정 평가표<i>56쪽</i></li>
+        <li>실험 설계서<i>57쪽</i></li>
+        <li>협업 역할·연락표<i>58쪽</i></li>
+      </ol>
+      <p class="to"><span class="chip">PART 02</span>설계하기 · 19쪽</p>
+    </div>
+    <p class="note">설계 중에 질문이나 1·2차 관계가 바뀌면 실험 설계서를 고치고 고친 날짜를 적는다</p>
+  </aside>
+
+  <div class="pno">17 <i class="vt" data-vname></i></div>
+</section>
+
+</body>
+</html>

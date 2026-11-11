@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>인천 사회실험 운영매뉴얼 · PART 02 설계하기</title>
+<link rel="stylesheet" href="manual.css">
+<script id="vscript">
+(function(){
+  var q=new URLSearchParams(location.search), v=(q.get('v')||'A').toUpperCase();
+  if(!/^(A|B|H)$/.test(v)) v='A';
+  var N={A:'시민참여중심형',B:'지자체추진중심형',H:'하이브리드형'};
+  var r=document.documentElement, qa=!!q.get('qa');
+  r.classList.add('v-'+v); r.dataset.ver=v; if(qa) r.classList.add('qa');
+  var MM=96/25.4;
+  function pno(el){var s=el&&el.closest('section.page'),p=s&&s.querySelector('.pno');return p?(p.firstChild&&p.firstChild.nodeValue||'').trim():'?';}
+  function runQA(){
+    var out=[],n=0;
+    document.querySelectorAll('.vslot>[data-v]').forEach(function(b){
+      n++; b.style.setProperty('display','block','important');
+      var over=[b].concat([].slice.call(b.querySelectorAll('*'))).some(function(e){
+        return e.clientHeight>0&&(e.scrollHeight>e.clientHeight+1||e.scrollWidth>e.clientWidth+1);});
+      b.style.removeProperty('display');
+      if(over){b.classList.add('qa-over');out.push('QA-OVERFLOW '+pno(b)+'쪽 '+b.getAttribute('data-v'));}
+    });
+    document.querySelectorAll('section.page').forEach(function(pg){
+      if(pg.classList.contains('divider')||pg.classList.contains('cover')) return;
+      var top=pg.getBoundingClientRect().top, low=0;
+      pg.querySelectorAll('.main,.side,.full,.hd').forEach(function(c){
+        var b=c.getBoundingClientRect().bottom;
+        c.querySelectorAll('*').forEach(function(d){var r=d.getBoundingClientRect();if(r.height>0)b=Math.max(b,r.bottom);});
+        var mm=(b-top)/MM; low=Math.max(low,mm);
+        if(mm>239.5){c.classList.add('qa-bottom');out.push('QA-BOTTOM '+pno(c)+'쪽 '+c.className.split(' ')[0]+' '+mm.toFixed(1)+'mm');}
+      });
+      if(low<192.75) out.push('QA-EMPTY '+pno(pg)+'쪽 내용 끝 '+low.toFixed(1)+'mm (아래 1/4 이상 빈 곳)');
+      if(pg.scrollHeight>pg.clientHeight+1||pg.scrollWidth>pg.clientWidth+1) out.push('QA-PAGE '+pno(pg)+'쪽 판 밖으로 넘침');
+    });
+    out.push('QA-DONE 버전 '+v+' · 블록 '+n+'개 · 쪽 '+document.querySelectorAll('section.page').length+'개');
+    var pre=document.getElementById('qa-out')||document.body.appendChild(document.createElement('pre'));
+    pre.id='qa-out'; pre.textContent=out.join('\n'); out.forEach(function(l){console.log(l)});
+  }
+  function glue(root){ /* 한글 줄바꿈: 가운뎃점(·)이 줄 첫머리에 오지 않게 앞 글자에 붙인다 */
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),t;
+    while(t=w.nextNode()){var x=t.nodeValue;if(x.indexOf('\u00b7')<0)continue;
+      t.nodeValue=x.replace(/\s\u00b7\s/g,'\u00a0\u00b7 ').replace(/([^\s\u2060])\u00b7/g,'$1\u2060\u00b7');}
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    document.body.classList.add('v-'+v); glue(document.body);
+    document.querySelectorAll('[data-vname]').forEach(function(e){
+      var m=e.getAttribute('data-vname'); e.textContent=m==='full'?v+' · '+N[v]:m==='letter'?v:N[v];
+    });
+    document.title='인천 사회실험 운영매뉴얼 '+v+' '+N[v];
+  });
+  if(qa) window.addEventListener('load',function(){(document.fonts?document.fonts.ready:Promise.resolve()).then(runQA)});
+})();
+</script>
+<style>
+/* ── m2 쪽 고유 스타일 (선택자는 쪽 클래스로 묶는다) ── */
+
+/* 18쪽 간지: 남색 편 칩이 남색 그늘 위에서 묻히지 않게 외곽선 대신 흰 면 + 남색 글자 */
+.pg18 .secs li b{background:#fff;color:var(--navy)}
+
+/* 19쪽: 실제 도면 + 번호 표시 + 다섯 칸 띠 */
+.pg19 .dwg{position:relative;width:112mm;height:72mm;background:var(--gray-bg)}
+.pg19 .dwg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.pg19 .mk{position:absolute;display:flex;align-items:center;justify-content:center;width:4.6mm;height:4.6mm;border-radius:50%;
+  background:var(--teal);color:#fff;font-size:6.6pt;font-weight:800;line-height:1;box-shadow:0 0 0 .5mm #fff}
+.pg19 .five{display:grid;grid-template-columns:22mm 24mm 21mm 11mm 34mm;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2)}
+.pg19 .five>div{padding:1.6mm 1.4mm 1.5mm;border-left:.25mm solid var(--line)}
+.pg19 .five>div:first-child{border-left:0;padding-left:0}
+.pg19 .five .k{display:flex;align-items:center;gap:1.1mm;font-size:6.4pt;line-height:1.3;font-weight:800;color:var(--navy)}
+.pg19 .five .k i{display:inline-flex;align-items:center;justify-content:center;width:3.6mm;height:3.6mm;border-radius:50%;background:var(--teal);color:#fff;font-style:normal;font-size:5.6pt;font-weight:800;line-height:1}
+.pg19 .five .v{margin-top:.8mm;font-size:6.8pt;line-height:1.38;font-weight:600;color:var(--ink)}
+
+/* 20쪽: 사진 두 장(전폭) */
+.pg20 .ph2{display:grid;grid-template-columns:92mm 56mm;column-gap:4mm}
+.pg20 .ph2 .ph{height:54mm}
+.pg20 .ph2 .ph img{object-position:50% 78%}
+.pg20 .ph2 .ph.r img{object-position:50% 60%}
+
+.pg20 .out .h3{font-size:7.6pt;margin-bottom:0}
+.pg20 .out ul{list-style:none;border-top:.5mm solid var(--navy);margin-top:1.4mm}
+.pg20 .out li{display:grid;grid-template-columns:22mm 1fr;column-gap:2mm;padding:1.2mm 0;border-bottom:.25mm solid var(--line);font-size:6.9pt;line-height:1.45}
+.pg20 .out li b{font-weight:800;color:var(--navy)}
+
+/* 21쪽: 품목 쌓기 */
+.pg21 .pile{display:grid;grid-template-columns:22mm 130mm}
+.pg21 .brk{position:relative}
+.pg21 .brk svg{position:absolute;left:0;top:0;width:22mm;height:100%;overflow:visible}
+.pg21 .brk span{position:absolute;left:0;width:15mm;font-size:6.4pt;line-height:1.35;font-weight:800;color:var(--navy)}
+.pg21 .lay{display:grid;grid-template-columns:96mm 30mm;column-gap:4mm;padding:2.6mm 3mm 3mm;border-radius:.6mm}
+.pg21 .lay.l2{background:var(--sky)}
+.pg21 .lay.l1{background:var(--gray-bg)}
+.pg21 .plus{height:5mm;display:flex;align-items:center;padding-left:3mm;font-size:6.4pt;font-weight:800;color:var(--teal);line-height:1}
+.pg21 .lh{display:flex;align-items:baseline;gap:2mm;font-size:7.6pt;line-height:1.3;font-weight:800;color:var(--navy);margin-bottom:1.4mm}
+.pg21 .lh b{background:var(--navy);color:#fff;font-size:6.4pt;padding:.4mm 1.6mm;font-weight:800}
+.pg21 .l1 .lh b{background:var(--teal)} /* 차수 색: 1차 블루·2차 남색 (st_module --r1/--r2) */
+.pg21 .lh em{color:var(--ink2);font-weight:600;font-size:6.6pt}
+.pg21 table{width:100%;border-collapse:collapse;font-size:6.7pt;line-height:1.35}
+.pg21 th{text-align:left;font-weight:700;color:var(--navy);font-size:6.2pt;padding:.6mm 1.2mm;border-bottom:.25mm solid var(--line2)}
+.pg21 td{padding:.75mm 1.2mm;border-bottom:.25mm solid rgba(26,47,75,.12);vertical-align:top}
+.pg21 td:first-child,.pg21 th:first-child{padding-left:0}
+.pg21 td.n{text-align:right;white-space:nowrap;font-weight:700;color:var(--navy)}
+.pg21 .th{display:flex;flex-direction:column;gap:1mm}
+.pg21 .th .ph{height:21mm;border-radius:.6mm}
+.pg21 .th .cap{margin-top:0;font-size:5.8pt}
+
+/* 22쪽: 서식 05 미리보기 */
+.pg22 .pv .fhd{padding:2.2mm 3mm}
+.pg22 .pv .fname{font-size:10pt}
+.pg22 .pv th,.pg22 .pv td{height:9mm;font-size:6.6pt;line-height:1.35;padding:.9mm 1.3mm}
+.pg22 .pv th{font-size:6.6pt}
+.pg22 .pv tr.gp th{height:auto;padding:1mm 1.3mm;font-size:6.4pt;font-weight:800;text-align:center}
+.pg22 .pv tr.gp th.mk1{background:var(--sky);color:var(--navy)}
+.pg22 .pv tr.gp th.mk2{background:#E6EBEF;color:var(--navy)}
+.pg22 .pv td.ex1{color:var(--ink);font-weight:600}
+.pg22 .pv .ex{font-size:6.4pt}
+
+/* 23쪽: 먼셀 기호 해부 + 색 견본 줄 */
+.pg23 .anat{display:grid;grid-template-columns:52mm 56mm;column-gap:4mm;align-items:center;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2);padding:2.6mm 0}
+.pg23 .code{display:flex;align-items:flex-start;gap:1.6mm;font-size:15pt;line-height:1;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.pg23 .code .pt{display:flex;flex-direction:column;align-items:center}
+.pg23 .code .pt i{margin-top:1.4mm;padding-top:.9mm;border-top:.35mm solid var(--teal);font-style:normal;font-size:6.2pt;font-weight:700;color:var(--teal);line-height:1.2;min-width:7mm;text-align:center}
+.pg23 .code .sl{font-weight:300;color:var(--mute)}
+.pg23 .anat p{font-size:6.8pt;line-height:1.5;color:var(--ink2);font-weight:500}
+.pg23 .sw .im{height:27mm;overflow:hidden;background:#fff}
+.pg23 .sw .im img{width:100%;height:100%;object-fit:cover}
+.pg23 .sw .lab{display:grid;grid-template-columns:repeat(5,1fr);list-style:none;border-top:.25mm solid var(--line2);margin-top:1mm}
+.pg23 .sw .lab li{padding-top:.9mm;text-align:center;font-size:6.3pt;line-height:1.3;font-weight:700;color:var(--navy)}
+.pg23 .sw .lab li small{display:block;font-size:5.8pt;font-weight:600;color:var(--mute)}
+.pg23 .sw .cap{margin-top:.8mm}
+
+/* 24쪽: 그림 두 쌍 */
+.pg24 .pairs{display:grid;grid-template-columns:74mm 74mm;column-gap:4mm}
+.pg24 .pair{display:grid;grid-template-columns:33mm 8mm 33mm;align-items:center}
+.pg24 .pair .ph{height:40mm;background:var(--gray-bg)}
+.pg24 .pair .ph.ct img{object-fit:contain;padding:1.2mm}
+.pg24 .pair .vs{text-align:center;font-size:6.2pt;font-weight:800;color:var(--teal);line-height:1.2}
+.pg24 .pair .lb{grid-column:1/-1;display:grid;grid-template-columns:33mm 8mm 33mm;margin-top:1.2mm}
+.pg24 .pair .lb span{font-size:6.6pt;line-height:1.3;font-weight:700;color:var(--navy)}
+.pg24 .pair .lb span:nth-child(2){visibility:hidden}
+.pg24 .pair .same{grid-column:1/-1;margin-top:1.2mm;padding-top:1mm;border-top:.25mm solid var(--line);font-size:6.3pt;line-height:1.4;color:var(--ink2);font-weight:600}
+.pg24 .pair .same b{color:var(--teal);font-weight:800}
+
+/* 25쪽: 설치 형태 입면 + 읽는 높이 자 */
+.pg25 .elev{position:relative;width:152mm;height:66mm}
+.pg25 .elev svg{position:absolute;left:0;top:0;width:152mm;height:66mm;overflow:visible}
+.pg25 .elev .t{position:absolute;font-size:6.8pt;line-height:1.3;font-weight:800;color:var(--navy);text-align:center}
+.pg25 .elev .t small{display:block;font-size:6pt;font-weight:600;color:var(--ink2)}
+.pg25 .elev .r{position:absolute;left:128mm;width:24mm;font-size:6pt;line-height:1.32;font-weight:600;color:var(--ink2)}
+.pg25 .elev .r b{color:var(--navy);font-weight:800}
+.pg25 .elev .rh{position:absolute;left:121mm;top:0;width:31mm;font-size:6.2pt;font-weight:800;color:var(--navy);line-height:1.3}
+.pg25 .ty{width:112mm;border-collapse:collapse;table-layout:fixed}
+.pg25 .ty col.a{width:21mm}.pg25 .ty col.b{width:30mm}
+.pg25 .ty th,.pg25 .ty td{font-size:6.9pt;line-height:1.42;padding:1.8mm 1.4mm;text-align:left;vertical-align:top}
+.pg25 .ty thead th{border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2);font-weight:700;color:var(--navy);font-size:6.5pt}
+.pg25 .ty td{border-bottom:.25mm solid var(--line)}
+.pg25 .ty td:first-child,.pg25 .ty th:first-child{padding-left:0}
+.pg25 .ty td.k{font-weight:800;color:var(--navy);font-size:7pt}
+.pg25 .ty td.s{color:var(--ink2);font-weight:500}
+
+/* 26쪽: 비워 둘 자리 해부 + 사진 */
+.pg26 .blank{display:grid;grid-template-columns:94mm 54mm;column-gap:4mm}
+.pg26 .tree{position:relative;height:64mm;background:var(--sky2);border-radius:.6mm}
+.pg26 .tree svg{position:absolute;left:0;top:0;width:94mm;height:64mm}
+.pg26 .tree .lb{position:absolute;font-size:6.2pt;line-height:1.36;font-weight:600;color:var(--ink)}
+.pg26 .tree .lb b{display:block;font-weight:800;color:var(--navy);font-size:6.5pt}
+.pg26 .tree .lb.r b{color:var(--teal)}
+.pg26 .tree .key{position:absolute;left:3mm;top:2.6mm;display:flex;gap:3.4mm;font-size:6pt;font-weight:700;color:var(--ink2);line-height:1.2}
+.pg26 .tree .key i{display:inline-block;width:5mm;height:2.6mm;margin-right:1mm;vertical-align:-.5mm;border-radius:0}
+.pg26 .tree .key .s{background:var(--navy)}
+.pg26 .tree .key .d{background:repeating-linear-gradient(135deg,var(--teal) 0 .3mm,#fff .3mm 1.3mm)}
+.pg26 .blank .ph{height:64mm;border-radius:.6mm}
+.pg26 .blank .ph img{object-position:40% 50%}
+.pg26 .shots{display:grid;grid-template-columns:54mm 54mm;column-gap:4mm}
+.pg26 .shots .ph{height:30mm}
+
+/* 28쪽: 장소 유형 × 조건 매트릭스 */
+.pg28 .mx{width:152mm;border-collapse:collapse;table-layout:fixed}
+.pg28 .mx col.p{width:24mm}
+.pg28 .mx th,.pg28 .mx td{font-size:6.7pt;line-height:1.4;padding:1.5mm 1.5mm;text-align:left;vertical-align:top}
+.pg28 .mx thead th{border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2);font-weight:700;color:var(--navy);font-size:6.8pt}
+.pg28 .mx thead th small{display:block;font-size:5.8pt;font-weight:600;color:var(--mute)}
+.pg28 .mx tbody td{border-bottom:.25mm solid var(--line);border-left:.25mm solid var(--line);color:var(--ink)}
+.pg28 .mx tbody td.p{border-left:0;padding-left:0;font-weight:800;color:var(--navy);font-size:7.2pt}
+.pg28 .mx tbody td.p small{display:block;font-size:5.8pt;font-weight:600;color:var(--mute);margin-top:.4mm}
+.pg28 .mx td.hi{background:var(--sky)}
+.pg28 .mx td.no{color:#AAB5BE}
+.pg28 .case.w{display:grid;grid-template-columns:30mm 1fr;column-gap:3.4mm;align-items:start}
+.pg28 .case.w .ph{height:30mm;border-radius:.6mm}
+
+/* 29쪽: 검토 단계 세로 흐름 */
+.pg29 .tl{position:relative;padding-left:9mm}
+.pg29 .tl::before{content:"";position:absolute;left:2.6mm;top:2mm;bottom:3mm;width:.3mm;background:var(--navy)}
+.pg29 .stg{position:relative;padding-bottom:6.4mm}
+.pg29 .stg+.stg{padding-top:2.4mm;border-top:.25mm solid var(--line)}
+.pg29 .stg::before{content:"";position:absolute;left:-8.2mm;top:3.4mm;width:3.6mm;height:3.6mm;border-radius:50%;background:var(--navy)}
+.pg29 .stg.now::before{background:var(--teal)}
+.pg29 .stg h3{display:flex;align-items:baseline;gap:2.4mm;font-size:8.4pt;line-height:1.3;font-weight:800;color:var(--navy);padding-top:2.4mm}
+.pg29 .stg h3 span{font-size:6.4pt;font-weight:600;color:var(--mute)}
+.pg29 .ln{display:grid;grid-template-columns:44mm 6mm 1fr;align-items:start;margin-top:1.6mm;font-size:6.9pt;line-height:1.45}
+.pg29 .ln .o{color:var(--ink2);font-weight:500}
+.pg29 .ln .o b{display:block;font-size:6pt;font-weight:800;color:var(--teal);margin-bottom:.3mm}
+.pg29 .ln .a{color:var(--ink);font-weight:600}
+.pg29 .ln .a b{display:block;font-size:6pt;font-weight:800;color:var(--navy);margin-bottom:.3mm}
+.pg29 .ln svg{margin-top:4.6mm}
+
+.pg29 .rec .h3{font-size:7.4pt;margin-bottom:1.2mm}
+.pg29 .rec .cells{display:grid;grid-template-columns:14mm 19mm 26mm 17mm 19mm 17mm;border-top:.5mm solid var(--navy);border-bottom:.25mm solid var(--line2)}
+.pg29 .rec .cells span{padding:1.6mm 1.2mm;font-size:6.5pt;line-height:1.3;font-weight:700;color:var(--navy);border-left:.25mm solid #fff;background:var(--gray-bg)}
+.pg29 .rec .cells span:first-child{border-left:0}
+
+/* 30쪽: 반영 전·후 두 쌍 */
+.pg30 .ba{display:grid;grid-template-columns:74mm 74mm;column-gap:4mm}
+.pg30 .ba .pr{display:grid;grid-template-columns:34mm 6mm 34mm;align-items:center}
+.pg30 .ba .ph{height:38mm;background:var(--gray-bg)}
+.pg30 .ba .ph.ct img{object-fit:contain}
+.pg30 .ba .tg{display:grid;grid-template-columns:34mm 6mm 34mm;margin-top:1mm;font-size:6.2pt;font-weight:800;color:var(--navy);line-height:1.3}
+.pg30 .ba .tg span:last-child{color:var(--teal)}
+.pg30 .ba .cap{margin-top:.8mm}
+
+/* 31쪽: 넘기는 묶음 */
+.pg31 .hand{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:3mm;background:var(--gray-bg);border-radius:.6mm;padding:3mm 3.4mm}
+.pg31 .hand p{font-size:7.2pt;line-height:1.55;color:var(--ink);font-weight:500}
+.pg31 .hand p b{color:var(--navy);font-weight:800}
+.pg31 .hand .go{display:flex;align-items:center;gap:1.6mm;font-size:7pt;font-weight:800;color:var(--navy);white-space:nowrap}
+.pg31 .hand .go span{background:var(--p3);color:#fff;padding:.5mm 1.8mm}
+</style>
+</head>
+<body>
+
+<!-- ================= 18쪽 PART 02 간지 (짝수) ================= -->
+<section class="page even p2 divider pg18">
+  <div class="bg duo" style="--focus:22% 50%"><img src="img/05_굴포천.jpg" alt="굴포천 교량 하부와 산책로"></div>
+  <div class="shade"></div>
+  <div class="tab">설계</div>
+  <div class="part">PART.2</div>
+  <div class="pname">설계하기</div>
+  <p class="q">무엇을, 어떤 크기와 재료로, 어디에 놓는가</p>
+  <ol class="secs">
+    <li><b>2-1</b><span>최종 도면·재료</span><i>19</i></li>
+    <li><b>2-2</b><span>색·그림·안내</span><i>23</i></li>
+    <li><b>2-3</b><span>현장 적용 조건</span><i>27</i></li>
+    <li><b>2-4</b><span>디자인 변경 이력</span><i>29</i></li>
+    <li><b>점검</b><span>설계를 넘기기 전에 확인할 열두 가지</span><i>31</i></li>
+  </ol>
+  <p class="phcap">굴포천 교량 하부와 산책로</p>
+</section>
+
+<!-- ================= 19쪽 2-1 최종 도면·재료 (홀수 · 혼합형 · W) ================= -->
+<section class="page odd p2 pg19">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-1</span>최종 도면·재료</div>
+    <h2 class="hl">도면 한 장에서 <em>품목·규격·재질·수량·위치</em>가 함께 읽혀야 한다</h2>
+    <p class="lede">제작업체는 규격과 재질을, 설치하는 사람은 위치와 수량을 찾는다. 다섯 가지가 한 장에 있으면 도면과 품목표를 오가며 맞춰 보는 일이 줄어든다.</p>
+  </div>
+
+  <div class="main" style="top:64mm">
+    <div class="dwg">
+      <img src="img/03_송도_부착상세.jpg" alt="송도 캠퍼스타운역 일대 바닥 사인 부착 상세도">
+      <span class="mk" style="left:15.6mm;top:10.2mm">2</span>
+      <span class="mk" style="left:80.6mm;top:33.4mm">5</span>
+      <span class="mk" style="left:33.4mm;top:21.2mm">5</span>
+    </div>
+    <div class="five" style="margin-top:var(--g1)">
+      <div><p class="k"><i>1</i>품목</p><p class="v">바닥 보도블록 사인</p></div>
+      <div><p class="k"><i>2</i>규격</p><p class="v">w400×h400 (보도블록 2×2칸)</p></div>
+      <div><p class="k"><i>3</i>재질</p><p class="v">3M 바닥 시트지</p></div>
+      <div><p class="k"><i>4</i>수량</p><p class="v">967장</p></div>
+      <div><p class="k"><i>5</i>위치</p><p class="v">연석에서 1m 떼어 부착, 진행 방향 약 6m 간격</p></div>
+    </div>
+    <p class="cap">송도 캠퍼스타운역 일대 바닥 사인 부착 상세도. 번호 2·5는 도면에 그려진 값, 아래 띠는 같은 품목의 품목표 값이다.</p>
+
+    <div class="tx" style="margin-top:var(--g2)">
+      <p>최종 도면은 설치물마다 한 장씩 만든다. 평면이나 입면 위에 설치 위치와 간격을 그리고, 같은 장 아래에 품목 이름과 규격, 재질, 수량을 표로 붙인다. 규격은 가로×세로(×높이) mm 순서로 적고, 재질은 소재와 마감을 함께 적는다. 수량은 구간별로 센 값과 합계를 같이 적어 현장에서 다시 셀 수 있게 한다.</p>
+      <p>위치는 연석, 벽, 기둥처럼 현장에서 바로 잴 수 있는 기준선에서 떨어진 거리로 적는다. 반복해 놓는 설치물은 간격도 적는다. 도면 번호와 고친 날짜는 도면 모서리에 두어 제작업체와 관리기관이 같은 판을 보는지 확인한다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:64mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>시민과 디자이너가 도면을 그린다</dd><dt>함께한다</dt><dd>제작업체가 규격과 재질을 맞춘다</dd><dt>정한다</dt><dd>관리기관이 안전을 확인한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>수행사가 도면과 품목표를 만든다</dd><dt>함께한다</dt><dd>제작업체·관계부서가 검토한다</dd><dt>정한다</dt><dd>부서 검토와 위원회 심의로 정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>디자인 담당이 도면을 묶어 낸다</dd><dt>함께한다</dt><dd>시민·제작업체가 의견을 더한다</dd><dt>정한다</dt><dd>공동 검토 뒤 부서가 확인한다</dd></dl>
+    </div>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">03</span><span class="fd incl">포용</span>송도 캠퍼스타운역 일대</div>
+      <p>현장 보도블록 200×200 네 칸에 사인 한 장을 붙이도록 그리고, 벤치와 식재를 고려해 연석에서 1m를 떼어 러닝 폭을 남겼다.</p>
+      <p>바닥 사인 967장과 안전 라바콘, 이동식 판매대를 같은 품목표에 적었다.</p>
+      <p class="more">결과는 최종보고서 97–120쪽</p>
+    </div>
+    <p class="note"><b>입면</b> 설치물을 옆에서 본 그림. 높이와 부착 위치를 적는다</p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">19 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 20쪽 2-1 최종 도면·재료 (짝수 · 서술형) ================= -->
+<section class="page even p2 pg20">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-1</span>최종 도면·재료</div>
+    <h2 class="hl">임시 설치물은 <em>당일 설치·철수와 원상복구</em>가 쉬운 재료로 만든다</h2>
+    <p class="lede">사회실험은 짧게 설치하고 같은 자리를 바로 돌려놓는다. 붙이고 떼는 방법이 도면에 함께 있어야 장소를 관리하는 기관과 설치를 협의할 수 있다.</p>
+  </div>
+
+  <div class="full" style="top:64mm">
+    <div class="ph2">
+      <figure><div class="ph"><img src="img/03_송도_1차시뮬.jpg" alt="송도 1차 시뮬레이션"></div>
+        <figcaption class="cap">송도 캠퍼스타운역 일대 1차 시뮬레이션(합성). 보도블록은 그대로 두고 바닥 시트를 붙였고, 이동식 판매대는 허니콤보드로 만들었다.</figcaption></figure>
+      <figure><div class="ph r"><img src="img/05_굴포천_1차시뮬.jpg" alt="굴포천 1차 시뮬레이션"></div>
+        <figcaption class="cap">굴포천 1차 시뮬레이션(합성). 파라솔·웨이트 베이스·빈백은 설치와 철수를 포함해 빌렸다.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="main stack" style="top:134mm">
+    <div class="tx">
+      <p>재료는 붙이고 떼는 방법부터 고른다. 바닥에는 기존 포장을 바꾸지 않고 시트를 붙이고, 세우는 설치물은 바닥을 뚫지 않는 자립식으로 만든다. 받침은 웨이트 베이스나 모래주머니처럼 무게로 버티는 것을 쓰고, 기존 시설물에 묶어야 하면 그 시설의 소유 기관과 먼저 협의한다. 전기를 쓰지 않는 구성이 설치와 철수를 가장 단순하게 만든다.</p>
+      <p>가벼운 재료는 옮기기 쉽지만 바람과 비에 약하다. 허니콤보드나 골판지로 만든 설치물은 우천 커버나 실내 보관 계획을 함께 적고, 모서리와 돌출부를 어떻게 마감하는지 도면에 표시한다. 대여품을 쓰면 설치와 철수를 대여 조건에 넣고, 반납 전 상태를 사진으로 남긴다.</p>
+      <p>철수 뒤에는 설치 전 사진과 같은 자리, 같은 각도에서 다시 찍어 원상복구를 확인한다. 시트를 뗀 자리의 접착 자국, 받침이 놓였던 자리의 눌린 흔적처럼 남기 쉬운 것을 점검 항목에 넣는다.</p>
+    </div>
+    <div class="out">
+      <p class="h3">도면 옆에 함께 적는 철수 계획</p>
+      <ul>
+        <li><b>붙이고 떼는 법</b><span>접착, 자립, 무게 받침 중 무엇으로 세우고 무엇으로 떼는지</span></li>
+        <li><b>설치·철수 시간</b><span>몇 명이 몇 분 걸리는지, 이용자가 없는 시간대인지</span></li>
+        <li><b>비·바람 때</b><span>접거나 거둬들이는 기준과 보관 장소</span></li>
+        <li><b>원상복구 확인</b><span>설치 전과 같은 자리·각도의 사진, 확인한 사람</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:134mm">
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">02</span><span class="fd safe">안전</span>선인재단</div>
+      <p>1차 설문 보드와 2차 거울나무, 받침을 모두 자립식으로 만들어 천공·결속·전기를 쓰지 않았다.</p>
+      <p>거울나무 본체는 허니콤보드 조립형으로 하고, 비에 대비해 투명 PE 비닐 커버를 준비하였다. 1차 설문 보드는 매일 등교 뒤 실내에 보관하였다.</p>
+      <p class="more">결과는 최종보고서 73–96쪽</p>
+    </div>
+    <p class="note"><b>허니콤보드</b> 종이를 벌집 모양으로 겹친 판. 가볍고 자립 구조를 만들기 쉽다</p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">20 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 21쪽 2-1 최종 도면·재료 (홀수 · 도식형) ================= -->
+<section class="page odd p2 pg21">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-1</span>최종 도면·재료</div>
+    <h2 class="hl">2차에 더하는 품목은 <em>1차 품목과 나눠</em> 적어 비교 조건을 지킨다</h2>
+    <p class="lede">누적형 실험은 1차 시설을 둔 채 2차에 요소를 더한다. 두 차수의 품목을 섞어 적으면 2차에서 무엇이 달라졌는지 가려낼 수 없다.</p>
+  </div>
+
+  <div class="full" style="top:64mm">
+    <div class="pile">
+      <div class="brk">
+        <svg viewBox="0 0 22 96" preserveAspectRatio="none">
+          <path d="M19.5 1.2H21V94.8H19.5" fill="none" stroke="#1A2F4B" stroke-width=".3"/>
+          <path d="M15.5 58.6H17V94.8H15.5" fill="none" stroke="#2E5A87" stroke-width=".3"/>
+        </svg>
+        <span style="top:24mm">2차에 보는 것<br><small style="font-weight:600;color:var(--ink2)">두 층 모두</small></span>
+        <span style="top:72mm;color:var(--teal)">1차에 보는 것<br><small style="font-weight:600;color:var(--ink2)">아래층만</small></span>
+      </div>
+      <div>
+        <div class="lay l2">
+          <div>
+            <p class="lh"><b>2차</b>「두 손은 자유롭게」<em>더한 품목 6종</em></p>
+            <table>
+              <thead><tr><th>품목</th><th>규격(mm)</th><th>재질</th><th style="text-align:right">수량</th></tr></thead>
+              <tbody>
+                <tr><td>벽면 사인</td><td>w1,275×h580</td><td>PVC 시트지</td><td class="n">1장</td></tr>
+                <tr><td>책장 측면 사인</td><td>w290×h277</td><td>PVC 시트지</td><td class="n">1장</td></tr>
+                <tr><td>테이블 측면 사인</td><td>w600×h1,000</td><td>폼보드</td><td class="n">1장</td></tr>
+                <tr><td>바닥 영역 사인</td><td>w5,000×h3,000</td><td>PVC 시트지</td><td class="n">1장</td></tr>
+                <tr><td>책장</td><td>w415×d290×h1,165</td><td></td><td class="n">4개</td></tr>
+                <tr><td>테이블</td><td>w1,200×d600×h1,000</td><td></td><td class="n">4개</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="th"><div class="ph"><img src="img/07_연안_2차시뮬.jpg" alt="연안 2차 시뮬레이션"></div><p class="cap">2차 시뮬레이션</p></div>
+        </div>
+        <p class="plus">＋ 위에 더한다</p>
+        <div class="lay l1">
+          <div>
+            <p class="lh"><b>1차</b>「발걸음은 가볍게」<em>2차에도 그대로 둔다</em></p>
+            <table>
+              <thead><tr><th>품목</th><th>규격(mm)</th><th>재질</th><th style="text-align:right">수량</th></tr></thead>
+              <tbody>
+                <tr><td>유도선 안내사인</td><td>w190×h1,000</td><td>PVC 시트지</td><td class="n">136장</td></tr>
+                <tr><td>사각 정보 안내사인</td><td>w500×h500</td><td>PVC 시트지</td><td class="n">10장</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="th"><div class="ph"><img src="img/07_연안_1차시뮬.jpg" alt="연안 1차 시뮬레이션"></div><p class="cap">1차 시뮬레이션</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main stack" style="top:158mm">
+    <p class="rule">1차 품목은 <em>그대로 두고</em>, 2차에는 더한 품목만 따로 적는다</p>
+    <div class="tx">
+      <p>품목표는 차수별로 나눈다. 1차 품목에는 2차 동안 그대로 두는지, 옮기거나 고치는지를 줄마다 적는다. 1차 품목을 고쳐야 하면 고친 내용을 변경 이력에 남기고 2차 결과를 읽을 때 함께 밝힌다. 비교형 실험은 같은 자리에서 안을 바꾸므로 두 안의 품목표를 같은 칸 구성으로 맞춘다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:158mm">
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">07</span><span class="fd conv">편의</span>연안여객터미널</div>
+      <p>인천항만공사와 협의해 1층 대합실의 최종 기획안을 정하였다. 1차 길찾기 사인을 그대로 두고 2차에 수화물 보관 공간을 더하였다.</p>
+    </div>
+    <p class="note">비교형·누적형 1·2차 관계 · 13쪽</p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">21 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 22쪽 2-1 최종 도면·재료 (짝수 · 혼합형) ================= -->
+<section class="page even p2 pg22">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-1</span>최종 도면·재료</div>
+    <h2 class="hl">설계 명세서는 <em>제작자와 관리자</em>가 같은 표를 보도록 쓴다</h2>
+    <p class="lede">제작자는 만들 수 있는지를, 관리자는 실험 기간에 지킬 수 있는지를 본다. 두 쪽이 읽을 칸을 한 표에 두면 설치 뒤 관리자가 제작자에게 다시 묻지 않아도 된다.</p>
+  </div>
+
+  <div class="full" style="top:57mm">
+    <div class="form pv">
+      <div class="fhd"><span class="fno">서식 05</span><span class="fname">설계 명세서</span><span class="fwhen">쓰는 때: PART 02 · 도면을 확정하고 제작을 맡기기 전</span></div>
+      <table>
+        <colgroup><col style="width:7mm"><col style="width:20mm"><col style="width:20mm"><col style="width:17mm"><col style="width:10mm"><col style="width:30mm"><col style="width:26mm"><col style="width:22mm"></colgroup>
+        <tr class="gp"><th colspan="5" class="mk1">제작자가 읽는 칸</th><th colspan="3" class="mk2">관리자가 읽는 칸</th></tr>
+        <tr><th>번호</th><th>품목</th><th>규격(mm)</th><th>재질·마감</th><th>수량</th><th>설치 위치·방법</th><th>철수·원상복구</th><th>실험 중 점검</th></tr>
+        <tr><td class="ex1">01</td><td class="ex1">바닥 보도블록 사인</td><td class="ex1">w400×h400</td><td class="ex1">3M 바닥 시트지</td><td class="ex1">967장</td><td class="ex1">연석에서 1m, 진행 방향 약 6m 간격</td><td class="ex1">보도블록을 바꾸지 않고 시트 부착</td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+      <div class="ex"><b>작성 예 · 인천</b>송도 캠퍼스타운역 일대 1차 바닥 사인 한 줄</div>
+    </div>
+  </div>
+
+  <div class="main" style="top:157mm">
+    <div class="tx">
+      <p>명세서는 품목마다 한 줄을 쓴다. 왼쪽 칸에는 품목, 규격, 재질과 마감, 수량을 적어 제작업체가 견적과 제작에 바로 쓰게 하고, 오른쪽 칸에는 설치 위치와 방법, 철수와 원상복구 방법, 실험 중에 볼 것을 적어 관리 주체가 현장에서 쓰게 한다.</p>
+      <p>규격은 도면과 같은 단위와 순서로 적고, 수량은 예비분을 따로 적는다. 같은 품목이라도 설치 방법이 다르면 줄을 나눈다. 실험 중 점검 칸에는 들뜸, 기울어짐, 오염처럼 그 품목에서 먼저 생길 문제를 적는다.</p>
+      <p>명세서를 고치면 도면 번호와 고친 날짜를 함께 바꾸고, 바뀐 줄을 변경 이력에 옮겨 적는다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:157mm">
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span></div>
+      <p>2차 부서검토에서 실험 장소별로 설치하는 디자인 항목의 규격과 재질을 정리하라는 의견을 받았다. 그래서 실험별 상세 쪽에 설치 품목과 규격, 재질을 적었다.</p>
+    </div>
+    <p class="to-form"><span class="fno">서식 05</span>설계 명세서<span class="pg">59쪽</span></p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">22 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 23쪽 2-2 색·그림·안내 (홀수 · 혼합형 · W) ================= -->
+<section class="page odd p2 pg23">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-2</span>색·그림·안내</div>
+    <h2 class="hl">색은 주변 경관에서 고르고 <em>먼셀 색기호</em>로 적는다</h2>
+    <p class="lede">화면에서 고른 색은 출력 재료와 빛에 따라 달라진다. 먼셀 색기호로 적어 두면 제작업체와 검토자가 같은 색을 두고 이야기할 수 있다.</p>
+  </div>
+
+  <div class="main stack" style="top:64mm">
+    <div class="anat">
+      <div class="code"><span class="pt">10R<i>색상</i></span><span class="pt">5<i>명도</i></span><span class="sl">/</span><span class="pt">16<i>채도</i></span></div>
+      <p>색상 기호 뒤에 명도(0 검정–10 흰색)와 채도(0 무채색에서 커질수록 선명함)를 적는다. 무채색은 N 뒤에 명도만 쓴다(N 10/0).</p>
+    </div>
+    <div class="tight">
+      <figure class="sw">
+        <div class="im"><img src="img/01_약산초_1차연필5색.jpg" alt="약산초 1차 연필형 시설물 5색" style="object-position:50% 22%"></div>
+        <ol class="lab"><li>10R 5/16<small>빨강</small></li><li>5YR 6/20<small>주황</small></li><li>5Y 9/12<small>노랑</small></li><li>2.5G 4/6<small>초록</small></li><li>7.5PB 4/16<small>파랑</small></li></ol>
+      </figure>
+      <figure class="sw">
+        <div class="im"><img src="img/01_약산초_2차동물5종.png" alt="약산초 2차 동물 그래픽 배경 5색" style="object-position:50% 40%"></div>
+        <ol class="lab"><li>2.5YR 7/20<small>강아지</small></li><li>7.5Y 9/16<small>고양이</small></li><li>5YR 3/12<small>곰</small></li><li>10RP 5/24<small>토끼</small></li><li>2.5B 7/10<small>앵무새</small></li></ol>
+        <figcaption class="cap">약산초 통학로. 위는 1차 시민 아이디어안의 연필형 시설물 5색, 아래는 2차 어린이안의 동물 그래픽 배경 5색과 먼셀 색기호</figcaption>
+      </figure>
+    </div>
+    <div class="tx">
+      <p>색은 설치할 자리의 바닥, 벽, 주변 시설물을 먼저 사진으로 모으고 그 옆에 후보를 놓아 고른다. 고른 색마다 먼셀 색기호를 적고, 디자인 아래에 색상·명도·채도를 함께 둔다. 출력 시트, 아크릴, 도장처럼 재료가 다르면 같은 기호라도 견본을 따로 받아 현장 빛에서 비교한다.</p>
+      <p>고명도·고채도 색을 주조색이나 배경색으로 쓰려면 안전과 주목이 필요한 매체인지 먼저 따지고, 그 이유를 도면 옆에 적는다. 중요한 기호는 색만으로 구분하지 않고 모양이나 글자를 함께 쓴다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:64mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>이용자와 함께 시민이 고른다</dd><dt>함께한다</dt><dd>디자이너가 색과 그림을 다듬는다</dd><dt>정한다</dt><dd>이용자 반응을 보고 정한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>수행사가 색·그림 시안을 만든다</dd><dt>함께한다</dt><dd>시민 참여 프로그램에서 의견을 받는다</dd><dt>정한다</dt><dd>담당 부서가 가이드라인으로 정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>디자인 담당이 시안을 모은다</dd><dt>함께한다</dt><dd>이용자·부서가 시안을 함께 본다</dd><dt>정한다</dt><dd>공동 검토 회의에서 정한다</dd></dl>
+    </div>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">01</span><span class="fd safe">안전</span>약산초</div>
+      <p>2차 부서검토에서 전체 디자인에 먼셀 색기호를 표기하라는 의견을 받았다. 연필형 시설물 5색과 동물 그래픽 배경 5색에 색 견본과 기호를 더하고, 디자인마다 아래에 색상·명도·채도를 적었다.</p>
+    </div>
+    <div class="tight">
+      <p class="note"><b>색 기준</b> 인천광역시 공공디자인 가이드라인, 인천광역시 색채디자인 가이드라인</p>
+      <p class="note">강조색은 기능에 따라 10% 이내로 쓴다</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">23 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 24쪽 2-2 색·그림·안내 (짝수 · 서술형) ================= -->
+<section class="page even p2 pg24">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-2</span>색·그림·안내</div>
+    <h2 class="hl">그림은 <em>보는 사람이 뜻을 말할 수 있는지</em>로 고른다</h2>
+    <p class="lede">그림을 그린 사람은 이미 뜻을 알고 있다. 처음 보는 이용자가 그림만 보고 무엇을 하라는지 말할 수 있어야 실험에서 반응을 잴 수 있다.</p>
+  </div>
+
+  <div class="full" style="top:64mm">
+    <div class="pairs">
+      <div class="pair">
+        <div class="ph ct"><img src="img/04_차이나타운_1차_1컷1.png" alt="차이나타운 1차 권유형 1컷"></div>
+        <span class="vs">↔</span>
+        <div class="ph ct"><img src="img/04_차이나타운_2차_1컷1.png" alt="차이나타운 2차 금지형 1컷"></div>
+        <div class="lb"><span>1차 권유형</span><span>·</span><span>2차 금지형</span></div>
+        <p class="same"><b>같게 둔 것</b> 주제(변기에서 내려와 앉기), 캐릭터, 장소와 배치 · <b>바꾼 것</b> 권하는 표현과 금지하는 표현</p>
+      </div>
+      <div class="pair">
+        <div class="ph"><img src="img/01_약산초_ch3_1차설치.jpg" alt="약산초 1차 시민 아이디어안" style="object-position:62% 50%"></div>
+        <span class="vs">↔</span>
+        <div class="ph"><img src="img/01_약산초_2차시뮬.jpg" alt="약산초 2차 어린이안 시뮬레이션" style="object-position:22% 50%"></div>
+        <div class="lb"><span>1차 시민 아이디어안</span><span>·</span><span>2차 어린이안(합성)</span></div>
+        <p class="same"><b>같게 둔 것</b> 통학로 전신주에 설치, 같은 사진·지도 질문 · <b>바꾼 것</b> 디자인한 사람과 그림(연필형 5색, 동물 5종)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main stack" style="top:130mm">
+    <p class="rule">그림만 보고 <em>무엇을 하라는지</em> 말할 수 있는 안을 설치한다</p>
+    <div class="tx">
+      <p>그림 후보는 두 가지 이상 만들어 같은 주제로 짝을 짓는다. 한 짝 안에서는 주제와 크기, 부착 위치를 같게 두고 표현 방식 한 가지만 다르게 한다. 그래야 이용자의 반응 차이를 그 표현 방식에서 읽을 수 있다.</p>
+      <p>설치 전에는 디자인에 참여하지 않은 사람에게 그림만 보여 주고 뜻을 말해 보게 한다. 말한 뜻이 의도와 다르면 그 말을 그대로 적어 두고 형태를 고친다. 권하는 그림과 금지하는 그림을 함께 쓸 때는 두 표시가 섞이지 않게 한다. 권하는 그림에 금지 기호가 남아 있으면 이용자는 둘을 구분하기 어렵다.</p>
+      <p>캐릭터를 쓰면 하나로 통일하고, 행동과 그 결과를 순서대로 보여 준다. 기존에 쓰던 캐릭터가 있어도 실험 취지와 맞지 않으면 바꾸고, 바꾼 이유를 변경 이력에 남긴다.</p>
+      <p>그림을 이해했는지는 실제 설치 자리에서 확인한다. 사진과 지도를 함께 보여 주고 그림이 어디에 있었는지, 무엇을 하라는 것인지를 1·2차에 같은 문항으로 묻는다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:130mm">
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">04</span><span class="fd incl">포용</span>차이나타운</div>
+      <p>1차 권유형과 2차 금지형을 같은 공중화장실에 하루씩 설치하였다. 주제마다 1컷 단일형과 3컷 연속형을 나란히 붙여 세 쌍을 비교하였다.</p>
+      <p>위원회 심의에서 권장과 금지 행동이 구분되게 하라는 의견을 받아 권유형에서 금지 표시를 지우고 캐릭터 행동을 바꾸었다.</p>
+      <p class="more">결과는 최종보고서 121–144쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">24 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 25쪽 2-2 색·그림·안내 (홀수 · 도식형) ================= -->
+<section class="page odd p2 pg25">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-2</span>색·그림·안내</div>
+    <h2 class="hl">안내 사인은 <em>설치 형태와 읽는 거리</em>부터 정한다</h2>
+    <p class="lede">같은 문구라도 바닥에 붙이면 걸으며 내려다보고, 기둥에 걸면 멀리서 먼저 본다. 형태를 먼저 정해야 글자 크기와 그림의 양을 정할 수 있다.</p>
+  </div>
+
+  <div class="full" style="top:64mm">
+    <div class="elev">
+      <!-- 1m = 16 단위. 바닥 y=58. 형태 그림은 축척 없음, 오른쪽 자만 높이 비례 -->
+      <svg viewBox="0 0 152 66">
+        <defs><marker id="m2-ar25" viewBox="0 0 4 4" refX="3.6" refY="2" markerWidth="3.4" markerHeight="3.4" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 4 2 0 4z" fill="#1A2F4B"/></marker></defs>
+        <!-- 바닥 -->
+        <rect x="0" y="58" width="118" height="1.4" fill="#D3DCE3"/>
+        <!-- 사람 -->
+        <g fill="#B8C4CD"><circle cx="9" cy="32.6" r="2.3"/><path d="M6.4 35.6h5.2l1 11.2h-1.6l-.6 11.2H8.6l-.2-9.4-.2 9.4H6.2l-.6-11.2H4z"/></g>
+        <!-- 시선 -->
+        <path d="M10.5 32.4 22 57.2" fill="none" stroke="#2E5A87" stroke-width=".3" stroke-dasharray="1 .8"/>
+        <path d="M10.5 32.4 41.5 24.2" fill="none" stroke="#2E5A87" stroke-width=".3" stroke-dasharray="1 .8"/>
+        <!-- 바닥형 -->
+        <rect x="18" y="56.9" width="13" height="1.1" fill="#2E5A87"/>
+        <!-- 기둥 부착형 -->
+        <rect x="40" y="8" width="2.4" height="50" fill="#8C98A3"/>
+        <rect x="42.4" y="19.6" width="6.4" height="6.4" fill="#2E5A87"/>
+        <!-- 독립형 (배너대) -->
+        <rect x="58" y="28.5" width="12" height="27" fill="#2E5A87"/>
+        <path d="M59 55.5V58M69 55.5V58M57 58h14" fill="none" stroke="#1A2F4B" stroke-width=".45"/>
+        <!-- 벽 부착형 -->
+        <rect x="79" y="8" width="18" height="50" fill="#E3E8EC"/>
+        <rect x="82" y="30" width="12" height="7" fill="#2E5A87"/>
+        <!-- 가구 부착형 (테이블) -->
+        <rect x="101" y="42" width="15" height="1.4" fill="#1A2F4B"/>
+        <path d="M102 43.4V58M115 43.4V58" stroke="#1A2F4B" stroke-width=".5"/>
+        <rect x="103.5" y="44.4" width="8" height="10" fill="#2E5A87"/>
+        <!-- 높이 자 (1m=16) -->
+        <path d="M124 58V16" stroke="#1A2F4B" stroke-width=".3" marker-end="url(#m2-ar25)"/>
+        <rect x="122.9" y="29.2" width="2.2" height="12.8" fill="#2E5A87"/>
+        <g stroke="#1A2F4B" stroke-width=".3"><path d="M122.6 58h3"/><path d="M122.6 46.8h3"/><path d="M122.6 42h3"/><path d="M122.6 29.2h3"/><path d="M122 18h4.2"/></g>
+        <g font-family="P" font-size="2.2" fill="#6A7784" font-weight="600"><text x="119.6" y="58.8" text-anchor="end">0</text><text x="119.6" y="47.6" text-anchor="end">0.7</text><text x="119.6" y="42.8" text-anchor="end">1.0</text><text x="119.6" y="30" text-anchor="end">1.8</text><text x="119.6" y="18.8" text-anchor="end">2.5m</text></g>
+      </svg>
+      <p class="t" style="left:13mm;top:60.4mm;width:23mm">바닥형</p>
+      <p class="t" style="left:33mm;top:1mm;width:24mm">기둥 부착형</p>
+      <p class="t" style="left:53mm;top:22.6mm;width:22mm">독립형</p>
+      <p class="t" style="left:78mm;top:2.6mm;width:20mm">벽 부착형</p>
+      <p class="t" style="left:98.5mm;top:35.6mm;width:20mm">가구 부착형</p>
+      <p class="rh">읽는 높이</p>
+      <p class="r" style="top:14.4mm"><b>2.5m 이상</b> 멀리서 알아볼 정보면</p>
+      <p class="r" style="top:31mm"><b>1.0–1.8m</b> 다가가 읽는 지도와 상세 정보</p>
+      <p class="r" style="top:44.6mm"><b>0.7m 이상</b> 부가 정보</p>
+      <p class="r" style="top:53.4mm">바닥에서 2.5m 아래 보행안전구역에는 장애물을 두지 않는다</p>
+    </div>
+  </div>
+
+  <div class="main stack" style="top:136mm">
+    <table class="ty">
+      <colgroup><col class="a"><col class="b"><col></colgroup>
+      <thead><tr><th>형태</th><th>읽는 자리</th><th>인천 실험 품목과 규격(mm)</th></tr></thead>
+      <tbody>
+        <tr><td class="k">바닥형</td><td class="s">걸으며 내려다본다</td><td>송도 보도블록 사인 400×400 · 로데오 바닥사인 2,000×300 · 연안 유도선 안내사인 190×1,000</td></tr>
+        <tr><td class="k">기둥 부착형</td><td class="s">멀리서 먼저 본다</td><td>로데오 지주형 사인 400×400. 전신주에 케이블타이로 고정, 사인 하단 2,000</td></tr>
+        <tr><td class="k">독립형</td><td class="s">다가가 읽는다</td><td>로데오 높은 배너대 1,300×410×1,845 · 낮은 배너대 1,300×410×1,320</td></tr>
+        <tr><td class="k">벽 부착형</td><td class="s">그 자리에 와서 본다</td><td>연안 수화물 보관 공간 벽면 사인 1,275×580</td></tr>
+        <tr><td class="k">가구 부착형</td><td class="s">쓰는 자리에서 본다</td><td>연안 책장 측면 사인 290×277 · 테이블 측면 사인 600×1,000</td></tr>
+      </tbody>
+    </table>
+    <div class="tx">
+      <p>형태는 설치할 자리의 바닥, 벽, 기둥이 무엇을 허락하는지에서 정한다. 바닥형은 보행 방향으로 읽히게 놓고, 기둥과 벽에 거는 사인은 보행 공간으로 튀어나오지 않게 한다. 기호와 문자를 함께 쓰면 둘의 시각적 균형을 맞추고, 영문 서체는 세로로 쓰지 않는다.</p>
+      <p>글자 크기는 그 형태에서 읽는 거리로 정한다. 고령 이용자를 고려해 일반 크기보다 10% 정도 키우고 굵게 쓰며, 여러 언어를 함께 적어야 하면 문자를 늘리기보다 픽토그램을 먼저 검토한다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:136mm">
+    <div class="tight">
+      <p class="note"><b>읽는 높이</b> 인천광역시 공공디자인 가이드라인의 시각매체 설치 조항</p>
+      <p class="note"><b>형태 그림</b> 축척 없음. 오른쪽 자만 높이에 비례한다</p>
+      <p class="note">색과 서체 기준 · 23쪽</p>
+      <p class="note">보행 폭과 돌출 확인 · 27쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">25 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 26쪽 2-2 색·그림·안내 (짝수 · 혼합형) ================= -->
+<section class="page even p2 pg26">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-2</span>색·그림·안내</div>
+    <h2 class="hl">그림과 문구의 일부는 <em>이용자가 직접 만들도록</em> 자리를 비워 둔다</h2>
+    <p class="lede">이용자가 고른 색과 문구가 들어간 설치물은 그 자체로 의견을 모은 기록이 된다. 무엇을 비워 둘지 설계 단계에서 정해야 제작 일정이 어긋나지 않는다.</p>
+  </div>
+
+  <div class="full" style="top:64mm">
+    <div class="blank">
+      <div class="tree">
+        <svg viewBox="0 0 94 64">
+          <!-- 지시선 -->
+          <g fill="none" stroke="#1A2F4B" stroke-width=".25">
+            <path d="M28 25H43"/><path d="M28 39.5H44"/><path d="M28 56.5H40"/>
+          </g>
+          <g fill="none" stroke="#2E5A87" stroke-width=".25">
+            <path d="M66 21.5H58"/><path d="M66 46.5H58"/>
+          </g>
+          <defs><pattern id="m2-hatch-blue26" width="1.3" height="1.3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.3" height="1.3" fill="#fff"/><rect width=".3" height="1.3" fill="#2E5A87"/></pattern></defs>
+          <!-- 받침 -->
+          <rect x="38" y="55.4" width="18" height="2.6" rx=".4" fill="#1A2F4B"/>
+          <!-- 기둥 -->
+          <rect x="45.4" y="17" width="3.2" height="38.6" fill="#1A2F4B"/>
+          <!-- 가지 -->
+          <g stroke="#1A2F4B" stroke-width=".9" fill="none" stroke-linecap="round"><path d="M47 22 38.5 15"/><path d="M47 20 55.5 13"/><path d="M47 28 57 23"/><path d="M47 27 37 23"/></g>
+          <!-- 컬러칩 자리(비움) -->
+          <g fill="url(#m2-hatch-blue26)">
+            <circle cx="37" cy="13.6" r="3.2"/><circle cx="47" cy="9.6" r="3.2"/><circle cx="57" cy="11.8" r="3.2"/><circle cx="35.4" cy="22" r="3.2"/><circle cx="58.6" cy="21.6" r="3.2"/>
+          </g>
+          <!-- 볼록거울 -->
+          <circle cx="47" cy="34" r="4.6" fill="#1A2F4B"/><circle cx="47" cy="34" r="3.7" fill="#E3E9F0"/>
+          <path d="M44.6 31.8a3.4 3.4 0 0 1 3.2-1.8" stroke="#fff" stroke-width=".8" fill="none"/>
+          <!-- 문구판(비움) -->
+          <rect x="38" y="44.6" width="18" height="4.2" fill="url(#m2-hatch-blue26)"/>
+        </svg>
+        <div class="key"><span><i class="s"></i>먼저 정해 발주한다</span><span><i class="d"></i>1차 응답으로 채운다</span></div>
+        <p class="lb" style="left:3mm;top:19.6mm;width:25mm"><b>본체</b>허니콤보드 조립형 H2,400·W1,600 내외</p>
+        <p class="lb" style="left:3mm;top:36.4mm;width:25mm"><b>볼록거울</b>Ø300, 아크릴</p>
+        <p class="lb" style="left:3mm;top:50.2mm;width:25mm"><b>받침</b>모래주머니 10kg</p>
+        <p class="lb r" style="left:66.6mm;top:16.4mm;width:25mm"><b>컬러칩 색</b>Ø150–200, 18–30개</p>
+        <p class="lb r" style="left:66.6mm;top:41.4mm;width:25mm"><b>긍정 문구판 문구</b>W600×H150</p>
+      </div>
+      <figure><div class="ph"><img src="img/02_선인재단_2차시뮬.jpg" alt="선인재단 2차 거울나무 시뮬레이션"></div></figure>
+    </div>
+    <p class="cap">선인재단 2차 거울나무. 오른쪽은 시뮬레이션(합성). 본체·거울·컬러 원판은 먼저 발주하고, 컬러칩 색과 문구판 문구는 1차 스티커 설문을 집계한 뒤 정하였다.</p>
+  </div>
+
+  <div class="main stack" style="top:140mm">
+    <div class="tx">
+      <p>비워 둘 자리는 이용자가 바꿔도 안전과 구조에 영향이 없는 부분으로 정한다. 본체와 받침, 설치 위치는 먼저 정해 발주하고, 색이나 문구, 그림처럼 바꿔 끼울 수 있는 부분만 비워 둔다. 비운 부분은 크기와 재료, 개수의 범위를 도면에 적어 응답이 늦게 모여도 제작할 수 있게 한다.</p>
+      <p>참여 방법은 비운 자리에 맞춘다. 색과 문구는 1차 설문 응답으로, 그림은 워크숍에서, 꾸미기는 현장에서 함께 만든다. 참여자가 만든 것이 어디에 어떻게 쓰였는지 기록해 참여자에게 알린다.</p>
+    </div>
+    <div class="shots">
+      <figure><div class="ph"><img src="img/01_약산초_워크숍2.jpg" alt="약산초 어린이 워크숍"></div><figcaption class="cap">약산초 6학년 35명 워크숍(10.8). 지도에 문제와 위치, 시설 아이디어를 적었다</figcaption></figure>
+      <figure><div class="ph"><img src="img/05_굴포천_스툴.jpg" alt="굴포천 인천대 스툴" style="object-position:50% 60%"></div><figcaption class="cap">굴포천 인천대 스툴. 1차에 두고 2차에 꾸미는 대상</figcaption></figure>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:140mm">
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">05</span><span class="fd attr">매력</span>굴포천</div>
+      <p>인천대 학생 19명·4팀이 이중 골판지 스툴을 만들어 1차에 두었다. 2차에는 같은 스툴을 청년작가 2명과 시민이 꾸미기 키트로 꾸몄다.</p>
+      <p class="more">결과는 최종보고서 145–168쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">26 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 27쪽 2-3 현장 적용 조건 (홀수 · 체크리스트형 · W) ================= -->
+<section class="page odd p2 pg27">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-3</span>현장 적용 조건</div>
+    <h2 class="hl">설치 전 <em>공공디자인 가이드라인</em> 조항으로 보행 안전부터 확인한다</h2>
+    <p class="lede">인천광역시 공공디자인 가이드라인 체크리스트는 심의 안건에 함께 붙는다. 설계를 마치기 전에 조항마다 반영 여부를 표시해 두면 검토 의견에 바로 답할 수 있다.</p>
+  </div>
+
+  <div class="main" style="top:64mm">
+    <div class="chk">
+      <p class="grp">보행 공간</p>
+      <div class="row"><span>유효보도폭 2m 이상을 남긴다. 좁은 곳은 휠체어가 지나도록 1.5m 이상</span><span class="ref">28쪽</span></div>
+      <div class="row"><span>바닥에서 높이 2.5m 아래 보행안전구역에 장애물이 없다</span><span class="ref">25쪽</span></div>
+      <div class="row"><span>설치물이 보행구역으로 튀어나오거나 통행을 막지 않는다</span><span class="ref">25쪽</span></div>
+      <div class="row"><span>통로 바닥은 미끄럽지 않은 재질이고, 패턴과 색채를 과하게 쓰지 않는다</span><span class="ref">20쪽</span></div>
+      <p class="grp">시설물과 재료</p>
+      <div class="row"><span>기초판과 앵커 볼트가 드러나 보행 장애물이 되지 않는다</span><span class="ref">20쪽</span></div>
+      <div class="row"><span>내구성이 약하거나 색이 변할 우려가 있는 재료를 피한다</span><span class="ref">22쪽</span></div>
+      <div class="row"><span>비와 눈이 올 때도 설치물이 안정하다</span><span class="ref">20쪽</span></div>
+      <div class="row"><span>파손 때 쉽게 교체하도록 분리 체결하고, 하부 플레이트와 체결금구가 돌출되지 않는다</span><span class="ref">19쪽</span></div>
+      <p class="grp">색·글자·그림</p>
+      <div class="row"><span>과다한 색채를 억제하고, 강조색은 기능에 따라 10% 이내로 쓴다</span><span class="ref">23쪽</span></div>
+      <div class="row"><span>고명도·고채도 자극색을 주조색이나 배경색으로 쓰지 않는다. 안전·주목성이 필요한 매체는 예외</span><span class="ref">23쪽</span></div>
+      <div class="row"><span>서체는 고딕 계열로 하고, 기울임체는 제한하며, 한 매체에 여러 서체를 쓰지 않는다</span><span class="ref">25쪽</span></div>
+      <div class="row"><span>영문 서체는 세로로 쓰지 않는다</span><span class="ref">25쪽</span></div>
+      <div class="row"><span>다국어 표기를 원칙으로 하고, 문자보다 픽토그램을 먼저 검토한다</span><span class="ref">24쪽</span></div>
+      <p class="grp">설치 위치</p>
+      <div class="row"><span>도로변 안내표지는 경계석에서 100mm 떼고, 정보면이 도로로 돌출되지 않는다</span><span class="ref">28쪽</span></div>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:64mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>시민이 현장을 재고 기록한다</dd><dt>함께한다</dt><dd>관리기관이 설치 조건을 알린다</dd><dt>정한다</dt><dd>관리기관이 설치를 허락한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>수행사가 현장을 재고 점검한다</dd><dt>함께한다</dt><dd>소관부서·관리기관이 조건을 낸다</dd><dt>정한다</dt><dd>담당 부서가 점검표로 확정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>조정자가 현장 확인을 모은다</dd><dt>함께한다</dt><dd>관리기관이 설치 조건을 알린다</dd><dt>정한다</dt><dd>관리기관이 설치를 허락한다</dd></dl>
+    </div>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">02</span><span class="fd safe">안전</span>선인재단</div>
+      <p>위원회 심의에서 거울나무의 돌출부·모서리 마감과 고정 방법, 설치 후 보행폭을 밝히라는 의견을 받았다. 골판지 소재로 만들고, 가로수 사이에 놓아도 보행폭 1.5m 이상이 남도록 배치하였다.</p>
+    </div>
+    <p class="note"><b>체크리스트 세 부분</b> 공공공간, 공공시설물, 공공시각매체 및 용품</p>
+    <p class="to-form"><span class="fno">서식 06</span>현장 적용 조건 점검표<span class="pg">60쪽</span></p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">27 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 28쪽 2-3 현장 적용 조건 (짝수 · 혼합형) ================= -->
+<section class="page even p2 pg28">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-3</span>현장 적용 조건</div>
+    <h2 class="hl">높이와 위치는 <em>현장에서 재고</em> 관리기관과 협의해 확정한다</h2>
+    <p class="lede">도면의 높이와 간격은 현장의 시야, 기존 시설, 이용 시간에 부딪혀 바뀐다. 현장에서 잰 값을 기록하고 장소를 관리하는 기관과 맞춘 뒤에 확정한다.</p>
+  </div>
+
+  <div class="full" style="top:58mm">
+    <table class="mx">
+      <colgroup><col class="p"><col><col><col><col></colgroup>
+      <thead><tr><th>장소 유형</th><th>시간<small>언제 재고 언제 설치하나</small></th><th>기상<small>바람·비·물</small></th><th>영업·운항<small>설치물이 막으면 안 되는 일</small></th><th>관리기관<small>누구에게 묻고 받나</small></th></tr></thead>
+      <tbody>
+        <tr><td class="p">통학로</td><td class="hi">등하교 시간대에 재고, 학생이 없는 시간에 설치</td><td>비 오는 날 미끄럼, 우천 보관 장소</td><td>학교 일과와 행사, 등교 동선</td><td>학교, 전신주처럼 시설을 가진 기관</td></tr>
+        <tr><td class="p">수변 산책로</td><td>해가 드는 시간과 그늘이 지는 자리</td><td class="hi">바람, 비, 물이 불어나는 때의 철수</td><td>산책, 러닝, 자전거 통행 동선</td><td>하천·산책로 관리 부서의 임시 점용</td></tr>
+        <tr><td class="p">상업가로</td><td>저녁과 밤 이용 시간</td><td>바람에 넘어질 물건</td><td class="hi">상가 출입구, 배송, 영업시간</td><td>구청 관련 부서, 상인 단체</td></tr>
+        <tr><td class="p">여객터미널</td><td>운항 시간표에 맞춘 이용 시간대</td><td class="no">실내</td><td class="hi">매표·승선 동선과 대기 좌석</td><td>터미널 운영 기관</td></tr>
+        <tr><td class="p">관광지 화장실</td><td>방문객이 몰리는 요일과 시간</td><td class="no">실내</td><td>청소 시간과 개방 시간</td><td class="hi">시설 관리 기관, 행정복지센터</td></tr>
+      </tbody>
+    </table>
+    <p class="cap">하늘색 칸은 그 장소에서 먼저 확인할 조건이다.</p>
+  </div>
+
+  <div class="main stack" style="top:132mm">
+    <div class="tx">
+      <p>현장 확인은 도면을 들고 실험할 시간대에 간다. 설치물 자리마다 높이, 기존 시설과의 거리, 남는 통행 폭을 재고 사진과 함께 기록한다. 시야는 이용자가 서는 자리에서 본다. 어린이가 쓰는 곳은 어린이 눈높이에서, 앉아서 쓰는 곳은 앉은 자리에서 본다.</p>
+      <p>잰 값은 도면 값과 나란히 적고, 다르면 어느 값으로 설치할지 관리기관과 정한다. 관리기관이 허용한 부착 면과 설치 시간, 철거 시점은 회신 날짜와 함께 남긴다. 정해진 기준값이 없는 높이는 현장에서 잰 값을 근거로 쓴다.</p>
+    </div>
+    <div class="case w">
+      <div class="ph"><img src="img/04_차이나타운_P1P2.jpg" alt="차이나타운 부착 위치 구상"></div>
+      <div>
+        <div class="ch"><span class="t">인천에서는</span><span class="site">04</span><span class="fd incl">포용</span>차이나타운</div>
+        <p>화장실 픽토그램의 높이는 법정값으로 임의 지정하지 않고, 현장 시야를 확인한 뒤 측정값을 기록하였다. 변기 칸 안쪽 문과 휴지통 옆처럼 행동 전에 보이는 면을 고르고, 기관 담당자와 위치를 협의한 뒤 최종 부착하였다.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:132mm">
+    <div class="tight">
+      <p class="note"><b>임시 점용</b> 실험 기간 동안 도로나 산책로 일부를 쓰도록 관리 부서의 허락을 받는 일</p>
+      <p class="note"><b>부착 면</b> 설치물을 붙이는 벽, 문, 기둥의 면. 협의 결과에 면 이름을 적는다</p>
+      <p class="note">설치하는 날 시작 점검 · 36쪽</p>
+    </div>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">28 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 29쪽 2-4 디자인 변경 이력 (홀수 · 도식형 · W) ================= -->
+<section class="page odd p2 pg29">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-4</span>디자인 변경 이력</div>
+    <h2 class="hl">설계가 바뀔 때마다 <em>누구 의견으로, 무엇을, 왜</em> 바꿨는지 남긴다</h2>
+    <p class="lede">실험 중에 바뀐 설계는 결과를 읽는 조건이 된다. 의견을 낸 주체와 바꾼 내용, 이유를 한 줄로 남겨 두면 1·2차 비교에서 무엇이 달라졌는지 가려낼 수 있다.</p>
+  </div>
+
+  <div class="main stack" style="top:64mm">
+    <div class="tl">
+      <div class="stg">
+        <h3>부서검토<span>관계부서 · 1차 의견 17건, 2차 의견 11건</span></h3>
+        <div class="ln"><p class="o"><b>의견 · 05 굴포천</b>계절에 따른 설치 안전성, 안전펜스에 매다는 구조의 안전성 검토</p><svg width="6mm" height="3mm" viewBox="0 0 6 3"><path d="M.4 1.5H4.6" stroke="#1A2F4B" stroke-width=".3"/><path d="M3.8.6 5.6 1.5 3.8 2.4z" fill="#1A2F4B"/></svg><p class="a"><b>반영</b>와이어로 거는 그늘막을 파라솔로 바꾸었다</p></div>
+      </div>
+      <div class="stg">
+        <h3>위원회 심의<span>공공디자인위원회 · 의견 9건</span></h3>
+        <div class="ln"><p class="o"><b>의견 · 06 로데오거리</b>보행로·휴게공간으로 연기가 들지 않게 흡연공간을 조정하고 이동 방향과 거리를 표시</p><svg width="6mm" height="3mm" viewBox="0 0 6 3"><path d="M.4 1.5H4.6" stroke="#1A2F4B" stroke-width=".3"/><path d="M3.8.6 5.6 1.5 3.8 2.4z" fill="#1A2F4B"/></svg><p class="a"><b>반영</b>상점이 밀집한 면은 부스 벽을 높여 연기를 막고 제연기를 함께 두었다</p></div>
+      </div>
+      <div class="stg now">
+        <h3>1차 실험 중<span>현장 운영 중 변경</span></h3>
+        <div class="ln"><p class="o"><b>변경 · 01 약산초</b>1차(10.20–22) 뒤 설치 위치를 바꿈</p><svg width="6mm" height="3mm" viewBox="0 0 6 3"><path d="M.4 1.5H4.6" stroke="#1A2F4B" stroke-width=".3"/><path d="M3.8.6 5.6 1.5 3.8 2.4z" fill="#1A2F4B"/></svg><p class="a"><b>반영</b>10.27–29에 바꾼 위치에서 다시 실험하였다</p></div>
+      </div>
+      <div class="stg">
+        <h3>2차 설치 전<span>이용자 응답 · 1차 집계</span></h3>
+        <div class="ln"><p class="o"><b>응답 · 02 선인재단</b>1차 스티커 설문에서 고른 색과 듣고 싶은 말</p><svg width="6mm" height="3mm" viewBox="0 0 6 3"><path d="M.4 1.5H4.6" stroke="#1A2F4B" stroke-width=".3"/><path d="M3.8.6 5.6 1.5 3.8 2.4z" fill="#1A2F4B"/></svg><p class="a"><b>반영</b>거울나무 컬러칩 색과 긍정 문구판 문구를 정하였다</p></div>
+      </div>
+    </div>
+    <div class="rec">
+      <p class="h3">변경 한 줄에 들어가는 칸</p>
+      <div class="cells"><span>의견 번호</span><span>의견 낸 주체</span><span>의견 요지</span><span>반영 여부</span><span>바꾼 도면·쪽</span><span>날짜·차수</span></div>
+    </div>
+    <div class="tx">
+      <p>의견을 받은 날 대장에 줄을 먼저 만들고, 반영 여부 칸은 도면을 고친 뒤에 채운다. 반영 여부는 반영·부분반영·미반영 중 하나로 적는다. 이용자 응답으로 바꾼 것도 같은 대장에 쓰고, 의견 낸 주체 칸에 어느 차수의 어떤 조사 응답인지 적는다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:64mm">
+    <div class="who vslot">
+      <dl data-v="A"><dt>이끈다</dt><dd>기록 담당 시민이 대장을 쓴다</dd><dt>함께한다</dt><dd>참여자 전원이 바꾼 이유를 낸다</dd><dt>정한다</dt><dd>모임 회의에서 변경을 정한다</dd></dl>
+      <dl data-v="B"><dt>이끈다</dt><dd>수행사가 변경 이력을 적는다</dd><dt>함께한다</dt><dd>관계부서·위원회가 의견을 낸다</dd><dt>정한다</dt><dd>담당 부서가 반영을 확정한다</dd></dl>
+      <dl data-v="H"><dt>이끈다</dt><dd>조정자가 의견과 변경을 모은다</dd><dt>함께한다</dt><dd>의견 낸 주체가 반영을 확인한다</dd><dt>정한다</dt><dd>공동 회의에서 반영을 정한다</dd></dl>
+    </div>
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">03</span><span class="fd incl">포용</span>송도</div>
+      <p>영문 글자의 두께와 배경 대비를 높이고 화살표·픽토그램을 함께 쓰라는 심의 의견을 받았다. 전문가 자문으로 정한 1차 픽토그램·숫자, 2차 영문 구조는 두고, 영문 두께와 대비만 부분반영하였다.</p>
+    </div>
+    <p class="note"><b>부분반영</b> 의견의 일부만 반영한 경우. 반영하지 않은 부분과 이유를 함께 적는다</p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">29 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 30쪽 2-4 디자인 변경 이력 (짝수 · 서술형) ================= -->
+<section class="page even p2 pg30">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">2-4</span>디자인 변경 이력</div>
+    <h2 class="hl">변경 기록은 <em>바꾸기 전 모습</em>과 함께 남긴다</h2>
+    <p class="lede">바꾼 뒤의 도면만 남으면 무엇이 달라졌는지 다음 사람이 알 수 없다. 반영 전과 후를 같은 크기, 같은 방향으로 나란히 남긴다.</p>
+  </div>
+
+  <div class="full" style="top:58mm">
+    <div class="ba">
+      <figure>
+        <div class="pr"><div class="ph"><img src="img/03_송도_2장_반영전.jpg" alt="송도 반영 전"></div><svg width="6mm" height="3mm" viewBox="0 0 6 3"><path d="M.6 1.5H4.6" stroke="#2E5A87" stroke-width=".3"/><path d="M3.8.6 5.6 1.5 3.8 2.4z" fill="#2E5A87"/></svg><div class="ph"><img src="img/03_송도_2장_반영후.jpg" alt="송도 반영 후"></div></div>
+        <div class="tg"><span>반영 전</span><span></span><span>반영 후</span></div>
+        <figcaption class="cap">송도 캠퍼스타운역 일대. 2차 부서검토 의견으로 실험 구간을 연세대 국제캠퍼스 방면에서 글로벌캠퍼스 일대로 넓히고, 구간별 거리와 설치 위치를 다시 정하였다.</figcaption>
+      </figure>
+      <figure>
+        <div class="pr"><div class="ph"><img src="img/04_차이나타운_2장_반영전.jpg" alt="차이나타운 반영 전" style="object-position:50% 40%"></div><svg width="6mm" height="3mm" viewBox="0 0 6 3"><path d="M.6 1.5H4.6" stroke="#2E5A87" stroke-width=".3"/><path d="M3.8.6 5.6 1.5 3.8 2.4z" fill="#2E5A87"/></svg><div class="ph ct"><img src="img/04_차이나타운_2장_반영후.jpg" alt="차이나타운 반영 후"></div></div>
+        <div class="tg"><span>반영 전</span><span></span><span>반영 후</span></div>
+        <figcaption class="cap">차이나타운. 파도와 물안개 캐릭터를 사회실험 BI 기반 캐릭터로 바꾸고, 휴지 처리와 변기 이용 행동을 캐릭터와 픽토그램으로 그렸다.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="main" style="top:121mm">
+    <div class="tx">
+      <p>변경 이력 대장은 한 번의 변경을 한 줄로 쓰고, 줄마다 반영 전과 반영 후 그림을 붙인다. 두 그림은 같은 축척과 같은 시점으로 맞춘다. 도면이 바뀌었으면 도면을, 현장 설치가 바뀌었으면 같은 자리에서 같은 각도로 찍은 사진을 붙인다.</p>
+      <p>대장에는 바꾼 것과 함께 바꾸지 않은 것도 적는다. 설치 위치를 옮겼다면 그림과 색은 그대로인지, 그림을 바꿨다면 위치와 크기는 그대로인지를 적어 두어야 1·2차 비교에서 달라진 조건을 하나로 좁힐 수 있다.</p>
+      <p>실험 중에 설치를 바꾸면 바꾼 날짜와 그 앞뒤의 조사 일정을 함께 적는다. 바꾸기 전 기록은 지우지 않고 대장에 남겨 결과를 읽을 때 두 기간을 따로 볼 수 있게 한다. 바꾼 그림과 문구의 제작 파일에도 판 번호를 붙여 현장에 걸린 것이 어느 판인지 확인한다.</p>
+      <p>심의나 부서검토 의견으로 바꾼 것은 의견 번호를 대장에 함께 적는다. 의견서와 대장을 나란히 놓고 빠진 의견이 없는지 확인한 뒤 다음 검토에 낸다.</p>
+      <p>실험이 끝나면 대장을 관리 주체에게 함께 넘긴다. 남겨 둔 시설을 고치거나 다시 만들 때 어느 판을 기준으로 할지 대장에서 찾는다.</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:121mm">
+    <div class="case">
+      <div class="ch"><span class="t">인천에서는</span><span class="site">01</span><span class="fd safe">안전</span>약산초</div>
+      <p>1차 시민 아이디어안을 10.20–22에 운영한 뒤, 설치 위치를 바꿔 10.27–29에 다시 실험하였다. 2차 어린이안은 11.3–5에 1차와 같은 사진·지도 질문으로 운영하였다.</p>
+      <p class="more">결과는 최종보고서 49–72쪽</p>
+    </div>
+    <p class="to-form"><span class="fno">서식 07</span>디자인 변경 이력 대장<span class="pg">61쪽</span></p>
+  </aside>
+
+  <p class="foot-src">자료: 인천광역시(2026), 인천 창의디자인 사회실험 사업 심의자료</p>
+  <div class="pno">30 <i class="vt" data-vname></i></div>
+</section>
+
+<!-- ================= 31쪽 점검 (홀수 · 체크리스트형) ================= -->
+<section class="page odd p2 pg31">
+  <div class="nav"><span>기획하기</span><span class="on">설계하기</span><span>운영하기</span><span>관리하기</span><span>서식</span></div>
+  <div class="tab">설계</div>
+  <div class="hd">
+    <div class="sec"><span class="no">점검</span>설계하기</div>
+    <h2 class="hl">설계를 넘기기 전에 <em>열두 가지</em>를 확인한다</h2>
+    <p class="lede">설계 결과는 운영 담당과 관리 주체가 현장에서 그대로 쓴다. 넘기기 전에 도면, 명세서, 점검표, 변경 이력이 서로 맞는지 한 번에 확인한다.</p>
+  </div>
+
+  <div class="main stack" style="top:58mm">
+    <div class="chk">
+      <p class="grp">2-1 최종 도면·재료</p>
+      <div class="row"><span>설치물마다 품목·규격·재질·수량·위치가 한 장의 도면에 있다</span><span class="ref">19쪽</span></div>
+      <div class="row"><span>도면에 철수 방법과 원상복구 확인 방법을 적었다</span><span class="ref">20쪽</span></div>
+      <div class="row"><span>2차에 더하는 품목을 1차 품목과 나눠 적었다</span><span class="ref">21쪽</span></div>
+      <div class="row"><span>설계 명세서의 제작자 칸과 관리자 칸을 모두 채웠다</span><span class="ref">서식 05 · 59쪽</span></div>
+      <p class="grp">2-2 색·그림·안내</p>
+      <div class="row"><span>모든 색에 먼셀 색기호를 적고, 재료별 견본을 현장 빛에서 비교했다</span><span class="ref">23쪽</span></div>
+      <div class="row"><span>비교할 그림 짝은 표현 방식 한 가지만 다르다</span><span class="ref">24쪽</span></div>
+      <div class="row"><span>사인마다 설치 형태와 읽는 높이를 정했다</span><span class="ref">25쪽</span></div>
+      <div class="row"><span>이용자가 채울 자리와 먼저 발주할 부분을 나눴다</span><span class="ref">26쪽</span></div>
+      <p class="grp">2-3 현장 적용 조건</p>
+      <div class="row"><span>가이드라인 체크리스트의 조항마다 반영 여부를 표시했다</span><span class="ref">서식 06 · 60쪽</span></div>
+      <div class="row"><span>높이와 간격을 현장에서 재고, 관리기관과 협의한 결과를 회신 날짜와 함께 남겼다</span><span class="ref">28쪽</span></div>
+      <p class="grp">2-4 디자인 변경 이력</p>
+      <div class="row"><span>검토 의견마다 주체·내용·이유·반영 여부를 한 줄로 남겼다</span><span class="ref">29쪽</span></div>
+      <div class="row"><span>변경마다 반영 전·후 그림을 같은 크기로 붙였다</span><span class="ref">서식 07 · 61쪽</span></div>
+    </div>
+    <div class="hand">
+      <p><b>운영으로 넘기는 묶음</b> 최종 도면, 설계 명세서, 현장 적용 조건 점검표, 디자인 변경 이력 대장</p>
+      <p class="go"><span>PART 03</span>실험 실행 절차 · 33쪽</p>
+    </div>
+  </div>
+
+  <aside class="side stack" style="top:58mm">
+    <div class="tight">
+      <p class="note">점검표의 쪽 번호는 각 항목을 설명한 쪽이다</p>
+      <p class="note">빈 칸이 남으면 그 쪽으로 돌아가 채운 뒤 넘긴다</p>
+    </div>
+  </aside>
+
+  <div class="pno">31 <i class="vt" data-vname></i></div>
+</section>
+
+</body>
+</html>
