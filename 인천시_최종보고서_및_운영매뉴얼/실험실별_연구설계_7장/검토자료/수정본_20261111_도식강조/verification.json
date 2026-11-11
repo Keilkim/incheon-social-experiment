@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-11",
+  "pages": 7,
+  "editable_slides": 7,
+  "format": "A4 portrait",
+  "font": "Paperlogy (embedded in PDF)",
+  "references": {
+    "palette_and_font": "정말 최종_인천시_심의도서보완.pdf, PDF pages 40 onwards",
+    "hierarchy_and_scale": "240724_강남공공디자인진흥계획_위원회 심의자료(전체취합)_최종_편집.pdf"
+  },
+  "source_pdfs": {
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_1차_행동관찰기록지_작성방법포함_보완본.pdf": "ef8b1328d78efa22208efecf81f026d30e6c5b49ac09b7ede51ac730cd17d4f2",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_2차_행동관찰기록지_작성방법포함_보완본.pdf": "2299356dd1c55b2ed6ef02f32fa421fe4634efce5aec4072693d42834690053b",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_인터뷰설문지_보완본.pdf": "bfdb176cb0ac1ec63ab32ba41ce6a1aad46c98306e6cc5131093d4d25a7be041"
+  },
+  "text_box_overlaps": [],
+  "centered_text_groups": 55,
+  "vector_only": true,
+  "pdf_sha256": "1b2abca27b93f76b1c5e5d73fb5a7cd878a3de9d6aeaddfcf7fe80ad760de61c",
+  "pptx_sha256": "7defca6992937d78b9a42c55fed3a52cb87ebe8d614562460f100139c3e46605",
+  "published_files": [
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/인천시_7개실험실_수집분석_다이어그램_A4_수정본.pdf",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/인천시_7개실험실_수집분석_다이어그램_A4_수정본_편집용.pptx"
+  ],
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "research_content_unchanged": true,
+  "design_changes": [
+    "중앙 도식 주요 요소의 크기를 약 1.5배 확대",
+    "핵심 제목·기호·관계 표현의 글자 확대",
+    "하단 도출 방향·모집 기준을 옅은 회백색 배경과 작은 회색 글자로 정리",
+    "중앙 도식과 보조 정보의 비중 구분"
+  ],
+  "gray_support_band": {
+    "color": "#F3F4F5",
+    "label_pt": 6.9,
+    "result_pt": 8.7,
+    "body_pt": 7.0
+  },
+  "previous_revision_backup": "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/검토자료/수정본_20261111_도식강조/수정전_백업"
+}

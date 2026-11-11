@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-10",
+  "pages": 7,
+  "slides": 7,
+  "page_size": "A4 portrait",
+  "original_files_preserved": true,
+  "fonts_embedded": true,
+  "images_in_deliverables": 0,
+  "text_bounds_checked": true,
+  "text_box_overlaps": [],
+  "pdf_sha256": "85e1e726fef5713e2b347ee0e7a6699656e739ec1b20d0ec7377db5dd537ed29",
+  "pptx_sha256": "78d69c39a631d930202f9ab7a213660762566cc4ceeeb3704cc46408f6c809b9"
+}

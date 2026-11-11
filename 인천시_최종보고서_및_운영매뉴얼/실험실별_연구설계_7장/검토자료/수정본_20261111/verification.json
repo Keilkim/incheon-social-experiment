@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-11",
+  "pages": 7,
+  "editable_slides": 7,
+  "format": "A4 portrait",
+  "font": "Paperlogy (embedded in PDF)",
+  "reference": "정말 최종_인천시_심의도서보완.pdf, PDF pages 40 onwards",
+  "source_pdfs": {
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_1차_행동관찰기록지_작성방법포함_보완본.pdf": "ef8b1328d78efa22208efecf81f026d30e6c5b49ac09b7ede51ac730cd17d4f2",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_2차_행동관찰기록지_작성방법포함_보완본.pdf": "2299356dd1c55b2ed6ef02f32fa421fe4634efce5aec4072693d42834690053b",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_인터뷰설문지_보완본.pdf": "bfdb176cb0ac1ec63ab32ba41ce6a1aad46c98306e6cc5131093d4d25a7be041"
+  },
+  "text_box_overlaps": [],
+  "centered_text_groups": 66,
+  "vector_only": true,
+  "pdf_sha256": "1eb8b9a8b4f5cc36d39e34b696e94dbe58f4c5900bc47befe262e440eb15ba82",
+  "pptx_sha256": "ba502592b9e1be3596d7a0e23531a8458fdca6a2d92b20bd9e63f06a85433ac8",
+  "published_files": [
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/인천시_7개실험실_수집분석_다이어그램_A4_수정본.pdf",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/인천시_7개실험실_수집분석_다이어그램_A4_수정본_편집용.pptx"
+  ],
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "previous_revision_backup": "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/검토자료/수정본_20261111/수정전_백업"
+}

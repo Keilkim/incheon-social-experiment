@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-11",
+  "pages": 7,
+  "editable_slides": 7,
+  "format": "A4 portrait",
+  "font": "Paperlogy (embedded in PDF)",
+  "reference": "정말 최종_인천시_심의도서보완.pdf, PDF pages 40 onwards",
+  "source_pdfs": {
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_1차_행동관찰기록지_작성방법포함_보완본.pdf": "ef8b1328d78efa22208efecf81f026d30e6c5b49ac09b7ede51ac730cd17d4f2",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_2차_행동관찰기록지_작성방법포함_보완본.pdf": "2299356dd1c55b2ed6ef02f32fa421fe4634efce5aec4072693d42834690053b",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험 관련/연안여객터미널/보완본_20261111/연안여객터미널_인터뷰설문지_보완본.pdf": "bfdb176cb0ac1ec63ab32ba41ce6a1aad46c98306e6cc5131093d4d25a7be041"
+  },
+  "text_box_overlaps": [],
+  "centered_text_groups": 54,
+  "vector_only": true,
+  "pdf_sha256": "dbf973f8d01230bc77b731918b25fb4b8029388ed24f0cd27ed065280dd1b190",
+  "pptx_sha256": "252d6d35db2509b9210fad61146e35f92be3ac691f92860803d7f6244709d9b6",
+  "published_files": [
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/인천시_7개실험실_수집분석_다이어그램_A4_수정본.pdf",
+    "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/인천시_7개실험실_수집분석_다이어그램_A4_수정본_편집용.pptx"
+  ],
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "research_content_unchanged": true,
+  "design_changes": [
+    "본문·수집 항목·인터뷰의 박스 제거",
+    "머리말·본문·하단 장식용 구분선 제거",
+    "반복 구역 번호 제거",
+    "타이포그래피·여백 중심 구성",
+    "내용의 비교·포함·공간 관계별 도식"
+  ],
+  "full_width_rules_outside_diagrams": [],
+  "remaining_rectangles": "차이나타운 1컷·3컷을 나타내는 만화 프레임 8개",
+  "previous_revision_backup": "/Users/chokogamja/Downloads/인천시_최종보고서_및_운영매뉴얼/실험실별_연구설계_7장/검토자료/수정본_20261111_편집디자인/수정전_백업"
+}
