@@ -1,0 +1,110 @@
+{
+  "연안여객터미널_1차_행동관찰기록지_작성방법포함_보완본": {
+    "pages": 5,
+    "layout": [
+      {
+        "page": 1,
+        "mainBottom": 704.3125,
+        "footerTop": 746.78125,
+        "gap": 42.46875
+      },
+      {
+        "page": 2,
+        "mainBottom": 715.171875,
+        "footerTop": 746.78125,
+        "gap": 31.609375
+      },
+      {
+        "page": 3,
+        "mainBottom": 726.40625,
+        "footerTop": 746.78125,
+        "gap": 20.375
+      },
+      {
+        "page": 4,
+        "mainBottom": 734.203125,
+        "footerTop": 746.78125,
+        "gap": 12.578125
+      },
+      {
+        "page": 5,
+        "mainBottom": 734.203125,
+        "footerTop": 746.78125,
+        "gap": 12.578125
+      }
+    ],
+    "bytes": 81346
+  },
+  "연안여객터미널_2차_행동관찰기록지_작성방법포함_보완본": {
+    "pages": 5,
+    "layout": [
+      {
+        "page": 1,
+        "mainBottom": 704.3125,
+        "footerTop": 746.78125,
+        "gap": 42.46875
+      },
+      {
+        "page": 2,
+        "mainBottom": 715.171875,
+        "footerTop": 746.78125,
+        "gap": 31.609375
+      },
+      {
+        "page": 3,
+        "mainBottom": 726.40625,
+        "footerTop": 746.78125,
+        "gap": 20.375
+      },
+      {
+        "page": 4,
+        "mainBottom": 734.203125,
+        "footerTop": 746.78125,
+        "gap": 12.578125
+      },
+      {
+        "page": 5,
+        "mainBottom": 734.203125,
+        "footerTop": 746.78125,
+        "gap": 12.578125
+      }
+    ],
+    "bytes": 81410
+  },
+  "연안여객터미널_인터뷰설문지_보완본": {
+    "pages": 5,
+    "layout": [
+      {
+        "page": 1,
+        "mainBottom": 920.4375,
+        "footerTop": 1071.828125,
+        "gap": 151.390625
+      },
+      {
+        "page": 2,
+        "mainBottom": 1035.15625,
+        "footerTop": 1071.828125,
+        "gap": 36.671875
+      },
+      {
+        "page": 3,
+        "mainBottom": 1035.625,
+        "footerTop": 1071.828125,
+        "gap": 36.203125
+      },
+      {
+        "page": 4,
+        "mainBottom": 1048.125,
+        "footerTop": 1071.828125,
+        "gap": 23.703125
+      },
+      {
+        "page": 5,
+        "mainBottom": 1034.390625,
+        "footerTop": 1071.828125,
+        "gap": 37.4375
+      }
+    ],
+    "bytes": 81294
+  }
+}
